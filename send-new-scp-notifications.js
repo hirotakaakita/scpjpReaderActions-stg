@@ -154,8 +154,9 @@ async function getAccessToken(serviceAccount) {
   return json.access_token;
 }
 
-async function sendTopicNotification(accessToken, projectId, topic, title, body) {
+async function sendTopicNotification(accessToken, projectId, topic, title, body, validateOnly = false) {
   const payload = JSON.stringify({
+    validate_only: validateOnly,
     message: {
       topic,
       notification: { title, body },
@@ -253,4 +254,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { extractItemsMap, formatDisplayId, buildNotificationBody };
+module.exports = { extractItemsMap, formatDisplayId, buildNotificationBody, getAccessToken, sendTopicNotification };
