@@ -1,0 +1,13 @@
+{
+  "lastUpdated": "2026-09-28T09:59:54.934Z",
+  "language": "ua",
+  "totalCount": 895,
+  "status": "completed",
+  "duration": 1201,
+  "statistics": {
+    "translated": 895,
+    "untranslated": 0,
+    "withImage": 414
+  },
+  "dataFile": "scp-data.json"
+}
