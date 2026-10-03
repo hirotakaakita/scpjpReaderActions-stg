@@ -1,8 +1,8 @@
 {
   "totalCount": 24,
   "language": "int",
-  "timestamp": "2026-10-01T15:36:04.338Z",
-  "duration": 20,
+  "timestamp": "2026-10-03T08:26:58.121Z",
+  "duration": 17,
   "status": "completed",
   "statistics": {
     "translated": 24,
@@ -29,7 +29,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -55,7 +55,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -77,7 +77,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -99,7 +99,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -125,7 +125,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -147,7 +147,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -175,7 +175,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -204,7 +204,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -230,7 +230,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -252,7 +252,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -277,7 +277,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -303,7 +303,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -325,7 +325,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -349,7 +349,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -373,7 +373,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -395,7 +395,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -420,7 +420,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -442,7 +442,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -464,7 +464,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -488,7 +488,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -510,7 +510,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -538,7 +538,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -562,7 +562,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -587,7 +587,7 @@
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-01T15:36:05.094Z",
+      "lastUpdated": "2026-10-03T08:26:58.622Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
