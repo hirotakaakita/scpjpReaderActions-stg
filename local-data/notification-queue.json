@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "pending": {
+    "jp": {
+      "items": [
+        {
+          "itemId": "scp-series-jp-4081",
+          "titleJP": "おっぱいいっぱい！では何個？"
+        }
+      ],
+      "lastSentWindow": null
+    },
+    "en": {
+      "items": [
+        {
+          "itemId": "scp-series-9276",
+          "titleJP": "The Doorway Effect"
+        },
+        {
+          "itemId": "scp-series-9297",
+          "titleJP": "The Cart of Porridge and Betrayal"
+        },
+        {
+          "itemId": "scp-series-9378",
+          "titleJP": "[ACCESS DENIED]"
+        },
+        {
+          "itemId": "scp-series-9772",
+          "titleJP": "The Imitator."
+        },
+        {
+          "itemId": "scp-series-9836",
+          "titleJP": "[ACCESS DENIED]"
+        }
+      ],
+      "lastSentWindow": null
+    },
+    "cn": {
+      "items": [
+        {
+          "itemId": "scp-series-cn-4819",
+          "titleJP": "闪亮粉红梳子"
+        }
+      ],
+      "lastSentWindow": null
+    },
+    "cs": {
+      "items": [],
+      "lastSentWindow": null
+    },
+    "de": {
+      "items": [],
+      "lastSentWindow": null
+    },
+    "es": {
+      "items": [],
+      "lastSentWindow": null
+    },
+    "fr": {
+      "items": [],
+      "lastSentWindow": null
+    },
+    "int": {
+      "items": [],
+      "lastSentWindow": null
+    },
+    "it": {
+      "items": [],
+      "lastSentWindow": null
+    },
+    "ko": {
+      "items": [
+        {
+          "itemId": "scp-series-5866",
+          "titleJP": "동명동사同名同蛇"
+        }
+      ],
+      "lastSentWindow": null
+    },
+    "pl": {
+      "items": [],
+      "lastSentWindow": null
+    },
+    "pt": {
+      "items": [],
+      "lastSentWindow": null
+    },
+    "th": {
+      "items": [],
+      "lastSentWindow": null
+    },
+    "ua": {
+      "items": [],
+      "lastSentWindow": null
+    },
+    "vn": {
+      "items": [],
+      "lastSentWindow": null
+    },
+    "zh-tr": {
+      "items": [],
+      "lastSentWindow": null
+    }
+  },
+  "updatedAt": "2026-10-04T01:46:04.345Z"
+}
