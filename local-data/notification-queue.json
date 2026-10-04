@@ -31,6 +31,26 @@
         {
           "itemId": "scp-series-9836",
           "titleJP": "[ACCESS DENIED]"
+        },
+        {
+          "itemId": "scp-series-9269",
+          "titleJP": "The Four-Tailed Cat Eater"
+        },
+        {
+          "itemId": "scp-series-9287",
+          "titleJP": "Trapped Titan"
+        },
+        {
+          "itemId": "scp-series-9381",
+          "titleJP": "“The Empty Seat”"
+        },
+        {
+          "itemId": "scp-series-9394",
+          "titleJP": "Towns no longer"
+        },
+        {
+          "itemId": "scp-series-9815",
+          "titleJP": "The Remainder"
         }
       ],
       "lastSentWindow": null
@@ -40,6 +60,22 @@
         {
           "itemId": "scp-series-cn-4819",
           "titleJP": "闪亮粉红梳子"
+        },
+        {
+          "itemId": "scp-series-cn-4278",
+          "titleJP": "[禁止访问]"
+        },
+        {
+          "itemId": "scp-series-cn-4395",
+          "titleJP": "冥菰"
+        },
+        {
+          "itemId": "scp-series-cn-4946",
+          "titleJP": "现实重构弹头-代号：反噬"
+        },
+        {
+          "itemId": "scp-series-cn-4947",
+          "titleJP": "追风者之夙愿"
         }
       ],
       "lastSentWindow": null
@@ -102,5 +138,5 @@
       "lastSentWindow": null
     }
   },
-  "updatedAt": "2026-10-04T01:46:04.345Z"
+  "updatedAt": "2026-10-04T14:20:18.293Z"
 }

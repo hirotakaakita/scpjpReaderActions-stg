@@ -4169,6 +4169,12 @@
       ],
       "labels": {}
     },
+    "deletable": {
+      "aliases": [
+        "deletable"
+      ],
+      "labels": {}
+    },
     "deletions-dept": {
       "aliases": [
         "deletions-dept"
@@ -36545,6 +36551,12 @@
     "tag-aed0bf1407017c32dda8048b": {
       "aliases": [
         "อัตโนมัติ"
+      ],
+      "labels": {}
+    },
+    "tag-aeec4f76760128ca73541dfe": {
+      "aliases": [
+        "削除通知"
       ],
       "labels": {}
     },
