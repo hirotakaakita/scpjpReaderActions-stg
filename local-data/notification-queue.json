@@ -2,13 +2,8 @@
   "version": 1,
   "pending": {
     "jp": {
-      "items": [
-        {
-          "itemId": "scp-series-jp-4081",
-          "titleJP": "おっぱいいっぱい！では何個？"
-        }
-      ],
-      "lastSentWindow": null
+      "items": [],
+      "lastSentWindow": "2026-10-04"
     },
     "en": {
       "items": [
@@ -56,29 +51,8 @@
       "lastSentWindow": null
     },
     "cn": {
-      "items": [
-        {
-          "itemId": "scp-series-cn-4819",
-          "titleJP": "闪亮粉红梳子"
-        },
-        {
-          "itemId": "scp-series-cn-4278",
-          "titleJP": "[禁止访问]"
-        },
-        {
-          "itemId": "scp-series-cn-4395",
-          "titleJP": "冥菰"
-        },
-        {
-          "itemId": "scp-series-cn-4946",
-          "titleJP": "现实重构弹头-代号：反噬"
-        },
-        {
-          "itemId": "scp-series-cn-4947",
-          "titleJP": "追风者之夙愿"
-        }
-      ],
-      "lastSentWindow": null
+      "items": [],
+      "lastSentWindow": "2026-10-04"
     },
     "cs": {
       "items": [],
@@ -105,13 +79,8 @@
       "lastSentWindow": null
     },
     "ko": {
-      "items": [
-        {
-          "itemId": "scp-series-5866",
-          "titleJP": "동명동사同名同蛇"
-        }
-      ],
-      "lastSentWindow": null
+      "items": [],
+      "lastSentWindow": "2026-10-04"
     },
     "pl": {
       "items": [],
@@ -138,5 +107,5 @@
       "lastSentWindow": null
     }
   },
-  "updatedAt": "2026-10-04T14:20:18.293Z"
+  "updatedAt": "2026-10-04T14:21:43.695Z"
 }
