@@ -1,8 +1,8 @@
 {
   "totalCount": 24,
   "language": "int",
-  "timestamp": "2026-10-04T14:20:01.612Z",
-  "duration": 19,
+  "timestamp": "2026-10-05T21:09:00.384Z",
+  "duration": 17,
   "status": "completed",
   "statistics": {
     "translated": 24,
@@ -35,11 +35,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -74,11 +75,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -165,11 +167,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -212,11 +215,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -295,11 +299,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -350,11 +355,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -425,11 +431,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -504,11 +511,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -575,11 +583,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -662,11 +671,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -721,11 +731,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -784,11 +795,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -839,11 +851,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -902,11 +915,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -949,11 +963,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -1028,11 +1043,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -1083,11 +1099,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -1182,11 +1199,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -1249,11 +1267,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -1284,11 +1303,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -1367,11 +1387,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -1486,11 +1507,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -1553,11 +1575,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
@@ -1612,11 +1635,12 @@
         }
       ],
       "tagVersion": 3,
+      "tagFetchStatus": "success",
       "isTranslatedJP": true,
       "extractedFrom": "int-hub",
       "pageType": "scp-series-int",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T09:56:38.079Z",
+      "lastUpdated": "2026-10-05T16:09:50.876Z",
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
