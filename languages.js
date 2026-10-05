@@ -156,6 +156,13 @@ const LANGUAGES = {
     ],
   },
 
+  ru: {
+    baseUrl: 'https://scpfoundation.net',
+    enBaseUrl: 'https://scp-wiki.wikidot.com',
+    crawler: 'rufoundation-api',
+    pages: [{ path: 'api', pageType: 'rufoundation-api', skipUnwritten: true }],
+  },
+
   pl: {
     baseUrl: 'http://scp-pl.wikidot.com',
     enBaseUrl: 'http://scp-wiki.wikidot.com',
