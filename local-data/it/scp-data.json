@@ -1,12 +1,12 @@
 {
-  "totalCount": 9496,
+  "totalCount": 9494,
   "language": "it",
-  "timestamp": "2026-10-04T14:20:01.612Z",
+  "timestamp": "2026-10-05T13:15:44.019Z",
   "duration": 6283,
   "status": "completed",
   "statistics": {
     "translated": 1957,
-    "untranslated": 7539,
+    "untranslated": 7537,
     "withImage": 5095
   },
   "data": [
@@ -268616,10 +268616,10 @@
       ],
       "tagVersion": 3,
       "isTranslatedJP": false,
-      "extractedFrom": "scp-series-5",
+      "extractedFrom": "scp-series-7",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-10-04T10:39:31.298Z",
+      "lastUpdated": "2026-10-04T11:01:54.537Z",
       "createdAt": "2026-08-01T11:24:36.060Z",
       "translatedLanguages": [
         "en",
@@ -327052,58 +327052,6 @@
         "en",
         "cn",
         "ko"
-      ]
-    },
-    {
-      "itemId": "scp-series-4697",
-      "numericItemId": 4697,
-      "titleJP": "[DA TRADURRE]",
-      "urlEN": "http://scp-wiki.wikidot.com/scp-4697",
-      "urlJP": null,
-      "imageUrl": null,
-      "objectClass": "Safe",
-      "rating": 25,
-      "descriptionExcerpt": "SCP-4697 is a teaching facility located in Northern Ontario, Canada containing facilities for 525 students and faculty members with classrooms, a library, offices, and an ice hockey rink.1 It was constructed in 1905, as a boarding school for assimilating First Nations children. The building burned down in 1915, and was reconstructed in the same year as a private hospital and operated until 1946.\nThe interior of SCP-4697 is perceptibly similar to how it appeared when it was functioning. The speci",
-      "tags": [
-        {
-          "id": "acoustic",
-          "label": "acoustic"
-        },
-        {
-          "id": "building",
-          "label": "building"
-        },
-        {
-          "id": "humanoid",
-          "label": "Umanoide"
-        },
-        {
-          "id": "observational",
-          "label": "observational"
-        },
-        {
-          "id": "rewritable",
-          "label": "rewritable"
-        },
-        {
-          "id": "safe",
-          "label": "safe"
-        },
-        {
-          "id": "visual",
-          "label": "visual"
-        }
-      ],
-      "tagVersion": 3,
-      "isTranslatedJP": false,
-      "extractedFrom": "scp-series-6",
-      "pageType": "scp-series",
-      "contentType": "scp",
-      "lastUpdated": "2026-10-04T10:50:15.979Z",
-      "createdAt": "2026-08-01T11:24:36.060Z",
-      "translatedLanguages": [
-        "en",
-        "cn"
       ]
     },
     {
@@ -387672,58 +387620,6 @@
         "en",
         "cn",
         "ko"
-      ]
-    },
-    {
-      "itemId": "scp-series-4697",
-      "numericItemId": 4697,
-      "titleJP": "[DA TRADURRE]",
-      "urlEN": "http://scp-wiki.wikidot.com/scp-4697",
-      "urlJP": null,
-      "imageUrl": null,
-      "objectClass": "Safe",
-      "rating": 25,
-      "descriptionExcerpt": "SCP-4697 is a teaching facility located in Northern Ontario, Canada containing facilities for 525 students and faculty members with classrooms, a library, offices, and an ice hockey rink.1 It was constructed in 1905, as a boarding school for assimilating First Nations children. The building burned down in 1915, and was reconstructed in the same year as a private hospital and operated until 1946.\nThe interior of SCP-4697 is perceptibly similar to how it appeared when it was functioning. The speci",
-      "tags": [
-        {
-          "id": "acoustic",
-          "label": "acoustic"
-        },
-        {
-          "id": "building",
-          "label": "building"
-        },
-        {
-          "id": "humanoid",
-          "label": "Umanoide"
-        },
-        {
-          "id": "observational",
-          "label": "observational"
-        },
-        {
-          "id": "rewritable",
-          "label": "rewritable"
-        },
-        {
-          "id": "safe",
-          "label": "safe"
-        },
-        {
-          "id": "visual",
-          "label": "visual"
-        }
-      ],
-      "tagVersion": 3,
-      "isTranslatedJP": false,
-      "extractedFrom": "scp-series-7",
-      "pageType": "scp-series",
-      "contentType": "scp",
-      "lastUpdated": "2026-10-04T11:01:54.537Z",
-      "createdAt": "2026-08-01T11:24:36.060Z",
-      "translatedLanguages": [
-        "en",
-        "cn"
       ]
     },
     {
