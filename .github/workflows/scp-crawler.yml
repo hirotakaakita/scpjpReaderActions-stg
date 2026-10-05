@@ -155,6 +155,9 @@ jobs:
       - name: Reject duplicate article IDs before publication
         run: node catalog-identity.js
 
+      - name: Validate staging catalog schema before publication
+        run: node validate-staging-catalogs.js
+
       # Compare against the latest master acquired after entering the publish lock.
       - name: Prepare notification queue
         run: node prepare-notification-queue.js

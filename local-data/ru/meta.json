@@ -1,0 +1,13 @@
+{
+  "lastUpdated": "2026-10-05T13:30:09.484Z",
+  "language": "ru",
+  "totalCount": 11104,
+  "status": "completed",
+  "duration": 4,
+  "statistics": {
+    "translated": 4876,
+    "untranslated": 6228,
+    "withImage": 3949
+  },
+  "dataFile": "scp-data.json"
+}

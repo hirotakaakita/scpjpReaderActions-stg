@@ -17,21 +17,7 @@ jobs:
       - run: npm ci
       - run: node --test
       - name: Validate catalog and staging status
-        run: |
-          node - <<'NODE'
-          const fs = require('fs');
-          const assert = require('assert/strict');
-          const { LANGUAGES } = require('./languages');
-          for (const lang of Object.keys(LANGUAGES)) {
-            const data = JSON.parse(fs.readFileSync(`local-data/${lang}/scp-data.json`));
-            assert(data.data.length > 0, `Empty catalog: ${lang}`);
-            JSON.parse(fs.readFileSync(`local-data/${lang}/meta.json`));
-          }
-          const status = JSON.parse(fs.readFileSync('app-status.json'));
-          assert.equal(status.androidStoreUrl, '');
-          assert.equal(status.maintenance, false);
-          console.log('Validated all language catalogs and staging status');
-          NODE
+        run: node validate-staging-catalogs.js
   firebase:
     needs: validate
     runs-on: ubuntu-latest

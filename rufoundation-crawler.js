@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
+const { deduplicateArticles } = require('./catalog-identity');
 
 const API_BASE_URL = 'https://scpfoundation.net';
 const EN_BASE_URL = 'https://scp-wiki.wikidot.com';
@@ -156,15 +157,17 @@ function fallbackItem(item) {
   };
 }
 
-async function crawlRussianApi() {
+async function crawlRussianApi({ root = __dirname, request = getJson, metadataOnly = false } = {}) {
   const startedAt = new Date();
-  const outputDir = path.join(__dirname, 'partial-data');
+  const outputDir = path.join(root, 'partial-data');
   fs.mkdirSync(outputDir, { recursive: true });
-  const existing = readCatalog(path.join(__dirname, 'local-data', 'ru', 'scp-data.json'));
+  const existing = readCatalog(path.join(root, 'local-data', 'ru', 'scp-data.json'));
   const existingMap = new Map((existing.data || []).map(item => [item.itemId, item]));
-  const english = readCatalog(path.join(__dirname, 'local-data', 'en', 'scp-data.json'));
+  const english = readCatalog(path.join(root, 'local-data', 'en', 'scp-data.json'));
+  const englishByPage = new Map((english.data || []).filter(item => item.urlEN).map(item =>
+    [new URL(item.urlEN).pathname.replace(/^\//, ''), item]));
 
-  const allArticles = await getJson(`${API_BASE_URL}/api/articles`);
+  const allArticles = await request(`${API_BASE_URL}/api/articles`);
   if (!Array.isArray(allArticles) || allArticles.length === 0) throw new Error('RuFoundation API returned no articles');
   const allScpArticles = allArticles.filter(isScpArticle);
   const apiLimit = Number(process.env.RU_API_LIMIT || 0);
@@ -177,15 +180,17 @@ async function crawlRussianApi() {
 
   const processArticle = async article => {
     const pageId = String(article.pageId).toLowerCase();
-    const old = existingMap.get(pageId);
+    const englishItem = englishByPage.get(pageId);
+    const itemId = englishItem?.itemId || `scp-series-${pageId.replace(/^scp-/, '')}`;
+    const old = existingMap.get(itemId) || existingMap.get(pageId);
     const branches = branchFromTags(article.tags, pageId);
     const sourceBranch = branches.includes('ru') ? 'ru' : branches[0];
     const sourceChanged = Boolean(article.updatedAt && article.updatedAt != old?.sourceUpdatedAt);
-    const needsDetails = !old || sourceChanged || forceDetails || forceObjectClass || forceDescription || !old.objectClass || !old.descriptionExcerpt;
+    const needsDetails = !old || old.detailFetchStatus === 'pending' || sourceChanged || forceDetails || forceObjectClass || forceDescription || !old.objectClass || !old.descriptionExcerpt;
     let detail = null;
-    if (needsDetails) {
+    if (needsDetails && !metadataOnly) {
       await sleep(Number(process.env.RU_API_REQUEST_INTERVAL_MS || 150));
-      detail = await getJson(`${API_BASE_URL}/api/articles/${encodeURIComponent(pageId)}`);
+      detail = await request(`${API_BASE_URL}/api/articles/${encodeURIComponent(pageId)}`);
     }
     const source = detail?.source || old?.source || '';
     const objectClass = needsDetails ? (extractObjectClass(source) || old?.objectClass || null) : old.objectClass;
@@ -194,7 +199,7 @@ async function crawlRussianApi() {
       ? article.tags.filter(tag => !/^\u0444\u0438\u043b\u0438\u0430\u043b:/iu.test(String(tag)))
       : (old?.tags || []);
     return {
-      itemId: pageId,
+      itemId,
       numericItemId: numericId(pageId),
       titleJP: article.title || old?.titleJP || pageId,
       urlEN: branches.includes('en') ? englishUrl(pageId) : (old?.urlEN || ''),
@@ -213,6 +218,12 @@ async function crawlRussianApi() {
       sourceBranches: branches,
       isTranslatedFromOtherLanguage: sourceBranch !== 'ru',
       sourceUpdatedAt: article.updatedAt || null,
+      extractedFrom: 'api',
+      pageType: englishItem?.pageType || (sourceBranch === 'en' ? 'scp-series' : `scp-series-${sourceBranch}`),
+      contentType: 'scp',
+      lastUpdated: startedAt.toISOString(),
+      createdAt: old?.createdAt || article.createdAt || startedAt.toISOString(),
+      detailFetchStatus: detail ? 'success' : (old?.detailFetchStatus || 'pending'),
     };
   };
   const concurrency = Math.max(1, Number(process.env.RU_API_DETAIL_CONCURRENCY || 3));
@@ -222,13 +233,13 @@ async function crawlRussianApi() {
       const index = cursor.value++;
       if (index >= articles.length) return;
       result[index] = await processArticle(articles[index]);
-      if ((index + 1) % 25 === 0) console.log(`[ru] detail ${index + 1}/${articles.length}`);
+      if ((index + 1) % 25 === 0) console.log(`[ru] ${metadataOnly ? 'index' : 'detail'} ${index + 1}/${articles.length}`);
     }
   });
   await Promise.all(workers);
   const translatedIds = new Set(result.map(item => item.itemId));
   for (const item of english.data || []) {
-    if (!item.itemId || !/^scp-\d+/i.test(item.itemId) || translatedIds.has(item.itemId)) continue;
+    if (!item.itemId || !/^scp-/.test(item.itemId) || translatedIds.has(item.itemId)) continue;
     result.push(fallbackItem(item));
   }
   result.sort((a, b) => String(a.itemId).localeCompare(String(b.itemId), 'en', { numeric: true }));
@@ -236,10 +247,13 @@ async function crawlRussianApi() {
   const duration = Math.round((Date.now() - startedAt.getTime()) / 1000);
   const partial = {
     lang: 'ru', page: 'api', url: `${API_BASE_URL}/api/articles`,
-    timestamp: startedAt.toISOString(), duration, totalCount: result.length, data: result,
+    timestamp: startedAt.toISOString(), duration, totalCount: result.length,
+    data: deduplicateArticles(result, 'ru'),
   };
+  partial.totalCount = partial.data.length;
   fs.writeFileSync(path.join(outputDir, 'ru--api.json'), JSON.stringify(partial, null, 2), 'utf8');
   console.log(`[ru] API articles=${allArticles.length}, SCP=${articles.length}${apiLimit > 0 ? ` (limit ${apiLimit})` : ''}, output=${result.length}`);
+  return partial;
 }
 
 module.exports = { crawlRussianApi, extractObjectClass, extractDescription, extractImageUrl, branchFromTags };
