@@ -6,49 +6,8 @@
       "lastSentWindow": "2026-10-04"
     },
     "en": {
-      "items": [
-        {
-          "itemId": "scp-series-9276",
-          "titleJP": "The Doorway Effect"
-        },
-        {
-          "itemId": "scp-series-9297",
-          "titleJP": "The Cart of Porridge and Betrayal"
-        },
-        {
-          "itemId": "scp-series-9378",
-          "titleJP": "[ACCESS DENIED]"
-        },
-        {
-          "itemId": "scp-series-9772",
-          "titleJP": "The Imitator."
-        },
-        {
-          "itemId": "scp-series-9836",
-          "titleJP": "[ACCESS DENIED]"
-        },
-        {
-          "itemId": "scp-series-9269",
-          "titleJP": "The Four-Tailed Cat Eater"
-        },
-        {
-          "itemId": "scp-series-9287",
-          "titleJP": "Trapped Titan"
-        },
-        {
-          "itemId": "scp-series-9381",
-          "titleJP": "“The Empty Seat”"
-        },
-        {
-          "itemId": "scp-series-9394",
-          "titleJP": "Towns no longer"
-        },
-        {
-          "itemId": "scp-series-9815",
-          "titleJP": "The Remainder"
-        }
-      ],
-      "lastSentWindow": null
+      "items": [],
+      "lastSentWindow": "2026-10-04"
     },
     "cn": {
       "items": [],
@@ -107,5 +66,5 @@
       "lastSentWindow": null
     }
   },
-  "updatedAt": "2026-10-04T14:21:43.695Z"
+  "updatedAt": "2026-10-05T02:24:27.883Z"
 }
