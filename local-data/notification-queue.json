@@ -228,13 +228,8 @@
       "lastSentWindow": null
     },
     "zh-tr": {
-      "items": [
-        {
-          "itemId": "scp-series-2615-j",
-          "titleJP": "If You Believe"
-        }
-      ],
-      "lastSentWindow": null
+      "items": [],
+      "lastSentWindow": "2026-10-04"
     },
     "ru": {
       "items": [
@@ -274,5 +269,5 @@
       "lastSentWindow": null
     }
   },
-  "updatedAt": "2026-10-06T07:29:06.370Z"
+  "updatedAt": "2026-10-06T13:38:09.250Z"
 }
