@@ -96,13 +96,18 @@ function extractDescription(source) {
   return fallback ? Array.from(fallback).slice(0, 500).join('') : null;
 }
 
-function extractImageUrl(source) {
+function extractImageUrl(source, pageId) {
   const match = String(source || '').match(/\[\[image\s+([^\]|\s]+)[^\]]*\]\]/i)
     || String(source || '').match(/(?:^|[|\n])\s*name\s*=\s*([^|\]\n]+?)(?:\s*[|\n])/i);
   if (!match) return null;
   const value = match[1].trim();
   if (/^https?:\/\//i.test(value)) return value;
-  return `${API_BASE_URL}/local--files/${value.replace(/^\/+/, '')}`;
+  if (value.startsWith('//')) return `https:${value}`;
+  if (value.startsWith('/')) return new URL(value, API_BASE_URL).href;
+  // A bare attachment filename is relative to its article, not local--files.
+  const relative = value.includes('/') ? value : `${pageId || ''}/${value}`;
+  if (!pageId && !value.includes('/')) return null;
+  return `${API_BASE_URL}/local--files/${relative.split('/').map(encodeURIComponent).join('/')}`;
 }
 
 function branchFromTags(tags, pageId) {
@@ -214,28 +219,39 @@ async function crawlRussianApi({ root = __dirname, request = getJson, metadataOn
       detail = await request(`${API_BASE_URL}/api/articles/${encodeURIComponent(pageId)}`);
     }
     const source = detail?.source || old?.source || '';
+    // Repair previously cached attachment URLs without refetching every body.
+    let cachedImageUrl = old?.imageUrl || null;
+    if (cachedImageUrl && /^https:\/\/scpfoundation\.net\/local--files\/[^/]+$/.test(cachedImageUrl)) {
+      cachedImageUrl = cachedImageUrl.replace('/local--files/', `/local--files/${encodeURIComponent(pageId)}/`);
+    }
     const objectClass = needsDetails ? (extractObjectClass(source) || old?.objectClass || null) : old.objectClass;
     const descriptionExcerpt = needsDetails ? (extractDescription(source) || old?.descriptionExcerpt || null) : old.descriptionExcerpt;
     const tags = Array.isArray(article.tags)
       ? article.tags.filter(tag => !/^\u0444\u0438\u043b\u0438\u0430\u043b:/iu.test(String(tag)))
       : (old?.tags || []);
     const now = startedAt.toISOString();
+    const pageType = englishItem?.pageType || (sourceBranch === 'en' ? 'scp-series' : `scp-series-${sourceBranch}`);
+    const seriesNumber = Math.floor((numericId(pageId) || 0) / 1000) + 1;
+    const extractedFrom = englishItem?.extractedFrom ||
+      (seriesNumber === 1 ? pageType : `${pageType}-${seriesNumber}`);
     return {
       itemId,
       numericItemId: numericId(pageId),
       titleJP: article.title || old?.titleJP || pageId,
       urlEN: branches.includes('en') ? englishUrl(pageId) : (old?.urlEN || ''),
       urlJP: localUrl(pageId),
-      imageUrl: needsDetails ? (extractImageUrl(source) || old?.imageUrl || null) : (old?.imageUrl || null),
+      imageUrl: needsDetails ? (extractImageUrl(source, pageId) || cachedImageUrl) : cachedImageUrl,
       objectClass,
       rating: normalizeRating(article.rating) ?? old?.rating ?? null,
       descriptionExcerpt,
+      detailFetchStatus: detail ? 'success' : (old?.detailFetchStatus ||
+        (objectClass && descriptionExcerpt ? 'success' : 'pending')),
       tags,
       tagVersion: forceTags || !old?.tagVersion ? TAG_VERSION : Math.max(old.tagVersion, TAG_VERSION),
       tagFetchStatus: 'success',
       isTranslatedJP: true,
-      extractedFrom: 'api',
-      pageType: englishItem?.pageType || (sourceBranch === 'en' ? 'scp-series' : `scp-series-${sourceBranch}`),
+      extractedFrom,
+      pageType,
       contentType: 'scp',
       lastUpdated: now,
       createdAt: old?.createdAt || article.createdAt || startedAt.toISOString(),

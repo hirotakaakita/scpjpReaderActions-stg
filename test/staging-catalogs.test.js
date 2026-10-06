@@ -55,6 +55,7 @@ test('complete API index bootstrap satisfies app schema and preserves English fa
   assert.equal(translated.createdAt, timestamp);
   assert.equal(translated.detailFetchStatus, 'pending');
   assert.equal(translated.descriptionExcerpt, null);
+  assert.equal(translated.extractedFrom, 'scp-series');
   assert.equal(result.data.find(item => item.itemId === 'scp-series-003').isTranslatedJP, false);
   assert.ok(result.data.some(item => item.itemId === 'scp-series-002-ru'));
   assert.equal(mergeLanguage('ru', path.join(root, 'partial-data'), output), true);
