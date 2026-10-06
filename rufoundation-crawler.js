@@ -145,15 +145,25 @@ function readCatalog(file) {
 }
 
 function fallbackItem(item) {
+  const now = new Date().toISOString();
   return {
-    ...item,
+    itemId: item.itemId,
+    numericItemId: item.numericItemId ?? null,
+    titleJP: item.titleJP || item.itemId,
+    urlEN: item.urlEN || '',
     urlJP: null,
-    urlRU: null,
+    imageUrl: item.imageUrl || null,
+    objectClass: item.objectClass || null,
+    rating: item.rating ?? null,
+    descriptionExcerpt: item.descriptionExcerpt || null,
+    tags: Array.isArray(item.tags) ? item.tags : [],
+    tagVersion: item.tagVersion ?? null,
     isTranslatedJP: false,
-    isTranslatedRU: false,
-    sourceLanguage: item.sourceLanguage || 'en',
-    sourceBranch: item.sourceBranch || 'en',
-    isTranslatedFromOtherLanguage: false,
+    extractedFrom: item.extractedFrom || 'api',
+    pageType: item.pageType || 'rufoundation-api',
+    contentType: item.contentType || 'scp',
+    lastUpdated: now,
+    createdAt: item.createdAt || now,
   };
 }
 
@@ -185,8 +195,7 @@ async function crawlRussianApi({ root = __dirname, request = getJson, metadataOn
     const old = existingMap.get(itemId) || existingMap.get(pageId);
     const branches = branchFromTags(article.tags, pageId);
     const sourceBranch = branches.includes('ru') ? 'ru' : branches[0];
-    const sourceChanged = Boolean(article.updatedAt && article.updatedAt != old?.sourceUpdatedAt);
-    const needsDetails = !old || old.detailFetchStatus === 'pending' || sourceChanged || forceDetails || forceObjectClass || forceDescription || !old.objectClass || !old.descriptionExcerpt;
+    const needsDetails = !old || forceDetails || forceObjectClass || forceDescription || !old.objectClass || !old.descriptionExcerpt;
     let detail = null;
     if (needsDetails && !metadataOnly) {
       await sleep(Number(process.env.RU_API_REQUEST_INTERVAL_MS || 150));
@@ -198,13 +207,13 @@ async function crawlRussianApi({ root = __dirname, request = getJson, metadataOn
     const tags = Array.isArray(article.tags)
       ? article.tags.filter(tag => !/^\u0444\u0438\u043b\u0438\u0430\u043b:/iu.test(String(tag)))
       : (old?.tags || []);
+    const now = startedAt.toISOString();
     return {
       itemId,
       numericItemId: numericId(pageId),
       titleJP: article.title || old?.titleJP || pageId,
       urlEN: branches.includes('en') ? englishUrl(pageId) : (old?.urlEN || ''),
       urlJP: localUrl(pageId),
-      urlRU: localUrl(pageId),
       imageUrl: needsDetails ? (extractImageUrl(source) || old?.imageUrl || null) : (old?.imageUrl || null),
       objectClass,
       rating: article.rating?.value ?? old?.rating ?? null,
@@ -212,18 +221,11 @@ async function crawlRussianApi({ root = __dirname, request = getJson, metadataOn
       tags,
       tagVersion: forceTags || !old?.tagVersion ? TAG_VERSION : Math.max(old.tagVersion, TAG_VERSION),
       isTranslatedJP: true,
-      isTranslatedRU: true,
-      sourceLanguage: sourceBranch,
-      sourceBranch,
-      sourceBranches: branches,
-      isTranslatedFromOtherLanguage: sourceBranch !== 'ru',
-      sourceUpdatedAt: article.updatedAt || null,
       extractedFrom: 'api',
       pageType: englishItem?.pageType || (sourceBranch === 'en' ? 'scp-series' : `scp-series-${sourceBranch}`),
       contentType: 'scp',
-      lastUpdated: startedAt.toISOString(),
+      lastUpdated: now,
       createdAt: old?.createdAt || article.createdAt || startedAt.toISOString(),
-      detailFetchStatus: detail ? 'success' : (old?.detailFetchStatus || 'pending'),
     };
   };
   const concurrency = Math.max(1, Number(process.env.RU_API_DETAIL_CONCURRENCY || 3));
