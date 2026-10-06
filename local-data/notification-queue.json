@@ -67,6 +67,14 @@
         {
           "itemId": "joke-scps-4321",
           "titleJP": "This SCP is proudly brought to you by TemuTM"
+        },
+        {
+          "itemId": "scp-series-9656",
+          "titleJP": "Best Practices"
+        },
+        {
+          "itemId": "scp-series-9713",
+          "titleJP": "A village during the war"
         }
       ],
       "lastSentWindow": "2026-10-04"
@@ -100,6 +108,14 @@
         {
           "itemId": "joke-scps-cn-1001",
           "titleJP": "神秘后室模因"
+        },
+        {
+          "itemId": "scp-series-cn-3583",
+          "titleJP": "[禁止访问]"
+        },
+        {
+          "itemId": "scp-series-cn-4783",
+          "titleJP": "[禁止访问]"
         }
       ],
       "lastSentWindow": "2026-10-04"
@@ -161,6 +177,10 @@
         {
           "itemId": "scp-series-4955-coltello",
           "titleJP": "Un Coltello Visibile per Scherzo"
+        },
+        {
+          "itemId": "scp-series-it-206",
+          "titleJP": "[ACCESSO NEGATO]"
         }
       ],
       "lastSentWindow": null
@@ -217,9 +237,42 @@
       "lastSentWindow": null
     },
     "ru": {
-      "items": [],
+      "items": [
+        {
+          "itemId": "scp-series-2615-j",
+          "titleJP": "If You Believe"
+        },
+        {
+          "itemId": "scp-series-8827",
+          "titleJP": "Whales With Rabies"
+        },
+        {
+          "itemId": "scp-series-9279",
+          "titleJP": "[ACCESS DENIED]"
+        },
+        {
+          "itemId": "scp-series-9435",
+          "titleJP": "[ACCESS DENIED]"
+        },
+        {
+          "itemId": "scp-series-9437",
+          "titleJP": "Qinhuangdao Summer"
+        },
+        {
+          "itemId": "scp-series-9438",
+          "titleJP": "Log of Sea Ghosts' Aestival Travels"
+        },
+        {
+          "itemId": "scp-series-9439",
+          "titleJP": "The Titmice Singer"
+        },
+        {
+          "itemId": "scp-series-9496",
+          "titleJP": "No Love Lost"
+        }
+      ],
       "lastSentWindow": null
     }
   },
-  "updatedAt": "2026-10-05T21:09:28.859Z"
+  "updatedAt": "2026-10-06T07:29:06.370Z"
 }

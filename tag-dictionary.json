@@ -1195,6 +1195,12 @@
       ],
       "labels": {}
     },
+    "architekt": {
+      "aliases": [
+        "architekt"
+      ],
+      "labels": {}
+    },
     "archived": {
       "aliases": [
         "archived"
@@ -49998,6 +50004,12 @@
     "traduzido": {
       "aliases": [
         "traduzido"
+      ],
+      "labels": {}
+    },
+    "trafigurazione": {
+      "aliases": [
+        "trafigurazione"
       ],
       "labels": {}
     },

@@ -199814,5 +199814,53 @@
       "vi",
       "zh-Hant"
     ]
+  },
+  {
+    "id": "architekt",
+    "aliases": [
+      "architekt"
+    ],
+    "missing": [
+      "ru",
+      "en",
+      "ja",
+      "zh",
+      "cs",
+      "de",
+      "es",
+      "fr",
+      "it",
+      "ko",
+      "pl",
+      "pt",
+      "th",
+      "uk",
+      "vi",
+      "zh-Hant"
+    ]
+  },
+  {
+    "id": "trafigurazione",
+    "aliases": [
+      "trafigurazione"
+    ],
+    "missing": [
+      "ru",
+      "en",
+      "ja",
+      "zh",
+      "cs",
+      "de",
+      "es",
+      "fr",
+      "it",
+      "ko",
+      "pl",
+      "pt",
+      "th",
+      "uk",
+      "vi",
+      "zh-Hant"
+    ]
   }
 ]
