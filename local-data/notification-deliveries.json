@@ -132,6 +132,48 @@
       "startedAt": "2026-10-06T19:04:57.204Z",
       "messageName": "projects/scpjp-reader-stg/messages/-582266014449692665",
       "sentAt": "2026-10-06T19:05:14.708Z"
+    },
+    {
+      "id": "ru/2026-10-04",
+      "lang": "ru",
+      "window": "2026-10-04",
+      "items": [
+        {
+          "itemId": "scp-series-2615-j",
+          "titleJP": "If You Believe"
+        },
+        {
+          "itemId": "scp-series-8827",
+          "titleJP": "Whales With Rabies"
+        },
+        {
+          "itemId": "scp-series-9279",
+          "titleJP": "[ACCESS DENIED]"
+        },
+        {
+          "itemId": "scp-series-9435",
+          "titleJP": "[ACCESS DENIED]"
+        },
+        {
+          "itemId": "scp-series-9437",
+          "titleJP": "Qinhuangdao Summer"
+        },
+        {
+          "itemId": "scp-series-9438",
+          "titleJP": "Log of Sea Ghosts' Aestival Travels"
+        },
+        {
+          "itemId": "scp-series-9439",
+          "titleJP": "The Titmice Singer"
+        },
+        {
+          "itemId": "scp-series-9496",
+          "titleJP": "No Love Lost"
+        }
+      ],
+      "attempts": 1,
+      "status": "sending",
+      "startedAt": "2026-10-06T19:04:57.204Z"
     }
   ]
 }
