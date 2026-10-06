@@ -64,6 +64,32 @@
       "startedAt": "2026-10-06T19:04:57.204Z",
       "messageName": "projects/scpjp-reader-stg/messages/954747503090805864",
       "sentAt": "2026-10-06T19:05:06.164Z"
+    },
+    {
+      "id": "fr/2026-10-04",
+      "lang": "fr",
+      "window": "2026-10-04",
+      "items": [
+        {
+          "itemId": "scp-series-5363-d",
+          "titleJP": "Confinement contrôlé"
+        },
+        {
+          "itemId": "scp-series-5558-d",
+          "titleJP": "𝒫 et la Petite Fête"
+        },
+        {
+          "itemId": "scp-series-6159-arc",
+          "titleJP": "Primrose Fatish Von Trevil, anciennement le Démon Lié au Livre"
+        },
+        {
+          "itemId": "scp-series-7603-arc",
+          "titleJP": "P pour ''Pluton, Précédemment. Présentement Primrose.''"
+        }
+      ],
+      "attempts": 1,
+      "status": "sending",
+      "startedAt": "2026-10-06T19:04:57.204Z"
     }
   ]
 }
