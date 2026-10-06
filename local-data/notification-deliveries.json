@@ -32,6 +32,20 @@
       "startedAt": "2026-10-06T19:04:57.204Z",
       "messageName": "projects/scpjp-reader-stg/messages/3666110537130465707",
       "sentAt": "2026-10-06T19:04:59.987Z"
+    },
+    {
+      "id": "de/2026-10-04",
+      "lang": "de",
+      "window": "2026-10-04",
+      "items": [
+        {
+          "itemId": "scp-series-2615-j",
+          "titleJP": "If You Believe"
+        }
+      ],
+      "attempts": 1,
+      "status": "sending",
+      "startedAt": "2026-10-06T19:04:57.204Z"
     }
   ]
 }
