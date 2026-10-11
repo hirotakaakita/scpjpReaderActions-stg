@@ -176,6 +176,40 @@
       "startedAt": "2026-10-06T19:04:57.204Z",
       "messageName": "projects/scpjp-reader-stg/messages/-8531670454777302945",
       "sentAt": "2026-10-06T19:05:17.732Z"
+    },
+    {
+      "id": "jp/2026-10-11",
+      "lang": "jp",
+      "window": "2026-10-11",
+      "items": [
+        {
+          "itemId": "scp-series-2615-j",
+          "titleJP": "信じるなら"
+        },
+        {
+          "itemId": "scp-series-jp-3347",
+          "titleJP": "寝取られ亭主の頭には角が生える"
+        },
+        {
+          "itemId": "scp-series-jp-3974",
+          "titleJP": "ハーベスト"
+        },
+        {
+          "itemId": "scp-series-jp-4023",
+          "titleJP": "忘れ物"
+        },
+        {
+          "itemId": "scp-series-jp-4949",
+          "titleJP": "お月見ず、うさぎは踊る"
+        },
+        {
+          "itemId": "scp-series-jp-4990",
+          "titleJP": "突撃！となりの次元のお呼び出し"
+        }
+      ],
+      "attempts": 1,
+      "status": "sending",
+      "startedAt": "2026-10-11T14:00:50.129Z"
     }
   ]
 }
