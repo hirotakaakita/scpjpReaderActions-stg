@@ -16,6 +16,8 @@ jobs:
           node-version: '24'
       - run: npm ci
       - run: node --test
+      - name: Rebuild and verify published research board
+        run: node research-board/validate.js
       - name: Validate catalog and staging status
         run: node validate-staging-catalogs.js
   firebase:

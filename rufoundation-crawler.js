@@ -212,11 +212,15 @@ async function crawlRussianApi({ root = __dirname, request = getJson, metadataOn
     const old = existingMap.get(itemId) || existingMap.get(pageId);
     const branches = branchFromTags(article.tags, pageId);
     const sourceBranch = branches.includes('ru') ? 'ru' : branches[0];
-    const needsDetails = !old || forceDetails || forceObjectClass || forceDescription || !old.objectClass || !old.descriptionExcerpt;
+    const needsDetails = process.env.CAPTURE_RESEARCH_BOARD === '1' || !old || forceDetails || forceObjectClass || forceDescription || !old.objectClass || !old.descriptionExcerpt;
     let detail = null;
     if (needsDetails && !metadataOnly) {
       await sleep(Number(process.env.RU_API_REQUEST_INTERVAL_MS || 150));
       detail = await request(`${API_BASE_URL}/api/articles/${encodeURIComponent(pageId)}`);
+    }
+    if (detail && process.env.CAPTURE_RESEARCH_BOARD === '1') {
+      try { require('./research-board/source-store').capture(localUrl(pageId), JSON.stringify(detail), 'ftml'); }
+      catch (error) { console.warn(`Research source skipped: ${pageId}: ${error.message}`); }
     }
     const source = detail?.source || old?.source || '';
     // Repair previously cached attachment URLs without refetching every body.
