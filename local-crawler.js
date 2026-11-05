@@ -546,13 +546,6 @@ class LocalSCPCrawler {
           }
         });
 
-        if (process.env.CAPTURE_RESEARCH_BOARD === '1') {
-          try { require('./research-board/source-store').capture(scpUrl, response.data); }
-          catch (error) {
-            require('./research-board/source-store').captureFailure(scpUrl, 'parse_error');
-            console.warn(`Research source skipped: ${scpUrl}: ${error.message}`);
-          }
-        }
         return withDom(response.data, document => ({
           fetchSucceeded: true,
           objectClass: extractObjectClassFromDocument(document),
@@ -562,10 +555,7 @@ class LocalSCPCrawler {
         }));
       } catch (error) {
         console.warn(`SCP詳細情報取得エラー ${scpUrl} (試行${attempt}/${maxRetries}):`, error.message);
-        if (attempt === maxRetries) {
-          if (process.env.CAPTURE_RESEARCH_BOARD === '1') require('./research-board/source-store').captureFailure(scpUrl, error.response?.status === 404 ? 'not_found' : 'fetch_error');
-          return { fetchSucceeded: false, objectClass: null, rating: null, descriptionExcerpt: null, tags: [], tagVersion: null };
-        }
+        if (attempt === maxRetries) return { fetchSucceeded: false, objectClass: null, rating: null, descriptionExcerpt: null, tags: [], tagVersion: null };
         await new Promise(resolve => setTimeout(resolve, 2000));
       }
     }

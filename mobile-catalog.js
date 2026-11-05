@@ -3,7 +3,6 @@ const path = require('node:path');
 const zlib = require('node:zlib');
 const crypto = require('node:crypto');
 const { LANGUAGES } = require('./languages');
-const { generateResearchBoard } = require('./research-board/catalog');
 
 // This is a delivery format, never a replacement for the crawler's source data.
 const FIELDS = new Set([
@@ -79,10 +78,6 @@ function generateMobileCatalogs(input, output = path.join(input, 'mobile-v1')) {
 if (require.main === module) {
   const input = path.resolve(process.argv[2] || path.join(__dirname, 'local-data'));
   const output = process.argv[3] && path.resolve(process.argv[3]);
-  const reports = generateMobileCatalogs(input, output);
-  const researchBoard = generateResearchBoard(input, output || path.join(input, 'mobile-v1'), {
-    seed: process.argv.includes('--seed-research-sources') ? process.argv[process.argv.indexOf('--seed-research-sources') + 1] : undefined,
-  });
-  console.log(JSON.stringify({ catalogs: reports, researchBoard }, null, 2));
+  console.log(JSON.stringify(generateMobileCatalogs(input, output), null, 2));
 }
 module.exports = { mobileCatalog, generateMobileCatalogs };
