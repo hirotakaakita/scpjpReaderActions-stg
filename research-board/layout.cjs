@@ -14,16 +14,18 @@ function starLayout(nodes,neighbors){
  for(const n of nodes)n.degree=neighbors[n.index].size;
  for(const code of branches){
   const members=nodes.filter(n=>n.branch===code),buckets=new Map();
-  for(const node of members){const match=node.slug.match(/^scp-(?:[a-z]{1,4}-)?(\d+)/i),start=match?Math.floor(Number(match[1])/500)*500:null;
+  for(const node of members){const match=node.slug.match(/^scp-(?:[a-z]{1,4}-)?(\d+)/i),number=Number.isInteger(node.articleNumber)?node.articleNumber:match?Number(match[1]):null,start=number!==null?Math.floor(number/100)*100:null;
+   const pageType=node.pageType||(node.kindIndex===0?(node.branch==='en'?'scp-series':`scp-series-${node.branch}`):'');
    const prefix=node.pageType?.startsWith('joke-scps')?'JOKE ':node.pageType&&/^scp-(?:[a-z-]+-)?ex$/.test(node.pageType)?'EX ':'';
-   const label=node.kindIndex===0&&start!==null?`${prefix}${String(start).padStart(3,'0')}–${start+499}`:node.kindIndex===0?prefix+'SPECIAL':null;
-   const key=node.kindIndex+':'+(node.pageType||'')+':'+(label||'');if(!buckets.has(key))buckets.set(key,{kind:node.kindIndex,label,nodes:[]});buckets.get(key).nodes.push(node);
+   const label=node.kindIndex===0&&start!==null?`${prefix}${String(start).padStart(3,'0')}–${String(start+99).padStart(3,'0')}`:node.kindIndex===0?prefix+'SPECIAL':null;
+   const key=node.kindIndex+':'+pageType+':'+(label||'');if(!buckets.has(key))buckets.set(key,{kind:node.kindIndex,label,nodes:[]});buckets.get(key).nodes.push(node);
   }
   const local=[];
   for(const [key,bucket]of [...buckets].sort(([a],[b])=>a.localeCompare(b,'en',{numeric:true}))){
    bucket.nodes.sort((a,b)=>a.id.localeCompare(b.id,'en'));
-   for(let start=0;start<bucket.nodes.length;start+=400){
-    const list=bucket.nodes.slice(start,start+400),available=new Set(list.map(n=>n.index)),systems=[];
+   const chunkSize=bucket.kind===0&&bucket.label&&!bucket.label.includes('SPECIAL')?bucket.nodes.length:200;
+   for(let start=0;start<bucket.nodes.length;start+=chunkSize){
+    const list=bucket.nodes.slice(start,start+chunkSize),available=new Set(list.map(n=>n.index)),systems=[];
     const ranked=[...list].sort((a,b)=>b.degree-a.degree||a.id.localeCompare(b.id,'en'));
     for(const root of ranked){if(!available.delete(root.index))continue;const group=[root],queue=[root.index],links=[];
      for(let at=0;at<queue.length&&group.length<48;at++){
@@ -35,7 +37,7 @@ function starLayout(nodes,neighbors){
     }
     systems.sort((a,b)=>b.nodes.length-a.nodes.length||a.hub-b.hub);pack(systems,20);
     const radius=Math.max(80,...systems.map(s=>Math.hypot(s.x,s.y)+s.radius))+34;
-    const section={id:`${code}:${key}:${start/400}`,branch:code,kind:bucket.kind,label:bucket.label?bucket.label+(bucket.nodes.length>400?` · ${start/400+1}`:''):`${start/400+1}`,count:list.length,radius,systems,nodes:list};local.push(section);
+    const section={id:`${code}:${key}:${start}`,branch:code,kind:bucket.kind,label:bucket.label||`${list[0].slug.slice(0,14)} – ${list.at(-1).slug.slice(0,14)}`,count:list.length,radius,systems,nodes:list};local.push(section);
    }
   }
   local.sort((a,b)=>b.count-a.count||a.id.localeCompare(b.id,'en'));pack(local,70);

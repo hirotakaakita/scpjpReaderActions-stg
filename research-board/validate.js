@@ -15,9 +15,18 @@ function validate(root = path.join(__dirname, '..')) {
   const board = JSON.parse(decoded);
   if (board.revision !== manifest.revision || board.nodes.length !== manifest.nodeCount || board.edges.length !== manifest.edgeCount) throw Error('Board metadata mismatch');
   if (board.overview.classification !== 'reading_record_page_type') throw Error('Missing ledger classification');
+  if (board.schemaVersion !== 2 || board.overview.identity !== 'ledger_work') throw Error('Missing work identity');
+  const workIds = new Set(), pageUrls = new Set();
   for (const n of board.nodes) {
-    if (n.length !== 13 || (n[12] && branchForPageType(n[12]) !== n[8])) throw Error('Ledger classification mismatch');
+    if (n.length !== 15 || (n[12] && branchForPageType(n[12]) !== n[8])) throw Error('Ledger classification mismatch');
+    if (workIds.has(n[14][0])) throw Error('Duplicate work node');
+    workIds.add(n[14][0]);
+    if (n[3] !== 4) for (const version of n[13]) {
+      if (pageUrls.has(version[1])) throw Error('Page assigned to multiple works');
+      pageUrls.add(version[1]);
+    }
   }
+  if (pageUrls.size !== board.overview.sourcePageCount) throw Error('Lost source page');
   const catalogs = fs.readdirSync(input).sort().flatMap(code => {
     const file = path.join(input, code, 'scp-data.json');
     return fs.existsSync(file) ? [JSON.parse(fs.readFileSync(file))] : [];

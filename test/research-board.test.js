@@ -12,8 +12,8 @@ function state(slug, html) {
 }
 function catalogs() {
   return [{ language: 'en', timestamp: '2026-11-05T00:00:00Z', data: [
-    { itemId: 'scp-001', titleJP: 'First', urlJP: BASE + 'scp-001' },
-    { itemId: 'scp-002', titleJP: 'Isolated', urlJP: BASE + 'scp-002' },
+    { itemId: 'scp-series-001', pageType: 'scp-series', titleJP: 'First', urlJP: BASE + 'scp-001' },
+    { itemId: 'scp-series-002', pageType: 'scp-series', titleJP: 'Isolated', urlJP: BASE + 'scp-002' },
   ] }];
 }
 
@@ -25,7 +25,8 @@ test('all catalog pages survive without links; branch identity and log kinds rem
   assert.deepEqual(a, b);
   const isolated = a.nodes.find(n => n[4] === 'scp-002');
   assert.equal(isolated[9], 0);
-  assert.equal(a.nodes.filter(n => n[4] === 'scp-001').length, 2);
+  assert.equal(a.nodes.filter(n => n[4] === 'scp-001').length, 1);
+  assert.equal(a.nodes.find(n => n[4] === 'scp-001')[13].length, 2);
   assert.equal(a.nodes.find(n => n[4].startsWith('experiment-log'))[3], 1);
   assert.ok(a.overview.types.includes('appears_in_log'));
   assert.equal(a.overview.types.includes('co_appearance'), false);
@@ -97,22 +98,23 @@ test('reading-ledger page types classify translations by work origin while prese
   merge(records, { record, lastAttempt: { status: 'success', at: record.checkedAt } });
   const board = buildBoard([
     { language: 'jp', timestamp: '2026-11-05T00:00:00Z', data: [
-      { urlJP: jp + 'scp-1537', pageType: 'scp-series' },
-      { urlJP: jp + 'scp-1537-jp', pageType: 'scp-series-jp' },
+      { itemId: 'scp-series-1537', urlJP: jp + 'scp-1537', pageType: 'scp-series' },
+      { itemId: 'scp-series-jp-1537', urlJP: jp + 'scp-1537-jp', pageType: 'scp-series-jp' },
       { urlJP: jp + 'scp-001-ex', pageType: 'scp-ex' },
       { urlJP: jp + 'scp-001-j', pageType: 'joke-scps' },
     ] },
     { language: 'en', timestamp: '2026-11-05T00:00:00Z', data: [
-      { urlJP: BASE + 'scp-1537', pageType: 'scp-series' },
+      { itemId: 'scp-series-1537', urlJP: BASE + 'scp-1537', pageType: 'scp-series' },
     ] },
   ], records);
-  const translated = board.nodes.find(n => n[6] === jp + 'scp-1537');
-  assert.equal(translated[8], 'en'); assert.equal(translated[11], 'jp');
+  const translated = board.nodes.find(n => n[4] === 'scp-1537');
+  assert.equal(translated[8], 'en'); assert.equal(translated[13].length, 2);
+  assert.ok(translated[13].some(p => p[0] === 'jp' && p[1] === jp + 'scp-1537'));
   assert.equal(translated[12], 'scp-series');
   assert.equal(board.nodes.find(n => n[4] === 'scp-1537-jp')[8], 'jp');
-  assert.equal(board.nodes.filter(n => n[4] === 'scp-1537').length, 2);
+  assert.equal(board.nodes.filter(n => n[4] === 'scp-1537').length, 1);
   assert.equal(board.edges.length, 1);
-  assert.equal(board.nodes[board.edges[0][0]][6], jp + 'scp-1537');
+  assert.ok(board.nodes[board.edges[0][0]][13].some(p => p[1] === jp + 'scp-1537'));
   assert.equal(board.nodes[board.edges[0][1]][6], jp + 'scp-1537-jp');
   assert.equal(board.overview.classification, 'reading_record_page_type');
   for (const [type, expected] of [['scp-series', 'en'], ['joke-scps', 'en'], ['scp-ex', 'en'],
@@ -134,4 +136,40 @@ test('non-catalog logs use explicit publisher origin tags; unknown origins are n
   assert.equal(log[8], 'en'); assert.equal(log[11], 'jp');
   assert.equal(log[3], 1);
   assert.equal(board.nodes.find(n => n[4] === 'unclassified-log')[8], 'other');
+});
+
+test('one work has language choices and one connection with every original proof', () => {
+  const jp = 'https://scp-jp.wikidot.com/';
+  const records = new Map();
+  merge(records, state('scp-079', '<p>SCP-079 and SCP-682 were contained within the same chamber for 43 minutes.</p><a href="/scp-682">682</a>'));
+  const r = makeRecord(jp + 'scp-079', '<div id="page-content"><a href="/scp-682">682</a><a href="https://scp-wiki.wikidot.com/scp-079">Original</a></div>', 'html', '2026-11-05T00:00:00Z');
+  merge(records, { record: r, lastAttempt: { status: 'success', at: r.checkedAt } });
+  const board = buildBoard(['en','jp'].map(language => ({ language, timestamp: r.checkedAt, data:
+    ['079','682'].map(id => ({ itemId: 'scp-series-' + id, pageType: 'scp-series', numericItemId: Number(id),
+      urlJP: (language === 'jp' ? jp : BASE) + 'scp-' + id })) })), records);
+  assert.equal(board.nodes.length, 2);
+  assert.ok(board.nodes.every(n => n[13].length === 2));
+  assert.equal(board.overview.sourcePageCount, 4);
+  assert.ok(board.overview.internalReferences > 0);
+  const references = board.edges.filter(e => board.overview.types[e[2]] === 'references');
+  assert.equal(references.length, 1);
+  assert.equal(references[0][4].length, 2);
+  assert.deepEqual(new Set(references[0][4].map(id => board.proofs[id][0])), new Set([BASE + 'scp-079', jp + 'scp-079']));
+  const claim = board.edges.find(e => board.overview.types[e[2]] === 'co_appearance');
+  assert.equal(claim[4].length, 1);
+  assert.equal(board.proofs[claim[3]][0], BASE + 'scp-079');
+  assert.ok(board.overview.sections.every(s => !/ · \d+$/.test(s.label)));
+});
+
+test('ledger identity keeps branch works, variants and different 001 proposals apart', () => {
+  const data = [
+    { itemId: 'scp-series-001-a', pageType: 'scp-series', numericItemId: 1, urlJP: BASE + 'proposal-a' },
+    { itemId: 'scp-series-001-b', pageType: 'scp-series', numericItemId: 1, urlJP: BASE + 'proposal-b' },
+    { itemId: 'scp-series-jp-001', pageType: 'scp-series-jp', numericItemId: 1, urlJP: 'https://scp-jp.wikidot.com/scp-001-jp' },
+  ];
+  const board = buildBoard([{ language: 'en', timestamp: '2026-11-05T00:00:00Z', data },
+    { language: 'jp', timestamp: '2026-11-05T00:00:00Z', data: [{ ...data[0], urlJP: 'https://scp-jp.wikidot.com/proposal-a' }] }], new Map());
+  assert.equal(board.nodes.length, 3);
+  assert.equal(board.nodes.find(n => n[14][1] === 'scp-series-001-a')[13].length, 2);
+  assert.ok(board.overview.sections.every(s => s.label === '000–099'));
 });

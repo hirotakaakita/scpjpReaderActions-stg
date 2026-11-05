@@ -9,6 +9,7 @@ const { starLayout } = require('./layout.cjs');
 const { regionLayout } = require('./regions.cjs');
 const { warpLayout } = require('./warp.cjs');
 const { classifyNodes } = require('./classification');
+const { collapseWorks } = require('./works');
 const KINDS = ['scp', 'log', 'hub', 'tale', 'organization', 'document'];
 
 function buildBoard(catalogs, sources) {
@@ -21,10 +22,12 @@ function buildBoard(catalogs, sources) {
   }
   for (const catalog of catalogs) for (const row of catalog.data) {
     const node = page(row.isTranslatedJP !== false && row.urlJP ? row.urlJP : row.urlEN);
-    if (node && (catalog.language === node.branch || node.title === node.slug)) node.title = row.titleJP || node.slug;
+    if (node && (catalog.language === node.branch || node.title === node.slug)) {
+      node.title = row.titleJP || node.slug; node.catalogTitle = node.title;
+    }
     if (node) {
       if (!catalogEntries.has(node.id)) catalogEntries.set(node.id, []);
-      catalogEntries.get(node.id).push({ language: catalog.language, pageType: row.pageType });
+      catalogEntries.get(node.id).push({ language: catalog.language, pageType: row.pageType, itemId: row.itemId, articleNumber: row.numericItemId });
     }
   }
   for (const state of sources.values()) {
@@ -61,13 +64,13 @@ function buildBoard(catalogs, sources) {
       }
     }
   }
-  const nodes = [...pages.values()].sort((a, b) => a.id.localeCompare(b.id, 'en'));
-  classifyNodes(nodes, sources, catalogEntries);
-  nodes.forEach((n, index) => { n.index = index; n.kindIndex = Math.max(0, KINDS.indexOf((n.pageKind || pageKind(n)).type)); });
+  const sourcePages = [...pages.values()].sort((a, b) => a.id.localeCompare(b.id, 'en'));
+  classifyNodes(sourcePages, sources, catalogEntries);
+  sourcePages.forEach(n => { n.kindIndex = n.pageType ? 0 : Math.max(0, KINDS.indexOf((n.pageKind || pageKind(n)).type)); });
+  const { nodes, relations, sourcePageCount, internalReferences } = collapseWorks(sourcePages, candidates, catalogEntries);
+  nodes.forEach((n, index) => { n.index = index; });
   const byId = new Map(nodes.map(n => [n.id, n]));
-  const neighbors = nodes.map(() => new Set()), unique = new Map();
-  for (const e of candidates) unique.set(`${e.source}\0${e.type}\0${e.target}\0${JSON.stringify(e.proof)}`, e);
-  const relations = [...unique.values()].sort((a,b) => `${a.source}\0${a.type}\0${a.target}`.localeCompare(`${b.source}\0${b.type}\0${b.target}`, 'en'));
+  const neighbors = nodes.map(() => new Set());
   for (const e of relations) {
     const a = byId.get(e.source).index, b = byId.get(e.target).index;
     neighbors[a].add(b); neighbors[b].add(a);
@@ -82,16 +85,20 @@ function buildBoard(catalogs, sources) {
     const key = `${n.branch}:${Math.floor(n.x / 180)}:${Math.floor(n.y / 180)}`;
     if (!points.has(key)) points.set(key, [n.x, n.y, 0, n.branch, n.kindIndex]);
     points.get(key)[2]++;
-    return [n.index, n.x, n.y, n.kindIndex, n.slug, n.title, n.url, n.coverage, n.branch, n.degree, n.section, n.siteBranch, n.pageType];
+    return [n.index, n.x, n.y, n.kindIndex, n.slug, n.title, n.url, n.coverage, n.branch, n.degree, n.section, n.siteBranch, n.pageType, n.versions, [n.id, n.articleId]];
   });
   const types = [...new Set(relations.map(e => e.type))].sort(), proofs = [], proofIds = new Map();
   const edges = relations.map(e => {
-    const key = JSON.stringify(e.proof);
-    if (!proofIds.has(key)) { proofIds.set(key, proofs.length); proofs.push(e.proof); }
-    return [byId.get(e.source).index, byId.get(e.target).index, types.indexOf(e.type), proofIds.get(key)];
+    const ids = e.proofs.map(proof => {
+      const key = JSON.stringify(proof);
+      if (!proofIds.has(key)) { proofIds.set(key, proofs.length); proofs.push(proof); }
+      return proofIds.get(key);
+    });
+    return [byId.get(e.source).index, byId.get(e.target).index, types.indexOf(e.type), ids[0], ids];
   });
   const generatedAt = [...catalogs.map(c => c.timestamp), ...[...sources.values()].map(s => s.record?.checkedAt).filter(Boolean)].sort().at(-1);
-  const overview = { schemaVersion: 1, generatedAt, pageCount: nodes.filter(n => !n.id.startsWith('entity:')).length,
+  const overview = { schemaVersion: 2, generatedAt, pageCount: nodes.filter(n => !n.classificationSourceId).length,
+    identity: 'ledger_work', sourcePageCount, internalReferences,
     nodeCount: nodes.length, edgeCount: edges.length, tileSize, width, height, geometryWarp: warp, sections,
     trunks: trunks.map(([a,b]) => [nodes[a].x, nodes[a].y, nodes[b].x, nodes[b].y, a, b]),
     branches: groups.map(b => ({ code: b.code, x: b.left, y: b.top, width: b.width, height: b.height,
@@ -101,7 +108,7 @@ function buildBoard(catalogs, sources) {
     classificationCounts: Object.fromEntries([...new Set(nodes.map(n => n.classificationBasis))].sort()
       .map(basis => [basis, nodes.filter(n => n.classificationBasis === basis).length])),
     semanticCoverage: 'partial_source_specific_only', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/' };
-  const content = { schemaVersion: 1, overview, nodes: compact, edges, proofs };
+  const content = { schemaVersion: 2, overview, nodes: compact, edges, proofs };
   const revision = digest(JSON.stringify(content)).slice(0, 20);
   return { ...content, revision, overview: { ...overview, revision } };
 }
@@ -122,7 +129,7 @@ function generateResearchBoard(input, output, { incoming = path.join(input, '../
   const directory = path.join(output, 'research-board');
   fs.mkdirSync(directory, { recursive: true });
   fs.writeFileSync(path.join(directory, fileName), bytes);
-  const manifest = { schemaVersion: 1, revision: board.revision, timestamp: board.overview.generatedAt,
+  const manifest = { schemaVersion: 2, revision: board.revision, timestamp: board.overview.generatedAt,
     fileName, bytes: bytes.length, decodedBytes: json.length, sha256,
     nodeCount: board.nodes.length, edgeCount: board.edges.length };
   saveSources(sources, sourceDir);
