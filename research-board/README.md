@@ -42,9 +42,19 @@ or explicit publisher canon breadcrumbs.
 
 Regions now follow the reading ledger's work classification (`pageType`), not
 the site hosting a translation. For example, SCP-1537 on the Japanese site
-belongs to EN, while SCP-1537-JP belongs to JP. Page URLs/nodes and evidence
-remain separate. Node columns 11 and 12 retain the hosting branch and pageType.
+belongs to EN, while SCP-1537-JP belongs to JP. Translations now share one ledger-work node. Every page URL and source proof
+is retained. Columns 11/12 are the canonical hosting branch/pageType; column 13
+contains language pages and column 14 contains the work key and ledger article ID.
 Catalog pageTypes take priority; publisher origin tags and canonical SCP IDs
 cover additional pages. Documents without a supported origin remain in `other`
 rather than treating their hosting language as proof. The app labels the actual
 hosting branch and prefers that language's page in classified search results.
+
+The graph uses schemaVersion 2: catalog pageType + itemId identifies a work,
+while distinct branch works, variants and 001 proposals keep distinct IDs.
+Canonical SCP identifiers or explicit publisher translation metadata can resolve
+additional pages; unconfirmed documents are never merged just by number/title.
+Connections collapse by work pair, direction and type, with all original proof
+IDs retained in edge column 4. The client chooses source proofs lazily. Numeric
+SCP districts use 100-number ranges with no internal page-chunk suffix. Reading
+state uses the same work ID and text-or-manga predicate as the reading ledger.
