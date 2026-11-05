@@ -23,3 +23,6 @@ logs/
 *.log
 # Crawler outputs
 partial-data/
+
+# Human-readable intermediate; the additional catalog is persisted as gzip.
+/local-data/related-documents/catalog.json
