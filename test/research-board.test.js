@@ -4,6 +4,7 @@ const fs = require('node:fs'), os = require('node:os'), path = require('node:pat
 const { buildBoard, generateResearchBoard } = require('../research-board/catalog');
 const { makeRecord, normalizePage, digest } = require('../research-board/extract');
 const { merge, saveSources, readSources, capture } = require('../research-board/source-store');
+const { branchForPageType } = require('../research-board/classification');
 const BASE = 'https://scp-wiki.wikidot.com/';
 function state(slug, html) {
   const record = makeRecord(BASE + slug, `<div id="page-content">${html}</div>`, 'html', '2026-11-05T00:00:00Z');
@@ -87,4 +88,50 @@ test('existing weekly crawler owns capture and mobile generation; no new schedul
   assert.match(workflow, /CAPTURE_RESEARCH_BOARD: '1'/);
   assert.match(fs.readFileSync(path.join(__dirname, '../mobile-catalog.js'), 'utf8'), /generateResearchBoard\(input/);
   assert.equal(fs.existsSync(path.join(__dirname, '../.github/workflows/relation-graph.yml')), false);
+});
+
+test('reading-ledger page types classify translations by work origin while preserving actual pages and links', () => {
+  const jp = 'https://scp-jp.wikidot.com/';
+  const records = new Map();
+  const record = makeRecord(jp + 'scp-1537', '<div id="page-content"><a href="/scp-1537-jp">Other work</a></div>', 'html', '2026-11-05T00:00:00Z');
+  merge(records, { record, lastAttempt: { status: 'success', at: record.checkedAt } });
+  const board = buildBoard([
+    { language: 'jp', timestamp: '2026-11-05T00:00:00Z', data: [
+      { urlJP: jp + 'scp-1537', pageType: 'scp-series' },
+      { urlJP: jp + 'scp-1537-jp', pageType: 'scp-series-jp' },
+      { urlJP: jp + 'scp-001-ex', pageType: 'scp-ex' },
+      { urlJP: jp + 'scp-001-j', pageType: 'joke-scps' },
+    ] },
+    { language: 'en', timestamp: '2026-11-05T00:00:00Z', data: [
+      { urlJP: BASE + 'scp-1537', pageType: 'scp-series' },
+    ] },
+  ], records);
+  const translated = board.nodes.find(n => n[6] === jp + 'scp-1537');
+  assert.equal(translated[8], 'en'); assert.equal(translated[11], 'jp');
+  assert.equal(translated[12], 'scp-series');
+  assert.equal(board.nodes.find(n => n[4] === 'scp-1537-jp')[8], 'jp');
+  assert.equal(board.nodes.filter(n => n[4] === 'scp-1537').length, 2);
+  assert.equal(board.edges.length, 1);
+  assert.equal(board.nodes[board.edges[0][0]][6], jp + 'scp-1537');
+  assert.equal(board.nodes[board.edges[0][1]][6], jp + 'scp-1537-jp');
+  assert.equal(board.overview.classification, 'reading_record_page_type');
+  for (const [type, expected] of [['scp-series', 'en'], ['joke-scps', 'en'], ['scp-ex', 'en'],
+    ['scp-series-jp', 'jp'], ['joke-scps-jp', 'jp'], ['scp-jp-ex', 'jp'], ['scp-series-zh', 'zh'], ['scp-series-sk', 'sk']]) {
+    assert.equal(branchForPageType(type), expected);
+  }
+});
+
+test('non-catalog logs use explicit publisher origin tags; unknown origins are not guessed from hosting language', () => {
+  const records = new Map();
+  for (const [slug, tag] of [['experiment-log-example', 'en'], ['unclassified-log', null]]) {
+    const url = 'https://scp-jp.wikidot.com/' + slug;
+    const record = makeRecord(url, '<div id="page-content">Content</div>' +
+      (tag ? `<div class="page-tags"><a>${tag}</a></div>` : ''), 'html', '2026-11-05T00:00:00Z');
+    merge(records, { record, lastAttempt: { status: 'success', at: record.checkedAt } });
+  }
+  const board = buildBoard(catalogs(), records);
+  const log = board.nodes.find(n => n[4] === 'experiment-log-example');
+  assert.equal(log[8], 'en'); assert.equal(log[11], 'jp');
+  assert.equal(log[3], 1);
+  assert.equal(board.nodes.find(n => n[4] === 'unclassified-log')[8], 'other');
 });

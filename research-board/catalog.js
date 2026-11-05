@@ -8,19 +8,24 @@ const { readSources, importDirectory, saveSources } = require('./source-store');
 const { starLayout } = require('./layout.cjs');
 const { regionLayout } = require('./regions.cjs');
 const { warpLayout } = require('./warp.cjs');
+const { classifyNodes } = require('./classification');
 const KINDS = ['scp', 'log', 'hub', 'tale', 'organization', 'document'];
 
 function buildBoard(catalogs, sources) {
-  const pages = new Map(), candidates = [];
+  const pages = new Map(), candidates = [], catalogEntries = new Map();
   function page(url) {
     const identity = normalizePage(url);
     if (!identity) return null;
-    if (!pages.has(identity.id)) pages.set(identity.id, { ...identity, title: identity.slug, coverage: 'unfetched' });
+    if (!pages.has(identity.id)) pages.set(identity.id, { ...identity, siteBranch: identity.branch, title: identity.slug, coverage: 'unfetched' });
     return pages.get(identity.id);
   }
   for (const catalog of catalogs) for (const row of catalog.data) {
     const node = page(row.isTranslatedJP !== false && row.urlJP ? row.urlJP : row.urlEN);
     if (node && (catalog.language === node.branch || node.title === node.slug)) node.title = row.titleJP || node.slug;
+    if (node) {
+      if (!catalogEntries.has(node.id)) catalogEntries.set(node.id, []);
+      catalogEntries.get(node.id).push({ language: catalog.language, pageType: row.pageType });
+    }
   }
   for (const state of sources.values()) {
     const r = state.record;
@@ -42,6 +47,7 @@ function buildBoard(catalogs, sources) {
           const entity = item.targetEntity, id = `entity:${source.id}/${entity.key}`;
           if (!/^[a-z0-9-]+$/.test(entity.key)) throw Error('Invalid entity');
           target = { id, slug: entity.title, title: entity.title, url: source.url, branch: source.branch,
+            siteBranch: source.siteBranch, classificationSourceId: source.id,
             coverage: source.coverage, pageKind: { type: 'organization' } };
           pages.set(id, target);
         } else target = page(item.target);
@@ -56,6 +62,7 @@ function buildBoard(catalogs, sources) {
     }
   }
   const nodes = [...pages.values()].sort((a, b) => a.id.localeCompare(b.id, 'en'));
+  classifyNodes(nodes, sources, catalogEntries);
   nodes.forEach((n, index) => { n.index = index; n.kindIndex = Math.max(0, KINDS.indexOf((n.pageKind || pageKind(n)).type)); });
   const byId = new Map(nodes.map(n => [n.id, n]));
   const neighbors = nodes.map(() => new Set()), unique = new Map();
@@ -75,7 +82,7 @@ function buildBoard(catalogs, sources) {
     const key = `${n.branch}:${Math.floor(n.x / 180)}:${Math.floor(n.y / 180)}`;
     if (!points.has(key)) points.set(key, [n.x, n.y, 0, n.branch, n.kindIndex]);
     points.get(key)[2]++;
-    return [n.index, n.x, n.y, n.kindIndex, n.slug, n.title, n.url, n.coverage, n.branch, n.degree, n.section];
+    return [n.index, n.x, n.y, n.kindIndex, n.slug, n.title, n.url, n.coverage, n.branch, n.degree, n.section, n.siteBranch, n.pageType];
   });
   const types = [...new Set(relations.map(e => e.type))].sort(), proofs = [], proofIds = new Map();
   const edges = relations.map(e => {
@@ -90,6 +97,9 @@ function buildBoard(catalogs, sources) {
     branches: groups.map(b => ({ code: b.code, x: b.left, y: b.top, width: b.width, height: b.height,
       count: b.nodes.length, lanes: b.lanes, polygon: b.polygon })),
     points: [...points.values()], branchLinks: [], aggregateLinks: [], tiles: [...tileKeys], kinds: KINDS, types,
+    classification: 'reading_record_page_type',
+    classificationCounts: Object.fromEntries([...new Set(nodes.map(n => n.classificationBasis))].sort()
+      .map(basis => [basis, nodes.filter(n => n.classificationBasis === basis).length])),
     semanticCoverage: 'partial_source_specific_only', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/' };
   const content = { schemaVersion: 1, overview, nodes: compact, edges, proofs };
   const revision = digest(JSON.stringify(content)).slice(0, 20);

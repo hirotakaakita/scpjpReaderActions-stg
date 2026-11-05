@@ -15,8 +15,9 @@ function starLayout(nodes,neighbors){
  for(const code of branches){
   const members=nodes.filter(n=>n.branch===code),buckets=new Map();
   for(const node of members){const match=node.slug.match(/^scp-(?:[a-z]{1,4}-)?(\d+)/i),start=match?Math.floor(Number(match[1])/500)*500:null;
-   const label=node.kindIndex===0&&start!==null?`${String(start).padStart(3,'0')}–${start+499}`:node.kindIndex===0?'SPECIAL':null;
-   const key=node.kindIndex+':'+(label||'');if(!buckets.has(key))buckets.set(key,{kind:node.kindIndex,label,nodes:[]});buckets.get(key).nodes.push(node);
+   const prefix=node.pageType?.startsWith('joke-scps')?'JOKE ':node.pageType&&/^scp-(?:[a-z-]+-)?ex$/.test(node.pageType)?'EX ':'';
+   const label=node.kindIndex===0&&start!==null?`${prefix}${String(start).padStart(3,'0')}–${start+499}`:node.kindIndex===0?prefix+'SPECIAL':null;
+   const key=node.kindIndex+':'+(node.pageType||'')+':'+(label||'');if(!buckets.has(key))buckets.set(key,{kind:node.kindIndex,label,nodes:[]});buckets.get(key).nodes.push(node);
   }
   const local=[];
   for(const [key,bucket]of [...buckets].sort(([a],[b])=>a.localeCompare(b,'en',{numeric:true}))){
