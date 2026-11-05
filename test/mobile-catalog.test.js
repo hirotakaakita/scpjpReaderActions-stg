@@ -91,7 +91,7 @@ test('additional documents join the ordinary data array by language with a new d
     data: [document, { ...document, language: 'en', itemId: 'document-en--incident-log', url: 'https://scp-wiki.wikidot.com/incident-log' }] };
   fs.writeFileSync(path.join(input, 'related-documents/catalog.json'), JSON.stringify(extra));
   generateMobileCatalogs(input);
-  const output = path.join(input, 'mobile-v1/jp');
+  const output = path.join(input, 'mobile-v2/jp');
   const manifest = JSON.parse(fs.readFileSync(path.join(output, 'manifest.json')));
   const result = JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(output, manifest.fileName))));
   assert.equal(result.timestamp, extra.timestamp); assert.equal(manifest.timestamp, extra.timestamp);
@@ -101,4 +101,21 @@ test('additional documents join the ordinary data array by language with a new d
   assert.equal(result.data[1].urlJP, document.url);
   assert.deepEqual(result.data[1].tags, [{ id: 'experiment', label: 'experiment' }]);
   assert.equal(JSON.parse(fs.readFileSync(path.join(input, 'jp/scp-data.json'))).totalCount, 1);
+  const oldOutput = path.join(input, 'mobile-v1/jp');
+  const oldManifest = JSON.parse(fs.readFileSync(path.join(oldOutput, 'manifest.json')));
+  const oldPayload = fs.readFileSync(path.join(oldOutput, oldManifest.fileName));
+  assert.equal(oldManifest.timestamp, source.timestamp);
+  assert.equal(oldManifest.totalCount, source.totalCount);
+  assert.deepEqual(JSON.parse(zlib.gunzipSync(oldPayload)), mobileCatalog(source, 'jp'));
+  // Additional-only updates must leave the released channel byte-identical.
+  const oldPointer = fs.readFileSync(path.join(oldOutput, 'manifest.json'));
+  extra.timestamp = '2026-11-06T00:00:00Z';
+  extra.data[0].title = 'Updated log';
+  fs.writeFileSync(path.join(input, 'related-documents/catalog.json'), JSON.stringify(extra));
+  generateMobileCatalogs(input);
+  assert.deepEqual(fs.readFileSync(path.join(oldOutput, 'manifest.json')), oldPointer);
+  assert.deepEqual(fs.readFileSync(path.join(oldOutput, oldManifest.fileName)), oldPayload);
+  const updated = JSON.parse(fs.readFileSync(path.join(output, 'manifest.json')));
+  assert.notEqual(updated.fileName, manifest.fileName);
+  assert.equal(updated.timestamp, extra.timestamp);
 });

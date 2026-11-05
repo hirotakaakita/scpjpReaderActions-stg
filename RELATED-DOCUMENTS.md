@@ -12,10 +12,11 @@ research board and does not change the production repository.
 3. After the ordinary language catalogs are merged, `node related-documents.js`
    discovers links from those catalog articles, imports current captured records,
    fetches a bounded batch of missing/stale pages and writes an additional catalog.
-4. `node mobile-catalog.js` includes successfully captured additional documents
-   in the **ordinary `data` array of each language's existing gzip**. The manifest
-   count, size and checksum cover the entire combined payload. No separate app
-   download, graph manifest or graph data is needed.
+4. `node mobile-catalog.js` generates two independent delivery channels:
+   `mobile-v1` for released apps (ordinary articles only), and `mobile-v2` for
+   updated apps (ordinary articles plus additional documents in one `data` array).
+   Both channels use the existing schemaVersion 1 JSON envelope. The channel name
+   is a delivery contract, not a new JSON decoder format. No graph data is generated.
 
 `SCP Crawler STG` executes these steps in its existing merge/publish job and lock.
 It retains its current dispatch schedule; this change does not create a second
@@ -28,8 +29,10 @@ workflow or enable production crawling. `Validate staging` runs the new tests.
 - `local-data/related-documents/catalog.json.gz`: additional metadata catalog,
   including classification evidence and the pending queue. Uncompressed JSON is
   a local intermediate and is ignored by Git.
-- `local-data/mobile-v1/<language>/catalog-<sha256>.json.gz`: **combined articles**
-  used by the app. Legacy `scp-data.json` and legacy metadata remain unchanged.
+- `local-data/mobile-v1/<language>/catalog-<sha256>.json.gz`: ordinary articles
+  only, with the original source timestamp/count matching legacy metadata.
+- `local-data/mobile-v2/<language>/catalog-<sha256>.json.gz`: combined articles
+  for the updated app. Legacy `scp-data.json` and metadata remain unchanged.
 
 Default batch: at most 300 requests, 500 ms between requests and a 180-second
 loop budget (an in-flight bounded request may finish after that budget). Missing
@@ -70,11 +73,15 @@ existing dictionary; previously unknown tags have stable IDs without guessed
 cross-language translations. The existing world activity sharing service still
 publishes only SCP IDs; no world activity backend change is included here.
 
-The combined delivery timestamp is the later of the ordinary and additional
+The mobile-v2 delivery timestamp is the later of the ordinary and additional
 catalog timestamps. The app checks the mobile manifest first so additions trigger
 an update even when legacy metadata is unchanged. If mobile delivery is unavailable,
 the existing legacy fallback still works, with its ordinary articles only.
 The previous gzip is retained for readers holding a cached manifest.
+Additional-only updates do not change mobile-v1's manifest or payload. Released
+apps continue using their existing endpoint, metadata checks and fallback without
+receiving unsupported document IDs or classifications. The updated app checks and
+downloads mobile-v2; it does not reuse a mobile-v1 manifest to fetch a mobile-v2 file.
 
 ## Initial dataset and verification
 

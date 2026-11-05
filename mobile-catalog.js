@@ -37,10 +37,10 @@ function mobileCatalog(source, language) {
   return { schemaVersion: 1, language, timestamp: source.timestamp, totalCount: data.length, data };
 }
 
-function generateMobileCatalogs(input, output = path.join(input, 'mobile-v1')) {
+function generateCatalogChannel(input, output, includeAdditional) {
   const reports = [];
   const additionalFile = path.join(input, 'related-documents', 'catalog.json');
-  const additional = fs.existsSync(additionalFile) ? JSON.parse(fs.readFileSync(additionalFile)) :
+  const additional = !includeAdditional ? null : fs.existsSync(additionalFile) ? JSON.parse(fs.readFileSync(additionalFile)) :
     fs.existsSync(`${additionalFile}.gz`) ? JSON.parse(zlib.gunzipSync(fs.readFileSync(`${additionalFile}.gz`))) : null;
   if (additional && (additional.schemaVersion !== 1 || !Array.isArray(additional.data) || additional.totalCount !== additional.data.length || !Number.isFinite(Date.parse(additional.timestamp)))) throw Error('Invalid additional document catalog');
   const dictionaryFile = path.join(input, '..', 'tag-dictionary.json');
@@ -101,6 +101,16 @@ function generateMobileCatalogs(input, output = path.join(input, 'mobile-v1')) {
   }
   if (!reports.length) throw new Error('No source catalogs found');
   return reports;
+}
+
+function generateMobileCatalogs(input, output = path.join(input, 'mobile-v1')) {
+  // Keep the released app's endpoint and metadata contract unchanged.
+  const legacy = generateCatalogChannel(input, output, false);
+  const extended = generateCatalogChannel(input, path.join(path.dirname(output), 'mobile-v2'), true);
+  return [
+    ...legacy.map(report => ({ channel: 'mobile-v1', ...report })),
+    ...extended.map(report => ({ channel: 'mobile-v2', ...report })),
+  ];
 }
 
 if (require.main === module) {
