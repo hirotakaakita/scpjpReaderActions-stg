@@ -18,7 +18,7 @@ function validate(root = path.join(__dirname, '..')) {
   if (board.schemaVersion !== 2 || board.overview.identity !== 'ledger_work') throw Error('Missing work identity');
   const workIds = new Set(), pageUrls = new Set();
   for (const n of board.nodes) {
-    if (n.length !== 15 || (n[12] && branchForPageType(n[12]) !== n[8])) throw Error('Ledger classification mismatch');
+    if (n.length !== 15 || (n[12] && n[12] !== 'related-document-unclassified' && branchForPageType(n[12]) !== n[8])) throw Error('Ledger classification mismatch');
     if (workIds.has(n[14][0])) throw Error('Duplicate work node');
     workIds.add(n[14][0]);
     if (n[3] !== 4) for (const version of n[13]) {

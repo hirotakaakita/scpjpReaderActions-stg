@@ -209,3 +209,30 @@ test('graph input uses combined v2 catalog and rejects a damaged payload', t => 
   fs.writeFileSync(path.join(directory, fileName), 'damaged');
   assert.throws(() => loadCatalogs(input), /checksum/);
 });
+
+
+test('unclassified catalog identity does not suppress publisher origin evidence', () => {
+  const records = new Map();
+  const url = BASE + 'document-with-origin';
+  const record = makeRecord(url, '<div id="page-content">Content</div><div class="page-tags"><a>jp</a></div>', 'html', '2026-11-06T00:00:00Z');
+  merge(records, { record, lastAttempt: { status: 'success', at: record.checkedAt } });
+  const board = buildBoard([{ language: 'en', timestamp: record.checkedAt, data: [
+    { itemId: 'document-origin', pageType: 'related-document-unclassified', urlEN: url }
+  ] }], records);
+  const node = board.nodes[0];
+  assert.equal(node[8], 'jp');
+  assert.equal(node[12], 'related-document-unclassified');
+  assert.deepEqual(node[14], ['catalog:related-document-unclassified:document-origin', 'document-origin']);
+  assert.equal(node[3], 5);
+});
+
+test('a classified catalog entry takes priority over an unclassified local entry', () => {
+  const url = BASE + 'classified-document';
+  const board = buildBoard([
+    { language: 'en', data: [{ itemId: 'document-a', pageType: 'related-document-unclassified', urlEN: url }] },
+    { language: 'jp', data: [{ itemId: 'document-b', pageType: 'related-document-fr', urlEN: url }] },
+  ], new Map());
+  assert.equal(board.nodes[0][8], 'fr');
+  assert.equal(board.nodes[0][12], 'related-document-fr');
+  assert.equal(board.nodes[0][14][1], 'document-b');
+});

@@ -6,8 +6,11 @@ const { branchForPageType } = require('./classification');
 function collapseWorks(pages, candidates, catalogEntries) {
   const pageKeys = new Map(), ledger = new Map(), aliases = new Map();
   for (const page of pages) {
-    const entries = (catalogEntries.get(page.id) || []).filter(e => e.itemId &&
-      e.pageType && branchForPageType(e.pageType) === page.branch);
+    const available = (catalogEntries.get(page.id) || []).filter(e => e.itemId && e.pageType);
+    const classified = available.filter(e => e.pageType !== 'related-document-unclassified' &&
+      branchForPageType(e.pageType) === page.branch);
+    const entries = classified.length ? classified :
+      available.filter(e => e.pageType === 'related-document-unclassified');
     const own = entries.filter(e => e.language === page.siteBranch);
     const eligible = own.length ? own : entries;
     const keys = [...new Set(eligible.map(e => `catalog:${e.pageType}:${e.itemId}`))];

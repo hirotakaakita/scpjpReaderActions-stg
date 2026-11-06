@@ -60,3 +60,10 @@ SCP districts use 100-number ranges with no internal page-chunk suffix. Reading
 state uses the same work ID and text-or-manga predicate as the reading ledger.
 
 The STG generator reads the combined mobile-v2 catalogs, including additional documents, and preserves their ledger article IDs. Production publishing is unchanged.
+
+
+## 未分類カタログの再判定
+
+`related-document-unclassified` は作品の記事IDを保持するために使い、原作支部の証拠とは扱わない。分類済みカタログがあれば優先し、なければ取得済み本文の明示的な原作支部タグで再判定する。根拠が競合する記事や根拠がない記事は未分類を維持し、掲載サイトから推測しない。分類が変わっても未分類カタログの記事ID・pageTypeを保持し、アプリ内閲覧と既読照合を継続する。
+
+再判定は既存の週次mobile-catalog.js実行に含まれ、追加のスケジュールやアプリ更新を必要としない。

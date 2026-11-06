@@ -12,7 +12,12 @@ function branchForPageType(type) {
 }
 
 function classify(node, record, catalogEntries, knownBranches) {
-  const candidates = (catalogEntries || []).filter(e => branchForPageType(e.pageType));
+  const entries = (catalogEntries || []).filter(e => branchForPageType(e.pageType));
+  // An unclassified additional-document row records identity, not origin evidence.
+  // Do not let it hide a classified catalog entry or publisher origin tags.
+  const candidates = entries.filter(e => branchForPageType(e.pageType) !== 'other');
+  const fallbackType = entries.some(e => e.pageType === 'related-document-unclassified')
+    ? 'related-document-unclassified' : '';
   // A page's own catalog is authoritative if another delivery catalog disagrees.
   const own = candidates.filter(e => e.language === node.siteBranch);
   const applicable = own.length ? own : candidates;
@@ -24,8 +29,8 @@ function classify(node, record, catalogEntries, knownBranches) {
   const aliases = { 'zh-tr': 'zh' };
   const tags = [...new Set((record?.tags || []).map(t => t.replace(/^филиал:/u, ''))
     .map(t => aliases[t] || t).filter(t => knownBranches.has(t)))];
-  if (tags.length === 1) return { branch: tags[0], pageType: '', basis: 'publisher_origin_tag' };
-  if (tags.length > 1) return { branch: 'other', pageType: '', basis: 'multiple_origin_tags' };
+  if (tags.length === 1) return { branch: tags[0], pageType: fallbackType, basis: 'publisher_origin_tag' };
+  if (tags.length > 1) return { branch: 'other', pageType: fallbackType, basis: 'multiple_origin_tags' };
 
   // Canonical SCP identifiers are a fallback only for pages absent from catalogs.
   const scp = /^scp-(?:([a-z][a-z-]*)-)?(\d+)(?:-(.*))?$/.exec(node.slug);
@@ -39,7 +44,7 @@ function classify(node, record, catalogEntries, knownBranches) {
     return { branch, pageType, basis: 'scp_identifier' };
   }
   // A log's hosting language alone is not proof of its original branch.
-  return { branch: 'other', pageType: '', basis: 'unclassified' };
+  return { branch: 'other', pageType: fallbackType, basis: 'unclassified' };
 }
 
 function classifyNodes(nodes, records, entries) {
