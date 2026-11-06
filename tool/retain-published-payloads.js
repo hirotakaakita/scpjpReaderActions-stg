@@ -5,6 +5,7 @@ const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_pro
 const {LANGUAGES}=require('../languages');
 const root=path.resolve(__dirname,'..');
 const dirs=[];for(const channel of ['mobile-v1','mobile-v2'])for(const language of Object.keys(LANGUAGES))dirs.push(`local-data/${channel}/${language}`);
+dirs.push('local-data/mobile-v2/research-board');
 let recovered=0,removed=0;
 for(const dir of dirs){
   const absolute=path.join(root,dir),pointer=dir+'/manifest.json';if(!fs.existsSync(path.join(root,pointer)))continue;

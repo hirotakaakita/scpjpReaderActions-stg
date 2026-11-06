@@ -246,7 +246,7 @@ async function crawl(language, { root = __dirname, now = new Date().toISOString(
     if (fetchedArticles >= maxRequests || Date.now()-started >= maxDurationMs) break;
     await slot();
     try {
-      const record = await articleRequest(url);
+      const record = await articleRequest(url, path.join(root,'partial-data/research-board'));
       if (!eligibleRecord(record)) throw Error('Not an article page');
       state.records[url] = record; state.attempts[url] = { at: now, status: 'success' };
       discoverHub(url,record);

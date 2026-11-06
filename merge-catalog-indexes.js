@@ -3,7 +3,7 @@ const fs = require('node:fs'), path = require('node:path'), zlib = require('node
 const { LANGUAGES } = require('./languages');
 const { readState, writeState, eligibleRecord, isExcluded } = require('./catalog-indexes');
 const { readCatalogs, normalize, classify } = require('./related-documents');
-const { branchForPageType } = require('./article-origin');
+const { branchForPageType } = require('./research-board/classification');
 const { buildEntries, variantSlugPart, stringifyAsciiSafe } = require('./local-crawler');
 const { deduplicateArticles } = require('./catalog-identity');
 
