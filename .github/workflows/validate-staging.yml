@@ -16,6 +16,7 @@ jobs:
           node-version: '24'
       - run: npm ci
       - run: node --test
+      - run: node validate-catalog-indexes.js
       - name: Validate catalog and staging status
         run: node validate-staging-catalogs.js
       - name: Validate research board against combined mobile-v2 catalogs

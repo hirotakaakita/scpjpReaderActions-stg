@@ -26,3 +26,8 @@ partial-data/
 
 # Human-readable intermediate; the additional catalog is persisted as gzip.
 /local-data/related-documents/catalog.json
+
+# Durable crawler checkpoints: publish the primary snapshot only.
+/local-data/catalog-indexes/*.bak
+/local-data/catalog-indexes/*.tmp
+/local-data/catalog-indexes/*.corrupt-*

@@ -59,14 +59,19 @@ function generateCatalogChannel(input, output, includeAdditional) {
     const delivery = mobileCatalog(source, language);
     const ids = new Set(delivery.data.map(r => r.itemId));
     const pageUrls = new Set(source.data.map(r => normalize(r.isTranslatedJP !== false && r.urlJP ? r.urlJP : r.urlEN)?.url));
-    const documents = (additional?.data || []).filter(r => r.language === language && !pageUrls.has(r.url)).map(r => ({
+    const documents = (additional?.data || []).filter(r => r.language === language && !pageUrls.has(r.url) && !ids.has(r.itemId)).map(r => ({
       itemId: r.itemId, titleJP: r.title, urlJP: r.url, isTranslatedJP: true,
       extractedFrom: r.pageType, pageType: r.pageType, contentType: r.contentType,
       lastUpdated: r.lastUpdated, descriptionExcerpt: r.descriptionExcerpt,
+      ...(r.objectClass ? { objectClass:r.objectClass } : {}),
+      ...(r.rating != null ? { rating:r.rating } : {}),
+      ...(r.imageUrl ? { imageUrl:r.imageUrl } : {}),
+      ...(r.contentType === 'scp' ? { numericItemId: r.numericItemId } : {}),
       tags: localizeTags(r.tags || [], language, dictionary, tagIndex),
     }));
     for (const row of documents) {
-      if (!row.itemId.startsWith('document-') || ids.has(row.itemId) || REQUIRED_STRINGS.some(k => typeof row[k] !== 'string') || !row.titleJP || !Number.isFinite(Date.parse(row.lastUpdated)) || !normalize(row.urlJP)) throw Error(`Invalid additional article: ${row.itemId}`);
+      const validId = row.itemId.startsWith('document-') || (row.contentType === 'scp' && /^(?:scp-series|joke-scps|scp-(?:[a-z]+-)?ex)/.test(row.pageType) && /^scp-|^joke-scps-/.test(row.itemId));
+      if (!validId || ids.has(row.itemId) || REQUIRED_STRINGS.some(k => typeof row[k] !== 'string') || !row.titleJP || !Number.isFinite(Date.parse(row.lastUpdated)) || !normalize(row.urlJP)) throw Error(`Invalid additional article: ${row.itemId}`);
       ids.add(row.itemId);
     }
     delivery.data.push(...documents);

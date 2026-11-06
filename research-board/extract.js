@@ -1,4 +1,5 @@
 'use strict';
+const { inspectArticlePage } = require('../article-page');
 const crypto = require('node:crypto');
 const { JSDOM, VirtualConsole } = require('jsdom');
 const { LANGUAGES } = require('../languages');
@@ -47,6 +48,8 @@ function extractHtml(html, url, existingDocument = null) {
   const dom = existingDocument ? null : new JSDOM(html, { url: source.url, virtualConsole: new VirtualConsole() });
   try {
     const document = existingDocument || dom.window.document;
+    const availability = inspectArticlePage(document);
+    if (!availability.usable) throw new Error('Unavailable article: ' + availability.reason);
     const root = document.querySelector('#page-content')?.cloneNode(true);
     if (!root || document.querySelector('#page-content .error-block, #page-content .page-not-found')) {
       throw new Error('Missing article content or soft error');

@@ -7,6 +7,7 @@ const zlib = require('node:zlib');
 const axios = require('axios');
 const { JSDOM, VirtualConsole } = require('jsdom');
 const { LANGUAGES } = require('./languages');
+const { inspectArticlePage } = require('./article-page');
 const { capture: captureBoard } = require('./research-board/source-store');
 const hash = value => crypto.createHash('sha256').update(value).digest('hex');
 const hosts = new Map(Object.entries(LANGUAGES).map(([language, config]) => [new URL(config.baseUrl).hostname, language]));
@@ -29,11 +30,17 @@ function normalize(value, base) {
 function extractHtml(url, html, now = new Date().toISOString(), existingDocument = null) {
   const page = normalize(url);
   if (!page) throw Error('Unsupported document URL');
-  const dom = existingDocument ? null : new JSDOM(String(html), { url: page.url, virtualConsole: new VirtualConsole() });
+  const dom = existingDocument ? null : new JSDOM(String(html).replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, ''), { url: page.url, virtualConsole: new VirtualConsole() });
   try {
     const d = existingDocument || dom.window.document, root = d.querySelector('#page-content')?.cloneNode(true);
     const title = (d.querySelector('#page-title')?.textContent || d.title || '').trim();
-    if (!root || !title || d.querySelector('#page-content .error-block,.page-not-found') || /^(?:page not found|page does not exist|access denied|security check|just a moment)/i.test(title)) throw Error('Not an article page');
+    const availability = inspectArticlePage(d);
+    if (!availability.usable) {
+      const error=Error('Unavailable article: '+availability.reason);error.articleUnavailable=availability.terminal;throw error;
+    }
+    const block=d.querySelector('#page-content .error-block,.page-not-found');
+    if(!root||!title||block){const error=Error('Unrecognized article structure');
+      error.articleUnavailable=!!block&&/not found|does not exist|no existe|存在しません/i.test(block.textContent);throw error;}
     const tags = [...d.querySelectorAll('.page-tags a')].map(a => a.textContent.trim()).filter(Boolean);
     const translations = [...d.querySelectorAll('a[rel~="alternate"][hreflang],link[rel~="alternate"][hreflang],.translation-source a[href],a[data-translation-source]')]
       .map(a => normalize(a.getAttribute('href'), page.url)?.url).filter(Boolean);
@@ -42,9 +49,13 @@ function extractHtml(url, html, now = new Date().toISOString(), existingDocument
     for (const n of root.querySelectorAll(excluded)) n.remove();
     const links = [...new Set([...root.querySelectorAll('a[href]')].filter(a => !a.classList.contains('newpage') && !a.getAttribute('href').startsWith('#'))
       .map(a => normalize(a.getAttribute('href'), page.url)?.url).filter(v => v && v !== page.url))].sort();
+    // Lazy import: the ordinary crawler also calls this extractor with its DOM.
+    const metadata = require('./local-crawler');
     return { ...page, title, tags, translations: [...new Set(translations)].sort(), authors,
+      objectClass: metadata.extractObjectClassFromDocument(d), rating: metadata.extractRatingFromDocument(d),
+      imageUrl: metadata.extractImageUrlFromDocument(d,page.url),
       links, descriptionExcerpt: root.textContent.trim().replace(/\s+/g, ' ').slice(0, 250),
-      contentSha256: hash(String(html)), checkedAt: now, format: 'html' };
+      contentSha256: hash(String(html)), checkedAt: now, format: 'html', availabilityVersion: 1 };
   } finally { dom?.window.close(); }
 }
 
@@ -56,8 +67,10 @@ function extractApi(url, article, now = new Date().toISOString()) {
     const target = normalize(match[1].trim(), `${page.url}/../`);
     if (target && target.url !== page.url) links.add(target.url);
   }
+  const metadata = require('./rufoundation-crawler');
   return { ...page, title: article.title, tags: (article.tags || []).map(t => typeof t === 'string' ? t : t.name).filter(Boolean),
-    links: [...links].sort(), translations: [], authors: [], format: 'ftml', contentSha256: hash(source), checkedAt: now,
+    objectClass: metadata.extractObjectClass(source),rating:metadata.normalizeRating(article.rating),imageUrl:metadata.extractImageUrl(source,page.slug),
+    links: [...links].sort(), translations: [], authors: [], format: 'ftml', contentSha256: hash(source), checkedAt: now, availabilityVersion: 1,
     descriptionExcerpt: source.replace(/\[\[[\s\S]*?\]\]/g, ' ').replace(/\s+/g, ' ').slice(0, 250) };
 }
 
@@ -266,4 +279,4 @@ if (require.main === module) {
   if (!Number.isInteger(count) || count < 0 || count > 1000) throw Error('Invalid request limit');
   run({ maxRequests: count, importDirectory: process.env.RELATED_DOCUMENT_IMPORT_DIR || null }).catch(error => { console.error(error); process.exitCode = 1; });
 }
-module.exports = { normalize, extractHtml, extractApi, capture, classify, buildCatalogs, run };
+module.exports = { normalize, extractHtml, extractApi, capture, classify, buildCatalogs, run, fetchRecord, readCatalogs, loadCache, saveCache };

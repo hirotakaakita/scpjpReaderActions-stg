@@ -72,7 +72,8 @@ test('workflow generates mobile catalogs after final legacy updates and before p
   assert.ok(workflow.indexOf('node mobile-catalog.js') > workflow.indexOf('run: node apply-manga-flags.js'));
   assert.ok(workflow.indexOf('node mobile-catalog.js') > workflow.indexOf('run: node catalog-identity.js'));
   assert.ok(workflow.indexOf('node mobile-catalog.js') < workflow.indexOf('git add local-data/'));
-  assert.ok(workflow.indexOf('node related-documents.js') < workflow.indexOf('node mobile-catalog.js'));
+  assert.ok(workflow.includes('node merge-catalog-indexes.js'));
+  assert.ok(workflow.indexOf('node merge-catalog-indexes.js') < workflow.indexOf('node mobile-catalog.js'));
 });
 
 test('additional documents join the ordinary data array by language with a new delivery timestamp', t => {

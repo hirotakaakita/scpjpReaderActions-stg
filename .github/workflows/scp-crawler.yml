@@ -98,6 +98,15 @@ jobs:
           FORCE_REFRESH_DESCRIPTION: ${{ inputs.force_refresh_description == true && '1' || '0' }}
           FORCE_REFRESH_TAGS: ${{ inputs.force_refresh_tags == true && '1' || '0' }}
 
+      - name: Crawl official article indexes
+        continue-on-error: true
+        run: node catalog-indexes.js ${{ matrix.lang }}
+        env:
+          CAPTURE_RESEARCH_BOARD: '1'
+          INDEX_MAX_REQUESTS: '600'
+          INDEX_MAX_DURATION_MS: '300000'
+          CRAWL_REQUEST_INTERVAL_MS: '500'
+
       - name: Upload partial data
         uses: actions/upload-artifact@v7
         with:
@@ -161,13 +170,11 @@ jobs:
       - name: Validate staging catalog schema before publication
         run: node validate-staging-catalogs.js
 
-      - name: Build additional document catalog without generating a research board
+      - name: Merge catalogs collected from official article indexes
         run: |
-          node --test test/related-documents.test.js
-          node related-documents.js
-        env:
-          CAPTURE_RESEARCH_BOARD: '1'
-          RELATED_DOCUMENT_MAX_REQUESTS: '300'
+          node --test test/catalog-indexes.test.js test/article-page.test.js
+          node merge-catalog-indexes.js
+          node validate-catalog-indexes.js
 
       - name: Generate combined compatible mobile catalogs
         run: |
