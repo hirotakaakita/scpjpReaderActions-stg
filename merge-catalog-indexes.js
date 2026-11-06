@@ -1,4 +1,5 @@
 'use strict';
+const { articleCategory } = require('./article-category');
 const fs = require('node:fs'), path = require('node:path'), zlib = require('node:zlib');
 const { LANGUAGES } = require('./languages');
 const { readState, writeState, eligibleRecord, isExcluded } = require('./catalog-indexes');
@@ -76,7 +77,7 @@ function buildIndexedCatalog(catalogs, states, previous = { data: [] }, now = ne
         const prior=previousByUrl.get(url);
         // Preserve an already published article only when it is actually listed
         // in the new official scope. Old one-hop membership alone is insufficient.
-        if(prior && prior.language===language && !isExcluded(url,prior.tags||[]))data.push({...prior,sourceArticleIds:[],sourceIndexUrls,indexEvidence:evidence,fetchStatus:'stale'});
+        if(prior && prior.language===language && !isExcluded(url,prior.tags||[]))data.push({...prior,contentType:!prior.pageType || prior.pageType.startsWith('related-document-') ? articleCategory(prior,evidence,url) : 'scp',sourceArticleIds:[],sourceIndexUrls,indexEvidence:evidence,fetchStatus:'stale'});
         continue;
       }
       if (isExcluded(url,record.tags)) continue;
@@ -86,11 +87,9 @@ function buildIndexedCatalog(catalogs, states, previous = { data: [] }, now = ne
       const branch = origins.length === 1 ? origins[0] : origins.length > 1 ? null : fallback.branch;
       if (branch === 'id') continue;
       const scp = scpIdentity(page,record,branch,known);
-      const kinds = new Set(evidence.map(e=>e.kind));
-      const contentType = scp ? 'scp' : /(?:experiment|exploration|incident|test)[-_](?:log|record)/i.test(page.slug) || kinds.has('record') ? 'log' :
-        (record.tags || []).some(t=>['hub','ハブ','中心','структура:хаб'].includes(t)) || kinds.has('canon') ? 'hub' : kinds.has('tale') ? 'tale' : 'document';
+      const contentType = scp ? 'scp' : articleCategory(record,evidence,url);
       const prior = previousByUrl.get(url);
-      data.push({ itemId:scp?.itemId || prior?.itemId || `document-${language}--${page.slug}`, url,language,title:record.title,
+      data.push({ itemId:prior?.itemId || scp?.itemId || `document-${language}--${page.slug}`, url,language,title:record.title,
         contentType,pageType:scp?.pageType || (branch ? `related-document-${branch}` : 'related-document-unclassified'),
         numericItemId:scp?.numericItemId,originBranch:scp?.originBranch || branch,
         classification:{branch:scp?.originBranch || branch,basis:origins.length ? 'official_index_section' : fallback.basis,evidence:origins},

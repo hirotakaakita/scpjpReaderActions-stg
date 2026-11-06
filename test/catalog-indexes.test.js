@@ -62,6 +62,16 @@ test('guides and artwork are rejected even when a mixed official index links the
   const state={indexes:{x:{members:[{url,kind:'tale',source:source.url}]}},records:{[url]:rec(url,['artwork'])},attempts:{}};
   assert.equal(buildIndexedCatalog([],{jp:state},{data:[]},date).totalCount,0);
 });
+
+test('reclassifying a published document as SCP preserves its reading identity',()=>{
+  const url=base+'scp-2412';
+  const state={indexes:{x:{members:[{url,kind:'scp',source:source.url}]}},records:{[url]:rec(url,['scp'])},attempts:{}};
+  const previous={data:[{url,itemId:'document-jp--scp-2412',language:'jp',pageType:'related-document-en'}]};
+  const row=buildIndexedCatalog([],{jp:state},previous,date).data[0];
+  assert.equal(row.itemId,'document-jp--scp-2412');
+  assert.equal(row.pageType,'scp-series');
+  assert.equal(row.contentType,'scp');
+});
 test('old one-hop-only rows are not retained after a successful scope migration',()=>{
   const linked=base+'only-linked-from-an-article',listed=base+'listed-in-index';
   const state={indexes:{x:{members:[{url:listed,kind:'tale',source:source.url}]}},records:{},attempts:{},failures:{'unrelated-index':{reason:'timeout'}}};

@@ -11,7 +11,7 @@ const VERSION = 1;
 const PARSER_VERSION = 4;
 const excludedPath = /(?:^|[-:])(?:guide|guides|artwork|authors?|members|contest|concurs|concorso|essay|news|translation-reservation|tag-guide|licensing)(?:[-:]|$)/i;
 const excludedTags = new Set(['artwork','artist','author','authors','author-page','guide','guidelines','essay','contest','contest-hub','news','著者ページ','アートワーク','ガイド','エッセイ','コンテスト','作者','艺术作品','指导','страница_автора','структура:страница_автора','структура:руководство','структура:конкурс']);
-for(const tag of ['autor','auteur','autore','작가','автор','tác-giả','hướng-dẫn'])excludedTags.add(tag);
+for(const tag of ['autor','auteur','autore','작가','автор','tác-giả','hướng-dẫn','藝術作品','hội-họa','_bild','안내'])excludedTags.add(tag);
 const clean = s => String(s || '').replace(/\s+/g, ' ').trim();
 function originHint(url) {
   const p = new URL(url).pathname;
