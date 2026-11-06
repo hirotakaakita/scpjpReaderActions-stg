@@ -8,7 +8,6 @@ const axios = require('axios');
 const { JSDOM, VirtualConsole } = require('jsdom');
 const { LANGUAGES } = require('./languages');
 const { inspectArticlePage } = require('./article-page');
-const { capture: captureBoard } = require('./research-board/source-store');
 const hash = value => crypto.createHash('sha256').update(value).digest('hex');
 const hosts = new Map(Object.entries(LANGUAGES).map(([language, config]) => [new URL(config.baseUrl).hostname, language]));
 hosts.set('scpfoundation.net', 'ru');
@@ -81,10 +80,6 @@ function capture(url, body, format = 'html', directory = path.join(__dirname, 'p
     fs.mkdirSync(directory, { recursive: true });
     const file = path.join(directory, `${hash(record.url)}.json`);
     fs.writeFileSync(`${file}.tmp`, JSON.stringify(record)); fs.renameSync(`${file}.tmp`, file);
-    try {
-      if (process.env.CAPTURE_RESEARCH_BOARD === '1') captureBoard(url, format === 'ftml' ? JSON.stringify(body) : body, format,
-        path.join(directory, '../research-board'), existingDocument);
-    } catch (error) { console.warn(`Board metadata capture skipped: ${url}: ${error.message}`); }
     return true;
   } catch (error) { console.warn(`Related document capture skipped: ${url}: ${error.message}`); return false; }
 }
@@ -207,7 +202,7 @@ function buildCatalogs(catalogs, records, attempts, now = new Date().toISOString
       discoveredDocuments: sources.size, classified: data.filter(r => r.originBranch).length, unclassified: data.filter(r => !r.originBranch).length, pending: pending.length } };
 }
 
-async function fetchRecord(url, captureDirectory = path.join(__dirname, 'partial-data/research-board')) {
+async function fetchRecord(url) {
   const page = normalize(url);
   if (!page) throw Error('Unsupported URL');
   // Validate every redirect so an allowlisted link cannot redirect requests to arbitrary hosts.
@@ -224,13 +219,11 @@ async function fetchRecord(url, captureDirectory = path.join(__dirname, 'partial
       timeout: 20000, maxRedirects: 0, maxContentLength: 4 * 1024 * 1024, headers: { Accept: 'application/json' },
     });
     const record = extractApi(url, response.data);
-    if (process.env.CAPTURE_RESEARCH_BOARD === '1') captureBoard(url, JSON.stringify({ ...response.data, pageId: page.slug }), 'ftml', captureDirectory);
     return record;
   }
   const configuredScheme = new URL(LANGUAGES[page.language].baseUrl).protocol;
   const html = await request(url.replace(/^https:/, configuredScheme));
   const record = extractHtml(url, html);
-  if (process.env.CAPTURE_RESEARCH_BOARD === '1') captureBoard(url, html, 'html', captureDirectory);
   return record;
 }
 
@@ -257,7 +250,7 @@ async function run({ root = __dirname, maxRequests = 300, intervalMs = 500, maxD
   for (const url of queue) {
     if (Date.now() - startedAt >= maxDurationMs) break;
     if (fetched && intervalMs) await new Promise(resolve => setTimeout(resolve, intervalMs));
-    try { records.set(url, await request(url, path.join(root, 'partial-data/research-board'))); attempts.set(url, { status: 'success', at: now }); }
+    try { records.set(url, await request(url)); attempts.set(url, { status: 'success', at: now }); }
     catch (error) {
       const status = error.response?.status === 404 || error.response?.status === 410 ? 'not_found' : /Not an article|Invalid API article/.test(error.message) ? 'not_article' : 'failed';
       attempts.set(url, { status, at: now, httpStatus: error.response?.status || null });

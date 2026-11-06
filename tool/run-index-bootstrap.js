@@ -19,7 +19,7 @@ async function job(language,pass){
   status.jobs[language]={state:'running',pass,startedAt:new Date().toISOString()};save();
   return new Promise(resolve=>{
     const child=spawn(process.execPath,['--max-old-space-size=1024','catalog-indexes.js',language],{cwd:root,windowsHide:true,stdio:['ignore',log,log],env:{...process.env,
-      CAPTURE_RESEARCH_BOARD:'1',INDEX_MAX_REQUESTS:process.env.BOOTSTRAP_REQUESTS||'100',INDEX_MAX_DURATION_MS:'300000',CRAWL_REQUEST_INTERVAL_MS:'500'}});
+      INDEX_MAX_REQUESTS:process.env.BOOTSTRAP_REQUESTS||'100',INDEX_MAX_DURATION_MS:'300000',CRAWL_REQUEST_INTERVAL_MS:'500'}});
     child.on('error',e=>{status.jobs[language].error=e.message;});
     child.on('close',code=>{fs.closeSync(log);let statistics;
       try{statistics=readState(path.join(root,'partial-data/catalog-indexes',language+'.json.gz')).statistics;}catch{}
