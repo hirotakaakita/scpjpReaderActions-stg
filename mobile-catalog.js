@@ -47,6 +47,22 @@ function generateCatalogChannel(input, output, includeAdditional) {
   const dictionary = fs.existsSync(dictionaryFile) ? readDictionary(dictionaryFile) : { version: 1, tags: {} };
   if (additional) updateDictionary(dictionary, additional.data.flatMap(r => r.tags || []));
   const tagIndex = indexDictionary(dictionary);
+  const translations = new Map();
+  function addTranslation(id, language) {
+    if (!translations.has(id)) translations.set(id, new Set());
+    translations.get(id).add(language);
+  }
+  if (includeAdditional) {
+    for (const language of Object.keys(LANGUAGES)) {
+      const file = path.join(input, language, 'scp-data.json');
+      if (!fs.existsSync(file)) continue;
+      for (const row of JSON.parse(fs.readFileSync(file)).data) {
+        if (row.isTranslatedJP !== false) addTranslation(row.itemId, language);
+        for (const code of row.translatedLanguages || []) addTranslation(row.itemId, code);
+      }
+    }
+    for (const row of additional?.data || []) addTranslation(row.itemId, row.language);
+  }
   for (const language of Object.keys(LANGUAGES)) {
     const file = path.join(input, language, 'scp-data.json');
     if (!fs.existsSync(file)) continue;
@@ -75,6 +91,11 @@ function generateCatalogChannel(input, output, includeAdditional) {
       ids.add(row.itemId);
     }
     delivery.data.push(...documents);
+    if (includeAdditional) for (const row of delivery.data) {
+      row.translatedLanguages = [...new Set([
+        ...(row.translatedLanguages || []), ...(translations.get(row.itemId) || []),
+      ])].sort();
+    }
     delivery.totalCount = delivery.data.length;
     if (additional && Date.parse(additional.timestamp) > Date.parse(delivery.timestamp)) delivery.timestamp = additional.timestamp;
     const json = Buffer.from(JSON.stringify(delivery), 'utf8');
