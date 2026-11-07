@@ -70,3 +70,39 @@ The same 58,063 catalog URL/item-ID pairs are retained. Unknown origin catalog
 entries decrease from **15,966 to 7,024** (8,942 fewer). Regression tests cover
 site-scoped native tags, EN hidden tags, documented defaults, conflicting tags,
 unsupported origin tags, and unresolved translation metadata.
+
+## Explicit original credits and smaller branches (third pass)
+
+- [PT tag guide](https://scp-pt-br.wikidot.com/guia-de-tags): translations have
+  `traduzido`; source-language tags are required except for English. This policy
+  now supplies EN only when no explicit source/tag conflict is present.
+- `additional-origins.json` recognizes smaller origin branches and documented
+  aliases. This does not add their sites as catalog collection targets. Published
+  translations can be assigned to their original LA/TR/EO/etc. branch. ID remains
+  excluded from collection.
+- `origin-provenance.js` extracts **explicit original-source labels** (for example
+  Czech `Originál:`) from credit containers. Ordinary body links, author profiles,
+  navigation, arbitrary hosts, action URLs, and self links are excluded. Source
+  URLs and label evidence are retained in the crawl checkpoint and classification.
+- A source already present in the catalog/checkpoints is resolved by its own
+  origin, never by the host of an intermediate translation. Conflicting sources,
+  unresolved known sources, INT pages without origin evidence, and unresolved
+  secondary translations remain unknown. Credit source URLs are never crawled as
+  newly discovered catalog members and do not create graph edges.
+- The normal weekly collector prioritizes unknown articles lacking provenance
+  metadata within its existing request/time limits, even if their other metadata
+  is still fresh. Successfully checked records are not immediately re-downloaded.
+- `node tool/refresh-origin-provenance.js` provides a bounded, resumable backfill
+  of already-published unknown URLs only (`PROVENANCE_MAX_REQUESTS`,
+  `PROVENANCE_MAX_DURATION_MS`, optional `PROVENANCE_LANGUAGES`). Failures retain
+  previous data. Local incoming checkpoints receive refreshed metadata too.
+
+The initial bounded backfill refreshed 192 articles, found explicit original
+sources on 121, and had no request failures. Together with policy/code changes,
+unknown origins decrease **7,024 → 6,059**. All 58,063 additional catalog URL/item-ID
+pairs remain unchanged. The remaining unrefreshed credits continue through the
+normal weekly schedule; this pass does not claim all 7,024 bodies were rechecked.
+
+The STG app adds Japanese/English fallback names for the smaller origin branches
+to HOME and the reading ledger. Existing localized names are reused for the
+previously supported branches; other app languages use English for the new names.

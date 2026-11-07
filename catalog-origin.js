@@ -1,6 +1,7 @@
 'use strict';
 const { LANGUAGES } = require('./languages');
-const branches = new Set(['en', 'zh', 'sk', 'id', ...Object.keys(LANGUAGES)]);
+const additionalOrigins = require('./additional-origins.json');
+const branches = new Set(['en', 'zh', 'sk', 'id', ...Object.keys(LANGUAGES), ...Object.keys(additionalOrigins)]);
 function validOrigin(value) {
   value = value === 'zh-tr' ? 'zh' : value;
   return branches.has(value) ? value : null;
@@ -8,12 +9,13 @@ function validOrigin(value) {
 // Publisher rules, not a blanket inference from the page's hosting language.
 // CN tag-guide: native = 原创; fiction without an origin tag defaults to EN.
 // EN translations-policy: translations require international and _<branch>.
-const unsupportedOrigins = new Set(['ar','cy','el','eo','et','he','hu','la','ms','nd-da','nd-no','nd-sv','ro','sl','tr','uk','da','no','sv','sh','interslavic','interlingue','ido','tok','nl']);
+const originAliases = {'nd-da':'da','nd-no':'no','nd-sv':'sv','interslavic':'isv','interlingue':'ie','ido':'io'};
+const unsupportedOrigins = new Set(['uk','sh','nd']);
 function publisherOriginTags(url, record) {
   const host = new URL(url).hostname;
   const tags = (record?.tags || []).map(t => t.toLowerCase());
   const values = tags.map(t => t.replace(/^филиал:/u, '')).map(t =>
-    host === 'scp-wiki.wikidot.com' && /^_[a-z]{2,3}$/.test(t) ? t.slice(1) : t);
+    host === 'scp-wiki.wikidot.com' && /^_[a-z]{2,3}$/.test(t) ? t.slice(1) : t).map(t=>originAliases[t] || t);
   if (host === 'scp-wiki-cn.wikidot.com' && tags.includes('原创')) values.push('cn');
   if (host === 'scp-zh-tr.wikidot.com' && tags.includes('原創')) values.push('zh');
   return {
@@ -23,12 +25,15 @@ function publisherOriginTags(url, record) {
 }
 function publisherDefaultOrigin(url, record) {
   // Unresolved explicit translation metadata must not be replaced by a default.
-  if (record?.translations?.length) return null;
+  if (record?.translations?.length || record?.originalSources?.length) return null;
   const tags = new Set((record?.tags || []).map(t => t.toLowerCase()));
   const host = new URL(url).hostname;
   // DE rules require übersetzt plus the source-language tag, except for EN.
   if (host === 'scp-wiki-de.wikidot.com' && tags.has('übersetzt')) {
     return { branch:'en',basis:'publisher_default_origin',evidence:['https://scp-wiki-de.wikidot.com/regeln'] };
+  }
+  if (host === 'scp-pt-br.wikidot.com' && tags.has('traduzido')) {
+    return {branch:'en',basis:'publisher_default_origin',evidence:['https://scp-pt-br.wikidot.com/guia-de-tags']};
   }
   if ([...tags].some(t => ['international','translation','translated','二次翻译','二次翻譯','翻譯','翻译','traduzido'].includes(t))) return null;
   if (host === 'scp-wiki-cn.wikidot.com' &&
@@ -54,7 +59,7 @@ function nativeCollectionOrigin(source) {
 function resolveOrigin(record, evidence, fallback, originHint) {
   // Article-specific provenance wins over a mixed hub's section headings.
   if (validOrigin(fallback.branch)) return { ...fallback, branch: validOrigin(fallback.branch) };
-  if (/^conflicting_|^unsupported_|^translation_(?:cycle|depth_limit)$/.test(fallback.basis || '')) return fallback;
+  if (/^conflicting_|^unsupported_|^unresolved_original_credit$|^translation_(?:cycle|depth_limit)$/.test(fallback.basis || '')) return fallback;
   const origins = [...new Set(evidence.map(e => {
     const hint = e.source ? validOrigin(originHint(e.source)) : null;
     // Old checkpoints may carry an origin leaked from a previous heading.

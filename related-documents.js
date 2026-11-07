@@ -9,6 +9,7 @@ const { JSDOM, VirtualConsole } = require('jsdom');
 const { LANGUAGES } = require('./languages');
 const { inspectArticlePage } = require('./article-page');
 const { publisherOriginTags, publisherDefaultOrigin } = require('./catalog-origin');
+const provenance = require('./origin-provenance');
 const hash = value => crypto.createHash('sha256').update(value).digest('hex');
 const hosts = new Map(Object.entries(LANGUAGES).map(([language, config]) => [new URL(config.baseUrl).hostname, language]));
 hosts.set('scpfoundation.net', 'ru');
@@ -68,6 +69,7 @@ function extractHtml(url, html, now = new Date().toISOString(), existingDocument
     // Lazy import: the ordinary crawler also calls this extractor with its DOM.
     const metadata = require('./local-crawler');
     return { ...page, title, tags, translations: [...new Set(translations)].sort(), authors,
+      originProvenanceVersion:provenance.VERSION, originalSources:provenance.extractOriginalSources(d,page.url),
       objectClass: metadata.extractObjectClassFromDocument(d), rating: metadata.extractRatingFromDocument(d),
       imageUrl: metadata.extractImageUrlFromDocument(d,page.url),
       links, descriptionExcerpt: root.textContent.trim().replace(/\s+/g, ' ').slice(0, 250),
@@ -86,7 +88,7 @@ function extractApi(url, article, now = new Date().toISOString()) {
   const metadata = require('./rufoundation-crawler');
   return { ...page, title: article.title, tags: (article.tags || []).map(t => typeof t === 'string' ? t : t.name).filter(Boolean),
     objectClass: metadata.extractObjectClass(source),rating:metadata.normalizeRating(article.rating),imageUrl:metadata.extractImageUrl(source,page.slug),
-    links: [...links].sort(), translations: [], authors: [], format: 'ftml', contentSha256: hash(source), checkedAt: now, availabilityVersion: 1,
+    links: [...links].sort(), translations: [], originalSources:[], originProvenanceVersion:provenance.VERSION, authors: [], format: 'ftml', contentSha256: hash(source), checkedAt: now, availabilityVersion: 1,
     descriptionExcerpt: source.replace(/\[\[[\s\S]*?\]\]/g, ' ').replace(/\s+/g, ' ').slice(0, 250) };
 }
 
@@ -152,7 +154,8 @@ function importRecords(directory, records) {
       const record = { ...page, title: r.title, tags: r.tags || [], authors: r.authors || [], format: r.format,
         checkedAt: r.checkedAt, contentSha256: r.contentSha256, descriptionExcerpt: r.descriptionExcerpt || '',
         links: (r.links || []).map(v => normalize(typeof v === 'string' ? v : v.target)?.url).filter(Boolean),
-        translations: (r.translations || []).map(v => normalize(typeof v === 'string' ? v : v.target)?.url).filter(Boolean) };
+        translations: (r.translations || []).map(v => normalize(typeof v === 'string' ? v : v.target)?.url).filter(Boolean),
+        originalSources:r.originalSources||[],originProvenanceVersion:r.originProvenanceVersion||0 };
       if (!records.has(page.url) || record.checkedAt > records.get(page.url).checkedAt) records.set(page.url, record);
     }
   }
@@ -174,6 +177,19 @@ function classify(url, records, catalogByUrl, visited = new Set()) {
   const { origins: tags, unsupported } = publisherOriginTags(url, r);
   if (unsupported.length) return {branch:null,basis:'unsupported_origin_tag',evidence:unsupported};
   if (tags.length) return { branch: tags.length === 1 ? tags[0] : null, basis: tags.length === 1 ? 'publisher_origin_tag' : 'conflicting_origin_tags', evidence: tags };
+  const originalOrigins=[];
+  for(const source of r?.originalSources||[]){
+    const target=provenance.originalPage(source.url);
+    if(!target||source.method!=='credit_original_label')continue;
+    const known=records.has(target.url)||catalogByUrl.has(target.url);
+    const result=known?classify(target.url,records,catalogByUrl,next):null;
+    const secondary=(r.tags||[]).some(t=>['二次翻译','二次翻譯','重訳','translation'].includes(t));
+    const branch=result?.branch||(!known&&!secondary&&target.hostBranch!=='int'?target.hostBranch:null);
+    if(branch)originalOrigins.push({branch,url:target.url,quote:source.quote});
+  }
+  const originalBranches=[...new Set(originalOrigins.map(s=>s.branch))];
+  if(originalBranches.length)return {branch:originalBranches.length===1?originalBranches[0]:null,basis:originalBranches.length===1?'explicit_original_credit':'conflicting_original_credits',evidence:originalOrigins};
+  if(r?.originalSources?.length)return {branch:null,basis:'unresolved_original_credit',evidence:r.originalSources};
   const translated = (r?.translations || []).map(target => ({ target, ...classify(target, records, catalogByUrl, next) })).filter(v => v.branch);
   const origins = [...new Set(translated.map(v => v.branch))];
   if (origins.length) return { branch: origins.length === 1 ? origins[0] : null, basis: origins.length === 1 ? 'explicit_translation_metadata' : 'conflicting_translation_metadata', evidence: translated };

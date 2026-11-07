@@ -1,13 +1,13 @@
 'use strict';
 const { LANGUAGES } = require('../languages');
+const { validOrigin } = require('../catalog-origin');
 
 // The reading ledger groups on pageType, not the host serving a translation.
 function branchForPageType(type) {
   const document = /^related-document-([a-z-]+)$/.exec(type || '');
   if (document) {
     const code = document[1];
-    return new Set(['en', 'zh', 'sk', ...Object.keys(LANGUAGES)]).has(code)
-      ? code === 'zh-tr' ? 'zh' : code : 'other';
+    return validOrigin(code) || 'other';
   }
   if (['scp-series', 'joke-scps', 'scp-ex'].includes(type)) return 'en';
   const match = /^(?:scp-series-|joke-scps-)([a-z][a-z-]*)$/.exec(type || '') ||

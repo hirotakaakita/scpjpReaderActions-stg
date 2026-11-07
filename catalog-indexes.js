@@ -256,8 +256,13 @@ async function crawl(language, { root = __dirname, now = new Date().toISOString(
     if(!registry.has(url)&&!state.discoveredIndexes.some(s=>s.url===url))state.discoveredIndexes.push({language,url,root:url,kind:'tale',origin:member.origin||null,discoveredFrom:member.source});
   }
   for(const [url,record]of Object.entries(state.records))if(eligibleRecord(record))discoverHub(url,record);
-  const pending = [...members.keys()].filter(url => !ordinaryUrls.has(url) && (!eligibleRecord(state.records[url]) || !fresh(state.records[url]?.checkedAt)))
-    .filter(url => !attemptFresh(state.attempts[url])).sort((a,b) => Number(!!state.records[a])-Number(!!state.records[b]) || a.localeCompare(b));
+  const additionalFile = path.join(root,'local-data/related-documents/catalog.json.gz');
+  const unknownOrigins = new Set(fs.existsSync(additionalFile) ? JSON.parse(zlib.gunzipSync(fs.readFileSync(additionalFile))).data
+    .filter(r=>r.language===language&&r.pageType==='related-document-unclassified').map(r=>r.url) : []);
+  const needsOrigin = url => unknownOrigins.has(url) && (state.records[url]?.originProvenanceVersion||0)<require('./origin-provenance').VERSION;
+  const pending = [...members.keys()].filter(url => !ordinaryUrls.has(url) && (!eligibleRecord(state.records[url]) || !fresh(state.records[url]?.checkedAt) ||
+    needsOrigin(url)))
+    .filter(url => !attemptFresh(state.attempts[url])).sort((a,b) => Number(!!state.records[a])-Number(!!state.records[b]) || Number(needsOrigin(b))-Number(needsOrigin(a)) || a.localeCompare(b));
   for (const url of pending) {
     if (fetchedArticles >= maxRequests || Date.now()-started >= maxDurationMs) break;
     await slot();
