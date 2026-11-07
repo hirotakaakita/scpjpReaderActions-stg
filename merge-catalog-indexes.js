@@ -2,7 +2,8 @@
 const { articleCategory } = require('./article-category');
 const fs = require('node:fs'), path = require('node:path'), zlib = require('node:zlib');
 const { LANGUAGES } = require('./languages');
-const { readState, writeState, eligibleRecord, isExcluded } = require('./catalog-indexes');
+const { readState, writeState, eligibleRecord, isExcluded, originHint } = require('./catalog-indexes');
+const { resolveOrigin } = require('./catalog-origin');
 const { readCatalogs, normalize, classify } = require('./related-documents');
 const { branchForPageType } = require('./article-origin');
 const { buildEntries, variantSlugPart, stringifyAsciiSafe } = require('./local-crawler');
@@ -42,6 +43,7 @@ function buildIndexedCatalog(catalogs, states, previous = { data: [] }, now = ne
     if(site===branch||(site==='cs'&&branch==='sk')){known.get(key).nativeIds ||= new Set();known.get(key).nativeIds.add(row.itemId);}
   }
   const previousByUrl = new Map(previous.data.map(r => [r.url,r]));
+  const allRecords = new Map(Object.values(states).flatMap(state => Object.entries(state.records)));
   const data = [], pending = [], removed = new Set(), progress = {}, markedMissing = new Map();
   function indexes(state){
     const rejected=new Set((state.discoveredIndexes||[]).filter(s=>isExcluded(s.url,state.records[s.url]?.tags||[])).map(s=>s.url));
@@ -58,7 +60,6 @@ function buildIndexedCatalog(catalogs, states, previous = { data: [] }, now = ne
   }
   for(const state of Object.values(states))for(const [url,a]of Object.entries(state.attempts))if(a.status==='unavailable')removed.add(url);
   for (const [language,state] of Object.entries(states)) {
-    const allRecords = new Map(Object.entries(state.records));
     const memberships = new Map();
     for (const index of indexes(state)) {
       for (const m of index.members || []) {
@@ -82,9 +83,9 @@ function buildIndexedCatalog(catalogs, states, previous = { data: [] }, now = ne
       }
       if (isExcluded(url,record.tags)) continue;
       if (/^scp-id-|^scp-\d+-id(?:-|$)/.test(page.slug) || (record.tags || []).some(t=>['id','филиал:id'].includes(t))) continue;
-      const origins = [...new Set(evidence.map(e=>e.origin).filter(Boolean))];
       const fallback = classify(url,allRecords,seeds);
-      const branch = origins.length === 1 ? origins[0] : origins.length > 1 ? null : fallback.branch;
+      const classification = resolveOrigin(record,evidence,fallback,originHint);
+      const branch = classification.branch;
       if (branch === 'id') continue;
       const scp = scpIdentity(page,record,branch,known);
       const contentType = scp ? 'scp' : articleCategory(record,evidence,url);
@@ -92,7 +93,7 @@ function buildIndexedCatalog(catalogs, states, previous = { data: [] }, now = ne
       data.push({ itemId:prior?.itemId || scp?.itemId || `document-${language}--${page.slug}`, url,language,title:record.title,
         contentType,pageType:scp?.pageType || (branch ? `related-document-${branch}` : 'related-document-unclassified'),
         numericItemId:scp?.numericItemId,originBranch:scp?.originBranch || branch,
-        classification:{branch:scp?.originBranch || branch,basis:origins.length ? 'official_index_section' : fallback.basis,evidence:origins},
+        classification:{...classification,branch:scp?.originBranch || branch},
         sourceArticleIds:[],sourceIndexUrls:[...new Set(evidence.map(e=>e.source))].sort(),indexEvidence:evidence,
         tags:record.tags||[],authors:record.authors||[],descriptionExcerpt:record.descriptionExcerpt||'',
         objectClass:record.objectClass,rating:record.rating,imageUrl:record.imageUrl,

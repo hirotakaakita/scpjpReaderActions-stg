@@ -7,8 +7,9 @@ const { LANGUAGES } = require('./languages');
 const { normalize, fetchRecord, loadCache } = require('./related-documents');
 const { inspectArticlePage } = require('./article-page');
 const sourcesFile = require('./catalog-index-sources.json');
+const { validOrigin } = require('./catalog-origin');
 const VERSION = 1;
-const PARSER_VERSION = 4;
+const PARSER_VERSION = 5;
 const excludedPath = /(?:^|[-:])(?:guide|guides|artwork|authors?|members|contest|concurs|concorso|essay|news|translation-reservation|tag-guide|licensing)(?:[-:]|$)/i;
 const excludedTags = new Set(['artwork','artist','author','authors','author-page','guide','guidelines','essay','contest','contest-hub','news','著者ページ','アートワーク','ガイド','エッセイ','コンテスト','作者','艺术作品','指导','страница_автора','структура:страница_автора','структура:руководство','структура:конкурс']);
 for(const tag of ['autor','auteur','autore','작가','автор','tác-giả','hướng-dẫn','藝術作品','hội-họa','_bild','안내'])excludedTags.add(tag);
@@ -19,9 +20,9 @@ function originHint(url) {
     '/centre-des-contes-francais':'fr','/centre-des-canons-francais':'fr','/contos-da-fundacao':'pt','/formatos-gdi':'pt','/scp-de-geschichten':'de','/relatos-de-la-fundacion-hispanoparlante':'es','/formatos-de-gdi':'es'};
   if (special[p]) return special[p];
   const tale = /\/tales-([a-z]+)-by-/.exec(p) || /\/tales-by-(?:author|title|page-name|create-time|date|year)-([a-z]+)$/.exec(p);
-  if (tale) return tale[1];
+  if (tale) return validOrigin(tale[1]);
   const m = /(?:foundation-tales|canon-hub|goi-formats|scp-series|scp-list|serie-scp|scp-serie|joke-scps|scp-ex)-([a-z]+)(?:-\d+)?$/.exec(p) || /\/series-\d+-([a-z]+)$/.exec(p);
-  if (m) return m[1] === 'unofficial' ? null : m[1];
+  if (m) return validOrigin(m[1]);
   return null;
 }
 function pageUrl(value, base) {
@@ -53,14 +54,17 @@ function parseIndex(html, source, registry, { embedded = false } = {}) {
     for (const e of content.querySelectorAll('script,style,noscript,nav,[role="navigation"],.page-navigation,.footer-wikiwalk-nav,.licensebox,.credit,.credit-box,#u-credit-view,#toc,.toc,.page-rate-widget-box,.authorbox')) e.remove();
     const members = new Map(), pages = new Set(), missing = new Set(), embeds = new Set(), childIndexes = new Set();
     const structured = !!content.querySelector('li a[href],td a[href],.list-pages-item a[href],.list-pages-box a[href]');
-    let origin = source.origin || originHint(source.url), section = '';
+    let origin = validOrigin(source.origin) || originHint(source.root || source.url), section = '';
     const sourceOrigin = origin;
+    const headings = [];
     for (const e of content.querySelectorAll('h1,h2,h3,a[href]')) {
       if (/^H[123]$/.test(e.tagName)) {
         section = clean(e.textContent);
-        const branch = /(?:^|\b)SCP[- ](EN|RU|KO|CN|FR|PL|ES|TH|JP|DE|IT|UA|PT(?:\/BR)?|CS|SK|ZH(?:-TR)?|VN|INT|ID)\b/i.exec(section);
-        if (branch) origin = branch[1].toLowerCase().replace('pt/br','pt').replace('zh-tr','zh');
-        else if (e.tagName === 'H1') origin = sourceOrigin;
+        const level = Number(e.tagName[1]);
+        while (headings.length && headings.at(-1).level >= level) headings.pop();
+        const branch = /^SCP[- ](EN|RU|KO|CN|FR|PL|ES|TH|JP|DE|IT|UA|PT(?:\/BR)?|CS|SK|ZH(?:-TR)?|VN|INT|ID)\b/i.exec(section);
+        origin = branch ? validOrigin(branch[1].toLowerCase().replace('pt/br','pt')) : headings.at(-1)?.origin ?? sourceOrigin;
+        headings.push({ level, origin });
         continue;
       }
       if (e.getAttribute('href').startsWith('#')) continue;
