@@ -8,6 +8,7 @@ const axios = require('axios');
 const { JSDOM, VirtualConsole } = require('jsdom');
 const { LANGUAGES } = require('./languages');
 const { inspectArticlePage } = require('./article-page');
+const { publisherOriginTags, publisherDefaultOrigin } = require('./catalog-origin');
 const hash = value => crypto.createHash('sha256').update(value).digest('hex');
 const hosts = new Map(Object.entries(LANGUAGES).map(([language, config]) => [new URL(config.baseUrl).hostname, language]));
 hosts.set('scpfoundation.net', 'ru');
@@ -170,7 +171,8 @@ function classify(url, records, catalogByUrl, visited = new Set()) {
   if (branches.length === 1) return { branch: branches[0], basis: 'catalog_page_type', evidence: entries.map(e => ({ itemId: e.itemId, pageType: e.pageType })) };
   if (branches.length > 1) return { branch: null, basis: 'conflicting_catalog_types', evidence: branches };
   const r = records.get(url), known = new Set(['en', 'zh', ...Object.keys(LANGUAGES)]);
-  const tags = [...new Set((r?.tags || []).map(t => t.replace(/^филиал:/u, '')).map(t => t === 'zh-tr' ? 'zh' : t).filter(t => known.has(t)))];
+  const { origins: tags, unsupported } = publisherOriginTags(url, r);
+  if (unsupported.length) return {branch:null,basis:'unsupported_origin_tag',evidence:unsupported};
   if (tags.length) return { branch: tags.length === 1 ? tags[0] : null, basis: tags.length === 1 ? 'publisher_origin_tag' : 'conflicting_origin_tags', evidence: tags };
   const translated = (r?.translations || []).map(target => ({ target, ...classify(target, records, catalogByUrl, next) })).filter(v => v.branch);
   const origins = [...new Set(translated.map(v => v.branch))];
@@ -180,7 +182,7 @@ function classify(url, records, catalogByUrl, visited = new Set()) {
     const tokens = (m[3] || '').split('-'), branch = m[1] || tokens.find(t => known.has(t)) || 'en';
     if (known.has(branch)) return { branch, basis: 'scp_identifier', evidence: [slug] };
   }
-  return { branch: null, basis: r ? 'insufficient_origin_evidence' : 'not_fetched', evidence: [] };
+  return publisherDefaultOrigin(url,r) || { branch: null, basis: r ? 'insufficient_origin_evidence' : 'not_fetched', evidence: [] };
 }
 
 function buildCatalogs(catalogs, records, attempts, now = new Date().toISOString()) {

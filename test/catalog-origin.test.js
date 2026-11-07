@@ -1,6 +1,6 @@
 ﻿'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
-const {resolveOrigin}=require('../catalog-origin');
+const {resolveOrigin,publisherDefaultOrigin}=require('../catalog-origin');
 const {originHint,parseIndex}=require('../catalog-indexes');
 const {buildIndexedCatalog}=require('../merge-catalog-indexes');
 const unknown={branch:null,basis:'insufficient_origin_evidence',evidence:[]};
@@ -19,6 +19,8 @@ test('native English collections do not classify translations by hosting site',(
  assert.equal(resolve(['tale'],[{source:'https://scp-wiki.wikidot.com/foundation-tales-audio-edition'}]).branch,null);
 });
 test('invalid URL suffixes and inherited heading origins are not branch evidence',()=>{
+ assert.equal(originHint('https://scp-wiki-cn.wikidot.com/log-of-anomalous-items-cn'),'cn');
+ assert.equal(originHint('https://scp-wiki-cn.wikidot.com/log-of-anomalous-items'),null);
  for(const name of ['foundation-tales-arc','canon-hub','foundation-tales-unofficial'])assert.equal(originHint('https://scpko.wikidot.com/'+name),null);
  assert.equal(resolve([], [{source:'https://scpko.wikidot.com/foundation-tales-arc',origin:'arc'}]).branch,null);
  assert.equal(resolve([], [{source:'https://scp-jp.wikidot.com/a-hub',origin:'pl',section:'Other works'}]).branch,null);
@@ -35,4 +37,30 @@ test('explicit cross-site translation metadata uses already collected records an
  const state=(url,rec,source)=>({indexes:{x:{members:[{url,source,kind:'tale'}]}},records:{[url]:rec},attempts:{}});
  const result=buildIndexedCatalog([],{en:state(en,record(en,['jp']),'https://scp-wiki.wikidot.com/foundation-tales'),jp:state(jp,record(jp,['tale'],[en]),'https://scp-jp.wikidot.com/foundation-tales')},{data:[{url:jp,itemId:'document-existing',language:'jp'}]});
  const row=result.data.find(r=>r.url===jp);assert.equal(row.pageType,'related-document-jp');assert.equal(row.itemId,'document-existing');
+});
+const {classify}=require('../related-documents');
+const infer=(url,tags)=>classify(url,new Map([[url,{url,tags,translations:[]}]]),new Map());
+test('publisher native tags are scoped to the actual site, not translated by text similarity',()=>{
+ assert.equal(infer('https://scp-wiki-cn.wikidot.com/story',['原创','故事']).branch,'cn');
+ assert.equal(infer('https://scp-zh-tr.wikidot.com/story',['原創','故事']).branch,'zh');
+ assert.equal(infer('https://scp-jp.wikidot.com/story',['原创']).branch,null);
+ assert.equal(infer('https://scp-wiki-cn.wikidot.com/story',['原创','jp','故事']).basis,'conflicting_origin_tags');
+});
+test('EN hidden language tags identify the original branch without treating international as INT',()=>{
+ assert.equal(infer('https://scp-wiki.wikidot.com/story',['international','_jp','tale']).branch,'jp');
+ assert.equal(infer('https://scp-wiki.wikidot.com/story',['international','_ms','tale']).basis,'unsupported_origin_tag');
+ assert.equal(infer('https://scp-wiki.wikidot.com/story',['international','tale']).branch,null);
+ assert.equal(infer('https://scp-jp.wikidot.com/story',['_jp']).branch,null);
+});
+test('documented publisher defaults require fiction tags and do not apply to unsupported or secondary translations',()=>{
+ const url='https://scp-wiki-cn.wikidot.com/story';
+ assert.equal(infer(url,['故事']).branch,'en');
+ assert.equal(infer(url,['故事']).basis,'publisher_default_origin');
+ for(const tags of [[],['fragment'],['故事','二次翻译'],['故事','tr']])assert.equal(infer(url,tags).branch,null);
+ assert.equal(infer('https://scp-vn.wikidot.com/story',['tale']).branch,null);
+ assert.equal(infer('https://scp-wiki.wikidot.com/026-exploration-logs',['supplement']).branch,'en');
+ assert.equal(infer('https://scp-wiki-de.wikidot.com/story',['übersetzt','geschichte']).branch,'en');
+ assert.equal(infer('https://scp-wiki-de.wikidot.com/story',['übersetzt','fr']).branch,'fr');
+ assert.equal(infer('https://scp-wiki-de.wikidot.com/story',['geschichte']).branch,null);
+ assert.equal(publisherDefaultOrigin(url,{tags:['故事'],translations:['https://scp-int.wikidot.com/unknown']}),null);
 });

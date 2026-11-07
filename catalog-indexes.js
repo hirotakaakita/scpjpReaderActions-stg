@@ -19,6 +19,8 @@ function originHint(url) {
   const special = {'/liste-fr':'fr','/lista-pl':'pl','/scp-it-serie-i':'it','/racconti-italiani':'it','/gdi-it-serie-i':'it',
     '/centre-des-contes-francais':'fr','/centre-des-canons-francais':'fr','/contos-da-fundacao':'pt','/formatos-gdi':'pt','/scp-de-geschichten':'de','/relatos-de-la-fundacion-hispanoparlante':'es','/formatos-de-gdi':'es'};
   if (special[p]) return special[p];
+  const nativeLog = /^\/(?:log-of-anomalous-items|log-of-extranormal-events|log-of-unexplained-locations|supplement-hub|anthology-hub)-([a-z]{2})(?:\/|$)/.exec(p);
+  if (nativeLog) return validOrigin(nativeLog[1]);
   const tale = /\/tales-([a-z]+)-by-/.exec(p) || /\/tales-by-(?:author|title|page-name|create-time|date|year)-([a-z]+)$/.exec(p);
   if (tale) return validOrigin(tale[1]);
   const m = /(?:foundation-tales|canon-hub|goi-formats|scp-series|scp-list|serie-scp|scp-serie|joke-scps|scp-ex)-([a-z]+)(?:-\d+)?$/.exec(p) || /\/series-\d+-([a-z]+)$/.exec(p);

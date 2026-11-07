@@ -38,3 +38,35 @@ collected records across all languages, without discovering any linked articles.
 collections, translation safeguards, and cross-site explicit translation metadata.
 The published-board validator rebuilds the graph and checks exact catalog URL
 membership and HOME article-category parity for every work.
+
+## Publisher tag policies (second pass, 2026-11-08 JST)
+
+The first pass missed site-specific origin tags and documented tagging defaults.
+These rules now run in the shared `classify` function, including cross-site
+explicit translation metadata resolution:
+
+- [CN tag guide](https://scp-wiki-cn.wikidot.com/tag-guide): `原创` identifies
+  Chinese originals. Fiction with a primary tag (`scp`, `故事`, `goi格式`,
+  `补充材料`, `站点`) and neither an original nor another origin tag defaults to
+  translation from EN. Fragments, untagged pages, and secondary translations
+  without a resolved origin do not receive this default.
+- [ZH tag guide](https://scp-zh-tr.wikidot.com/tag-guide): `原創` identifies
+  Traditional Chinese originals, only on that publishing site.
+- [EN translations policy](https://scp-wiki.wikidot.com/translations-policy):
+  translated works require `international` and a language tag such as `_ru`.
+  Hidden language tags are recognized on EN. Fiction without a translation marker
+  or other origin tag can use the publisher's native EN default.
+- [DE rules](https://scp-wiki-de.wikidot.com/regeln): translations require
+  `übersetzt` and the source language, except for English. DE pages carrying
+  `übersetzt` with no other source language can therefore use EN.
+- Native anomalous-item/event/location lists with a recognized language suffix
+  also supply the origin of their untagged indexed records.
+
+Explicit origin tags and translation metadata take priority. Unsupported language
+tags block these defaults, as do unresolved explicit translation links. No title
+or slug matching merges separate works and no article-link traversal is added.
+
+The same 58,063 catalog URL/item-ID pairs are retained. Unknown origin catalog
+entries decrease from **15,966 to 7,024** (8,942 fewer). Regression tests cover
+site-scoped native tags, EN hidden tags, documented defaults, conflicting tags,
+unsupported origin tags, and unresolved translation metadata.
