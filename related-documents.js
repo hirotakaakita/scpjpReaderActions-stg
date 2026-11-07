@@ -96,6 +96,7 @@ function capture(url, body, format = 'html', directory = path.join(__dirname, 'p
     fs.mkdirSync(directory, { recursive: true });
     const file = path.join(directory, `${hash(record.url)}.json`);
     fs.writeFileSync(`${file}.tmp`, JSON.stringify(record)); fs.renameSync(`${file}.tmp`, file);
+    require('./research-board/source-store').capture(url, format === 'html' ? body : JSON.stringify(body), format === 'html' ? 'html' : 'ftml', path.join(directory,'research-board'), existingDocument);
     return true;
   } catch (error) { console.warn(`Related document capture skipped: ${url}: ${error.message}`); return false; }
 }
@@ -218,7 +219,7 @@ function buildCatalogs(catalogs, records, attempts, now = new Date().toISOString
       discoveredDocuments: sources.size, classified: data.filter(r => r.originBranch).length, unclassified: data.filter(r => !r.originBranch).length, pending: pending.length } };
 }
 
-async function fetchRecord(url) {
+async function fetchRecord(url, captureDirectory = null) {
   const page = normalize(url);
   if (!page) throw Error('Unsupported URL');
   // Validate every redirect so an allowlisted link cannot redirect requests to arbitrary hosts.
@@ -236,11 +237,13 @@ async function fetchRecord(url) {
       timeout: 20000, maxRedirects: 0, maxContentLength: 4 * 1024 * 1024, headers: { Accept: 'application/json' },
     });
     const record = extractApi(url, response.data);
+    if (captureDirectory) require('./research-board/source-store').capture(url, JSON.stringify(response.data), 'ftml', captureDirectory);
     return record;
   }
   const configuredScheme = new URL(LANGUAGES[page.language].baseUrl).protocol;
   const html = await request(url.replace(/^https:/, configuredScheme));
   const record = extractHtml(url, html);
+  if (captureDirectory) require('./research-board/source-store').capture(url, html, 'html', captureDirectory);
   return record;
 }
 

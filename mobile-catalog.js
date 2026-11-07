@@ -145,6 +145,7 @@ if (require.main === module) {
   const input = path.resolve(process.argv[2] || path.join(__dirname, 'local-data'));
   const output = process.argv[3] && path.resolve(process.argv[3]);
   const catalogs = generateMobileCatalogs(input, output);
-  console.log(JSON.stringify(catalogs, null, 2));
+  const researchBoard = require('./research-board/catalog').generateResearchBoard(input, path.join(path.dirname(output || path.join(input, 'mobile-v1')), 'mobile-v3'));
+  console.log(JSON.stringify({catalogs, researchBoard}, null, 2));
 }
 module.exports = { mobileCatalog, generateMobileCatalogs };

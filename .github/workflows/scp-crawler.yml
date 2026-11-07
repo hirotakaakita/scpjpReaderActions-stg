@@ -176,8 +176,9 @@ jobs:
 
       - name: Generate combined compatible mobile catalogs
         run: |
-          node --test test/mobile-catalog.test.js
+          node --test test/mobile-catalog.test.js test/research-board.test.js
           node mobile-catalog.js
+          node research-board/validate.js
 
       # Compare against the latest master acquired after entering the publish lock.
       - name: Prepare notification queue

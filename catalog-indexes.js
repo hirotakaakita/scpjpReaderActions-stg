@@ -141,7 +141,7 @@ function eligibleRecord(record) {
     (record.availabilityVersion || clean(record.descriptionExcerpt));
 }
 async function crawl(language, { root = __dirname, now = new Date().toISOString(), maxRequests = 600,
-  maxDurationMs = 300000, intervalMs = 500, request = requestHtml, articleRequest = fetchRecord, force = false, sources = sourcesFile.sources } = {}) {
+  maxDurationMs = 300000, intervalMs = 500, request = requestHtml, articleRequest = url => fetchRecord(url, path.join(root,'partial-data/related-documents/research-board')), force = false, sources = sourcesFile.sources } = {}) {
   if (!LANGUAGES[language]) throw Error('Unknown language');
   const started = Date.now(), committed = path.join(root, 'local-data/catalog-indexes', language + '.json.gz');
   if (!Number.isInteger(maxRequests) || maxRequests < 0 || maxRequests > 10000 || !Number.isFinite(maxDurationMs) || maxDurationMs <= 0 || !Number.isFinite(intervalMs) || intervalMs < 0) throw Error('Invalid index crawl limits');
