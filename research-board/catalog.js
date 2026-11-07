@@ -9,6 +9,7 @@ const { regionLayout } = require('./regions.cjs');
 const { warpLayout } = require('./warp.cjs');
 const { classifyNodes } = require('./classification');
 const { collapseWorks } = require('./works');
+const { translationIdentities } = require('./translation-identities');
 const { LANGUAGES } = require('../languages');
 const {KINDS, CATEGORY_ORDER, KIND_BY_CATEGORY, homeCategory} = require('./article-categories');
 
@@ -72,6 +73,8 @@ function buildBoard(catalogs, sources) {
     const own = entries.find(e => e.language === n.siteBranch) || entries[0];
     n.kindIndex = KIND_BY_CATEGORY[homeCategory(own?.pageType || '', own?.contentType)];
   });
+  const identities=translationIdentities(sourcePages,sources);
+  candidates.push(...identities.candidates);
   const collapsed = collapseWorks(sourcePages, candidates, catalogEntries);
   const { nodes, sourcePageCount, internalReferences } = collapsed;
   const byWork = new Map();
@@ -126,7 +129,11 @@ function buildBoard(catalogs, sources) {
     classificationCounts: Object.fromEntries([...new Set(nodes.map(n => n.classificationBasis))].sort()
       .map(basis => [basis, nodes.filter(n => n.classificationBasis === basis).length])),
     semanticCoverage: 'partial_source_specific_only', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/' };
-  const content = { schemaVersion: 3, overview, nodes: compact, edges, proofs };
+  overview.workIdentityPolicy='original_catalog_and_explicit_credits_v1';
+  const identityReview=[...identities.review,...collapsed.identityReview];
+  overview.identityReviewCount=identityReview.length;
+  const content = { schemaVersion: 3, overview, nodes: compact, edges, proofs,
+    workIdentityProofs:collapsed.identityProofs,identityReview };
   const revision = digest(JSON.stringify(content)).slice(0, 20);
   return { ...content, revision, overview: { ...overview, revision } };
 }

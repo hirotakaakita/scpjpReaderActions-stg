@@ -1,5 +1,6 @@
 'use strict';
 const { branchForPageType } = require('./classification');
+const {native}=require('./translation-identities');
 
 // Ledger identity, not a bare SCP number. Each variant/proposal and branch
 // namespace keeps its own itemId. Unverified document translations stay apart.
@@ -47,19 +48,44 @@ function collapseWorks(pages, candidates, catalogEntries) {
     if (a !== b) parent.set([a,b].sort()[1], [a,b].sort()[0]);
   }
   const byPage = new Map(pages.map(p => [p.id, p]));
+  const claims=new Map(),blockedSources=new Set();
+  for(const edge of candidates)if(edge.type==='translation_assertion'){
+    const target=byPage.get(edge.target),key=edge.source+'\0'+target.siteBranch;
+    if(!claims.has(key))claims.set(key,new Set());claims.get(key).add(target.id);
+    if(claims.get(key).size>1)blockedSources.add(edge.source);
+  }
+  const components=new Map(),nativeKeys=new Set(),identityProofs=[],identityReview=[];
+  for(const page of pages){
+    const key=root(pageKeys.get(page.id));
+    if(!components.has(key))components.set(key,new Set());components.get(key).add(page.id);
+    if(native(page))nativeKeys.add(key);
+  }
   for (const edge of candidates) if (edge.type === 'translation_assertion') {
+    if(blockedSources.has(edge.source)){identityReview.push({url:byPage.get(edge.source).url,original:byPage.get(edge.target).url,reason:'conflicting_translation_targets'});continue;}
     const a = root(pageKeys.get(edge.source)), b = root(pageKeys.get(edge.target));
     const source = byPage.get(edge.source), target = byPage.get(edge.target);
     const bothCatalogued = ledger.has(a) && ledger.has(b);
     const explicitDocumentTranslations = bothCatalogued &&
       ledger.get(a).pageType.startsWith('related-document-') &&
       ledger.get(b).pageType.startsWith('related-document-');
-    if (a === b || source.classificationSourceId || target.classificationSourceId ||
+    if(a===b)continue;
+    if (source.classificationSourceId || target.classificationSourceId ||
         (bothCatalogued && !explicitDocumentTranslations) || source.siteBranch === target.siteBranch ||
-        (source.branch !== 'other' && target.branch !== 'other' && source.branch !== target.branch)) continue;
+        (source.branch !== 'other' && target.branch !== 'other' && source.branch !== target.branch)) {identityReview.push({url:source.url,original:target.url,reason:'incompatible_translation_scope'});continue;}
+    const left=[...(components.get(a)||[])].map(id=>byPage.get(id));
+    const right=[...(components.get(b)||[])].map(id=>byPage.get(id));
+    // An identity component cannot contain two distinct pages on one site, or
+    // acquire incompatible origins through a chain of translation assertions.
+    if(left.some(p=>right.some(q=>p.siteBranch===q.siteBranch&&p.id!==q.id))){identityReview.push({url:source.url,original:target.url,reason:'same_site_identity_collision'});continue;}
+    const origins=new Set([...left,...right].map(p=>p.branch).filter(b=>b!=='other'));
+    if(origins.size>1){identityReview.push({url:source.url,original:target.url,reason:'conflicting_component_origins'});continue;}
     // Prefer a catalog-backed identity over a URL-only identity.
-    const first = bothCatalogued ? [a,b].sort()[0] : ledger.has(a) ? a : ledger.has(b) ? b : [a, b].sort()[0];
-    parent.set(first === a ? b : a, first);
+    const first = nativeKeys.has(a)!==nativeKeys.has(b) ? nativeKeys.has(a)?a:b : bothCatalogued ? [a,b].sort()[0] : ledger.has(a) ? a : ledger.has(b) ? b : [a, b].sort()[0];
+    const second=first===a?b:a;
+    parent.set(second,first);
+    components.set(first,new Set([...(components.get(a)||[]),...(components.get(b)||[])]));components.delete(second);
+    if(nativeKeys.has(a)||nativeKeys.has(b))nativeKeys.add(first);
+    identityProofs.push({source:source.url,target:target.url,method:edge.proof?.[5]||edge.proof?.[2]||'explicit_translation_metadata'});
   }
 
   const groups = new Map();
@@ -72,8 +98,8 @@ function collapseWorks(pages, candidates, catalogEntries) {
   const nodes = [];
   for (const [key, versions] of groups) {
     const info = ledger.get(key);
-    versions.sort((a, b) => Number(b.siteBranch === (info?.branch || b.branch)) -
-      Number(a.siteBranch === (info?.branch || a.branch)) ||
+    versions.sort((a, b) => Number(native(b)&&b.branch === (info?.branch || b.branch)) -
+      Number(native(a)&&a.branch === (info?.branch || a.branch)) ||
       Number(b.coverage === 'fetched') - Number(a.coverage === 'fetched') || a.id.localeCompare(b.id, 'en'));
     const representative = versions[0];
     const pageVersions = versions.map(p => [p.siteBranch, p.url, p.slug,
@@ -98,7 +124,7 @@ function collapseWorks(pages, candidates, catalogEntries) {
     if (!relations.has(key)) relations.set(key, { source, target, type: edge.type, proofs: new Map() });
     relations.get(key).proofs.set(JSON.stringify(edge.proof), edge.proof);
   }
-  return { nodes, sourcePageCount: pages.filter(p => !p.classificationSourceId).length, internalReferences,
+  return { nodes, identityProofs, identityReview, sourcePageCount: pages.filter(p => !p.classificationSourceId).length, internalReferences,
     relations: [...relations.values()].map(e => ({ ...e, proofs: [...e.proofs].sort(([a], [b]) => a.localeCompare(b, 'en')).map(([, proof]) => proof) }))
       .sort((a, b) => `${a.source}\0${a.type}\0${a.target}`.localeCompare(`${b.source}\0${b.type}\0${b.target}`, 'en')) };
 }

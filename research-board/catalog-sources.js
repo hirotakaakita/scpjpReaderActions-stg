@@ -31,6 +31,7 @@ function importCatalogSources(sources, input, catalogs) {
         translations:[],
         semanticRelations:[], limitations:[trusted ? 'metadata_links_only_v5' : 'legacy_unchecked_links'],
       };
+      converted.originalSources=record.originalSources||[];
       if (legacyPrevious && !trusted && previous.checkedAt === record.checkedAt) {
         sources.set(page.id,{...sources.get(page.id),record:converted});
       } else merge(sources,{record:converted,lastAttempt:{status:'success',at:record.checkedAt}});
@@ -43,6 +44,22 @@ function importCatalogSources(sources, input, catalogs) {
       if (!['success','not_modified'].includes(attempt.status)) {
         sources.set(page.id,{url:page.url,record:current?.record || null,lastAttempt:attempt});
       }
+    }
+  }
+  // Work identity metadata is independent of semantic/body-link coverage.
+  const additional=path.join(input,'related-documents/catalog.json.gz');
+  if(fs.existsSync(additional))for(const row of JSON.parse(zlib.gunzipSync(fs.readFileSync(additional))).data){
+    const p=normalizePage(row.url),state=p&&sources.get(p.id);
+    if(!state?.record||!members.has(p.id))continue;
+    state.record.catalogIdentity={originBranch:row.originBranch,basis:row.classification?.basis};
+    // Preserve explicit original credits even if the semantic snapshot has the
+    // same timestamp and was therefore retained above.
+  }
+  for(const name of fs.readdirSync(root).sort())if(/^[a-z-]+\.json\.gz$/.test(name)){
+    const state=JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(root,name))));
+    for(const r of Object.values(state.records||{})){
+      const p=normalizePage(r.url),saved=p&&sources.get(p.id);
+      if(saved?.record&&members.has(p.id)&&saved.record.contentSha256===r.contentSha256&&r.originalSources?.length)saved.record.originalSources=r.originalSources;
     }
   }
 }

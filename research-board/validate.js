@@ -33,6 +33,14 @@ function validate(root = path.join(__dirname, '..')) {
     }
   }
   if (pageUrls.size !== board.overview.sourcePageCount) throw Error('Lost source page');
+  const owners=new Map(board.nodes.flatMap(node=>node[13].map(page=>[page[1],node[14][0]])));
+  if(board.overview.workIdentityPolicy!=='original_catalog_and_explicit_credits_v1')throw Error('Missing document work identity policy');
+  for(const proof of board.workIdentityProofs||[]){
+    if(!owners.has(proof.source)||owners.get(proof.source)!==owners.get(proof.target))throw Error('Translation identity proof does not join catalog pages');
+  }
+  for(const node of board.nodes){
+    if(node[14][2].length<1)throw Error('Work lost its original catalog identity');
+  }
   const catalogs = loadCatalogs(input);
   if (JSON.stringify(board.overview.categoryOrder) !== JSON.stringify(CATEGORY_ORDER)) throw Error('HOME category order mismatch');
   const catalogWorks = new Map();
