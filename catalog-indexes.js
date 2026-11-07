@@ -94,10 +94,15 @@ function parseIndex(html, source, registry, { embedded = false } = {}) {
 }
 async function requestHtml(url) {
   const allowed = new Set(Object.values(LANGUAGES).map(c => new URL(c.baseUrl).hostname));
+  const initial = new URL(url);
+  const embed = /^\/([^/]+)\/html\/([^/]+)$/.exec(initial.pathname);
+  const embeddedHost = initial.hostname.replace(/\.wikidot\.com$/, '.wdfiles.com');
   let current = url;
   for (let depth = 0; depth <= 5; depth++) {
     const u = new URL(current);
-    if (!allowed.has(u.hostname) || u.username || u.password || u.port || !/^https?:$/.test(u.protocol)) throw Error('Unsafe index redirect');
+    const embeddedAsset = embed && u.hostname === embeddedHost &&
+      u.pathname === `/local--html/${embed[1]}/${embed[2]}/${initial.hostname}/`;
+    if ((!allowed.has(u.hostname) && !embeddedAsset) || u.username || u.password || u.port || !/^https?:$/.test(u.protocol)) throw Error('Unsafe index redirect');
     const r = await axios.get(current, { timeout: 25000, maxRedirects: 0, maxContentLength: 8 * 1024 * 1024,
       validateStatus: s => s >= 200 && s < 400, headers: { 'User-Agent': 'SCPReaderCrawler/1.0', Accept: 'text/html' } });
     if (r.status < 300) return r.data;
@@ -158,6 +163,11 @@ async function crawl(language, { root = __dirname, now = new Date().toISOString(
   let fetchedIndexes = 0, fetchedArticles = 0, failures = 0, last = 0;
   async function slot() { const wait = Math.max(0, last + intervalMs - Date.now()); if (wait) await new Promise(r => setTimeout(r, wait)); last = Date.now(); }
   const fresh = at => !force && Date.parse(now) - Date.parse(at || 0) < 7 * 86400000;
+  // Transient failures must not be cached for the same week as successes and
+  // confirmed missing articles. Avoid hammering persistently failing pages.
+  const attemptFresh = attempt => attempt?.status === 'failed'
+    ? !force && Date.parse(now) - Date.parse(attempt.at || 0) < 15 * 60000
+    : fresh(attempt?.at);
   if (language === 'ru') {
     // Public HTML is blocked; official API lists all pages with publisher tags.
     await slot();
@@ -241,7 +251,7 @@ async function crawl(language, { root = __dirname, now = new Date().toISOString(
   }
   for(const [url,record]of Object.entries(state.records))if(eligibleRecord(record))discoverHub(url,record);
   const pending = [...members.keys()].filter(url => !ordinaryUrls.has(url) && (!eligibleRecord(state.records[url]) || !fresh(state.records[url]?.checkedAt)))
-    .filter(url => !fresh(state.attempts[url]?.at)).sort((a,b) => Number(!!state.records[a])-Number(!!state.records[b]) || a.localeCompare(b));
+    .filter(url => !attemptFresh(state.attempts[url])).sort((a,b) => Number(!!state.records[a])-Number(!!state.records[b]) || a.localeCompare(b));
   for (const url of pending) {
     if (fetchedArticles >= maxRequests || Date.now()-started >= maxDurationMs) break;
     await slot();
@@ -262,7 +272,7 @@ async function crawl(language, { root = __dirname, now = new Date().toISOString(
   state.language = language; state.updatedAt = now;
   state.statistics = { members: members.size, available: [...members.keys()].filter(u => (ordinaryUrls.has(u) || eligibleRecord(state.records[u])) && state.attempts[u]?.status !== 'unavailable').length,
     fetchedIndexes, fetchedArticles, failures, pendingIndexes: state.pendingIndexes?.length || 0,
-    pendingDiscoveredIndexes:(state.discoveredIndexes||[]).filter(s=>!state.indexes[s.url]).length };
+    pendingDiscoveredIndexes:language === 'ru' ? 0 : (state.discoveredIndexes||[]).filter(s=>!state.indexes[s.url]).length };
   writeState(partial, state); console.log(JSON.stringify({ language, ...state.statistics }));
   return state;
 }
@@ -270,4 +280,4 @@ if (require.main === module) {
   crawl(process.argv[2], { maxRequests: Number(process.env.INDEX_MAX_REQUESTS || 600), maxDurationMs: Number(process.env.INDEX_MAX_DURATION_MS || 300000),
     intervalMs: Number(process.env.CRAWL_REQUEST_INTERVAL_MS || 500) }).catch(e => { console.error(e); process.exitCode = 1; });
 }
-module.exports = { parseIndex, crawl, readState, writeState, eligibleRecord, isExcluded, originHint, isPager };
+module.exports = { parseIndex, crawl, readState, writeState, eligibleRecord, isExcluded, originHint, isPager, requestHtml };

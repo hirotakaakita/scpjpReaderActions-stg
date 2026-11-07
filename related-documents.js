@@ -26,6 +26,19 @@ function normalize(value, base) {
   } catch { return null; }
 }
 
+// A published article may redirect to one of its paginated views. Accept that
+// view for fetching only; it is not a new catalog entry or a discovery source.
+function articleFetchTarget(value) {
+  try {
+    const u = new URL(value);
+    if (u.username || u.password || u.port || !['http:', 'https:'].includes(u.protocol)) return null;
+    if (u.hostname.startsWith('www.') && hosts.has(u.hostname.slice(4))) u.hostname = u.hostname.slice(4);
+    if (normalize(u.href)) return u.href;
+    if (u.search || !/^\/[^/]+(?:\/(?:p|offset|page\d+_limit)\/\d+)+(?:\/noredirect\/true)?$/.test(u.pathname)) return null;
+    return normalize(u.origin + '/' + u.pathname.split('/')[1]) ? u.href : null;
+  } catch { return null; }
+}
+
 function extractHtml(url, html, now = new Date().toISOString(), existingDocument = null) {
   const page = normalize(url);
   if (!page) throw Error('Unsupported document URL');
@@ -38,14 +51,17 @@ function extractHtml(url, html, now = new Date().toISOString(), existingDocument
       const error=Error('Unavailable article: '+availability.reason);error.articleUnavailable=availability.terminal;throw error;
     }
     const block=d.querySelector('#page-content .error-block,.page-not-found');
-    if(!root||!title||block){const error=Error('Unrecognized article structure');
+    const substantive = root?.cloneNode(true);
+    if (substantive) for (const n of substantive.querySelectorAll(excluded + ',.error-block')) n.remove();
+    const errorOnly = block && !substantive?.textContent.trim() && !substantive?.querySelector('img,svg,canvas,video,audio,iframe');
+    if(!root||!title||errorOnly){const error=Error('Unrecognized article structure');
       error.articleUnavailable=!!block&&/not found|does not exist|no existe|存在しません/i.test(block.textContent);throw error;}
     const tags = [...d.querySelectorAll('.page-tags a')].map(a => a.textContent.trim()).filter(Boolean);
     const translations = [...d.querySelectorAll('a[rel~="alternate"][hreflang],link[rel~="alternate"][hreflang],.translation-source a[href],a[data-translation-source]')]
       .map(a => normalize(a.getAttribute('href'), page.url)?.url).filter(Boolean);
     const authors = [...d.querySelectorAll('.licensebox a,.credit a,#u-credit-view a')]
       .filter(a => /wikidot\.com\/user:info\//i.test(a.href)).map(a => ({ name: a.textContent.trim(), url: a.href }));
-    for (const n of root.querySelectorAll(excluded)) n.remove();
+    for (const n of root.querySelectorAll(excluded + ',.error-block')) n.remove();
     const links = [...new Set([...root.querySelectorAll('a[href]')].filter(a => !a.classList.contains('newpage') && !a.getAttribute('href').startsWith('#'))
       .map(a => normalize(a.getAttribute('href'), page.url)?.url).filter(v => v && v !== page.url))].sort();
     // Lazy import: the ordinary crawler also calls this extractor with its DOM.
@@ -207,7 +223,8 @@ async function fetchRecord(url) {
   if (!page) throw Error('Unsupported URL');
   // Validate every redirect so an allowlisted link cannot redirect requests to arbitrary hosts.
   const request = async (target, depth = 0) => {
-    if (!normalize(target) || depth > 5) throw Error('Unsupported redirect');
+    target = articleFetchTarget(target);
+    if (!target || depth > 5) throw Error('Unsupported redirect');
     const response = await axios.get(target, { timeout: 20000, maxRedirects: 0, maxContentLength: 4 * 1024 * 1024,
       validateStatus: s => (s >= 200 && s < 400), headers: { 'User-Agent': 'SCPReaderCatalog/1.0', Accept: 'text/html,application/json' } });
     if (response.status >= 300) return request(new URL(response.headers.location, target).href, depth + 1);
@@ -272,4 +289,4 @@ if (require.main === module) {
   if (!Number.isInteger(count) || count < 0 || count > 1000) throw Error('Invalid request limit');
   run({ maxRequests: count, importDirectory: process.env.RELATED_DOCUMENT_IMPORT_DIR || null }).catch(error => { console.error(error); process.exitCode = 1; });
 }
-module.exports = { normalize, extractHtml, extractApi, capture, classify, buildCatalogs, run, fetchRecord, readCatalogs, loadCache, saveCache };
+module.exports = { normalize, articleFetchTarget, extractHtml, extractApi, capture, classify, buildCatalogs, run, fetchRecord, readCatalogs, loadCache, saveCache };

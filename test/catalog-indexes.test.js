@@ -9,6 +9,28 @@ const date='2026-11-06T00:00:00Z',base='https://scp-jp.wikidot.com/';
 const html=s=>'<div id="page-title">Index</div><div id="page-content">'+s+'</div>';
 const source={url:base+'foundation-tales-jp',kind:'tale'};
 const rec=(url,tags=['jp'])=>({url,title:'Work',tags,checkedAt:date,contentSha256:'a'.repeat(64),descriptionExcerpt:'Real article',availabilityVersion:1});
+
+test('transient article failures retry after cooldown without refetching successful metadata',async t=>{
+  const root=fs.mkdtempSync(path.join(os.tmpdir(),'scp-index-retry-'));t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
+  const url=base+'retry-story';let attempts=0,indexRequests=0;
+  const options={root,sources:[{...source,language:'jp'}],now:date,intervalMs:0,maxRequests:1,
+    request:async()=>{indexRequests++;return html('<ul><li><a href="/retry-story">Story</a></li></ul>')},
+    articleRequest:async()=>{attempts++;throw Error('socket hang up')}};
+  await crawl('jp',options);
+  await crawl('jp',{...options,now:'2026-11-06T00:05:00Z'});assert.equal(attempts,1);
+  const later='2026-11-06T00:20:00Z';
+  const state=await crawl('jp',{...options,now:later,articleRequest:async()=>{attempts++;return {...rec(url),checkedAt:later}}});
+  assert.equal(attempts,2);assert.equal(indexRequests,1);assert.equal(state.attempts[url].status,'success');
+});
+
+test('embedded index redirects allow only the matching Wikidot asset',async t=>{
+  const axios=require('axios'),original=axios.get;t.after(()=>{axios.get=original});
+  const url=base+'hub/html/abc-123',target='https://scp-jp.wdfiles.com/local--html/hub/abc-123/scp-jp.wikidot.com/';
+  axios.get=async u=>u===url?{status:302,headers:{location:target}}:{status:200,data:'embedded content'};
+  assert.equal(await require('../catalog-indexes').requestHtml(url),'embedded content');
+  axios.get=async()=>({status:302,headers:{location:target.replace('abc-123','wrong-asset')}});
+  await assert.rejects(require('../catalog-indexes').requestHtml(url),/Unsafe index redirect/);
+});
 test('index lists, tables, flat SCP layouts, tabs and missing links',()=>{
   const r=parseIndex(html('<nav><a href="/nav">nav</a></nav><ul><li><a href="/work-a">A</a></li></ul><table><tr><td><a href="/work-b">B</a></td></tr></table><ul><li><a class="newpage" href="/missing">missing</a></li><li><a href="/guide-hub">guide</a></li><li><a href="https://example.com/no">external</a></li></ul>'),source,new Set());
   assert.deepEqual(r.members.map(m=>m.url),[base+'work-a',base+'work-b']);
