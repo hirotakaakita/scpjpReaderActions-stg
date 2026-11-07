@@ -106,3 +106,22 @@ normal weekly schedule; this pass does not claim all 7,024 bodies were rechecked
 The STG app adds Japanese/English fallback names for the smaller origin branches
 to HOME and the reading ledger. Existing localized names are reused for the
 previously supported branches; other app languages use English for the new names.
+
+## Additional native evidence (fourth pass)
+
+- [PL official tag list](https://scp-pl.wikidot.com/tag-list) defines `oryginał`
+  as work originally written for the Polish branch. The rule applies only on PL;
+  simultaneous `oryginał` and `tłumaczenie` are conflicting evidence.
+- The ES [Tale collection](https://lafundacionscp.wikidot.com/relatos-de-la-fundacion)
+  explicitly identifies itself as `Relatos de la Fundación Anglosajones` /
+  `Sección Anglosajona`, and distinguishes itself from the separate Spanish
+  original collection. Its indexed members can use EN when article-specific
+  provenance is absent. The similarly named Spanish-original page does not use
+  this EN rule. Existing explicit tags/credits keep priority.
+- A second bounded credit refresh examined 194 already-cataloged articles and
+  found original-source credits on 138, with no failures. The remaining credits
+  continue via the weekly collector; this is not a full recrawl.
+
+Unknown origins decrease **6,059 → 5,508**: 512 entries can now be assigned to EN
+and 39 to PL. All 58,063 additional URL/item-ID pairs remain unchanged. No title
+matching, inferred authorship, or body-link discovery is used.

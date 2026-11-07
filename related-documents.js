@@ -174,7 +174,8 @@ function classify(url, records, catalogByUrl, visited = new Set()) {
   if (branches.length === 1) return { branch: branches[0], basis: 'catalog_page_type', evidence: entries.map(e => ({ itemId: e.itemId, pageType: e.pageType })) };
   if (branches.length > 1) return { branch: null, basis: 'conflicting_catalog_types', evidence: branches };
   const r = records.get(url), known = new Set(['en', 'zh', ...Object.keys(LANGUAGES)]);
-  const { origins: tags, unsupported } = publisherOriginTags(url, r);
+  const { origins: tags, unsupported, conflicts } = publisherOriginTags(url, r);
+  if (conflicts.length) return {branch:null,basis:'conflicting_origin_tags',evidence:conflicts};
   if (unsupported.length) return {branch:null,basis:'unsupported_origin_tag',evidence:unsupported};
   if (tags.length) return { branch: tags.length === 1 ? tags[0] : null, basis: tags.length === 1 ? 'publisher_origin_tag' : 'conflicting_origin_tags', evidence: tags };
   const originalOrigins=[];

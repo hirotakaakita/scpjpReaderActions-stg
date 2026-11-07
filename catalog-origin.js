@@ -18,9 +18,11 @@ function publisherOriginTags(url, record) {
     host === 'scp-wiki.wikidot.com' && /^_[a-z]{2,3}$/.test(t) ? t.slice(1) : t).map(t=>originAliases[t] || t);
   if (host === 'scp-wiki-cn.wikidot.com' && tags.includes('原创')) values.push('cn');
   if (host === 'scp-zh-tr.wikidot.com' && tags.includes('原創')) values.push('zh');
+  if (host === 'scp-pl.wikidot.com' && tags.includes('oryginał')) values.push('pl');
   return {
     origins: [...new Set(values.map(validOrigin).filter(Boolean))],
     unsupported: [...new Set(values.filter(t => unsupportedOrigins.has(t)))],
+    conflicts: host === 'scp-pl.wikidot.com' && tags.includes('oryginał') && tags.includes('tłumaczenie') ? ['oryginał','tłumaczenie'] : [],
   };
 }
 function publisherDefaultOrigin(url, record) {
@@ -47,11 +49,12 @@ function publisherDefaultOrigin(url, record) {
   return null;
 }
 
-// These native EN collections omit language suffixes and native language tags.
-// Never apply this default to another hosting site or a translation-tagged page.
+// Explicit EN-origin collections; this is not a default from the hosting site.
 function nativeCollectionOrigin(source) {
   try {
     const u = new URL(source);
+    // The page explicitly says "Relatos ... Anglosajones / Sección Anglosajona".
+    if (u.hostname === 'lafundacionscp.wikidot.com' && /^\/relatos-de-la-fundacion(?:\/p\/\d+)?\/?$/.test(u.pathname)) return 'en';
     return u.hostname === 'scp-wiki.wikidot.com' &&
       /^\/(?:foundation-tales|goi-formats|top-rated-tales|tales-by-(?:year|author|title|date))(?:\/|$)/.test(u.pathname) ? 'en' : null;
   } catch { return null; }

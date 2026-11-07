@@ -17,6 +17,9 @@ test('native English collections do not classify translations by hosting site',(
  assert.equal(resolve(['tale'],[{source:'https://scp-wiki-cn.wikidot.com/foundation-tales'}]).branch,null);
  assert.equal(resolve(['tale'],en,{branch:'jp',basis:'publisher_origin_tag'}).branch,'jp');
  assert.equal(resolve(['tale'],[{source:'https://scp-wiki.wikidot.com/foundation-tales-audio-edition'}]).branch,null);
+ assert.equal(resolve(['relato'],[{source:'https://lafundacionscp.wikidot.com/relatos-de-la-fundacion'}]).branch,'en');
+ assert.equal(resolve(['relato'],[{source:'https://lafundacionscp.wikidot.com/relatos-de-la-fundacion-hispanoparlante'}]).branch,'es');
+ assert.equal(resolve(['relato'],[{source:'https://lafundacionscp.wikidot.com/relatos-de-la-fundacion'}],{branch:'jp',basis:'publisher_origin_tag'}).branch,'jp');
 });
 test('invalid URL suffixes and inherited heading origins are not branch evidence',()=>{
  assert.equal(originHint('https://scp-wiki-cn.wikidot.com/log-of-anomalous-items-cn'),'cn');
@@ -45,6 +48,10 @@ test('publisher native tags are scoped to the actual site, not translated by tex
  assert.equal(infer('https://scp-zh-tr.wikidot.com/story',['原創','故事']).branch,'zh');
  assert.equal(infer('https://scp-jp.wikidot.com/story',['原创']).branch,null);
  assert.equal(infer('https://scp-wiki-cn.wikidot.com/story',['原创','jp','故事']).basis,'conflicting_origin_tags');
+ assert.equal(infer('https://scp-pl.wikidot.com/story',['oryginał','opowiadanie']).branch,'pl');
+ assert.equal(infer('https://scp-pl.wikidot.com/story',['oryginał','tłumaczenie']).basis,'conflicting_origin_tags');
+ assert.equal(infer('https://scp-pl.wikidot.com/story',['tłumaczenie']).branch,null);
+ assert.equal(infer('https://scp-jp.wikidot.com/story',['oryginał']).branch,null);
 });
 test('EN hidden language tags identify the original branch without treating international as INT',()=>{
  assert.equal(infer('https://scp-wiki.wikidot.com/story',['international','_jp','tale']).branch,'jp');
