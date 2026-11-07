@@ -104,7 +104,7 @@ async function requestHtml(url) {
       u.pathname === `/local--html/${embed[1]}/${embed[2]}/${initial.hostname}/`;
     if ((!allowed.has(u.hostname) && !embeddedAsset) || u.username || u.password || u.port || !/^https?:$/.test(u.protocol)) throw Error('Unsafe index redirect');
     const r = await axios.get(current, { timeout: 25000, maxRedirects: 0, maxContentLength: 8 * 1024 * 1024,
-      validateStatus: s => s >= 200 && s < 400, headers: { 'User-Agent': 'SCPReaderCrawler/1.0', Accept: 'text/html' } });
+      validateStatus: s => s >= 200 && s < 400, headers: { 'User-Agent': 'SCPReaderCatalog/1.0', Accept: 'text/html' } });
     if (r.status < 300) return r.data;
     current = new URL(r.headers.location, current).href;
   }
