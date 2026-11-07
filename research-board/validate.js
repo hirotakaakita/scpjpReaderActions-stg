@@ -4,6 +4,7 @@ const { digest, normalizePage } = require('./extract');
 const { buildBoard, loadCatalogs } = require('./catalog');
 const { readSources } = require('./source-store');
 const { branchForPageType } = require('./classification');
+const {CATEGORY_ORDER, KIND_BY_CATEGORY, homeCategory} = require('./article-categories');
 function validate(root = path.join(__dirname, '..')) {
   const input = path.join(root, 'local-data'), directory = path.join(input, 'mobile-v3/research-board');
   const manifest = JSON.parse(fs.readFileSync(path.join(directory, 'manifest.json')));
@@ -33,6 +34,20 @@ function validate(root = path.join(__dirname, '..')) {
   }
   if (pageUrls.size !== board.overview.sourcePageCount) throw Error('Lost source page');
   const catalogs = loadCatalogs(input);
+  if (JSON.stringify(board.overview.categoryOrder) !== JSON.stringify(CATEGORY_ORDER)) throw Error('HOME category order mismatch');
+  const catalogWorks = new Map();
+  for (const catalog of catalogs) for (const row of catalog.data) {
+    const key = `catalog:${row.pageType}:${row.itemId}`;
+    if (!catalogWorks.has(key)) catalogWorks.set(key,[]);
+    catalogWorks.get(key).push({...row,language:catalog.language});
+  }
+  for (const node of board.nodes) {
+    const rows = catalogWorks.get(node[14][0]) || [];
+    const row = rows.find(row => row.language === node[11]) || rows[0];
+    if (!row || node[3] !== KIND_BY_CATEGORY[homeCategory(row.pageType,row.contentType)]) {
+      throw Error(`HOME article category mismatch: ${node[14][0]}`);
+    }
+  }
   const members = new Set(catalogs.flatMap(c => c.data.map(row =>
     normalizePage(row.isTranslatedJP !== false && row.urlJP ? row.urlJP : row.urlEN)?.url)).filter(Boolean));
   if (pageUrls.size !== members.size || [...pageUrls].some(url => !members.has(url))) {

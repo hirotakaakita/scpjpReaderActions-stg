@@ -3,7 +3,6 @@ const fs = require('node:fs');
 const path = require('node:path');
 const zlib = require('node:zlib');
 const { normalizePage, digest } = require('./extract');
-const { pageKind } = require('./semantics');
 const { readSources, importDirectory, saveSources } = require('./source-store');
 const { starLayout } = require('./layout.cjs');
 const { regionLayout } = require('./regions.cjs');
@@ -11,7 +10,7 @@ const { warpLayout } = require('./warp.cjs');
 const { classifyNodes } = require('./classification');
 const { collapseWorks } = require('./works');
 const { LANGUAGES } = require('../languages');
-const KINDS = ['scp', 'log', 'hub', 'tale', 'organization', 'document', 'goi', 'setting'];
+const {KINDS, CATEGORY_ORDER, KIND_BY_CATEGORY, homeCategory} = require('./article-categories');
 
 function buildBoard(catalogs, sources) {
   const pages = new Map(), candidates = [], catalogEntries = new Map();
@@ -46,7 +45,6 @@ function buildBoard(catalogs, sources) {
     source.title = r.title || source.title;
     source.coverage = terminal ? 'missing' : r.limitations?.includes('legacy_unchecked_links') ? 'unfetched' :
       state.lastAttempt?.status !== 'success' && state.lastAttempt?.status !== 'not_modified' ? 'stale' : 'fetched';
-    source.pageKind = pageKind(source, r);
     // A failed new observation cannot keep old assertions as current relations.
     if (source.coverage !== 'fetched') continue;
     for (const [baseType, items] of [['translation_assertion', r.translations],
@@ -60,8 +58,7 @@ function buildBoard(catalogs, sources) {
         target = catalogPage(item.target);
         const subject = item.subject ? catalogPage(item.subject) : source;
         if (!target || !subject || target.id === subject.id) continue;
-        const type = baseType === 'references' ? (item.section?.kind === 'addendum' ? 'appears_in_addendum' :
-          source.pageKind.type === 'log' ? 'appears_in_log' : 'references') : baseType;
+        const type = baseType;
         const proof = [r.url, item.quote || '', item.section?.title ? `${item.location} / ${item.section.title}` : item.location || '',
           r.contentSha256, item.sourceAnchor || '', item.note || '', r.checkedAt];
         candidates.push({ source: subject.id, target: target.id, type, proof });
@@ -73,12 +70,21 @@ function buildBoard(catalogs, sources) {
   sourcePages.forEach(n => {
     const entries = catalogEntries.get(n.id) || [];
     const own = entries.find(e => e.language === n.siteBranch) || entries[0];
-    const category = own?.contentType;
-    const kind = {record:'log',log:'log',hub:'hub',tale:'tale',goi:'goi',setting:'setting'}[category];
-    n.kindIndex = n.classificationSourceId ? 4 : n.pageType && !n.pageType.startsWith('related-document-') ? 0 : Math.max(0, KINDS.indexOf(kind || (n.pageKind || pageKind(n)).type));
+    n.kindIndex = KIND_BY_CATEGORY[homeCategory(own?.pageType || '', own?.contentType)];
   });
   const collapsed = collapseWorks(sourcePages, candidates, catalogEntries);
   const { nodes, sourcePageCount, internalReferences } = collapsed;
+  const byWork = new Map();
+  for (const entries of catalogEntries.values()) for (const entry of entries) {
+    const key = `catalog:${entry.pageType}:${entry.itemId}`;
+    if (!byWork.has(key)) byWork.set(key, []);
+    byWork.get(key).push(entry);
+  }
+  for (const node of nodes) {
+    const entries = byWork.get(node.id) || [];
+    const entry = entries.find(row => row.language === node.siteBranch) || entries[0];
+    node.kindIndex = KIND_BY_CATEGORY[homeCategory(node.pageType || '', entry?.contentType)];
+  }
   const relations = collapsed.relations.filter(edge => edge.type !== 'translation_assertion');
   nodes.forEach((n, index) => { n.index = index; });
   const byId = new Map(nodes.map(n => [n.id, n]));
@@ -116,7 +122,7 @@ function buildBoard(catalogs, sources) {
     branches: groups.map(b => ({ code: b.code, x: b.left, y: b.top, width: b.width, height: b.height,
       count: b.nodes.length, lanes: b.lanes, polygon: b.polygon })),
     points: [...points.values()], branchLinks: [], aggregateLinks: [], tiles: [...tileKeys], kinds: KINDS, types,
-    classification: 'reading_record_page_type', membership: 'official_index_catalog_v3', linkPolicy: 'excluded_verified_semantics_only',
+    classification: 'reading_record_page_type', categoryOrder: CATEGORY_ORDER, categoryClassification: 'home_article_classification_v1', membership: 'official_index_catalog_v3', linkPolicy: 'excluded_verified_semantics_only',
     classificationCounts: Object.fromEntries([...new Set(nodes.map(n => n.classificationBasis))].sort()
       .map(basis => [basis, nodes.filter(n => n.classificationBasis === basis).length])),
     semanticCoverage: 'partial_source_specific_only', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/' };

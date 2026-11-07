@@ -6,8 +6,14 @@ const {buildBoard, loadCatalogs} = require('../research-board/catalog');
 const {makeRecord, normalizePage} = require('../research-board/extract');
 const {merge} = require('../research-board/source-store');
 const {importCatalogSources} = require('../research-board/catalog-sources');
+const {CATEGORY_ORDER,KIND_BY_CATEGORY,homeCategory} = require('../research-board/article-categories');
 const base='https://scp-wiki.wikidot.com/';
 const stamp='2026-11-07T00:00:00Z';
+test('board categories match the HOME contract and order',()=>{
+  const contract = require('./fixtures/board-article-categories.json');
+  assert.deepEqual(CATEGORY_ORDER,contract.categoryOrder);
+  for(const row of contract.cases) assert.equal(homeCategory(row.pageType,row.contentType),row.category,JSON.stringify(row));
+});
 function article(slug, extra={}) {
   return {itemId:`scp-series-${slug.replace('scp-','')}`,pageType:'scp-series',contentType:'scp',
     titleJP:slug,urlJP:base+slug,isTranslatedJP:true,...extra};
@@ -43,6 +49,18 @@ test('new catalog content categories separate records, GoI, settings, Tales and 
   const board=buildBoard([catalog(types.map(type=>article(type,{itemId:'document-en--'+type,pageType:'related-document-en',contentType:type})))],new Map());
   assert.deepEqual(Object.fromEntries(board.nodes.map(n=>[n[4],n[3]])),{goi:6,hub:2,record:1,setting:7,tale:3});
   assert.equal(board.overview.sections.length,5);
+});
+test('SCP-EX and JOKE have their own districts and unknown articles never use tag/URL guesses',()=>{
+  const rows=[article('scp-001'),article('scp-002-ex',{pageType:'scp-ex'}),
+    article('scp-003-j',{itemId:'joke-scps-003',pageType:'joke-scps'}),
+    article('experiment-log-004',{itemId:'document-en--experiment-log-004',pageType:'related-document-en',contentType:'other'})];
+  const sources=new Map();
+  merge(sources,source('experiment-log-004','<div class="page-tags"><a>tale</a><a>scp</a></div>'));
+  const board=buildBoard([catalog(rows)],sources);
+  assert.equal(board.nodes.find(n=>n[4]==='scp-002-ex')[3],KIND_BY_CATEGORY.ex);
+  assert.equal(board.nodes.find(n=>n[4]==='scp-003-j')[3],KIND_BY_CATEGORY.joke);
+  assert.equal(board.nodes.find(n=>n[4]==='experiment-log-004')[3],KIND_BY_CATEGORY.other);
+  assert.deepEqual(board.overview.sections.map(s=>s.kind),[0,8,9,5]);
 });
 test('mutual and addendum hyperlinks never create connections',()=>{
   const sources=new Map();merge(sources,source('scp-001','<h2>Addendum:</h2><a href="/scp-002">SCP-002</a>'));

@@ -1,5 +1,6 @@
 'use strict';
 // Offline, deterministic star systems. Layout proximity is presentation only.
+const {categoryRank} = require('./article-categories');
 const GOLDEN=2.399963229728653;
 function pack(items,padding=32){
  const maxRadius=Math.max(1,...items.map(i=>i.radius)),cellSize=maxRadius*2+padding,grid=new Map();
@@ -15,15 +16,16 @@ function starLayout(nodes,neighbors){
  for(const code of branches){
   const members=nodes.filter(n=>n.branch===code),buckets=new Map();
   for(const node of members){const match=node.slug.match(/^scp-(?:[a-z]{1,4}-)?(\d+)/i),number=Number.isInteger(node.articleNumber)?node.articleNumber:match?Number(match[1]):null,start=number!==null?Math.floor(number/100)*100:null;
-   const pageType=node.pageType||(node.kindIndex===0?(node.branch==='en'?'scp-series':`scp-series-${node.branch}`):'');
-   const prefix=node.pageType?.startsWith('joke-scps')?'JOKE ':node.pageType&&/^scp-(?:[a-z-]+-)?ex$/.test(node.pageType)?'EX ':'';
-   const label=node.kindIndex===0&&start!==null?`${prefix}${String(start).padStart(3,'0')}–${String(start+99).padStart(3,'0')}`:node.kindIndex===0?prefix+'SPECIAL':null;
-   const key=node.kindIndex+':'+pageType+':'+(label||'');if(!buckets.has(key))buckets.set(key,{kind:node.kindIndex,label,nodes:[]});buckets.get(key).nodes.push(node);
+   const isScp = [0,8,9].includes(node.kindIndex);
+   const pageType=node.pageType||(isScp?(node.branch==='en'?'scp-series':`scp-series-${node.branch}`):'');
+   const prefix='';
+   const label=isScp&&start!==null?`${prefix}${String(start).padStart(3,'0')}–${String(start+99).padStart(3,'0')}`:isScp?'SPECIAL':null;
+   const key=categoryRank(node.kindIndex)+':'+pageType+':'+(label||'');if(!buckets.has(key))buckets.set(key,{kind:node.kindIndex,label,nodes:[]});buckets.get(key).nodes.push(node);
   }
   const local=[];
   for(const [key,bucket]of [...buckets].sort(([a],[b])=>a.localeCompare(b,'en',{numeric:true}))){
    bucket.nodes.sort((a,b)=>a.id.localeCompare(b.id,'en'));
-   const chunkSize=bucket.kind===0&&bucket.label&&!bucket.label.includes('SPECIAL')?bucket.nodes.length:200;
+   const chunkSize=[0,8,9].includes(bucket.kind)&&bucket.label&&!bucket.label.includes('SPECIAL')?bucket.nodes.length:200;
    for(let start=0;start<bucket.nodes.length;start+=chunkSize){
     const list=bucket.nodes.slice(start,start+chunkSize),available=new Set(list.map(n=>n.index)),systems=[];
     const ranked=[...list].sort((a,b)=>b.degree-a.degree||a.id.localeCompare(b.id,'en'));
@@ -40,7 +42,7 @@ function starLayout(nodes,neighbors){
     const section={id:`${code}:${key}:${start}`,branch:code,kind:bucket.kind,label:bucket.label||`${list[0].slug.slice(0,14)} – ${list.at(-1).slug.slice(0,14)}`,count:list.length,radius,systems,nodes:list};local.push(section);
    }
   }
-  local.sort((a,b)=>b.count-a.count||a.id.localeCompare(b.id,'en'));pack(local,70);
+  local.sort((a,b)=>categoryRank(a.kind)-categoryRank(b.kind)||b.count-a.count||a.id.localeCompare(b.id,'en'));pack(local,70);
   const radius=Math.max(...local.map(s=>Math.hypot(s.x,s.y)+s.radius))+100;
   groups.push({code,nodes:members,radius,sections:local});
  }
