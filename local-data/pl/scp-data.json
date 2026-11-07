@@ -1,13 +1,13 @@
 {
-  "totalCount": 2110,
+  "totalCount": 2109,
   "language": "pl",
-  "timestamp": "2026-11-06T15:56:42.349Z",
+  "timestamp": "2026-11-07T05:05:58.493Z",
   "duration": 8014,
   "status": "completed",
   "statistics": {
-    "translated": 2110,
+    "translated": 2109,
     "untranslated": 0,
-    "withImage": 1221
+    "withImage": 1220
   },
   "data": [
     {
@@ -79081,39 +79081,6 @@
         "wzrokowe",
         "tag-a0112e888b1a9a2e97f49cb5",
         "tag-ce46da2cce4229ea041d02c4"
-      ],
-      "tagVersion": 3,
-      "tagFetchStatus": "success",
-      "isTranslatedJP": true,
-      "extractedFrom": "lista-pl",
-      "pageType": "scp-series-pl",
-      "contentType": "scp",
-      "lastUpdated": "2026-10-06T06:09:59.847Z",
-      "createdAt": "2026-08-01T12:47:55.130Z",
-      "translatedLanguages": [
-        "pl"
-      ]
-    },
-    {
-      "itemId": "scp-series-pl-287",
-      "numericItemId": 287,
-      "titleJP": "Fa\u0142szywa mikronacja",
-      "urlEN": "http://scp-wiki.wikidot.com/scp-pl-287",
-      "urlJP": "http://scp-pl.wikidot.com/scp-pl-287",
-      "imageUrl": "http://scp-pl.wikidot.com/local--files/scp-pl-287/SCP-PL-287-1.jpeg",
-      "objectClass": "Bezpieczne",
-      "rating": 2,
-      "descriptionExcerpt": "SCP-PL-287 to by\u0142a platforma przeciwlotnicza z czas\u00f3w drugiej wojny \u015bwiatowej znajduj\u0105ca si\u0119 w pobli\u017cu Wielkiej Brytanii. Powierzchnia podmiotu wynosi 4000 m2. Obiekt jest odporny na wszelkie obra\u017cenia.\nSCP-PL-287-1 to grupa humanoidalnych stworze\u0144 zamieszkuj\u0105cych SCP-PL-287. Wszystkie instancje s\u0105 pokryte czerwonymi \u0142uskami. Dodatkowymi charakterystycznymi elementami dla nich s\u0105 dodatkowa para ko\u0144czyn zako\u0144czona szczypcami oraz ca\u0142kowicie szare ga\u0142ki oczne. Ich budowa czaszki znacz\u0105co r\u00f3\u017cni si\u0119",
-      "tags": [
-        "ezoteryczne",
-        "humanoid",
-        "kw2021",
-        "tag-bc34da44d8b873c07e3c8368",
-        "reanimacja",
-        "rozumne",
-        "struktura",
-        "wrogie",
-        "tag-9674aaa18d9818d4cd7a6f93"
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
