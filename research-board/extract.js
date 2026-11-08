@@ -111,6 +111,7 @@ function extractHtml(html, url, existingDocument = null) {
     return { title, tags: [...new Set(tags)].sort(), authors, links:bodyLinks(root, source),
       linkExtractionVersion: EXTRACTOR_VERSION,
       originalSources: require('../origin-provenance').extractOriginalSources(document,source.url),
+      ...require('../origin-provenance').extractAuthorCredits(document),
       translations, semanticRelations, limitations: includes ? ['iframe_content_not_expanded'] : [] };
   } finally { dom?.window.close(); }
 }
@@ -130,7 +131,7 @@ function makeRecord(url, body, format = 'html', now = new Date().toISOString(), 
   const page = normalizePage(url);
   if (!page) throw new Error('Unsupported source URL');
   const content = format === 'ftml' ? extractFtml(JSON.parse(body), page.url) : extractHtml(body, page.url, existingDocument);
-  return { schemaVersion: 1, extractorVersion: EXTRACTOR_VERSION, pageId: page.id, url: page.url,
+  return { schemaVersion: 1, extractorVersion: EXTRACTOR_VERSION, identityMetadataVersion:1, pageId: page.id, url: page.url,
     fetchedAt: now, checkedAt: now, contentSha256: digest(body), format,
     etag: response.etag || null, lastModified: response.lastModified || null,
     ...content };

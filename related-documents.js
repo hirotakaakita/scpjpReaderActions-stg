@@ -71,9 +71,10 @@ function extractHtml(url, html, now = new Date().toISOString(), existingDocument
     const metadata = require('./local-crawler');
     return { ...page, title, tags, translations: [...new Set(translations)].sort(), authors,
       originProvenanceVersion:provenance.VERSION, originalSources:provenance.extractOriginalSources(d,page.url),
+      ...provenance.extractAuthorCredits(d),
       objectClass: metadata.extractObjectClassFromDocument(d), rating: metadata.extractRatingFromDocument(d),
       imageUrl: metadata.extractImageUrlFromDocument(d,page.url),
-      links, bodyLinks, linkExtractionVersion: boardExtractor.EXTRACTOR_VERSION,
+      links, bodyLinks, linkExtractionVersion: boardExtractor.EXTRACTOR_VERSION,identityMetadataVersion:1,
       descriptionExcerpt: root.textContent.trim().replace(/\s+/g, ' ').slice(0, 250),
       contentSha256: hash(String(html)), checkedAt: now, format: 'html', availabilityVersion: 1 };
   } finally { dom?.window.close(); }

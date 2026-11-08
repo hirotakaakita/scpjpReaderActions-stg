@@ -6,6 +6,7 @@ const { readSources } = require('./source-store');
 const { branchForPageType } = require('./classification');
 const {CATEGORY_ORDER, KIND_BY_CATEGORY, homeCategory} = require('./article-categories');
 const {scpIdentityKey}=require('./translation-identities');
+const {originalPage}=require('../origin-provenance');
 function validate(root = path.join(__dirname, '..')) {
   const input = path.join(root, 'local-data'), directory = path.join(input, 'mobile-v3/research-board');
   const manifest = JSON.parse(fs.readFileSync(path.join(directory, 'manifest.json')));
@@ -86,6 +87,16 @@ function validate(root = path.join(__dirname, '..')) {
   }
   if(board.overview.linkPolicy!=='catalog_members_body_links_v6')throw Error('Invalid body link policy');
   const sources=readSources(path.join(input,'research-board-sources'));
+  for(const proof of board.workIdentityProofs||[])if(proof.method==='shared_explicit_original_credit'){
+    const original=url=>{
+      const p=normalizePage(url),r=p&&sources.get(p.id)?.record;
+      const raw=(r?.originalSources||[]).filter(x=>x.method==='credit_original_label');
+      if(new Set(raw.map(x=>x.url)).size!==1)return null;
+      return originalPage(raw[0]?.url)?.url;
+    };
+    const a=original(proof.source),b=original(proof.target);
+    if(!a||a!==b)throw Error('Unproven shared original-credit identity');
+  }
   for(const edge of board.edges){
     if(edge[0]===edge[1] || !board.nodes[edge[0]] || !board.nodes[edge[1]])throw Error('Invalid catalog link endpoints');
     if(board.overview.types[edge[2]]!=='references')continue;

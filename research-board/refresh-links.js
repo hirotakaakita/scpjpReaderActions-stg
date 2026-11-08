@@ -28,11 +28,11 @@ async function refresh({root=path.join(__dirname,'..'),language,maxRequests=600,
       (ra?.checkedAt||'').localeCompare(rb?.checkedAt||'')||a.id.localeCompare(b.id,'en');
   });
   const fetch=request|| (async url=>{
-    const current=await fetchRecord(url,incoming);
+    const requestedAt=Date.now(),current=await fetchRecord(url,incoming);
     const p=normalizePage(url),file=path.join(incoming,digest(p.id)+'.json');
     if(!fs.existsSync(file))throw Error('Missing current body-link capture');
     const record=JSON.parse(fs.readFileSync(file)).record;
-    if(record?.contentSha256!==current.contentSha256)throw Error('Stale body-link capture');
+    if(!require('./refresh-identities').freshCapture(record,current,requestedAt))throw Error('Stale body-link capture');
     return record;
   });
   const report={language,totalCatalogPages:pages.size,pendingBefore:queue.length,attempted:0,updated:0,failed:0};

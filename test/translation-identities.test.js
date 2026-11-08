@@ -58,6 +58,48 @@ test('two collected translations join without inventing a native node when origi
  assert(b.nodes[0][13].every(p=>p[0]!=='jp'));
  intl.state.record.authors=[];assert.equal(board([cn,intl]).nodes.length,2);
 });
+
+test('translations with the same explicit original credit join across different paths even when the original is uncollected',()=>{
+ const cn=fixture('cn','translated-a'),es=fixture('es','translated-b');
+ for(const x of [cn,es])x.state.record.originalSources=[{url:'https://scp-jp.wikidot.com/not-in-catalog',method:'credit_original_label'}];
+ const b=board([cn,es]);assert.equal(b.nodes.length,1);assert.equal(b.overview.sourcePageCount,2);assert.equal(b.nodes[0][13].length,2);
+ es.state.record.originalSources=[{url:'https://scp-jp.wikidot.com/different-original',method:'credit_original_label'}];assert.equal(board([cn,es]).nodes.length,2);
+});
+
+test('known translator roles are excluded from original author identity and conflicts between actual authors stay separate',()=>{
+ const jp=fixture('jp'),cn=fixture('cn');
+ jp.state.record.authorCreditVersion=cn.state.record.authorCreditVersion=1;
+ jp.state.record.originalAuthors=[{id:'original'}];cn.state.record.originalAuthors=[];
+ cn.state.record.translators=[{id:'translator'}];cn.state.record.authors=[{url:'https://www.wikidot.com/user:info/translator'}];
+ assert.equal(board([jp,cn]).nodes.length,1);
+ cn.state.record.originalAuthors=[{id:'different-original'}];assert.equal(board([jp,cn]).nodes.length,2);
+});
+
+test('unlabelled fresh credits do not erase a legacy author conflict',()=>{
+ const jp=fixture('jp'),cn=fixture('cn');cn.state.record.authorCreditVersion=1;cn.state.record.originalAuthors=[];cn.state.record.translators=[];
+ cn.state.record.authors=[{url:'https://www.wikidot.com/user:info/different-author'}];assert.equal(board([jp,cn]).nodes.length,2);
+});
+
+test('only known translator accounts are removed when original-author labels are missing',()=>{
+ const cn=fixture('cn'),intl=fixture('int');cn.state.record.authorCreditVersion=1;cn.state.record.originalAuthors=[];
+ cn.state.record.translators=[{id:'translator'}];cn.state.record.authors.push({url:'https://www.wikidot.com/user:info/translator'});
+ assert.equal(board([cn,intl]).nodes.length,1);
+});
+
+test('an explicit uncollected original compatible with path/author evidence does not split established translations',()=>{
+ const cn=fixture('cn'),intl=fixture('int');cn.state.record.originalSources=[{url:'https://scp-jp.wikidot.com/aeliana',method:'credit_original_label'}];
+ assert.equal(board([cn,intl]).nodes.length,1);
+ cn.state.record.originalSources=[{url:'https://scp-jp.wikidot.com/different-original',method:'credit_original_label'}];
+ assert.equal(board([cn,intl]).nodes.length,2);
+});
+
+test('shared deletion notices or collection credits cannot combine different works',()=>{
+ const items=[fixture('cn','work-a'),fixture('int','work-a'),fixture('cn','work-b'),fixture('int','work-b')];
+ for(const x of items)x.state.record.originalSources=[{url:'https://scp-jp.wikidot.com/deletion-notice',method:'credit_original_label'}];
+ const b=board(items);assert.equal(b.nodes.length,2);
+ assert(b.nodes.every(n=>new Set(n[13].map(p=>p[2])).size===1));
+ assert(b.identityReview.some(r=>r.reason==='non_unique_original_credit'));
+});
 test('generic hubs, different proposal paths and translation-only catalogs remain separate',()=>{
  assert.equal(board([fixture('jp','groups-of-interest'),fixture('cn','groups-of-interest')]).nodes.length,2);
  assert.equal(board([fixture('jp','scp-001-proposal-a'),fixture('cn','scp-001-proposal-b')]).nodes.length,2);

@@ -65,6 +65,13 @@ function importCatalogSources(sources, input, catalogs) {
         saved.record.links=r.bodyLinks||[];
         saved.record.linkExtractionVersion=r.linkExtractionVersion;
       }
+      if(saved?.record&&members.has(p.id)&&saved.record.contentSha256===r.contentSha256&&r.authorCreditVersion>=1){
+        saved.record.identityMetadataVersion=r.identityMetadataVersion;
+        saved.record.authorCreditVersion=r.authorCreditVersion;
+        saved.record.originalAuthors=r.originalAuthors||[];
+        saved.record.upstreamAuthors=r.upstreamAuthors||[];
+        saved.record.translators=r.translators||[];
+      }
     }
   }
 }

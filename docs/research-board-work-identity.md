@@ -131,3 +131,70 @@ the formerly separate RU SCP catalog entry. Its RU legacy ID still marks that
 same work read and opens the actual RU catalog page. SCP-1025-RU-J likewise has
 one RU/CN node. Reference edges are remapped to merged work endpoints, with
 self-references suppressed and duplicate edges consolidated.
+
+## Explicit source credits and contributor roles
+
+The credit extractor recognizes an original article linked by the literal
+anchor label `原文`, as well as labelled JP `元記事` / `翻訳元` links. Historical
+CN publisher domains `scp-wiki-cn.org` and `www.scp-wiki-cn.org` normalize to the
+current CN host for source identity. Ordinary body references do not become
+translation identity assertions.
+
+JP `元記事リンク` and `著作権者`, and CN plain bracketed `原文地址` URLs are
+also supported. A separately labelled derivative-work creator takes precedence
+over an upstream SCP creator; `upstreamAuthors` preserves that distinction.
+
+`authorCreditVersion: 1` stores `originalAuthors` and `translators` separately.
+Only explicitly labelled credit lines supply those roles. Unlabelled or image
+contributors are not promoted to original authors. When no role was recognized,
+legacy author conflicts remain conservative; an empty new field alone must not
+erase a prior conflict. Actual original-author disagreements still block path
+inference. A direct explicit original-source credit can establish identity
+independently of the credited translators.
+
+When an original-author label is absent, only explicitly identified translator
+accounts are subtracted from legacy credits; unassigned contributors are not
+silently discarded. A translation citing a single uncollected original on the
+expected original branch and exact path can still join another version with
+the same origin/path and shared author. Adding a compatible explicit source
+credit must not detach previously supported translations.
+
+Two collected translations citing the same single explicit original URL can
+share one node even when their paths differ and the original is uncollected.
+Conflicting or multiple original credits, incompatible known origins and
+distinct pages on one hosting site remain guarded. Validation rechecks the
+shared original URL against both saved source records. No original placeholder
+or new catalog article is added.
+
+`node research-board/refresh-identities.js [language]` refreshes the unresolved
+single-language nodes that already have same-origin/path counterparts, plus
+those existing counterparts only. The queue is resumable through per-page
+captures, has a global request/time budget and at most one active request per
+hosting site. Failed observations back off for one day; refined metadata is
+rechecked after 28 days if identity remains unresolved. The existing weekly
+language jobs run a 150-request / 3-minute pass after normal source collection.
+
+If distinct pages on one site cite the same original URL, that URL is not a
+unique work identifier (for example a shared deletion notice or collection).
+Such credits stay in source metadata and produce `non_unique_original_credit`
+review entries, but cannot merge those different works. Independent matching
+path/author evidence can still identify the individual translations.
+
+FTML capture freshness validates the page, format and capture timestamp. The
+ordinary RU catalog hashes its source string, whereas research evidence hashes
+the full API response; comparing those two hashes would incorrectly reject a
+successful API capture. HTML captures additionally compare content hashes.
+
+The 2026-11-08 targeted pass revisited all 1,892 selected/counterpart pages and
+retried transient failures successfully. After the additional JP/CN label pass,
+40 of the original 851 translation-counterpart cases and 81 of the original 301
+native-counterpart cases became multilingual nodes; 811 and 220 respectively
+remain held. These cohort outcomes trace the original page URLs into the new
+graph. Of the first group's 40 resolutions, 22 used an actual original or alias
+at a different path rather than the previous same-path candidate.
+
+The graph contains 59,123 work nodes / 125,023 retained page URLs, with 26,083
+edges after current body-link extraction. Identity counts must not be reduced
+by forcing unknown authors or generic/shared source URLs to match. Full Node
+tests and actual Flutter payload installation, identity/read and reference
+direction checks pass. Schema 3 and existing article IDs remain unchanged.
