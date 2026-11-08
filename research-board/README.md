@@ -24,6 +24,18 @@ The published manifest is authoritative for work/edge counts and payload sizes. 
 
 ## Rendering and update contract
 
+For a bounded manual catch-up, dispatch `research-board-backfill.yml` on STG
+master. It reuses `refresh-links.js` against the currently published catalogs,
+checking at most 500 pages per site by default (17 sites, 8,500 attempts maximum).
+Four sites run in parallel; the ordinary `scp-crawl` lock prevents overlap with
+the weekly crawler. Per-page metadata checkpoints are uploaded as compressed
+artifacts, and the short `scp-data-update` writer lock is acquired only after
+collection. Publication checks out current master, merges the captures, validates
+the graph and pushes only board/source data. It never collects new catalog
+members, changes mobile-v1/v2/v3 article catalogs or sends notifications. Logs
+show progress every 25 attempts and the publish summary lists totals per site.
+Artifacts remain available for seven days if collection or publication fails.
+
 The Flutter app installs the shared gzip during startup into immutable local shards in an isolate. Only visible geometry and selected relations/evidence enter bounded caches. Search uses a compact branch index rather than repeatedly decoding all node versions. The same graph revision is reused across content languages. Failed updates keep the last valid version; open routes pin their version. Corrupt local shards mark the snapshot for reinstallation, even when the remote revision is unchanged.
 
 `node research-board/validate.js` validates checksums, exact catalog membership, work/alias uniqueness, allowed link types, versioned body evidence, classifications and deterministic regeneration from saved inputs. Existing STG validation and weekly publication both run it. Production Actions are unchanged and the production app does not enable or download the board by default.

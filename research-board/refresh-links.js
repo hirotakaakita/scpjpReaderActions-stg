@@ -59,5 +59,6 @@ async function refresh({root=path.join(__dirname,'..'),language,maxRequests=600,
 }
 if(require.main===module)refresh({language:process.argv[2],maxRequests:Number(process.env.BOARD_LINK_MAX_REQUESTS||600),
   maxDurationMs:Number(process.env.BOARD_LINK_MAX_DURATION_MS||300000),intervalMs:Number(process.env.CRAWL_REQUEST_INTERVAL_MS||500)})
+  .then(report=>{if(process.env.BOARD_LINK_REPORT_FILE){const file=path.resolve(process.env.BOARD_LINK_REPORT_FILE);fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,JSON.stringify(report)+'\n');}})
   .catch(error=>{console.error(error);process.exitCode=1;});
 module.exports={refresh};

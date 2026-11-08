@@ -199,6 +199,8 @@ function generateResearchBoard(input, output, { incoming = path.join(input, '../
   const sha256 = digest(bytes), fileName = `board-${sha256}.json.gz`;
   const directory = path.join(output, 'research-board');
   fs.mkdirSync(directory, { recursive: true });
+  const pointer=path.join(directory,'manifest.json');
+  const previousFile=fs.existsSync(pointer)?JSON.parse(fs.readFileSync(pointer)).fileName:null;
   fs.writeFileSync(path.join(directory, fileName), bytes);
   const manifest = { schemaVersion: 3, revision: board.revision, timestamp: board.overview.generatedAt,
     fileName, bytes: bytes.length, decodedBytes: json.length, sha256,
@@ -207,9 +209,7 @@ function generateResearchBoard(input, output, { incoming = path.join(input, '../
   fs.writeFileSync(path.join(directory, 'manifest.json.tmp'), JSON.stringify(manifest) + '\n');
   fs.renameSync(path.join(directory, 'manifest.json.tmp'), path.join(directory, 'manifest.json'));
   // Retain the last published payload so a cached pointer can still be used.
-  const prior = fs.readdirSync(directory).filter(n => /^board-[a-f0-9]{64}\.json\.gz$/.test(n) && n !== fileName)
-    .sort((a,b) => fs.statSync(path.join(directory,b)).mtimeMs - fs.statSync(path.join(directory,a)).mtimeMs);
-  for (const name of prior.slice(1)) fs.unlinkSync(path.join(directory, name));
+  if(previousFile!==fileName)for(const name of fs.readdirSync(directory))if(/^board-[a-f0-9]{64}\.json\.gz$/.test(name)&&name!==fileName&&name!==previousFile)fs.unlinkSync(path.join(directory,name));
   return manifest;
 }
 module.exports = { buildBoard, generateResearchBoard, loadCatalogs };
