@@ -1381,41 +1381,8 @@
       "lastSentWindow": null
     },
     "th": {
-      "items": [
-        {
-          "itemId": "scp-series-199",
-          "titleJP": "เฟิร์นจารกรรม"
-        },
-        {
-          "itemId": "scp-series-3125",
-          "titleJP": "ผู้หลบหนี"
-        },
-        {
-          "itemId": "scp-series-4514",
-          "titleJP": "สิ่งที่ฆ่าคุณตายได้"
-        },
-        {
-          "itemId": "scp-series-9113",
-          "titleJP": "สิ่งเทพสรรค์มามิอาจล่วงเกินไปแตะต้อง"
-        },
-        {
-          "itemId": "scp-series-th-042",
-          "titleJP": "สาวสำนึกบาป"
-        },
-        {
-          "itemId": "scp-series-th-044",
-          "titleJP": "กล่องสุ่มอวัยวะ"
-        },
-        {
-          "itemId": "scp-series-th-045",
-          "titleJP": "นิยายเชิงประสบการณ์"
-        },
-        {
-          "itemId": "scp-series-th-226",
-          "titleJP": "ม้าทะลุมิติ"
-        }
-      ],
-      "lastSentWindow": null
+      "items": [],
+      "lastSentWindow": "2026-11-08"
     },
     "ua": {
       "items": [
@@ -1554,5 +1521,5 @@
       "lastSentWindow": "2026-10-04"
     }
   },
-  "updatedAt": "2026-11-08T05:51:59.387Z"
+  "updatedAt": "2026-11-08T16:10:36.574Z"
 }
