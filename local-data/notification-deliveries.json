@@ -832,6 +832,32 @@
       "startedAt": "2026-11-08T20:27:31.125Z",
       "messageName": "projects/scpjp-reader-stg/messages/1965523600494331994",
       "sentAt": "2026-11-08T20:27:52.516Z"
+    },
+    {
+      "id": "ru/2026-11-08",
+      "lang": "ru",
+      "window": "2026-11-08",
+      "items": [
+        {
+          "itemId": "scp-series-1255",
+          "titleJP": "SCP-1255 - Виноград от «Ферма и ранчо Доунов»"
+        },
+        {
+          "itemId": "scp-series-3014",
+          "titleJP": "SCP-3014 - Одинокий голодный демон"
+        },
+        {
+          "itemId": "scp-series-6976",
+          "titleJP": "SCP-6976 - Не разбивай мне сердце"
+        },
+        {
+          "itemId": "scp-series-9951",
+          "titleJP": "SCP-9951 - Touhou Fuminkyou ~ Echoes of Insomnia"
+        }
+      ],
+      "attempts": 1,
+      "status": "sending",
+      "startedAt": "2026-11-08T20:27:31.125Z"
     }
   ]
 }
