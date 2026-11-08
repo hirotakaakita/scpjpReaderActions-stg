@@ -97,3 +97,37 @@ Verification:
 
 The data remains schema 3. Install the updated STG APK for the ambiguous-ID read
 and reader protections; the node merging itself is delivered through board data.
+
+## Category-independent work identity (2026-11-08)
+
+An article's local content category is not a work identifier. Native and
+translated catalog entries may disagree on SCP/log, Tale/other or hub/setting.
+An exact distinctive original path plus confirmed original-branch provenance
+can therefore join different categories. The native catalog entry continues to
+determine the canonical category; all existing catalog IDs remain read aliases.
+Full numbered SCP/log paths can also resolve legacy SCP-vs-document entries,
+with all suffixes preserved. Shared author conflicts and generic hub names are
+still held for review. A distinctive hub with an explicit publisher origin tag
+does not need optional author metadata merely to join its collected native hub.
+
+If the native page is uncollected, two already-collected document translations
+can join only when both have origin provenance, the exact same distinctive path
+and a shared credited Wikidot author. Explicit original credits take precedence;
+conflicting or unavailable original credits are never replaced by path guessing.
+No native placeholder, catalog row or linked target is added.
+
+The STG snapshot changed from 60,654 to 59,232 work nodes, retaining all 125,023
+page URLs. Known-origin single-language nodes whose host differs from the origin
+decreased from 4,660 to 3,151. This count cannot be expected to reach zero: among
+the remaining nodes, 1,999 have no same-path counterpart, 851 have only translated
+counterparts without enough matching identity evidence, and 301 have a native
+same-path counterpart held for conflicting authors, generic names or other
+insufficient evidence. A missing same-path counterpart does not establish that
+the work has no original anywhere; its original may be outside the catalogs or
+under an unproven different path.
+
+SCP-093-Blue-Test now has one record node with 14 language versions, including
+the formerly separate RU SCP catalog entry. Its RU legacy ID still marks that
+same work read and opens the actual RU catalog page. SCP-1025-RU-J likewise has
+one RU/CN node. Reference edges are remapped to merged work endpoints, with
+self-references suppressed and duplicate edges consolidated.

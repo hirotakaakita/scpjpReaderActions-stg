@@ -16,14 +16,47 @@ test('AELIANA original and three translations form one JP work with all old iden
  assert.equal(n[14][0],'catalog:related-document-jp:document-jp--aeliana');assert.equal(b.edges.length,0);assert.equal(b.workIdentityProofs.length,3);
 });
 test('same slug without confirmed origin, incompatible author or original branch is not merged',()=>{
- for(const mode of ['unknown','author','branch','kind']){
+ for(const mode of ['unknown','author','branch']){
    const jp=fixture('jp'),cn=fixture('cn');
    if(mode==='unknown')delete cn.state.record.catalogIdentity;
    if(mode==='author')cn.state.record.authors=[{url:'https://www.wikidot.com/user:info/another-author'}];
    if(mode==='branch')cn.row.pageType='related-document-cn';
-   if(mode==='kind')cn.row.contentType='record';
    assert.equal(board([jp,cn]).nodes.length,2,mode);
  }
+});
+
+test('work identity is independent of differing document categories when the author and original path agree',()=>{
+ const jp=fixture('jp'),cn=fixture('cn');cn.row.contentType='record';
+ const b=board([jp,cn]);assert.equal(b.nodes.length,1);assert.equal(b.nodes[0][3],6);
+ assert.equal(b.nodes[0][14][0],'catalog:related-document-jp:document-jp--aeliana');
+});
+
+test('a distinctive hub with explicit publisher origin joins its native work without author metadata',()=>{
+ const jp=fixture('jp','distinct-canon-hub','jp',{contentType:'hub'}),cn=fixture('cn','distinct-canon-hub','jp',{contentType:'hub'});
+ jp.state.record.authors=[];cn.state.record.authors=[];assert.equal(board([jp,cn]).nodes.length,1);
+ delete cn.state.record.catalogIdentity;assert.equal(board([jp,cn]).nodes.length,2);
+});
+
+test('numbered document/log paths join a native catalog work despite legacy SCP category and absent provenance metadata',()=>{
+ hosts.en='scp-wiki.wikidot.com';hosts.ru='scpfoundation.net';
+ const en=fixture('en','scp-093-blue-test','en',{contentType:'record'});
+ const ru=fixture('ru','scp-093-blue-test','en',{itemId:'scp-series-093-blue-test',pageType:'scp-series',contentType:'scp'});
+ delete ru.state.record.catalogIdentity;ru.state.record.authors=[];
+ const b=board([en,ru]);assert.equal(b.nodes.length,1);assert.equal(b.nodes[0][3],1);
+ assert.equal(b.nodes[0][13].length,2);assert(b.nodes[0][14][2].includes('catalog:scp-series:scp-series-093-blue-test'));
+});
+
+test('a category difference cannot split a distinctive work with confirmed origin and exact native path',()=>{
+ const jp=fixture('jp'),cn=fixture('cn');cn.row.contentType='record';jp.state.record.authors=[];cn.state.record.authors=[];
+ assert.equal(board([jp,cn]).nodes.length,1);
+ delete cn.state.record.catalogIdentity;assert.equal(board([jp,cn]).nodes.length,2);
+});
+
+test('two collected translations join without inventing a native node when origin, full path and author agree',()=>{
+ const cn=fixture('cn'),intl=fixture('int');
+ const b=board([cn,intl]);assert.equal(b.nodes.length,1);assert.equal(b.nodes[0][13].length,2);
+ assert(b.nodes[0][13].every(p=>p[0]!=='jp'));
+ intl.state.record.authors=[];assert.equal(board([cn,intl]).nodes.length,2);
 });
 test('generic hubs, different proposal paths and translation-only catalogs remain separate',()=>{
  assert.equal(board([fixture('jp','groups-of-interest'),fixture('cn','groups-of-interest')]).nodes.length,2);
