@@ -860,6 +860,36 @@
       "startedAt": "2026-11-08T20:27:31.125Z",
       "messageName": "projects/scpjp-reader-stg/messages/4902727744998418257",
       "sentAt": "2026-11-08T20:27:55.558Z"
+    },
+    {
+      "id": "pt/2026-11-08",
+      "lang": "pt",
+      "window": "2026-11-08",
+      "items": [
+        {
+          "itemId": "scp-series-1522",
+          "titleJP": "Navios Que se Cruzam na Noite"
+        },
+        {
+          "itemId": "scp-series-2523",
+          "titleJP": "Mercado Goblin"
+        },
+        {
+          "itemId": "scp-series-4096",
+          "titleJP": "A Velha Troca"
+        },
+        {
+          "itemId": "scp-series-6165",
+          "titleJP": "Ramadã"
+        },
+        {
+          "itemId": "scp-series-7594",
+          "titleJP": "ChatSCP"
+        }
+      ],
+      "attempts": 1,
+      "status": "sending",
+      "startedAt": "2026-11-08T23:53:24.711Z"
     }
   ]
 }
