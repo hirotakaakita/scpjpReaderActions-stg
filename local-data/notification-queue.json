@@ -1071,21 +1071,8 @@
       "lastSentWindow": "2026-11-08"
     },
     "ua": {
-      "items": [
-        {
-          "itemId": "scp-series-7819",
-          "titleJP": "Немає вільних кімнат"
-        },
-        {
-          "itemId": "scp-series-ua-145",
-          "titleJP": "Книги кривавих сліз"
-        },
-        {
-          "itemId": "scp-series-ua-185",
-          "titleJP": "Гнівливі духи"
-        }
-      ],
-      "lastSentWindow": null
+      "items": [],
+      "lastSentWindow": "2026-11-08"
     },
     "vn": {
       "items": [],
