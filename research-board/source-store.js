@@ -12,7 +12,6 @@ function capture(url, body, format = 'html', directory = path.join(__dirname, '.
   fs.mkdirSync(directory, { recursive: true });
   const file = path.join(directory, `${digest(page.id)}.json`);
   const record = makeRecord(url, body, format, new Date().toISOString(), {}, existingDocument);
-  record.links = [];
   fs.writeFileSync(`${file}.tmp`, JSON.stringify({ record, lastAttempt: { status: 'success', at: record.checkedAt } }));
   fs.renameSync(`${file}.tmp`, file);
   return true;
@@ -76,7 +75,7 @@ function saveSources(sources, directory) {
   for (const [id, state] of [...sources].sort(([a], [b]) => a.localeCompare(b, 'en'))) {
     const key = digest(id).slice(0, 2);
     if (!buckets.has(key)) buckets.set(key, []);
-    buckets.get(key).push({...state,record:state.record ? {...state.record,links:[]} : null});
+    buckets.get(key).push(state);
   }
   const files = {};
   for (const [key, rows] of buckets) {

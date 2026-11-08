@@ -62,12 +62,14 @@ test('SCP-EX and JOKE have their own districts and unknown articles never use ta
   assert.equal(board.nodes.find(n=>n[4]==='experiment-log-004')[3],KIND_BY_CATEGORY.other);
   assert.deepEqual(board.overview.sections.map(s=>s.kind),[0,8,9,5]);
 });
-test('mutual and addendum hyperlinks never create connections',()=>{
+test('mutual and addendum hyperlinks connect only existing works with direction',()=>{
   const sources=new Map();merge(sources,source('scp-001','<h2>Addendum:</h2><a href="/scp-002">SCP-002</a>'));
   merge(sources,source('scp-002','<a href="/scp-001">SCP-001</a>'));
   const board=buildBoard([catalog([article('scp-001'),article('scp-002')])],sources);
-  assert.deepEqual(board.overview.types,[]);assert.equal(board.edges.length,0);
-  assert.equal(board.overview.linkPolicy,'excluded_verified_semantics_only');
+  assert.deepEqual(board.overview.types,['references']);assert.equal(board.edges.length,2);
+  assert.equal(board.nodes.length,2);
+  assert.deepEqual(board.edges.map(e=>e.slice(0,2)).sort(),[[0,1],[1,0]]);
+  assert.equal(board.overview.linkPolicy,'catalog_members_body_links_v6');
 });
 test('reviewed exact-source assertions survive only with both catalog endpoints',()=>{
   const sources=new Map();merge(sources,source('scp-079','<p>SCP-079 and SCP-682 were contained within the same chamber for 43 minutes.</p><a href="/scp-682">682</a>'));

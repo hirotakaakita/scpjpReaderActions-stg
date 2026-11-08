@@ -27,7 +27,8 @@ function importCatalogSources(sources, input, catalogs) {
         title:record.title, tags:record.tags || [], authors:record.authors || [],
         checkedAt:record.checkedAt, fetchedAt:record.checkedAt,
         contentSha256:record.contentSha256, format:record.format,
-        links:[],
+        links:record.linkExtractionVersion>=6 ? record.bodyLinks || [] : [],
+        linkExtractionVersion:record.linkExtractionVersion || 0,
         translations:[],
         semanticRelations:[], limitations:[trusted ? 'metadata_links_only_v5' : 'legacy_unchecked_links'],
       };
@@ -60,6 +61,10 @@ function importCatalogSources(sources, input, catalogs) {
     for(const r of Object.values(state.records||{})){
       const p=normalizePage(r.url),saved=p&&sources.get(p.id);
       if(saved?.record&&members.has(p.id)&&saved.record.contentSha256===r.contentSha256&&r.originalSources?.length)saved.record.originalSources=r.originalSources;
+      if(saved?.record&&members.has(p.id)&&saved.record.contentSha256===r.contentSha256&&r.linkExtractionVersion>=6){
+        saved.record.links=r.bodyLinks||[];
+        saved.record.linkExtractionVersion=r.linkExtractionVersion;
+      }
     }
   }
 }

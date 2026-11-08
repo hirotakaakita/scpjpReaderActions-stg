@@ -14,17 +14,19 @@ Run `node mobile-catalog.js` in the existing weekly crawler workflow. The comman
 
 ## Relationships
 
-**Mutual/article hyperlinks are not used.** Body, addendum, log and footnote links are neither extracted nor saved by this feature. Translation metadata is used only to consolidate already-cataloged versions and is not drawn as an edge.
+**Body hyperlinks connect existing catalog members only.** Version 6 extraction removes navigation, credits, interwiki/translation metadata, missing-page links and fragment-only links. Explicit HTML and FTML links become directed `references` edges. Reciprocal links yield two directions. Links never discover nodes or trigger target fetches; references to an uncollected page and links within a consolidated translation work are omitted. Repeated references between the same works share an edge, retaining their source evidence. Translation identity is separate and is not drawn as an edge.
 
-Only source-specific, previously reviewed semantic assertions with exact quotes, or approved explicit canon breadcrumbs, can create edges between existing catalog members. Latest failed/deleted observations suppress older assertions. Metadata with a changed content hash cannot preserve an old semantic assertion without revalidation. Merely having a link, a similar identifier, a shared generic tag or nearby layout positions is not evidence of a story relationship.
+Only source-specific, previously reviewed semantic assertions with exact quotes, or approved explicit canon breadcrumbs, create semantic edges. Latest failed/deleted observations suppress older assertions and references. Metadata with a changed content hash cannot preserve old claims without revalidation. Merely having a link, a similar identifier, a shared generic tag or nearby layout positions is not evidence of a story relationship.
 
-Current snapshot: 125,032 catalog rows / 125,023 distinct page URLs → 75,285 work nodes, **2 verified semantic edges**. This is not an exhaustive semantic review of all articles. Isolated works remain visible. Gzip: 5,781,320 bytes; decoded JSON: 41,234,531 bytes (the manifest is authoritative after subsequent updates).
+Older cached link lists have uncertain navigation filtering and are not promoted to version 6. `node research-board/refresh-links.js <language>` backfills only already-published catalog member URLs, writes resumable per-page checkpoints, and never follows extracted targets. The existing weekly language jobs run this with a 600-request / 5-minute budget per hosting site after the usual crawl. Fresh ordinary captures also supply version 6 immediately. Untested pages come first, then snapshots older than 28 days; failures back off for one day. The shared overview reports `bodyLinkCoverage.checkedPages`, `totalPages` and `referenceEdges`, so a partial backfill is never presented as exhaustive. FTML includes, code, HTML blocks and comments are not expanded.
+
+The published manifest is authoritative for work/edge counts and payload sizes. `references` edges describe navigation in the article body, separately from the source-specific semantic assertions. This is not an exhaustive semantic review of all articles. Isolated works remain visible.
 
 ## Rendering and update contract
 
 The Flutter app installs the shared gzip during startup into immutable local shards in an isolate. Only visible geometry and selected relations/evidence enter bounded caches. Search uses a compact branch index rather than repeatedly decoding all node versions. The same graph revision is reused across content languages. Failed updates keep the last valid version; open routes pin their version. Corrupt local shards mark the snapshot for reinstallation, even when the remote revision is unchanged.
 
-`node research-board/validate.js` validates checksums, exact catalog membership, work/alias uniqueness, excluded link types, classifications and deterministic regeneration from saved inputs. Existing STG validation and weekly publication both run it. Production Actions are unchanged and the production app does not enable or download the board by default.
+`node research-board/validate.js` validates checksums, exact catalog membership, work/alias uniqueness, allowed link types, versioned body evidence, classifications and deterministic regeneration from saved inputs. Existing STG validation and weekly publication both run it. Production Actions are unchanged and the production app does not enable or download the board by default.
 
 ## HOME category parity (2026-11-08)
 

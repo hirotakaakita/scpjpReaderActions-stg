@@ -63,16 +63,18 @@ function extractHtml(url, html, now = new Date().toISOString(), existingDocument
       .map(a => normalize(a.getAttribute('href'), page.url)?.url).filter(Boolean);
     const authors = [...d.querySelectorAll('.licensebox a,.credit a,#u-credit-view a')]
       .filter(a => /wikidot\.com\/user:info\//i.test(a.href)).map(a => ({ name: a.textContent.trim(), url: a.href }));
-    for (const n of root.querySelectorAll(excluded + ',.error-block')) n.remove();
-    const links = [...new Set([...root.querySelectorAll('a[href]')].filter(a => !a.classList.contains('newpage') && !a.getAttribute('href').startsWith('#'))
-      .map(a => normalize(a.getAttribute('href'), page.url)?.url).filter(v => v && v !== page.url))].sort();
+    const boardExtractor = require('./research-board/extract');
+    for (const n of root.querySelectorAll(excluded + ',' + boardExtractor.EXCLUDED)) n.remove();
+    const bodyLinks = boardExtractor.bodyLinks(root, boardExtractor.normalizePage(page.url));
+    const links = bodyLinks.map(l => l.target);
     // Lazy import: the ordinary crawler also calls this extractor with its DOM.
     const metadata = require('./local-crawler');
     return { ...page, title, tags, translations: [...new Set(translations)].sort(), authors,
       originProvenanceVersion:provenance.VERSION, originalSources:provenance.extractOriginalSources(d,page.url),
       objectClass: metadata.extractObjectClassFromDocument(d), rating: metadata.extractRatingFromDocument(d),
       imageUrl: metadata.extractImageUrlFromDocument(d,page.url),
-      links, descriptionExcerpt: root.textContent.trim().replace(/\s+/g, ' ').slice(0, 250),
+      links, bodyLinks, linkExtractionVersion: boardExtractor.EXTRACTOR_VERSION,
+      descriptionExcerpt: root.textContent.trim().replace(/\s+/g, ' ').slice(0, 250),
       contentSha256: hash(String(html)), checkedAt: now, format: 'html', availabilityVersion: 1 };
   } finally { dom?.window.close(); }
 }
@@ -80,15 +82,13 @@ function extractHtml(url, html, now = new Date().toISOString(), existingDocument
 function extractApi(url, article, now = new Date().toISOString()) {
   const page = normalize(url);
   if (!page || !article?.title || typeof article.source !== 'string' || !article.source.trim()) throw Error('Invalid API article');
-  const source = article.source, links = new Set();
-  for (const match of source.matchAll(/\[\[\[([^\]|]+)(?:\|[^\]]*)?\]\]\]/g)) {
-    const target = normalize(match[1].trim(), `${page.url}/../`);
-    if (target && target.url !== page.url) links.add(target.url);
-  }
+  const source = article.source, boardExtractor=require('./research-board/extract');
+  const bodyLinks=boardExtractor.ftmlLinks(source,boardExtractor.normalizePage(page.url));
   const metadata = require('./rufoundation-crawler');
   return { ...page, title: article.title, tags: (article.tags || []).map(t => typeof t === 'string' ? t : t.name).filter(Boolean),
     objectClass: metadata.extractObjectClass(source),rating:metadata.normalizeRating(article.rating),imageUrl:metadata.extractImageUrl(source,page.slug),
-    links: [...links].sort(), translations: [], originalSources:[], originProvenanceVersion:provenance.VERSION, authors: [], format: 'ftml', contentSha256: hash(source), checkedAt: now, availabilityVersion: 1,
+    links: bodyLinks.map(l=>l.target), bodyLinks, linkExtractionVersion:boardExtractor.EXTRACTOR_VERSION,
+    translations: [], originalSources:[], originProvenanceVersion:provenance.VERSION, authors: [], format: 'ftml', contentSha256: hash(source), checkedAt: now, availabilityVersion: 1,
     descriptionExcerpt: source.replace(/\[\[[\s\S]*?\]\]/g, ' ').replace(/\s+/g, ' ').slice(0, 250) };
 }
 

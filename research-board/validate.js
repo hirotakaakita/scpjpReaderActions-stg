@@ -81,12 +81,25 @@ function validate(root = path.join(__dirname, '..')) {
   }
   for(const [id,works]of rawIdOwners)if(works.size>1&&!flaggedIds.has(id))throw Error('Unflagged reused article ID: '+id);
   if (board.nodes.some(n => n[3] === 4) ||
-      board.overview.types.some(type => ['references','appears_in_log','appears_in_addendum','translation_assertion'].includes(type))) {
+      board.overview.types.some(type => ['appears_in_log','appears_in_addendum','translation_assertion'].includes(type))) {
     throw Error('Uncollected entity or excluded hyperlink relations');
+  }
+  if(board.overview.linkPolicy!=='catalog_members_body_links_v6')throw Error('Invalid body link policy');
+  const sources=readSources(path.join(input,'research-board-sources'));
+  for(const edge of board.edges){
+    if(edge[0]===edge[1] || !board.nodes[edge[0]] || !board.nodes[edge[1]])throw Error('Invalid catalog link endpoints');
+    if(board.overview.types[edge[2]]!=='references')continue;
+    for(const id of edge[4]){
+      const proof=board.proofs[id],p=normalizePage(proof[0]),state=p&&sources.get(p.id),r=state?.record;
+      const targetUrls=new Set(board.nodes[edge[1]][13].map(v=>v[1]));
+      if(owners.get(proof[0])!==board.nodes[edge[0]][14][0] || !(r?.linkExtractionVersion>=6) ||
+          !r || r.contentSha256!==proof[3] ||
+          !(r.links||[]).some(l=>l.method==='body_hyperlink_v6'&&targetUrls.has(normalizePage(l.target)?.url)))throw Error('Unproven body reference');
+    }
   }
   // Exercise the real generation path against committed evidence and catalogs.
   // This runs in the existing staging validation workflow without recrawling.
-  const rebuilt = buildBoard(catalogs, readSources(path.join(input, 'research-board-sources')));
+  const rebuilt = buildBoard(catalogs, sources);
   if (JSON.stringify(board) !== JSON.stringify(rebuilt)) throw Error('Published board does not match current crawler inputs');
   console.log(JSON.stringify({ revision: board.revision, nodes: board.nodes.length, edges: board.edges.length, verified: true }));
 }

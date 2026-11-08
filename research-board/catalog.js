@@ -49,6 +49,16 @@ function buildBoard(catalogs, sources) {
       state.lastAttempt?.status !== 'success' && state.lastAttempt?.status !== 'not_modified' ? 'stale' : 'fetched';
     // A failed new observation cannot keep old assertions as current relations.
     if (source.coverage !== 'fetched') continue;
+    // A directed reference is structural evidence, never a story assertion.
+    // Resolve only against the existing catalog; links cannot add pages.
+    if (r.linkExtractionVersion >= 6) for (const item of r.links || []) {
+      if (item.method !== 'body_hyperlink_v6') continue;
+      const target = catalogPage(item.target);
+      if (!target || target.id === source.id) continue;
+      candidates.push({source:source.id,target:target.id,type:'references',
+        proof:[r.url,item.quote || '',item.location || 'article_body',r.contentSha256,
+          item.sourceAnchor || '', '',r.checkedAt]});
+    }
     for (const [baseType, items] of [['translation_assertion', r.translations],
       ...Object.entries(Object.groupBy(r.semanticRelations || [], x => x.type))]) {
       for (const item of items || []) {
@@ -139,11 +149,16 @@ function buildBoard(catalogs, sources) {
     branches: groups.map(b => ({ code: b.code, x: b.left, y: b.top, width: b.width, height: b.height,
       count: b.nodes.length, lanes: b.lanes, polygon: b.polygon })),
     points: [...points.values()], branchLinks: [], aggregateLinks: [], tiles: [...tileKeys], kinds: KINDS, types,
-    classification: 'reading_record_page_type', categoryOrder: CATEGORY_ORDER, categoryClassification: 'home_article_classification_v1', membership: 'official_index_catalog_v3', linkPolicy: 'excluded_verified_semantics_only',
+    classification: 'reading_record_page_type', categoryOrder: CATEGORY_ORDER, categoryClassification: 'home_article_classification_v1', membership: 'official_index_catalog_v3', linkPolicy: 'catalog_members_body_links_v6',
     classificationCounts: Object.fromEntries([...new Set(nodes.map(n => n.classificationBasis))].sort()
       .map(basis => [basis, nodes.filter(n => n.classificationBasis === basis).length])),
     semanticCoverage: 'partial_source_specific_only', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/' };
   overview.workIdentityPolicy='original_catalog_and_explicit_credits_v1';
+  overview.bodyLinkCoverage = {
+    checkedPages: sourcePages.filter(p => p.coverage === 'fetched' && sources.get(p.id)?.record?.linkExtractionVersion >= 6).length,
+    totalPages: sourcePages.length,
+    referenceEdges: relations.filter(e => e.type === 'references').length,
+  };
   const identityReview=[...identities.review,...collapsed.identityReview];
   overview.identityReviewCount=identityReview.length;
   overview.ambiguousWorkKeys=collapsed.ambiguousWorkKeys;
@@ -178,8 +193,6 @@ function generateResearchBoard(input, output, { incoming = path.join(input, '../
   importDirectory(sources, incoming);
   const catalogs = loadCatalogs(input);
   require('./catalog-sources').importCatalogSources(sources, input, catalogs);
-  // The user explicitly excludes mutual hyperlinks from this feature.
-  for (const state of sources.values()) if (state.record) state.record.links = [];
   const board = buildBoard(catalogs, sources);
   const json = Buffer.from(JSON.stringify(board)), bytes = zlib.gzipSync(json, { level: 9 });
   if (json.length > 160 * 1024 * 1024 || bytes.length > 32 * 1024 * 1024) throw Error('Research board client size limit exceeded');
