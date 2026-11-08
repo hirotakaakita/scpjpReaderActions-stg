@@ -58,3 +58,41 @@ metadata/provenance stays in the source snapshots.
   A full published-payload installation/search smoke test also passes.
 
 Only STG is updated. The current STG app accepts this schema without rebuilding.
+
+## Legacy SCP IDs and full identifiers
+
+SCP-749-JP exposed another class of merge omission: the KO catalog retained
+`document-ko--scp-749-jp`, while JP/ZH used `scp-series-jp-749`. The database IDs
+are preserved. SCP/EX/Joke identity now uses original branch, family and full
+identifier (including all variant/proposal suffixes), independently of the old
+catalog item ID. Branch-prefix and branch-suffix spellings are normalized, e.g.
+`scp-de-272` and `scp-272-de`; number padding and remaining suffixes are preserved.
+Positional branch codes also correct board-only origin metadata from old mixed
+Joke indexes. Words later in suffixes are not treated as language codes.
+
+The audit also found old IDs reused by different works. One ID must not join
+SCP-001-J and SCP-001-EX-J or an EN Joke and an unrelated DE Joke. The uniquely
+authoritative original owns the old scoped key; other works use their existing
+valid aliases or a corrected branch scope with the unchanged article ID. If the
+same scoped ID still collides, an opaque `@work-<hash>` qualifier distinguishes
+board work keys. This qualifier is not an article ID and never changes catalog
+rows, database IDs, bookmarks or saved history.
+
+31 reused article IDs are explicitly flagged in the board overview. The updated
+STG app does not use those ambiguous IDs/work keys alone as read evidence or as a
+cross-language reader fallback. Exact page URLs and unambiguous aliases continue
+to work. Historic records containing only a reused ID cannot be reliably assigned
+to a work from that ID alone, and are not automatically migrated.
+
+Verification:
+
+- SCP-749-JP: **one JP-origin node with JP/KO/ZH versions**, retaining the KO ID.
+- Board: **61,053 → 60,645 nodes**, with all 125,023 page URLs retained.
+- **Zero duplicate normalized full SCP signatures**, enforced by the validator.
+- All reused raw IDs across distinct catalog works must have an ambiguity flag.
+- Tests cover legacy document IDs, reused IDs, distinct 001 suffix variants,
+  prefix/suffix branch spelling, read-state isolation and safe reader fallback.
+- Full actual-payload installation/search/read checks pass in Flutter.
+
+The data remains schema 3. Install the updated STG APK for the ambiguous-ID read
+and reader protections; the node merging itself is delivered through board data.

@@ -10,6 +10,7 @@ const { warpLayout } = require('./warp.cjs');
 const { classifyNodes } = require('./classification');
 const { collapseWorks } = require('./works');
 const { translationIdentities } = require('./translation-identities');
+const {validOrigin}=require('../catalog-origin');
 const { LANGUAGES } = require('../languages');
 const {KINDS, CATEGORY_ORDER, KIND_BY_CATEGORY, homeCategory} = require('./article-categories');
 
@@ -72,6 +73,17 @@ function buildBoard(catalogs, sources) {
     const entries = catalogEntries.get(n.id) || [];
     const own = entries.find(e => e.language === n.siteBranch) || entries[0];
     n.kindIndex = KIND_BY_CATEGORY[homeCategory(own?.pageType || '', own?.contentType)];
+    // Legacy mixed Joke indexes sometimes assigned EN to explicitly branch-
+    // numbered SCPs. Only positional identifier codes override that metadata;
+    // words later in a title-like suffix (e.g. "but-it-s...") are not codes.
+    if([0,8,9].includes(n.kindIndex)&&n.pageType){
+      const identifier=/^scp-(?:([a-z]{2,5})-)?\d+(?:-([a-z]{2,5})(?:-|$))?/.exec(n.slug);
+      const branches=[...new Set((identifier?[identifier[1],identifier[2]]:[]).map(validOrigin).filter(Boolean))];
+      if(branches.length===1){
+        n.branch=branches[0];
+        n.pageType=n.kindIndex===9?(n.branch==='en'?'joke-scps':`joke-scps-${n.branch}`):n.kindIndex===8?(n.branch==='en'?'scp-ex':`scp-${n.branch}-ex`):(n.branch==='en'?'scp-series':`scp-series-${n.branch}`);
+      }
+    }
   });
   const identities=translationIdentities(sourcePages,sources);
   candidates.push(...identities.candidates);
@@ -132,6 +144,8 @@ function buildBoard(catalogs, sources) {
   overview.workIdentityPolicy='original_catalog_and_explicit_credits_v1';
   const identityReview=[...identities.review,...collapsed.identityReview];
   overview.identityReviewCount=identityReview.length;
+  overview.ambiguousWorkKeys=collapsed.ambiguousWorkKeys;
+  overview.ambiguousArticleIds=collapsed.ambiguousArticleIds;
   const content = { schemaVersion: 3, overview, nodes: compact, edges, proofs,
     workIdentityProofs:collapsed.identityProofs,identityReview };
   const revision = digest(JSON.stringify(content)).slice(0, 20);

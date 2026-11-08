@@ -4,8 +4,28 @@ const site=code=>code==='zh-tr'?'zh':code;
 const native=p=>site(p.siteBranch)===p.branch||(p.siteBranch==='cs'&&p.branch==='sk');
 const generic=/^(?:main|index|home|start|about|groups-of-interest|foundation-tales|canon-hub|series-archive|personnel-and-character-dossier|task-forces|secure-facilities-locations|goi-formats)(?:-[a-z]{2})?$/;
 const authorIds=r=>new Set((r?.authors||[]).map(a=>/wikidot\.com\/user:info\/([^/?#]+)/i.exec(a.url||'')?.[1]?.toLowerCase()).filter(Boolean));
+function scpIdentityKey(p){
+ const m=/^scp-(?:([a-z]{2,5})-)?(\d+)(.*)$/.exec(p.slug);
+ let identifier=p.slug;
+ if(m&&(!m[1]||m[1]===p.branch)){
+   let suffix=m[3];
+   if(suffix===`-${p.branch}`||suffix.startsWith(`-${p.branch}-`))suffix=suffix.slice(p.branch.length+1);
+   identifier='scp-'+m[2]+suffix;
+ }
+ return p.branch+'\0'+p.pageType+'\0'+identifier;
+}
 function translationIdentities(pages,sources){
  const byId=new Map(pages.map(p=>[p.id,p])), originals=new Map(), candidates=[],review=[];
+ const scpGroups=new Map();
+ for(const p of pages)if([0,8,9].includes(p.kindIndex)&&p.branch!=='other'&&/^(?:scp-series(?:-[a-z-]+)?|joke-scps(?:-[a-z-]+)?|scp-(?:[a-z-]+-)?ex)$/.test(p.pageType||'')){
+   // Full identifier, including proposal/variant suffixes, never number alone.
+   const key=scpIdentityKey(p);
+   if(!scpGroups.has(key))scpGroups.set(key,[]);scpGroups.get(key).push(p);
+ }
+ for(const group of scpGroups.values())if(group.length>1){
+   group.sort((a,b)=>Number(native(b))-Number(native(a))||a.url.localeCompare(b.url));
+   for(const p of group.slice(1))candidates.push({source:p.id,target:group[0].id,type:'translation_assertion',proof:[p.url,group[0].url,'full_scp_identifier','','','catalog_scp_identifier','']});
+ }
  for(const p of pages)if(p.pageType?.startsWith('related-document-')&&p.branch!=='other'&&native(p)){
    const key=p.branch+'\0'+p.slug;if(!originals.has(key))originals.set(key,[]);originals.get(key).push(p);
  }
@@ -38,4 +58,4 @@ function translationIdentities(pages,sources){
  }
  return {candidates,review};
 }
-module.exports={translationIdentities,native};
+module.exports={translationIdentities,native,scpIdentityKey};

@@ -5,6 +5,7 @@ const { buildBoard, loadCatalogs } = require('./catalog');
 const { readSources } = require('./source-store');
 const { branchForPageType } = require('./classification');
 const {CATEGORY_ORDER, KIND_BY_CATEGORY, homeCategory} = require('./article-categories');
+const {scpIdentityKey}=require('./translation-identities');
 function validate(root = path.join(__dirname, '..')) {
   const input = path.join(root, 'local-data'), directory = path.join(input, 'mobile-v3/research-board');
   const manifest = JSON.parse(fs.readFileSync(path.join(directory, 'manifest.json')));
@@ -41,18 +42,28 @@ function validate(root = path.join(__dirname, '..')) {
   for(const node of board.nodes){
     if(node[14][2].length<1)throw Error('Work lost its original catalog identity');
   }
+  const scpOwners=new Map();
+  for(const node of board.nodes)if([0,8,9].includes(node[3])&&node[12])for(const page of node[13]){
+    const key=scpIdentityKey({branch:node[8],pageType:node[12],slug:page[2]}),owner=scpOwners.get(key);
+    if(owner&&owner!==node[14][0])throw Error('Duplicate full SCP identity: '+key.replaceAll('\0',' / '));
+    scpOwners.set(key,node[14][0]);
+  }
   const catalogs = loadCatalogs(input);
   if (JSON.stringify(board.overview.categoryOrder) !== JSON.stringify(CATEGORY_ORDER)) throw Error('HOME category order mismatch');
   const catalogWorks = new Map();
+  const catalogById=new Map();
   for (const catalog of catalogs) for (const row of catalog.data) {
     const key = `catalog:${row.pageType}:${row.itemId}`;
     if (!catalogWorks.has(key)) catalogWorks.set(key,[]);
     catalogWorks.get(key).push({...row,language:catalog.language});
+    if(!catalogById.has(row.itemId))catalogById.set(row.itemId,[]);
+    catalogById.get(row.itemId).push({...row,language:catalog.language});
   }
   for (const node of board.nodes) {
-    const rows = catalogWorks.get(node[14][0]) || [];
+    const urls=new Set(node[13].map(p=>p[1]));
+    const rows = catalogWorks.get(node[14][0]) || (catalogById.get(node[14][1])||[]).filter(row=>urls.has(normalizePage(row.isTranslatedJP!==false&&row.urlJP?row.urlJP:row.urlEN)?.url));
     const row = rows.find(row => row.language === node[11]) || rows[0];
-    if (!row || node[3] !== KIND_BY_CATEGORY[homeCategory(row.pageType,row.contentType)]) {
+    if (!row || node[3] !== KIND_BY_CATEGORY[homeCategory(node[12]||row.pageType,row.contentType)]) {
       throw Error(`HOME article category mismatch: ${node[14][0]}`);
     }
   }
@@ -61,6 +72,14 @@ function validate(root = path.join(__dirname, '..')) {
   if (pageUrls.size !== members.size || [...pageUrls].some(url => !members.has(url))) {
     throw Error('Board pages differ from the fetched official catalog');
   }
+  const rawIdOwners=new Map(),flaggedIds=new Set(board.overview.ambiguousArticleIds||[]);
+  for(const catalog of catalogs)for(const row of catalog.data){
+    const url=normalizePage(row.isTranslatedJP!==false&&row.urlJP?row.urlJP:row.urlEN)?.url;
+    if(!owners.has(url))continue;
+    if(!rawIdOwners.has(row.itemId))rawIdOwners.set(row.itemId,new Set());
+    rawIdOwners.get(row.itemId).add(owners.get(url));
+  }
+  for(const [id,works]of rawIdOwners)if(works.size>1&&!flaggedIds.has(id))throw Error('Unflagged reused article ID: '+id);
   if (board.nodes.some(n => n[3] === 4) ||
       board.overview.types.some(type => ['references','appears_in_log','appears_in_addendum','translation_assertion'].includes(type))) {
     throw Error('Uncollected entity or excluded hyperlink relations');

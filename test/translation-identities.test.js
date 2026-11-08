@@ -56,3 +56,64 @@ test('traditional Chinese native page is the representative rather than its CN t
  const original=fixture('zh-tr','example','zh'),cn=fixture('cn','example','zh');
  const b=board([original,cn]);assert.equal(b.nodes.length,1);assert.equal(b.nodes[0][11],'zh-tr');
 });
+test('SCP translations with legacy document IDs join their full original identity without rewriting IDs',()=>{
+ const jp=fixture('jp','scp-749-jp','jp',{itemId:'scp-series-jp-749',pageType:'scp-series-jp',contentType:'scp'});
+ const ko=fixture('cn','scp-749-jp','jp',{itemId:'document-ko--scp-749-jp',pageType:'scp-series-jp',contentType:'scp',urlJP:'https://scpko.wikidot.com/scp-749-jp'});
+ ko.catalog.language='ko';ko.id=normalizePage(ko.row.urlJP).id;ko.state.record.url=ko.row.urlJP;ko.state.record.pageId=ko.id;
+ const b=board([jp,ko]);assert.equal(b.nodes.length,1);assert.equal(b.nodes[0][13].length,2);
+ assert(b.nodes[0][14][2].includes('catalog:scp-series-jp:document-ko--scp-749-jp'));
+ assert.equal(b.nodes[0][14][1],'scp-series-jp-749');
+});
+test('full SCP identity never merges different suffixes, branches, J/EX categories or 001 proposals',()=>{
+ const variants=[
+  ['scp-749-jp','scp-series-jp','scp'],['scp-749-jp-j','joke-scps-jp','scp'],
+  ['scp-749-jp-ex','scp-jp-ex','scp'],['scp-749-ko','scp-series-ko','scp'],
+  ['scp-001-jp-a','scp-series-jp','scp'],['scp-001-jp-b','scp-series-jp','scp']
+ ];
+ const items=variants.map(([slug,pageType,contentType],i)=>fixture('jp',slug,pageType.includes('ko')?'ko':'jp',{itemId:'legacy-'+i,pageType,contentType}));
+ assert.equal(board(items).nodes.length,variants.length);
+});
+test('reused legacy IDs cannot attach a different branch work to the same-numbered EN work',()=>{
+ hosts.en='scp-wiki.wikidot.com';hosts.de='scp-wiki-de.wikidot.com';
+ const en=fixture('en','scp-015-j','en',{itemId:'joke-scps-015',pageType:'joke-scps',contentType:'scp'});
+ const de=fixture('de','scp-015-de-j','en',{itemId:'joke-scps-015',pageType:'joke-scps',contentType:'scp'});
+ const translated=fixture('int','scp-015-de-j','de',{itemId:'joke-scps-de-015',pageType:'joke-scps-de',contentType:'scp'});
+ const b=board([en,de,translated]);assert.equal(b.nodes.length,2);
+ const native=b.nodes.find(n=>n[8]==='de');assert.deepEqual(native[13].map(p=>p[0]).sort(),['de','int']);
+ assert(!native[14][2].includes('catalog:joke-scps:joke-scps-015'));
+ assert.equal(b.nodes.find(n=>n[8]==='en')[13].length,1);
+});
+test('001 suffix variants sharing an old numeric ID stay separate while their translations join',()=>{
+ hosts.en='scp-wiki.wikidot.com';hosts.th='scp-th.wikidot.com';
+ const button=fixture('en','scp-001-j','en',{itemId:'joke-scps-001',pageType:'joke-scps',contentType:'scp'});
+ const ckg=fixture('en','scp-001-ex-j','en',{itemId:'joke-scps-001-ex-j',pageType:'joke-scps',contentType:'scp'});
+ const th=fixture('th','scp-001-ex-j','en',{itemId:'joke-scps-001',pageType:'joke-scps',contentType:'scp'});
+ const b=board([button,ckg,th]);assert.equal(b.nodes.length,2);assert.equal(b.nodes.find(n=>n[4]==='scp-001-ex-j')[13].length,2);
+});
+test('language-like words later in an SCP suffix do not become original branch codes',()=>{
+ hosts.en='scp-wiki.wikidot.com';
+ const p=fixture('en','scp-173-but-it-s-the-admonition-hub','en',{itemId:'joke-scps-173-long',pageType:'joke-scps',contentType:'scp'});
+ assert.equal(board([p]).nodes[0][8],'en');
+});
+test('branch-scoped fallback keeps actual catalog IDs when a legacy ID is reused without another alias',()=>{
+ hosts.en='scp-wiki.wikidot.com';hosts.de='scp-wiki-de.wikidot.com';
+ const en=fixture('en','scp-015-j','en',{itemId:'joke-scps-015',pageType:'joke-scps',contentType:'scp'});
+ const de=fixture('de','scp-015-de-j','en',{itemId:'joke-scps-015',pageType:'joke-scps',contentType:'scp'});
+ const b=board([en,de]);assert.equal(b.nodes.length,2);assert(b.nodes.every(n=>n[14][2].length));
+ assert(b.overview.ambiguousArticleIds.includes('joke-scps-015'));
+ assert.equal(b.nodes.find(n=>n[8]==='de')[14][1],'joke-scps-015');
+ assert.equal(new Set(b.nodes.flatMap(n=>n[14][2])).size,b.nodes.flatMap(n=>n[14][2]).length);
+});
+test('prefix and suffix branch spelling share the same full SCP identity',()=>{
+ hosts.de='scp-wiki-de.wikidot.com';
+ const de=fixture('de','scp-272-de','de',{itemId:'scp-series-de-272',pageType:'scp-series-de',contentType:'scp'});
+ const es=fixture('es','scp-de-272','de',{itemId:'document-es--scp-de-272',pageType:'scp-series-de',contentType:'scp'});
+ const b=board([de,es]);assert.equal(b.nodes.length,1);assert.equal(b.nodes[0][13].length,2);
+});
+test('same-branch variants reusing a legacy ID get distinct work keys while keeping the article ID',()=>{
+ hosts.ko='scpko.wikidot.com';
+ const original=fixture('ko','scp-001-ex-ko-j','ko',{itemId:'joke-scps-ko-001',pageType:'joke-scps-ko',contentType:'scp'});
+ const other=fixture('cn','scp-001-ko-j','ko',{itemId:'joke-scps-ko-001',pageType:'joke-scps-ko',contentType:'scp'});
+ const b=board([original,other]);assert.equal(b.nodes.length,2);assert(b.nodes.every(n=>n[14][2].length));
+ assert(b.nodes.some(n=>n[14][0].includes('@work-')));assert(b.nodes.every(n=>n[14][1]==='joke-scps-ko-001'));
+});
