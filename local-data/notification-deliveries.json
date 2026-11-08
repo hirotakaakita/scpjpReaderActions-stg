@@ -804,8 +804,10 @@
         }
       ],
       "attempts": 1,
-      "status": "sending",
-      "startedAt": "2026-11-08T20:27:31.125Z"
+      "status": "sent",
+      "startedAt": "2026-11-08T20:27:31.125Z",
+      "messageName": "projects/scpjp-reader-stg/messages/-6228666299001718845",
+      "sentAt": "2026-11-08T20:27:49.674Z"
     }
   ]
 }
