@@ -117,3 +117,10 @@ test('same-branch variants reusing a legacy ID get distinct work keys while keep
  const b=board([original,other]);assert.equal(b.nodes.length,2);assert(b.nodes.every(n=>n[14][2].length));
  assert(b.nodes.some(n=>n[14][0].includes('@work-')));assert(b.nodes.every(n=>n[14][1]==='joke-scps-ko-001'));
 });
+test('explicit original-language tags resolve legacy EN list entries without positional branch codes',()=>{
+ hosts.en='scp-wiki.wikidot.com';
+ const jp=fixture('jp','scp-001-ex-solvex','jp',{itemId:'scp-jp-ex-solvex',pageType:'scp-jp-ex',contentType:'scp'});
+ const en=fixture('en','scp-001-ex-solvex','en',{itemId:'scp-ex-solvex',pageType:'scp-ex',contentType:'scp'});
+ en.state.record.tags=['international','_jp'];
+ const b=board([jp,en]);assert.equal(b.nodes.length,1);assert.equal(b.nodes[0][8],'jp');
+});

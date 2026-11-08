@@ -10,7 +10,7 @@ const { warpLayout } = require('./warp.cjs');
 const { classifyNodes } = require('./classification');
 const { collapseWorks } = require('./works');
 const { translationIdentities } = require('./translation-identities');
-const {validOrigin}=require('../catalog-origin');
+const {validOrigin,publisherOriginTags}=require('../catalog-origin');
 const { LANGUAGES } = require('../languages');
 const {KINDS, CATEGORY_ORDER, KIND_BY_CATEGORY, homeCategory} = require('./article-categories');
 
@@ -78,7 +78,9 @@ function buildBoard(catalogs, sources) {
     // words later in a title-like suffix (e.g. "but-it-s...") are not codes.
     if([0,8,9].includes(n.kindIndex)&&n.pageType){
       const identifier=/^scp-(?:([a-z]{2,5})-)?\d+(?:-([a-z]{2,5})(?:-|$))?/.exec(n.slug);
-      const branches=[...new Set((identifier?[identifier[1],identifier[2]]:[]).map(validOrigin).filter(Boolean))];
+      let branches=[...new Set((identifier?[identifier[1],identifier[2]]:[]).map(validOrigin).filter(Boolean))];
+      const tagged=publisherOriginTags(n.url,sources.get(n.id)?.record);
+      if(!branches.length&&tagged.origins.length===1&&!tagged.unsupported.length&&!tagged.conflicts.length)branches=tagged.origins;
       if(branches.length===1){
         n.branch=branches[0];
         n.pageType=n.kindIndex===9?(n.branch==='en'?'joke-scps':`joke-scps-${n.branch}`):n.kindIndex===8?(n.branch==='en'?'scp-ex':`scp-${n.branch}-ex`):(n.branch==='en'?'scp-series':`scp-series-${n.branch}`);
