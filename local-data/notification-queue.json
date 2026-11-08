@@ -1136,25 +1136,8 @@
       "lastSentWindow": "2026-10-04"
     },
     "ru": {
-      "items": [
-        {
-          "itemId": "scp-series-1255",
-          "titleJP": "SCP-1255 - Виноград от «Ферма и ранчо Доунов»"
-        },
-        {
-          "itemId": "scp-series-3014",
-          "titleJP": "SCP-3014 - Одинокий голодный демон"
-        },
-        {
-          "itemId": "scp-series-6976",
-          "titleJP": "SCP-6976 - Не разбивай мне сердце"
-        },
-        {
-          "itemId": "scp-series-9951",
-          "titleJP": "SCP-9951 - Touhou Fuminkyou ~ Echoes of Insomnia"
-        }
-      ],
-      "lastSentWindow": "2026-10-04"
+      "items": [],
+      "lastSentWindow": "2026-11-08"
     }
   },
   "updatedAt": "2026-11-08T20:27:31.125Z"
