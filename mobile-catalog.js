@@ -37,11 +37,19 @@ function mobileCatalog(source, language) {
   return { schemaVersion: 1, language, timestamp: source.timestamp, totalCount: data.length, data };
 }
 
-function generateCatalogChannel(input, output, includeAdditional, sourceDirectory = 'related-documents', enrichTranslations = true) {
+function normalizedSourceListing(row) {
+  const type=row.pageType,source=row.extractedFrom,n=row.numericItemId;
+  if(type!=='scp-series'&&!/^scp-series-[a-z][a-z-]*$/.test(type||''))return source;
+  if(source!=='api'&&source!==type&&source!==type+'-1')return source;
+  if(!Number.isSafeInteger(n)||n<0)return source;
+  return n>=1000?`${type}-${Math.floor(n/1000)+1}`:source==='api'?type:source;
+}
+
+function generateCatalogChannel(input, output, includeAdditional, sourceDirectory = 'related-documents', enrichTranslations = true, normalizeSeries = false) {
   const reports = [];
   const additionalFile = path.join(input, sourceDirectory, 'catalog.json');
-  const additional = !includeAdditional ? null : fs.existsSync(additionalFile) ? JSON.parse(fs.readFileSync(additionalFile)) :
-    fs.existsSync(`${additionalFile}.gz`) ? JSON.parse(zlib.gunzipSync(fs.readFileSync(`${additionalFile}.gz`))) : null;
+  const additional = !includeAdditional ? null : fs.existsSync(`${additionalFile}.gz`) ? JSON.parse(zlib.gunzipSync(fs.readFileSync(`${additionalFile}.gz`))) :
+    fs.existsSync(additionalFile) ? JSON.parse(fs.readFileSync(additionalFile)) : null;
   if (additional && (additional.schemaVersion !== 1 || !Array.isArray(additional.data) || additional.totalCount !== additional.data.length || !Number.isFinite(Date.parse(additional.timestamp)))) throw Error('Invalid additional document catalog');
   const dictionaryFile = path.join(input, '..', 'tag-dictionary.json');
   const dictionary = fs.existsSync(dictionaryFile) ? readDictionary(dictionaryFile) : { version: 1, tags: {} };
@@ -98,6 +106,29 @@ function generateCatalogChannel(input, output, includeAdditional, sourceDirector
     }
     delivery.totalCount = delivery.data.length;
     if (additional && Date.parse(additional.timestamp) > Date.parse(delivery.timestamp)) delivery.timestamp = additional.timestamp;
+    const directory = path.join(output, language), pointer = path.join(directory, 'manifest.json');
+    const previousManifest = fs.existsSync(pointer) ? JSON.parse(fs.readFileSync(pointer)) : null;
+    const previousFile = previousManifest?.fileName || null;
+    if(normalizeSeries){
+      const corrections=[];
+      for(const row of delivery.data){const source=normalizedSourceListing(row);if(source!==row.extractedFrom){row.extractedFrom=source;corrections.push(row);}}
+      if(previousManifest){
+        const priorTime=Date.parse(previousManifest.timestamp),sourceTime=Date.parse(delivery.timestamp);
+        if(!Number.isFinite(priorTime))throw Error('Invalid previous delivery timestamp');
+        let correctedPrevious=false;
+        if(corrections.length){
+          if(!/^catalog-[a-f0-9]{64}\.json\.gz$/.test(previousFile))throw Error('Invalid previous delivery pointer');
+          const priorBytes=fs.readFileSync(path.join(directory,previousFile));
+          if(crypto.createHash('sha256').update(priorBytes).digest('hex')!==previousManifest.sha256)throw Error('Previous delivery checksum mismatch');
+          const prior=JSON.parse(zlib.gunzipSync(priorBytes)),sources=new Map(prior.data.map(r=>[r.itemId,r.extractedFrom]));
+          correctedPrevious=corrections.some(row=>sources.get(row.itemId)!==row.extractedFrom);
+        }
+        // Existing clients decide whether to reimport by timestamp. A delivery-
+        // only repair must advance it, then retain that floor on repeat builds.
+        if(correctedPrevious&&sourceTime<=priorTime)delivery.timestamp=new Date(Math.max(Date.now(),priorTime+1)).toISOString();
+        else if(sourceTime<priorTime)delivery.timestamp=previousManifest.timestamp;
+      }
+    }
     const json = Buffer.from(JSON.stringify(delivery), 'utf8');
     const compressed = zlib.gzipSync(json, { level: 9 });
     if (delivery.totalCount > 200000 || json.length > 128 * 1024 * 1024 || compressed.length > 32 * 1024 * 1024) {
@@ -105,10 +136,7 @@ function generateCatalogChannel(input, output, includeAdditional, sourceDirector
     }
     const sha256 = crypto.createHash('sha256').update(compressed).digest('hex');
     const fileName = `catalog-${sha256}.json.gz`;
-    const directory = path.join(output, language);
     fs.mkdirSync(directory, { recursive: true });
-    const pointer = path.join(directory, 'manifest.json');
-    const previousFile = fs.existsSync(pointer) ? JSON.parse(fs.readFileSync(pointer)).fileName : null;
     fs.writeFileSync(path.join(directory, fileName), compressed);
     const manifest = {
       schemaVersion: 1, language, timestamp: delivery.timestamp, totalCount: delivery.totalCount,
@@ -129,11 +157,15 @@ function generateCatalogChannel(input, output, includeAdditional, sourceDirector
   return reports;
 }
 
+function generateMobileV3Catalogs(input,output=path.join(input,'mobile-v3')){
+  return generateCatalogChannel(input,output,true,'related-documents',true,true);
+}
+
 function generateMobileCatalogs(input, output = path.join(input, 'mobile-v1')) {
   // Keep the released app's endpoint and metadata contract unchanged.
   const legacy = generateCatalogChannel(input, output, false);
   const previous = generateCatalogChannel(input, path.join(path.dirname(output), 'mobile-v2'), true, 'related-documents-v2', false);
-  const extended = generateCatalogChannel(input, path.join(path.dirname(output), 'mobile-v3'), true);
+  const extended = generateMobileV3Catalogs(input, path.join(path.dirname(output), 'mobile-v3'));
   return [
     ...legacy.map(report => ({ channel: 'mobile-v1', ...report })),
     ...previous.map(report => ({ channel: 'mobile-v2', ...report })),
@@ -148,4 +180,4 @@ if (require.main === module) {
   const researchBoard = require('./research-board/catalog').generateResearchBoard(input, path.join(path.dirname(output || path.join(input, 'mobile-v1')), 'mobile-v3'));
   console.log(JSON.stringify({catalogs, researchBoard}, null, 2));
 }
-module.exports = { mobileCatalog, generateMobileCatalogs };
+module.exports = { mobileCatalog, generateMobileCatalogs, generateMobileV3Catalogs, normalizedSourceListing };

@@ -5,7 +5,7 @@ const os = require('node:os');
 const path = require('node:path');
 const zlib = require('node:zlib');
 const crypto = require('node:crypto');
-const { mobileCatalog, generateMobileCatalogs } = require('../mobile-catalog');
+const { mobileCatalog, generateMobileCatalogs, generateMobileV3Catalogs } = require('../mobile-catalog');
 
 function catalog() {
   return { language: 'jp', timestamp: '2026-11-03T00:00:00Z', totalCount: 1,
@@ -18,6 +18,38 @@ function catalog() {
       tags: [{ id: 'tag-1', label: '人間型' }], mangaLanguages: ['jp'], translatedLanguages: ['jp', 'en'],
     }] };
 }
+
+test('v3 corrects unnumbered SCP series and advances an installed delivery timestamp once, preserving v1/v2',t=>{
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),'mobile-series-'));t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
+ const input=path.join(root,'local-data');fs.mkdirSync(path.join(input,'jp'),{recursive:true});
+ const source=catalog();source.data=[999,1000,1999,2000].map(n=>({...source.data[0],itemId:'scp-series-ko-'+n,numericItemId:n,pageType:'scp-series-ko',extractedFrom:'scp-series-ko',urlJP:'https://scp-jp.wikidot.com/scp-'+n+'-ko'}));source.totalCount=source.data.length;
+ fs.writeFileSync(path.join(input,'jp/scp-data.json'),JSON.stringify(source));fs.writeFileSync(path.join(input,'jp/meta.json'),JSON.stringify({lastUpdated:source.timestamp,totalCount:source.totalCount}));
+ generateMobileCatalogs(input);
+ const snapshots=Object.fromEntries(['mobile-v1','mobile-v2'].map(c=>[c,fs.readFileSync(path.join(input,c,'jp/manifest.json'),'utf8')]));
+ const dir=path.join(input,'mobile-v3/jp'),pointer=path.join(dir,'manifest.json');
+ // Simulate the already installed pre-fix catalog, with its original timestamp.
+ const priorManifest=JSON.parse(fs.readFileSync(pointer)),prior=JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(dir,priorManifest.fileName))));
+ for(const row of prior.data)row.extractedFrom=row.pageType;
+ const bytes=zlib.gzipSync(JSON.stringify(prior),{level:9}),sha=crypto.createHash('sha256').update(bytes).digest('hex'),name='catalog-'+sha+'.json.gz';
+ fs.writeFileSync(path.join(dir,name),bytes);fs.writeFileSync(pointer,JSON.stringify({...priorManifest,fileName:name,sha256:sha,bytes:bytes.length,decodedBytes:Buffer.byteLength(JSON.stringify(prior))}));
+ generateMobileCatalogs(input);const updated=JSON.parse(fs.readFileSync(pointer)),data=JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(dir,updated.fileName))));
+ assert.deepEqual(data.data.map(r=>r.extractedFrom),['scp-series-ko','scp-series-ko-2','scp-series-ko-2','scp-series-ko-3']);
+ assert.deepEqual(data.data.map(r=>r.itemId),source.data.map(r=>r.itemId));assert(Date.parse(updated.timestamp)>Date.parse(source.timestamp));
+ for(const c of Object.keys(snapshots))assert.equal(fs.readFileSync(path.join(input,c,'jp/manifest.json'),'utf8'),snapshots[c]);
+ const stable=fs.readFileSync(pointer,'utf8');generateMobileCatalogs(input);assert.equal(fs.readFileSync(pointer,'utf8'),stable);
+});
+
+test('v3-only repair reads published gzip instead of a stale local JSON without touching old channels',t=>{
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),'mobile-v3-repair-'));t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
+ const input=path.join(root,'local-data');fs.mkdirSync(path.join(input,'jp'),{recursive:true});fs.mkdirSync(path.join(input,'related-documents'));
+ const source=catalog();fs.writeFileSync(path.join(input,'jp/scp-data.json'),JSON.stringify(source));fs.writeFileSync(path.join(input,'jp/meta.json'),JSON.stringify({lastUpdated:source.timestamp,totalCount:source.totalCount}));
+ const extra=id=>({schemaVersion:1,timestamp:'2026-11-05T00:00:00Z',totalCount:1,data:[{itemId:'document-jp--'+id,language:'jp',title:id,url:'https://scp-jp.wikidot.com/'+id,pageType:'related-document-jp',contentType:'tale',lastUpdated:source.timestamp,tags:[]}]});
+ fs.writeFileSync(path.join(input,'related-documents/catalog.json'),JSON.stringify(extra('stale')));
+ fs.writeFileSync(path.join(input,'related-documents/catalog.json.gz'),zlib.gzipSync(JSON.stringify(extra('published'))));
+ generateMobileV3Catalogs(input);assert(!fs.existsSync(path.join(input,'mobile-v1')));assert(!fs.existsSync(path.join(input,'mobile-v2')));
+ const dir=path.join(input,'mobile-v3/jp'),m=JSON.parse(fs.readFileSync(path.join(dir,'manifest.json'))),data=JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(dir,m.fileName))));
+ assert.deepEqual(data.data.map(r=>r.itemId),[source.data[0].itemId,'document-jp--published']);
+});
 
 test('delivery projection preserves reader fields without mutating crawler state', () => {
   const source = catalog(), before = JSON.stringify(source);
