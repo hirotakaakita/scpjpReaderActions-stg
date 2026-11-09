@@ -1932,6 +1932,68 @@
       "startedAt": "2026-11-09T12:24:55.062Z",
       "messageName": "projects/scpjp-reader-stg/messages/-3070592682591024669",
       "sentAt": "2026-11-09T12:25:04.173Z"
+    },
+    {
+      "id": "zh-tr/2026-11-08",
+      "lang": "zh-tr",
+      "window": "2026-11-08",
+      "items": [
+        {
+          "itemId": "scp-series-9506",
+          "titleJP": "[ACCESS DENIED]"
+        },
+        {
+          "itemId": "scp-series-9996",
+          "titleJP": "The Middleman"
+        },
+        {
+          "itemId": "joke-scps-3",
+          "titleJP": "帶小孩上班日！"
+        },
+        {
+          "itemId": "joke-scps-005",
+          "titleJP": "「不，因為她認為他是在說……」"
+        },
+        {
+          "itemId": "joke-scps-2600",
+          "titleJP": "最 可愛 的小東西"
+        },
+        {
+          "itemId": "joke-scps-173",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-zh-318",
+          "titleJP": "狗螺"
+        },
+        {
+          "itemId": "scp-series-zh-325",
+          "titleJP": "[禁止訪問]"
+        },
+        {
+          "itemId": "scp-series-zh-335",
+          "titleJP": "[禁止訪問]"
+        },
+        {
+          "itemId": "scp-series-zh-415",
+          "titleJP": "花海"
+        },
+        {
+          "itemId": "scp-series-zh-721",
+          "titleJP": "根本不需要朋友，去死吧。"
+        },
+        {
+          "itemId": "scp-series-zh-827",
+          "titleJP": "[禁止訪問]"
+        },
+        {
+          "itemId": "scp-series-zh-917",
+          "titleJP": "讓我們「修好」你"
+        }
+      ],
+      "attempts": 1,
+      "status": "sending",
+      "startedAt": "2026-11-09T12:24:55.062Z"
     }
   ]
 }
