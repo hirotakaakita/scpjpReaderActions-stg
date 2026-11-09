@@ -892,6 +892,208 @@
       "startedAt": "2026-11-08T23:53:24.711Z",
       "messageName": "projects/scpjp-reader-stg/messages/8111741630904057953",
       "sentAt": "2026-11-08T23:53:27.931Z"
+    },
+    {
+      "id": "en/2026-11-08",
+      "lang": "en",
+      "window": "2026-11-08",
+      "items": [
+        {
+          "itemId": "scp-series-7063",
+          "titleJP": "Sometimes I Wish I Could Just Fly Away, and Leave This Place to the Woods."
+        },
+        {
+          "itemId": "scp-series-9261",
+          "titleJP": "GORGER'S PICKLES"
+        },
+        {
+          "itemId": "scp-series-9284",
+          "titleJP": "Chronolia"
+        },
+        {
+          "itemId": "scp-series-9287",
+          "titleJP": "The Asclepian Serpent"
+        },
+        {
+          "itemId": "scp-series-9297",
+          "titleJP": "With A Heavy Heart"
+        },
+        {
+          "itemId": "scp-series-9304",
+          "titleJP": "[ACCESS DENIED]"
+        },
+        {
+          "itemId": "scp-series-9352",
+          "titleJP": "Autopsy Anomaly"
+        },
+        {
+          "itemId": "scp-series-9354",
+          "titleJP": "MAGIC RAINBOW ROOM"
+        },
+        {
+          "itemId": "scp-series-9356",
+          "titleJP": "Blood and Hemokinesis"
+        },
+        {
+          "itemId": "scp-series-9358",
+          "titleJP": "Herbarium Sheets"
+        },
+        {
+          "itemId": "scp-series-9359",
+          "titleJP": "[ACCESS DENIED]"
+        },
+        {
+          "itemId": "scp-series-9378",
+          "titleJP": "Baby Blue"
+        },
+        {
+          "itemId": "scp-series-9382",
+          "titleJP": "[ACCESS DENIED]"
+        },
+        {
+          "itemId": "scp-series-9392",
+          "titleJP": "The Advisor"
+        },
+        {
+          "itemId": "scp-series-9397",
+          "titleJP": "[ACCESS DENIED]"
+        },
+        {
+          "itemId": "scp-series-9418",
+          "titleJP": "Mister Enigma the Wandering Candyman"
+        },
+        {
+          "itemId": "scp-series-9447",
+          "titleJP": "The Whistler of Los Llanos"
+        },
+        {
+          "itemId": "scp-series-9472",
+          "titleJP": "The Mad MiG"
+        },
+        {
+          "itemId": "scp-series-9488",
+          "titleJP": "Space Infection"
+        },
+        {
+          "itemId": "scp-series-9489",
+          "titleJP": "[ACCESS DENIED]"
+        },
+        {
+          "itemId": "scp-series-9495",
+          "titleJP": "Well-Meaning but Confused Teeth"
+        },
+        {
+          "itemId": "scp-series-9544",
+          "titleJP": "Addictive Absolution"
+        },
+        {
+          "itemId": "scp-series-9558",
+          "titleJP": "Thank You For Installing Windows 95"
+        },
+        {
+          "itemId": "scp-series-9579",
+          "titleJP": "On Wednesday Morning, When the Truck Rolls In"
+        },
+        {
+          "itemId": "scp-series-9608",
+          "titleJP": "Hard-to-Contain Gastropod"
+        },
+        {
+          "itemId": "scp-series-9623",
+          "titleJP": "Gamer Box"
+        },
+        {
+          "itemId": "scp-series-9638",
+          "titleJP": "A Sinful Beast of Terrifying Savagery"
+        },
+        {
+          "itemId": "scp-series-9644",
+          "titleJP": "The Perfect Straw"
+        },
+        {
+          "itemId": "scp-series-9704",
+          "titleJP": "Certainty"
+        },
+        {
+          "itemId": "scp-series-9738",
+          "titleJP": "Funeral for Every Butterfly"
+        },
+        {
+          "itemId": "scp-series-9739",
+          "titleJP": "Family Annihilator."
+        },
+        {
+          "itemId": "scp-series-9756",
+          "titleJP": "Dotson's Inferno"
+        },
+        {
+          "itemId": "scp-series-9821",
+          "titleJP": "Let's Go Gambling!"
+        },
+        {
+          "itemId": "scp-series-9833",
+          "titleJP": "Ever Obstruction"
+        },
+        {
+          "itemId": "scp-series-9837",
+          "titleJP": "Plane-ly Ridiculous"
+        },
+        {
+          "itemId": "scp-series-9840",
+          "titleJP": "The No-Punching Bag"
+        },
+        {
+          "itemId": "scp-series-9854",
+          "titleJP": "The King in Yellow"
+        },
+        {
+          "itemId": "scp-series-9855",
+          "titleJP": "Doubles DNI"
+        },
+        {
+          "itemId": "scp-series-9865",
+          "titleJP": "The Flag"
+        },
+        {
+          "itemId": "scp-series-9867",
+          "titleJP": "Baby Boomer Basking Shark"
+        },
+        {
+          "itemId": "scp-series-9871",
+          "titleJP": "[ACCESS DENIED]"
+        },
+        {
+          "itemId": "scp-series-9937",
+          "titleJP": "A Better Path To Nowhere"
+        },
+        {
+          "itemId": "joke-scps-705",
+          "titleJP": "An Invisible Crocodile Takes Over Site-57's Low-Security Wing"
+        },
+        {
+          "itemId": "joke-scps-1551",
+          "titleJP": "Something Important"
+        },
+        {
+          "itemId": "joke-scps-1730",
+          "titleJP": "What Happened to Site-1337?"
+        },
+        {
+          "itemId": "joke-scps-3278",
+          "titleJP": "Wasn't Me"
+        },
+        {
+          "itemId": "scp-ex-777",
+          "titleJP": "Non-Euclidean stairs"
+        },
+        {
+          "itemId": "scp-ex-900",
+          "titleJP": "Lochlan Read"
+        }
+      ],
+      "attempts": 1,
+      "status": "sending",
+      "startedAt": "2026-11-09T03:53:44.906Z"
     }
   ]
 }
