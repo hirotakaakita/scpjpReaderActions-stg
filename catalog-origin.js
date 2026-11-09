@@ -9,13 +9,20 @@ function validOrigin(value) {
 // Publisher rules, not a blanket inference from the page's hosting language.
 // CN tag-guide: native = 原创; fiction without an origin tag defaults to EN.
 // EN translations-policy: translations require international and _<branch>.
-const originAliases = {'nd-da':'da','nd-no':'no','nd-sv':'sv','interslavic':'isv','interlingue':'ie','ido':'io'};
-const unsupportedOrigins = new Set(['uk','sh','nd']);
+const originAliases = {'nd-da':'da','nd-no':'no','nd-sv':'sv','interslavic':'isv','interlingue':'ie','ido':'io','iranic':'ir'};
+const unsupportedOrigins = new Set(['uk']);
 function publisherOriginTags(url, record) {
   const host = new URL(url).hostname;
   const tags = (record?.tags || []).map(t => t.toLowerCase());
   const values = tags.map(t => t.replace(/^филиал:/u, '')).map(t =>
     host === 'scp-wiki.wikidot.com' && /^_[a-z]{2,3}$/.test(t) ? t.slice(1) : t).map(t=>originAliases[t] || t);
+  // ULI's namespace and matching language tag describe the delivery language.
+  // Keep every other origin tag, including genuine collaboration conflicts.
+  const delivery = host === 'scp-int.wikidot.com' && tags.includes('language-incubator') &&
+    /^\/unofficial:([a-z]{2,3}):/.exec(new URL(url).pathname)?.[1];
+  if (delivery) {
+    for (let i = values.length - 1; i >= 0; i--) if (values[i] === delivery) values.splice(i, 1);
+  }
   if (host === 'scp-wiki-cn.wikidot.com' && tags.includes('原创')) values.push('cn');
   if (host === 'scp-zh-tr.wikidot.com' && tags.includes('原創')) values.push('zh');
   if (host === 'scp-pl.wikidot.com' && tags.includes('oryginał')) values.push('pl');

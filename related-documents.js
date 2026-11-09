@@ -8,7 +8,7 @@ const axios = require('axios');
 const { JSDOM, VirtualConsole } = require('jsdom');
 const { LANGUAGES } = require('./languages');
 const { inspectArticlePage } = require('./article-page');
-const { publisherOriginTags, publisherDefaultOrigin } = require('./catalog-origin');
+const { validOrigin, publisherOriginTags, publisherDefaultOrigin } = require('./catalog-origin');
 const provenance = require('./origin-provenance');
 const hash = value => crypto.createHash('sha256').update(value).digest('hex');
 const hosts = new Map(Object.entries(LANGUAGES).map(([language, config]) => [new URL(config.baseUrl).hostname, language]));
@@ -169,17 +169,18 @@ function branchOfType(type) {
 }
 function incubatorSource(url, record, catalogByUrl) {
   const page = normalize(url);
-  const match = /^unofficial:[a-z]{2,3}:(scp-[a-z0-9-]+)$/.exec(page?.slug || '');
+  const match = /^unofficial:[a-z]{2,3}:([a-z0-9][a-z0-9-]*)$/.exec(page?.slug || '');
   if (page?.language !== 'int' || !match || !(record?.tags || []).includes('language-incubator')) return null;
   // ULI's posting rules preserve the original unix-name after the delivery
   // language prefix. The language tag itself describes the translation, not
   // its origin: https://scp-int.wikidot.com/unofficial:language-incubator-hub
-  // Require an existing native SCP catalog entry for that exact unix-name.
+  // Require an existing native catalog entry for that exact unix-name. ULI's
+  // rule covers tales, proposals and documents as well as numbered SCPs.
   const evidence = [];
   for (const [site, config] of Object.entries(LANGUAGES)) {
     const source = normalize(match[1], config.baseUrl);
     for (const entry of catalogByUrl.get(source?.url) || []) {
-      const branch = branchOfType(entry.pageType);
+      const branch = branchOfType(entry.pageType) || validOrigin(/^related-document-([a-z]+)$/.exec(entry.pageType || '')?.[1]);
       if (branch && (branch === (site === 'zh-tr' ? 'zh' : site) || (site === 'cs' && branch === 'sk'))) {
         evidence.push({ url: source.url, itemId: entry.itemId, pageType: entry.pageType, branch });
       }

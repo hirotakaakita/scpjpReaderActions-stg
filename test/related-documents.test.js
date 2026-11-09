@@ -37,6 +37,43 @@ test('incubator translations resolve the preserved original name against native 
  assert.equal(classify(url,records,conflicting).basis,'conflicting_incubator_source_catalog');
 });
 
+test('incubator document names require a unique native source and preserve conflicts', () => {
+ const url='https://scp-int.wikidot.com/unofficial:ca:dr-clef-s-proposal';
+ const source='https://scp-wiki.wikidot.com/dr-clef-s-proposal';
+ const records=new Map([[url,{tags:['language-incubator','catalan']}]]);
+ const seeds=new Map([[source,[{pageType:'related-document-en',itemId:'original-proposal'}]]]);
+ const result=classify(url,records,seeds);
+ assert.equal(result.branch,'en');
+ assert.equal(result.basis,'incubator_source_catalog');
+ assert.equal(result.evidence[0].itemId,'original-proposal');
+ assert.equal(classify(url,records,new Map()).branch,null);
+ seeds.set('https://scp-jp.wikidot.com/dr-clef-s-proposal',[{pageType:'related-document-jp'}]);
+ assert.equal(classify(url,records,seeds).basis,'conflicting_incubator_source_catalog');
+ seeds.delete('https://scp-jp.wikidot.com/dr-clef-s-proposal');
+ seeds.set(source,[{pageType:'related-document-jp'}]);
+ assert.equal(classify(url,records,seeds).branch,null);
+});
+
+test('incubator delivery tags are scoped to their own namespace and publisher', () => {
+ const infer=(url,tags)=>classify(url,new Map([[url,{tags}]]),new Map());
+ const url='https://scp-int.wikidot.com/unofficial:isv:scp-005';
+ assert.equal(infer(url,['language-incubator','interslavic','en']).branch,'en');
+ assert.equal(infer(url,['language-incubator','interslavic','en','jp']).basis,'conflicting_origin_tags');
+ assert.equal(infer(url,['interslavic','en']).basis,'conflicting_origin_tags');
+ assert.equal(infer(url,['language-incubator','interslavic']).branch,null);
+ assert.equal(infer(url.replace(':isv:',':ca:'),['language-incubator','interslavic','en']).basis,'conflicting_origin_tags');
+ assert.equal(infer(url.replace('scp-int','scp-jp'),['language-incubator','interslavic','en']).basis,'conflicting_origin_tags');
+});
+
+test('official other-branch origin tags include Nordic and constructed languages', () => {
+ for(const [tag,branch] of [['sh','sh'],['nd','nd'],['pig','pig'],['sga','sga'],['iranic','ir']]) {
+  const url='https://scp-int.wikidot.com/some-story';
+  const result=classify(url,new Map([[url,{tags:[tag]}]]),new Map());
+  assert.equal(result.branch,branch);
+  assert.equal(result.basis,'publisher_origin_tag');
+ }
+});
+
 test('only publisher pages are candidates; aliases and tracking URLs normalize', () => {
   assert.equal(normalize('http://www.scpwiki.com/scp-682#x').url, seed);
   for (const url of ['https://example.com/a', 'file:///a', 'https://scp-wiki.wikidot.com/system:page',

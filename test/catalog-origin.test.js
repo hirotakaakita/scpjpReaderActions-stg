@@ -82,7 +82,8 @@ test('German written-out origin tags take priority over the English translation 
  assert.equal(infer(url,['übersetzt','fr','französisch']).branch,'fr');
  assert.equal(infer(url,['übersetzt','französisch','japanisch']).basis,'conflicting_origin_tags');
  assert.equal(infer(url,['deutsch','jp']).basis,'conflicting_origin_tags');
- assert.equal(infer(url,['übersetzt','sh','deutsch']).basis,'unsupported_origin_tag');
+ assert.equal(infer(url,['übersetzt','sh','deutsch']).basis,'conflicting_origin_tags');
+ assert.equal(infer(url,['übersetzt','uk','deutsch']).basis,'unsupported_origin_tag');
 });
 
 test('Czech and Slovak original tags identify separate branches on the shared publisher',()=>{
@@ -129,7 +130,8 @@ test('documented publisher defaults require fiction tags and do not apply to uns
  const url='https://scp-wiki-cn.wikidot.com/story';
  assert.equal(infer(url,['故事']).branch,'en');
  assert.equal(infer(url,['故事']).basis,'publisher_default_origin');
- for(const tags of [[],['fragment'],['故事','二次翻译'],['故事','sh']])assert.equal(infer(url,tags).branch,null);
+ for(const tags of [[],['fragment'],['故事','二次翻译'],['故事','uk']])assert.equal(infer(url,tags).branch,null);
+ assert.equal(infer(url,['故事','sh']).branch,'sh');
  assert.equal(infer(url,['故事','tr']).branch,'tr');
  assert.equal(infer('https://scp-vn.wikidot.com/story',['tale']).branch,null);
  assert.equal(infer('https://scp-wiki.wikidot.com/026-exploration-logs',['supplement']).branch,'en');
