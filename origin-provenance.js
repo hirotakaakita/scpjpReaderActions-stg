@@ -1,10 +1,14 @@
 'use strict';
 const { LANGUAGES } = require('./languages');
-const VERSION = 1;
+const VERSION = 2;
 const hosts = new Map(Object.entries(LANGUAGES).map(([code,c])=>[new URL(c.baseUrl).hostname,code==='zh-tr'?'zh':code]));
 hosts.set('scpfoundation.net','ru');
+// Source metadata only: these are not new crawl or board membership inputs.
+for(const [code,host] of Object.entries({en:'wanderers-library.wikidot.com',jp:'wanderers-library-jp.wikidot.com',
+  cs:'wanderers-library-cs.wikidot.com',ko:'wanderers-library-ko.wikidot.com',pl:'wanderers-library-pl.wikidot.com'}))hosts.set(host,code);
 for (const [code,host] of Object.entries({la:'scp-la.wikidot.com',ro:'scp-ro.wikidot.com',tr:'scpvakfi.wikidot.com',el:'scp-el.wikidot.com',eo:'scp-esperanto.wikidot.com',ms:'scp-ms.wikidot.com'})) hosts.set(host,code);
 const aliases = {'www.scp-wiki.net':'scp-wiki.wikidot.com','scp-wiki.net':'scp-wiki.wikidot.com','scpwiki.com':'scp-wiki.wikidot.com','www.scpwiki.com':'scp-wiki.wikidot.com'};
+aliases['scp-ru.wikidot.com']='scpfoundation.net';
 for(const host of ['scp-wiki-cn.org','www.scp-wiki-cn.org'])aliases[host]='scp-wiki-cn.wikidot.com';
 function originalPage(value, base) {
   try {
@@ -28,8 +32,16 @@ function extractOriginalSources(document, url) {
     const line=prefix.split(/[\r\n]/).at(-1).trim();
     const label=new RegExp('^(?:'+terms+')\\s*[:：]\\s*$','iu');
     const anchorLabel=new RegExp('^(?:'+terms+')\\s*[:：]?\\s*$','iu');
-    if(!a.closest('.translation-source')&&!label.test(line)&&!anchorLabel.test(a.textContent.trim()))continue;
-    found.set(target.url,{...target,method:'credit_original_label',quote:line.slice(0,200)});
+    const cell=a.closest('td');
+    const tableLabel=cell?.previousElementSibling?.textContent.trim();
+    // VN license boxes explicitly distinguish article source from translation
+    // source in two citation paragraphs. Generic media "Source" is excluded.
+    const vnCitation=new URL(url).hostname==='scp-vn.wikidot.com'&&a.closest('.licensebox blockquote')&&
+      /(?:^|[.!?]\s+)Nguồn bài viết\s*:\s*$/iu.test(line)&&
+      /Được dịch sang Tiếng Việt/iu.test(a.closest('blockquote').textContent);
+    if(!a.closest('.translation-source')&&!label.test(line)&&!anchorLabel.test(a.textContent.trim())&&
+       !(tableLabel&&anchorLabel.test(tableLabel))&&!vnCitation)continue;
+    found.set(target.url,{...target,method:'credit_original_label',quote:(vnCitation?'Nguồn bài viết:':line||a.textContent.trim()||tableLabel||'').slice(0,200)});
   }
   // Some credits print a bracketed URL as text rather than an <a> element.
   const plainLabel=new RegExp('^((?:'+terms+')\\s*[:：])\\s*\\[?(https?:\\/\\/[^\\s\\]]+)\\]?\\s*$','iu');
@@ -42,6 +54,26 @@ function extractOriginalSources(document, url) {
     }
   }
   return [...found.values()].sort((a,b)=>a.url.localeCompare(b.url));
+}
+function validDiscussionUrl(url,value){
+  if(new URL(url).hostname!=='scp-pl.wikidot.com')return null;
+  try{const u=new URL(value,url);
+    return u.hostname===new URL(url).hostname&&/^https?:$/.test(u.protocol)&&!u.username&&!u.password&&!u.port&&!u.search&&
+      /^\/forum\/t-\d+(?:\/[a-z0-9-]+)?$/.test(u.pathname)?'https://'+u.hostname+u.pathname:null;
+  }catch{return null;}
+}
+function discussionPage(document,url){return validDiscussionUrl(url,document.querySelector('#discuss-button[href]')?.getAttribute('href'));}
+function extractDiscussionSources(document,articleUrl,threadUrl){
+  if(!validDiscussionUrl(articleUrl,threadUrl))return [];
+  // Only the first attribution post of a thread that links back to this exact
+  // article, never arbitrary replies recommending other works.
+  const linked=[...document.querySelectorAll('.description-block a[href]')].some(a=>originalPage(a.getAttribute('href'),threadUrl)?.url===originalPage(articleUrl)?.url);
+  if(!linked)return [];
+  const post=document.querySelector('.post'),content=post?.querySelector('.long > .content');
+  if(!content||!/^atrybucja(?:\s|$)/iu.test(post.querySelector('.long .title')?.textContent.trim()||''))return [];
+  return [...content.querySelectorAll('a[href]')].filter(a=>/^oryginał\s*:?$/iu.test(a.textContent.trim()))
+    .map(a=>originalPage(a.getAttribute('href'),threadUrl)).filter(p=>p&&p.url!==originalPage(articleUrl)?.url)
+    .map(p=>({...p,method:'credit_original_label',quote:'Oryginał',attributionPage:threadUrl,postId:post.id}));
 }
 function extractAuthorCredits(document){
   const authors=new Map(),translators=new Map(),derivativeAuthors=new Map();
@@ -60,4 +92,4 @@ function extractAuthorCredits(document){
   return {authorCreditVersion:1,originalAuthors:[...(derivativeAuthors.size?derivativeAuthors:authors).values()].sort((a,b)=>a.id.localeCompare(b.id)),
     upstreamAuthors:derivativeAuthors.size?[...authors.values()]:[],translators:[...translators.values()].sort((a,b)=>a.id.localeCompare(b.id))};
 }
-module.exports={VERSION,originalPage,extractOriginalSources,extractAuthorCredits};
+module.exports={VERSION,originalPage,extractOriginalSources,extractAuthorCredits,discussionPage,extractDiscussionSources,validDiscussionUrl};

@@ -5,6 +5,17 @@ const {originHint,parseIndex}=require('../catalog-indexes');
 const {buildIndexedCatalog}=require('../merge-catalog-indexes');
 const unknown={branch:null,basis:'insufficient_origin_evidence',evidence:[]};
 const resolve=(tags,evidence,fallback=unknown)=>resolveOrigin({tags},evidence,fallback,originHint);
+
+test('CN original short-story collection supplies origin without treating arbitrary CN pages as originals',()=>{
+ const source='https://scp-wiki-cn.wikidot.com/short-stories';
+ assert.equal(resolve([], [{source}]).branch,'cn');
+ assert.equal(resolve([], [{source:source+'/p/2'}]).branch,'cn');
+ assert.equal(resolve([], [{source:'https://scp-jp.wikidot.com/short-stories'}]).branch,null);
+ assert.equal(resolve([], [{source:source+'-translations'}]).branch,null);
+ assert.equal(resolve(['翻译'],[{source}]).branch,null);
+ assert.equal(resolve([], [{source}],{branch:'jp',basis:'publisher_origin_tag'}).branch,'jp');
+ assert.equal(resolve([], [{source}],{branch:null,basis:'unresolved_interwiki_origin'}).branch,null);
+});
 test('article provenance overrides conflicting or incorrect index origins',()=>{
  const fallback={branch:'jp',basis:'publisher_origin_tag',evidence:['jp']};
  assert.equal(resolve(['jp'],[{source:'https://scp-jp.wikidot.com/foundation-tales-jp',origin:'pl'}],fallback).branch,'jp');
@@ -58,6 +69,61 @@ test('EN hidden language tags identify the original branch without treating inte
  assert.equal(infer('https://scp-wiki.wikidot.com/story',['international','_ms','tale']).branch,'ms');
  assert.equal(infer('https://scp-wiki.wikidot.com/story',['international','tale']).branch,null);
  assert.equal(infer('https://scp-jp.wikidot.com/story',['_jp']).branch,null);
+});
+
+test('German written-out origin tags take priority over the English translation default',()=>{
+ const url='https://scp-wiki-de.wikidot.com/story';
+ for(const [tag,branch] of [['deutsch','de'],['französisch','fr'],['japanisch','jp'],['traditionelles-chinesisch','zh'],['lateinisch','la']]) {
+   const result=infer(url,[tag,'geschichte',...(branch==='de'?[]:['übersetzt'])]);
+   assert.equal(result.branch,branch);
+   assert.equal(result.basis,'publisher_origin_tag');
+   assert.equal(infer('https://scp-jp.wikidot.com/story',[tag]).branch,null);
+ }
+ assert.equal(infer(url,['übersetzt','fr','französisch']).branch,'fr');
+ assert.equal(infer(url,['übersetzt','französisch','japanisch']).basis,'conflicting_origin_tags');
+ assert.equal(infer(url,['deutsch','jp']).basis,'conflicting_origin_tags');
+ assert.equal(infer(url,['übersetzt','sh','deutsch']).basis,'unsupported_origin_tag');
+});
+
+test('Czech and Slovak original tags identify separate branches on the shared publisher',()=>{
+ const url='https://scp-cs.wikidot.com/story';
+ assert.equal(infer(url,['české','tale']).branch,'cs');
+ assert.equal(infer(url,['slovenské','tale']).branch,'sk');
+ assert.equal(infer(url,['české','slovenské']).basis,'conflicting_origin_tags');
+ assert.equal(infer(url,['české','en']).basis,'conflicting_origin_tags');
+ assert.equal(infer('https://scp-jp.wikidot.com/story',['české']).branch,null);
+ assert.equal(infer(url,['tale']).branch,null);
+});
+
+test('localized origin tags flow into the catalog without changing article IDs or membership',()=>{
+ const languages=[['de','scp-wiki-de','deutsch'],['cs','scp-cs','české']];
+ const states={},previous={data:[]};
+ for(const [language,host,tag] of languages){
+   const url=`https://${host}.wikidot.com/story`,source=`https://${host}.wikidot.com/foundation-tales`;
+   states[language]={indexes:{[source]:{members:[{url,source,kind:'tale'}]}},records:{[url]:{url,title:'Story',tags:[tag,'tale'],availabilityVersion:1,contentSha256:'a'.repeat(64),checkedAt:'2026-11-09T00:00:00Z'}},attempts:{}};
+   previous.data.push({url,language,itemId:`document-${language}--story`,pageType:'related-document-unclassified'});
+ }
+ const result=buildIndexedCatalog([],states,previous);
+ assert.equal(result.data.length,previous.data.length);
+ for(const row of result.data){
+   assert.equal(row.itemId,previous.data.find(r=>r.url===row.url).itemId);
+   assert.equal(row.pageType,`related-document-${row.language}`);
+   assert.equal(row.classification.basis,'publisher_origin_tag');
+ }
+});
+
+test('incubator source catalog fixes origin while retaining the published document identity',()=>{
+ const source='https://scp-wiki.wikidot.com/scp-682',url='https://scp-int.wikidot.com/unofficial:ca:scp-682';
+ const index='https://scp-int.wikidot.com/unofficial:language-incubator-hub';
+ const seed={language:'en',itemId:'scp-series-682',pageType:'scp-series',urlJP:source,isTranslatedJP:true};
+ const previous={data:[{url,language:'int',itemId:'document-existing-incubator',pageType:'related-document-unclassified'}]};
+ const state={indexes:{[index]:{members:[{url,source:index,kind:'scp'}]}},records:{[url]:{url,title:'SCP-682 (Catalan)',tags:['language-incubator','catalan','scp'],availabilityVersion:1,contentSha256:'a'.repeat(64),checkedAt:'2026-11-09T00:00:00Z'}},attempts:{}};
+ const result=buildIndexedCatalog([seed],{int:state},previous);
+ assert.equal(result.data.length,1);
+ assert.equal(result.data[0].url,url);
+ assert.equal(result.data[0].itemId,'document-existing-incubator');
+ assert.equal(result.data[0].pageType,'related-document-en');
+ assert.equal(result.data[0].classification.basis,'incubator_source_catalog');
 });
 test('documented publisher defaults require fiction tags and do not apply to unsupported or secondary translations',()=>{
  const url='https://scp-wiki-cn.wikidot.com/story';

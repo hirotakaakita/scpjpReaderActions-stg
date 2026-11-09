@@ -2,13 +2,14 @@
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const {extractHtml,classify}=require('../related-documents');
 const {originalPage}=require('../origin-provenance');
+const {VERSION}=require('../origin-provenance');
 const url='https://scp-cs.wikidot.com/translated';
 const html=body=>`<div id="page-title">Story</div><div id="page-content"><p>Real story text.</p>${body}</div>`;
 test('extracts only explicit original-source labels in credits, not body references or other credit links',()=>{
  const r=extractHtml(url,html('<a href="https://scp-wiki.wikidot.com/referenced">Reference</a><div class="credit"><p>Title: Work<br>Originál: <a href="http://www.scp-wiki.net/original">Source</a><br>Other work: <a href="https://scp-jp.wikidot.com/other">Other</a></p></div>'));
  assert.deepEqual(r.originalSources.map(s=>s.url),['https://scp-wiki.wikidot.com/original']);
  const result=classify(url,new Map([[url,r]]),new Map());assert.equal(result.branch,'en');assert.equal(result.basis,'explicit_original_credit');
- assert.equal(r.originProvenanceVersion,1);
+ assert.equal(r.originProvenanceVersion,VERSION);
 });
 test('rejects arbitrary hosts, query actions, user profiles, and same-page sources',()=>{
  for(const target of ['https://example.com/story','https://scp-wiki.wikidot.com/story?action=delete','https://scp-wiki.wikidot.com/user:info/person'])assert.equal(originalPage(target),null);
@@ -49,20 +50,41 @@ function fixture(t){
 }
 test('bounded provenance refresh keeps catalog membership and pending checkpoints intact',async t=>{
  const f=fixture(t),incoming=path.join(f.root,'partial-data/catalog-indexes/cs.json.gz');writeState(incoming,f.state);
- const report=await refresh({root:f.root,maxRequests:1,intervalMs:0,request:async url=>({...f.record,originProvenanceVersion:1,originalSources:[{url:'https://scp-wiki.wikidot.com/original',method:'credit_original_label'}],links:['https://scp-wiki.wikidot.com/do-not-crawl']})});
+ const report=await refresh({root:f.root,maxRequests:1,intervalMs:0,request:async url=>({...f.record,originProvenanceVersion:VERSION,originalSources:[{url:'https://scp-wiki.wikidot.com/original',method:'credit_original_label'}],links:['https://scp-wiki.wikidot.com/do-not-crawl']})});
  assert.equal(report.updated,1);assert.equal(report.withOriginalSource,1);
- for(const file of [f.file,incoming]){const state=readState(file);assert.deepEqual(Object.keys(state.records),[f.url]);assert.deepEqual(state.records[f.url].links,[]);assert.equal(state.records[f.url].originProvenanceVersion,1);}
+ for(const file of [f.file,incoming]){const state=readState(file);assert.deepEqual(Object.keys(state.records),[f.url]);assert.deepEqual(state.records[f.url].links,[]);assert.equal(state.records[f.url].originProvenanceVersion,VERSION);}
  let requests=0;await refresh({root:f.root,maxRequests:1,intervalMs:0,request:async()=>{requests++;}});assert.equal(requests,0);
+});
+
+test('explicit refresh targets include audited pages absent from the additional catalog and force a new observation',async t=>{
+ const f=fixture(t),other='https://scp-cs.wikidot.com/other';
+ f.state.records[f.url]={...f.record,originProvenanceVersion:VERSION};
+ f.state.records[other]={...f.record,url:other};writeState(f.file,f.state);
+ let requests=0;
+ const report=await refresh({root:f.root,targets:[{url:other,language:'cs'},{url:f.url,language:'cs'}],force:true,maxRequests:2,intervalMs:0,
+  request:async url=>{requests++;return {...f.record,url,originProvenanceVersion:VERSION};}});
+ assert.equal(requests,2);assert.equal(report.updated,2);assert.equal(report.complete,true);
+ assert.equal(readState(f.file).records[other].originProvenanceVersion,VERSION);
+});
+
+test('concurrent provenance requests share state and keep the request budget',async t=>{
+ const f=fixture(t),urls=Array.from({length:5},(_,i)=>'https://scp-cs.wikidot.com/story-'+i);
+ for(const url of urls)f.state.records[url]={...f.record,url};writeState(f.file,f.state);
+ let active=0,peak=0;
+ const report=await refresh({root:f.root,targets:urls.map(url=>({url,language:'cs'})),force:true,maxRequests:3,intervalMs:0,concurrency:2,
+  request:async url=>{active++;peak=Math.max(active,peak);await new Promise(r=>setTimeout(r,10));active--;return {...f.record,url,originProvenanceVersion:VERSION};}});
+ assert.equal(report.attempted,3);assert.equal(report.updated,3);assert.equal(report.complete,false);assert.equal(peak,2);
+ assert.equal(Object.values(readState(f.file).records).filter(r=>r.originProvenanceVersion===VERSION).length,3);
 });
 test('weekly collector refreshes missing provenance even while article metadata is otherwise fresh',async t=>{
  const f=fixture(t);let requests=0;
- const options={root:f.root,now:f.date,maxRequests:1,intervalMs:0,sources:[{language:'cs',url:f.source,kind:'tale'}],request:async()=>{throw Error('Fresh index should be reused');},articleRequest:async()=>{requests++;return {...f.record,originProvenanceVersion:1,originalSources:[]};}};
+ const options={root:f.root,now:f.date,maxRequests:1,intervalMs:0,sources:[{language:'cs',url:f.source,kind:'tale'}],request:async()=>{throw Error('Fresh index should be reused');},articleRequest:async()=>{requests++;return {...f.record,originProvenanceVersion:VERSION,originalSources:[]};}};
  await crawl('cs',options);assert.equal(requests,1);await crawl('cs',options);assert.equal(requests,1);
 });
 test('weekly provenance backfill takes priority over ordinary stale metadata',async t=>{
  const f=fixture(t),other='https://scp-cs.wikidot.com/aaa-stale';
- f.state.records[other]={...f.record,url:other,checkedAt:'2026-10-01T00:00:00Z',originProvenanceVersion:1};
+ f.state.records[other]={...f.record,url:other,checkedAt:'2026-10-01T00:00:00Z',originProvenanceVersion:VERSION};
  f.state.indexes[f.source].members.push({url:other,source:f.source,kind:'tale'});writeState(f.file,f.state);
- const seen=[];await crawl('cs',{root:f.root,now:f.date,maxRequests:1,intervalMs:0,sources:[{language:'cs',url:f.source,kind:'tale'}],request:async()=>{throw Error('Do not refresh fresh index');},articleRequest:async url=>{seen.push(url);return {...f.record,originProvenanceVersion:1};}});
+ const seen=[];await crawl('cs',{root:f.root,now:f.date,maxRequests:1,intervalMs:0,sources:[{language:'cs',url:f.source,kind:'tale'}],request:async()=>{throw Error('Do not refresh fresh index');},articleRequest:async url=>{seen.push(url);return {...f.record,originProvenanceVersion:VERSION};}});
  assert.deepEqual(seen,[f.url]);
 });

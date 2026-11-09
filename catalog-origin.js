@@ -19,13 +19,30 @@ function publisherOriginTags(url, record) {
   if (host === 'scp-wiki-cn.wikidot.com' && tags.includes('原创')) values.push('cn');
   if (host === 'scp-zh-tr.wikidot.com' && tags.includes('原創')) values.push('zh');
   if (host === 'scp-pl.wikidot.com' && tags.includes('oryginał')) values.push('pl');
+  // The publisher separates České články / Slovenské články using these tags:
+  // https://scp-cs.wikidot.com/foundation-tales
+  if (host === 'scp-cs.wikidot.com') {
+    if (tags.includes('české')) values.push('cs');
+    if (tags.includes('slovenské')) values.push('sk');
+  }
+  // DE requires the origin language written out, including deutsch for native
+  // articles: https://scp-wiki-de.wikidot.com/regeln (Vorgeschriebene Tags).
+  if (host === 'scp-wiki-de.wikidot.com') {
+    const languages = { deutsch:'de', englisch:'en', chinesisch:'cn',
+      'traditionelles-chinesisch':'zh', japanisch:'jp', koreanisch:'ko',
+      russisch:'ru', 'französisch':'fr', polnisch:'pl', spanisch:'es',
+      'thailändisch':'th', italienisch:'it', ukrainisch:'ua',
+      portugiesisch:'pt', tschechisch:'cs', vietnamesisch:'vn',
+      griechisch:'el', lateinisch:'la' };
+    values.push(...tags.map(t => languages[t]).filter(Boolean));
+  }
   return {
     origins: [...new Set(values.map(validOrigin).filter(Boolean))],
     unsupported: [...new Set(values.filter(t => unsupportedOrigins.has(t)))],
     conflicts: host === 'scp-pl.wikidot.com' && tags.includes('oryginał') && tags.includes('tłumaczenie') ? ['oryginał','tłumaczenie'] : [],
   };
 }
-function publisherDefaultOrigin(url, record) {
+function publisherDefaultOrigin(url, record, {originalSource=false}={}) {
   // Unresolved explicit translation metadata must not be replaced by a default.
   if (record?.translations?.length || record?.originalSources?.length) return null;
   const tags = new Set((record?.tags || []).map(t => t.toLowerCase()));
@@ -43,7 +60,12 @@ function publisherDefaultOrigin(url, record) {
     return { branch:'en',basis:'publisher_default_origin',evidence:['https://scp-wiki-cn.wikidot.com/tag-guide'] };
   }
   if (host === 'scp-wiki.wikidot.com' &&
-      ['scp','tale','supplement','hub','site'].some(t => tags.has(t))) {
+      (['scp','tale','supplement','hub','site'].some(t => tags.has(t)) ||
+       // A verified terminal translationOf source also covers EN resources,
+       // essays and art. EN translations-policy requires international tags
+       // for translations of every article type. Do not extend host defaults
+       // to unlabelled pages without this independent original-source proof.
+       originalSource && tags.size>0 && ![...tags].some(t=>/^_[a-z]{2,3}$/.test(t)&&!['_cc','_nc','_occ','_o'].includes(t)))) {
     return { branch:'en',basis:'publisher_default_origin',evidence:['https://scp-wiki.wikidot.com/translations-policy'] };
   }
   return null;
@@ -53,6 +75,10 @@ function publisherDefaultOrigin(url, record) {
 function nativeCollectionOrigin(source) {
   try {
     const u = new URL(source);
+    // The CN short-story submission hub explicitly presents its archive as
+    // 原创短篇故事 and publishes members' own submissions (with authors).
+    // https://scp-wiki-cn.wikidot.com/short-stories
+    if(u.hostname==='scp-wiki-cn.wikidot.com'&&/^\/short-stories(?:\/p\/\d+)?\/?$/.test(u.pathname))return 'cn';
     // The page explicitly says "Relatos ... Anglosajones / Sección Anglosajona".
     if (u.hostname === 'lafundacionscp.wikidot.com' && /^\/relatos-de-la-fundacion(?:\/p\/\d+)?\/?$/.test(u.pathname)) return 'en';
     return u.hostname === 'scp-wiki.wikidot.com' &&
@@ -62,7 +88,7 @@ function nativeCollectionOrigin(source) {
 function resolveOrigin(record, evidence, fallback, originHint) {
   // Article-specific provenance wins over a mixed hub's section headings.
   if (validOrigin(fallback.branch)) return { ...fallback, branch: validOrigin(fallback.branch) };
-  if (/^conflicting_|^unsupported_|^unresolved_original_credit$|^translation_(?:cycle|depth_limit)$/.test(fallback.basis || '')) return fallback;
+  if (/^conflicting_|^unsupported_|^unresolved_(?:original_credit|interwiki_origin)$|^translation_(?:cycle|depth_limit)$/.test(fallback.basis || '')) return fallback;
   const origins = [...new Set(evidence.map(e => {
     const hint = e.source ? validOrigin(originHint(e.source)) : null;
     // Old checkpoints may carry an origin leaked from a previous heading.

@@ -71,6 +71,7 @@ function extractHtml(url, html, now = new Date().toISOString(), existingDocument
     const metadata = require('./local-crawler');
     return { ...page, title, tags, translations: [...new Set(translations)].sort(), authors,
       originProvenanceVersion:provenance.VERSION, originalSources:provenance.extractOriginalSources(d,page.url),
+      attributionDiscussionUrl:provenance.discussionPage(d,page.url),
       ...provenance.extractAuthorCredits(d),
       objectClass: metadata.extractObjectClassFromDocument(d), rating: metadata.extractRatingFromDocument(d),
       imageUrl: metadata.extractImageUrlFromDocument(d,page.url),
@@ -166,6 +167,29 @@ function branchOfType(type) {
   if (['scp-series', 'joke-scps', 'scp-ex'].includes(type)) return 'en';
   return /^(?:scp-series-|joke-scps-)([a-z-]+)$/.exec(type || '')?.[1] || /^scp-([a-z-]+)-ex$/.exec(type || '')?.[1] || null;
 }
+function incubatorSource(url, record, catalogByUrl) {
+  const page = normalize(url);
+  const match = /^unofficial:[a-z]{2,3}:(scp-[a-z0-9-]+)$/.exec(page?.slug || '');
+  if (page?.language !== 'int' || !match || !(record?.tags || []).includes('language-incubator')) return null;
+  // ULI's posting rules preserve the original unix-name after the delivery
+  // language prefix. The language tag itself describes the translation, not
+  // its origin: https://scp-int.wikidot.com/unofficial:language-incubator-hub
+  // Require an existing native SCP catalog entry for that exact unix-name.
+  const evidence = [];
+  for (const [site, config] of Object.entries(LANGUAGES)) {
+    const source = normalize(match[1], config.baseUrl);
+    for (const entry of catalogByUrl.get(source?.url) || []) {
+      const branch = branchOfType(entry.pageType);
+      if (branch && (branch === (site === 'zh-tr' ? 'zh' : site) || (site === 'cs' && branch === 'sk'))) {
+        evidence.push({ url: source.url, itemId: entry.itemId, pageType: entry.pageType, branch });
+      }
+    }
+  }
+  const branches = [...new Set(evidence.map(e => e.branch))];
+  if (!branches.length) return null;
+  return { branch: branches.length === 1 ? branches[0] : null,
+    basis: branches.length === 1 ? 'incubator_source_catalog' : 'conflicting_incubator_source_catalog', evidence };
+}
 function classify(url, records, catalogByUrl, visited = new Set()) {
   if (visited.size >= 20) return { branch: null, basis: 'translation_depth_limit', evidence: [] };
   if (visited.has(url)) return { branch: null, basis: 'translation_cycle', evidence: [] };
@@ -185,16 +209,34 @@ function classify(url, records, catalogByUrl, visited = new Set()) {
     if(!target||source.method!=='credit_original_label')continue;
     const known=records.has(target.url)||catalogByUrl.has(target.url);
     const result=known?classify(target.url,records,catalogByUrl,next):null;
+    const originalDefault=result?.basis==='insufficient_origin_evidence'&&target.hostBranch==='en'?
+      publisherDefaultOrigin(target.url,records.get(target.url),{originalSource:true}):null;
     const secondary=(r.tags||[]).some(t=>['二次翻译','二次翻譯','重訳','translation'].includes(t));
-    const branch=result?.branch||(!known&&!secondary&&target.hostBranch!=='int'?target.hostBranch:null);
+    const branch=result?.branch||originalDefault?.branch||(!known&&!secondary&&target.hostBranch!=='int'?target.hostBranch:null);
     if(branch)originalOrigins.push({branch,url:target.url,quote:source.quote});
   }
   const originalBranches=[...new Set(originalOrigins.map(s=>s.branch))];
   if(originalBranches.length)return {branch:originalBranches.length===1?originalBranches[0]:null,basis:originalBranches.length===1?'explicit_original_credit':'conflicting_original_credits',evidence:originalOrigins};
   if(r?.originalSources?.length)return {branch:null,basis:'unresolved_original_credit',evidence:r.originalSources};
+  const interwiki=r?.interwikiOrigin;
+  if(interwiki?.schemaVersion===1&&interwiki.queryUrl===url&&interwiki.contentSha256===r.contentSha256&&interwiki.status==='unsupported_source')
+    return {branch:null,basis:'unsupported_interwiki_source',evidence:[interwiki]};
+  if(interwiki?.schemaVersion===1&&interwiki.queryUrl===url&&interwiki.contentSha256===r.contentSha256&&interwiki.status==='translation'&&interwiki.chain?.length){
+    const chain=interwiki.chain.map(u=>provenance.originalPage(u));
+    if(!interwiki.terminal||chain.some(p=>!p)||new Set([url,...chain.map(p=>p?.url)]).size!==chain.length+1)
+      return {branch:null,basis:'unresolved_interwiki_origin',evidence:[interwiki]};
+    const target=chain.at(-1),known=records.has(target.url)||catalogByUrl.has(target.url);
+    const resolved=known?classify(target.url,records,catalogByUrl,new Set([...next,...chain.slice(0,-1).map(p=>p.url)])):null;
+    const originalDefault=resolved?.basis==='insufficient_origin_evidence'&&target.hostBranch==='en'?
+      publisherDefaultOrigin(target.url,records.get(target.url),{originalSource:true}):null;
+    const branch=resolved?.branch||originalDefault?.branch||(!known&&target.hostBranch!=='int'?target.hostBranch:null);
+    return {branch,basis:branch?'interwiki_original_metadata':'unresolved_interwiki_origin',evidence:[interwiki]};
+  }
   const translated = (r?.translations || []).map(target => ({ target, ...classify(target, records, catalogByUrl, next) })).filter(v => v.branch);
   const origins = [...new Set(translated.map(v => v.branch))];
   if (origins.length) return { branch: origins.length === 1 ? origins[0] : null, basis: origins.length === 1 ? 'explicit_translation_metadata' : 'conflicting_translation_metadata', evidence: translated };
+  const incubator = incubatorSource(url, r, catalogByUrl);
+  if (incubator) return incubator;
   const slug = normalize(url).slug, m = /^scp-(?:([a-z][a-z-]*)-)?(\d+)(?:-(.*))?$/.exec(slug);
   if (m) {
     const tokens = (m[3] || '').split('-'), branch = m[1] || tokens.find(t => known.has(t)) || 'en';
@@ -239,9 +281,11 @@ function buildCatalogs(catalogs, records, attempts, now = new Date().toISOString
       discoveredDocuments: sources.size, classified: data.filter(r => r.originBranch).length, unclassified: data.filter(r => !r.originBranch).length, pending: pending.length } };
 }
 
-async function fetchRecord(url, captureDirectory = null) {
+async function fetchRecord(url, captureDirectory = null, {rawDirectory=null} = {}) {
   const page = normalize(url);
   if (!page) throw Error('Unsupported URL');
+  function saveRaw(body,format){if(!rawDirectory)return;fs.mkdirSync(rawDirectory,{recursive:true});
+    fs.writeFileSync(path.join(rawDirectory,hash(page.url)+'.'+format+'.gz'),zlib.gzipSync(typeof body==='string'?body:JSON.stringify(body)));}
   // Validate every redirect so an allowlisted link cannot redirect requests to arbitrary hosts.
   const request = async (target, depth = 0) => {
     target = articleFetchTarget(target);
@@ -257,12 +301,14 @@ async function fetchRecord(url, captureDirectory = null) {
       timeout: 20000, maxRedirects: 0, maxContentLength: 4 * 1024 * 1024, headers: { Accept: 'application/json' },
     });
     const record = extractApi(url, response.data);
+    saveRaw(response.data,'json');
     if (captureDirectory) require('./research-board/source-store').capture(url, JSON.stringify(response.data), 'ftml', captureDirectory);
     return record;
   }
   const configuredScheme = new URL(LANGUAGES[page.language].baseUrl).protocol;
   const html = await request(url.replace(/^https:/, configuredScheme));
   const record = extractHtml(url, html);
+  saveRaw(html,'html');
   if (captureDirectory) require('./research-board/source-store').capture(url, html, 'html', captureDirectory);
   return record;
 }

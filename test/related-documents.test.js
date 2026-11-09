@@ -12,6 +12,31 @@ const date = '2026-11-05T00:00:00.000Z';
 const row = { itemId: 'scp-series-682', language: 'en', urlEN: seed, pageType: 'scp-series', isTranslatedJP: false };
 const html = body => `<div id="page-title">Document title</div><div id="page-content">${body}</div><div class="page-tags"><a>en</a></div>`;
 
+test('incubator translations resolve the preserved original name against native SCP catalogs',()=>{
+ const url='https://scp-int.wikidot.com/unofficial:ca:scp-682';
+ const records=new Map([[url,{tags:['language-incubator','catalan','scp']}]]);
+ const seeds=new Map([[seed,[row]]]);
+ const result=classify(url,records,seeds);
+ assert.equal(result.branch,'en');assert.equal(result.basis,'incubator_source_catalog');
+ assert.equal(result.evidence[0].url,seed);
+ const jp='https://scp-jp.wikidot.com/scp-040-jp';
+ const translated='https://scp-int.wikidot.com/unofficial:he:scp-040-jp';
+ records.set(translated,{tags:['language-incubator','hebrew']});
+ seeds.set(jp,[{itemId:'scp-series-jp-040',pageType:'scp-series-jp'}]);
+ assert.equal(classify(translated,records,seeds).branch,'jp');
+ assert.equal(classify(url,records,new Map()).branch,null);
+ assert.equal(classify(url,new Map([[url,{tags:['catalan']}]]),seeds).branch,null);
+ const elsewhere='https://scp-jp.wikidot.com/unofficial:ca:scp-682';
+ assert.equal(classify(elsewhere,new Map([[elsewhere,{tags:['language-incubator']}]]),seeds).branch,null);
+ // A translation delivery catalog is not proof of a native source.
+ assert.equal(classify(url,records,new Map([['https://scp-jp.wikidot.com/scp-682',[row]]])).branch,null);
+ // Explicit provenance and conflicts retain priority over namespace evidence.
+ assert.equal(classify(url,new Map([[url,{tags:['language-incubator','jp']}]]),seeds).branch,'jp');
+ assert.equal(classify(url,new Map([[url,{tags:['language-incubator','jp','en']}]]),seeds).basis,'conflicting_origin_tags');
+ const conflicting=new Map([...seeds,['https://scp-jp.wikidot.com/scp-682',[{pageType:'scp-series-jp'}]]]);
+ assert.equal(classify(url,records,conflicting).basis,'conflicting_incubator_source_catalog');
+});
+
 test('only publisher pages are candidates; aliases and tracking URLs normalize', () => {
   assert.equal(normalize('http://www.scpwiki.com/scp-682#x').url, seed);
   for (const url of ['https://example.com/a', 'file:///a', 'https://scp-wiki.wikidot.com/system:page',

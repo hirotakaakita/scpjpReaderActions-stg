@@ -118,6 +118,20 @@ jobs:
           IDENTITY_MAX_REQUESTS: '150'
           IDENTITY_MAX_DURATION_MS: '180000'
 
+      - name: Refresh attribution formats for unresolved articles
+        continue-on-error: true
+        run: node tool/refresh-attribution-evidence.js ${{ matrix.lang }}
+        env:
+          ATTRIBUTION_MAX_REQUESTS: '40'
+          ATTRIBUTION_MAX_DURATION_MS: '120000'
+
+      - name: Resolve original sources from interwiki metadata
+        continue-on-error: true
+        run: node tool/enrich-origin-evidence.js ${{ matrix.lang }}
+        env:
+          ORIGIN_EVIDENCE_MAX_PAGES: '600'
+          ORIGIN_EVIDENCE_MAX_DURATION_MS: '180000'
+
       - name: Upload partial data
         uses: actions/upload-artifact@v7
         with:
