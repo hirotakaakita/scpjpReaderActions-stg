@@ -164,7 +164,21 @@ function collapseWorks(pages, candidates, catalogEntries) {
     relations.get(key).proofs.set(JSON.stringify(edge.proof), edge.proof);
   }
   const ambiguousWorkKeys=[...keyClaims].filter(([,claims])=>claims.size>1).map(([key])=>key).sort();
-  const ambiguousArticleIds=[...new Set(ambiguousWorkKeys.map(key=>key.slice(key.indexOf(':',8)+1)))].sort();
+  // A classification repair keeps raw IDs even when their pageType changes.
+  // Track reuse across all resulting works, including non-SCP categories.
+  const rawOwners=new Map();
+  for(const [pageId,entries]of catalogEntries){
+    const work=pageKeys.get(pageId);if(!work)continue;
+    for(const entry of entries){
+      if(!entry.itemId)continue;
+      if(!rawOwners.has(entry.itemId))rawOwners.set(entry.itemId,new Set());
+      rawOwners.get(entry.itemId).add(work);
+    }
+  }
+  const ambiguousArticleIds=[...new Set([
+    ...ambiguousWorkKeys.map(key=>key.slice(key.indexOf(':',8)+1)),
+    ...[...rawOwners].filter(([,owners])=>owners.size>1).map(([id])=>id),
+  ])].sort();
   return { nodes, identityProofs, identityReview, ambiguousWorkKeys, ambiguousArticleIds, sourcePageCount: pages.filter(p => !p.classificationSourceId).length, internalReferences,
     relations: [...relations.values()].map(e => ({ ...e, proofs: [...e.proofs].sort(([a], [b]) => a.localeCompare(b, 'en')).map(([, proof]) => proof) }))
       .sort((a, b) => `${a.source}\0${a.type}\0${a.target}`.localeCompare(`${b.source}\0${b.type}\0${b.target}`, 'en')) };

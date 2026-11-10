@@ -10,6 +10,15 @@ function fixture(site,slug='aeliana',origin='jp',extra={}){
  return {row,catalog:{language:site,timestamp:stamp,data:[row]},id:p.id,state:{record:{url,pageId:p.id,title:row.titleJP,tags:[origin],authors:site==='es'?[]:[{url:'https://www.wikidot.com/user:info/amamiel'}],catalogIdentity:{originBranch:origin,basis:'publisher_origin_tag'},limitations:['legacy_unchecked_links'],contentSha256:'a'.repeat(64),checkedAt:stamp},lastAttempt:{status:'success',at:stamp}}};
 }
 const board=items=>buildBoard(items.map(x=>x.catalog),new Map(items.map(x=>[x.id,x.state])));
+
+test('raw IDs reused across reclassified non-SCP works are flagged without merging',()=>{
+ const id='joke-scps-173-but-it-s-the-admonition-hub';
+ const first=fixture('jp','different-joke','en',{itemId:id,pageType:'joke-scps',contentType:'scp'});
+ const second=fixture('cn','different-hub','jp',{itemId:id,pageType:'related-document-jp',contentType:'hub'});
+ const b=board([first,second]);
+ assert.equal(b.nodes.length,2);
+ assert(b.overview.ambiguousArticleIds.includes(id));
+});
 test('AELIANA original and three translations form one JP work with all old identities',()=>{
  const b=board(['jp','cn','es','int'].map(s=>fixture(s)));assert.equal(b.nodes.length,1);
  const n=b.nodes[0];assert.equal(n[8],'jp');assert.equal(n[11],'jp');assert.equal(n[13].length,4);assert.equal(n[14][2].length,4);
