@@ -5528,8 +5528,10 @@
         }
       ],
       "attempts": 1,
-      "status": "sending",
-      "startedAt": "2026-11-10T20:08:06.913Z"
+      "status": "sent",
+      "startedAt": "2026-11-10T20:08:06.913Z",
+      "messageName": "projects/scpjp-reader-stg/messages/-3443051959155391725",
+      "sentAt": "2026-11-10T20:08:43.422Z"
     }
   ]
 }
