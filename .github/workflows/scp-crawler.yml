@@ -5,6 +5,11 @@ on:
     - cron: '0 0 * * 0'
   workflow_dispatch:
     inputs:
+      additional_sites_only:
+        description: "Crawl only the 16 newly added viewing languages"
+        required: false
+        default: false
+        type: boolean
       force_refresh_scp_details:
         description: "Force refresh SCP object classes and excerpts"
         required: false
@@ -57,9 +62,14 @@ jobs:
       - name: Validate tag dictionary
         run: node -e "require('./tag-dictionary').readDictionary('tag-dictionary.json')"
 
+      - name: Validate additional branch sites and namespace routing
+        run: node --test test/additional-sites.test.js
+
       - name: Generate matrix
         id: matrix
         run: echo "matrix=$(node print-matrix.js)" >> "$GITHUB_OUTPUT"
+        env:
+          ADDITIONAL_SITES_ONLY: ${{ inputs.additional_sites_only == true && '1' || '0' }}
 
   crawl:
     runs-on: ubuntu-latest

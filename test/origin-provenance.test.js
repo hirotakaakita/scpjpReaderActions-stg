@@ -26,10 +26,10 @@ test('conflicting credits and unresolved secondary translations stay unknown',()
  r.tags=['二次翻译'];r.originalSources=r.originalSources.slice(0,1);
  assert.equal(classify(url,new Map([[url,r]]),new Map()).basis,'unresolved_original_credit');
 });
-test('recognized smaller branches are metadata only, not added crawl destinations',()=>{
+test('verified smaller branches retain original-credit classification as crawl destinations',()=>{
  const r=extractHtml(url,html('<div class="credit">Originál: <a href="https://scp-la.wikidot.com/story">Latin source</a></div>'));
  assert.equal(classify(url,new Map([[url,r]]),new Map()).branch,'la');
- assert.equal(require('../related-documents').normalize(r.originalSources[0].url),null);
+ assert.equal(require('../related-documents').normalize(r.originalSources[0].url).language,'la');
  assert.equal(require('../research-board/classification').branchForPageType('related-document-la'),'la');
 });
 test('Portuguese translation policy supplies EN only if no origin or conflicting metadata exists',()=>{

@@ -7,7 +7,10 @@ const { LANGUAGES } = require('./languages');
  * 使い方: node print-matrix.js
  * 出力例: {"include":[{"lang":"jp"}, {"lang":"en"}, ...]}
  */
-const include = Object.keys(LANGUAGES).map(lang => ({ lang }));
+const selected = process.env.ADDITIONAL_SITES_ONLY === '1'
+  ? Object.keys(require('./additional-sites.json'))
+  : Object.keys(LANGUAGES);
+const include = selected.map(lang => ({ lang }));
 
 if (include.length > 256) {
   // GitHub Actionsのmatrix上限
