@@ -90,53 +90,8 @@
       "lastSentWindow": "2026-11-08"
     },
     "la": {
-      "items": [
-        {
-          "itemId": "scp-series-la-001",
-          "titleJP": "Awaiting De-classification [Blocked]"
-        },
-        {
-          "itemId": "scp-series-la-002",
-          "titleJP": "Fructum"
-        },
-        {
-          "itemId": "scp-series-la-003",
-          "titleJP": "ianua"
-        },
-        {
-          "itemId": "scp-series-la-004",
-          "titleJP": "Police!!!!"
-        },
-        {
-          "itemId": "scp-series-la-005",
-          "titleJP": "Kinander Bales"
-        },
-        {
-          "itemId": "scp-series-la-006",
-          "titleJP": "Abyssus Road"
-        },
-        {
-          "itemId": "scp-series-la-007",
-          "titleJP": "Gloria praeteriti"
-        },
-        {
-          "itemId": "scp-series-005",
-          "titleJP": "Clavis Translatitia"
-        },
-        {
-          "itemId": "scp-series-066",
-          "titleJP": "Eric's Toy"
-        },
-        {
-          "itemId": "scp-series-079",
-          "titleJP": "Old AI"
-        },
-        {
-          "itemId": "scp-series-173",
-          "titleJP": "Simulacrum -"
-        }
-      ],
-      "lastSentWindow": null
+      "items": [],
+      "lastSentWindow": "2026-11-08"
     },
     "nl": {
       "items": [
