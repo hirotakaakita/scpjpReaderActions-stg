@@ -6152,6 +6152,32 @@
       "startedAt": "2026-11-10T20:08:06.913Z",
       "messageName": "projects/scpjp-reader-stg/messages/-824535098934422151",
       "sentAt": "2026-11-10T20:08:46.245Z"
+    },
+    {
+      "id": "tok/2026-11-08",
+      "lang": "tok",
+      "window": "2026-11-08",
+      "items": [
+        {
+          "itemId": "scp-series-tok-021",
+          "titleJP": "󱥔　:)"
+        },
+        {
+          "itemId": "scp-series-173",
+          "titleJP": "󱤛󱤻 - 󱤽󱥳"
+        },
+        {
+          "itemId": "scp-series-426",
+          "titleJP": "󱤴󱤌󱥗󱥋"
+        },
+        {
+          "itemId": "scp-series-527",
+          "titleJP": "󱤑󱦐󱤔󱦝󱦑"
+        }
+      ],
+      "attempts": 1,
+      "status": "sending",
+      "startedAt": "2026-11-10T20:08:06.913Z"
     }
   ]
 }
