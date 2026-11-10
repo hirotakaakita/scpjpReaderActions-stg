@@ -70,125 +70,8 @@
       "lastSentWindow": "2026-11-08"
     },
     "ar": {
-      "items": [
-        {
-          "itemId": "scp-series-ar-001",
-          "titleJP": "في انتظار إلغاء التصنيف [محظور]"
-        },
-        {
-          "itemId": "scp-series-ar-010",
-          "titleJP": "الوحش البلاستيكي"
-        },
-        {
-          "itemId": "scp-series-ar-062",
-          "titleJP": "\"Dr.S\""
-        },
-        {
-          "itemId": "scp-series-001",
-          "titleJP": "في انتظار إلغاء التصنيف [محظور]"
-        },
-        {
-          "itemId": "scp-series-002",
-          "titleJP": "\"غرفة \"المعيشة"
-        },
-        {
-          "itemId": "scp-series-004",
-          "titleJP": "12 مفتاحًا صدئًا والباب"
-        },
-        {
-          "itemId": "scp-series-005",
-          "titleJP": "مفتاح الهيكل العظمي"
-        },
-        {
-          "itemId": "scp-series-006",
-          "titleJP": "ينبوع الشباب"
-        },
-        {
-          "itemId": "scp-series-008",
-          "titleJP": "طاعون الزومبي"
-        },
-        {
-          "itemId": "scp-series-017",
-          "titleJP": "الشخص الظل"
-        },
-        {
-          "itemId": "scp-series-018",
-          "titleJP": "الكرة الخارقة"
-        },
-        {
-          "itemId": "scp-series-035",
-          "titleJP": "قناع التملك"
-        },
-        {
-          "itemId": "scp-series-043",
-          "titleJP": "البيتلز"
-        },
-        {
-          "itemId": "scp-series-053",
-          "titleJP": "فتاة صغيرة"
-        },
-        {
-          "itemId": "scp-series-069",
-          "titleJP": "فرصة ثانية"
-        },
-        {
-          "itemId": "scp-series-073",
-          "titleJP": "\"قابيل\""
-        },
-        {
-          "itemId": "scp-series-076",
-          "titleJP": "\"هابيل\""
-        },
-        {
-          "itemId": "scp-series-104",
-          "titleJP": "الكرة الوحيدة"
-        },
-        {
-          "itemId": "scp-series-106",
-          "titleJP": "الرجل العجوز"
-        },
-        {
-          "itemId": "scp-series-173",
-          "titleJP": "النحت -"
-        },
-        {
-          "itemId": "scp-series-203",
-          "titleJP": "الروح الحديدية المعذبة"
-        },
-        {
-          "itemId": "scp-series-293",
-          "titleJP": "الهوس"
-        },
-        {
-          "itemId": "scp-series-321",
-          "titleJP": "طفل الانسان"
-        },
-        {
-          "itemId": "scp-series-485",
-          "titleJP": "قلم الموت"
-        },
-        {
-          "itemId": "scp-series-914",
-          "titleJP": "كلوكوركس"
-        },
-        {
-          "itemId": "scp-series-1129",
-          "titleJP": "استجابة مفرطة"
-        },
-        {
-          "itemId": "scp-series-1370",
-          "titleJP": "بيستيربوت"
-        },
-        {
-          "itemId": "scp-series-1535",
-          "titleJP": "المطهر"
-        },
-        {
-          "itemId": "scp-series-1784",
-          "titleJP": "الكسلان Skywriter"
-        }
-      ],
-      "lastSentWindow": null
+      "items": [],
+      "lastSentWindow": "2026-11-08"
     },
     "cy": {
       "items": [
@@ -5546,5 +5429,5 @@
       "lastSentWindow": null
     }
   },
-  "updatedAt": "2026-11-10T00:52:42.271Z"
+  "updatedAt": "2026-11-10T20:08:06.913Z"
 }
