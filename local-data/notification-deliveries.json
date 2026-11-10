@@ -5084,6 +5084,84 @@
       "startedAt": "2026-11-10T20:08:06.913Z",
       "messageName": "projects/scpjp-reader-stg/messages/5430166214619674816",
       "sentAt": "2026-11-10T20:08:32.250Z"
+    },
+    {
+      "id": "ro/2026-11-08",
+      "lang": "ro",
+      "window": "2026-11-08",
+      "items": [
+        {
+          "itemId": "scp-series-ro-001",
+          "titleJP": "În Așteptarea Clasificării [Blocate]"
+        },
+        {
+          "itemId": "scp-series-ro-004",
+          "titleJP": "Totul este mai frumos la Realitatea virtuală"
+        },
+        {
+          "itemId": "scp-series-ro-006",
+          "titleJP": "LaughCoin"
+        },
+        {
+          "itemId": "scp-series-001",
+          "titleJP": "În așteptarea Declasificării [Blocat]"
+        },
+        {
+          "itemId": "scp-series-002",
+          "titleJP": "Camera Vie"
+        },
+        {
+          "itemId": "scp-series-003",
+          "titleJP": "Placă de bază biologică"
+        },
+        {
+          "itemId": "scp-series-004",
+          "titleJP": "Cele 12 Chei Ruginite și Ușa"
+        },
+        {
+          "itemId": "scp-series-005",
+          "titleJP": "Cheia universală"
+        },
+        {
+          "itemId": "scp-series-006",
+          "titleJP": "Fântâna tinereții"
+        },
+        {
+          "itemId": "scp-series-007",
+          "titleJP": "Planeta abdominală"
+        },
+        {
+          "itemId": "scp-series-008",
+          "titleJP": "Prionul Zombi"
+        },
+        {
+          "itemId": "scp-series-012",
+          "titleJP": "O Compoziție Proastă"
+        },
+        {
+          "itemId": "scp-series-096",
+          "titleJP": "„Tipul Timid”"
+        },
+        {
+          "itemId": "scp-series-173",
+          "titleJP": "Sculptura - Originalul"
+        },
+        {
+          "itemId": "scp-series-409",
+          "titleJP": "Cristalul Contagios"
+        },
+        {
+          "itemId": "scp-series-500",
+          "titleJP": "Panacea"
+        },
+        {
+          "itemId": "scp-series-871",
+          "titleJP": "Tort cu Auto-Replicare"
+        }
+      ],
+      "attempts": 1,
+      "status": "sending",
+      "startedAt": "2026-11-10T20:08:06.913Z"
     }
   ]
 }
