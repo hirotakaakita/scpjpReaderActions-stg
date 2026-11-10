@@ -68,7 +68,5483 @@
     "ru": {
       "items": [],
       "lastSentWindow": "2026-11-08"
+    },
+    "ar": {
+      "items": [
+        {
+          "itemId": "scp-series-ar-001",
+          "titleJP": "في انتظار إلغاء التصنيف [محظور]"
+        },
+        {
+          "itemId": "scp-series-ar-010",
+          "titleJP": "الوحش البلاستيكي"
+        },
+        {
+          "itemId": "scp-series-ar-062",
+          "titleJP": "\"Dr.S\""
+        },
+        {
+          "itemId": "scp-series-001",
+          "titleJP": "في انتظار إلغاء التصنيف [محظور]"
+        },
+        {
+          "itemId": "scp-series-002",
+          "titleJP": "\"غرفة \"المعيشة"
+        },
+        {
+          "itemId": "scp-series-004",
+          "titleJP": "12 مفتاحًا صدئًا والباب"
+        },
+        {
+          "itemId": "scp-series-005",
+          "titleJP": "مفتاح الهيكل العظمي"
+        },
+        {
+          "itemId": "scp-series-006",
+          "titleJP": "ينبوع الشباب"
+        },
+        {
+          "itemId": "scp-series-008",
+          "titleJP": "طاعون الزومبي"
+        },
+        {
+          "itemId": "scp-series-017",
+          "titleJP": "الشخص الظل"
+        },
+        {
+          "itemId": "scp-series-018",
+          "titleJP": "الكرة الخارقة"
+        },
+        {
+          "itemId": "scp-series-035",
+          "titleJP": "قناع التملك"
+        },
+        {
+          "itemId": "scp-series-043",
+          "titleJP": "البيتلز"
+        },
+        {
+          "itemId": "scp-series-053",
+          "titleJP": "فتاة صغيرة"
+        },
+        {
+          "itemId": "scp-series-069",
+          "titleJP": "فرصة ثانية"
+        },
+        {
+          "itemId": "scp-series-073",
+          "titleJP": "\"قابيل\""
+        },
+        {
+          "itemId": "scp-series-076",
+          "titleJP": "\"هابيل\""
+        },
+        {
+          "itemId": "scp-series-104",
+          "titleJP": "الكرة الوحيدة"
+        },
+        {
+          "itemId": "scp-series-106",
+          "titleJP": "الرجل العجوز"
+        },
+        {
+          "itemId": "scp-series-173",
+          "titleJP": "النحت -"
+        },
+        {
+          "itemId": "scp-series-203",
+          "titleJP": "الروح الحديدية المعذبة"
+        },
+        {
+          "itemId": "scp-series-293",
+          "titleJP": "الهوس"
+        },
+        {
+          "itemId": "scp-series-321",
+          "titleJP": "طفل الانسان"
+        },
+        {
+          "itemId": "scp-series-485",
+          "titleJP": "قلم الموت"
+        },
+        {
+          "itemId": "scp-series-914",
+          "titleJP": "كلوكوركس"
+        },
+        {
+          "itemId": "scp-series-1129",
+          "titleJP": "استجابة مفرطة"
+        },
+        {
+          "itemId": "scp-series-1370",
+          "titleJP": "بيستيربوت"
+        },
+        {
+          "itemId": "scp-series-1535",
+          "titleJP": "المطهر"
+        },
+        {
+          "itemId": "scp-series-1784",
+          "titleJP": "الكسلان Skywriter"
+        }
+      ],
+      "lastSentWindow": null
+    },
+    "cy": {
+      "items": [
+        {
+          "itemId": "scp-series-cy-001",
+          "titleJP": "[deiliad lle]"
+        },
+        {
+          "itemId": "scp-series-007",
+          "titleJP": "Planed yr Abdomen"
+        },
+        {
+          "itemId": "scp-series-096",
+          "titleJP": "Y \"Dyn Swil\""
+        },
+        {
+          "itemId": "scp-series-173",
+          "titleJP": "Y Cerflunwaith -"
+        },
+        {
+          "itemId": "scp-series-198",
+          "titleJP": "Cup of Joe"
+        },
+        {
+          "itemId": "scp-series-297",
+          "titleJP": "\"Steely Dan\""
+        },
+        {
+          "itemId": "scp-series-527",
+          "titleJP": "Mr. Pysgodyn"
+        },
+        {
+          "itemId": "scp-series-1535",
+          "titleJP": "Purdan"
+        }
+      ],
+      "lastSentWindow": null
+    },
+    "da": {
+      "items": [
+        {
+          "itemId": "scp-series-nd-001",
+          "titleJP": "Indtil publikation [Blokeret]"
+        },
+        {
+          "itemId": "scp-series-nd-004",
+          "titleJP": "Indhold: Ukendt"
+        },
+        {
+          "itemId": "scp-series-001",
+          "titleJP": "Afventer afklassificering [Blokeret]"
+        },
+        {
+          "itemId": "scp-series-002",
+          "titleJP": "Det \"levende\" rum"
+        },
+        {
+          "itemId": "scp-series-003",
+          "titleJP": "Biologiskt moderkort"
+        },
+        {
+          "itemId": "scp-series-037",
+          "titleJP": "Dværgstjerne"
+        },
+        {
+          "itemId": "scp-series-173",
+          "titleJP": "Skulpturen -"
+        }
+      ],
+      "lastSentWindow": null
+    },
+    "el": {
+      "items": [
+        {
+          "itemId": "scp-series-el-001",
+          "titleJP": "Αναμονή για αποχαρακτηρισμό [Αποκλεισμένο]"
+        },
+        {
+          "itemId": "scp-series-el-002",
+          "titleJP": "Βιολογικές σκάλες"
+        },
+        {
+          "itemId": "scp-series-el-005",
+          "titleJP": "Απαντήστε στα αναπάντητα"
+        },
+        {
+          "itemId": "scp-series-el-007",
+          "titleJP": "Πηγή Ανωμαλιών"
+        },
+        {
+          "itemId": "scp-series-el-010",
+          "titleJP": "Ατελείωτες Δεξαμενές"
+        },
+        {
+          "itemId": "scp-series-el-012",
+          "titleJP": "Παγωμένος ωκεανός"
+        },
+        {
+          "itemId": "scp-series-el-018",
+          "titleJP": "Σχισμένες πέτρες"
+        },
+        {
+          "itemId": "scp-series-el-025",
+          "titleJP": "Το πλοίο"
+        },
+        {
+          "itemId": "scp-series-el-030",
+          "titleJP": "Στη θάλασσα, όπου το πετρέλαιο περιβάλλει"
+        },
+        {
+          "itemId": "scp-series-el-043",
+          "titleJP": "Αρχαίος κύβος"
+        },
+        {
+          "itemId": "scp-series-el-066",
+          "titleJP": "Γονέας φάλαινας"
+        },
+        {
+          "itemId": "scp-series-el-074",
+          "titleJP": "Νυχτερινό Ξύλινο άλογο"
+        },
+        {
+          "itemId": "scp-series-el-093",
+          "titleJP": "Βλέποντας τις ατέλειές τους"
+        },
+        {
+          "itemId": "scp-series-el-099",
+          "titleJP": "[ΧΩΡΙΣ ΠΡΟΣΒΑΣΗ]"
+        },
+        {
+          "itemId": "scp-series-001",
+          "titleJP": "Αναμονή για αποχαρακτηρισμό [Αποκλεισμένο]"
+        },
+        {
+          "itemId": "scp-series-002",
+          "titleJP": "Το \"Ζωντανό\" Δωμάτιο"
+        },
+        {
+          "itemId": "scp-series-003",
+          "titleJP": "Βιολογική μητρική πλακέτα"
+        },
+        {
+          "itemId": "scp-series-004",
+          "titleJP": "Τα 12 σκουριασμένα κλειδιά και η πόρτα"
+        },
+        {
+          "itemId": "scp-series-005",
+          "titleJP": "Το κλειδί \"σκελετός\""
+        },
+        {
+          "itemId": "scp-series-006",
+          "titleJP": "Πηγή της νιότης"
+        },
+        {
+          "itemId": "scp-series-007",
+          "titleJP": "Κοιλιακός Πλανήτης"
+        },
+        {
+          "itemId": "scp-series-008",
+          "titleJP": "Ο λοιμός των ζόμπι"
+        },
+        {
+          "itemId": "scp-series-009",
+          "titleJP": "Κόκκινος πάγος"
+        },
+        {
+          "itemId": "scp-series-010",
+          "titleJP": "Περιδέραια ελέγχου"
+        },
+        {
+          "itemId": "scp-series-011",
+          "titleJP": "Το ζωντανό άγαλμα του Εμφυλίου Πολέμου"
+        },
+        {
+          "itemId": "scp-series-012",
+          "titleJP": "Μια κακή σύνθεση"
+        },
+        {
+          "itemId": "scp-series-013",
+          "titleJP": "Τα τσιγάρα Μπλε Κυρίας"
+        },
+        {
+          "itemId": "scp-series-014",
+          "titleJP": "Ο Τσιμεντένιος Άνθρωπος"
+        },
+        {
+          "itemId": "scp-series-015",
+          "titleJP": "Εφιάλτης Σωλήνων"
+        },
+        {
+          "itemId": "scp-series-016",
+          "titleJP": "Νοήμων μικροοργανισμός"
+        },
+        {
+          "itemId": "scp-series-017",
+          "titleJP": "Άτομο σκιάς"
+        },
+        {
+          "itemId": "scp-series-018",
+          "titleJP": "Η Σούπερ Μπάλα"
+        },
+        {
+          "itemId": "scp-series-019",
+          "titleJP": "Το αγγείο των τεράτων"
+        },
+        {
+          "itemId": "scp-series-020",
+          "titleJP": "Αόρατη μούχλα"
+        },
+        {
+          "itemId": "scp-series-021",
+          "titleJP": "Ερπετό δέρματος"
+        },
+        {
+          "itemId": "scp-series-022",
+          "titleJP": "Το νεκροτομείο"
+        },
+        {
+          "itemId": "scp-series-023",
+          "titleJP": "Μαύρο Shuck"
+        },
+        {
+          "itemId": "scp-series-024",
+          "titleJP": "Τηλεπαιχνίδι του θανάτου"
+        },
+        {
+          "itemId": "scp-series-025",
+          "titleJP": "Μια καλη χρησημοποιημένη ντουλάπα"
+        },
+        {
+          "itemId": "scp-series-026",
+          "titleJP": "Κράτηση σχολείου"
+        },
+        {
+          "itemId": "scp-series-027",
+          "titleJP": "Ο Θεός των παράσιτων"
+        },
+        {
+          "itemId": "scp-series-028",
+          "titleJP": "Η γνώση"
+        },
+        {
+          "itemId": "scp-series-029",
+          "titleJP": "Η Κόρη των σκιών"
+        },
+        {
+          "itemId": "scp-series-030",
+          "titleJP": "Το ανθρωπάριο"
+        },
+        {
+          "itemId": "scp-series-032",
+          "titleJP": "Νύφη των αδελφών"
+        },
+        {
+          "itemId": "scp-series-033",
+          "titleJP": "Ο αριθμός που λείπει"
+        },
+        {
+          "itemId": "scp-series-034",
+          "titleJP": "Οψιδιανό τελετουργικό μαχαίρι"
+        },
+        {
+          "itemId": "scp-series-035",
+          "titleJP": "Κτητικη μασκα"
+        },
+        {
+          "itemId": "scp-series-036",
+          "titleJP": "Το Προσκύνημα Μετενσάρκωσης των Γιαζίντι (Kiras Guhorîn)"
+        },
+        {
+          "itemId": "scp-series-037",
+          "titleJP": "Το αστέρι νάνου"
+        },
+        {
+          "itemId": "scp-series-038",
+          "titleJP": "Το δέντρο όλων"
+        },
+        {
+          "itemId": "scp-series-039",
+          "titleJP": "Μυαλό μαϊμούς"
+        },
+        {
+          "itemId": "scp-series-040",
+          "titleJP": "Παιδί της εξέλιξης"
+        },
+        {
+          "itemId": "scp-series-041",
+          "titleJP": "Ασθενής σκέψης-εκπομπής"
+        },
+        {
+          "itemId": "scp-series-042",
+          "titleJP": "Ένα πρώην φτερωτό άλογο"
+        },
+        {
+          "itemId": "scp-series-043",
+          "titleJP": "Το Σκαθάρι"
+        },
+        {
+          "itemId": "scp-series-044",
+          "titleJP": "Κανόνι Μοριακής Σχάσης της εποχής του Β' Παγκοσμίου Πολέμου"
+        },
+        {
+          "itemId": "scp-series-045",
+          "titleJP": "Ατμοσφαιρικός μετατροπέας"
+        },
+        {
+          "itemId": "scp-series-046",
+          "titleJP": "\"Αρπακτικό\" θαμνο λιόπρινου"
+        },
+        {
+          "itemId": "scp-series-047",
+          "titleJP": "Μικροβιακό μεταλλαξιογόνο"
+        },
+        {
+          "itemId": "scp-series-048",
+          "titleJP": "Ο καταραμένος αριθμός SCP"
+        },
+        {
+          "itemId": "scp-series-049",
+          "titleJP": "Ο Γιατρός της Πανούκλας"
+        },
+        {
+          "itemId": "scp-series-050",
+          "titleJP": "Στον εξυπνότερο"
+        },
+        {
+          "itemId": "scp-series-051",
+          "titleJP": "Ιαπωνικό μαιευτικό μοντέλο"
+        },
+        {
+          "itemId": "scp-series-052",
+          "titleJP": "Τρένο στο χρόνο"
+        },
+        {
+          "itemId": "scp-series-053",
+          "titleJP": "Νεαρό Κορίτσι"
+        },
+        {
+          "itemId": "scp-series-054",
+          "titleJP": "Νύμφη του Νερού"
+        },
+        {
+          "itemId": "scp-series-055",
+          "titleJP": "[Αγνωστο]"
+        },
+        {
+          "itemId": "scp-series-056",
+          "titleJP": "Ένα όμορφο άτομο"
+        },
+        {
+          "itemId": "scp-series-057",
+          "titleJP": "Η καθημερινή μάχη"
+        },
+        {
+          "itemId": "scp-series-059",
+          "titleJP": "Ραδιενεργό Ορυκτό"
+        },
+        {
+          "itemId": "scp-series-060",
+          "titleJP": "Κρυμμένος σκελετός"
+        },
+        {
+          "itemId": "scp-series-062",
+          "titleJP": "Κβαντισμένος Υπολογιστής"
+        },
+        {
+          "itemId": "scp-series-063",
+          "titleJP": "\"Η καλύτερη οδοντόβουρτσα του κόσμου\""
+        },
+        {
+          "itemId": "scp-series-064",
+          "titleJP": "Ελαττωματική δομή von Neumann"
+        },
+        {
+          "itemId": "scp-series-065",
+          "titleJP": "Κατεστραμμένος Οργανικός Διαλύτης"
+        },
+        {
+          "itemId": "scp-series-066",
+          "titleJP": "Το παιχνίδι του Έρικ"
+        },
+        {
+          "itemId": "scp-series-067",
+          "titleJP": "Η Πένα του Καλλιτέχνη"
+        },
+        {
+          "itemId": "scp-series-068",
+          "titleJP": "Η Συρμάτινη Φιγούρα"
+        },
+        {
+          "itemId": "scp-series-069",
+          "titleJP": "Δεύτερη ευκαιρία"
+        },
+        {
+          "itemId": "scp-series-070",
+          "titleJP": "Σιδερένια Φτερά"
+        },
+        {
+          "itemId": "scp-series-071",
+          "titleJP": "Εκφυλιστική μεταμορφική οντότητα"
+        },
+        {
+          "itemId": "scp-series-072",
+          "titleJP": "Το Πόδι του Κρεβατιού"
+        },
+        {
+          "itemId": "scp-series-073",
+          "titleJP": "\"Κάιν\""
+        },
+        {
+          "itemId": "scp-series-074",
+          "titleJP": "Κβαντικός ονίσκος"
+        },
+        {
+          "itemId": "scp-series-075",
+          "titleJP": "Διαβρωτικό σαλιγκάρι"
+        },
+        {
+          "itemId": "scp-series-079",
+          "titleJP": "Το παλιό ΑΙ"
+        },
+        {
+          "itemId": "scp-series-082",
+          "titleJP": "\"Φερνάντ\" ο Κανίβαλος"
+        },
+        {
+          "itemId": "scp-series-087",
+          "titleJP": "Η σκάλα"
+        },
+        {
+          "itemId": "scp-series-088",
+          "titleJP": "Ο βασιλιάς της σαύρας"
+        },
+        {
+          "itemId": "scp-series-091",
+          "titleJP": "Νοσταλγία"
+        },
+        {
+          "itemId": "scp-series-093",
+          "titleJP": "Αντικείμενο της Ερυθράς Θάλασσας"
+        },
+        {
+          "itemId": "scp-series-094",
+          "titleJP": "Μικρογραφία συμβάντος ορίζοντα"
+        },
+        {
+          "itemId": "scp-series-096",
+          "titleJP": "Ο Ντροπαλός"
+        },
+        {
+          "itemId": "scp-series-098",
+          "titleJP": "Καβούρια χειρουργού"
+        },
+        {
+          "itemId": "scp-series-099",
+          "titleJP": "Το πορτρέτο"
+        },
+        {
+          "itemId": "scp-series-101",
+          "titleJP": "Πεινασμένη Τσάντα"
+        },
+        {
+          "itemId": "scp-series-106",
+          "titleJP": "Ο γέρος"
+        },
+        {
+          "itemId": "scp-series-111",
+          "titleJP": "Δρακο-Σαλιγκαρια"
+        },
+        {
+          "itemId": "scp-series-115",
+          "titleJP": "Μίνι εκσκαφέας"
+        },
+        {
+          "itemId": "scp-series-122",
+          "titleJP": "Όχι Άλλα Τέρατα"
+        },
+        {
+          "itemId": "scp-series-126",
+          "titleJP": "Αόρατη Φίλη"
+        },
+        {
+          "itemId": "scp-series-127",
+          "titleJP": "Το ζωντανό όπλο"
+        },
+        {
+          "itemId": "scp-series-131",
+          "titleJP": "Τα \"Eye Pods\""
+        },
+        {
+          "itemId": "scp-series-138",
+          "titleJP": "Ο αιώνιος άνθρωπος"
+        },
+        {
+          "itemId": "scp-series-143",
+          "titleJP": "Το Περιβόλι Του Λεπίδοξύλου"
+        },
+        {
+          "itemId": "scp-series-151",
+          "titleJP": "Η ελαιογραφία"
+        },
+        {
+          "itemId": "scp-series-152",
+          "titleJP": "Βιβλίο των τελών"
+        },
+        {
+          "itemId": "scp-series-156",
+          "titleJP": "Ρόδι Αναζωογόνησης"
+        },
+        {
+          "itemId": "scp-series-159",
+          "titleJP": "Το Τέλειο Κλείδωμα"
+        },
+        {
+          "itemId": "scp-series-162",
+          "titleJP": "Η μπάλα των μυτερων"
+        },
+        {
+          "itemId": "scp-series-166",
+          "titleJP": "Μια νεαρή Γαία"
+        },
+        {
+          "itemId": "scp-series-167",
+          "titleJP": "Άπειρος λαβύρινθος"
+        },
+        {
+          "itemId": "scp-series-173",
+          "titleJP": "Το Γλυπτό - Το Πρωτότυπο"
+        },
+        {
+          "itemId": "scp-series-174",
+          "titleJP": "Ομοίωμα Βεντριλόκουιστ του"
+        },
+        {
+          "itemId": "scp-series-189",
+          "titleJP": "Παράσιτο μίμησης μαλλιών"
+        },
+        {
+          "itemId": "scp-series-196",
+          "titleJP": "Χρονοπαράδοξο"
+        },
+        {
+          "itemId": "scp-series-201",
+          "titleJP": "Ο Άδειος Κόσμος"
+        },
+        {
+          "itemId": "scp-series-210",
+          "titleJP": "Πλημμυρισμένο σπίτι"
+        },
+        {
+          "itemId": "scp-series-217",
+          "titleJP": "Ο μηχανικός ιός"
+        },
+        {
+          "itemId": "scp-series-221",
+          "titleJP": "Τσιμπιδάκια του εξαναγκασμού"
+        },
+        {
+          "itemId": "scp-series-226",
+          "titleJP": "Παζλ του τρόμου"
+        },
+        {
+          "itemId": "scp-series-227",
+          "titleJP": "Ολοκληρωμένος Μηχανισμός Αντικυθήρων"
+        },
+        {
+          "itemId": "scp-series-228",
+          "titleJP": "Ψυχιατρικό διαγνωστικό εργαλείο"
+        },
+        {
+          "itemId": "scp-series-234",
+          "titleJP": "Πολυδιάστατο ψάρι"
+        },
+        {
+          "itemId": "scp-series-240",
+          "titleJP": "Ιπτάμενη μηχανή αναπνοής"
+        },
+        {
+          "itemId": "scp-series-241",
+          "titleJP": "Καλή Σπιτική Μαγειρική"
+        },
+        {
+          "itemId": "scp-series-246",
+          "titleJP": "Προφητικός Προβολέας"
+        },
+        {
+          "itemId": "scp-series-247",
+          "titleJP": "Ένα αβλαβές γατάκι"
+        },
+        {
+          "itemId": "scp-series-248",
+          "titleJP": "110%"
+        },
+        {
+          "itemId": "scp-series-249",
+          "titleJP": "Η τυχαία πόρτα"
+        },
+        {
+          "itemId": "scp-series-251",
+          "titleJP": "Η Παραπλανητική σφαίρα χιονιού"
+        },
+        {
+          "itemId": "scp-series-258",
+          "titleJP": "Ο θλιμμένος βάτραχος"
+        },
+        {
+          "itemId": "scp-series-264",
+          "titleJP": "Σκελετός Ναός"
+        },
+        {
+          "itemId": "scp-series-265",
+          "titleJP": "Το μάυρο Volga"
+        },
+        {
+          "itemId": "scp-series-266",
+          "titleJP": "Will o' the Wisp"
+        },
+        {
+          "itemId": "scp-series-271",
+          "titleJP": "Εγγεγραμμένος δίσκος"
+        },
+        {
+          "itemId": "scp-series-273",
+          "titleJP": "Ανθρώπινη Φοίνιξ"
+        },
+        {
+          "itemId": "scp-series-276",
+          "titleJP": "Σκούνα του χρόνου"
+        },
+        {
+          "itemId": "scp-series-278",
+          "titleJP": "Μια μεγάλη μηχανική αράχνη"
+        },
+        {
+          "itemId": "scp-series-280",
+          "titleJP": "Τα μάτια στο σκοτάδι"
+        },
+        {
+          "itemId": "scp-series-284",
+          "titleJP": "Τα δίδυμα"
+        },
+        {
+          "itemId": "scp-series-290",
+          "titleJP": "Η μηχανή του Picasso"
+        },
+        {
+          "itemId": "scp-series-299",
+          "titleJP": "Μολυσματικό Δένδρο"
+        },
+        {
+          "itemId": "scp-series-300",
+          "titleJP": "Έναν κόσμο σε ένα μπουκάλι"
+        },
+        {
+          "itemId": "scp-series-302",
+          "titleJP": "Γλυπτό μυρμηγκιών"
+        },
+        {
+          "itemId": "scp-series-304",
+          "titleJP": "Το σήμα"
+        },
+        {
+          "itemId": "scp-series-305",
+          "titleJP": "Ο Ψιθυριστής"
+        },
+        {
+          "itemId": "scp-series-309",
+          "titleJP": "Χνουδωτο παιχνίδι"
+        },
+        {
+          "itemId": "scp-series-311",
+          "titleJP": "Γάντια Απτικής Μετατόπισης"
+        },
+        {
+          "itemId": "scp-series-312",
+          "titleJP": "Μέδουσες του ουρανού"
+        },
+        {
+          "itemId": "scp-series-313",
+          "titleJP": "Ισχυρό στεγνωτήριο χεριών"
+        },
+        {
+          "itemId": "scp-series-316",
+          "titleJP": "Φως αποστράγγισης χρώματος"
+        },
+        {
+          "itemId": "scp-series-322",
+          "titleJP": "\"Φύτεψε Το Δικό Σου Καστρο\""
+        },
+        {
+          "itemId": "scp-series-327",
+          "titleJP": "Η γοργόνα"
+        },
+        {
+          "itemId": "scp-series-330",
+          "titleJP": "Πάρε μόνο δύο"
+        },
+        {
+          "itemId": "scp-series-334",
+          "titleJP": "Αστρική αλεπού"
+        },
+        {
+          "itemId": "scp-series-341",
+          "titleJP": "Μια συλλογή από υπερ-ηλιακά πλανητοσκόπια"
+        },
+        {
+          "itemId": "scp-series-343",
+          "titleJP": "\"Θεός\""
+        },
+        {
+          "itemId": "scp-series-346",
+          "titleJP": "\"Πτερρυ\" ο Πτεροδάκτυλος"
+        },
+        {
+          "itemId": "scp-series-348",
+          "titleJP": "Ένα δώρο από τον μπαμπά"
+        },
+        {
+          "itemId": "scp-series-350",
+          "titleJP": "Ενα άθραυστο συμβόλαιο"
+        },
+        {
+          "itemId": "scp-series-353",
+          "titleJP": "''Φορέα''"
+        },
+        {
+          "itemId": "scp-series-354",
+          "titleJP": "Η κοκκινη λιμνη"
+        },
+        {
+          "itemId": "scp-series-355",
+          "titleJP": "Το οδοντωτό γρασίδι"
+        },
+        {
+          "itemId": "scp-series-357",
+          "titleJP": "Πεινασμένο πηλό"
+        },
+        {
+          "itemId": "scp-series-359",
+          "titleJP": "Το γεράκι"
+        },
+        {
+          "itemId": "scp-series-361",
+          "titleJP": "Χάλκινο συκώτι"
+        },
+        {
+          "itemId": "scp-series-365",
+          "titleJP": "Μακαρόνι πισίνας"
+        },
+        {
+          "itemId": "scp-series-367",
+          "titleJP": "Το μικρό σκυλί"
+        },
+        {
+          "itemId": "scp-series-368",
+          "titleJP": "Ο Χάρτινος γερανός"
+        },
+        {
+          "itemId": "scp-series-369",
+          "titleJP": "Μεταναστευτική Οδική Εργασία"
+        },
+        {
+          "itemId": "scp-series-376",
+          "titleJP": "Το δέντρο φαναριών"
+        },
+        {
+          "itemId": "scp-series-377",
+          "titleJP": "Ακριβής μπισκότα τύχης"
+        },
+        {
+          "itemId": "scp-series-379",
+          "titleJP": "Μηχανική φερομόνη"
+        },
+        {
+          "itemId": "scp-series-380",
+          "titleJP": "Συσκευή βιολογικής δικτύωσης"
+        },
+        {
+          "itemId": "scp-series-388",
+          "titleJP": "Το Απόλυτο Frisbee"
+        },
+        {
+          "itemId": "scp-series-389",
+          "titleJP": "Ένα μήνυμα σε ένα μπουκάλι"
+        },
+        {
+          "itemId": "scp-series-390",
+          "titleJP": "Αρχαία ακτίνα θανάτου"
+        },
+        {
+          "itemId": "scp-series-391",
+          "titleJP": "Η κουκουβάγια του Μίδα"
+        },
+        {
+          "itemId": "scp-series-393",
+          "titleJP": "Το ημερολόγιο"
+        },
+        {
+          "itemId": "scp-series-397",
+          "titleJP": "Ένα Hominidae"
+        },
+        {
+          "itemId": "scp-series-398",
+          "titleJP": "Ο Διάδρομος εισόδου"
+        },
+        {
+          "itemId": "scp-series-405",
+          "titleJP": "Ιός Τηλεπάθειας"
+        },
+        {
+          "itemId": "scp-series-407",
+          "titleJP": "Το τραγούδι της Γενέσεως"
+        },
+        {
+          "itemId": "scp-series-408",
+          "titleJP": "Πεταλούδες Ψευδαισθησεων"
+        },
+        {
+          "itemId": "scp-series-409",
+          "titleJP": "Μεταδοτικο Κρύσταλλο"
+        },
+        {
+          "itemId": "scp-series-410",
+          "titleJP": "Σκαθάρια Επεξεργασιων"
+        },
+        {
+          "itemId": "scp-series-412",
+          "titleJP": "Μεταλλαξιογόνος καθρέφτης"
+        },
+        {
+          "itemId": "scp-series-416",
+          "titleJP": "Άπειρο δάσος"
+        },
+        {
+          "itemId": "scp-series-422",
+          "titleJP": "Το μπερδεμένο θηρίο"
+        },
+        {
+          "itemId": "scp-series-426",
+          "titleJP": "Είμαι μια τοστιέρα"
+        },
+        {
+          "itemId": "scp-series-427",
+          "titleJP": "Μενταγιόν του Λόβκραφτ"
+        },
+        {
+          "itemId": "scp-series-431",
+          "titleJP": "Δρ. Γιδέων"
+        },
+        {
+          "itemId": "scp-series-432",
+          "titleJP": "Λαβύρινθος ντουλαπιού"
+        },
+        {
+          "itemId": "scp-series-434",
+          "titleJP": "Μια συνάντηση με τον εαυτό μου"
+        },
+        {
+          "itemId": "scp-series-436",
+          "titleJP": "Μενταγιόν σφάλματος"
+        },
+        {
+          "itemId": "scp-series-443",
+          "titleJP": "Κηρομπογιές της σκέψης"
+        },
+        {
+          "itemId": "scp-series-444",
+          "titleJP": "Η γλώσσα της παγκόσμιας αρμονίας"
+        },
+        {
+          "itemId": "scp-series-447",
+          "titleJP": "Μπάλα από πράσινο ζελέ"
+        },
+        {
+          "itemId": "scp-series-450",
+          "titleJP": "Εγκαταλελειμμένη ομοσπονδιακή φυλακή"
+        },
+        {
+          "itemId": "scp-series-452",
+          "titleJP": "Αράχνη ονειροπαγίδας"
+        },
+        {
+          "itemId": "scp-series-463",
+          "titleJP": "Ένα κουτάλι που λυγίζει τους ανθρώπους"
+        },
+        {
+          "itemId": "scp-series-465",
+          "titleJP": "Πάρτι σε ένα κουτί"
+        },
+        {
+          "itemId": "scp-series-474",
+          "titleJP": "℞FM"
+        },
+        {
+          "itemId": "scp-series-476",
+          "titleJP": "Χάρτης στο Πουθενά"
+        },
+        {
+          "itemId": "scp-series-490",
+          "titleJP": "Φορτηγό παγωτού"
+        },
+        {
+          "itemId": "scp-series-497",
+          "titleJP": "Το κοχύλι"
+        },
+        {
+          "itemId": "scp-series-500",
+          "titleJP": "Πανάκεια"
+        },
+        {
+          "itemId": "scp-series-506",
+          "titleJP": "Φυτά στιγμιαίας ανάπτυξης"
+        },
+        {
+          "itemId": "scp-series-510",
+          "titleJP": "Μαλακός θάνατος"
+        },
+        {
+          "itemId": "scp-series-513",
+          "titleJP": "Ενα κουδούνι"
+        },
+        {
+          "itemId": "scp-series-514",
+          "titleJP": "[ΧΩΡΙΣ ΠΡΟΣΒΑΣΗ]"
+        },
+        {
+          "itemId": "scp-series-521",
+          "titleJP": "Walter το παμφάγο κουνέλι"
+        },
+        {
+          "itemId": "scp-series-522",
+          "titleJP": "Το γραμματοκιβώτιο"
+        },
+        {
+          "itemId": "scp-series-524",
+          "titleJP": "Χαλί αποστράγγισης αίματος"
+        },
+        {
+          "itemId": "scp-series-527",
+          "titleJP": "Κυρ. Ψάρι"
+        },
+        {
+          "itemId": "scp-series-528",
+          "titleJP": "Πηλός Βουντού"
+        },
+        {
+          "itemId": "scp-series-529",
+          "titleJP": "Τζόσι η ημί-γατα"
+        },
+        {
+          "itemId": "scp-series-530",
+          "titleJP": "''Carl'' ο μεταβλητός σκύλος"
+        },
+        {
+          "itemId": "scp-series-531",
+          "titleJP": "Ορειχάλκινες Γάτες φρουράς"
+        },
+        {
+          "itemId": "scp-series-532",
+          "titleJP": "Έντομο Πάγου"
+        },
+        {
+          "itemId": "scp-series-539",
+          "titleJP": "Η Τέλεια Απόσπαση της Προσοχής"
+        },
+        {
+          "itemId": "scp-series-546",
+          "titleJP": "Ενα Τετράδιο"
+        },
+        {
+          "itemId": "scp-series-548",
+          "titleJP": "Αράχνη Πάγου"
+        },
+        {
+          "itemId": "scp-series-551",
+          "titleJP": "Αδύνατο παζλ"
+        },
+        {
+          "itemId": "scp-series-553",
+          "titleJP": "Κρυσταλλικές πεταλούδες"
+        },
+        {
+          "itemId": "scp-series-555",
+          "titleJP": "Μαγνήτης πτώματων"
+        },
+        {
+          "itemId": "scp-series-557",
+          "titleJP": "Αρχαία Βάση Περιορισμού"
+        },
+        {
+          "itemId": "scp-series-561",
+          "titleJP": "Ένα παθητικό Σχίσμα Στον Χρόνο"
+        },
+        {
+          "itemId": "scp-series-564",
+          "titleJP": "Μη Ολοκληρωμένο Πρωτόγονο Βιονικό Άνθρωπο"
+        },
+        {
+          "itemId": "scp-series-570",
+          "titleJP": "Γάντια κουκλοθέατρου!!!"
+        },
+        {
+          "itemId": "scp-series-574",
+          "titleJP": "Το Σπίτι Dropera"
+        },
+        {
+          "itemId": "scp-series-576",
+          "titleJP": "Καλόν ύπνο"
+        },
+        {
+          "itemId": "scp-series-578",
+          "titleJP": "Οπάλια αίματος"
+        },
+        {
+          "itemId": "scp-series-579",
+          "titleJP": "[ΑΠΟΡΡΗΤΑ ΔΕΔΟΜΕΝΑ]"
+        },
+        {
+          "itemId": "scp-series-599",
+          "titleJP": "Ανεξερεύνητη πόλη"
+        },
+        {
+          "itemId": "scp-series-600",
+          "titleJP": "\"Αυτός ο τύπος\""
+        },
+        {
+          "itemId": "scp-series-601",
+          "titleJP": "Ο Χορός του Σοφοκλή"
+        },
+        {
+          "itemId": "scp-series-602",
+          "titleJP": "Ο Γλύπτης του Σόχο"
+        },
+        {
+          "itemId": "scp-series-605",
+          "titleJP": "Ζωντανό σύννεφο καταιγίδας"
+        },
+        {
+          "itemId": "scp-series-606",
+          "titleJP": "\"Ο Δάσκαλος\""
+        },
+        {
+          "itemId": "scp-series-610",
+          "titleJP": "Η σάρκα που μισεί"
+        },
+        {
+          "itemId": "scp-series-611",
+          "titleJP": "Παρασιτική οδοντογλυφίδα"
+        },
+        {
+          "itemId": "scp-series-613",
+          "titleJP": "\"Wonder Bread!\""
+        },
+        {
+          "itemId": "scp-series-614",
+          "titleJP": "Διεύθυνση IP 57.32.███.███"
+        },
+        {
+          "itemId": "scp-series-615",
+          "titleJP": "Ξύλινη μάζα"
+        },
+        {
+          "itemId": "scp-series-617",
+          "titleJP": "Πέτρες με στόματα"
+        },
+        {
+          "itemId": "scp-series-619",
+          "titleJP": "Τυχερά τζίν"
+        },
+        {
+          "itemId": "scp-series-620",
+          "titleJP": "Ο χρόνος συνεχίζει να γλιστρά"
+        },
+        {
+          "itemId": "scp-series-621",
+          "titleJP": "Υπνωτικές τουλίπες"
+        },
+        {
+          "itemId": "scp-series-622",
+          "titleJP": "Έρημος σε ντενεκέ"
+        },
+        {
+          "itemId": "scp-series-626",
+          "titleJP": "Άγαλμα Όραματος"
+        },
+        {
+          "itemId": "scp-series-627",
+          "titleJP": "Αέναος κύκλος"
+        },
+        {
+          "itemId": "scp-series-629",
+          "titleJP": "Κύρ. Ορείχαλκος"
+        },
+        {
+          "itemId": "scp-series-632",
+          "titleJP": "Ενοχλητικές Αραχνοειδείς Σκέψεις"
+        },
+        {
+          "itemId": "scp-series-634",
+          "titleJP": "Μνήμη χρυσόψαρου"
+        },
+        {
+          "itemId": "scp-series-635",
+          "titleJP": "Μεσαιωνικό Πρόγραμμα Εκκίνησης"
+        },
+        {
+          "itemId": "scp-series-636",
+          "titleJP": "Ασανσέρ στο πουθενά"
+        },
+        {
+          "itemId": "scp-series-639",
+          "titleJP": "Διαστρεβλωμένος άνθρωπος"
+        },
+        {
+          "itemId": "scp-series-643",
+          "titleJP": "Νόστιμες σοκολάτες"
+        },
+        {
+          "itemId": "scp-series-644",
+          "titleJP": "Κυρ. Καύσωνας"
+        },
+        {
+          "itemId": "scp-series-647",
+          "titleJP": "Πεινασμένο κουτί"
+        },
+        {
+          "itemId": "scp-series-648",
+          "titleJP": "Ο Λαβύρινθος"
+        },
+        {
+          "itemId": "scp-series-649",
+          "titleJP": "Σπιρτόκουτο του χειμώνα"
+        },
+        {
+          "itemId": "scp-series-650",
+          "titleJP": "Αιφνίδιο άγαλμα"
+        },
+        {
+          "itemId": "scp-series-653",
+          "titleJP": "Το μπούμερανγκ"
+        },
+        {
+          "itemId": "scp-series-663",
+          "titleJP": "Ζωντανό φίλτρο νερού"
+        },
+        {
+          "itemId": "scp-series-664",
+          "titleJP": "Το πάτωμα στο πουθενά"
+        },
+        {
+          "itemId": "scp-series-665",
+          "titleJP": "Ο σκουπιδιάρης"
+        },
+        {
+          "itemId": "scp-series-667",
+          "titleJP": "Το Kudzu νεράιδων"
+        },
+        {
+          "itemId": "scp-series-670",
+          "titleJP": "Οικογένεια βαμβακιού"
+        },
+        {
+          "itemId": "scp-series-672",
+          "titleJP": "Κοράλλι Πέτρας"
+        },
+        {
+          "itemId": "scp-series-675",
+          "titleJP": "Σκιές Μέσω του Παραθύρου"
+        },
+        {
+          "itemId": "scp-series-676",
+          "titleJP": "Μη φυσική θερμή πηγή"
+        },
+        {
+          "itemId": "scp-series-678",
+          "titleJP": "Ο Τραυμαφάγος"
+        },
+        {
+          "itemId": "scp-series-682",
+          "titleJP": "Το ερπετό που δεν μπορεί να καταστραφεί"
+        },
+        {
+          "itemId": "scp-series-687",
+          "titleJP": "NOIR"
+        },
+        {
+          "itemId": "scp-series-689",
+          "titleJP": "Στοιχειώνοντας στο σκοτάδι"
+        },
+        {
+          "itemId": "scp-series-691",
+          "titleJP": "Η έξοδο του δειλού"
+        },
+        {
+          "itemId": "scp-series-696",
+          "titleJP": "Χαώδης γραφομηχανή"
+        },
+        {
+          "itemId": "scp-series-698",
+          "titleJP": "Η Επικριτική Χελώνα"
+        },
+        {
+          "itemId": "scp-series-700",
+          "titleJP": "Εργοστάσιο του γκράφιτι"
+        },
+        {
+          "itemId": "scp-series-701",
+          "titleJP": "Η Τραγωδία του Κρεμασμένου Βασιλιά"
+        },
+        {
+          "itemId": "scp-series-702",
+          "titleJP": "Η κατοικία του εμπόρου"
+        },
+        {
+          "itemId": "scp-series-708",
+          "titleJP": "Το μεγάλο πορτοκαλί περονοφόρο"
+        },
+        {
+          "itemId": "scp-series-709",
+          "titleJP": "Το μάτι του δάσους"
+        },
+        {
+          "itemId": "scp-series-710",
+          "titleJP": "Εξαφάνιση"
+        },
+        {
+          "itemId": "scp-series-712",
+          "titleJP": "Τα αδύνατα χρώματα"
+        },
+        {
+          "itemId": "scp-series-714",
+          "titleJP": "Το νεφριτένιο δαχτυλίδι"
+        },
+        {
+          "itemId": "scp-series-716",
+          "titleJP": "Το τρένο"
+        },
+        {
+          "itemId": "scp-series-718",
+          "titleJP": "Το μάτι"
+        },
+        {
+          "itemId": "scp-series-721",
+          "titleJP": "Εργοστασιακά παιχνίδια"
+        },
+        {
+          "itemId": "scp-series-722",
+          "titleJP": "Jörmungandr"
+        },
+        {
+          "itemId": "scp-series-723",
+          "titleJP": "Σκάλα γήρανσης"
+        },
+        {
+          "itemId": "scp-series-725",
+          "titleJP": "Επαναλαμβανόμενη φάλαινα"
+        },
+        {
+          "itemId": "scp-series-727",
+          "titleJP": "Το σιδηρουργείο του Ηφαίστου"
+        },
+        {
+          "itemId": "scp-series-728",
+          "titleJP": "Το αιώνιο δωμάτιο"
+        },
+        {
+          "itemId": "scp-series-729",
+          "titleJP": "Μαρμαρένια μπανιέρα"
+        },
+        {
+          "itemId": "scp-series-730",
+          "titleJP": "Αποεγκεφαλικός ιός"
+        },
+        {
+          "itemId": "scp-series-733",
+          "titleJP": "Ένα ψαλίδι"
+        },
+        {
+          "itemId": "scp-series-736",
+          "titleJP": "Η ανωμαλία του Ιαπετού"
+        },
+        {
+          "itemId": "scp-series-737",
+          "titleJP": "Πεινασμένο τρένο"
+        },
+        {
+          "itemId": "scp-series-739",
+          "titleJP": "Κατοπτριζόμενος θάλαμος"
+        },
+        {
+          "itemId": "scp-series-740",
+          "titleJP": "Η φωτογραφία του Χίντενμπουργκ"
+        },
+        {
+          "itemId": "scp-series-741",
+          "titleJP": "Μυστηριώδες ρωσικό υποβρύχιο"
+        },
+        {
+          "itemId": "scp-series-742",
+          "titleJP": "Ρετροϊός"
+        },
+        {
+          "itemId": "scp-series-743",
+          "titleJP": "Ένα σιντριβάνι σοκολάτας"
+        },
+        {
+          "itemId": "scp-series-744",
+          "titleJP": "Απαιτείται συναρμολόγηση"
+        },
+        {
+          "itemId": "scp-series-745",
+          "titleJP": "Οι προβολείς"
+        },
+        {
+          "itemId": "scp-series-746",
+          "titleJP": "Ψευδο-Πτηνό"
+        },
+        {
+          "itemId": "scp-series-747",
+          "titleJP": "Παιδιά και κούκλες"
+        },
+        {
+          "itemId": "scp-series-748",
+          "titleJP": "Βιομηχανική διάλυση"
+        },
+        {
+          "itemId": "scp-series-749",
+          "titleJP": "Σταγόνες βροχής"
+        },
+        {
+          "itemId": "scp-series-752",
+          "titleJP": "Αλτρουιστική ουτοπία"
+        },
+        {
+          "itemId": "scp-series-753",
+          "titleJP": "Αυτόματος Καλλιτέχνης"
+        },
+        {
+          "itemId": "scp-series-754",
+          "titleJP": "Εικονογραφημένο αναρριχώμενο αμπέλι"
+        },
+        {
+          "itemId": "scp-series-755",
+          "titleJP": "\"Προσέξτε το λευκό πουλί.\""
+        },
+        {
+          "itemId": "scp-series-756",
+          "titleJP": "Μινιατούρα ηλιακού συστήματος"
+        },
+        {
+          "itemId": "scp-series-757",
+          "titleJP": "Το Φρουτόδεντρο"
+        },
+        {
+          "itemId": "scp-series-761",
+          "titleJP": "Ένα τραμπολίνο που είναι λίγο επικίνδυνο"
+        },
+        {
+          "itemId": "scp-series-762",
+          "titleJP": "Αθάνατη σιδηρά παρθένος"
+        },
+        {
+          "itemId": "scp-series-765",
+          "titleJP": "Λίμνη πάπιων"
+        },
+        {
+          "itemId": "scp-series-766",
+          "titleJP": "Ανθρωποειδή ανωμαλία στο Διάστημα"
+        },
+        {
+          "itemId": "scp-series-767",
+          "titleJP": "Φωτογραφίες σκηνών εγκλήματος"
+        },
+        {
+          "itemId": "scp-series-768",
+          "titleJP": "Ξυπνητήρι μεγάλης εμβέλειας"
+        },
+        {
+          "itemId": "scp-series-769",
+          "titleJP": "Αρχαία εγκυκλοπαίδεια"
+        },
+        {
+          "itemId": "scp-series-770",
+          "titleJP": "Πυρηνική μούχλα"
+        },
+        {
+          "itemId": "scp-series-771",
+          "titleJP": "Αυτοεπιδιορθούμενη βιολογική τεχνητή νοημοσύνη"
+        },
+        {
+          "itemId": "scp-series-773",
+          "titleJP": "Βουντού Βελάκια"
+        },
+        {
+          "itemId": "scp-series-774",
+          "titleJP": "Σφυρίζοντα οστά"
+        },
+        {
+          "itemId": "scp-series-775",
+          "titleJP": "Πεινασμένα τσιμπούρια"
+        },
+        {
+          "itemId": "scp-series-776",
+          "titleJP": "Λατρεία της νεολαίας"
+        },
+        {
+          "itemId": "scp-series-777",
+          "titleJP": "Βασίλειο της άμμου"
+        },
+        {
+          "itemId": "scp-series-778",
+          "titleJP": "Καταρράκτες του Παραδείσου"
+        },
+        {
+          "itemId": "scp-series-779",
+          "titleJP": "Brownies"
+        },
+        {
+          "itemId": "scp-series-780",
+          "titleJP": "Χάντρα σπόρου"
+        },
+        {
+          "itemId": "scp-series-781",
+          "titleJP": "Ανυποψίαστος διαμορφωτής ονείρων"
+        },
+        {
+          "itemId": "scp-series-785",
+          "titleJP": "Μια αλυσίδα εστιατορίων"
+        },
+        {
+          "itemId": "scp-series-786",
+          "titleJP": "Παράγοντας χωνιού δώδεκα"
+        },
+        {
+          "itemId": "scp-series-788",
+          "titleJP": "Κυπρίνος του μάγματος"
+        },
+        {
+          "itemId": "scp-series-790",
+          "titleJP": "Αίμα?"
+        },
+        {
+          "itemId": "scp-series-791",
+          "titleJP": "Σφαίρα νερού"
+        },
+        {
+          "itemId": "scp-series-792",
+          "titleJP": "Η φάρμα πτωμάτων"
+        },
+        {
+          "itemId": "scp-series-794",
+          "titleJP": "Ναυάγιο της ερήμου"
+        },
+        {
+          "itemId": "scp-series-795",
+          "titleJP": "Γάτα που δαμάζει την πραγματικότητα"
+        },
+        {
+          "itemId": "scp-series-796",
+          "titleJP": "Γάτα του ποταμού"
+        },
+        {
+          "itemId": "scp-series-799",
+          "titleJP": "Σαρκοφάγα κουβέρτα"
+        },
+        {
+          "itemId": "scp-series-801",
+          "titleJP": "Επτά γούνες"
+        },
+        {
+          "itemId": "scp-series-802",
+          "titleJP": "Μουσικό τανκ"
+        },
+        {
+          "itemId": "scp-series-803",
+          "titleJP": "Αρπακτικές ομπρέλες"
+        },
+        {
+          "itemId": "scp-series-804",
+          "titleJP": "Κόσμος χωρίς ανθρώπους"
+        },
+        {
+          "itemId": "scp-series-805",
+          "titleJP": "Πουλάρι δηλητηριασμένου ξύλου"
+        },
+        {
+          "itemId": "scp-series-806",
+          "titleJP": "Προβολή Αναβίωσης"
+        },
+        {
+          "itemId": "scp-series-807",
+          "titleJP": "Ανακοπή καρδιάς στο πιάτο"
+        },
+        {
+          "itemId": "scp-series-809",
+          "titleJP": "Μπότες πολεμικές"
+        },
+        {
+          "itemId": "scp-series-810",
+          "titleJP": "Η λάμπα \"Ποτέ-δεν-θέλω\""
+        },
+        {
+          "itemId": "scp-series-811",
+          "titleJP": "Γυναίκα του βάλτου"
+        },
+        {
+          "itemId": "scp-series-812",
+          "titleJP": "Ένα κουτί με ποτάμι"
+        },
+        {
+          "itemId": "scp-series-814",
+          "titleJP": "Καθαρός τόνος"
+        },
+        {
+          "itemId": "scp-series-815",
+          "titleJP": "Φιδίσια κονσέρβα ξηρών καρπών"
+        },
+        {
+          "itemId": "scp-series-819",
+          "titleJP": "Ζωτικά γλειφιτζούρια"
+        },
+        {
+          "itemId": "scp-series-820",
+          "titleJP": "Las Langostas Pintadas"
+        },
+        {
+          "itemId": "scp-series-821",
+          "titleJP": "Dixie Funland"
+        },
+        {
+          "itemId": "scp-series-822",
+          "titleJP": "Κάκτοι ναρκών"
+        },
+        {
+          "itemId": "scp-series-825",
+          "titleJP": "Κράνος ενοχλητικών οραμάτων"
+        },
+        {
+          "itemId": "scp-series-826",
+          "titleJP": "Σε παρασύρει στο βιβλίο"
+        },
+        {
+          "itemId": "scp-series-827",
+          "titleJP": "Η σούπα"
+        },
+        {
+          "itemId": "scp-series-829",
+          "titleJP": "Αιμοδιψής βερνίκι νυχιών"
+        },
+        {
+          "itemId": "scp-series-830",
+          "titleJP": "Υγρή κινούμενη άμμο"
+        },
+        {
+          "itemId": "scp-series-831",
+          "titleJP": "Tinkerbug"
+        },
+        {
+          "itemId": "scp-series-832",
+          "titleJP": "Το νόμισμα του λογιστή"
+        },
+        {
+          "itemId": "scp-series-833",
+          "titleJP": "Σκουλήκια φιλανθρωπίας"
+        },
+        {
+          "itemId": "scp-series-834",
+          "titleJP": "Μαρκαρισμένο"
+        },
+        {
+          "itemId": "scp-series-836",
+          "titleJP": "Δομικός καρκίνος"
+        },
+        {
+          "itemId": "scp-series-837",
+          "titleJP": "Πολλαπλασιαζόμενος πηλός"
+        },
+        {
+          "itemId": "scp-series-838",
+          "titleJP": "Η δουλειά των ονείρων"
+        },
+        {
+          "itemId": "scp-series-839",
+          "titleJP": "Καραμελωμένα σκουλήκια"
+        },
+        {
+          "itemId": "scp-series-840",
+          "titleJP": "Τροφοδότης αποστράγγισης"
+        },
+        {
+          "itemId": "scp-series-841",
+          "titleJP": "Αντίστροφη ξύλινη μαριονέτα βουντού"
+        },
+        {
+          "itemId": "scp-series-842",
+          "titleJP": "Τραπέζι χειρουργικής επέμβασης"
+        },
+        {
+          "itemId": "scp-series-843",
+          "titleJP": "\"Σπόροι αγελάδων\""
+        },
+        {
+          "itemId": "scp-series-844",
+          "titleJP": "Crybaby"
+        },
+        {
+          "itemId": "scp-series-845",
+          "titleJP": "Υγρό κουνάβι"
+        },
+        {
+          "itemId": "scp-series-848",
+          "titleJP": "Δια-διαστατικός ιστός αράχνης"
+        },
+        {
+          "itemId": "scp-series-849",
+          "titleJP": "Μια τέλεια μέρα"
+        },
+        {
+          "itemId": "scp-series-850",
+          "titleJP": "Ομάδα ψαριών"
+        },
+        {
+          "itemId": "scp-series-851",
+          "titleJP": "Lullabugs"
+        },
+        {
+          "itemId": "scp-series-852",
+          "titleJP": "Σεληνιακή ανωμαλία"
+        },
+        {
+          "itemId": "scp-series-853",
+          "titleJP": "Καιρικές Συντηρήσεις"
+        },
+        {
+          "itemId": "scp-series-854",
+          "titleJP": "Γέφυρα ονείρων"
+        },
+        {
+          "itemId": "scp-series-855",
+          "titleJP": "Η αίθουσα ταινιών"
+        },
+        {
+          "itemId": "scp-series-856",
+          "titleJP": "Λιοπόταμος"
+        },
+        {
+          "itemId": "scp-series-857",
+          "titleJP": "Οικοσύστημα με βάση τον άνθρωπο"
+        },
+        {
+          "itemId": "scp-series-858",
+          "titleJP": "Το ουράνιο τόξο της βαρύτητας"
+        },
+        {
+          "itemId": "scp-series-859",
+          "titleJP": "Αραχνοφοβική σφαίρα"
+        },
+        {
+          "itemId": "scp-series-860",
+          "titleJP": "Μπλε Κλειδί"
+        },
+        {
+          "itemId": "scp-series-862",
+          "titleJP": "Αρουραίοι"
+        },
+        {
+          "itemId": "scp-series-863",
+          "titleJP": "Καβούρια ανακατεμένα"
+        },
+        {
+          "itemId": "scp-series-864",
+          "titleJP": "Αποτελεσματική λεκάνη"
+        },
+        {
+          "itemId": "scp-series-867",
+          "titleJP": "Ματωμένη ερυθρελάτη"
+        },
+        {
+          "itemId": "scp-series-870",
+          "titleJP": "Τα ίσως εκεί τέρατα"
+        },
+        {
+          "itemId": "scp-series-871",
+          "titleJP": "Το κέικ που αυτοαντικαθίσταται"
+        },
+        {
+          "itemId": "scp-series-872",
+          "titleJP": "Ο κουρελιασμένος αγρότης"
+        },
+        {
+          "itemId": "scp-series-873",
+          "titleJP": "Ρωσική κρυστάλλινη σφαίρα"
+        },
+        {
+          "itemId": "scp-series-874",
+          "titleJP": "Αβυσσαλέο υγρό"
+        },
+        {
+          "itemId": "scp-series-875",
+          "titleJP": "Εγκληματίες πολέμου"
+        },
+        {
+          "itemId": "scp-series-876",
+          "titleJP": "Χάπια μετατροπής στοιχείων"
+        },
+        {
+          "itemId": "scp-series-877",
+          "titleJP": "Πανεπιστημιακά μικροτσίπ"
+        },
+        {
+          "itemId": "scp-series-878",
+          "titleJP": "Ο ηθοποιός"
+        },
+        {
+          "itemId": "scp-series-880",
+          "titleJP": "Παγιδευμένος χειμώνας"
+        },
+        {
+          "itemId": "scp-series-881",
+          "titleJP": "Μικροί άνθρωποι"
+        },
+        {
+          "itemId": "scp-series-882",
+          "titleJP": "Μια μηχανή"
+        },
+        {
+          "itemId": "scp-series-883",
+          "titleJP": "Εξωδιαστατική κυψέλη"
+        },
+        {
+          "itemId": "scp-series-885",
+          "titleJP": "Ζωντανό κενό"
+        },
+        {
+          "itemId": "scp-series-888",
+          "titleJP": "Πέτρες μνήμης"
+        },
+        {
+          "itemId": "scp-series-890",
+          "titleJP": "Ο μηχανικός χειρουργός"
+        },
+        {
+          "itemId": "scp-series-891",
+          "titleJP": "Πεδίο της Καλιφόρνιας"
+        },
+        {
+          "itemId": "scp-series-894",
+          "titleJP": "Δεν μιλάω, δεν ακούω, δεν βλέπω."
+        },
+        {
+          "itemId": "scp-series-899",
+          "titleJP": "Χαμένα παιδιά"
+        },
+        {
+          "itemId": "scp-series-902",
+          "titleJP": "Η τελική αντίστροφη μέτρηση"
+        },
+        {
+          "itemId": "scp-series-904",
+          "titleJP": "Ένα σύντομο ποίημα"
+        },
+        {
+          "itemId": "scp-series-906",
+          "titleJP": "Κυψέλη που σαρώνει"
+        },
+        {
+          "itemId": "scp-series-907",
+          "titleJP": "Ένα όχημα εξερεύνησης"
+        },
+        {
+          "itemId": "scp-series-908",
+          "titleJP": "Βράχος συνεγκατάστασης"
+        },
+        {
+          "itemId": "scp-series-911",
+          "titleJP": "[ΧΩΡΙΣ ΠΡΟΣΒΑΣΗ]"
+        },
+        {
+          "itemId": "scp-series-912",
+          "titleJP": "[ΧΩΡΙΣ ΠΡΟΣΒΑΣΗ]"
+        },
+        {
+          "itemId": "scp-series-914",
+          "titleJP": "Τα μηχανικά"
+        },
+        {
+          "itemId": "scp-series-939",
+          "titleJP": "Με πολλές φωνές"
+        },
+        {
+          "itemId": "scp-series-948",
+          "titleJP": "Ο εργασιομανής"
+        },
+        {
+          "itemId": "scp-series-966",
+          "titleJP": "Δολοφόνος ύπνου"
+        },
+        {
+          "itemId": "scp-series-999",
+          "titleJP": "Το γαργαλητό τέρας"
+        },
+        {
+          "itemId": "scp-series-1010",
+          "titleJP": "Ο πράσινος άνδρας"
+        },
+        {
+          "itemId": "scp-series-1048",
+          "titleJP": "Οικοδόμος Αρκούδα"
+        },
+        {
+          "itemId": "scp-series-1151",
+          "titleJP": "Ένας πρακτικός μαρκαδόρος"
+        },
+        {
+          "itemId": "scp-series-1173",
+          "titleJP": "Ισλαμική Δημοκρατία της Ανατολικής Σαμοθράκης"
+        },
+        {
+          "itemId": "scp-series-1471",
+          "titleJP": "MalO ver1.0.0"
+        },
+        {
+          "itemId": "scp-series-1545",
+          "titleJP": "Larry το Loving Llama"
+        },
+        {
+          "itemId": "scp-series-1678",
+          "titleJP": "UnLondon"
+        }
+      ],
+      "lastSentWindow": null
+    },
+    "hu": {
+      "items": [
+        {
+          "itemId": "scp-series-hu-002",
+          "titleJP": "Mint egy óriási pulyka"
+        },
+        {
+          "itemId": "scp-series-hu-003",
+          "titleJP": "A rák ellenszere.. többé-kevésbé"
+        },
+        {
+          "itemId": "scp-series-hu-004",
+          "titleJP": "Mindent látó teleszkóp"
+        },
+        {
+          "itemId": "scp-series-hu-005",
+          "titleJP": "Botond öröksége"
+        },
+        {
+          "itemId": "scp-series-hu-006",
+          "titleJP": "A Ganz időgép"
+        },
+        {
+          "itemId": "scp-series-hu-007",
+          "titleJP": "Robbanó Szappan"
+        },
+        {
+          "itemId": "scp-series-hu-008",
+          "titleJP": "Csodaszarvas"
+        },
+        {
+          "itemId": "scp-series-hu-009",
+          "titleJP": "Háborús Emlékek"
+        },
+        {
+          "itemId": "scp-series-hu-010",
+          "titleJP": "Idegesítő szúnyogok"
+        },
+        {
+          "itemId": "scp-series-hu-011",
+          "titleJP": "A Pánikszoba"
+        },
+        {
+          "itemId": "scp-series-hu-012",
+          "titleJP": "Acélkirálynő"
+        },
+        {
+          "itemId": "scp-series-hu-013",
+          "titleJP": "Becsavarodott Ördög"
+        },
+        {
+          "itemId": "scp-series-hu-014",
+          "titleJP": "Ezüst rinelaaB"
+        },
+        {
+          "itemId": "scp-series-hu-015",
+          "titleJP": "A Barátságok Háza"
+        },
+        {
+          "itemId": "scp-series-hu-016",
+          "titleJP": "A nyugalom fuvolája"
+        },
+        {
+          "itemId": "scp-series-hu-017",
+          "titleJP": "Pöttyös Idegenek"
+        },
+        {
+          "itemId": "scp-series-hu-018",
+          "titleJP": "Klausztrofóbia"
+        },
+        {
+          "itemId": "scp-series-hu-019",
+          "titleJP": "Tarajos Maneki-neko"
+        },
+        {
+          "itemId": "scp-series-hu-020",
+          "titleJP": "Nevess és a világ veled nevet majd"
+        },
+        {
+          "itemId": "scp-series-hu-021",
+          "titleJP": "A Halál Hat Árnyalata"
+        },
+        {
+          "itemId": "scp-series-hu-022",
+          "titleJP": "Tömörített Járat"
+        },
+        {
+          "itemId": "scp-series-hu-023",
+          "titleJP": "A teleportáló telefon fülke"
+        },
+        {
+          "itemId": "scp-series-hu-024",
+          "titleJP": "A Végtelenbe és Tovább"
+        },
+        {
+          "itemId": "scp-series-hu-025",
+          "titleJP": "20██-es Népszámlálás"
+        },
+        {
+          "itemId": "scp-series-hu-026",
+          "titleJP": "Egy Kemény Férfi"
+        },
+        {
+          "itemId": "scp-series-hu-027",
+          "titleJP": "Vérszerződés"
+        },
+        {
+          "itemId": "scp-series-hu-028",
+          "titleJP": "Módosított Savoia"
+        },
+        {
+          "itemId": "scp-series-hu-029",
+          "titleJP": "A Fene"
+        },
+        {
+          "itemId": "scp-series-hu-030",
+          "titleJP": "Eger Ostroma"
+        },
+        {
+          "itemId": "scp-series-hu-031",
+          "titleJP": "Macskafogó: A Kezdetek"
+        },
+        {
+          "itemId": "scp-series-hu-032",
+          "titleJP": "A Vörös Biblia"
+        },
+        {
+          "itemId": "scp-series-hu-033",
+          "titleJP": "A Testetlen Ragály"
+        },
+        {
+          "itemId": "scp-series-hu-034",
+          "titleJP": "Semmi Sem Okoz Nagyobb Kárt, Mint Az Ember"
+        },
+        {
+          "itemId": "scp-series-hu-035",
+          "titleJP": "A Badacsonyi Görényember"
+        },
+        {
+          "itemId": "scp-series-hu-036",
+          "titleJP": "Magyar Népmesék"
+        },
+        {
+          "itemId": "scp-series-hu-037",
+          "titleJP": "Kutyaharapást szőrével"
+        },
+        {
+          "itemId": "scp-series-hu-042",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-hu-045",
+          "titleJP": "Élőhalott Komondor"
+        },
+        {
+          "itemId": "scp-series-hu-046",
+          "titleJP": "ÁKGY-49"
+        },
+        {
+          "itemId": "scp-series-hu-048",
+          "titleJP": "Mint ██████ a ködben"
+        },
+        {
+          "itemId": "scp-series-hu-050",
+          "titleJP": "Mátranováki Fanyűvő"
+        },
+        {
+          "itemId": "scp-series-hu-055",
+          "titleJP": "Mit rejt a mély"
+        },
+        {
+          "itemId": "scp-series-hu-056",
+          "titleJP": "A Művészi Látás"
+        },
+        {
+          "itemId": "scp-series-hu-059",
+          "titleJP": "Míg a Halál El Nem Választ"
+        },
+        {
+          "itemId": "scp-series-hu-062",
+          "titleJP": "5 Perc Az Örökkévalóságig"
+        },
+        {
+          "itemId": "scp-series-hu-069",
+          "titleJP": "Aratás"
+        },
+        {
+          "itemId": "scp-series-hu-071",
+          "titleJP": "\"Jogos\" \"Igazságos\" Revolúciós Kannibál"
+        },
+        {
+          "itemId": "scp-series-hu-075",
+          "titleJP": "Aeternum Vulnus"
+        },
+        {
+          "itemId": "scp-series-hu-077",
+          "titleJP": "Sprinterek"
+        },
+        {
+          "itemId": "scp-series-hu-079",
+          "titleJP": "Mi az ott az erdő mélyén?"
+        },
+        {
+          "itemId": "scp-series-hu-087",
+          "titleJP": "Éteri Expedíció"
+        },
+        {
+          "itemId": "scp-series-hu-089",
+          "titleJP": "Tudati mediátor"
+        },
+        {
+          "itemId": "scp-series-hu-090",
+          "titleJP": "A Szürreális ember"
+        },
+        {
+          "itemId": "scp-series-hu-098",
+          "titleJP": "A VHS kazetta"
+        },
+        {
+          "itemId": "scp-series-hu-099",
+          "titleJP": "Dr. Dínó"
+        },
+        {
+          "itemId": "scp-series-001",
+          "titleJP": "Titkositás Feloldására Vár [Zárolt]"
+        },
+        {
+          "itemId": "scp-series-002",
+          "titleJP": "Az \"Élő\" Szoba"
+        },
+        {
+          "itemId": "scp-series-003",
+          "titleJP": "Biológiai Alaplap"
+        },
+        {
+          "itemId": "scp-series-004",
+          "titleJP": "A 12 Rozsdás Kulcs és az Ajtó"
+        },
+        {
+          "itemId": "scp-series-005",
+          "titleJP": "Mesterkulcs"
+        },
+        {
+          "itemId": "scp-series-006",
+          "titleJP": "A Fiatalság Forrása"
+        },
+        {
+          "itemId": "scp-series-007",
+          "titleJP": "Hasi Bolygó"
+        },
+        {
+          "itemId": "scp-series-008",
+          "titleJP": "Zombi Pestis"
+        },
+        {
+          "itemId": "scp-series-009",
+          "titleJP": "Vörös Jég"
+        },
+        {
+          "itemId": "scp-series-010",
+          "titleJP": "Az Irányitás Nyakörvei"
+        },
+        {
+          "itemId": "scp-series-011",
+          "titleJP": "Érző Polgárháborús Emlékmű"
+        },
+        {
+          "itemId": "scp-series-012",
+          "titleJP": "Egy Rossz Szerzemény"
+        },
+        {
+          "itemId": "scp-series-013",
+          "titleJP": "Blue Lady Cigaretták"
+        },
+        {
+          "itemId": "scp-series-014",
+          "titleJP": "A Beton Ember"
+        },
+        {
+          "itemId": "scp-series-015",
+          "titleJP": "Cső Rémálom"
+        },
+        {
+          "itemId": "scp-series-016",
+          "titleJP": "Értelmes Mikroorganizmus"
+        },
+        {
+          "itemId": "scp-series-017",
+          "titleJP": "Árny Ember"
+        },
+        {
+          "itemId": "scp-series-018",
+          "titleJP": "Elasztikus golyó"
+        },
+        {
+          "itemId": "scp-series-019",
+          "titleJP": "A Szörnyfazék"
+        },
+        {
+          "itemId": "scp-series-020",
+          "titleJP": "Észrevétlen Penész"
+        },
+        {
+          "itemId": "scp-series-021",
+          "titleJP": "Sárkánybőr"
+        },
+        {
+          "itemId": "scp-series-022",
+          "titleJP": "A Hullaház"
+        },
+        {
+          "itemId": "scp-series-023",
+          "titleJP": "Fekete Rém"
+        },
+        {
+          "itemId": "scp-series-024",
+          "titleJP": "A Halál Vetélkedője"
+        },
+        {
+          "itemId": "scp-series-025",
+          "titleJP": "Az Elnyűtt Ruhásszekrény"
+        },
+        {
+          "itemId": "scp-series-026",
+          "titleJP": "Iskolautáni Visszatérés"
+        },
+        {
+          "itemId": "scp-series-027",
+          "titleJP": "A Csúszómászó Isten"
+        },
+        {
+          "itemId": "scp-series-028",
+          "titleJP": "Tudás"
+        },
+        {
+          "itemId": "scp-series-029",
+          "titleJP": "A Sötétség Leánya"
+        },
+        {
+          "itemId": "scp-series-030",
+          "titleJP": "A Homunkulusz"
+        },
+        {
+          "itemId": "scp-series-031",
+          "titleJP": "Mi a Szerelem?"
+        },
+        {
+          "itemId": "scp-series-032",
+          "titleJP": "Testvér Menyasszonya"
+        },
+        {
+          "itemId": "scp-series-033",
+          "titleJP": "A Hiányzó Szám"
+        },
+        {
+          "itemId": "scp-series-034",
+          "titleJP": "Rituális Obszidián Kés"
+        },
+        {
+          "itemId": "scp-series-035",
+          "titleJP": "Megszálló Maszk"
+        },
+        {
+          "itemId": "scp-series-036",
+          "titleJP": "A Yazidi Zarándoklat Reinkarnációja (Kiras Guhorîn)"
+        },
+        {
+          "itemId": "scp-series-037",
+          "titleJP": "Törpe Csillag"
+        },
+        {
+          "itemId": "scp-series-038",
+          "titleJP": "A Mindenes Fa"
+        },
+        {
+          "itemId": "scp-series-043",
+          "titleJP": "A Beatles"
+        },
+        {
+          "itemId": "scp-series-047",
+          "titleJP": "Mikróbiális Mutagén"
+        },
+        {
+          "itemId": "scp-series-048",
+          "titleJP": "Az Elátkozott SCP Szám"
+        },
+        {
+          "itemId": "scp-series-049",
+          "titleJP": "Pestisdoktor"
+        },
+        {
+          "itemId": "scp-series-050",
+          "titleJP": "A Legokosabbnak"
+        },
+        {
+          "itemId": "scp-series-052",
+          "titleJP": "Időutazó Vonat"
+        },
+        {
+          "itemId": "scp-series-053",
+          "titleJP": "Fiatal Lány"
+        },
+        {
+          "itemId": "scp-series-055",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-056",
+          "titleJP": "Egy Gyönyörű Személy"
+        },
+        {
+          "itemId": "scp-series-058",
+          "titleJP": "A Sötétség Szíve"
+        },
+        {
+          "itemId": "scp-series-061",
+          "titleJP": "Hangalapú Agykontroll"
+        },
+        {
+          "itemId": "scp-series-063",
+          "titleJP": "\"A Világ Legjobb fokeféje\""
+        },
+        {
+          "itemId": "scp-series-066",
+          "titleJP": "Eric Játéka"
+        },
+        {
+          "itemId": "scp-series-073",
+          "titleJP": "\"Káin\""
+        },
+        {
+          "itemId": "scp-series-075",
+          "titleJP": "Korrozív Csiga"
+        },
+        {
+          "itemId": "scp-series-076",
+          "titleJP": "\"Ábel\""
+        },
+        {
+          "itemId": "scp-series-079",
+          "titleJP": "Régi MI"
+        },
+        {
+          "itemId": "scp-series-082",
+          "titleJP": "\"Fernand\" A Kannibál"
+        },
+        {
+          "itemId": "scp-series-087",
+          "titleJP": "A Lépcsőház"
+        },
+        {
+          "itemId": "scp-series-093",
+          "titleJP": "Vörös Tengeri Objektum"
+        },
+        {
+          "itemId": "scp-series-096",
+          "titleJP": "A \"Félénk Fickó\""
+        },
+        {
+          "itemId": "scp-series-098",
+          "titleJP": "Sebész Rákok"
+        },
+        {
+          "itemId": "scp-series-105",
+          "titleJP": "\"Írisz\""
+        },
+        {
+          "itemId": "scp-series-106",
+          "titleJP": "Az Öregember"
+        },
+        {
+          "itemId": "scp-series-107",
+          "titleJP": "A Teknőspáncél"
+        },
+        {
+          "itemId": "scp-series-113",
+          "titleJP": "A Nemváltó"
+        },
+        {
+          "itemId": "scp-series-114",
+          "titleJP": "Konfliktushozó"
+        },
+        {
+          "itemId": "scp-series-123",
+          "titleJP": "Elzárt Miniatűr Fekete Lyuk"
+        },
+        {
+          "itemId": "scp-series-131",
+          "titleJP": "A \"Szemgolyók\""
+        },
+        {
+          "itemId": "scp-series-140",
+          "titleJP": "A Befejezetlen Krónika"
+        },
+        {
+          "itemId": "scp-series-162",
+          "titleJP": "Egy Golyónyi Él"
+        },
+        {
+          "itemId": "scp-series-173",
+          "titleJP": "A Szobor -"
+        },
+        {
+          "itemId": "scp-series-201",
+          "titleJP": "Az Üres Világ"
+        },
+        {
+          "itemId": "scp-series-250",
+          "titleJP": "Egy Allosaurus Nagy Része"
+        },
+        {
+          "itemId": "scp-series-294",
+          "titleJP": "A Kávégép"
+        },
+        {
+          "itemId": "scp-series-343",
+          "titleJP": "\"Isten\""
+        },
+        {
+          "itemId": "scp-series-361",
+          "titleJP": "Bronz Máj"
+        },
+        {
+          "itemId": "scp-series-372",
+          "titleJP": "Peripheral Jumper"
+        },
+        {
+          "itemId": "scp-series-381",
+          "titleJP": "A Pirotechnikus Polifónia"
+        },
+        {
+          "itemId": "scp-series-475",
+          "titleJP": "A Pápa Szappanja"
+        },
+        {
+          "itemId": "scp-series-484",
+          "titleJP": "Emléklopó Drog"
+        },
+        {
+          "itemId": "scp-series-500",
+          "titleJP": "Csodaszer"
+        },
+        {
+          "itemId": "scp-series-507",
+          "titleJP": "Visszatérő Dimenzió Ugró"
+        },
+        {
+          "itemId": "scp-series-529",
+          "titleJP": "Josie a Fél-Macska"
+        },
+        {
+          "itemId": "scp-series-610",
+          "titleJP": "A Hús mely Gyűlöl"
+        },
+        {
+          "itemId": "scp-series-616",
+          "titleJP": "A Tároló és a Kapu"
+        },
+        {
+          "itemId": "scp-series-650",
+          "titleJP": "Ijesztegető Szobor"
+        },
+        {
+          "itemId": "scp-series-682",
+          "titleJP": "Nehezen Elpusztítható Hüllő"
+        },
+        {
+          "itemId": "scp-series-701",
+          "titleJP": "Az Akasztott Király Tragédiája"
+        },
+        {
+          "itemId": "scp-series-738",
+          "titleJP": "Az Ördög Ajánlata"
+        },
+        {
+          "itemId": "scp-series-914",
+          "titleJP": "Az Óramű"
+        },
+        {
+          "itemId": "scp-series-955",
+          "titleJP": "Mr. Butusbogár"
+        },
+        {
+          "itemId": "scp-series-963",
+          "titleJP": "Halhatatlanság"
+        },
+        {
+          "itemId": "scp-series-973",
+          "titleJP": "Smokey"
+        },
+        {
+          "itemId": "scp-series-990",
+          "titleJP": "Álom Ember"
+        },
+        {
+          "itemId": "scp-series-998",
+          "titleJP": "Az Eltűnt Repülőgép"
+        },
+        {
+          "itemId": "scp-series-999",
+          "titleJP": "A Csikiszörny"
+        },
+        {
+          "itemId": "scp-series-1000",
+          "titleJP": "Nagyláb"
+        },
+        {
+          "itemId": "scp-series-1111",
+          "titleJP": "A Fehér Kutya"
+        },
+        {
+          "itemId": "scp-series-1173",
+          "titleJP": "A Kelet-Samothrace-i Iszlám Állami Köztársaság"
+        },
+        {
+          "itemId": "scp-series-1295",
+          "titleJP": "Megék Étkezője"
+        },
+        {
+          "itemId": "scp-series-1348",
+          "titleJP": "Belső Szentély"
+        },
+        {
+          "itemId": "scp-series-1503",
+          "titleJP": "Agórafóbiás Szikla"
+        },
+        {
+          "itemId": "scp-series-1512",
+          "titleJP": "Irracionális Gyök(ér)"
+        },
+        {
+          "itemId": "scp-series-1762",
+          "titleJP": "Ahová A Sárkányok Mentek"
+        },
+        {
+          "itemId": "scp-series-1801",
+          "titleJP": "Megosztott Betegség"
+        },
+        {
+          "itemId": "scp-series-1890",
+          "titleJP": "A Családi Fotó Album"
+        },
+        {
+          "itemId": "scp-series-1958",
+          "titleJP": "Varázsbusz"
+        },
+        {
+          "itemId": "scp-series-1981",
+          "titleJP": "\"RONALD REAGAN FELVAGDOSVA BESZÉD KÖZBEN\""
+        }
+      ],
+      "lastSentWindow": null
+    },
+    "la": {
+      "items": [
+        {
+          "itemId": "scp-series-la-001",
+          "titleJP": "Awaiting De-classification [Blocked]"
+        },
+        {
+          "itemId": "scp-series-la-002",
+          "titleJP": "Fructum"
+        },
+        {
+          "itemId": "scp-series-la-003",
+          "titleJP": "ianua"
+        },
+        {
+          "itemId": "scp-series-la-004",
+          "titleJP": "Police!!!!"
+        },
+        {
+          "itemId": "scp-series-la-005",
+          "titleJP": "Kinander Bales"
+        },
+        {
+          "itemId": "scp-series-la-006",
+          "titleJP": "Abyssus Road"
+        },
+        {
+          "itemId": "scp-series-la-007",
+          "titleJP": "Gloria praeteriti"
+        },
+        {
+          "itemId": "scp-series-005",
+          "titleJP": "Clavis Translatitia"
+        },
+        {
+          "itemId": "scp-series-066",
+          "titleJP": "Eric's Toy"
+        },
+        {
+          "itemId": "scp-series-079",
+          "titleJP": "Old AI"
+        },
+        {
+          "itemId": "scp-series-173",
+          "titleJP": "Simulacrum -"
+        }
+      ],
+      "lastSentWindow": null
+    },
+    "nl": {
+      "items": [
+        {
+          "itemId": "scp-series-002",
+          "titleJP": "De levende Kamer"
+        },
+        {
+          "itemId": "scp-series-003",
+          "titleJP": "Organisch moederbord"
+        },
+        {
+          "itemId": "scp-series-004",
+          "titleJP": "De 12 roestige sleutels en de deur"
+        },
+        {
+          "itemId": "scp-series-005",
+          "titleJP": "De skeletsleutel"
+        },
+        {
+          "itemId": "scp-series-008",
+          "titleJP": "Zombieplaag"
+        },
+        {
+          "itemId": "scp-series-009",
+          "titleJP": "Rood ijs"
+        },
+        {
+          "itemId": "scp-series-031",
+          "titleJP": "Wat is Liefde"
+        },
+        {
+          "itemId": "scp-series-049",
+          "titleJP": "De Dokter van de Pest"
+        },
+        {
+          "itemId": "scp-series-055",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-087",
+          "titleJP": "De trap"
+        },
+        {
+          "itemId": "scp-series-096",
+          "titleJP": "De verlegen man"
+        },
+        {
+          "itemId": "scp-series-169",
+          "titleJP": "De leviathan"
+        },
+        {
+          "itemId": "scp-series-173",
+          "titleJP": "Het Standbeeld"
+        },
+        {
+          "itemId": "scp-series-239",
+          "titleJP": "Het heksenkind"
+        },
+        {
+          "itemId": "scp-series-500",
+          "titleJP": "Wondermiddel"
+        },
+        {
+          "itemId": "scp-series-963",
+          "titleJP": "Onsterfelijkheid"
+        }
+      ],
+      "lastSentWindow": null
+    },
+    "no": {
+      "items": [
+        {
+          "itemId": "scp-series-nd-001",
+          "titleJP": "Venter på offentliggjøring [Blokkert]"
+        },
+        {
+          "itemId": "scp-series-nd-007",
+          "titleJP": "En Øy i Himmelen"
+        }
+      ],
+      "lastSentWindow": null
+    },
+    "pig": {
+      "items": [
+        {
+          "itemId": "scp-series-pig-001",
+          "titleJP": "Awaitingyay Eclassificationday [Ockedblay]"
+        },
+        {
+          "itemId": "scp-series-pig-002",
+          "titleJP": "Ansformingtray Ishfay"
+        },
+        {
+          "itemId": "scp-series-pig-003",
+          "titleJP": "Estchay ofyay Earstay"
+        },
+        {
+          "itemId": "scp-series-pig-004",
+          "titleJP": "Isyay Axtonsay Alehay anyay SCP? Onay, e'shay ayay TF2"
+        },
+        {
+          "itemId": "scp-series-pig-005",
+          "titleJP": "Ateyay Ithoutway Abletay"
+        },
+        {
+          "itemId": "scp-series-pig-006",
+          "titleJP": "Ethay Ingdomkay Ofyay Inwdomsway"
+        },
+        {
+          "itemId": "scp-series-pig-007",
+          "titleJP": "Ometay Ofyay Aconbay"
+        },
+        {
+          "itemId": "scp-series-pig-008",
+          "titleJP": "Orrysay, ouyay on'tday avehay ayay ermitpay otay openyay ayay ocationlay erehay"
+        },
+        {
+          "itemId": "scp-series-pig-009",
+          "titleJP": "Amboozledbay"
+        },
+        {
+          "itemId": "scp-series-pig-014",
+          "titleJP": "Evernay Akemay Ayay Ealday Ithway"
+        },
+        {
+          "itemId": "scp-series-pig-020",
+          "titleJP": "Ormalvillenay"
+        },
+        {
+          "itemId": "scp-series-pig-023",
+          "titleJP": "Ichway Amecay Irstfay, Ethay Ickenchay Oryay Ethay Eggyay?"
+        },
+        {
+          "itemId": "scp-series-pig-026",
+          "titleJP": "Ethay Endlessyay Corridor"
+        },
+        {
+          "itemId": "scp-series-pig-039",
+          "titleJP": "Atsunehay Ikumay"
+        },
+        {
+          "itemId": "scp-series-pig-075",
+          "titleJP": "Ethay Iamondday Ingkay"
+        },
+        {
+          "itemId": "scp-series-pig-080",
+          "titleJP": "Airborneyay ethay Igspay"
+        },
+        {
+          "itemId": "scp-series-pig-100",
+          "titleJP": "Onos'kray Indblay Otspay"
+        },
+        {
+          "itemId": "scp-series-pig-102",
+          "titleJP": "Imetay Andyay Elativeray Imensionsday Inyay Emoriamay"
+        },
+        {
+          "itemId": "scp-series-pig-199",
+          "titleJP": "Ethay Eaponway"
+        },
+        {
+          "itemId": "scp-series-001",
+          "titleJP": "Awaitingyay Eclassificationday [Ockedblay]"
+        },
+        {
+          "itemId": "scp-series-002",
+          "titleJP": "Ethay \"Ivinglay\" Oomray"
+        },
+        {
+          "itemId": "scp-series-003",
+          "titleJP": "Iologicalbay Otherboardmay"
+        },
+        {
+          "itemId": "scp-series-005",
+          "titleJP": "Eletonskay Eykay"
+        },
+        {
+          "itemId": "scp-series-006",
+          "titleJP": "Ountainfay ofyay Outhyay"
+        },
+        {
+          "itemId": "scp-series-007",
+          "titleJP": "Abdominalyay Anetplay"
+        },
+        {
+          "itemId": "scp-series-011",
+          "titleJP": "Entientsay Ivilcay Arway Emorialmay Atuestay"
+        },
+        {
+          "itemId": "scp-series-012",
+          "titleJP": "Ayay Adbay Ompositioncay"
+        },
+        {
+          "itemId": "scp-series-015",
+          "titleJP": "Ipepay Ightmarenay"
+        },
+        {
+          "itemId": "scp-series-017",
+          "titleJP": "Adowshay Ersonpay"
+        },
+        {
+          "itemId": "scp-series-018",
+          "titleJP": "Upersay Allbay"
+        },
+        {
+          "itemId": "scp-series-043",
+          "titleJP": "Ethay Eatlebay"
+        },
+        {
+          "itemId": "scp-series-049",
+          "titleJP": "Agueplay Octorday"
+        },
+        {
+          "itemId": "scp-series-050",
+          "titleJP": "Otay Ethay Everestclay"
+        },
+        {
+          "itemId": "scp-series-053",
+          "titleJP": "Oungyay Irlgay"
+        },
+        {
+          "itemId": "scp-series-055",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-062",
+          "titleJP": "\"Uantumqay\" Omputercay"
+        },
+        {
+          "itemId": "scp-series-063",
+          "titleJP": "\"Ethay Orld'sway Estbay OthBrushtay\""
+        },
+        {
+          "itemId": "scp-series-075",
+          "titleJP": "Orrosivecay Ailsnay"
+        },
+        {
+          "itemId": "scp-series-094",
+          "titleJP": "Iniaturemay Eventyay Orizonhay"
+        },
+        {
+          "itemId": "scp-series-096",
+          "titleJP": "Ethay Yshay Uygay"
+        },
+        {
+          "itemId": "scp-series-104",
+          "titleJP": "Ethay Onelylay Allbay"
+        },
+        {
+          "itemId": "scp-series-115",
+          "titleJP": "Iniaturemay Umpday Ucktray"
+        },
+        {
+          "itemId": "scp-series-124",
+          "titleJP": "Ertilefay Oilsay"
+        },
+        {
+          "itemId": "scp-series-127",
+          "titleJP": "Ethay Ivinglay Ungay"
+        },
+        {
+          "itemId": "scp-series-133",
+          "titleJP": "Instantyay Oleshay"
+        },
+        {
+          "itemId": "scp-series-143",
+          "titleJP": "Ethay Adewoodblay Ovegray"
+        },
+        {
+          "itemId": "scp-series-154",
+          "titleJP": "Offensiveyay Aceletsbray"
+        },
+        {
+          "itemId": "scp-series-159",
+          "titleJP": "Ethay Erfectpay Ocklay"
+        },
+        {
+          "itemId": "scp-series-162",
+          "titleJP": "Allbay ofyay Arpshay"
+        },
+        {
+          "itemId": "scp-series-173",
+          "titleJP": "Ethay Ulpturescay -"
+        },
+        {
+          "itemId": "scp-series-183",
+          "titleJP": "\"Eaverway\""
+        },
+        {
+          "itemId": "scp-series-343",
+          "titleJP": "\"Odgay\""
+        },
+        {
+          "itemId": "scp-series-409",
+          "titleJP": "Ontagiouscay Ystralcray"
+        },
+        {
+          "itemId": "scp-series-509",
+          "titleJP": "Enmay Areyay Ashtray"
+        },
+        {
+          "itemId": "scp-series-529",
+          "titleJP": "Osiejay ethay Alfhay-Atcay"
+        },
+        {
+          "itemId": "scp-series-530",
+          "titleJP": "Arlcay Ethay Ariablevay Ogday"
+        },
+        {
+          "itemId": "scp-series-682",
+          "titleJP": "Ardhay-otay-Estroyday Eptileray"
+        },
+        {
+          "itemId": "scp-series-718",
+          "titleJP": "Eyeballyay"
+        },
+        {
+          "itemId": "scp-series-966",
+          "titleJP": "Eepslay Illerkay"
+        },
+        {
+          "itemId": "scp-series-999",
+          "titleJP": "Ethay Ickletay Onstermay"
+        },
+        {
+          "itemId": "scp-series-1000",
+          "titleJP": "Igfootbay"
+        },
+        {
+          "itemId": "scp-series-1002",
+          "titleJP": "Emisersday"
+        },
+        {
+          "itemId": "scp-series-1003",
+          "titleJP": "Apewormtay Ildchay"
+        },
+        {
+          "itemId": "scp-series-1005",
+          "titleJP": "Ethay Aintedpay Anmay"
+        },
+        {
+          "itemId": "scp-series-1006",
+          "titleJP": "Iderspay Oletariatpray"
+        },
+        {
+          "itemId": "scp-series-1007",
+          "titleJP": "Mr. Ifelay andyay Mr. Eathday"
+        },
+        {
+          "itemId": "scp-series-1079",
+          "titleJP": "Dr Ondertainment'sway Ubblebathbay"
+        },
+        {
+          "itemId": "scp-series-1080",
+          "titleJP": "Ethay Echecray"
+        },
+        {
+          "itemId": "scp-series-1087",
+          "titleJP": "Itewhay Arsiertay"
+        },
+        {
+          "itemId": "scp-series-1523",
+          "titleJP": "Oulsay Otherbray"
+        },
+        {
+          "itemId": "scp-series-1982",
+          "titleJP": "Irstfay Outhernsay Ifthistfay"
+        }
+      ],
+      "lastSentWindow": null
+    },
+    "ro": {
+      "items": [
+        {
+          "itemId": "scp-series-ro-001",
+          "titleJP": "În Așteptarea Clasificării [Blocate]"
+        },
+        {
+          "itemId": "scp-series-ro-004",
+          "titleJP": "Totul este mai frumos la Realitatea virtuală"
+        },
+        {
+          "itemId": "scp-series-ro-006",
+          "titleJP": "LaughCoin"
+        },
+        {
+          "itemId": "scp-series-001",
+          "titleJP": "În așteptarea Declasificării [Blocat]"
+        },
+        {
+          "itemId": "scp-series-002",
+          "titleJP": "Camera Vie"
+        },
+        {
+          "itemId": "scp-series-003",
+          "titleJP": "Placă de bază biologică"
+        },
+        {
+          "itemId": "scp-series-004",
+          "titleJP": "Cele 12 Chei Ruginite și Ușa"
+        },
+        {
+          "itemId": "scp-series-005",
+          "titleJP": "Cheia universală"
+        },
+        {
+          "itemId": "scp-series-006",
+          "titleJP": "Fântâna tinereții"
+        },
+        {
+          "itemId": "scp-series-007",
+          "titleJP": "Planeta abdominală"
+        },
+        {
+          "itemId": "scp-series-008",
+          "titleJP": "Prionul Zombi"
+        },
+        {
+          "itemId": "scp-series-012",
+          "titleJP": "O Compoziție Proastă"
+        },
+        {
+          "itemId": "scp-series-096",
+          "titleJP": "„Tipul Timid”"
+        },
+        {
+          "itemId": "scp-series-173",
+          "titleJP": "Sculptura - Originalul"
+        },
+        {
+          "itemId": "scp-series-409",
+          "titleJP": "Cristalul Contagios"
+        },
+        {
+          "itemId": "scp-series-500",
+          "titleJP": "Panacea"
+        },
+        {
+          "itemId": "scp-series-871",
+          "titleJP": "Tort cu Auto-Replicare"
+        }
+      ],
+      "lastSentWindow": null
+    },
+    "sga": {
+      "items": [
+        {
+          "itemId": "scp-series-sga-001",
+          "titleJP": "ᔑ∴ᔑ╎ℸ ̣ ╎リ⊣ ↸ᒷ-ᓵꖎᔑᓭᓭ╎⎓╎ᓵᔑℸ ̣ ╎𝙹リ [ʖꖎ𝙹ᓵꖌᒷ↸]"
+        },
+        {
+          "itemId": "scp-series-sga-002",
+          "titleJP": "ʖ∷ᔑ╎リ ⎓∷ᒷᒷ⨅ᒷ"
+        },
+        {
+          "itemId": "scp-series-sga-009",
+          "titleJP": "ℸ ̣ ⍑ᒷ ʖ╎⊣ ||ᒷꖎꖎ𝙹∴ 𝙹リᒷ'ᓭ ℸ ̣ ⍑ᒷ ᓭ⚍リ!"
+        },
+        {
+          "itemId": "scp-series-sga-171",
+          "titleJP": "ᓵ𝙹∴ʖ𝙹||ᓭ ᔑリ↸ ᓵ⍑ᔑ𝙹ᓭ."
+        },
+        {
+          "itemId": "scp-series-001",
+          "titleJP": "ᔑ∴ᔑ╎ℸ ̣ ╎リ⊣ ↸ᒷ-ᓵꖎᔑᓭᓭ╎⎓╎ᓵᔑℸ ̣ ╎𝙹リ [ʖꖎ𝙹ᓵꖌᒷ↸]"
+        },
+        {
+          "itemId": "scp-series-173",
+          "titleJP": "ℸ ̣ ⍑ᒷ ᓭᓵ⚍ꖎ!¡ℸ ̣ ⚍∷ᒷ -"
+        }
+      ],
+      "lastSentWindow": null
+    },
+    "sh": {
+      "items": [
+        {
+          "itemId": "scp-series-sh-012",
+          "titleJP": "Kristalna laž"
+        },
+        {
+          "itemId": "scp-series-sh-016",
+          "titleJP": "Raskovnik"
+        },
+        {
+          "itemId": "scp-series-sh-049",
+          "titleJP": "Krvoločna zvijer"
+        },
+        {
+          "itemId": "scp-series-001",
+          "titleJP": "Čeka deklasifikaciju [Blokirano]"
+        },
+        {
+          "itemId": "scp-series-002",
+          "titleJP": "„Živa” soba"
+        },
+        {
+          "itemId": "scp-series-003",
+          "titleJP": "Biološka matična ploča"
+        },
+        {
+          "itemId": "scp-series-004",
+          "titleJP": "12 zarđalih ključeva i vrata"
+        },
+        {
+          "itemId": "scp-series-005",
+          "titleJP": "Kalauz"
+        },
+        {
+          "itemId": "scp-series-006",
+          "titleJP": "Fontana mladosti"
+        },
+        {
+          "itemId": "scp-series-007",
+          "titleJP": "Trbušna planeta"
+        },
+        {
+          "itemId": "scp-series-008",
+          "titleJP": "Zombi pandemija"
+        },
+        {
+          "itemId": "scp-series-009",
+          "titleJP": "Crveni led"
+        },
+        {
+          "itemId": "scp-series-010",
+          "titleJP": "Okovratnici kontrole"
+        },
+        {
+          "itemId": "scp-series-011",
+          "titleJP": "Samosvesni spomenik Građanskom ratu"
+        },
+        {
+          "itemId": "scp-series-029",
+          "titleJP": "Ćerka senki"
+        },
+        {
+          "itemId": "scp-series-048",
+          "titleJP": "Prokleti SCP broj"
+        },
+        {
+          "itemId": "scp-series-054",
+          "titleJP": "Vodena nimfa"
+        },
+        {
+          "itemId": "scp-series-055",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-173",
+          "titleJP": "Skulptura -"
+        },
+        {
+          "itemId": "scp-series-447",
+          "titleJP": "Lopta zelene sluzi"
+        },
+        {
+          "itemId": "scp-series-682",
+          "titleJP": "Težko-Uništiv Reptil"
+        },
+        {
+          "itemId": "scp-series-1471",
+          "titleJP": "MalO ver1.0.0"
+        }
+      ],
+      "lastSentWindow": null
+    },
+    "sl": {
+      "items": [
+        {
+          "itemId": "scp-series-sl-001",
+          "titleJP": "Do umika tajnosti [blok]"
+        },
+        {
+          "itemId": "scp-series-sl-003",
+          "titleJP": "Vas na oblakih"
+        },
+        {
+          "itemId": "scp-series-sl-004",
+          "titleJP": "Ko je bila imortalnost podarjena Pandi…"
+        },
+        {
+          "itemId": "scp-series-sl-005",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-sl-006",
+          "titleJP": "Poslušalec"
+        },
+        {
+          "itemId": "scp-series-sl-007",
+          "titleJP": "Kit oprema za fotografiranje"
+        },
+        {
+          "itemId": "scp-series-sl-008",
+          "titleJP": "Izginjajoča soba"
+        },
+        {
+          "itemId": "scp-series-sl-009",
+          "titleJP": "Kaki Esplsivi"
+        },
+        {
+          "itemId": "scp-series-sl-012",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-001",
+          "titleJP": "Do umika tajnosti [blok]"
+        },
+        {
+          "itemId": "scp-series-002",
+          "titleJP": "\"Dnevna\" Soba"
+        },
+        {
+          "itemId": "scp-series-003",
+          "titleJP": "Biološka Matična Plošča"
+        },
+        {
+          "itemId": "scp-series-004",
+          "titleJP": "12 zarjavelih tipk in vrata"
+        },
+        {
+          "itemId": "scp-series-005",
+          "titleJP": "Passe-Partout"
+        },
+        {
+          "itemId": "scp-series-006",
+          "titleJP": "Fontana mladosti"
+        },
+        {
+          "itemId": "scp-series-007",
+          "titleJP": "Abdominalni Planet"
+        },
+        {
+          "itemId": "scp-series-008",
+          "titleJP": "Zombi Kuga"
+        },
+        {
+          "itemId": "scp-series-009",
+          "titleJP": "Rdeči LED"
+        },
+        {
+          "itemId": "scp-series-010",
+          "titleJP": "Ovratniki nadzora"
+        },
+        {
+          "itemId": "scp-series-011",
+          "titleJP": "Spomenik Čuteče Državljanske Vojne"
+        },
+        {
+          "itemId": "scp-series-012",
+          "titleJP": "Slaba zasnova"
+        },
+        {
+          "itemId": "scp-series-013",
+          "titleJP": "Cigarete Blue Lady"
+        },
+        {
+          "itemId": "scp-series-014",
+          "titleJP": "Betonski Mož"
+        },
+        {
+          "itemId": "scp-series-015",
+          "titleJP": "Nočna Mora Pipe"
+        },
+        {
+          "itemId": "scp-series-016",
+          "titleJP": "Čuteči Mikroorganizem"
+        },
+        {
+          "itemId": "scp-series-017",
+          "titleJP": "Oseba V Senci"
+        },
+        {
+          "itemId": "scp-series-018",
+          "titleJP": "Super žoga"
+        },
+        {
+          "itemId": "scp-series-019",
+          "titleJP": "Pošastna Vaza"
+        },
+        {
+          "itemId": "scp-series-020",
+          "titleJP": "Nevidna Plesen"
+        },
+        {
+          "itemId": "scp-series-021",
+          "titleJP": "Kožni Wyrm"
+        },
+        {
+          "itemId": "scp-series-022",
+          "titleJP": "Mrtvašnica"
+        },
+        {
+          "itemId": "scp-series-023",
+          "titleJP": "Črni šok"
+        },
+        {
+          "itemId": "scp-series-031",
+          "titleJP": "Kaj je ljubezen?"
+        },
+        {
+          "itemId": "scp-series-039",
+          "titleJP": "Inženirji Proboscis"
+        },
+        {
+          "itemId": "scp-series-043",
+          "titleJP": "v \"Beatle\""
+        },
+        {
+          "itemId": "scp-series-048",
+          "titleJP": "Prekleta SCP Številka"
+        },
+        {
+          "itemId": "scp-series-049",
+          "titleJP": "Doktor od kuga"
+        },
+        {
+          "itemId": "scp-series-063",
+          "titleJP": "\"Najboljša čopič na svetu\""
+        },
+        {
+          "itemId": "scp-series-079",
+          "titleJP": "Stari Al"
+        },
+        {
+          "itemId": "scp-series-087",
+          "titleJP": "Stopnišče"
+        },
+        {
+          "itemId": "scp-series-115",
+          "titleJP": "Miniaturni Smetarski Tovornjak"
+        },
+        {
+          "itemId": "scp-series-131",
+          "titleJP": "\"Očesni Stroki\""
+        },
+        {
+          "itemId": "scp-series-173",
+          "titleJP": "Skulptura"
+        },
+        {
+          "itemId": "scp-series-207",
+          "titleJP": "steklenice kola"
+        },
+        {
+          "itemId": "scp-series-245",
+          "titleJP": "SCP-RPG"
+        },
+        {
+          "itemId": "scp-series-297",
+          "titleJP": "\"Steely Dan\""
+        },
+        {
+          "itemId": "scp-series-316",
+          "titleJP": "Vpijanje Svetlobe-Barva"
+        },
+        {
+          "itemId": "scp-series-343",
+          "titleJP": "\"Dio\""
+        },
+        {
+          "itemId": "scp-series-409",
+          "titleJP": "Nalezljivi Kristal"
+        },
+        {
+          "itemId": "scp-series-745",
+          "titleJP": "Žarometi"
+        },
+        {
+          "itemId": "scp-series-862",
+          "titleJP": "Podgane"
+        },
+        {
+          "itemId": "scp-series-999",
+          "titleJP": "Žgečkljiva Pošast"
+        },
+        {
+          "itemId": "scp-series-1002",
+          "titleJP": "Pokojni"
+        },
+        {
+          "itemId": "scp-series-1003",
+          "titleJP": "Trakulja otrok"
+        },
+        {
+          "itemId": "scp-series-1004",
+          "titleJP": "Tovarniška Pornografija"
+        }
+      ],
+      "lastSentWindow": null
+    },
+    "sv": {
+      "items": [
+        {
+          "itemId": "scp-series-nd-001",
+          "titleJP": "Inväntar offentliggörande [Blockerad]"
+        },
+        {
+          "itemId": "scp-series-nd-002",
+          "titleJP": "Ett busigt virus"
+        },
+        {
+          "itemId": "scp-series-nd-003",
+          "titleJP": "De försvunna barnens trapp"
+        },
+        {
+          "itemId": "scp-series-nd-010",
+          "titleJP": "Han ligger i explosiv koma"
+        },
+        {
+          "itemId": "scp-series-nd-085",
+          "titleJP": "Flytande Trygghet"
+        },
+        {
+          "itemId": "scp-series-001",
+          "titleJP": "Inväntar Avklassificering [Blockerad]"
+        },
+        {
+          "itemId": "scp-series-002",
+          "titleJP": "Det \"Levande\" Rummet"
+        },
+        {
+          "itemId": "scp-series-003",
+          "titleJP": "Biologiskt Moderkort"
+        },
+        {
+          "itemId": "scp-series-004",
+          "titleJP": "De 12 Rostiga Nycklarna och Dörren"
+        },
+        {
+          "itemId": "scp-series-005",
+          "titleJP": "Huvudnyckel"
+        },
+        {
+          "itemId": "scp-series-006",
+          "titleJP": "Ungdomens Källa"
+        },
+        {
+          "itemId": "scp-series-007",
+          "titleJP": "Bukplanet"
+        },
+        {
+          "itemId": "scp-series-008",
+          "titleJP": "Zombiepest"
+        },
+        {
+          "itemId": "scp-series-009",
+          "titleJP": "Röd Is"
+        },
+        {
+          "itemId": "scp-series-010",
+          "titleJP": "Kontrollhalsband"
+        },
+        {
+          "itemId": "scp-series-011",
+          "titleJP": "Kännande Minnesstaty Från Inbördeskriget"
+        },
+        {
+          "itemId": "scp-series-012",
+          "titleJP": "Ett Dåligt Upplägg"
+        },
+        {
+          "itemId": "scp-series-013",
+          "titleJP": "Blue Lady-Cigaretter"
+        },
+        {
+          "itemId": "scp-series-014",
+          "titleJP": "Betongmannen"
+        },
+        {
+          "itemId": "scp-series-015",
+          "titleJP": "Rör-mardröm"
+        },
+        {
+          "itemId": "scp-series-016",
+          "titleJP": "Kännande Mikro-Organism"
+        },
+        {
+          "itemId": "scp-series-017",
+          "titleJP": "Skuggperson"
+        },
+        {
+          "itemId": "scp-series-018",
+          "titleJP": "Super Boll"
+        },
+        {
+          "itemId": "scp-series-019",
+          "titleJP": "Monstergrytan"
+        },
+        {
+          "itemId": "scp-series-020",
+          "titleJP": "Osedd Mögel"
+        },
+        {
+          "itemId": "scp-series-021",
+          "titleJP": "Lindorm av Hud"
+        },
+        {
+          "itemId": "scp-series-022",
+          "titleJP": "Bårhuset"
+        },
+        {
+          "itemId": "scp-series-023",
+          "titleJP": "Svart Hölje"
+        },
+        {
+          "itemId": "scp-series-024",
+          "titleJP": "Dödens Spelprogram"
+        },
+        {
+          "itemId": "scp-series-025",
+          "titleJP": "En Väl Använd Garderob"
+        },
+        {
+          "itemId": "scp-series-026",
+          "titleJP": "Fasthållande Efter Skolan"
+        },
+        {
+          "itemId": "scp-series-027",
+          "titleJP": "Skadedjursguden"
+        },
+        {
+          "itemId": "scp-series-028",
+          "titleJP": "Kunskap"
+        },
+        {
+          "itemId": "scp-series-030",
+          "titleJP": "Homunculus"
+        },
+        {
+          "itemId": "scp-series-035",
+          "titleJP": "Possessiv Mask"
+        },
+        {
+          "itemId": "scp-series-036",
+          "titleJP": "Yazidiernas Återuppstånende Pilgrimsfärd (Kiras Guhorîn)"
+        },
+        {
+          "itemId": "scp-series-037",
+          "titleJP": "Dvärgstjärna"
+        },
+        {
+          "itemId": "scp-series-038",
+          "titleJP": "All-trädet"
+        },
+        {
+          "itemId": "scp-series-040",
+          "titleJP": "Evolutionens Barn"
+        },
+        {
+          "itemId": "scp-series-042",
+          "titleJP": "En Tidigare Bevingad Häst"
+        },
+        {
+          "itemId": "scp-series-043",
+          "titleJP": "Beatlen"
+        },
+        {
+          "itemId": "scp-series-044",
+          "titleJP": "Molekulär-Fission Kanon från Andra Världskriget"
+        },
+        {
+          "itemId": "scp-series-048",
+          "titleJP": "Det Förbannade SCP-numret"
+        },
+        {
+          "itemId": "scp-series-051",
+          "titleJP": "Japansk Obstetrisk Modell"
+        },
+        {
+          "itemId": "scp-series-053",
+          "titleJP": "Ung Tjej"
+        },
+        {
+          "itemId": "scp-series-055",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-060",
+          "titleJP": "Infernaliskt Ockult Skelett"
+        },
+        {
+          "itemId": "scp-series-062",
+          "titleJP": "\"Kvant\" Dator"
+        },
+        {
+          "itemId": "scp-series-063",
+          "titleJP": "\"Världens Bästa TanBorste\""
+        },
+        {
+          "itemId": "scp-series-064",
+          "titleJP": "Bristfällig von Neumann Struktur"
+        },
+        {
+          "itemId": "scp-series-065",
+          "titleJP": "Förstörd Organisk Katalysator"
+        },
+        {
+          "itemId": "scp-series-066",
+          "titleJP": "Erics Leksak"
+        },
+        {
+          "itemId": "scp-series-067",
+          "titleJP": "Konstnärens Penna"
+        },
+        {
+          "itemId": "scp-series-068",
+          "titleJP": "Trådfiguren"
+        },
+        {
+          "itemId": "scp-series-072",
+          "titleJP": "Vid Kanten På Sängen"
+        },
+        {
+          "itemId": "scp-series-073",
+          "titleJP": "\"Kain\""
+        },
+        {
+          "itemId": "scp-series-074",
+          "titleJP": "Kvant Gråsugga"
+        },
+        {
+          "itemId": "scp-series-075",
+          "titleJP": "Frätande Snigel"
+        },
+        {
+          "itemId": "scp-series-076",
+          "titleJP": "\"Abel\""
+        },
+        {
+          "itemId": "scp-series-078",
+          "titleJP": "Skuld"
+        },
+        {
+          "itemId": "scp-series-079",
+          "titleJP": "Gammal AI"
+        },
+        {
+          "itemId": "scp-series-081",
+          "titleJP": "Spontan Förbränningsvirus"
+        },
+        {
+          "itemId": "scp-series-084",
+          "titleJP": "Statisk Torn"
+        },
+        {
+          "itemId": "scp-series-085",
+          "titleJP": "Handritad ''Cassy''"
+        },
+        {
+          "itemId": "scp-series-087",
+          "titleJP": "Trapphuset"
+        },
+        {
+          "itemId": "scp-series-088",
+          "titleJP": "Ödlekungen"
+        },
+        {
+          "itemId": "scp-series-091",
+          "titleJP": "Nostalgi"
+        },
+        {
+          "itemId": "scp-series-093",
+          "titleJP": "Rött Sjö-Föremål"
+        },
+        {
+          "itemId": "scp-series-094",
+          "titleJP": "Miniatyr Händelsehorisont"
+        },
+        {
+          "itemId": "scp-series-095",
+          "titleJP": "Ronnie Ray-Guns Atomiska Äventyr"
+        },
+        {
+          "itemId": "scp-series-096",
+          "titleJP": "Den \"Blyga Killen\""
+        },
+        {
+          "itemId": "scp-series-098",
+          "titleJP": "Kirurgikrabbor"
+        },
+        {
+          "itemId": "scp-series-099",
+          "titleJP": "Porträttet"
+        },
+        {
+          "itemId": "scp-series-101",
+          "titleJP": "Hungrig Väska"
+        },
+        {
+          "itemId": "scp-series-104",
+          "titleJP": "Den Ensamma Bollen"
+        },
+        {
+          "itemId": "scp-series-105",
+          "titleJP": "\"Iris\""
+        },
+        {
+          "itemId": "scp-series-106",
+          "titleJP": "Den Gamla Mannen"
+        },
+        {
+          "itemId": "scp-series-108",
+          "titleJP": "Extradimensionell Näshåla"
+        },
+        {
+          "itemId": "scp-series-115",
+          "titleJP": "Miniatyr Tippvagn"
+        },
+        {
+          "itemId": "scp-series-119",
+          "titleJP": "Tidkrovågsugn"
+        },
+        {
+          "itemId": "scp-series-123",
+          "titleJP": "Säkrat Miniatyrt Svart Hål"
+        },
+        {
+          "itemId": "scp-series-124",
+          "titleJP": "Grogrund"
+        },
+        {
+          "itemId": "scp-series-127",
+          "titleJP": "Den Levande Pistolen"
+        },
+        {
+          "itemId": "scp-series-131",
+          "titleJP": "\"Ögonkapslarna\""
+        },
+        {
+          "itemId": "scp-series-133",
+          "titleJP": "Omedelbart Hål"
+        },
+        {
+          "itemId": "scp-series-134",
+          "titleJP": "Stjärnögt Barn"
+        },
+        {
+          "itemId": "scp-series-135",
+          "titleJP": "Universell Karcinogen"
+        },
+        {
+          "itemId": "scp-series-137",
+          "titleJP": "Den Riktiga Leksaken"
+        },
+        {
+          "itemId": "scp-series-138",
+          "titleJP": "Den Ständigt Levande mannen"
+        },
+        {
+          "itemId": "scp-series-140",
+          "titleJP": "En Inkomplett Krönika"
+        },
+        {
+          "itemId": "scp-series-144",
+          "titleJP": "Tibetanska Repet till Himlen"
+        },
+        {
+          "itemId": "scp-series-149",
+          "titleJP": "Blodflugorna"
+        },
+        {
+          "itemId": "scp-series-151",
+          "titleJP": "Tavlan"
+        },
+        {
+          "itemId": "scp-series-153",
+          "titleJP": "Avloppsmaskar"
+        },
+        {
+          "itemId": "scp-series-159",
+          "titleJP": "Det Perfekta Låset"
+        },
+        {
+          "itemId": "scp-series-160",
+          "titleJP": "Rovdjursdrönare"
+        },
+        {
+          "itemId": "scp-series-162",
+          "titleJP": "Boll av vasst"
+        },
+        {
+          "itemId": "scp-series-169",
+          "titleJP": "Leviatan"
+        },
+        {
+          "itemId": "scp-series-172",
+          "titleJP": "Kugghjulmannen"
+        },
+        {
+          "itemId": "scp-series-173",
+          "titleJP": "Skulpturen -"
+        },
+        {
+          "itemId": "scp-series-178",
+          "titleJP": "\"3-D\" Specs"
+        },
+        {
+          "itemId": "scp-series-180",
+          "titleJP": "Identitetsstjälande Hatt"
+        },
+        {
+          "itemId": "scp-series-181",
+          "titleJP": "\"Lucky\""
+        },
+        {
+          "itemId": "scp-series-185",
+          "titleJP": "Radion"
+        },
+        {
+          "itemId": "scp-series-202",
+          "titleJP": "Tillbakaspolningsmannen"
+        },
+        {
+          "itemId": "scp-series-208",
+          "titleJP": "\"Bes\""
+        },
+        {
+          "itemId": "scp-series-210",
+          "titleJP": "Översvämmat Hus"
+        },
+        {
+          "itemId": "scp-series-239",
+          "titleJP": "Häxbarnet"
+        },
+        {
+          "itemId": "scp-series-249",
+          "titleJP": "Den Slumpmässiga Dörren"
+        },
+        {
+          "itemId": "scp-series-250",
+          "titleJP": "Större Delen av en Allosaurus"
+        },
+        {
+          "itemId": "scp-series-251",
+          "titleJP": "Den Missvisande Snögloben"
+        },
+        {
+          "itemId": "scp-series-258",
+          "titleJP": "Gråtande Groda"
+        },
+        {
+          "itemId": "scp-series-266",
+          "titleJP": "Will o' the Wisp"
+        },
+        {
+          "itemId": "scp-series-269",
+          "titleJP": "Dialysarmband"
+        },
+        {
+          "itemId": "scp-series-278",
+          "titleJP": "En Stor Mekanisk Spindel"
+        },
+        {
+          "itemId": "scp-series-280",
+          "titleJP": "Ögonen i Mörkret"
+        },
+        {
+          "itemId": "scp-series-283",
+          "titleJP": "En Sten som Faller Sidleds"
+        },
+        {
+          "itemId": "scp-series-284",
+          "titleJP": "Tvillingarna"
+        },
+        {
+          "itemId": "scp-series-356",
+          "titleJP": "Figurer På Stranden"
+        },
+        {
+          "itemId": "scp-series-365",
+          "titleJP": "Poolnudel"
+        },
+        {
+          "itemId": "scp-series-426",
+          "titleJP": "Jag är en Brödrost"
+        },
+        {
+          "itemId": "scp-series-434",
+          "titleJP": "Ett Möte med Mig Själv"
+        },
+        {
+          "itemId": "scp-series-436",
+          "titleJP": "Fellås"
+        },
+        {
+          "itemId": "scp-series-437",
+          "titleJP": "Sommaren '91"
+        },
+        {
+          "itemId": "scp-series-439",
+          "titleJP": "Benkupa"
+        },
+        {
+          "itemId": "scp-series-444",
+          "titleJP": "Den Globala Harmonins Språk"
+        },
+        {
+          "itemId": "scp-series-450",
+          "titleJP": "Övergivet Statligt Fängelse"
+        },
+        {
+          "itemId": "scp-series-479",
+          "titleJP": "Korridor 4, D-Klass Sovsalar, Anläggning 14"
+        },
+        {
+          "itemId": "scp-series-499",
+          "titleJP": "Gammal Sol Man"
+        },
+        {
+          "itemId": "scp-series-500",
+          "titleJP": "Universalmedel"
+        },
+        {
+          "itemId": "scp-series-524",
+          "titleJP": "Walter den Allätande Kaninen"
+        },
+        {
+          "itemId": "scp-series-527",
+          "titleJP": "Herr Fisk"
+        },
+        {
+          "itemId": "scp-series-529",
+          "titleJP": "Halvkatten Josie"
+        },
+        {
+          "itemId": "scp-series-530",
+          "titleJP": "Carl den Variabla Hunden"
+        },
+        {
+          "itemId": "scp-series-536",
+          "titleJP": "Testkammare för Fysikens Lagar"
+        },
+        {
+          "itemId": "scp-series-548",
+          "titleJP": "Isspindel"
+        },
+        {
+          "itemId": "scp-series-553",
+          "titleJP": "Kristallina Fjärilar"
+        },
+        {
+          "itemId": "scp-series-598",
+          "titleJP": "Kännande Färg"
+        },
+        {
+          "itemId": "scp-series-607",
+          "titleJP": "Dorian den Grå Katten"
+        },
+        {
+          "itemId": "scp-series-618",
+          "titleJP": "Smalval"
+        },
+        {
+          "itemId": "scp-series-637",
+          "titleJP": "Viral Katt"
+        },
+        {
+          "itemId": "scp-series-640",
+          "titleJP": "Lucenta Strålar"
+        },
+        {
+          "itemId": "scp-series-682",
+          "titleJP": "Svårförintad Reptil"
+        },
+        {
+          "itemId": "scp-series-686",
+          "titleJP": "Smittsam Mjölkavsöndring"
+        },
+        {
+          "itemId": "scp-series-689",
+          "titleJP": "Hemsökare i Mörkret"
+        },
+        {
+          "itemId": "scp-series-701",
+          "titleJP": "Den Hängda Kungens Tragedi"
+        },
+        {
+          "itemId": "scp-series-707",
+          "titleJP": "Ryska Dockor"
+        },
+        {
+          "itemId": "scp-series-722",
+          "titleJP": "Jörmungandr"
+        },
+        {
+          "itemId": "scp-series-913",
+          "titleJP": "Herr Hungrig"
+        },
+        {
+          "itemId": "scp-series-955",
+          "titleJP": "Herr Sillybug"
+        },
+        {
+          "itemId": "scp-series-990",
+          "titleJP": "Drömmannen"
+        },
+        {
+          "itemId": "scp-series-999",
+          "titleJP": "Kittelmonstret"
+        }
+      ],
+      "lastSentWindow": null
+    },
+    "tok": {
+      "items": [
+        {
+          "itemId": "scp-series-tok-021",
+          "titleJP": "󱥔　:)"
+        },
+        {
+          "itemId": "scp-series-173",
+          "titleJP": "󱤛󱤻 - 󱤽󱥳"
+        },
+        {
+          "itemId": "scp-series-426",
+          "titleJP": "󱤴󱤌󱥗󱥋"
+        },
+        {
+          "itemId": "scp-series-527",
+          "titleJP": "󱤑󱦐󱤔󱦝󱦑"
+        }
+      ],
+      "lastSentWindow": null
+    },
+    "tr": {
+      "items": [
+        {
+          "itemId": "scp-series-tr-001",
+          "titleJP": "Şiir"
+        },
+        {
+          "itemId": "scp-series-tr-002",
+          "titleJP": "Zaman Suçlusu"
+        },
+        {
+          "itemId": "scp-series-tr-003",
+          "titleJP": "Yeraltı Makinesi"
+        },
+        {
+          "itemId": "scp-series-tr-005",
+          "titleJP": "\"It's Not Even Over\""
+        },
+        {
+          "itemId": "scp-series-tr-006",
+          "titleJP": "Fiziksel Hal Değiştirici"
+        },
+        {
+          "itemId": "scp-series-tr-007",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-tr-008",
+          "titleJP": "Zamansal Geçit"
+        },
+        {
+          "itemId": "scp-series-tr-010",
+          "titleJP": "Altın Küre"
+        },
+        {
+          "itemId": "scp-series-tr-012",
+          "titleJP": "Darwin'in Evrim Ağacı"
+        },
+        {
+          "itemId": "scp-series-tr-013",
+          "titleJP": "17 Tarikatı"
+        },
+        {
+          "itemId": "scp-series-tr-014",
+          "titleJP": "Ayna Adam"
+        },
+        {
+          "itemId": "scp-series-tr-017",
+          "titleJP": "Dejavu"
+        },
+        {
+          "itemId": "scp-series-tr-020",
+          "titleJP": "Keşif Otomatı"
+        },
+        {
+          "itemId": "scp-series-tr-023",
+          "titleJP": "Gribshunden"
+        },
+        {
+          "itemId": "scp-series-tr-030",
+          "titleJP": "D-Sınıfı Personel Üretim Tesisi"
+        },
+        {
+          "itemId": "scp-series-tr-032",
+          "titleJP": "Lanetli Web Kamerası"
+        },
+        {
+          "itemId": "scp-series-tr-037",
+          "titleJP": "Dodekahedron Holoskop"
+        },
+        {
+          "itemId": "scp-series-tr-041",
+          "titleJP": "Nefret Sorgusu"
+        },
+        {
+          "itemId": "scp-series-tr-042",
+          "titleJP": "Radyasyon Geçitleri"
+        },
+        {
+          "itemId": "scp-series-tr-044",
+          "titleJP": "ᓁᕰᓿᘟѺᗥϠϞᐝЉᙰᔒѪՁ"
+        },
+        {
+          "itemId": "scp-series-tr-046",
+          "titleJP": "Fussweg"
+        },
+        {
+          "itemId": "scp-series-tr-048",
+          "titleJP": "4. Seri Kutu"
+        },
+        {
+          "itemId": "scp-series-tr-049",
+          "titleJP": "Koşan Kurt"
+        },
+        {
+          "itemId": "scp-series-tr-050",
+          "titleJP": "Dijital Boyut"
+        },
+        {
+          "itemId": "scp-series-tr-052",
+          "titleJP": "Organik Hela"
+        },
+        {
+          "itemId": "scp-series-tr-053",
+          "titleJP": "Snall"
+        },
+        {
+          "itemId": "scp-series-tr-057",
+          "titleJP": "Yastık Kılıfı"
+        },
+        {
+          "itemId": "scp-series-tr-061",
+          "titleJP": "Özgür Kuş"
+        },
+        {
+          "itemId": "scp-series-tr-069",
+          "titleJP": "Obje Yaratıcısı"
+        },
+        {
+          "itemId": "scp-series-tr-072",
+          "titleJP": "Bıçaklı Ceset"
+        },
+        {
+          "itemId": "scp-series-tr-075",
+          "titleJP": "Kara Mizah"
+        },
+        {
+          "itemId": "scp-series-tr-076",
+          "titleJP": "Telekinezi Fenomeni"
+        },
+        {
+          "itemId": "scp-series-tr-077",
+          "titleJP": "Gelecekten Sinyal"
+        },
+        {
+          "itemId": "scp-series-tr-080",
+          "titleJP": "Boyutsal Kapı"
+        },
+        {
+          "itemId": "scp-series-tr-086",
+          "titleJP": "Hayalet Uydu"
+        },
+        {
+          "itemId": "scp-series-tr-088",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-tr-090",
+          "titleJP": "Derinde Yatan"
+        },
+        {
+          "itemId": "scp-series-tr-091",
+          "titleJP": "Karşı Amnezi"
+        },
+        {
+          "itemId": "scp-series-tr-092",
+          "titleJP": "Çam Dünyası"
+        },
+        {
+          "itemId": "scp-series-tr-097",
+          "titleJP": "Gerçek Kabus"
+        },
+        {
+          "itemId": "scp-series-tr-098",
+          "titleJP": "Nükleer Çekirdek"
+        },
+        {
+          "itemId": "scp-series-001",
+          "titleJP": "Sınıflandırılmayı Bekliyor [Engellendi]"
+        },
+        {
+          "itemId": "scp-series-002",
+          "titleJP": "\"Yaşayan\" Oda"
+        },
+        {
+          "itemId": "scp-series-003",
+          "titleJP": "Biyolojik Anakart"
+        },
+        {
+          "itemId": "scp-series-004",
+          "titleJP": "12 Paslı Anahtar ve Kapı"
+        },
+        {
+          "itemId": "scp-series-005",
+          "titleJP": "Maymuncuk Anahtar"
+        },
+        {
+          "itemId": "scp-series-006",
+          "titleJP": "Gençlik Şelalesi"
+        },
+        {
+          "itemId": "scp-series-007",
+          "titleJP": "Abdominal Gezegen"
+        },
+        {
+          "itemId": "scp-series-008",
+          "titleJP": "Zombi Vebası"
+        },
+        {
+          "itemId": "scp-series-009",
+          "titleJP": "Kırmızı Buz"
+        },
+        {
+          "itemId": "scp-series-010",
+          "titleJP": "Kontrol Tasmaları"
+        },
+        {
+          "itemId": "scp-series-011",
+          "titleJP": "Duyarlı İç Savaş Anıt Heykeli"
+        },
+        {
+          "itemId": "scp-series-012",
+          "titleJP": "Kötü Bir Beste"
+        },
+        {
+          "itemId": "scp-series-013",
+          "titleJP": "Mavi Hanımefendi Sigaraları"
+        },
+        {
+          "itemId": "scp-series-014",
+          "titleJP": "Beton Adam"
+        },
+        {
+          "itemId": "scp-series-015",
+          "titleJP": "Boru Kabusu"
+        },
+        {
+          "itemId": "scp-series-016",
+          "titleJP": "Duyarlı Mikroorganizma"
+        },
+        {
+          "itemId": "scp-series-017",
+          "titleJP": "Gölge Kişi"
+        },
+        {
+          "itemId": "scp-series-018",
+          "titleJP": "Süper Top"
+        },
+        {
+          "itemId": "scp-series-019",
+          "titleJP": "Canavar Çömleği"
+        },
+        {
+          "itemId": "scp-series-020",
+          "titleJP": "Görünmez Küf"
+        },
+        {
+          "itemId": "scp-series-021",
+          "titleJP": "Deri Ejderi"
+        },
+        {
+          "itemId": "scp-series-022",
+          "titleJP": "Morg"
+        },
+        {
+          "itemId": "scp-series-023",
+          "titleJP": "Siyah Shuck"
+        },
+        {
+          "itemId": "scp-series-024",
+          "titleJP": "Ölüm Oyun Şovu"
+        },
+        {
+          "itemId": "scp-series-025",
+          "titleJP": "Eskimiş Bir Gardırop"
+        },
+        {
+          "itemId": "scp-series-026",
+          "titleJP": "Okul Sonrası Ceza"
+        },
+        {
+          "itemId": "scp-series-027",
+          "titleJP": "Haşarat Tanrısı"
+        },
+        {
+          "itemId": "scp-series-028",
+          "titleJP": "İlim"
+        },
+        {
+          "itemId": "scp-series-029",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-030",
+          "titleJP": "Adamcık"
+        },
+        {
+          "itemId": "scp-series-031",
+          "titleJP": "Aşk Nedir?"
+        },
+        {
+          "itemId": "scp-series-032",
+          "titleJP": "Kardeşin Gelini"
+        },
+        {
+          "itemId": "scp-series-033",
+          "titleJP": "Kayıp Sayı"
+        },
+        {
+          "itemId": "scp-series-034",
+          "titleJP": "Obsidiyen Ayin Bıçağı"
+        },
+        {
+          "itemId": "scp-series-035",
+          "titleJP": "Ele Geçiren Maske"
+        },
+        {
+          "itemId": "scp-series-036",
+          "titleJP": "Yezidilerin Reenkarnasyon Haccı (Kiras Guhorîn)"
+        },
+        {
+          "itemId": "scp-series-037",
+          "titleJP": "Cüce Yıldız"
+        },
+        {
+          "itemId": "scp-series-038",
+          "titleJP": "Her Şey Ağacı"
+        },
+        {
+          "itemId": "scp-series-039",
+          "titleJP": "Proboskis Mühendisler"
+        },
+        {
+          "itemId": "scp-series-040",
+          "titleJP": "Evrimin Çocuğu"
+        },
+        {
+          "itemId": "scp-series-041",
+          "titleJP": "Düşüncelerini Yayınlayan Hasta"
+        },
+        {
+          "itemId": "scp-series-042",
+          "titleJP": "Eskiden Kanatlı Bir At"
+        },
+        {
+          "itemId": "scp-series-043",
+          "titleJP": "Beatle"
+        },
+        {
+          "itemId": "scp-series-044",
+          "titleJP": "II. Dünya Savaşına Ait Moleküler-Füzyon Topu"
+        },
+        {
+          "itemId": "scp-series-045",
+          "titleJP": "Atmosferik Dönüştürücü"
+        },
+        {
+          "itemId": "scp-series-046",
+          "titleJP": "\"Yırtıcı\" Çobanpüskülü Çalısı"
+        },
+        {
+          "itemId": "scp-series-047",
+          "titleJP": "Mikrobiyal Mutajen"
+        },
+        {
+          "itemId": "scp-series-048",
+          "titleJP": "Lanetli SCP Numarası"
+        },
+        {
+          "itemId": "scp-series-049",
+          "titleJP": "Veba Doktoru"
+        },
+        {
+          "itemId": "scp-series-050",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-051",
+          "titleJP": "Japon Doğum Modeli"
+        },
+        {
+          "itemId": "scp-series-052",
+          "titleJP": "Zaman-Yolculuğu-Yapan Tren"
+        },
+        {
+          "itemId": "scp-series-053",
+          "titleJP": "Genç Kız"
+        },
+        {
+          "itemId": "scp-series-054",
+          "titleJP": "Su Nemfi"
+        },
+        {
+          "itemId": "scp-series-055",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-056",
+          "titleJP": "Güzel Bir İnsan"
+        },
+        {
+          "itemId": "scp-series-057",
+          "titleJP": "Günlük Eziyet"
+        },
+        {
+          "itemId": "scp-series-058",
+          "titleJP": "Karanlığın Kalbi"
+        },
+        {
+          "itemId": "scp-series-059",
+          "titleJP": "Radyoaktif Mineral"
+        },
+        {
+          "itemId": "scp-series-060",
+          "titleJP": "Şeytani Doğaüstü İskelet"
+        },
+        {
+          "itemId": "scp-series-061",
+          "titleJP": "İşitsel Zihin Kontrolü"
+        },
+        {
+          "itemId": "scp-series-062",
+          "titleJP": "\"Kuantum\" Bilgisayarı"
+        },
+        {
+          "itemId": "scp-series-063",
+          "titleJP": "\"Dünyanın En İyi Dş Fırçası\""
+        },
+        {
+          "itemId": "scp-series-064",
+          "titleJP": "Flawed von Neumann Heykeli"
+        },
+        {
+          "itemId": "scp-series-065",
+          "titleJP": "Yok Olmuş Organik Kataliz"
+        },
+        {
+          "itemId": "scp-series-066",
+          "titleJP": "Eric'in Oyuncağı"
+        },
+        {
+          "itemId": "scp-series-067",
+          "titleJP": "Sanatçının Kalemi"
+        },
+        {
+          "itemId": "scp-series-068",
+          "titleJP": "Telden Figür"
+        },
+        {
+          "itemId": "scp-series-069",
+          "titleJP": "İkinci Şans"
+        },
+        {
+          "itemId": "scp-series-070",
+          "titleJP": "Demir Kanatlar"
+        },
+        {
+          "itemId": "scp-series-071",
+          "titleJP": "Dejeneratif Metamorfik Varlık"
+        },
+        {
+          "itemId": "scp-series-072",
+          "titleJP": "Yatağın Ayak Ucu"
+        },
+        {
+          "itemId": "scp-series-073",
+          "titleJP": "\"Kabil\""
+        },
+        {
+          "itemId": "scp-series-074",
+          "titleJP": "Kuantum Tesbih Böceği"
+        },
+        {
+          "itemId": "scp-series-075",
+          "titleJP": "Aşındırıcı Salyangoz"
+        },
+        {
+          "itemId": "scp-series-076",
+          "titleJP": "\"Habil\""
+        },
+        {
+          "itemId": "scp-series-077",
+          "titleJP": "Çürük Kafatası"
+        },
+        {
+          "itemId": "scp-series-078",
+          "titleJP": "Suç"
+        },
+        {
+          "itemId": "scp-series-079",
+          "titleJP": "Eski Yapay Zeka"
+        },
+        {
+          "itemId": "scp-series-080",
+          "titleJP": "Karanlık Şekil"
+        },
+        {
+          "itemId": "scp-series-081",
+          "titleJP": "Kendiliğinden Yanan Virus"
+        },
+        {
+          "itemId": "scp-series-082",
+          "titleJP": "Yamyam \"Fernand\""
+        },
+        {
+          "itemId": "scp-series-083",
+          "titleJP": "Terk Edilmiş Sıra Ev"
+        },
+        {
+          "itemId": "scp-series-084",
+          "titleJP": "Statik Kule"
+        },
+        {
+          "itemId": "scp-series-085",
+          "titleJP": "Elle-Çizilmiş ''Cassy''"
+        },
+        {
+          "itemId": "scp-series-086",
+          "titleJP": "Dr. [ÇIKARILMIŞTIR]'ın Ofisi"
+        },
+        {
+          "itemId": "scp-series-087",
+          "titleJP": "Merdiven Boşluğu"
+        },
+        {
+          "itemId": "scp-series-088",
+          "titleJP": "Sürüngen Kral"
+        },
+        {
+          "itemId": "scp-series-089",
+          "titleJP": "Tophet"
+        },
+        {
+          "itemId": "scp-series-090",
+          "titleJP": "Apocorubik Küpü"
+        },
+        {
+          "itemId": "scp-series-091",
+          "titleJP": "Nostalji"
+        },
+        {
+          "itemId": "scp-series-092",
+          "titleJP": "\""
+        },
+        {
+          "itemId": "scp-series-093",
+          "titleJP": "Kızıldeniz Nesnesi"
+        },
+        {
+          "itemId": "scp-series-094",
+          "titleJP": "Minyatür Olay Ufku"
+        },
+        {
+          "itemId": "scp-series-095",
+          "titleJP": "Ronnie Ray-Gun'ın Atomik Maceraları"
+        },
+        {
+          "itemId": "scp-series-096",
+          "titleJP": "\"Utangaç Adam\""
+        },
+        {
+          "itemId": "scp-series-097",
+          "titleJP": "Eski Fuar"
+        },
+        {
+          "itemId": "scp-series-098",
+          "titleJP": "Cerrah Yengeçler"
+        },
+        {
+          "itemId": "scp-series-099",
+          "titleJP": "Portre"
+        },
+        {
+          "itemId": "scp-series-100",
+          "titleJP": "\"Jamaican Joe's Junkyard Jubilee\""
+        },
+        {
+          "itemId": "scp-series-101",
+          "titleJP": "Aç Çanta"
+        },
+        {
+          "itemId": "scp-series-102",
+          "titleJP": "Property of Marshall, Carter, and Dark Ltd."
+        },
+        {
+          "itemId": "scp-series-103",
+          "titleJP": "Asla Acıkmayan Adam"
+        },
+        {
+          "itemId": "scp-series-104",
+          "titleJP": "Yanlız Top"
+        },
+        {
+          "itemId": "scp-series-105",
+          "titleJP": "\"Iris\""
+        },
+        {
+          "itemId": "scp-series-106",
+          "titleJP": "Yaşlı Adam"
+        },
+        {
+          "itemId": "scp-series-107",
+          "titleJP": "Kaplumbağa Kabuğu"
+        },
+        {
+          "itemId": "scp-series-108",
+          "titleJP": "Ekstra-Boyutlu Burun Boşluğu"
+        },
+        {
+          "itemId": "scp-series-109",
+          "titleJP": "Sonsuz Matara"
+        },
+        {
+          "itemId": "scp-series-110",
+          "titleJP": "Yeraltı Şehri"
+        },
+        {
+          "itemId": "scp-series-111",
+          "titleJP": "Dragon-Snails™"
+        },
+        {
+          "itemId": "scp-series-112",
+          "titleJP": "Değişken Coaster"
+        },
+        {
+          "itemId": "scp-series-113",
+          "titleJP": "Cinsiyet Değiştirici"
+        },
+        {
+          "itemId": "scp-series-114",
+          "titleJP": "Çatışmanın Getiricisi"
+        },
+        {
+          "itemId": "scp-series-115",
+          "titleJP": "Minyatür Damperli Kamyon"
+        },
+        {
+          "itemId": "scp-series-116",
+          "titleJP": "Kırılgan Çocuk"
+        },
+        {
+          "itemId": "scp-series-117",
+          "titleJP": "Complete Multitool"
+        },
+        {
+          "itemId": "scp-series-119",
+          "titleJP": "Zamankrodalga"
+        },
+        {
+          "itemId": "scp-series-120",
+          "titleJP": "Işınlayıcı Şişme Havuz"
+        },
+        {
+          "itemId": "scp-series-121",
+          "titleJP": "Beton Beşik"
+        },
+        {
+          "itemId": "scp-series-122",
+          "titleJP": "Artık Canavarlar Yok"
+        },
+        {
+          "itemId": "scp-series-123",
+          "titleJP": "Kapsanan Minyatür Kara Delik"
+        },
+        {
+          "itemId": "scp-series-124",
+          "titleJP": "Verimli Toprak"
+        },
+        {
+          "itemId": "scp-series-125",
+          "titleJP": "Bulaşıcı Yansıma"
+        },
+        {
+          "itemId": "scp-series-126",
+          "titleJP": "Görünmez Arkadaş"
+        },
+        {
+          "itemId": "scp-series-127",
+          "titleJP": "Yaşayan Silah"
+        },
+        {
+          "itemId": "scp-series-128",
+          "titleJP": "Kinetik Enerjili Varlık"
+        },
+        {
+          "itemId": "scp-series-131",
+          "titleJP": "\"Göz Topları\""
+        },
+        {
+          "itemId": "scp-series-132",
+          "titleJP": "Bozuk Çöl"
+        },
+        {
+          "itemId": "scp-series-133",
+          "titleJP": "Hazır Delik"
+        },
+        {
+          "itemId": "scp-series-134",
+          "titleJP": "Yıldız-Gözlü Çocuk"
+        },
+        {
+          "itemId": "scp-series-136",
+          "titleJP": "Çıplak Manken"
+        },
+        {
+          "itemId": "scp-series-137",
+          "titleJP": "Gerçek Oyuncak"
+        },
+        {
+          "itemId": "scp-series-148",
+          "titleJP": "\"Telekill\" Alaşımı"
+        },
+        {
+          "itemId": "scp-series-149",
+          "titleJP": "Kan Sinekleri"
+        },
+        {
+          "itemId": "scp-series-151",
+          "titleJP": "Resim"
+        },
+        {
+          "itemId": "scp-series-152",
+          "titleJP": "Book of Endings"
+        },
+        {
+          "itemId": "scp-series-155",
+          "titleJP": "Infinite Speed Computer"
+        },
+        {
+          "itemId": "scp-series-161",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-166",
+          "titleJP": "Sadece Genç Bir Gaea"
+        },
+        {
+          "itemId": "scp-series-167",
+          "titleJP": "Sonsuz Labirent"
+        },
+        {
+          "itemId": "scp-series-168",
+          "titleJP": "Canlı Hesap Makinesi"
+        },
+        {
+          "itemId": "scp-series-169",
+          "titleJP": "Leviathan"
+        },
+        {
+          "itemId": "scp-series-173",
+          "titleJP": "Heykel -"
+        },
+        {
+          "itemId": "scp-series-176",
+          "titleJP": "Observable Time Loop"
+        },
+        {
+          "itemId": "scp-series-177",
+          "titleJP": "Şah Mat"
+        },
+        {
+          "itemId": "scp-series-178",
+          "titleJP": "\"3-D\" Gözlük"
+        },
+        {
+          "itemId": "scp-series-179",
+          "titleJP": "Sauelsuesor"
+        },
+        {
+          "itemId": "scp-series-184",
+          "titleJP": "Mimar"
+        },
+        {
+          "itemId": "scp-series-185",
+          "titleJP": "Radyo"
+        },
+        {
+          "itemId": "scp-series-198",
+          "titleJP": "Bir Bardak Joe"
+        },
+        {
+          "itemId": "scp-series-200",
+          "titleJP": "Chrysalis"
+        },
+        {
+          "itemId": "scp-series-205",
+          "titleJP": "Gölge Lambalar"
+        },
+        {
+          "itemId": "scp-series-210",
+          "titleJP": "Flooded House"
+        },
+        {
+          "itemId": "scp-series-217",
+          "titleJP": "Saat-Mekanizmalı Virüs"
+        },
+        {
+          "itemId": "scp-series-228",
+          "titleJP": "Psychiatric Diagnostic Tool"
+        },
+        {
+          "itemId": "scp-series-231",
+          "titleJP": "Özel Personel Gerekliliği"
+        },
+        {
+          "itemId": "scp-series-239",
+          "titleJP": "Cadı Çocuk"
+        },
+        {
+          "itemId": "scp-series-245",
+          "titleJP": "SCP-RPG"
+        },
+        {
+          "itemId": "scp-series-249",
+          "titleJP": "Rastgele Kapı"
+        },
+        {
+          "itemId": "scp-series-250",
+          "titleJP": "Bir Allosaurus'un Çoğu"
+        },
+        {
+          "itemId": "scp-series-253",
+          "titleJP": "Kanser Vebası"
+        },
+        {
+          "itemId": "scp-series-261",
+          "titleJP": "Boyutsal Otomat"
+        },
+        {
+          "itemId": "scp-series-266",
+          "titleJP": "Bataklık Yakamozu"
+        },
+        {
+          "itemId": "scp-series-278",
+          "titleJP": "Bir Büyük Mekanik Örümcek"
+        },
+        {
+          "itemId": "scp-series-280",
+          "titleJP": "Karanlıktaki Gözler"
+        },
+        {
+          "itemId": "scp-series-281",
+          "titleJP": "The Snooze Alarm"
+        },
+        {
+          "itemId": "scp-series-293",
+          "titleJP": "Takıntı"
+        },
+        {
+          "itemId": "scp-series-294",
+          "titleJP": "Kahve Makinesi"
+        },
+        {
+          "itemId": "scp-series-297",
+          "titleJP": "\"Steely Dan\""
+        },
+        {
+          "itemId": "scp-series-300",
+          "titleJP": "\"Şişedeki Dünya\""
+        },
+        {
+          "itemId": "scp-series-304",
+          "titleJP": "Sinyal"
+        },
+        {
+          "itemId": "scp-series-309",
+          "titleJP": "Peluş Oyuncak"
+        },
+        {
+          "itemId": "scp-series-325",
+          "titleJP": "Deterjan"
+        },
+        {
+          "itemId": "scp-series-343",
+          "titleJP": "\"Tanrı\""
+        },
+        {
+          "itemId": "scp-series-348",
+          "titleJP": "Babadan bir Hediye"
+        },
+        {
+          "itemId": "scp-series-353",
+          "titleJP": "\"Vektör\""
+        },
+        {
+          "itemId": "scp-series-354",
+          "titleJP": "Kan Havuzu"
+        },
+        {
+          "itemId": "scp-series-358",
+          "titleJP": "\"Kesat\" Bir Hastane"
+        },
+        {
+          "itemId": "scp-series-361",
+          "titleJP": "Bronz Karaciğer"
+        },
+        {
+          "itemId": "scp-series-367",
+          "titleJP": "Küçük Köpek"
+        },
+        {
+          "itemId": "scp-series-372",
+          "titleJP": "Periferik Yaratık"
+        },
+        {
+          "itemId": "scp-series-376",
+          "titleJP": "The Traffic Light Tree"
+        },
+        {
+          "itemId": "scp-series-377",
+          "titleJP": "Kesinlikle Doğru Fal Kurabiyeleri"
+        },
+        {
+          "itemId": "scp-series-380",
+          "titleJP": "Biyolojik Ağ Cihazı"
+        },
+        {
+          "itemId": "scp-series-389",
+          "titleJP": "Message in a Bottle"
+        },
+        {
+          "itemId": "scp-series-395",
+          "titleJP": "Şişedeki Bebek"
+        },
+        {
+          "itemId": "scp-series-397",
+          "titleJP": "A Hominidae"
+        },
+        {
+          "itemId": "scp-series-407",
+          "titleJP": "Doğuşun Şarkısı"
+        },
+        {
+          "itemId": "scp-series-409",
+          "titleJP": "Bulaşıcı Kristal"
+        },
+        {
+          "itemId": "scp-series-426",
+          "titleJP": "Ben bir Tost Makinesiyim"
+        },
+        {
+          "itemId": "scp-series-427",
+          "titleJP": "Lovecraftçı Madalyon"
+        },
+        {
+          "itemId": "scp-series-437",
+          "titleJP": "1991 Yaz Kampı"
+        },
+        {
+          "itemId": "scp-series-439",
+          "titleJP": "Kemik Kovan"
+        },
+        {
+          "itemId": "scp-series-446",
+          "titleJP": "İnsan Manken"
+        },
+        {
+          "itemId": "scp-series-450",
+          "titleJP": "Terk Edilmiş Federal Cezaevi"
+        },
+        {
+          "itemId": "scp-series-451",
+          "titleJP": "Bay Yanlız"
+        },
+        {
+          "itemId": "scp-series-455",
+          "titleJP": "Kargo Gemisi"
+        },
+        {
+          "itemId": "scp-series-457",
+          "titleJP": "Yanan Adam"
+        },
+        {
+          "itemId": "scp-series-469",
+          "titleJP": "Çok-Kanatlı Melek"
+        },
+        {
+          "itemId": "scp-series-500",
+          "titleJP": "Her Derde Deva İlaç"
+        },
+        {
+          "itemId": "scp-series-504",
+          "titleJP": "Eleştiren Domatesler"
+        },
+        {
+          "itemId": "scp-series-513",
+          "titleJP": "Bir Çan"
+        },
+        {
+          "itemId": "scp-series-524",
+          "titleJP": "Walter the Omnivorous Rabbit"
+        },
+        {
+          "itemId": "scp-series-527",
+          "titleJP": "Bay Balık"
+        },
+        {
+          "itemId": "scp-series-528",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-529",
+          "titleJP": "Yarım-Kedi Josie"
+        },
+        {
+          "itemId": "scp-series-550",
+          "titleJP": "The Ghûl"
+        },
+        {
+          "itemId": "scp-series-556",
+          "titleJP": "Boyalı Uçak"
+        },
+        {
+          "itemId": "scp-series-559",
+          "titleJP": "Doğum Günü Zamanı!"
+        },
+        {
+          "itemId": "scp-series-567",
+          "titleJP": "Zindan"
+        },
+        {
+          "itemId": "scp-series-573",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-574",
+          "titleJP": "Senin Evin Benim Evimdir"
+        },
+        {
+          "itemId": "scp-series-579",
+          "titleJP": "[BİLGİ GİZLENMİŞTİR]"
+        },
+        {
+          "itemId": "scp-series-614",
+          "titleJP": "IP Adresi 57.32.███.███"
+        },
+        {
+          "itemId": "scp-series-638",
+          "titleJP": "The Roaring One"
+        },
+        {
+          "itemId": "scp-series-644",
+          "titleJP": "Mr. Hot"
+        },
+        {
+          "itemId": "scp-series-651",
+          "titleJP": "Tissue-fusing virus"
+        },
+        {
+          "itemId": "scp-series-662",
+          "titleJP": "Butler's Hand Bell"
+        },
+        {
+          "itemId": "scp-series-666",
+          "titleJP": "Ruh Köşkü"
+        },
+        {
+          "itemId": "scp-series-682",
+          "titleJP": "Yok Edilmesi Zor Sürüngen"
+        },
+        {
+          "itemId": "scp-series-693",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-701",
+          "titleJP": "Asılmış Kral'ın Trajedisi"
+        },
+        {
+          "itemId": "scp-series-705",
+          "titleJP": "Militaristic Play-Doh"
+        },
+        {
+          "itemId": "scp-series-713",
+          "titleJP": "Her Yere Tıklanabilen Bilgisayar"
+        },
+        {
+          "itemId": "scp-series-714",
+          "titleJP": "Yeşim Yüzük"
+        },
+        {
+          "itemId": "scp-series-721",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-735",
+          "titleJP": "Insult Box"
+        },
+        {
+          "itemId": "scp-series-738",
+          "titleJP": "The Devil's Deal"
+        },
+        {
+          "itemId": "scp-series-804",
+          "titleJP": "Medeniyeti Yok Eden Küre"
+        },
+        {
+          "itemId": "scp-series-834",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-860",
+          "titleJP": "Blue Key"
+        },
+        {
+          "itemId": "scp-series-871",
+          "titleJP": "Kendini Yenileyen Pasta"
+        },
+        {
+          "itemId": "scp-series-882",
+          "titleJP": "Bir Makine"
+        },
+        {
+          "itemId": "scp-series-894",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-895",
+          "titleJP": "Kamera Bozukluğu"
+        },
+        {
+          "itemId": "scp-series-896",
+          "titleJP": "Online Role Playing Game"
+        },
+        {
+          "itemId": "scp-series-902",
+          "titleJP": "Son Geriye Sayım"
+        },
+        {
+          "itemId": "scp-series-903",
+          "titleJP": "Sonsuz İhtimal Tüneli"
+        },
+        {
+          "itemId": "scp-series-905",
+          "titleJP": "Mr. Chameleon"
+        },
+        {
+          "itemId": "scp-series-909",
+          "titleJP": "Mr. Forgetful"
+        },
+        {
+          "itemId": "scp-series-913",
+          "titleJP": "Mr. Hungry"
+        },
+        {
+          "itemId": "scp-series-914",
+          "titleJP": "Saat Mekanizmaları"
+        },
+        {
+          "itemId": "scp-series-917",
+          "titleJP": "Mr. Moon"
+        },
+        {
+          "itemId": "scp-series-920",
+          "titleJP": "Mr. Lost"
+        },
+        {
+          "itemId": "scp-series-939",
+          "titleJP": "Binbir Sesli"
+        },
+        {
+          "itemId": "scp-series-944",
+          "titleJP": "Mirror Maze"
+        },
+        {
+          "itemId": "scp-series-953",
+          "titleJP": "Polimorfik İnsansı"
+        },
+        {
+          "itemId": "scp-series-965",
+          "titleJP": "Penceredeki Yüz"
+        },
+        {
+          "itemId": "scp-series-966",
+          "titleJP": "Uyku Katili"
+        },
+        {
+          "itemId": "scp-series-970",
+          "titleJP": "The Recursive Room"
+        },
+        {
+          "itemId": "scp-series-973",
+          "titleJP": "Smokey"
+        },
+        {
+          "itemId": "scp-series-978",
+          "titleJP": "Desire Camera"
+        },
+        {
+          "itemId": "scp-series-990",
+          "titleJP": "Rüya Adam"
+        },
+        {
+          "itemId": "scp-series-993",
+          "titleJP": "Palyaço Bobble"
+        },
+        {
+          "itemId": "scp-series-999",
+          "titleJP": "Gıdıklayan Canavar"
+        },
+        {
+          "itemId": "scp-series-1000",
+          "titleJP": "Kocaayak"
+        },
+        {
+          "itemId": "scp-series-1001",
+          "titleJP": "Ya-Te-Veo"
+        },
+        {
+          "itemId": "scp-series-1007",
+          "titleJP": "Bay Yaşam ve Bay Ölüm"
+        },
+        {
+          "itemId": "scp-series-1018",
+          "titleJP": "The Thirst"
+        },
+        {
+          "itemId": "scp-series-1025",
+          "titleJP": "Encyclopedia of Diseases"
+        },
+        {
+          "itemId": "scp-series-1033",
+          "titleJP": "33 Saniyelik Adam"
+        },
+        {
+          "itemId": "scp-series-1045",
+          "titleJP": "Yaşam Mumu"
+        },
+        {
+          "itemId": "scp-series-1048",
+          "titleJP": "Builder Bear"
+        },
+        {
+          "itemId": "scp-series-1068",
+          "titleJP": "Harmless Nuke"
+        },
+        {
+          "itemId": "scp-series-1079",
+          "titleJP": "Dr Wondertainment's Bubblebath Bonbons"
+        },
+        {
+          "itemId": "scp-series-1109",
+          "titleJP": "The Painkiller"
+        },
+        {
+          "itemId": "scp-series-1111",
+          "titleJP": "The White Dog"
+        },
+        {
+          "itemId": "scp-series-1123",
+          "titleJP": "Zalim Kafatası"
+        },
+        {
+          "itemId": "scp-series-1152",
+          "titleJP": "A Common Raccoon"
+        },
+        {
+          "itemId": "scp-series-1171",
+          "titleJP": "Humans Go Home"
+        },
+        {
+          "itemId": "scp-series-1173",
+          "titleJP": "The Islamic Republic of Eastern Samothrace"
+        },
+        {
+          "itemId": "scp-series-1230",
+          "titleJP": "Bir Kahraman Doğuyor"
+        },
+        {
+          "itemId": "scp-series-1295",
+          "titleJP": "Meg's Diner"
+        },
+        {
+          "itemId": "scp-series-1337",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-1422",
+          "titleJP": "The Yellowstone Anomaly"
+        },
+        {
+          "itemId": "scp-series-1440",
+          "titleJP": "The Old Man from Nowhere"
+        },
+        {
+          "itemId": "scp-series-1471",
+          "titleJP": "MalO ver1.0.0"
+        },
+        {
+          "itemId": "scp-series-1489",
+          "titleJP": "A \"Ghost Train\""
+        },
+        {
+          "itemId": "scp-series-1504",
+          "titleJP": "Joe Schmo"
+        },
+        {
+          "itemId": "scp-series-1506",
+          "titleJP": "Havalanan Örümcekler"
+        },
+        {
+          "itemId": "scp-series-1510",
+          "titleJP": "The Tarnished Legionnaire"
+        },
+        {
+          "itemId": "scp-series-1535",
+          "titleJP": "Purgatory"
+        },
+        {
+          "itemId": "scp-series-1562",
+          "titleJP": "Tünel Kaydırak"
+        },
+        {
+          "itemId": "scp-series-1584",
+          "titleJP": "www.yuzdurmecihazi.███"
+        },
+        {
+          "itemId": "scp-series-1590",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-1609",
+          "titleJP": "The Remains of a Chair"
+        },
+        {
+          "itemId": "scp-series-1612",
+          "titleJP": "Pangloss Ateşleri"
+        },
+        {
+          "itemId": "scp-series-1663",
+          "titleJP": "Containment Site 1663-0"
+        },
+        {
+          "itemId": "scp-series-1678",
+          "titleJP": "UnLondon"
+        },
+        {
+          "itemId": "scp-series-1715",
+          "titleJP": "Online Friend"
+        },
+        {
+          "itemId": "scp-series-1730",
+          "titleJP": "Site-13'e ne oldu?"
+        },
+        {
+          "itemId": "scp-series-1753",
+          "titleJP": "Vertigo"
+        },
+        {
+          "itemId": "scp-series-1762",
+          "titleJP": "Ejderhalar Nereye Gitti"
+        },
+        {
+          "itemId": "scp-series-1772",
+          "titleJP": "\"Egg\" Allergy"
+        },
+        {
+          "itemId": "scp-series-1773",
+          "titleJP": "Gumi Beeps"
+        },
+        {
+          "itemId": "scp-series-1777",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-1780",
+          "titleJP": "The Temporal Anomalies Department"
+        },
+        {
+          "itemId": "scp-series-1799",
+          "titleJP": "Mr. Laugh"
+        },
+        {
+          "itemId": "scp-series-1833",
+          "titleJP": "Class of '76"
+        },
+        {
+          "itemId": "scp-series-1867",
+          "titleJP": "A Gentleman"
+        },
+        {
+          "itemId": "scp-series-1883",
+          "titleJP": "Gamification"
+        },
+        {
+          "itemId": "scp-series-1908",
+          "titleJP": "Mr. Soap"
+        },
+        {
+          "itemId": "scp-series-1958",
+          "titleJP": "Sihirli Otobüs"
+        },
+        {
+          "itemId": "scp-series-1959",
+          "titleJP": "Kayıp Kozmonot"
+        },
+        {
+          "itemId": "scp-series-1960",
+          "titleJP": "Neptün Mesajları"
+        },
+        {
+          "itemId": "scp-series-1981",
+          "titleJP": "\"RONALD REAGAN CUT UP WHILE TALKING\""
+        }
+      ],
+      "lastSentWindow": null
     }
   },
-  "updatedAt": "2026-11-09T12:24:55.062Z"
+  "updatedAt": "2026-11-10T00:52:42.271Z"
 }

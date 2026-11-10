@@ -1,0 +1,14 @@
+{
+  "lastUpdated": "2026-11-10T00:49:26.482Z",
+  "language": "cy",
+  "totalCount": 8,
+  "status": "completed",
+  "duration": 6,
+  "statistics": {
+    "translated": 8,
+    "untranslated": 0,
+    "withImage": 3
+  },
+  "dataFile": "scp-data.json",
+  "tagSchemaVersion": 2
+}

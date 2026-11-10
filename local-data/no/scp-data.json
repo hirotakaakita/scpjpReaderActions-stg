@@ -1,0 +1,67 @@
+{
+  "totalCount": 2,
+  "language": "no",
+  "timestamp": "2026-11-10T00:49:26.482Z",
+  "duration": 2,
+  "status": "completed",
+  "statistics": {
+    "translated": 2,
+    "untranslated": 0,
+    "withImage": 1
+  },
+  "data": [
+    {
+      "itemId": "scp-series-nd-001",
+      "numericItemId": 1,
+      "titleJP": "Venter p\u00e5 offentliggj\u00f8ring [Blokkert]",
+      "urlEN": "https://scp-wiki.wikidot.com/no:scp-001-nd",
+      "urlJP": "https://scp-nd.wikidot.com/no:scp-001-nd",
+      "imageUrl": null,
+      "objectClass": null,
+      "rating": null,
+      "descriptionExcerpt": null,
+      "tags": [],
+      "tagVersion": 3,
+      "tagFetchStatus": "success",
+      "isTranslatedJP": true,
+      "extractedFrom": "no:scp-series-nd",
+      "pageType": "scp-series-nd",
+      "contentType": "scp",
+      "lastUpdated": "2026-11-10T00:35:48.310Z",
+      "createdAt": "2026-11-10T00:35:48.310Z",
+      "translatedLanguages": [
+        "da",
+        "no",
+        "sv"
+      ]
+    },
+    {
+      "itemId": "scp-series-nd-007",
+      "numericItemId": 7,
+      "titleJP": "En \u00d8y i Himmelen",
+      "urlEN": "https://scp-wiki.wikidot.com/no:scp-007-nd",
+      "urlJP": "https://scp-nd.wikidot.com/no:scp-007-nd",
+      "imageUrl": "https://scp-nd.wdfiles.com/local--files/fragment:no:scp-007-nd-1/Temple_of_Isis,_Delos_03.jpg",
+      "objectClass": "Safe",
+      "rating": null,
+      "descriptionExcerpt": "SCP-007-ND er en kopi av den greske \u00f8yen D\u00edlos som svever i midten av Troposf\u00e6ren rett over Egeerhavet og har som observert mer religi\u00f8st motiverte bygninger enn den virkelige versjonen av D\u00edlos som er festet til havbunnen i samme hav. \u00d8yen er tilsynelatende usynlig til de som ikke er bak Sl\u00f8ret ettersom at ingen som er utenfor Sl\u00f8ret har rapportert at de har sett \u00f8yen. \u00d8yen ble f\u00f8rst observert av Stiftelsen i 1945, rett f\u00f8r den Syvende Okkult-krigen avsluttet med alliert seier.\n\n\nBilde fra den ",
+      "tags": [
+        "norsk",
+        "scp-nd-no",
+        "sikker"
+      ],
+      "tagVersion": 3,
+      "tagFetchStatus": "success",
+      "isTranslatedJP": true,
+      "extractedFrom": "no:scp-series-nd",
+      "pageType": "scp-series-nd",
+      "contentType": "scp",
+      "lastUpdated": "2026-11-10T00:35:48.310Z",
+      "createdAt": "2026-11-10T00:35:48.310Z",
+      "translatedLanguages": [
+        "no"
+      ]
+    }
+  ],
+  "tagSchemaVersion": 2
+}

@@ -1,0 +1,14 @@
+{
+  "lastUpdated": "2026-11-10T00:49:33.025Z",
+  "language": "ar",
+  "totalCount": 29,
+  "status": "completed",
+  "duration": 25,
+  "statistics": {
+    "translated": 29,
+    "untranslated": 0,
+    "withImage": 16
+  },
+  "dataFile": "scp-data.json",
+  "tagSchemaVersion": 2
+}
