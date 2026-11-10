@@ -2124,6 +2124,48 @@
       "startedAt": "2026-11-10T20:08:06.913Z",
       "messageName": "projects/scpjp-reader-stg/messages/-3401862552786332146",
       "sentAt": "2026-11-10T20:08:10.063Z"
+    },
+    {
+      "id": "cy/2026-11-08",
+      "lang": "cy",
+      "window": "2026-11-08",
+      "items": [
+        {
+          "itemId": "scp-series-cy-001",
+          "titleJP": "[deiliad lle]"
+        },
+        {
+          "itemId": "scp-series-007",
+          "titleJP": "Planed yr Abdomen"
+        },
+        {
+          "itemId": "scp-series-096",
+          "titleJP": "Y \"Dyn Swil\""
+        },
+        {
+          "itemId": "scp-series-173",
+          "titleJP": "Y Cerflunwaith -"
+        },
+        {
+          "itemId": "scp-series-198",
+          "titleJP": "Cup of Joe"
+        },
+        {
+          "itemId": "scp-series-297",
+          "titleJP": "\"Steely Dan\""
+        },
+        {
+          "itemId": "scp-series-527",
+          "titleJP": "Mr. Pysgodyn"
+        },
+        {
+          "itemId": "scp-series-1535",
+          "titleJP": "Purdan"
+        }
+      ],
+      "attempts": 1,
+      "status": "sending",
+      "startedAt": "2026-11-10T20:08:06.913Z"
     }
   ]
 }
