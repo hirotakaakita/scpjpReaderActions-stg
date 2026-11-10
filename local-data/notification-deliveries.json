@@ -5200,6 +5200,104 @@
       "startedAt": "2026-11-10T20:08:06.913Z",
       "messageName": "projects/scpjp-reader-stg/messages/2848487131311714251",
       "sentAt": "2026-11-10T20:08:38.049Z"
+    },
+    {
+      "id": "sh/2026-11-08",
+      "lang": "sh",
+      "window": "2026-11-08",
+      "items": [
+        {
+          "itemId": "scp-series-sh-012",
+          "titleJP": "Kristalna laž"
+        },
+        {
+          "itemId": "scp-series-sh-016",
+          "titleJP": "Raskovnik"
+        },
+        {
+          "itemId": "scp-series-sh-049",
+          "titleJP": "Krvoločna zvijer"
+        },
+        {
+          "itemId": "scp-series-001",
+          "titleJP": "Čeka deklasifikaciju [Blokirano]"
+        },
+        {
+          "itemId": "scp-series-002",
+          "titleJP": "„Živa” soba"
+        },
+        {
+          "itemId": "scp-series-003",
+          "titleJP": "Biološka matična ploča"
+        },
+        {
+          "itemId": "scp-series-004",
+          "titleJP": "12 zarđalih ključeva i vrata"
+        },
+        {
+          "itemId": "scp-series-005",
+          "titleJP": "Kalauz"
+        },
+        {
+          "itemId": "scp-series-006",
+          "titleJP": "Fontana mladosti"
+        },
+        {
+          "itemId": "scp-series-007",
+          "titleJP": "Trbušna planeta"
+        },
+        {
+          "itemId": "scp-series-008",
+          "titleJP": "Zombi pandemija"
+        },
+        {
+          "itemId": "scp-series-009",
+          "titleJP": "Crveni led"
+        },
+        {
+          "itemId": "scp-series-010",
+          "titleJP": "Okovratnici kontrole"
+        },
+        {
+          "itemId": "scp-series-011",
+          "titleJP": "Samosvesni spomenik Građanskom ratu"
+        },
+        {
+          "itemId": "scp-series-029",
+          "titleJP": "Ćerka senki"
+        },
+        {
+          "itemId": "scp-series-048",
+          "titleJP": "Prokleti SCP broj"
+        },
+        {
+          "itemId": "scp-series-054",
+          "titleJP": "Vodena nimfa"
+        },
+        {
+          "itemId": "scp-series-055",
+          "titleJP": ""
+        },
+        {
+          "itemId": "scp-series-173",
+          "titleJP": "Skulptura -"
+        },
+        {
+          "itemId": "scp-series-447",
+          "titleJP": "Lopta zelene sluzi"
+        },
+        {
+          "itemId": "scp-series-682",
+          "titleJP": "Težko-Uništiv Reptil"
+        },
+        {
+          "itemId": "scp-series-1471",
+          "titleJP": "MalO ver1.0.0"
+        }
+      ],
+      "attempts": 1,
+      "status": "sending",
+      "startedAt": "2026-11-10T20:08:06.913Z"
     }
   ]
 }
