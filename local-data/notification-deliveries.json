@@ -2168,6 +2168,44 @@
       "startedAt": "2026-11-10T20:08:06.913Z",
       "messageName": "projects/scpjp-reader-stg/messages/351036049633566052",
       "sentAt": "2026-11-10T20:08:13.512Z"
+    },
+    {
+      "id": "da/2026-11-08",
+      "lang": "da",
+      "window": "2026-11-08",
+      "items": [
+        {
+          "itemId": "scp-series-nd-001",
+          "titleJP": "Indtil publikation [Blokeret]"
+        },
+        {
+          "itemId": "scp-series-nd-004",
+          "titleJP": "Indhold: Ukendt"
+        },
+        {
+          "itemId": "scp-series-001",
+          "titleJP": "Afventer afklassificering [Blokeret]"
+        },
+        {
+          "itemId": "scp-series-002",
+          "titleJP": "Det \"levende\" rum"
+        },
+        {
+          "itemId": "scp-series-003",
+          "titleJP": "Biologiskt moderkort"
+        },
+        {
+          "itemId": "scp-series-037",
+          "titleJP": "Dværgstjerne"
+        },
+        {
+          "itemId": "scp-series-173",
+          "titleJP": "Skulpturen -"
+        }
+      ],
+      "attempts": 1,
+      "status": "sending",
+      "startedAt": "2026-11-10T20:08:06.913Z"
     }
   ]
 }
