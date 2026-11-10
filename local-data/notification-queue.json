@@ -110,33 +110,8 @@
       "lastSentWindow": "2026-11-08"
     },
     "sga": {
-      "items": [
-        {
-          "itemId": "scp-series-sga-001",
-          "titleJP": "ᔑ∴ᔑ╎ℸ ̣ ╎リ⊣ ↸ᒷ-ᓵꖎᔑᓭᓭ╎⎓╎ᓵᔑℸ ̣ ╎𝙹リ [ʖꖎ𝙹ᓵꖌᒷ↸]"
-        },
-        {
-          "itemId": "scp-series-sga-002",
-          "titleJP": "ʖ∷ᔑ╎リ ⎓∷ᒷᒷ⨅ᒷ"
-        },
-        {
-          "itemId": "scp-series-sga-009",
-          "titleJP": "ℸ ̣ ⍑ᒷ ʖ╎⊣ ||ᒷꖎꖎ𝙹∴ 𝙹リᒷ'ᓭ ℸ ̣ ⍑ᒷ ᓭ⚍リ!"
-        },
-        {
-          "itemId": "scp-series-sga-171",
-          "titleJP": "ᓵ𝙹∴ʖ𝙹||ᓭ ᔑリ↸ ᓵ⍑ᔑ𝙹ᓭ."
-        },
-        {
-          "itemId": "scp-series-001",
-          "titleJP": "ᔑ∴ᔑ╎ℸ ̣ ╎リ⊣ ↸ᒷ-ᓵꖎᔑᓭᓭ╎⎓╎ᓵᔑℸ ̣ ╎𝙹リ [ʖꖎ𝙹ᓵꖌᒷ↸]"
-        },
-        {
-          "itemId": "scp-series-173",
-          "titleJP": "ℸ ̣ ⍑ᒷ ᓭᓵ⚍ꖎ!¡ℸ ̣ ⚍∷ᒷ -"
-        }
-      ],
-      "lastSentWindow": null
+      "items": [],
+      "lastSentWindow": "2026-11-08"
     },
     "sh": {
       "items": [
