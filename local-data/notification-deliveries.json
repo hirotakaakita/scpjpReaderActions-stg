@@ -2208,6 +2208,1772 @@
       "startedAt": "2026-11-10T20:08:06.913Z",
       "messageName": "projects/scpjp-reader-stg/messages/107456500302663294",
       "sentAt": "2026-11-10T20:08:16.322Z"
+    },
+    {
+      "id": "el/2026-11-08",
+      "lang": "el",
+      "window": "2026-11-08",
+      "items": [
+        {
+          "itemId": "scp-series-el-001",
+          "titleJP": "Αναμονή για αποχαρακτηρισμό [Αποκλεισμένο]"
+        },
+        {
+          "itemId": "scp-series-el-002",
+          "titleJP": "Βιολογικές σκάλες"
+        },
+        {
+          "itemId": "scp-series-el-005",
+          "titleJP": "Απαντήστε στα αναπάντητα"
+        },
+        {
+          "itemId": "scp-series-el-007",
+          "titleJP": "Πηγή Ανωμαλιών"
+        },
+        {
+          "itemId": "scp-series-el-010",
+          "titleJP": "Ατελείωτες Δεξαμενές"
+        },
+        {
+          "itemId": "scp-series-el-012",
+          "titleJP": "Παγωμένος ωκεανός"
+        },
+        {
+          "itemId": "scp-series-el-018",
+          "titleJP": "Σχισμένες πέτρες"
+        },
+        {
+          "itemId": "scp-series-el-025",
+          "titleJP": "Το πλοίο"
+        },
+        {
+          "itemId": "scp-series-el-030",
+          "titleJP": "Στη θάλασσα, όπου το πετρέλαιο περιβάλλει"
+        },
+        {
+          "itemId": "scp-series-el-043",
+          "titleJP": "Αρχαίος κύβος"
+        },
+        {
+          "itemId": "scp-series-el-066",
+          "titleJP": "Γονέας φάλαινας"
+        },
+        {
+          "itemId": "scp-series-el-074",
+          "titleJP": "Νυχτερινό Ξύλινο άλογο"
+        },
+        {
+          "itemId": "scp-series-el-093",
+          "titleJP": "Βλέποντας τις ατέλειές τους"
+        },
+        {
+          "itemId": "scp-series-el-099",
+          "titleJP": "[ΧΩΡΙΣ ΠΡΟΣΒΑΣΗ]"
+        },
+        {
+          "itemId": "scp-series-001",
+          "titleJP": "Αναμονή για αποχαρακτηρισμό [Αποκλεισμένο]"
+        },
+        {
+          "itemId": "scp-series-002",
+          "titleJP": "Το \"Ζωντανό\" Δωμάτιο"
+        },
+        {
+          "itemId": "scp-series-003",
+          "titleJP": "Βιολογική μητρική πλακέτα"
+        },
+        {
+          "itemId": "scp-series-004",
+          "titleJP": "Τα 12 σκουριασμένα κλειδιά και η πόρτα"
+        },
+        {
+          "itemId": "scp-series-005",
+          "titleJP": "Το κλειδί \"σκελετός\""
+        },
+        {
+          "itemId": "scp-series-006",
+          "titleJP": "Πηγή της νιότης"
+        },
+        {
+          "itemId": "scp-series-007",
+          "titleJP": "Κοιλιακός Πλανήτης"
+        },
+        {
+          "itemId": "scp-series-008",
+          "titleJP": "Ο λοιμός των ζόμπι"
+        },
+        {
+          "itemId": "scp-series-009",
+          "titleJP": "Κόκκινος πάγος"
+        },
+        {
+          "itemId": "scp-series-010",
+          "titleJP": "Περιδέραια ελέγχου"
+        },
+        {
+          "itemId": "scp-series-011",
+          "titleJP": "Το ζωντανό άγαλμα του Εμφυλίου Πολέμου"
+        },
+        {
+          "itemId": "scp-series-012",
+          "titleJP": "Μια κακή σύνθεση"
+        },
+        {
+          "itemId": "scp-series-013",
+          "titleJP": "Τα τσιγάρα Μπλε Κυρίας"
+        },
+        {
+          "itemId": "scp-series-014",
+          "titleJP": "Ο Τσιμεντένιος Άνθρωπος"
+        },
+        {
+          "itemId": "scp-series-015",
+          "titleJP": "Εφιάλτης Σωλήνων"
+        },
+        {
+          "itemId": "scp-series-016",
+          "titleJP": "Νοήμων μικροοργανισμός"
+        },
+        {
+          "itemId": "scp-series-017",
+          "titleJP": "Άτομο σκιάς"
+        },
+        {
+          "itemId": "scp-series-018",
+          "titleJP": "Η Σούπερ Μπάλα"
+        },
+        {
+          "itemId": "scp-series-019",
+          "titleJP": "Το αγγείο των τεράτων"
+        },
+        {
+          "itemId": "scp-series-020",
+          "titleJP": "Αόρατη μούχλα"
+        },
+        {
+          "itemId": "scp-series-021",
+          "titleJP": "Ερπετό δέρματος"
+        },
+        {
+          "itemId": "scp-series-022",
+          "titleJP": "Το νεκροτομείο"
+        },
+        {
+          "itemId": "scp-series-023",
+          "titleJP": "Μαύρο Shuck"
+        },
+        {
+          "itemId": "scp-series-024",
+          "titleJP": "Τηλεπαιχνίδι του θανάτου"
+        },
+        {
+          "itemId": "scp-series-025",
+          "titleJP": "Μια καλη χρησημοποιημένη ντουλάπα"
+        },
+        {
+          "itemId": "scp-series-026",
+          "titleJP": "Κράτηση σχολείου"
+        },
+        {
+          "itemId": "scp-series-027",
+          "titleJP": "Ο Θεός των παράσιτων"
+        },
+        {
+          "itemId": "scp-series-028",
+          "titleJP": "Η γνώση"
+        },
+        {
+          "itemId": "scp-series-029",
+          "titleJP": "Η Κόρη των σκιών"
+        },
+        {
+          "itemId": "scp-series-030",
+          "titleJP": "Το ανθρωπάριο"
+        },
+        {
+          "itemId": "scp-series-032",
+          "titleJP": "Νύφη των αδελφών"
+        },
+        {
+          "itemId": "scp-series-033",
+          "titleJP": "Ο αριθμός που λείπει"
+        },
+        {
+          "itemId": "scp-series-034",
+          "titleJP": "Οψιδιανό τελετουργικό μαχαίρι"
+        },
+        {
+          "itemId": "scp-series-035",
+          "titleJP": "Κτητικη μασκα"
+        },
+        {
+          "itemId": "scp-series-036",
+          "titleJP": "Το Προσκύνημα Μετενσάρκωσης των Γιαζίντι (Kiras Guhorîn)"
+        },
+        {
+          "itemId": "scp-series-037",
+          "titleJP": "Το αστέρι νάνου"
+        },
+        {
+          "itemId": "scp-series-038",
+          "titleJP": "Το δέντρο όλων"
+        },
+        {
+          "itemId": "scp-series-039",
+          "titleJP": "Μυαλό μαϊμούς"
+        },
+        {
+          "itemId": "scp-series-040",
+          "titleJP": "Παιδί της εξέλιξης"
+        },
+        {
+          "itemId": "scp-series-041",
+          "titleJP": "Ασθενής σκέψης-εκπομπής"
+        },
+        {
+          "itemId": "scp-series-042",
+          "titleJP": "Ένα πρώην φτερωτό άλογο"
+        },
+        {
+          "itemId": "scp-series-043",
+          "titleJP": "Το Σκαθάρι"
+        },
+        {
+          "itemId": "scp-series-044",
+          "titleJP": "Κανόνι Μοριακής Σχάσης της εποχής του Β' Παγκοσμίου Πολέμου"
+        },
+        {
+          "itemId": "scp-series-045",
+          "titleJP": "Ατμοσφαιρικός μετατροπέας"
+        },
+        {
+          "itemId": "scp-series-046",
+          "titleJP": "\"Αρπακτικό\" θαμνο λιόπρινου"
+        },
+        {
+          "itemId": "scp-series-047",
+          "titleJP": "Μικροβιακό μεταλλαξιογόνο"
+        },
+        {
+          "itemId": "scp-series-048",
+          "titleJP": "Ο καταραμένος αριθμός SCP"
+        },
+        {
+          "itemId": "scp-series-049",
+          "titleJP": "Ο Γιατρός της Πανούκλας"
+        },
+        {
+          "itemId": "scp-series-050",
+          "titleJP": "Στον εξυπνότερο"
+        },
+        {
+          "itemId": "scp-series-051",
+          "titleJP": "Ιαπωνικό μαιευτικό μοντέλο"
+        },
+        {
+          "itemId": "scp-series-052",
+          "titleJP": "Τρένο στο χρόνο"
+        },
+        {
+          "itemId": "scp-series-053",
+          "titleJP": "Νεαρό Κορίτσι"
+        },
+        {
+          "itemId": "scp-series-054",
+          "titleJP": "Νύμφη του Νερού"
+        },
+        {
+          "itemId": "scp-series-055",
+          "titleJP": "[Αγνωστο]"
+        },
+        {
+          "itemId": "scp-series-056",
+          "titleJP": "Ένα όμορφο άτομο"
+        },
+        {
+          "itemId": "scp-series-057",
+          "titleJP": "Η καθημερινή μάχη"
+        },
+        {
+          "itemId": "scp-series-059",
+          "titleJP": "Ραδιενεργό Ορυκτό"
+        },
+        {
+          "itemId": "scp-series-060",
+          "titleJP": "Κρυμμένος σκελετός"
+        },
+        {
+          "itemId": "scp-series-062",
+          "titleJP": "Κβαντισμένος Υπολογιστής"
+        },
+        {
+          "itemId": "scp-series-063",
+          "titleJP": "\"Η καλύτερη οδοντόβουρτσα του κόσμου\""
+        },
+        {
+          "itemId": "scp-series-064",
+          "titleJP": "Ελαττωματική δομή von Neumann"
+        },
+        {
+          "itemId": "scp-series-065",
+          "titleJP": "Κατεστραμμένος Οργανικός Διαλύτης"
+        },
+        {
+          "itemId": "scp-series-066",
+          "titleJP": "Το παιχνίδι του Έρικ"
+        },
+        {
+          "itemId": "scp-series-067",
+          "titleJP": "Η Πένα του Καλλιτέχνη"
+        },
+        {
+          "itemId": "scp-series-068",
+          "titleJP": "Η Συρμάτινη Φιγούρα"
+        },
+        {
+          "itemId": "scp-series-069",
+          "titleJP": "Δεύτερη ευκαιρία"
+        },
+        {
+          "itemId": "scp-series-070",
+          "titleJP": "Σιδερένια Φτερά"
+        },
+        {
+          "itemId": "scp-series-071",
+          "titleJP": "Εκφυλιστική μεταμορφική οντότητα"
+        },
+        {
+          "itemId": "scp-series-072",
+          "titleJP": "Το Πόδι του Κρεβατιού"
+        },
+        {
+          "itemId": "scp-series-073",
+          "titleJP": "\"Κάιν\""
+        },
+        {
+          "itemId": "scp-series-074",
+          "titleJP": "Κβαντικός ονίσκος"
+        },
+        {
+          "itemId": "scp-series-075",
+          "titleJP": "Διαβρωτικό σαλιγκάρι"
+        },
+        {
+          "itemId": "scp-series-079",
+          "titleJP": "Το παλιό ΑΙ"
+        },
+        {
+          "itemId": "scp-series-082",
+          "titleJP": "\"Φερνάντ\" ο Κανίβαλος"
+        },
+        {
+          "itemId": "scp-series-087",
+          "titleJP": "Η σκάλα"
+        },
+        {
+          "itemId": "scp-series-088",
+          "titleJP": "Ο βασιλιάς της σαύρας"
+        },
+        {
+          "itemId": "scp-series-091",
+          "titleJP": "Νοσταλγία"
+        },
+        {
+          "itemId": "scp-series-093",
+          "titleJP": "Αντικείμενο της Ερυθράς Θάλασσας"
+        },
+        {
+          "itemId": "scp-series-094",
+          "titleJP": "Μικρογραφία συμβάντος ορίζοντα"
+        },
+        {
+          "itemId": "scp-series-096",
+          "titleJP": "Ο Ντροπαλός"
+        },
+        {
+          "itemId": "scp-series-098",
+          "titleJP": "Καβούρια χειρουργού"
+        },
+        {
+          "itemId": "scp-series-099",
+          "titleJP": "Το πορτρέτο"
+        },
+        {
+          "itemId": "scp-series-101",
+          "titleJP": "Πεινασμένη Τσάντα"
+        },
+        {
+          "itemId": "scp-series-106",
+          "titleJP": "Ο γέρος"
+        },
+        {
+          "itemId": "scp-series-111",
+          "titleJP": "Δρακο-Σαλιγκαρια"
+        },
+        {
+          "itemId": "scp-series-115",
+          "titleJP": "Μίνι εκσκαφέας"
+        },
+        {
+          "itemId": "scp-series-122",
+          "titleJP": "Όχι Άλλα Τέρατα"
+        },
+        {
+          "itemId": "scp-series-126",
+          "titleJP": "Αόρατη Φίλη"
+        },
+        {
+          "itemId": "scp-series-127",
+          "titleJP": "Το ζωντανό όπλο"
+        },
+        {
+          "itemId": "scp-series-131",
+          "titleJP": "Τα \"Eye Pods\""
+        },
+        {
+          "itemId": "scp-series-138",
+          "titleJP": "Ο αιώνιος άνθρωπος"
+        },
+        {
+          "itemId": "scp-series-143",
+          "titleJP": "Το Περιβόλι Του Λεπίδοξύλου"
+        },
+        {
+          "itemId": "scp-series-151",
+          "titleJP": "Η ελαιογραφία"
+        },
+        {
+          "itemId": "scp-series-152",
+          "titleJP": "Βιβλίο των τελών"
+        },
+        {
+          "itemId": "scp-series-156",
+          "titleJP": "Ρόδι Αναζωογόνησης"
+        },
+        {
+          "itemId": "scp-series-159",
+          "titleJP": "Το Τέλειο Κλείδωμα"
+        },
+        {
+          "itemId": "scp-series-162",
+          "titleJP": "Η μπάλα των μυτερων"
+        },
+        {
+          "itemId": "scp-series-166",
+          "titleJP": "Μια νεαρή Γαία"
+        },
+        {
+          "itemId": "scp-series-167",
+          "titleJP": "Άπειρος λαβύρινθος"
+        },
+        {
+          "itemId": "scp-series-173",
+          "titleJP": "Το Γλυπτό - Το Πρωτότυπο"
+        },
+        {
+          "itemId": "scp-series-174",
+          "titleJP": "Ομοίωμα Βεντριλόκουιστ του"
+        },
+        {
+          "itemId": "scp-series-189",
+          "titleJP": "Παράσιτο μίμησης μαλλιών"
+        },
+        {
+          "itemId": "scp-series-196",
+          "titleJP": "Χρονοπαράδοξο"
+        },
+        {
+          "itemId": "scp-series-201",
+          "titleJP": "Ο Άδειος Κόσμος"
+        },
+        {
+          "itemId": "scp-series-210",
+          "titleJP": "Πλημμυρισμένο σπίτι"
+        },
+        {
+          "itemId": "scp-series-217",
+          "titleJP": "Ο μηχανικός ιός"
+        },
+        {
+          "itemId": "scp-series-221",
+          "titleJP": "Τσιμπιδάκια του εξαναγκασμού"
+        },
+        {
+          "itemId": "scp-series-226",
+          "titleJP": "Παζλ του τρόμου"
+        },
+        {
+          "itemId": "scp-series-227",
+          "titleJP": "Ολοκληρωμένος Μηχανισμός Αντικυθήρων"
+        },
+        {
+          "itemId": "scp-series-228",
+          "titleJP": "Ψυχιατρικό διαγνωστικό εργαλείο"
+        },
+        {
+          "itemId": "scp-series-234",
+          "titleJP": "Πολυδιάστατο ψάρι"
+        },
+        {
+          "itemId": "scp-series-240",
+          "titleJP": "Ιπτάμενη μηχανή αναπνοής"
+        },
+        {
+          "itemId": "scp-series-241",
+          "titleJP": "Καλή Σπιτική Μαγειρική"
+        },
+        {
+          "itemId": "scp-series-246",
+          "titleJP": "Προφητικός Προβολέας"
+        },
+        {
+          "itemId": "scp-series-247",
+          "titleJP": "Ένα αβλαβές γατάκι"
+        },
+        {
+          "itemId": "scp-series-248",
+          "titleJP": "110%"
+        },
+        {
+          "itemId": "scp-series-249",
+          "titleJP": "Η τυχαία πόρτα"
+        },
+        {
+          "itemId": "scp-series-251",
+          "titleJP": "Η Παραπλανητική σφαίρα χιονιού"
+        },
+        {
+          "itemId": "scp-series-258",
+          "titleJP": "Ο θλιμμένος βάτραχος"
+        },
+        {
+          "itemId": "scp-series-264",
+          "titleJP": "Σκελετός Ναός"
+        },
+        {
+          "itemId": "scp-series-265",
+          "titleJP": "Το μάυρο Volga"
+        },
+        {
+          "itemId": "scp-series-266",
+          "titleJP": "Will o' the Wisp"
+        },
+        {
+          "itemId": "scp-series-271",
+          "titleJP": "Εγγεγραμμένος δίσκος"
+        },
+        {
+          "itemId": "scp-series-273",
+          "titleJP": "Ανθρώπινη Φοίνιξ"
+        },
+        {
+          "itemId": "scp-series-276",
+          "titleJP": "Σκούνα του χρόνου"
+        },
+        {
+          "itemId": "scp-series-278",
+          "titleJP": "Μια μεγάλη μηχανική αράχνη"
+        },
+        {
+          "itemId": "scp-series-280",
+          "titleJP": "Τα μάτια στο σκοτάδι"
+        },
+        {
+          "itemId": "scp-series-284",
+          "titleJP": "Τα δίδυμα"
+        },
+        {
+          "itemId": "scp-series-290",
+          "titleJP": "Η μηχανή του Picasso"
+        },
+        {
+          "itemId": "scp-series-299",
+          "titleJP": "Μολυσματικό Δένδρο"
+        },
+        {
+          "itemId": "scp-series-300",
+          "titleJP": "Έναν κόσμο σε ένα μπουκάλι"
+        },
+        {
+          "itemId": "scp-series-302",
+          "titleJP": "Γλυπτό μυρμηγκιών"
+        },
+        {
+          "itemId": "scp-series-304",
+          "titleJP": "Το σήμα"
+        },
+        {
+          "itemId": "scp-series-305",
+          "titleJP": "Ο Ψιθυριστής"
+        },
+        {
+          "itemId": "scp-series-309",
+          "titleJP": "Χνουδωτο παιχνίδι"
+        },
+        {
+          "itemId": "scp-series-311",
+          "titleJP": "Γάντια Απτικής Μετατόπισης"
+        },
+        {
+          "itemId": "scp-series-312",
+          "titleJP": "Μέδουσες του ουρανού"
+        },
+        {
+          "itemId": "scp-series-313",
+          "titleJP": "Ισχυρό στεγνωτήριο χεριών"
+        },
+        {
+          "itemId": "scp-series-316",
+          "titleJP": "Φως αποστράγγισης χρώματος"
+        },
+        {
+          "itemId": "scp-series-322",
+          "titleJP": "\"Φύτεψε Το Δικό Σου Καστρο\""
+        },
+        {
+          "itemId": "scp-series-327",
+          "titleJP": "Η γοργόνα"
+        },
+        {
+          "itemId": "scp-series-330",
+          "titleJP": "Πάρε μόνο δύο"
+        },
+        {
+          "itemId": "scp-series-334",
+          "titleJP": "Αστρική αλεπού"
+        },
+        {
+          "itemId": "scp-series-341",
+          "titleJP": "Μια συλλογή από υπερ-ηλιακά πλανητοσκόπια"
+        },
+        {
+          "itemId": "scp-series-343",
+          "titleJP": "\"Θεός\""
+        },
+        {
+          "itemId": "scp-series-346",
+          "titleJP": "\"Πτερρυ\" ο Πτεροδάκτυλος"
+        },
+        {
+          "itemId": "scp-series-348",
+          "titleJP": "Ένα δώρο από τον μπαμπά"
+        },
+        {
+          "itemId": "scp-series-350",
+          "titleJP": "Ενα άθραυστο συμβόλαιο"
+        },
+        {
+          "itemId": "scp-series-353",
+          "titleJP": "''Φορέα''"
+        },
+        {
+          "itemId": "scp-series-354",
+          "titleJP": "Η κοκκινη λιμνη"
+        },
+        {
+          "itemId": "scp-series-355",
+          "titleJP": "Το οδοντωτό γρασίδι"
+        },
+        {
+          "itemId": "scp-series-357",
+          "titleJP": "Πεινασμένο πηλό"
+        },
+        {
+          "itemId": "scp-series-359",
+          "titleJP": "Το γεράκι"
+        },
+        {
+          "itemId": "scp-series-361",
+          "titleJP": "Χάλκινο συκώτι"
+        },
+        {
+          "itemId": "scp-series-365",
+          "titleJP": "Μακαρόνι πισίνας"
+        },
+        {
+          "itemId": "scp-series-367",
+          "titleJP": "Το μικρό σκυλί"
+        },
+        {
+          "itemId": "scp-series-368",
+          "titleJP": "Ο Χάρτινος γερανός"
+        },
+        {
+          "itemId": "scp-series-369",
+          "titleJP": "Μεταναστευτική Οδική Εργασία"
+        },
+        {
+          "itemId": "scp-series-376",
+          "titleJP": "Το δέντρο φαναριών"
+        },
+        {
+          "itemId": "scp-series-377",
+          "titleJP": "Ακριβής μπισκότα τύχης"
+        },
+        {
+          "itemId": "scp-series-379",
+          "titleJP": "Μηχανική φερομόνη"
+        },
+        {
+          "itemId": "scp-series-380",
+          "titleJP": "Συσκευή βιολογικής δικτύωσης"
+        },
+        {
+          "itemId": "scp-series-388",
+          "titleJP": "Το Απόλυτο Frisbee"
+        },
+        {
+          "itemId": "scp-series-389",
+          "titleJP": "Ένα μήνυμα σε ένα μπουκάλι"
+        },
+        {
+          "itemId": "scp-series-390",
+          "titleJP": "Αρχαία ακτίνα θανάτου"
+        },
+        {
+          "itemId": "scp-series-391",
+          "titleJP": "Η κουκουβάγια του Μίδα"
+        },
+        {
+          "itemId": "scp-series-393",
+          "titleJP": "Το ημερολόγιο"
+        },
+        {
+          "itemId": "scp-series-397",
+          "titleJP": "Ένα Hominidae"
+        },
+        {
+          "itemId": "scp-series-398",
+          "titleJP": "Ο Διάδρομος εισόδου"
+        },
+        {
+          "itemId": "scp-series-405",
+          "titleJP": "Ιός Τηλεπάθειας"
+        },
+        {
+          "itemId": "scp-series-407",
+          "titleJP": "Το τραγούδι της Γενέσεως"
+        },
+        {
+          "itemId": "scp-series-408",
+          "titleJP": "Πεταλούδες Ψευδαισθησεων"
+        },
+        {
+          "itemId": "scp-series-409",
+          "titleJP": "Μεταδοτικο Κρύσταλλο"
+        },
+        {
+          "itemId": "scp-series-410",
+          "titleJP": "Σκαθάρια Επεξεργασιων"
+        },
+        {
+          "itemId": "scp-series-412",
+          "titleJP": "Μεταλλαξιογόνος καθρέφτης"
+        },
+        {
+          "itemId": "scp-series-416",
+          "titleJP": "Άπειρο δάσος"
+        },
+        {
+          "itemId": "scp-series-422",
+          "titleJP": "Το μπερδεμένο θηρίο"
+        },
+        {
+          "itemId": "scp-series-426",
+          "titleJP": "Είμαι μια τοστιέρα"
+        },
+        {
+          "itemId": "scp-series-427",
+          "titleJP": "Μενταγιόν του Λόβκραφτ"
+        },
+        {
+          "itemId": "scp-series-431",
+          "titleJP": "Δρ. Γιδέων"
+        },
+        {
+          "itemId": "scp-series-432",
+          "titleJP": "Λαβύρινθος ντουλαπιού"
+        },
+        {
+          "itemId": "scp-series-434",
+          "titleJP": "Μια συνάντηση με τον εαυτό μου"
+        },
+        {
+          "itemId": "scp-series-436",
+          "titleJP": "Μενταγιόν σφάλματος"
+        },
+        {
+          "itemId": "scp-series-443",
+          "titleJP": "Κηρομπογιές της σκέψης"
+        },
+        {
+          "itemId": "scp-series-444",
+          "titleJP": "Η γλώσσα της παγκόσμιας αρμονίας"
+        },
+        {
+          "itemId": "scp-series-447",
+          "titleJP": "Μπάλα από πράσινο ζελέ"
+        },
+        {
+          "itemId": "scp-series-450",
+          "titleJP": "Εγκαταλελειμμένη ομοσπονδιακή φυλακή"
+        },
+        {
+          "itemId": "scp-series-452",
+          "titleJP": "Αράχνη ονειροπαγίδας"
+        },
+        {
+          "itemId": "scp-series-463",
+          "titleJP": "Ένα κουτάλι που λυγίζει τους ανθρώπους"
+        },
+        {
+          "itemId": "scp-series-465",
+          "titleJP": "Πάρτι σε ένα κουτί"
+        },
+        {
+          "itemId": "scp-series-474",
+          "titleJP": "℞FM"
+        },
+        {
+          "itemId": "scp-series-476",
+          "titleJP": "Χάρτης στο Πουθενά"
+        },
+        {
+          "itemId": "scp-series-490",
+          "titleJP": "Φορτηγό παγωτού"
+        },
+        {
+          "itemId": "scp-series-497",
+          "titleJP": "Το κοχύλι"
+        },
+        {
+          "itemId": "scp-series-500",
+          "titleJP": "Πανάκεια"
+        },
+        {
+          "itemId": "scp-series-506",
+          "titleJP": "Φυτά στιγμιαίας ανάπτυξης"
+        },
+        {
+          "itemId": "scp-series-510",
+          "titleJP": "Μαλακός θάνατος"
+        },
+        {
+          "itemId": "scp-series-513",
+          "titleJP": "Ενα κουδούνι"
+        },
+        {
+          "itemId": "scp-series-514",
+          "titleJP": "[ΧΩΡΙΣ ΠΡΟΣΒΑΣΗ]"
+        },
+        {
+          "itemId": "scp-series-521",
+          "titleJP": "Walter το παμφάγο κουνέλι"
+        },
+        {
+          "itemId": "scp-series-522",
+          "titleJP": "Το γραμματοκιβώτιο"
+        },
+        {
+          "itemId": "scp-series-524",
+          "titleJP": "Χαλί αποστράγγισης αίματος"
+        },
+        {
+          "itemId": "scp-series-527",
+          "titleJP": "Κυρ. Ψάρι"
+        },
+        {
+          "itemId": "scp-series-528",
+          "titleJP": "Πηλός Βουντού"
+        },
+        {
+          "itemId": "scp-series-529",
+          "titleJP": "Τζόσι η ημί-γατα"
+        },
+        {
+          "itemId": "scp-series-530",
+          "titleJP": "''Carl'' ο μεταβλητός σκύλος"
+        },
+        {
+          "itemId": "scp-series-531",
+          "titleJP": "Ορειχάλκινες Γάτες φρουράς"
+        },
+        {
+          "itemId": "scp-series-532",
+          "titleJP": "Έντομο Πάγου"
+        },
+        {
+          "itemId": "scp-series-539",
+          "titleJP": "Η Τέλεια Απόσπαση της Προσοχής"
+        },
+        {
+          "itemId": "scp-series-546",
+          "titleJP": "Ενα Τετράδιο"
+        },
+        {
+          "itemId": "scp-series-548",
+          "titleJP": "Αράχνη Πάγου"
+        },
+        {
+          "itemId": "scp-series-551",
+          "titleJP": "Αδύνατο παζλ"
+        },
+        {
+          "itemId": "scp-series-553",
+          "titleJP": "Κρυσταλλικές πεταλούδες"
+        },
+        {
+          "itemId": "scp-series-555",
+          "titleJP": "Μαγνήτης πτώματων"
+        },
+        {
+          "itemId": "scp-series-557",
+          "titleJP": "Αρχαία Βάση Περιορισμού"
+        },
+        {
+          "itemId": "scp-series-561",
+          "titleJP": "Ένα παθητικό Σχίσμα Στον Χρόνο"
+        },
+        {
+          "itemId": "scp-series-564",
+          "titleJP": "Μη Ολοκληρωμένο Πρωτόγονο Βιονικό Άνθρωπο"
+        },
+        {
+          "itemId": "scp-series-570",
+          "titleJP": "Γάντια κουκλοθέατρου!!!"
+        },
+        {
+          "itemId": "scp-series-574",
+          "titleJP": "Το Σπίτι Dropera"
+        },
+        {
+          "itemId": "scp-series-576",
+          "titleJP": "Καλόν ύπνο"
+        },
+        {
+          "itemId": "scp-series-578",
+          "titleJP": "Οπάλια αίματος"
+        },
+        {
+          "itemId": "scp-series-579",
+          "titleJP": "[ΑΠΟΡΡΗΤΑ ΔΕΔΟΜΕΝΑ]"
+        },
+        {
+          "itemId": "scp-series-599",
+          "titleJP": "Ανεξερεύνητη πόλη"
+        },
+        {
+          "itemId": "scp-series-600",
+          "titleJP": "\"Αυτός ο τύπος\""
+        },
+        {
+          "itemId": "scp-series-601",
+          "titleJP": "Ο Χορός του Σοφοκλή"
+        },
+        {
+          "itemId": "scp-series-602",
+          "titleJP": "Ο Γλύπτης του Σόχο"
+        },
+        {
+          "itemId": "scp-series-605",
+          "titleJP": "Ζωντανό σύννεφο καταιγίδας"
+        },
+        {
+          "itemId": "scp-series-606",
+          "titleJP": "\"Ο Δάσκαλος\""
+        },
+        {
+          "itemId": "scp-series-610",
+          "titleJP": "Η σάρκα που μισεί"
+        },
+        {
+          "itemId": "scp-series-611",
+          "titleJP": "Παρασιτική οδοντογλυφίδα"
+        },
+        {
+          "itemId": "scp-series-613",
+          "titleJP": "\"Wonder Bread!\""
+        },
+        {
+          "itemId": "scp-series-614",
+          "titleJP": "Διεύθυνση IP 57.32.███.███"
+        },
+        {
+          "itemId": "scp-series-615",
+          "titleJP": "Ξύλινη μάζα"
+        },
+        {
+          "itemId": "scp-series-617",
+          "titleJP": "Πέτρες με στόματα"
+        },
+        {
+          "itemId": "scp-series-619",
+          "titleJP": "Τυχερά τζίν"
+        },
+        {
+          "itemId": "scp-series-620",
+          "titleJP": "Ο χρόνος συνεχίζει να γλιστρά"
+        },
+        {
+          "itemId": "scp-series-621",
+          "titleJP": "Υπνωτικές τουλίπες"
+        },
+        {
+          "itemId": "scp-series-622",
+          "titleJP": "Έρημος σε ντενεκέ"
+        },
+        {
+          "itemId": "scp-series-626",
+          "titleJP": "Άγαλμα Όραματος"
+        },
+        {
+          "itemId": "scp-series-627",
+          "titleJP": "Αέναος κύκλος"
+        },
+        {
+          "itemId": "scp-series-629",
+          "titleJP": "Κύρ. Ορείχαλκος"
+        },
+        {
+          "itemId": "scp-series-632",
+          "titleJP": "Ενοχλητικές Αραχνοειδείς Σκέψεις"
+        },
+        {
+          "itemId": "scp-series-634",
+          "titleJP": "Μνήμη χρυσόψαρου"
+        },
+        {
+          "itemId": "scp-series-635",
+          "titleJP": "Μεσαιωνικό Πρόγραμμα Εκκίνησης"
+        },
+        {
+          "itemId": "scp-series-636",
+          "titleJP": "Ασανσέρ στο πουθενά"
+        },
+        {
+          "itemId": "scp-series-639",
+          "titleJP": "Διαστρεβλωμένος άνθρωπος"
+        },
+        {
+          "itemId": "scp-series-643",
+          "titleJP": "Νόστιμες σοκολάτες"
+        },
+        {
+          "itemId": "scp-series-644",
+          "titleJP": "Κυρ. Καύσωνας"
+        },
+        {
+          "itemId": "scp-series-647",
+          "titleJP": "Πεινασμένο κουτί"
+        },
+        {
+          "itemId": "scp-series-648",
+          "titleJP": "Ο Λαβύρινθος"
+        },
+        {
+          "itemId": "scp-series-649",
+          "titleJP": "Σπιρτόκουτο του χειμώνα"
+        },
+        {
+          "itemId": "scp-series-650",
+          "titleJP": "Αιφνίδιο άγαλμα"
+        },
+        {
+          "itemId": "scp-series-653",
+          "titleJP": "Το μπούμερανγκ"
+        },
+        {
+          "itemId": "scp-series-663",
+          "titleJP": "Ζωντανό φίλτρο νερού"
+        },
+        {
+          "itemId": "scp-series-664",
+          "titleJP": "Το πάτωμα στο πουθενά"
+        },
+        {
+          "itemId": "scp-series-665",
+          "titleJP": "Ο σκουπιδιάρης"
+        },
+        {
+          "itemId": "scp-series-667",
+          "titleJP": "Το Kudzu νεράιδων"
+        },
+        {
+          "itemId": "scp-series-670",
+          "titleJP": "Οικογένεια βαμβακιού"
+        },
+        {
+          "itemId": "scp-series-672",
+          "titleJP": "Κοράλλι Πέτρας"
+        },
+        {
+          "itemId": "scp-series-675",
+          "titleJP": "Σκιές Μέσω του Παραθύρου"
+        },
+        {
+          "itemId": "scp-series-676",
+          "titleJP": "Μη φυσική θερμή πηγή"
+        },
+        {
+          "itemId": "scp-series-678",
+          "titleJP": "Ο Τραυμαφάγος"
+        },
+        {
+          "itemId": "scp-series-682",
+          "titleJP": "Το ερπετό που δεν μπορεί να καταστραφεί"
+        },
+        {
+          "itemId": "scp-series-687",
+          "titleJP": "NOIR"
+        },
+        {
+          "itemId": "scp-series-689",
+          "titleJP": "Στοιχειώνοντας στο σκοτάδι"
+        },
+        {
+          "itemId": "scp-series-691",
+          "titleJP": "Η έξοδο του δειλού"
+        },
+        {
+          "itemId": "scp-series-696",
+          "titleJP": "Χαώδης γραφομηχανή"
+        },
+        {
+          "itemId": "scp-series-698",
+          "titleJP": "Η Επικριτική Χελώνα"
+        },
+        {
+          "itemId": "scp-series-700",
+          "titleJP": "Εργοστάσιο του γκράφιτι"
+        },
+        {
+          "itemId": "scp-series-701",
+          "titleJP": "Η Τραγωδία του Κρεμασμένου Βασιλιά"
+        },
+        {
+          "itemId": "scp-series-702",
+          "titleJP": "Η κατοικία του εμπόρου"
+        },
+        {
+          "itemId": "scp-series-708",
+          "titleJP": "Το μεγάλο πορτοκαλί περονοφόρο"
+        },
+        {
+          "itemId": "scp-series-709",
+          "titleJP": "Το μάτι του δάσους"
+        },
+        {
+          "itemId": "scp-series-710",
+          "titleJP": "Εξαφάνιση"
+        },
+        {
+          "itemId": "scp-series-712",
+          "titleJP": "Τα αδύνατα χρώματα"
+        },
+        {
+          "itemId": "scp-series-714",
+          "titleJP": "Το νεφριτένιο δαχτυλίδι"
+        },
+        {
+          "itemId": "scp-series-716",
+          "titleJP": "Το τρένο"
+        },
+        {
+          "itemId": "scp-series-718",
+          "titleJP": "Το μάτι"
+        },
+        {
+          "itemId": "scp-series-721",
+          "titleJP": "Εργοστασιακά παιχνίδια"
+        },
+        {
+          "itemId": "scp-series-722",
+          "titleJP": "Jörmungandr"
+        },
+        {
+          "itemId": "scp-series-723",
+          "titleJP": "Σκάλα γήρανσης"
+        },
+        {
+          "itemId": "scp-series-725",
+          "titleJP": "Επαναλαμβανόμενη φάλαινα"
+        },
+        {
+          "itemId": "scp-series-727",
+          "titleJP": "Το σιδηρουργείο του Ηφαίστου"
+        },
+        {
+          "itemId": "scp-series-728",
+          "titleJP": "Το αιώνιο δωμάτιο"
+        },
+        {
+          "itemId": "scp-series-729",
+          "titleJP": "Μαρμαρένια μπανιέρα"
+        },
+        {
+          "itemId": "scp-series-730",
+          "titleJP": "Αποεγκεφαλικός ιός"
+        },
+        {
+          "itemId": "scp-series-733",
+          "titleJP": "Ένα ψαλίδι"
+        },
+        {
+          "itemId": "scp-series-736",
+          "titleJP": "Η ανωμαλία του Ιαπετού"
+        },
+        {
+          "itemId": "scp-series-737",
+          "titleJP": "Πεινασμένο τρένο"
+        },
+        {
+          "itemId": "scp-series-739",
+          "titleJP": "Κατοπτριζόμενος θάλαμος"
+        },
+        {
+          "itemId": "scp-series-740",
+          "titleJP": "Η φωτογραφία του Χίντενμπουργκ"
+        },
+        {
+          "itemId": "scp-series-741",
+          "titleJP": "Μυστηριώδες ρωσικό υποβρύχιο"
+        },
+        {
+          "itemId": "scp-series-742",
+          "titleJP": "Ρετροϊός"
+        },
+        {
+          "itemId": "scp-series-743",
+          "titleJP": "Ένα σιντριβάνι σοκολάτας"
+        },
+        {
+          "itemId": "scp-series-744",
+          "titleJP": "Απαιτείται συναρμολόγηση"
+        },
+        {
+          "itemId": "scp-series-745",
+          "titleJP": "Οι προβολείς"
+        },
+        {
+          "itemId": "scp-series-746",
+          "titleJP": "Ψευδο-Πτηνό"
+        },
+        {
+          "itemId": "scp-series-747",
+          "titleJP": "Παιδιά και κούκλες"
+        },
+        {
+          "itemId": "scp-series-748",
+          "titleJP": "Βιομηχανική διάλυση"
+        },
+        {
+          "itemId": "scp-series-749",
+          "titleJP": "Σταγόνες βροχής"
+        },
+        {
+          "itemId": "scp-series-752",
+          "titleJP": "Αλτρουιστική ουτοπία"
+        },
+        {
+          "itemId": "scp-series-753",
+          "titleJP": "Αυτόματος Καλλιτέχνης"
+        },
+        {
+          "itemId": "scp-series-754",
+          "titleJP": "Εικονογραφημένο αναρριχώμενο αμπέλι"
+        },
+        {
+          "itemId": "scp-series-755",
+          "titleJP": "\"Προσέξτε το λευκό πουλί.\""
+        },
+        {
+          "itemId": "scp-series-756",
+          "titleJP": "Μινιατούρα ηλιακού συστήματος"
+        },
+        {
+          "itemId": "scp-series-757",
+          "titleJP": "Το Φρουτόδεντρο"
+        },
+        {
+          "itemId": "scp-series-761",
+          "titleJP": "Ένα τραμπολίνο που είναι λίγο επικίνδυνο"
+        },
+        {
+          "itemId": "scp-series-762",
+          "titleJP": "Αθάνατη σιδηρά παρθένος"
+        },
+        {
+          "itemId": "scp-series-765",
+          "titleJP": "Λίμνη πάπιων"
+        },
+        {
+          "itemId": "scp-series-766",
+          "titleJP": "Ανθρωποειδή ανωμαλία στο Διάστημα"
+        },
+        {
+          "itemId": "scp-series-767",
+          "titleJP": "Φωτογραφίες σκηνών εγκλήματος"
+        },
+        {
+          "itemId": "scp-series-768",
+          "titleJP": "Ξυπνητήρι μεγάλης εμβέλειας"
+        },
+        {
+          "itemId": "scp-series-769",
+          "titleJP": "Αρχαία εγκυκλοπαίδεια"
+        },
+        {
+          "itemId": "scp-series-770",
+          "titleJP": "Πυρηνική μούχλα"
+        },
+        {
+          "itemId": "scp-series-771",
+          "titleJP": "Αυτοεπιδιορθούμενη βιολογική τεχνητή νοημοσύνη"
+        },
+        {
+          "itemId": "scp-series-773",
+          "titleJP": "Βουντού Βελάκια"
+        },
+        {
+          "itemId": "scp-series-774",
+          "titleJP": "Σφυρίζοντα οστά"
+        },
+        {
+          "itemId": "scp-series-775",
+          "titleJP": "Πεινασμένα τσιμπούρια"
+        },
+        {
+          "itemId": "scp-series-776",
+          "titleJP": "Λατρεία της νεολαίας"
+        },
+        {
+          "itemId": "scp-series-777",
+          "titleJP": "Βασίλειο της άμμου"
+        },
+        {
+          "itemId": "scp-series-778",
+          "titleJP": "Καταρράκτες του Παραδείσου"
+        },
+        {
+          "itemId": "scp-series-779",
+          "titleJP": "Brownies"
+        },
+        {
+          "itemId": "scp-series-780",
+          "titleJP": "Χάντρα σπόρου"
+        },
+        {
+          "itemId": "scp-series-781",
+          "titleJP": "Ανυποψίαστος διαμορφωτής ονείρων"
+        },
+        {
+          "itemId": "scp-series-785",
+          "titleJP": "Μια αλυσίδα εστιατορίων"
+        },
+        {
+          "itemId": "scp-series-786",
+          "titleJP": "Παράγοντας χωνιού δώδεκα"
+        },
+        {
+          "itemId": "scp-series-788",
+          "titleJP": "Κυπρίνος του μάγματος"
+        },
+        {
+          "itemId": "scp-series-790",
+          "titleJP": "Αίμα?"
+        },
+        {
+          "itemId": "scp-series-791",
+          "titleJP": "Σφαίρα νερού"
+        },
+        {
+          "itemId": "scp-series-792",
+          "titleJP": "Η φάρμα πτωμάτων"
+        },
+        {
+          "itemId": "scp-series-794",
+          "titleJP": "Ναυάγιο της ερήμου"
+        },
+        {
+          "itemId": "scp-series-795",
+          "titleJP": "Γάτα που δαμάζει την πραγματικότητα"
+        },
+        {
+          "itemId": "scp-series-796",
+          "titleJP": "Γάτα του ποταμού"
+        },
+        {
+          "itemId": "scp-series-799",
+          "titleJP": "Σαρκοφάγα κουβέρτα"
+        },
+        {
+          "itemId": "scp-series-801",
+          "titleJP": "Επτά γούνες"
+        },
+        {
+          "itemId": "scp-series-802",
+          "titleJP": "Μουσικό τανκ"
+        },
+        {
+          "itemId": "scp-series-803",
+          "titleJP": "Αρπακτικές ομπρέλες"
+        },
+        {
+          "itemId": "scp-series-804",
+          "titleJP": "Κόσμος χωρίς ανθρώπους"
+        },
+        {
+          "itemId": "scp-series-805",
+          "titleJP": "Πουλάρι δηλητηριασμένου ξύλου"
+        },
+        {
+          "itemId": "scp-series-806",
+          "titleJP": "Προβολή Αναβίωσης"
+        },
+        {
+          "itemId": "scp-series-807",
+          "titleJP": "Ανακοπή καρδιάς στο πιάτο"
+        },
+        {
+          "itemId": "scp-series-809",
+          "titleJP": "Μπότες πολεμικές"
+        },
+        {
+          "itemId": "scp-series-810",
+          "titleJP": "Η λάμπα \"Ποτέ-δεν-θέλω\""
+        },
+        {
+          "itemId": "scp-series-811",
+          "titleJP": "Γυναίκα του βάλτου"
+        },
+        {
+          "itemId": "scp-series-812",
+          "titleJP": "Ένα κουτί με ποτάμι"
+        },
+        {
+          "itemId": "scp-series-814",
+          "titleJP": "Καθαρός τόνος"
+        },
+        {
+          "itemId": "scp-series-815",
+          "titleJP": "Φιδίσια κονσέρβα ξηρών καρπών"
+        },
+        {
+          "itemId": "scp-series-819",
+          "titleJP": "Ζωτικά γλειφιτζούρια"
+        },
+        {
+          "itemId": "scp-series-820",
+          "titleJP": "Las Langostas Pintadas"
+        },
+        {
+          "itemId": "scp-series-821",
+          "titleJP": "Dixie Funland"
+        },
+        {
+          "itemId": "scp-series-822",
+          "titleJP": "Κάκτοι ναρκών"
+        },
+        {
+          "itemId": "scp-series-825",
+          "titleJP": "Κράνος ενοχλητικών οραμάτων"
+        },
+        {
+          "itemId": "scp-series-826",
+          "titleJP": "Σε παρασύρει στο βιβλίο"
+        },
+        {
+          "itemId": "scp-series-827",
+          "titleJP": "Η σούπα"
+        },
+        {
+          "itemId": "scp-series-829",
+          "titleJP": "Αιμοδιψής βερνίκι νυχιών"
+        },
+        {
+          "itemId": "scp-series-830",
+          "titleJP": "Υγρή κινούμενη άμμο"
+        },
+        {
+          "itemId": "scp-series-831",
+          "titleJP": "Tinkerbug"
+        },
+        {
+          "itemId": "scp-series-832",
+          "titleJP": "Το νόμισμα του λογιστή"
+        },
+        {
+          "itemId": "scp-series-833",
+          "titleJP": "Σκουλήκια φιλανθρωπίας"
+        },
+        {
+          "itemId": "scp-series-834",
+          "titleJP": "Μαρκαρισμένο"
+        },
+        {
+          "itemId": "scp-series-836",
+          "titleJP": "Δομικός καρκίνος"
+        },
+        {
+          "itemId": "scp-series-837",
+          "titleJP": "Πολλαπλασιαζόμενος πηλός"
+        },
+        {
+          "itemId": "scp-series-838",
+          "titleJP": "Η δουλειά των ονείρων"
+        },
+        {
+          "itemId": "scp-series-839",
+          "titleJP": "Καραμελωμένα σκουλήκια"
+        },
+        {
+          "itemId": "scp-series-840",
+          "titleJP": "Τροφοδότης αποστράγγισης"
+        },
+        {
+          "itemId": "scp-series-841",
+          "titleJP": "Αντίστροφη ξύλινη μαριονέτα βουντού"
+        },
+        {
+          "itemId": "scp-series-842",
+          "titleJP": "Τραπέζι χειρουργικής επέμβασης"
+        },
+        {
+          "itemId": "scp-series-843",
+          "titleJP": "\"Σπόροι αγελάδων\""
+        },
+        {
+          "itemId": "scp-series-844",
+          "titleJP": "Crybaby"
+        },
+        {
+          "itemId": "scp-series-845",
+          "titleJP": "Υγρό κουνάβι"
+        },
+        {
+          "itemId": "scp-series-848",
+          "titleJP": "Δια-διαστατικός ιστός αράχνης"
+        },
+        {
+          "itemId": "scp-series-849",
+          "titleJP": "Μια τέλεια μέρα"
+        },
+        {
+          "itemId": "scp-series-850",
+          "titleJP": "Ομάδα ψαριών"
+        },
+        {
+          "itemId": "scp-series-851",
+          "titleJP": "Lullabugs"
+        },
+        {
+          "itemId": "scp-series-852",
+          "titleJP": "Σεληνιακή ανωμαλία"
+        },
+        {
+          "itemId": "scp-series-853",
+          "titleJP": "Καιρικές Συντηρήσεις"
+        },
+        {
+          "itemId": "scp-series-854",
+          "titleJP": "Γέφυρα ονείρων"
+        },
+        {
+          "itemId": "scp-series-855",
+          "titleJP": "Η αίθουσα ταινιών"
+        },
+        {
+          "itemId": "scp-series-856",
+          "titleJP": "Λιοπόταμος"
+        },
+        {
+          "itemId": "scp-series-857",
+          "titleJP": "Οικοσύστημα με βάση τον άνθρωπο"
+        },
+        {
+          "itemId": "scp-series-858",
+          "titleJP": "Το ουράνιο τόξο της βαρύτητας"
+        },
+        {
+          "itemId": "scp-series-859",
+          "titleJP": "Αραχνοφοβική σφαίρα"
+        },
+        {
+          "itemId": "scp-series-860",
+          "titleJP": "Μπλε Κλειδί"
+        },
+        {
+          "itemId": "scp-series-862",
+          "titleJP": "Αρουραίοι"
+        },
+        {
+          "itemId": "scp-series-863",
+          "titleJP": "Καβούρια ανακατεμένα"
+        },
+        {
+          "itemId": "scp-series-864",
+          "titleJP": "Αποτελεσματική λεκάνη"
+        },
+        {
+          "itemId": "scp-series-867",
+          "titleJP": "Ματωμένη ερυθρελάτη"
+        },
+        {
+          "itemId": "scp-series-870",
+          "titleJP": "Τα ίσως εκεί τέρατα"
+        },
+        {
+          "itemId": "scp-series-871",
+          "titleJP": "Το κέικ που αυτοαντικαθίσταται"
+        },
+        {
+          "itemId": "scp-series-872",
+          "titleJP": "Ο κουρελιασμένος αγρότης"
+        },
+        {
+          "itemId": "scp-series-873",
+          "titleJP": "Ρωσική κρυστάλλινη σφαίρα"
+        },
+        {
+          "itemId": "scp-series-874",
+          "titleJP": "Αβυσσαλέο υγρό"
+        },
+        {
+          "itemId": "scp-series-875",
+          "titleJP": "Εγκληματίες πολέμου"
+        },
+        {
+          "itemId": "scp-series-876",
+          "titleJP": "Χάπια μετατροπής στοιχείων"
+        },
+        {
+          "itemId": "scp-series-877",
+          "titleJP": "Πανεπιστημιακά μικροτσίπ"
+        },
+        {
+          "itemId": "scp-series-878",
+          "titleJP": "Ο ηθοποιός"
+        },
+        {
+          "itemId": "scp-series-880",
+          "titleJP": "Παγιδευμένος χειμώνας"
+        },
+        {
+          "itemId": "scp-series-881",
+          "titleJP": "Μικροί άνθρωποι"
+        },
+        {
+          "itemId": "scp-series-882",
+          "titleJP": "Μια μηχανή"
+        },
+        {
+          "itemId": "scp-series-883",
+          "titleJP": "Εξωδιαστατική κυψέλη"
+        },
+        {
+          "itemId": "scp-series-885",
+          "titleJP": "Ζωντανό κενό"
+        },
+        {
+          "itemId": "scp-series-888",
+          "titleJP": "Πέτρες μνήμης"
+        },
+        {
+          "itemId": "scp-series-890",
+          "titleJP": "Ο μηχανικός χειρουργός"
+        },
+        {
+          "itemId": "scp-series-891",
+          "titleJP": "Πεδίο της Καλιφόρνιας"
+        },
+        {
+          "itemId": "scp-series-894",
+          "titleJP": "Δεν μιλάω, δεν ακούω, δεν βλέπω."
+        },
+        {
+          "itemId": "scp-series-899",
+          "titleJP": "Χαμένα παιδιά"
+        },
+        {
+          "itemId": "scp-series-902",
+          "titleJP": "Η τελική αντίστροφη μέτρηση"
+        },
+        {
+          "itemId": "scp-series-904",
+          "titleJP": "Ένα σύντομο ποίημα"
+        },
+        {
+          "itemId": "scp-series-906",
+          "titleJP": "Κυψέλη που σαρώνει"
+        },
+        {
+          "itemId": "scp-series-907",
+          "titleJP": "Ένα όχημα εξερεύνησης"
+        },
+        {
+          "itemId": "scp-series-908",
+          "titleJP": "Βράχος συνεγκατάστασης"
+        },
+        {
+          "itemId": "scp-series-911",
+          "titleJP": "[ΧΩΡΙΣ ΠΡΟΣΒΑΣΗ]"
+        },
+        {
+          "itemId": "scp-series-912",
+          "titleJP": "[ΧΩΡΙΣ ΠΡΟΣΒΑΣΗ]"
+        },
+        {
+          "itemId": "scp-series-914",
+          "titleJP": "Τα μηχανικά"
+        },
+        {
+          "itemId": "scp-series-939",
+          "titleJP": "Με πολλές φωνές"
+        },
+        {
+          "itemId": "scp-series-948",
+          "titleJP": "Ο εργασιομανής"
+        },
+        {
+          "itemId": "scp-series-966",
+          "titleJP": "Δολοφόνος ύπνου"
+        },
+        {
+          "itemId": "scp-series-999",
+          "titleJP": "Το γαργαλητό τέρας"
+        },
+        {
+          "itemId": "scp-series-1010",
+          "titleJP": "Ο πράσινος άνδρας"
+        },
+        {
+          "itemId": "scp-series-1048",
+          "titleJP": "Οικοδόμος Αρκούδα"
+        },
+        {
+          "itemId": "scp-series-1151",
+          "titleJP": "Ένας πρακτικός μαρκαδόρος"
+        },
+        {
+          "itemId": "scp-series-1173",
+          "titleJP": "Ισλαμική Δημοκρατία της Ανατολικής Σαμοθράκης"
+        },
+        {
+          "itemId": "scp-series-1471",
+          "titleJP": "MalO ver1.0.0"
+        },
+        {
+          "itemId": "scp-series-1545",
+          "titleJP": "Larry το Loving Llama"
+        },
+        {
+          "itemId": "scp-series-1678",
+          "titleJP": "UnLondon"
+        }
+      ],
+      "attempts": 1,
+      "status": "sending",
+      "startedAt": "2026-11-10T20:08:06.913Z"
     }
   ]
 }
