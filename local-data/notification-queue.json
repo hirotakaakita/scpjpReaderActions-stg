@@ -106,77 +106,8 @@
       "lastSentWindow": "2026-11-08"
     },
     "ro": {
-      "items": [
-        {
-          "itemId": "scp-series-ro-001",
-          "titleJP": "În Așteptarea Clasificării [Blocate]"
-        },
-        {
-          "itemId": "scp-series-ro-004",
-          "titleJP": "Totul este mai frumos la Realitatea virtuală"
-        },
-        {
-          "itemId": "scp-series-ro-006",
-          "titleJP": "LaughCoin"
-        },
-        {
-          "itemId": "scp-series-001",
-          "titleJP": "În așteptarea Declasificării [Blocat]"
-        },
-        {
-          "itemId": "scp-series-002",
-          "titleJP": "Camera Vie"
-        },
-        {
-          "itemId": "scp-series-003",
-          "titleJP": "Placă de bază biologică"
-        },
-        {
-          "itemId": "scp-series-004",
-          "titleJP": "Cele 12 Chei Ruginite și Ușa"
-        },
-        {
-          "itemId": "scp-series-005",
-          "titleJP": "Cheia universală"
-        },
-        {
-          "itemId": "scp-series-006",
-          "titleJP": "Fântâna tinereții"
-        },
-        {
-          "itemId": "scp-series-007",
-          "titleJP": "Planeta abdominală"
-        },
-        {
-          "itemId": "scp-series-008",
-          "titleJP": "Prionul Zombi"
-        },
-        {
-          "itemId": "scp-series-012",
-          "titleJP": "O Compoziție Proastă"
-        },
-        {
-          "itemId": "scp-series-096",
-          "titleJP": "„Tipul Timid”"
-        },
-        {
-          "itemId": "scp-series-173",
-          "titleJP": "Sculptura - Originalul"
-        },
-        {
-          "itemId": "scp-series-409",
-          "titleJP": "Cristalul Contagios"
-        },
-        {
-          "itemId": "scp-series-500",
-          "titleJP": "Panacea"
-        },
-        {
-          "itemId": "scp-series-871",
-          "titleJP": "Tort cu Auto-Replicare"
-        }
-      ],
-      "lastSentWindow": null
+      "items": [],
+      "lastSentWindow": "2026-11-08"
     },
     "sga": {
       "items": [
