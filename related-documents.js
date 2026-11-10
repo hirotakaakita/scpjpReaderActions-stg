@@ -205,7 +205,7 @@ function classify(url, records, catalogByUrl, visited = new Set()) {
   const branches = [...new Set(entries.map(e => branchOfType(e.pageType)).filter(Boolean))];
   if (branches.length === 1) return { branch: branches[0], basis: 'catalog_page_type', evidence: entries.map(e => ({ itemId: e.itemId, pageType: e.pageType })) };
   if (branches.length > 1) return { branch: null, basis: 'conflicting_catalog_types', evidence: branches };
-  const r = records.get(url), known = new Set(['en', 'zh', 'nd', ...Object.keys(LANGUAGES)]);
+  const r = records.get(url), known = new Set(['en', 'zh', 'nd', ...Object.keys(LANGUAGES), ...Object.keys(require('./additional-origins.json'))]);
   const { origins: tags, unsupported, conflicts } = publisherOriginTags(url, r);
   if (conflicts.length) return {branch:null,basis:'conflicting_origin_tags',evidence:conflicts};
   if (unsupported.length) return {branch:null,basis:'unsupported_origin_tag',evidence:unsupported};

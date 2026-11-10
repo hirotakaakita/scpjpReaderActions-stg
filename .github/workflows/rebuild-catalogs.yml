@@ -1,0 +1,42 @@
+name: Rebuild STG catalogs
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    if: github.repository == 'hirotakaakita/scpjpReaderActions-stg' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    environment: stg
+    timeout-minutes: 20
+    concurrency:
+      group: scp-data-update
+      cancel-in-progress: false
+      queue: max
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: master
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: node --test
+      - run: node merge-catalog-indexes.js
+      - run: node validate-catalog-indexes.js
+      - run: node validate-staging-catalogs.js
+      - run: node mobile-catalog.js
+      - run: node research-board/validate.js
+      - name: Commit regenerated staging catalogs
+        run: |
+          git config user.name 'SCP Crawler Bot'
+          git config user.email 'scp-crawler@github-actions.bot'
+          git add local-data/
+          if ! git diff --staged --quiet; then
+            git commit -m "Rebuild STG article classifications - $(date -u +%Y%m%d%H%M%S)"
+            git push origin master
+          fi
