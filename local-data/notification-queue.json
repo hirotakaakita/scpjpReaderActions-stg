@@ -78,37 +78,8 @@
       "lastSentWindow": "2026-11-08"
     },
     "da": {
-      "items": [
-        {
-          "itemId": "scp-series-nd-001",
-          "titleJP": "Indtil publikation [Blokeret]"
-        },
-        {
-          "itemId": "scp-series-nd-004",
-          "titleJP": "Indhold: Ukendt"
-        },
-        {
-          "itemId": "scp-series-001",
-          "titleJP": "Afventer afklassificering [Blokeret]"
-        },
-        {
-          "itemId": "scp-series-002",
-          "titleJP": "Det \"levende\" rum"
-        },
-        {
-          "itemId": "scp-series-003",
-          "titleJP": "Biologiskt moderkort"
-        },
-        {
-          "itemId": "scp-series-037",
-          "titleJP": "Dværgstjerne"
-        },
-        {
-          "itemId": "scp-series-173",
-          "titleJP": "Skulpturen -"
-        }
-      ],
-      "lastSentWindow": null
+      "items": [],
+      "lastSentWindow": "2026-11-08"
     },
     "el": {
       "items": [
