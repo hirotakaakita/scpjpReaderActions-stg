@@ -1,13 +1,13 @@
 {
   "totalCount": 348,
   "language": "tr",
-  "timestamp": "2026-11-10T00:49:33.025Z",
+  "timestamp": "2026-11-11T13:06:32.673Z",
   "duration": 201,
   "status": "completed",
   "statistics": {
     "translated": 348,
     "untranslated": 0,
-    "withImage": 145
+    "withImage": 147
   },
   "data": [
     {
@@ -815,7 +815,7 @@
       "titleJP": "B\u0131\u00e7akl\u0131 Ceset",
       "urlEN": "https://scp-wiki.wikidot.com/scp-tr-072",
       "urlJP": "https://scpvakfi.wikidot.com/scp-tr-072",
-      "imageUrl": null,
+      "imageUrl": "http://scpvakfi.wdfiles.com/local--files/scp-tr-072/SCP-TR-072",
       "objectClass": null,
       "rating": 4,
       "descriptionExcerpt": "SCP-TR-072, kafas\u0131 ve elleri olmayan bir insand\u0131r. Elleri ve kafas\u0131 anormal bir \u015fekilde yoktur. Elleri ve kafas\u0131 sanki kopar\u0131lm\u0131\u015f ve kesilmi\u015f gibidir. SCP-TR-072'nin bu k\u0131s\u0131mlar\u0131 do\u011fu\u015ftand\u0131r. Fakat hi\u00e7bir h\u00fccre oradaki dokuyu onarmaz ve kan p\u0131ht\u0131la\u015fmaz. Bu k\u0131s\u0131mdan kan s\u00fcrekli akar. Akan kan tam p\u0131ht\u0131la\u015fmayacak \u015fekilde akmaya devam eder. Bu k\u0131s\u0131mlar hi\u00e7bir zaman kabuk tutmaz. SCP-TR-072'nin nas\u0131l ya\u015fam\u0131n\u0131 s\u00fcrd\u00fcrebildi\u011fi bilinmiyor. Yemek yeme, nefes alma, merkezi sinir sistemi, g\u00f6rme, duyma, kok",
@@ -829,11 +829,12 @@
       "extractedFrom": "scp-series-tr",
       "pageType": "scp-series-tr",
       "contentType": "scp",
-      "lastUpdated": "2026-11-10T00:40:12.918Z",
+      "lastUpdated": "2026-11-11T13:06:32.673Z",
       "createdAt": "2026-11-10T00:40:12.918Z",
       "translatedLanguages": [
         "tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T13:06:32.673Z"
     },
     {
       "itemId": "scp-series-tr-075",
@@ -1061,7 +1062,7 @@
       "titleJP": "\u00c7am D\u00fcnyas\u0131",
       "urlEN": "https://scp-wiki.wikidot.com/scp-tr-092",
       "urlJP": "https://scpvakfi.wikidot.com/scp-tr-092",
-      "imageUrl": null,
+      "imageUrl": "http://scpvakfi.wdfiles.com/local--files/scp-tr-092/SCP-TR-092",
       "objectClass": "Safe",
       "rating": 6,
       "descriptionExcerpt": "SCP-TR-092 d\u0131\u015f g\u00f6r\u00fcn\u00fc\u015f olarak f\u0131st\u0131k \u00e7am kozala\u011f\u0131d\u0131r. Bunu ondan farkl\u0131 k\u0131lan tek \u00f6zelli\u011fi i\u00e7inde f\u0131st\u0131k bulunmamas\u0131d\u0131r. SCP-TR-092 dokunuldu\u011funda ya da neden oldu\u011fu \u00e7\u00f6z\u00fclememi\u015f baz\u0131 zamanlarda de\u011fi\u015fim ge\u00e7irir. Bu de\u011fi\u015fimi sadece \u00e7ok kuvvetli asitlerin engel oldu\u011fu tespit edilmi\u015ftir. Bu duruma en uygun asit 10% deri\u015fiminde 0.5 pH'taki hidroklorik asittir. SCP-TR-092'nin bu de\u011fi\u015fimi esnas\u0131nda SCP-TR-092-1 ve SCP-TR-092-2'ler olu\u015fur.\n\n\n\nSCP-TR-092-2 uyuyor iken\n\n\nSCP-TR-092 de\u011fi\u015fim ge\u00e7irdi\u011finde et",
@@ -1077,11 +1078,12 @@
       "extractedFrom": "scp-series-tr",
       "pageType": "scp-series-tr",
       "contentType": "scp",
-      "lastUpdated": "2026-11-10T00:40:12.918Z",
+      "lastUpdated": "2026-11-11T13:06:32.673Z",
       "createdAt": "2026-11-10T00:40:12.918Z",
       "translatedLanguages": [
         "tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T13:06:32.673Z"
     },
     {
       "itemId": "scp-series-tr-097",

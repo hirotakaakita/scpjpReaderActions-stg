@@ -1,13 +1,13 @@
 {
   "totalCount": 2905,
   "language": "de",
-  "timestamp": "2026-11-11T12:43:28.747Z",
+  "timestamp": "2026-11-11T13:06:32.673Z",
   "duration": 1856,
   "status": "completed",
   "statistics": {
     "translated": 2905,
     "untranslated": 0,
-    "withImage": 997
+    "withImage": 998
   },
   "data": [
     {
@@ -85991,7 +85991,7 @@
       "titleJP": "Das rote Messer",
       "urlEN": "http://scp-wiki.wikidot.com/scp-3041",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-3041",
-      "imageUrl": null,
+      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-3041/redknife.JPG",
       "objectClass": "Sicher",
       "rating": 1,
       "descriptionExcerpt": "SCP-3041 ist ein 12 Zentimeter langes Eisenmesser unbekannter Herkunft mit einem in geflochtenes Leder gewickelten Heft. Radiometrische Datierungen liefern uneindeutige Ergebnisse hinsichtlich des Alters der Klinge, deuten jedoch darauf hin, dass das Heft in den vergangenen zwei Jahrhunderten angebracht wurde. Die Oberfl\u00e4che des Messers ist rostfarben und verstr\u00f6mt den Geruch von verdorbenem Fleisch. Trotz umfassender Analysen konnte die Ursache dieses Geruchs bisher nicht ermittelt werden.\nSCP-",
@@ -86016,7 +86016,7 @@
       "extractedFrom": "scp-series-4",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:10:15.860Z",
+      "lastUpdated": "2026-11-11T13:06:32.673Z",
       "createdAt": "2026-08-01T08:27:45.454Z",
       "translatedLanguages": [
         "jp",
@@ -86033,7 +86033,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T13:06:32.673Z"
     },
     {
       "itemId": "scp-series-3073",

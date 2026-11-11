@@ -1,13 +1,13 @@
 {
   "totalCount": 2324,
   "language": "vn",
-  "timestamp": "2026-11-11T12:43:28.747Z",
+  "timestamp": "2026-11-11T13:06:32.673Z",
   "duration": 1657,
   "status": "completed",
   "statistics": {
     "translated": 2324,
     "untranslated": 0,
-    "withImage": 1301
+    "withImage": 1302
   },
   "data": [
     {
@@ -41244,7 +41244,7 @@
       "titleJP": "Con Dao \u0110\u1ecf",
       "urlEN": "https://scp-wiki.wikidot.com/scp-3041",
       "urlJP": "https://scp-vn.wikidot.com/scp-3041",
-      "imageUrl": null,
+      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-3041/redknife.JPG",
       "objectClass": "Safe",
       "rating": 7,
       "descriptionExcerpt": "SCP-3041 l\u00e0 m\u1ed9t con dao s\u1eaft c\u00f3 chi\u1ec1u d\u00e0i 12 cm kh\u00f4ng r\u00f5 ngu\u1ed3n g\u1ed1c v\u00e0 c\u00f3 tay c\u1ea7m b\u1ecdc trong m\u1ed9t l\u1edbp da b\u1ec7n. Ph\u00e2n t\u00edch ph\u00f3ng x\u1ea1 kh\u00f4ng cho k\u1ebft qu\u1ea3 thuy\u1ebft ph\u1ee5c v\u1ec1 ni\u00ean hi\u1ec7u c\u1ee7a l\u01b0\u1ee1i dao, nh\u01b0ng cho th\u1ea5y tay c\u1ea7m \u0111\u00e3 \u0111\u01b0\u1ee3c l\u1eafp v\u00e0o trong kho\u1ea3ng hai th\u1ebf k\u1ef7 qua. B\u1ec1 m\u1eb7t l\u01b0\u1ee1i dao b\u1ecb r\u1ec9 s\u00e9t v\u00e0 c\u00f3 m\u00f9i th\u1ecbt ph\u00e2n h\u1ee7y. M\u1eb7c d\u00f9 \u0111\u00e3 ph\u00e2n t\u00edch k\u0129 c\u00e0ng nh\u01b0ng ngu\u1ed3n g\u1ed1c c\u1ee7a m\u00f9i n\u00e0y v\u1eabn ch\u01b0a \u0111\u01b0\u1ee3c x\u00e1c \u0111\u1ecbnh.\nSCP-3041 th\u1ec3 hi\u1ec7n \u0111\u1eb7c t\u00ednh b\u1ea5t th\u01b0\u1eddng c\u1ee7a n\u00f3 ch\u1ec9 khi n\u00f3 \u0111\u01b0\u1ee3c c\u1ea7m b\u1edfi m\u1ed9t sinh v\u1eadt c\u00f3 tr\u00ed kh\u00f4n trong m\u1ed9t kho\u1ea3ng th\u1eddi gia",
@@ -41267,7 +41267,7 @@
       "extractedFrom": "scp-series-4",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:15:34.729Z",
+      "lastUpdated": "2026-11-11T13:06:32.673Z",
       "createdAt": "2026-08-01T13:58:04.362Z",
       "translatedLanguages": [
         "jp",
@@ -41284,7 +41284,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T13:06:32.673Z"
     },
     {
       "itemId": "scp-series-3043",

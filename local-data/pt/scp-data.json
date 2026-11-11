@@ -1,13 +1,13 @@
 {
   "totalCount": 2165,
   "language": "pt",
-  "timestamp": "2026-11-11T12:43:28.747Z",
+  "timestamp": "2026-11-11T13:06:32.673Z",
   "duration": 1454,
   "status": "completed",
   "statistics": {
     "translated": 2165,
     "untranslated": 0,
-    "withImage": 980
+    "withImage": 981
   },
   "data": [
     {
@@ -60309,7 +60309,7 @@
       "titleJP": "A Faca Vermelha",
       "urlEN": "http://scp-wiki.wikidot.com/scp-3041",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-3041",
-      "imageUrl": null,
+      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-3041/redknife.JPG",
       "objectClass": "Seguro",
       "rating": 6,
       "descriptionExcerpt": null,
@@ -60334,7 +60334,7 @@
       "extractedFrom": "scp-series-4",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:11:54.779Z",
+      "lastUpdated": "2026-11-11T13:06:32.673Z",
       "createdAt": "2026-08-01T12:56:51.850Z",
       "translatedLanguages": [
         "jp",
@@ -60351,7 +60351,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T13:06:32.673Z"
     },
     {
       "itemId": "scp-series-3060",

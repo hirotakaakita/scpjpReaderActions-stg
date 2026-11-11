@@ -1,13 +1,13 @@
 {
   "totalCount": 1962,
   "language": "it",
-  "timestamp": "2026-11-11T12:43:28.747Z",
+  "timestamp": "2026-11-11T13:06:32.673Z",
   "duration": 1474,
   "status": "completed",
   "statistics": {
     "translated": 1962,
     "untranslated": 0,
-    "withImage": 789
+    "withImage": 791
   },
   "data": [
     {
@@ -56061,7 +56061,7 @@
       "titleJP": "Il Coltello Rosso",
       "urlEN": "http://scp-wiki.wikidot.com/scp-3041",
       "urlJP": "http://fondazionescp.wikidot.com/scp-3041",
-      "imageUrl": null,
+      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-3041/redknife.JPG",
       "objectClass": "Safe",
       "rating": 8,
       "descriptionExcerpt": "SCP-3041 \u00e8 un coltello di metallo lungo 12 cm di origine ignota e con il manico avvolto in cuoio intrecciato. I risultati della datazione radiometrica non sono riusciti a stabilire l\u2019et\u00e0 della lama, ma indicano che l\u2019elsa venne aggiunta negli ultimi due secoli. La superficie del coltello \u00e8 color ruggine e odora di carne putrefatta; nonostante un\u2019analisi approfondita, l\u2019origine di questo odore deve ancora essere determinata.\nSCP-3041 dimostra le sue propriet\u00e0 anomale solo quando \u00e8 tenuto in mano ",
@@ -56082,7 +56082,7 @@
       "extractedFrom": "scp-series-4",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:20:01.114Z",
+      "lastUpdated": "2026-11-11T13:06:32.673Z",
       "createdAt": "2026-08-01T11:09:09.643Z",
       "translatedLanguages": [
         "jp",
@@ -56099,7 +56099,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T13:06:32.673Z"
     },
     {
       "itemId": "scp-series-3043",
@@ -73337,7 +73338,7 @@
       "titleJP": "Un Luogo da Sogno",
       "urlEN": "http://scp-wiki.wikidot.com/scp-005-it",
       "urlJP": "http://fondazionescp.wikidot.com/scp-005-it",
-      "imageUrl": null,
+      "imageUrl": "http://fondazionescp.wdfiles.com/local--files/scp-005-it/005-IT-C",
       "objectClass": "Keter",
       "rating": 27,
       "descriptionExcerpt": "SCP-005-IT \u00e8 un agente memetico che manifesta, in coloro che lo osservano, un sogno formato da quattro livelli labirintici con entit\u00e0 ostili al loro interno. Ogni dato riguardante tali labirinti ed entit\u00e0 \u00e8 stato acquisito nel corso di vari test. La struttura di SCP-005-IT \u00e8 sempre uguale per ogni sognatore, ed a seconda delle azioni del soggetto si verificher\u00e0 una delle seguenti situazioni: se il soggetto riesce a trovare l'uscita egli passer\u00e0 al labirinto successivo secondo l'ordine C-E-T-R; u",
@@ -73360,11 +73361,12 @@
       "extractedFrom": "scp-it-serie-i",
       "pageType": "scp-series-it",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:25:52.883Z",
+      "lastUpdated": "2026-11-11T13:06:32.673Z",
       "createdAt": "2026-08-01T11:38:47.939Z",
       "translatedLanguages": [
         "it"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T13:06:32.673Z"
     },
     {
       "itemId": "scp-series-it-006",

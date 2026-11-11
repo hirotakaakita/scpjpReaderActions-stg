@@ -1,13 +1,13 @@
 {
   "totalCount": 16,
   "language": "nl",
-  "timestamp": "2026-11-10T00:49:33.025Z",
+  "timestamp": "2026-11-11T13:06:32.673Z",
   "duration": 9,
   "status": "completed",
   "statistics": {
     "translated": 16,
     "untranslated": 0,
-    "withImage": 11
+    "withImage": 12
   },
   "data": [
     {
@@ -468,7 +468,7 @@
       "titleJP": "De Dokter van de Pest",
       "urlEN": "https://scp-wiki.wikidot.com/scp-049",
       "urlJP": "https://scp-nl.wikidot.com/scp-049",
-      "imageUrl": null,
+      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-049/SCP-049D",
       "objectClass": null,
       "rating": null,
       "descriptionExcerpt": "SCP-049 is een humano\u00efde entiteit, ongeveer 1,9 meter hoog, die het uiterlijk heeft van een middeleeuwse pestdoctor/snaveldocter/pestarts. Terwijl de SCP-049 de dikke gewaden en het keramische masker lijkt te dragen dat een indicatie is van dat beroep, de kledingstukken lijken in de loop der tijd uit het lichaam van de SCP-049 te zijn gegroeid en zijn nu bijna niet te onderscheiden van welke vorm dan ook onder het bevindt. R\u00f6ntgenstralen geven aan dat SCP-049 desondanks een humano\u00efde skeletstruc",
@@ -479,7 +479,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-10T00:34:46.327Z",
+      "lastUpdated": "2026-11-11T13:06:32.673Z",
       "createdAt": "2026-11-10T00:34:46.327Z",
       "translatedLanguages": [
         "jp",
@@ -504,7 +504,8 @@
         "pig",
         "sl",
         "tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T13:06:32.673Z"
     },
     {
       "itemId": "scp-series-055",

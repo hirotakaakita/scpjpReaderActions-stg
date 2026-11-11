@@ -1,7 +1,7 @@
 {
   "totalCount": 4463,
   "language": "es",
-  "timestamp": "2026-11-11T12:43:28.747Z",
+  "timestamp": "2026-11-11T13:06:32.673Z",
   "duration": 3060,
   "status": "completed",
   "statistics": {
@@ -48165,7 +48165,7 @@
       "titleJP": "Un Grito de Ayuda",
       "urlEN": "http://scp-wiki.wikidot.com/scp-1142",
       "urlJP": "http://lafundacionscp.wikidot.com/scp-1142",
-      "imageUrl": null,
+      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-1142/goliath.png",
       "objectClass": "Seguro",
       "rating": 6,
       "descriptionExcerpt": "SCP-1142 es una mina sobre orugas Goliath (de designaci\u00f3n original Leichter Ladungstr\u00e4ger Goliath (Sd.Kfz. 303b)) como las que us\u00f3 la Wehrmacht alemana durante la Segunda Guerra Mundial. SCP-1142 no muestra signos de envejecimiento y, aunque originalmente fue dise\u00f1ado para transportar una carga explosiva, contiene un receptor de radio Kw.E.a de la Wehrmacht enormemente modificado dentro de su carcasa. Los componentes modificados tienen un dise\u00f1o y una complejidad incompatibles con el nivel de la",
@@ -48185,7 +48185,7 @@
       "extractedFrom": "scp-series-2",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-11T12:43:28.747Z",
+      "lastUpdated": "2026-11-11T13:06:32.673Z",
       "createdAt": "2026-08-01T09:12:13.487Z",
       "translatedLanguages": [
         "jp",
@@ -48199,7 +48199,7 @@
         "pl",
         "th"
       ],
-      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
+      "imageCheckedAt": "2026-11-11T13:06:32.673Z"
     },
     {
       "itemId": "scp-series-1143",
@@ -49374,7 +49374,7 @@
       "titleJP": "La Rep\u00fablica Isl\u00e1mica de Samotracia Oriental",
       "urlEN": "http://scp-wiki.wikidot.com/scp-1173",
       "urlJP": "http://lafundacionscp.wikidot.com/scp-1173",
-      "imageUrl": "http://lafundacionscp.wdfiles.com/local--files/fragment:scp-1173-1/sq11-06.jpg",
+      "imageUrl": null,
       "objectClass": "Euclid",
       "rating": 14,
       "descriptionExcerpt": "SCP-1173 es un fen\u00f3meno mem\u00e9tico relacionado con el cuerpo pol\u00edtico de la Rep\u00fablica Isl\u00e1mica de Samotracia Oriental (\u0399\u03c3\u03bb\u03b1\u03bc\u03b9\u03ba\u03ae \u0394\u03b7\u03bc\u03bf\u03ba\u03c1\u03b1\u03c4\u03af\u03b1 \u03c4\u03b7\u03c2 \u0391\u03bd\u03b1\u03c4\u03bf\u03bb\u03b9\u03ba\u03ae\u03c2 \u03a3\u03b1\u03bc\u03bf\u03b8\u03c1\u03ac\u03ba\u03b7\u03c2, o IDAS), actualmente el gobierno reconocido del \u00e1rea es conocido como Samotracia Oriental e Islas Asociadas. La naci\u00f3n greco parlante, centrada en una peque\u00f1o enclave de la pen\u00ednsula de Anatolia y una serie de islas en el noreste del mar Egeo, es una regi\u00f3n pobre conocida anteriormente por sus valiosas ciudades portuarias. La mayor pa",
@@ -49392,7 +49392,7 @@
       "extractedFrom": "scp-series-2",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:15:51.637Z",
+      "lastUpdated": "2026-11-11T13:06:32.673Z",
       "createdAt": "2026-08-01T09:12:13.487Z",
       "translatedLanguages": [
         "jp",
@@ -49409,7 +49409,8 @@
         "el",
         "hu",
         "tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T13:06:32.673Z"
     },
     {
       "itemId": "scp-series-1174",

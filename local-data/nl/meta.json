@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-10T00:49:33.025Z",
+  "lastUpdated": "2026-11-11T13:06:32.673Z",
   "language": "nl",
   "totalCount": 16,
   "status": "completed",
@@ -7,7 +7,7 @@
   "statistics": {
     "translated": 16,
     "untranslated": 0,
-    "withImage": 11
+    "withImage": 12
   },
   "dataFile": "scp-data.json",
   "tagSchemaVersion": 2

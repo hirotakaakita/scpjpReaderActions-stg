@@ -1,13 +1,13 @@
 {
   "totalCount": 6,
   "language": "sga",
-  "timestamp": "2026-11-10T00:49:26.482Z",
+  "timestamp": "2026-11-11T13:06:32.673Z",
   "duration": 5,
   "status": "completed",
   "statistics": {
     "translated": 6,
     "untranslated": 0,
-    "withImage": 1
+    "withImage": 4
   },
   "data": [
     {
@@ -16,7 +16,7 @@
       "titleJP": "\u1511\u2234\u1511\u254e\u2138 \u0323 \u254e\u30ea\u22a3 \u21b8\u14b7-\u14f5\ua58e\u1511\u14ed\u14ed\u254e\u2393\u254e\u14f5\u1511\u2138 \u0323 \u254e\ud835\ude79\u30ea [\u0296\ua58e\ud835\ude79\u14f5\ua58c\u14b7\u21b8]",
       "urlEN": "https://scp-wiki.wikidot.com/scp-sga-001",
       "urlJP": "https://scp-sga.wikidot.com/scp-sga-001",
-      "imageUrl": null,
+      "imageUrl": "http://scp-sga.wikidot.com/local--files/scp-sga-001/Memetic%20Kill%20Agent",
       "objectClass": null,
       "rating": null,
       "descriptionExcerpt": null,
@@ -29,11 +29,12 @@
       "extractedFrom": "scp-sga-series",
       "pageType": "scp-series-sga",
       "contentType": "scp",
-      "lastUpdated": "2026-11-10T00:37:08.206Z",
+      "lastUpdated": "2026-11-11T13:06:32.673Z",
       "createdAt": "2026-11-10T00:37:08.206Z",
       "translatedLanguages": [
         "sga"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T13:06:32.673Z"
     },
     {
       "itemId": "scp-series-sga-002",
@@ -87,7 +88,7 @@
       "titleJP": "\u14f5\ud835\ude79\u2234\u0296\ud835\ude79||\u14ed \u1511\u30ea\u21b8 \u14f5\u2351\u1511\ud835\ude79\u14ed.",
       "urlEN": "https://scp-wiki.wikidot.com/scp-sga-171",
       "urlJP": "https://scp-sga.wikidot.com/scp-sga-171",
-      "imageUrl": null,
+      "imageUrl": "http://scp-sga.wikidot.com/local--files/scp-sga-171/Texas%20Map",
       "objectClass": null,
       "rating": 2,
       "descriptionExcerpt": null,
@@ -98,11 +99,12 @@
       "extractedFrom": "scp-sga-series",
       "pageType": "scp-series-sga",
       "contentType": "scp",
-      "lastUpdated": "2026-11-10T00:37:08.206Z",
+      "lastUpdated": "2026-11-11T13:06:32.673Z",
       "createdAt": "2026-11-10T00:37:08.206Z",
       "translatedLanguages": [
         "sga"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T13:06:32.673Z"
     },
     {
       "itemId": "scp-series-001",
@@ -110,7 +112,7 @@
       "titleJP": "\u1511\u2234\u1511\u254e\u2138 \u0323 \u254e\u30ea\u22a3 \u21b8\u14b7-\u14f5\ua58e\u1511\u14ed\u14ed\u254e\u2393\u254e\u14f5\u1511\u2138 \u0323 \u254e\ud835\ude79\u30ea [\u0296\ua58e\ud835\ude79\u14f5\ua58c\u14b7\u21b8]",
       "urlEN": "https://scp-wiki.wikidot.com/scp-001",
       "urlJP": "https://scp-sga.wikidot.com/scp-001",
-      "imageUrl": null,
+      "imageUrl": "http://www.scp-wiki.net/local--files/scp-001/fractal001",
       "objectClass": null,
       "rating": null,
       "descriptionExcerpt": null,
@@ -124,7 +126,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-10T00:37:12.088Z",
+      "lastUpdated": "2026-11-11T13:06:32.673Z",
       "createdAt": "2026-11-10T00:37:12.088Z",
       "translatedLanguages": [
         "jp",
@@ -154,7 +156,8 @@
         "sl",
         "sv",
         "tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T13:06:32.673Z"
     },
     {
       "itemId": "scp-series-173",

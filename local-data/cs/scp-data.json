@@ -1,13 +1,13 @@
 {
   "totalCount": 1234,
   "language": "cs",
-  "timestamp": "2026-11-11T12:43:28.747Z",
+  "timestamp": "2026-11-11T13:06:32.673Z",
   "duration": 808,
   "status": "completed",
   "statistics": {
     "translated": 1234,
     "untranslated": 0,
-    "withImage": 556
+    "withImage": 557
   },
   "data": [
     {
@@ -28238,7 +28238,7 @@
       "titleJP": "Rud\u00fd N\u016f\u017e",
       "urlEN": "http://scp-wiki.wikidot.com/scp-3041",
       "urlJP": "http://scp-cs.wikidot.com/scp-3041",
-      "imageUrl": null,
+      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-3041/redknife.JPG",
       "objectClass": "Safe",
       "rating": 0,
       "descriptionExcerpt": "SCP-3041 je 12cm dlouh\u00fd \u017eelezn\u00fd n\u016f\u017e nezn\u00e1m\u00e9ho p\u016fvodu. Rukoje\u0165 je obalena v ko\u017een\u00e9m pletenci. Ur\u010den\u00ed st\u00e1\u0159\u00ed \u010depele radiometrick\u00fdm datov\u00e1n\u00edm bylo nepr\u016fkazn\u00e9, av\u0161ak indikuje, \u017ee rukoje\u0165 byla vytvo\u0159ena b\u011bhem posledn\u00edch 200 let. Povrch no\u017ee m\u00e1 rezavou barvu a je c\u00edtit po zka\u017een\u00e9m mase. Navzdory rozs\u00e1hl\u00e9 anal\u00fdze se nepoda\u0159ilo zjistit zdroj z\u00e1pachu.\nAnom\u00e1ln\u00ed vlastnosti SCP-3041 se projevuj\u00ed, pokud jej dr\u017e\u00ed uv\u011bdom\u011bl\u00e1 osoba po ur\u010ditou dobu. \u010casov\u00e1 prodleva nutn\u00e1 k aktivaci anom\u00e1ln\u00edch vlastnost\u00ed SCP-3041 s",
@@ -28259,7 +28259,7 @@
       "extractedFrom": "scp-series-4",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T02:55:37.911Z",
+      "lastUpdated": "2026-11-11T13:06:32.673Z",
       "createdAt": "2026-08-01T07:38:13.803Z",
       "translatedLanguages": [
         "jp",
@@ -28276,7 +28276,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T13:06:32.673Z"
     },
     {
       "itemId": "scp-series-3043",

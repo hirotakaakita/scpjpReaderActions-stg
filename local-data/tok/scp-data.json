@@ -1,13 +1,13 @@
 {
   "totalCount": 4,
   "language": "tok",
-  "timestamp": "2026-11-11T12:43:28.747Z",
+  "timestamp": "2026-11-11T13:06:32.673Z",
   "duration": 3,
   "status": "completed",
   "statistics": {
     "translated": 4,
     "untranslated": 0,
-    "withImage": 1
+    "withImage": 2
   },
   "data": [
     {
@@ -155,7 +155,7 @@
       "titleJP": "\udb86\udd11\udb86\udd90\udb86\udd14\udb86\udd9d\udb86\udd91",
       "urlEN": "https://scp-wiki.wikidot.com/scp-527",
       "urlJP": "https://scp-tok.wikidot.com/scp-527",
-      "imageUrl": null,
+      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-527/fish.png",
       "objectClass": null,
       "rating": 0,
       "descriptionExcerpt": null,
@@ -176,7 +176,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-11T12:43:28.747Z",
+      "lastUpdated": "2026-11-11T13:06:32.673Z",
       "createdAt": "2026-11-10T00:40:12.375Z",
       "translatedLanguages": [
         "jp",
@@ -201,7 +201,7 @@
         "tok",
         "tr"
       ],
-      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
+      "imageCheckedAt": "2026-11-11T13:06:32.673Z"
     }
   ],
   "tagSchemaVersion": 2

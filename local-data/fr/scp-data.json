@@ -1,13 +1,13 @@
 {
   "totalCount": 4137,
   "language": "fr",
-  "timestamp": "2026-11-11T12:43:28.747Z",
+  "timestamp": "2026-11-11T13:06:32.673Z",
   "duration": 3011,
   "status": "completed",
   "statistics": {
     "translated": 4137,
     "untranslated": 0,
-    "withImage": 1962
+    "withImage": 1963
   },
   "data": [
     {
@@ -48394,7 +48394,7 @@
       "titleJP": "Un appel \u00e0 l'aide",
       "urlEN": "http://scp-wiki.wikidot.com/scp-1142",
       "urlJP": "http://fondationscp.wikidot.com/scp-1142",
-      "imageUrl": null,
+      "imageUrl": "https://fondationscp.wdfiles.com/local--files/scp-1142/goliath.png",
       "objectClass": "S\u00fbr",
       "rating": 3,
       "descriptionExcerpt": "SCP-1142 est un engin explosif Goliath (d\u00e9signation originelle Leichter Ladungstr\u00e4ger Goliath (Sd.Kfz. 303b)) identique \u00e0 ceux employ\u00e9s par la Wehrmacht allemande au cours de la Seconde Guerre Mondiale. SCP-1142 ne pr\u00e9sente aucun signe d'usure et, bien qu'originellement construit afin de transporter une charge explosive, contient \u00e0 l'int\u00e9rieur de sa coque une version particuli\u00e8rement modifi\u00e9e d'un r\u00e9cepteur radio de type Kw.E.a de la Wehrmacht. Les composants modifi\u00e9s ont une conception et une c",
@@ -48413,7 +48413,7 @@
       "extractedFrom": "scp-series-2",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-11T12:43:28.747Z",
+      "lastUpdated": "2026-11-11T13:06:32.673Z",
       "createdAt": "2026-08-01T10:05:47.925Z",
       "translatedLanguages": [
         "jp",
@@ -48427,7 +48427,7 @@
         "pl",
         "th"
       ],
-      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
+      "imageCheckedAt": "2026-11-11T13:06:32.673Z"
     },
     {
       "itemId": "scp-series-1143",

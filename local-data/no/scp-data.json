@@ -1,13 +1,13 @@
 {
   "totalCount": 2,
   "language": "no",
-  "timestamp": "2026-11-10T00:49:26.482Z",
+  "timestamp": "2026-11-11T13:06:32.673Z",
   "duration": 2,
   "status": "completed",
   "statistics": {
     "translated": 2,
     "untranslated": 0,
-    "withImage": 1
+    "withImage": 2
   },
   "data": [
     {
@@ -16,7 +16,7 @@
       "titleJP": "Venter p\u00e5 offentliggj\u00f8ring [Blokkert]",
       "urlEN": "https://scp-wiki.wikidot.com/no:scp-001-nd",
       "urlJP": "https://scp-nd.wikidot.com/no:scp-001-nd",
-      "imageUrl": null,
+      "imageUrl": "https://i.kym-cdn.com/photos/images/newsfeed/001/475/324/52b",
       "objectClass": null,
       "rating": null,
       "descriptionExcerpt": null,
@@ -27,13 +27,14 @@
       "extractedFrom": "no:scp-series-nd",
       "pageType": "scp-series-nd",
       "contentType": "scp",
-      "lastUpdated": "2026-11-10T00:35:48.310Z",
+      "lastUpdated": "2026-11-11T13:06:32.673Z",
       "createdAt": "2026-11-10T00:35:48.310Z",
       "translatedLanguages": [
         "da",
         "no",
         "sv"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T13:06:32.673Z"
     },
     {
       "itemId": "scp-series-nd-007",
