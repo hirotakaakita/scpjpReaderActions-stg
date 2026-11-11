@@ -1,7 +1,7 @@
 {
   "totalCount": 9621,
   "language": "jp",
-  "timestamp": "2026-11-11T07:21:57.183Z",
+  "timestamp": "2026-11-11T07:34:17.574Z",
   "duration": 7425,
   "status": "completed",
   "statistics": {
@@ -335005,7 +335005,7 @@
       "titleJP": "\u3053\u3090\u306c",
       "urlEN": "http://scp-wiki.wikidot.com/scp-3168-jp-j",
       "urlJP": "http://scp-jp.wikidot.com/scp-3168-jp-j",
-      "imageUrl": "https://scp-jp.wdfiles.com/local--resized-images/scp-3168-jp-j/{$url}/medium.jpg",
+      "imageUrl": "https://scp-jp-storage.wdfiles.com/local--files/file%3A3705485-24-fin2/outdoor-puppy-dog-animal-pet-mammal-542273-pxhere.com.jpg",
       "objectClass": null,
       "rating": 159,
       "descriptionExcerpt": null,
@@ -335023,7 +335023,7 @@
       "extractedFrom": "joke-scps-jp",
       "pageType": "joke-scps-jp",
       "contentType": "scp",
-      "lastUpdated": "2026-11-11T07:21:57.183Z",
+      "lastUpdated": "2026-11-11T07:34:17.574Z",
       "createdAt": "2025-07-27T16:58:57.527Z",
       "translatedLanguages": [
         "jp"
