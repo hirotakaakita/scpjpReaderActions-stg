@@ -1,13 +1,13 @@
 {
   "totalCount": 2905,
   "language": "de",
-  "timestamp": "2026-11-10T00:49:26.482Z",
+  "timestamp": "2026-11-11T12:43:28.747Z",
   "duration": 1856,
   "status": "completed",
   "statistics": {
     "translated": 2905,
     "untranslated": 0,
-    "withImage": 1019
+    "withImage": 997
   },
   "data": [
     {
@@ -21053,7 +21053,7 @@
       "titleJP": "Traumf\u00e4ngerspinne",
       "urlEN": "http://scp-wiki.wikidot.com/scp-452",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-452",
-      "imageUrl": "http://scp-wiki-de.wdfiles.com/local--files/scp-452/scp452.jpg",
+      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-452/scp452.jpg",
       "objectClass": "Euclid",
       "rating": 1,
       "descriptionExcerpt": "SCP-452 ist eine Kolonie von Latrodectus hesperus (Westamerikanische Schwarze Witwe), die physisch nicht von normalen Spinnen ihrer Art zu unterscheiden ist. SCP-452 spinnt seine Netze bevorzugt in der N\u00e4he von Orten, an denen Menschen schlafen, und wenn es sich frei bewegen darf, versucht es, seinen Standort zu wechseln, wenn \u00fcber einen l\u00e4ngeren Zeitraum von mehr als einer Woche keine Menschen in der N\u00e4he seines Netzes schlafen.\nWenn ein schlafendes Subjekt im Umkreis von 5 Metern um ein SCP-45",
@@ -21074,7 +21074,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T02:49:19.054Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:22:58.033Z",
       "translatedLanguages": [
         "jp",
@@ -21088,7 +21088,8 @@
         "ru",
         "pt",
         "el"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-453",
@@ -32394,7 +32395,7 @@
       "titleJP": "Eine Schere",
       "urlEN": "http://scp-wiki.wikidot.com/scp-733",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-733",
-      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-300/AW-signature.png",
+      "imageUrl": null,
       "objectClass": "Sicher",
       "rating": 0,
       "descriptionExcerpt": "SCP-733-01 ist eine verschn\u00f6rkelte Silberschere, die offenbar um das Jahr 18\u2588\u2588 hergestellt wurde. Wenn sie benutzt wird, um [ZENSIERT AUF ANORDNUNG DES O5-RATES]\nBei seiner Entdeckung war SCP-733-01 zwischen die Seiten von SCP-733-02 gepresst, einem handgefertigten, in Leder gebundenen Buch mit etwa 80 Seiten. Die Seiten von SCP-733-02 enthalten 33 Schwarz-Wei\u00df-Fotos sowie 137 handschriftliche Textfragmente. Die Autoren des Textes in SCP-733-02 wurden als zwei nicht identifizierte Personen analy",
@@ -32413,7 +32414,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T02:49:19.054Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:22:58.033Z",
       "translatedLanguages": [
         "jp",
@@ -32428,7 +32429,8 @@
         "ua",
         "zh-tr",
         "el"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-734",
@@ -35607,7 +35609,7 @@
       "titleJP": "Dixie Fun Faire",
       "urlEN": "http://scp-wiki.wikidot.com/scp-821",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-821",
-      "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-821/Ride_at_the_Ohio_State_Fair_-_DPLA_-_1c37a42c1ed28e8f70f85160c201eca4.jpg",
+      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-821/When_old_New_York_was_young_%281902%29_%2814763437062%29.jpg",
       "objectClass": "Sicher (Neutralisiert ausstehend)",
       "rating": 0,
       "descriptionExcerpt": "SCP-821 ist das ehemalige Gel\u00e4nde des \"Dixie Fun Faire\",1 ein Vergn\u00fcgungspark, der haupts\u00e4chlich zwischen etwa 1954 und 1979 und erneut zwischen 2009 und 2014 in Betrieb war.\nSCP-821 besteht aus einer Reihe von Geb\u00e4uden und Einrichtungen, die um eine zentrale Jahrmarktmeile, Der Weg der K\u00fcnstler, angeordnet sind. Die Aufzeichnungen \u00fcber den Bau sind sp\u00e4rlich, da der Gro\u00dfteil der Bau- und Entwicklungsarbeiten informell und ohne Genehmigung der lokalen Beh\u00f6rden durchgef\u00fchrt wurde. Daher entspreche",
@@ -35630,7 +35632,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T02:49:19.054Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:22:58.033Z",
       "translatedLanguages": [
         "en",
@@ -35643,7 +35645,8 @@
         "th",
         "vn",
         "el"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-822",
@@ -37102,7 +37105,7 @@
       "titleJP": "Blutfichte",
       "urlEN": "http://scp-wiki.wikidot.com/scp-867",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-867",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--resized-images/scp-867/scp867.webp/medium.jpg",
+      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-867/scp867.webp",
       "objectClass": "Euclid",
       "rating": 0,
       "descriptionExcerpt": "SCP-867 ist eine Nadelbaumart, die optisch der Picea pungens, der Blaufichte, \u00e4hnelt, abgesehen von ihrer charakteristischen roten F\u00e4rbung und dem vollst\u00e4ndigen Fehlen von Samenzapfen in jedem Lebensstadium.\nDie Bl\u00e4tter von SCP-867 sind hohle Strukturen, die Injektionsnadeln \u00e4hneln und einen einzelnen langen, d\u00fcnnen Samen sowie eine winzige Gasblase an der Blattbasis enthalten. Wenn ein lebendes Tier die Bl\u00e4tter streift, wird die Gasblase entleert und der Samen mithilfe eines Mechanismus, der de",
@@ -37123,7 +37126,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T02:49:19.054Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:22:58.033Z",
       "translatedLanguages": [
         "jp",
@@ -37139,7 +37142,8 @@
         "pt",
         "vn",
         "el"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-868",
@@ -47753,7 +47757,7 @@
       "titleJP": "Die Islamische Republik Ost-Samothraki",
       "urlEN": "http://scp-wiki.wikidot.com/scp-1173",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-1173",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/fragment:scp-1173-1/sq11-06.jpg",
+      "imageUrl": null,
       "objectClass": "Euclid",
       "rating": 1,
       "descriptionExcerpt": "SCP-1173 ist ein memetisches Ph\u00e4nomen, das sich um einen wahnhaften Glauben an eine Politische Instanz dreht, die als die \"Islamische Union von Ost-Samothraki\", \"\u0399\u03c3\u03bb\u03b1\u03bc\u03b9\u03ba\u03ae \u0394\u03b7\u03bc\u03bf\u03ba\u03c1\u03b1\u03c4\u03af\u03b1 \u03c4\u03b7\u03c2 \u0391\u03bd\u03b1\u03c4\u03bf\u03bb\u03b9\u03ba\u03ae\u03c2 \u03a3\u03b1\u03bc\u03bf\u03b8\u03c1\u03ac\u03ba\u03b7\u03c2\" (im griechischen Original), oder IDAS bekannt ist. Betroffene Personen werden ein unterschiedliches Ma\u00df an Verst\u00e4ndnis oder Bewusstsein f\u00fcr die Geschichte oder Kultur der IDAS besitzen, aber Befragungen von Personen, die unter dem Einfluss von SCP-1173 stehen, haben mehrere Schl\u00fcsselmerkmal",
@@ -47773,7 +47777,7 @@
       "extractedFrom": "scp-series-2",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T02:58:38.178Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:25:18.821Z",
       "translatedLanguages": [
         "jp",
@@ -47790,7 +47794,8 @@
         "el",
         "hu",
         "tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-1174",
@@ -49946,7 +49951,7 @@
       "titleJP": "Ein Foundation-Forscher macht Tests",
       "urlEN": "http://scp-wiki.wikidot.com/scp-1229",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-1229",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--resized-images/scp-1229/1229.jpeg/medium.jpg",
+      "imageUrl": "https://firedawnfolder.wdfiles.com/local--files/dysadron-114/16.jpg",
       "objectClass": "Sicher",
       "rating": 1,
       "descriptionExcerpt": "SCP-1229 ist ein Wurmloch mit einem Durchmesser von 0,2 m, das am 08.07.2025 unterhalb von Standort-19 erschien. Die Ursache f\u00fcr das Auftreten des Wurmlochs ist derzeit unbekannt; es wurde festgestellt, dass sich das Wurmloch am selben Tag manifestierte, an dem es zu einer standortweiten Sicherheitsverletzung kam.\nJeden Tag st\u00f6\u00dft SCP-1229 ein Objekt aus, das als SCP-1229-# bezeichnet wird. Derzeit ist kein erkennbares Muster bei den ausgesto\u00dfenen Objekten festzustellen. Dr. Charles arbeitet an d",
@@ -49966,7 +49971,7 @@
       "extractedFrom": "scp-series-2",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T02:58:38.178Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:25:18.821Z",
       "translatedLanguages": [
         "jp",
@@ -49976,7 +49981,8 @@
         "es",
         "fr",
         "ru"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-1230",
@@ -56921,7 +56927,7 @@
       "titleJP": "Erinnerungsumschreiber aus der viktorianischen \u00c4ra",
       "urlEN": "http://scp-wiki.wikidot.com/scp-1408",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-1408",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-300/AW-signature.png",
+      "imageUrl": null,
       "objectClass": "Sicher",
       "rating": 1,
       "descriptionExcerpt": "SCP-1408 ist ein komplexes elektromechanisches Ger\u00e4t, das aus einer 1 m x 1 m x 2 m gro\u00dfen Haupteinheit besteht, die aus Holz, einem Uhrwerk und Rollen konstruiert ist, die mit einer metallischen Kopfkappe mit mehreren Kabeln verbunden sind. Ein Symbol bestehend aus dem Buchstaben \"W\" mit einem hineingeschriebenen \"A\" (sp\u00e4ter wurde festgestellt, dass es das Monogramm eines gewissen Professor A\u2588\u2588\u2588\u2588\u2588\u2588 W\u2588\u2588\u2588\u2588\u2588, 1823\u2013?, aus [ZENSIERT], England ist) ist sowohl auf der Kopfkappe als auch auf der Haupte",
@@ -56940,7 +56946,7 @@
       "extractedFrom": "scp-series-2",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T02:58:38.178Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:25:18.821Z",
       "translatedLanguages": [
         "jp",
@@ -56953,7 +56959,8 @@
         "ru",
         "ua",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-1409",
@@ -77060,7 +77067,7 @@
       "titleJP": "Abwesenheit von Abwesenheit",
       "urlEN": "http://scp-wiki.wikidot.com/scp-1934",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-1934",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv1.png",
+      "imageUrl": null,
       "objectClass": "Sicher",
       "rating": 0,
       "descriptionExcerpt": "SCP-1934 bezieht sich auf ein Ph\u00e4nomen, das das ehemalige B\u00fcro von Dr. Jaime Marlow umfasst, bei dem der gesamte Raum unpassierbar geworden ist. Versuche, den Raum zu betreten und/oder Objekte durch die T\u00fcrschwelle des Raums zu platzieren, wurden durch unbekannte Mittel verhindert. Die physische Interaktion mit der ge\u00f6ffneten T\u00fcr erzeugt keine Anzeichen eines unsichtbaren oder anderweitig unidentifizierbaren Objekts, das die T\u00fcr\u00f6ffnung blockiert, und Versuche, von oben oder unten in den Raum dur",
@@ -77080,7 +77087,7 @@
       "extractedFrom": "scp-series-2",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T02:58:38.178Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:25:18.821Z",
       "translatedLanguages": [
         "jp",
@@ -77088,7 +77095,8 @@
         "cn",
         "de",
         "ru"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-1935",
@@ -86932,7 +86940,7 @@
       "titleJP": "Panoptikum II",
       "urlEN": "http://scp-wiki.wikidot.com/scp-3220",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-3220",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--resized-images/scp-3220/shaft/medium.jpg",
+      "imageUrl": null,
       "objectClass": "Sicher",
       "rating": 1,
       "descriptionExcerpt": "SCP-3220 ist ein gro\u00dfes Untergrundsilo, das sich unter einem verlassenen Lagerhaus auf der Insel Hashima, Japan, befindet. Es ist \u00fcber einen f\u00fcnfzig Meter tiefen Schacht zug\u00e4nglich, der unter einer Luke in der Mitte des Lagerhausbodens liegt. Ein kleines Metallschild mit der japanischen Aufschrift \"Abteilung f\u00fcr Abnormalit\u00e4ten\" ist an die Luke geschraubt.\nSCP-3220 erstreckt sich etwas mehr als einen Kilometer tief in den Boden und hat einen Durchmesser von zwanzig Metern. Die Struktur ist \u00e4hnlic",
@@ -86953,7 +86961,7 @@
       "extractedFrom": "scp-series-4",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:10:15.860Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:27:45.454Z",
       "translatedLanguages": [
         "jp",
@@ -86971,7 +86979,8 @@
         "th",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-3280",
@@ -87400,7 +87409,7 @@
       "titleJP": "Bethlehem-Stahl",
       "urlEN": "http://scp-wiki.wikidot.com/scp-3352",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-3352",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv2.png",
+      "imageUrl": null,
       "objectClass": "Neutralisiert",
       "rating": 1,
       "descriptionExcerpt": "SCP-3352 ist ein anomales Ereignis, das sich am 2. Juli 1992 in der Hardwick-Petroleumraffinerie (in der Stadt Hardwick, Pennsylvania) ereignete. Dieses Ereignis fand in der 476HF-Alkylierungseinheit statt \u2013 einer Einheit, die Isobutan und andere leichte Alkene (haupts\u00e4chlich Propylen und Butylen) in Alkylat (einen Bestandteil von hochoktanigen Benzinen) umwandelt.",
@@ -87420,7 +87429,7 @@
       "extractedFrom": "scp-series-4",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:10:15.860Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:27:45.454Z",
       "translatedLanguages": [
         "jp",
@@ -87429,7 +87438,8 @@
         "de",
         "es",
         "ko"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-3355",
@@ -88256,7 +88266,7 @@
       "titleJP": "Postskriptum \u2013 Wie durch einen Spiegel in einem dunklen Bild",
       "urlEN": "http://scp-wiki.wikidot.com/scp-3693",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-3693",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-3693/theother.jpg",
+      "imageUrl": null,
       "objectClass": "Euclid",
       "rating": 1,
       "descriptionExcerpt": "SCP-3693 ist eine 1,6 m hohe Keramikskulptur einer jungen Frau unbestimmten Alters.\nSCP-3693 ist f\u00fcr Beobachter nur bei geschlossenen Augen sichtbar. Obwohl es durch geschlossene Augenlider hindurch wahrgenommen werden kann, wird die Sicht darauf durch andere Hindernisse (wie W\u00e4nde oder T\u00fcren) teilweise oder vollst\u00e4ndig versperrt. Typischerweise schwebt es einige Zentimeter \u00fcber dem Boden, setzt jedoch gelegentlich ab, wenn es sich l\u00e4ngere Zeit nicht bewegt hat.\nWird SCP-3693 beobachtet, n\u00e4hert ",
@@ -88277,7 +88287,7 @@
       "extractedFrom": "scp-series-4",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:10:15.860Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:27:45.454Z",
       "translatedLanguages": [
         "jp",
@@ -88292,7 +88302,8 @@
         "pl",
         "pt",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-3731",
@@ -89453,7 +89464,7 @@
       "titleJP": "#MassaTruthetts",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4006",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-4006",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--resized-images/scp-4006/MS/medium.jpg",
+      "imageUrl": null,
       "objectClass": "Thaumiel",
       "rating": 0,
       "descriptionExcerpt": "SCP-4006 ist eine probabilistische Anomalie, die den US-Bundesstaat Massachusetts betrifft. SCP-4006 dient dazu, die Vorstellung aufrechtzuerhalten, Massachusetts sei ein besiedelter Staat mit Regierung, Infrastruktur, Wirtschaft, verschiedenen Bev\u00f6lkerungszentren usw. Daher ist die wahre Natur von Massachusetts der \u00d6ffentlichkeit v\u00f6llig unbekannt:\nMassachusetts hat keine Geschichte menschlicher Besiedlung.\nAlle Effekte von SCP-4006 selbst sind allt\u00e4gliche Ereignisse, wenn auch h\u00f6chst unwahrsche",
@@ -89472,7 +89483,7 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:11:14.406Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:42:17.399Z",
       "translatedLanguages": [
         "jp",
@@ -89487,7 +89498,8 @@
         "pl",
         "pt",
         "vn"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4008",
@@ -89938,7 +89950,7 @@
       "titleJP": "Dein freundliches Keter in deiner Nachbarschaft",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4051",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-4051",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv2.png",
+      "imageUrl": null,
       "objectClass": "SCP-4051 war bis zum 18. Juli 2013 als Euclid klassifiziert. Eine Beschreibung der Ereignisse, die seine Neuklassifizierung erforderlich machten, ist f\u00fcr Personal mit einer 4/4051-Berechtigungsstufe im",
       "rating": 0,
       "descriptionExcerpt": "SCP-4051 ist eine m\u00e4nnliche humanoide Entit\u00e4t, welche tempor\u00e4re Klasse-E-Wurml\u00f6cher zu extradimensionalen R\u00e4umen erschaffen kann, die mit einer theoretisch unendlichen Anzahl eines einzelnen Objekts gef\u00fcllt sind. Diese Objekte k\u00f6nnen vom extradimensionalen Raum entfernt werden, vorausgesetzt, sie k\u00f6nnen physisch durch das Wurmloch passen. Tests haben gezeigt, dass SCP-4051 nicht in der Lage ist, die Inhalte des extradimensionalen Raums nach seiner Manifestation zu ver\u00e4ndern.\nSCP-4051 konnte die ",
@@ -89963,7 +89975,7 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:11:14.406Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:42:17.399Z",
       "translatedLanguages": [
         "jp",
@@ -89972,7 +89984,8 @@
         "de",
         "pl",
         "pt"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4065",
@@ -90259,7 +90272,7 @@
       "titleJP": "Kopf oder Zahl",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4127",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-4127",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/fragment:scp-4127-1/nickel.png",
+      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/fragment:scp-4127-2/quarter.png",
       "objectClass": "Neutralisiert",
       "rating": 0,
       "descriptionExcerpt": "SCP-4127 ist ein USA-Buffalo-Nickel (5-Cent-M\u00fcnze) von 1936, der auf der einen Seite einen B\u00fcffel und auf der anderen Seite einen menschlichen Sch\u00e4del zeigt. Beim Werfen landet SCP-4127 immer mit der Kopfseite nach oben.\nSCP-4127 wurde zuvor im Protokoll der anomalen Objekte dokumentiert; ein Hausmeister entdeckte jedoch 2006 bei routinem\u00e4\u00dfigen Wartungsarbeiten eine weitere Eigenschaft. Wenn die M\u00fcnze geworfen wird, unmittelbar nachdem das Subjekt ein Ereignis beschreibt, das vom Wurf abh\u00e4ngig g",
@@ -90278,7 +90291,7 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:11:14.406Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:42:17.399Z",
       "translatedLanguages": [
         "jp",
@@ -90288,7 +90301,8 @@
         "ko",
         "ru",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4144",
@@ -90448,7 +90462,7 @@
       "titleJP": "Es gibt keinen Standort-5",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4182",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-4182",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv4.png",
+      "imageUrl": null,
       "objectClass": "Keter",
       "rating": 3,
       "descriptionExcerpt": "SCP-4182 ist ein Ph\u00e4nomen, durch das interne Foundation-Dokumente regelm\u00e4\u00dfig ge\u00e4ndert werden, um Verweise auf einen nicht existierenden Standort (\"Standort-5\") aufzunehmen. Der Mechanismus, durch den dies geschieht, muss noch verstanden werden.\nDie Darstellungen von Standort-5 sind widerspr\u00fcchlich, beschreiben ihn jedoch typischerweise als eine k\u00fcnstliche Insel, die zur Lagerung gef\u00e4hrlicher Materialien gebaut wurde.1\nSeit seiner Entdeckung im Jahr 2018 hat die H\u00e4ufigkeit des Auftretens von SCP-",
@@ -90476,7 +90490,7 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:11:14.406Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:42:17.399Z",
       "translatedLanguages": [
         "jp",
@@ -90492,7 +90506,8 @@
         "pt",
         "th",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4183",
@@ -91231,7 +91246,7 @@
       "titleJP": "Hast du einfach mal versucht, mehr zu l\u00e4cheln?",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4376",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-4376",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv2.png",
+      "imageUrl": null,
       "objectClass": "Euclid",
       "rating": 5,
       "descriptionExcerpt": "SCP-4376 ist ein 23-j\u00e4hriger Mann, welcher auf den Namen Wilhelm Schr\u00f6der h\u00f6rt. Seit dem 10.06.2019 weist Herr Schr\u00f6der eine einzigartige k\u00f6rperliche Anomalie auf: Sein Kopf sitzt auf einem sekund\u00e4ren Oberk\u00f6rper, der aus dem Hals seines urspr\u00fcnglichen K\u00f6rpers herausgewachsen ist. Beide K\u00f6rper sind genetisch und visuell aufeinander abgestimmt. Die Krankengeschichte von Wilhelm Sch\u00f6der zeigt, dass bei ihm im Alter von 14 Jahren eine klinische Depression diagnostiziert wurde, wobei die letzte Bewer",
@@ -91249,7 +91264,7 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:11:14.406Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:42:17.399Z",
       "translatedLanguages": [
         "jp",
@@ -91258,7 +91273,8 @@
         "de",
         "it",
         "ko"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4387",
@@ -91301,7 +91317,7 @@
       "titleJP": "Isolierzelle f\u00fcr Humanoide Nr. \u03bb045",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4415",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-4415",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv2.png",
+      "imageUrl": null,
       "objectClass": "Euclid",
       "rating": 1,
       "descriptionExcerpt": "SCP-4415 ist eine Reihe extradimensionaler Orte, die durch die T\u00fcr zur ehemaligen Isolierzelle f\u00fcr Humanoide Nr. \u03bb045 zug\u00e4nglich sind. SCP-4415 dient als ein Wegpunkt f\u00fcr mehrere au\u00dferr\u00e4umliche und au\u00dfertemporale Orte, die sich halbzuf\u00e4llig1 pr\u00e4sentieren, sobald die T\u00fcr der Zelle vollst\u00e4ndig geschlossen und wieder ge\u00f6ffnet wurde. Zus\u00e4tzlich ist SCP-4415 nur f\u00fcr anomale Humanoide zug\u00e4nglich; Versuche von nicht anomalen Personen, SCP-4415 zu betreten, waren alle erfolglos.\nDie Realit\u00e4t in Zelle Nr",
@@ -91322,7 +91338,7 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:11:14.406Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:42:17.399Z",
       "translatedLanguages": [
         "jp",
@@ -91332,7 +91348,8 @@
         "es",
         "pl",
         "pt"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4465",
@@ -94675,7 +94692,7 @@
       "titleJP": "Universal-Fernbedienung",
       "urlEN": "http://scp-wiki.wikidot.com/scp-5510",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-5510",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/fragment:scp-4182-1/blank.png",
+      "imageUrl": null,
       "objectClass": "Sicher (vorl\u00e4ufig)",
       "rating": 1,
       "descriptionExcerpt": "SCP-5510 ist eine TV-Fernbedienung. Das Objekt funktioniert wie erwartet, mit Ausnahme der vier Mediennavigationstasten. Wird eine dieser Tasten gedr\u00fcckt, \u00e4ndert sich das subjektive Zeitgef\u00fchl durch die Anomalie.",
@@ -94693,7 +94710,7 @@
       "extractedFrom": "scp-series-6",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:12:22.599Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:44:09.270Z",
       "translatedLanguages": [
         "jp",
@@ -94712,7 +94729,8 @@
         "ua",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-5511",
@@ -94720,7 +94738,7 @@
       "titleJP": "Wer erinnert sich an dich, wenn du nicht mehr bist?",
       "urlEN": "http://scp-wiki.wikidot.com/scp-5511",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-5511",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv2.png",
+      "imageUrl": null,
       "objectClass": "Keter",
       "rating": 4,
       "descriptionExcerpt": "SCP-5511 beschreibt ein Ereignis, das in der Nacht vom 12.02.2020 stattfand und bei dem insgesamt 84 Zivilisten ums Leben kamen, als ihre K\u00f6pfe mit einer Kraft von etwa einer Millitonne TNT spontan explodierten. Dies f\u00fchrte dazu, dass weitere 20 Menschen an den Folgen der Wucht oder der daraus resultierenden Tr\u00fcmmer starben und mehr als 30 verletzt wurden. W\u00e4hrend dieser Zeit erschien eine Projektion roter Buchstaben (SCP-5511-1) auf der Mondoberfl\u00e4che, die sich jedes Mal anpasste, sobald es ein",
@@ -94739,7 +94757,7 @@
       "extractedFrom": "scp-series-6",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:12:22.599Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:44:09.270Z",
       "translatedLanguages": [
         "jp",
@@ -94750,7 +94768,8 @@
         "ru",
         "pl",
         "vn"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-5542",
@@ -96058,7 +96077,7 @@
       "titleJP": "Nicht mehrer l\u00e4nger benutzte Spiegel",
       "urlEN": "http://scp-wiki.wikidot.com/scp-6192",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-6192",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aearthworm/Transparent.gif",
+      "imageUrl": null,
       "objectClass": "Euclid",
       "rating": 4,
       "descriptionExcerpt": "SCP-6192 beschreibt ein neurologisches Ph\u00e4nomen, bei dem ein Neuron sowohl feuert, wenn eine Person eine Aktivit\u00e4t oder einen Gedanken bei einer anderen Person wahrnimmt, als auch, wenn sie die gleiche Aktivit\u00e4t oder den gleichen Gedanken bei sich selbst ausf\u00fchrt. Da dies dazu f\u00fchrt, dass das Neuron die Aktivit\u00e4t eines anderen Neurons \"spiegelt\", wurde es in der wissenschaftlichen \u00d6ffentlichkeit als \"Spiegelneuron\" bezeichnet.\nSpiegelneuronsysteme sind f\u00fcr die Simulation von Denkmustern beobacht",
@@ -96081,12 +96100,13 @@
       "extractedFrom": "scp-series-7",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:12:59.248Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:46:05.830Z",
       "translatedLanguages": [
         "en",
         "de"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-6222",
@@ -97143,7 +97163,7 @@
       "titleJP": "Der D\u00e4mon Ogier und der Blutende Thron von Balidraug",
       "urlEN": "http://scp-wiki.wikidot.com/scp-6765",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-6765",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-6765/kaktus1.png",
+      "imageUrl": "https://i.imgur.com/AVwLYTH.png",
       "objectClass": "Keter",
       "rating": 1,
       "descriptionExcerpt": "SCP-6765 ist die Gruppenbezeichnung f\u00fcr einen Strukturkomplex antediluvianischen Ursprungs, der sich unter dem Aksayqin-See in der Pr\u00e4fektur Hotan, Xinjiang, befindet, sowie f\u00fcr mehrere darin enthaltene anomale Entit\u00e4ten und Artefakte. Dieser Komplex, dessen Volumen auf mehr als 552.000 m3 gesch\u00e4tzt wird, besteht aus drei Hauptbereichen:",
@@ -97178,7 +97198,7 @@
       "extractedFrom": "scp-series-7",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:12:59.248Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:46:05.830Z",
       "translatedLanguages": [
         "jp",
@@ -97190,7 +97210,8 @@
         "ru",
         "pt",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-6770",
@@ -97542,7 +97563,7 @@
       "titleJP": "Riesen \u00fcber uns",
       "urlEN": "http://scp-wiki.wikidot.com/scp-6961",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-6961",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Wind_turbines_at_sunset%2C_California_LCCN2011630079.tif/lossy-page1-6144px-Wind_turbines_at_sunset%2C_California_LCCN2011630079.tif.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Wind_turbines_at_sunset%2C_California_LCCN2011630079.tif/lossy-page1-960px-Wind_turbines_at_sunset%2C_California_LCCN2011630079.tif.jpg?_=20161005171021",
       "objectClass": "Keter",
       "rating": 1,
       "descriptionExcerpt": "SCP-6961 ist eine anomale Makropilzspezies, die in allen Kontinenten der Erde heimisch ist. Instanzen von SCP-6961 k\u00f6nnen Gr\u00f6\u00dfen von bis zu 100 Meter erreichen und sind von einem metallischen Panzer mit einem wei\u00dfen Schimmer \u00fcberzogen. SCP-6961-Instanzen haben ein rotationssymetrisches, fl\u00fcgelf\u00f6rmiges Sporangium, das aus ihren Spitzen ragt, aus dem sie Sporen f\u00fcr die sexuelle Fortpflanzung freisetzen. Instanzen sind f\u00fcr gew\u00f6hnlich in Kolonien von bis zu 7.000 Mitgliedern in offenen Umgebungen, w",
@@ -97567,7 +97588,7 @@
       "extractedFrom": "scp-series-7",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:12:59.248Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:46:05.830Z",
       "translatedLanguages": [
         "jp",
@@ -97576,7 +97597,8 @@
         "de",
         "it",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-6982",
@@ -100385,7 +100407,7 @@
       "titleJP": "Unser schlechtestes Leben",
       "urlEN": "http://scp-wiki.wikidot.com/scp-8751",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-8751",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-8751/8751-thumbnail.jpg",
+      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-8751/house.jpg",
       "objectClass": "Euclid",
       "rating": 1,
       "descriptionExcerpt": "SCP-8751 ist ein einst\u00f6ckiges Haus in Los Gatos, Kalifornien, das von Gilbert Burton (SUBJEKT A) am 3. M\u00e4rz 1942 nach seiner Heirat mit Judith Burton (SUBJEKT B) erworben hat.\nDas Program wurde auf SCP-8751s anomalen Eigenschaften aufmerksam und erstand es kurz danach.\nSCP-8751 scheint eine 18-st\u00fcndigen \u201eGeschlossenes System\u201c Schleife zu beherbergen, die jegliche direkt Interaktion mit seinen Anwohnern verhindert. Obwohl das Ergebnis jede Iteration der Schleife immer die gleiche ist, unterscheid",
@@ -100406,7 +100428,7 @@
       "extractedFrom": "scp-series-9",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:13:55.924Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T08:48:21.649Z",
       "translatedLanguages": [
         "jp",
@@ -100418,7 +100440,8 @@
         "pl",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-8790",
@@ -101550,7 +101573,7 @@
       "titleJP": "Eine Gabel",
       "urlEN": "http://scp-wiki.wikidot.com/scp-014-j",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-014-j",
-      "imageUrl": "http://scp-wiki-de.wdfiles.com/local--resized-images/scp-014-de-j/Jugg_with_Beer_Loewenbraeu_one_liter.jpeg/medium.jpg",
+      "imageUrl": null,
       "objectClass": "Keter",
       "rating": 1,
       "descriptionExcerpt": "SCP-014 besitzt die Form einer antiken, abgenutzten Tafelgabel die, soweit das beurteilt werden kann, seit den Neunzigern des 19. Jahrhunderts nicht mehr gereinigt wurde. Das Objekt besteht aus f\u00fcr die Zeit in der es vermutlich hergestellt wurde typischen, galvanisierten Neusilber und die Zinke rechts au\u00dfen ist um \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 (\u2588\u2588) Grad nach au\u00dfen gebogen. Braune Flecken und Schimmel zieren die Zinken und die Mulden auf den Dekorationen des Griffs. Die Analyse dieses Materials l\u00e4sst darauf schlie\u00dfe",
@@ -101568,7 +101591,7 @@
       "extractedFrom": "joke-scps",
       "pageType": "joke-scps",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:14:47.195Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T09:09:06.819Z",
       "translatedLanguages": [
         "jp",
@@ -101584,7 +101607,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "joke-scps-014-de-j",
@@ -102387,7 +102411,7 @@
       "titleJP": "Der gro\u00dfe rote Knopf",
       "urlEN": "http://scp-wiki.wikidot.com/scp-001-j",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-001-j",
-      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-001-ex-j/rockpainting.jpg",
+      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-001-j/001j-new.PNG",
       "objectClass": "Keter",
       "rating": 10,
       "descriptionExcerpt": "SCP-001-J ist ein gro\u00dfer, roter, gl\u00e4nzender, merkw\u00fcrdig anziehender Knopf, der nur darauf wartet, gedr\u00fcckt zu werden.\nSCP-001-J ist ein Selbstzerst\u00f6rungsmechanismus, welcher von Forschern als stark genug befunden wird, um die Realit\u00e4t selbst zu zerst\u00f6ren, und besteht aus einem roten Knopf und einer Metall-Box. Es sieht aus wie S\u00fc\u00dfigkeiten.\nDer Mechanismus, mit dem SCP-001-J funktioniert, ist nicht ganz klar, aber es w\u00e4re stark, das herauszufinden.\nSCP-001-J veranlasst einen milden psychischen Zw",
@@ -102406,7 +102430,7 @@
       "extractedFrom": "joke-scps",
       "pageType": "joke-scps",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:14:47.195Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T09:09:06.819Z",
       "translatedLanguages": [
         "jp",
@@ -102423,7 +102447,8 @@
         "th",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "joke-scps-001-ex-j",
@@ -111223,7 +111248,7 @@
       "titleJP": "St. Caesarius Krankenhaus",
       "urlEN": "http://scp-wiki.wikidot.com/scp-208-de",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-208-de",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv3.png",
+      "imageUrl": null,
       "objectClass": "Argus",
       "rating": 10,
       "descriptionExcerpt": "Bei SCP-208-DE handelt es sich um das St. Caesarius1 Krankenhaus. Im Gegensatz zu normalen Kliniken liegt das Hauptaugenmerk hier auf der Behandlung von anomalen Krankheiten und Verletzungen sowie der Versorgung von Mitgliedern der anomalen Gemeinde. Der Betreiber der Einrichtung scheint die World Parahealth Organization, eine Mitgliedsorganisation der GOC, zu sein. Die Versorgung kostet zwischen 200 und 5000 Euro, liegt aber qualitativ \u00fcber dem deutschen Standard und steht jeder Person zur frei",
@@ -111244,11 +111269,12 @@
       "extractedFrom": "scp-serie-de",
       "pageType": "scp-series-de",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:15:47.202Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T09:10:57.036Z",
       "translatedLanguages": [
         "de"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-de-209",
@@ -113093,7 +113119,7 @@
       "titleJP": "Eine Kammer f\u00fcr Poeten",
       "urlEN": "http://scp-wiki.wikidot.com/scp-267-de",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-267-de",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv2.png",
+      "imageUrl": null,
       "objectClass": "Sicher",
       "rating": 5,
       "descriptionExcerpt": "SCP-267-DE beschreibt die Humanoiden-Standardzelle-24A in Standort-DE6. Die Zelle weist ein zwei cm gro\u00dfes Loch an der unteren rechten Ecke der Nordwand auf.\nDurch besagtes Loch scheint Wind mit einer Geschwindigkeit von 46 km/h zu blasen. Wie dieser Wind zustande kommt, ist bislang unbekannt, da keine der W\u00e4nde zum \u00c4u\u00dferen des Standortes f\u00fchrt.\nDurch den Wind, der durch das Loch bl\u00e4st, entsteht ein spezifischer Ton, der alle Lebewesen mit einer h\u00f6heren Hirnfunktionalit\u00e4t zum schriftlichen Reime",
@@ -113112,11 +113138,12 @@
       "extractedFrom": "scp-serie-de",
       "pageType": "scp-series-de",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:15:47.202Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T09:10:57.036Z",
       "translatedLanguages": [
         "de"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-de-268",
@@ -115576,7 +115603,7 @@
       "titleJP": "Vom Blitze getroffen",
       "urlEN": "http://scp-wiki.wikidot.com/scp-344-de",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-344-de",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv2.png",
+      "imageUrl": null,
       "objectClass": "Keter",
       "rating": 4,
       "descriptionExcerpt": "SCP-344-DE ist eine k\u00f6rperlose Entit\u00e4t der Klasse 5 f\u00fcr postmortem EVE-Echos.1 SCP-344-DE ist nicht f\u00e4hig, sich mehr als 25 Meter von SCP-344-DE-1 zu entfernen. SCP-344-DE gleicht in seiner Ruhephase einer 1,80 Meter gro\u00dfen, transluzenten, weiblichen Person mit langen schwarzen Haaren, welche bis zu den Knien reichen, jedoch die meiste Zeit in einem Zopf gebunden sind. SCP-344-DE schwebt normalerweise ungef\u00e4hr f\u00fcnf Zentimeter \u00fcber dem Boden.2 SCP-344-DE ist f\u00e4hig, kurzzeitig eine physikalische F",
@@ -115602,11 +115629,12 @@
       "extractedFrom": "scp-serie-de",
       "pageType": "scp-series-de",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:15:47.202Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T09:10:57.036Z",
       "translatedLanguages": [
         "de"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-de-345",
@@ -116685,7 +116713,7 @@
       "titleJP": "\u263d\u263d\u263d HDC-CODENAME: \"Elser\"",
       "urlEN": "http://scp-wiki.wikidot.com/scp-380-de",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-380-de",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv3.png",
+      "imageUrl": null,
       "objectClass": "Argus",
       "rating": 4,
       "descriptionExcerpt": "Bei SCP-380-DE-B handelt es sich um einen f\u00fcnf Meter breiten und zweieinhalb Meter hohen Satelliten in der Form eines f\u00fcnfeckigen Sterns. Auf der H\u00fclle, welche aus einem unbekannten, dunkelgrauem Metall besteht, sind in Richtung der Erde drei gelbe Mondsicheln abgedruckt. Bei Aktivierung beginnen diese schwach zu leuchten.\nSCP-380-DE-B ist in der Lage, seine Orbitalbahn zu ver\u00e4ndern, bleibt aber durchgehend bei ca. 38.000 Metern H\u00f6he. Weder der Steuermechanismus noch andere interne Funktionsweis",
@@ -116703,11 +116731,12 @@
       "extractedFrom": "scp-serie-de",
       "pageType": "scp-series-de",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:15:47.202Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T09:10:57.036Z",
       "translatedLanguages": [
         "de"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-de-381",
@@ -117440,7 +117469,7 @@
       "titleJP": "Eintrag gefunden?",
       "urlEN": "http://scp-wiki.wikidot.com/scp-404-de",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-404-de",
-      "imageUrl": "https://i.imgur.com/uuBSgWB.png",
+      "imageUrl": null,
       "objectClass": null,
       "rating": 12,
       "descriptionExcerpt": null,
@@ -117453,11 +117482,12 @@
       "extractedFrom": "scp-serie-de",
       "pageType": "scp-series-de",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:15:47.202Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T09:10:57.036Z",
       "translatedLanguages": [
         "de"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-de-405",
@@ -117723,7 +117753,7 @@
       "titleJP": "Ehemaliges Zuhause aus Papier und Liebe",
       "urlEN": "http://scp-wiki.wikidot.com/scp-442-de",
       "urlJP": "http://scp-wiki-de.wikidot.com/scp-442-de",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv2.png",
+      "imageUrl": null,
       "objectClass": "Neutralisiert",
       "rating": 2,
       "descriptionExcerpt": "SCP-ARC-442-DE beschrieb eine braune Wellkarton-Schachtel mit den Ma\u00dfen 75 cm \u00d7 100 cm \u00d7 75 cm mit verschiedenen, farbigen Aufklebern, wie zum Beispiel Fenster, Blumen und verschiedene Tiere. SCP-ARC-442-DE wurde Opfer des am 20.8.2024 stattgefundenen Bruchs einer Wasserleitung und dabei vollst\u00e4ndig zerst\u00f6rt. Die \u00dcberreste wurden nach der Best\u00e4tigung der Neutralisierung nach Standort-43 geschickt, um dort durch Acroamatic Abatement verarbeitet zu werden.\n\nBei der Entdeckung von SCP-ARC-442-DE be",
@@ -117743,11 +117773,12 @@
       "extractedFrom": "scp-serie-de",
       "pageType": "scp-series-de",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T03:15:47.202Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T09:10:57.036Z",
       "translatedLanguages": [
         "de"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-de-444",

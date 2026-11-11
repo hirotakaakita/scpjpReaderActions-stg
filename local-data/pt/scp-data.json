@@ -1,13 +1,13 @@
 {
   "totalCount": 2165,
   "language": "pt",
-  "timestamp": "2026-11-10T00:49:26.482Z",
+  "timestamp": "2026-11-11T12:43:28.747Z",
   "duration": 1454,
   "status": "completed",
   "statistics": {
     "translated": 2165,
     "untranslated": 0,
-    "withImage": 1003
+    "withImage": 980
   },
   "data": [
     {
@@ -14104,7 +14104,7 @@
       "titleJP": "Os An\u00e9is de \"Casamento Stepford\"",
       "urlEN": "http://scp-wiki.wikidot.com/scp-288",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-288",
-      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-288/rings.jpg",
+      "imageUrl": null,
       "objectClass": "Seguro",
       "rating": 1,
       "descriptionExcerpt": null,
@@ -14121,7 +14121,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:57:39.789Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:49:39.845Z",
       "translatedLanguages": [
         "jp",
@@ -14134,7 +14134,8 @@
         "ru",
         "pt",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-289",
@@ -22295,7 +22296,7 @@
       "titleJP": "estacionamento canino",
       "urlEN": "http://scp-wiki.wikidot.com/scp-480",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-480",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aearthworm/Transparent.gif",
+      "imageUrl": null,
       "objectClass": "Seguro",
       "rating": 0,
       "descriptionExcerpt": null,
@@ -22316,7 +22317,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:57:39.789Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:49:39.845Z",
       "translatedLanguages": [
         "jp",
@@ -22329,7 +22330,8 @@
         "pt",
         "th",
         "vn"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-481",
@@ -38584,7 +38586,7 @@
       "titleJP": "C\u00e2mera do Desejo",
       "urlEN": "http://scp-wiki.wikidot.com/scp-978",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-978",
-      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-978/978%20camera%20new.jpg",
+      "imageUrl": null,
       "objectClass": "Seguro",
       "rating": 6,
       "descriptionExcerpt": null,
@@ -38603,7 +38605,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:57:39.789Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:49:39.845Z",
       "translatedLanguages": [
         "jp",
@@ -38622,7 +38624,8 @@
         "vn",
         "zh-tr",
         "tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-979",
@@ -43167,7 +43170,7 @@
       "titleJP": "Planta Cor-de-Carne",
       "urlEN": "http://scp-wiki.wikidot.com/scp-1199",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-1199",
-      "imageUrl": "http://scp-wiki.wdfiles.com/local--resized-images/scp-1199/NewCan/medium.jpg",
+      "imageUrl": null,
       "objectClass": "Seguro",
       "rating": 1,
       "descriptionExcerpt": null,
@@ -43186,7 +43189,7 @@
       "extractedFrom": "scp-series-2",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:06:48.976Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:51:21.501Z",
       "translatedLanguages": [
         "jp",
@@ -43202,7 +43205,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-1208",
@@ -66343,7 +66347,7 @@
       "titleJP": "Cutucando a Morte com um Graveto",
       "urlEN": "http://scp-wiki.wikidot.com/scp-3984",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-3984",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aearthworm/Transparent.gif",
+      "imageUrl": null,
       "objectClass": "Keter",
       "rating": 3,
       "descriptionExcerpt": null,
@@ -66366,7 +66370,7 @@
       "extractedFrom": "scp-series-4",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:11:54.779Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:56:51.850Z",
       "translatedLanguages": [
         "jp",
@@ -66381,7 +66385,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-3989",
@@ -67021,7 +67026,7 @@
       "titleJP": "Seu Amigo da Vizinhan\u00e7a, o Keter",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4051",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-4051",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv2.png",
+      "imageUrl": null,
       "objectClass": "s de Objetos N\u00edveis de Amea\u00e7a N\u00edveis de Acesso",
       "rating": 7,
       "descriptionExcerpt": null,
@@ -67044,7 +67049,7 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:13:42.101Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:10:14.716Z",
       "translatedLanguages": [
         "jp",
@@ -67053,7 +67058,8 @@
         "de",
         "pl",
         "pt"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4056",
@@ -67682,7 +67688,7 @@
       "titleJP": "N\u00e3o h\u00e1 um S\u00edtio-5",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4182",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-4182",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv4.png",
+      "imageUrl": null,
       "objectClass": "s de Objetos N\u00edveis de Amea\u00e7a N\u00edveis de Acesso",
       "rating": 4,
       "descriptionExcerpt": null,
@@ -67709,7 +67715,7 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:13:42.101Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:10:14.716Z",
       "translatedLanguages": [
         "jp",
@@ -67725,7 +67731,8 @@
         "pt",
         "th",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4205",
@@ -68294,7 +68301,7 @@
       "titleJP": "P\u00f3s-Industrial",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4370",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-4370",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aearthworm/Transparent.gif",
+      "imageUrl": null,
       "objectClass": "s de Objetos N\u00edveis de Amea\u00e7a N\u00edveis de Acesso",
       "rating": 0,
       "descriptionExcerpt": null,
@@ -68315,14 +68322,15 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:13:42.101Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:10:14.716Z",
       "translatedLanguages": [
         "en",
         "cn",
         "es",
         "pt"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4390",
@@ -68535,7 +68543,7 @@
       "titleJP": "C\u00e2mara de Conten\u00e7\u00e3o Humanoide #\u03bb045",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4415",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-4415",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv2.png",
+      "imageUrl": null,
       "objectClass": "s de Objetos N\u00edveis de Amea\u00e7a N\u00edveis de Acesso",
       "rating": 1,
       "descriptionExcerpt": null,
@@ -68554,7 +68562,7 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:13:42.101Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:10:14.716Z",
       "translatedLanguages": [
         "jp",
@@ -68564,7 +68572,8 @@
         "es",
         "pl",
         "pt"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4420",
@@ -69818,7 +69827,7 @@
       "titleJP": "A Solu\u00e7\u00e3o da Insurg\u00eancia",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4725",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-4725",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aearthworm/Transparent.gif",
+      "imageUrl": null,
       "objectClass": "Eucl\u00eddeo",
       "rating": 1,
       "descriptionExcerpt": null,
@@ -69841,7 +69850,7 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:13:42.101Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:10:14.716Z",
       "translatedLanguages": [
         "jp",
@@ -69851,7 +69860,8 @@
         "fr",
         "ru",
         "pt"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4726",
@@ -73121,7 +73131,7 @@
       "titleJP": "Conjun\u00e7\u00e3o Imemorial",
       "urlEN": "http://scp-wiki.wikidot.com/scp-5486",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-5486",
-      "imageUrl": "https://scptestwiki.wdfiles.com/local--files/jawn-one/reaganmain.png",
+      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-5486/reaganmain.png",
       "objectClass": "Keter",
       "rating": 3,
       "descriptionExcerpt": null,
@@ -73144,7 +73154,7 @@
       "extractedFrom": "scp-series-6",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:15:01.226Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:16:37.159Z",
       "translatedLanguages": [
         "jp",
@@ -73155,7 +73165,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-5510",
@@ -73163,7 +73174,7 @@
       "titleJP": "Controle Universal",
       "urlEN": "http://scp-wiki.wikidot.com/scp-5510",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-5510",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/fragment:scp-4182-1/blank.png",
+      "imageUrl": null,
       "objectClass": "Seguro (provis\u00f3ria)",
       "rating": 0,
       "descriptionExcerpt": null,
@@ -73181,7 +73192,7 @@
       "extractedFrom": "scp-series-6",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:15:01.226Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:16:37.159Z",
       "translatedLanguages": [
         "jp",
@@ -73200,7 +73211,8 @@
         "ua",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-5514",
@@ -80346,7 +80358,7 @@
       "titleJP": "S \u00e9 de Santo",
       "urlEN": "http://scp-wiki.wikidot.com/scp-7725",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-7725",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aearthworm/Transparent.gif",
+      "imageUrl": null,
       "objectClass": "Eucl\u00eddeo",
       "rating": 0,
       "descriptionExcerpt": null,
@@ -80369,7 +80381,7 @@
       "extractedFrom": "scp-series-8",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:17:32.539Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:19:54.453Z",
       "translatedLanguages": [
         "jp",
@@ -80381,7 +80393,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-7726",
@@ -80553,7 +80566,7 @@
       "titleJP": "X \u00e9 de XXX",
       "urlEN": "http://scp-wiki.wikidot.com/scp-7930",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-7930",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aearthworm/Transparent.gif",
+      "imageUrl": null,
       "objectClass": "Keter",
       "rating": 0,
       "descriptionExcerpt": null,
@@ -80576,7 +80589,7 @@
       "extractedFrom": "scp-series-8",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:17:32.539Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:19:54.453Z",
       "translatedLanguages": [
         "jp",
@@ -80588,7 +80601,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-7933",
@@ -81258,7 +81272,7 @@
       "titleJP": "NUCLEOMITUFOBIA: VIT\u00d3RIA CULTURAL TOTAL",
       "urlEN": "http://scp-wiki.wikidot.com/scp-8084",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-8084",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aearthworm/Transparent.gif",
+      "imageUrl": null,
       "objectClass": "s de Objetos N\u00edveis de Amea\u00e7a N\u00edveis de Acesso",
       "rating": 0,
       "descriptionExcerpt": null,
@@ -81278,7 +81292,7 @@
       "extractedFrom": "scp-series-9",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:18:21.314Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:29:12.445Z",
       "translatedLanguages": [
         "jp",
@@ -81287,7 +81301,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-8106",
@@ -82265,7 +82280,7 @@
       "titleJP": "Eu N\u00e3o Me Arrependo do Meu Tempo Irreal",
       "urlEN": "http://scp-wiki.wikidot.com/scp-8801",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-8801",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-8801/recovered-image.jpg",
+      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-8801/thereflection.png",
       "objectClass": "Thaumiel",
       "rating": 0,
       "descriptionExcerpt": null,
@@ -82290,14 +82305,15 @@
       "extractedFrom": "scp-series-9",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:18:21.314Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:29:12.445Z",
       "translatedLanguages": [
         "jp",
         "en",
         "cn",
         "pt"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-8815",
@@ -82628,7 +82644,7 @@
       "titleJP": "O Grande Bot\u00e3o Vermelho",
       "urlEN": "http://scp-wiki.wikidot.com/scp-001-j",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-001-j",
-      "imageUrl": "http://scp-pt-br.wdfiles.com/local--files/scp-001-ex-j/rockpainting.jpg",
+      "imageUrl": "https://scp-wiki.wikidot.com/local--files/scp-001-j/001j-new.PNG",
       "objectClass": "Keter",
       "rating": 2,
       "descriptionExcerpt": null,
@@ -82648,7 +82664,7 @@
       "extractedFrom": "joke-scps",
       "pageType": "joke-scps",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:18:58.743Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:31:55.554Z",
       "translatedLanguages": [
         "jp",
@@ -82665,7 +82681,8 @@
         "th",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "joke-scps-001-ex-j",
@@ -82826,7 +82843,7 @@
       "titleJP": "O QUE CARALHOS \u00c9 ESSA COISA",
       "urlEN": "http://scp-wiki.wikidot.com/scp-006-j",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-006-j",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-006-cu-ex/CU-EX3.jpg",
+      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-006-j/006-Centipede-new.jpg",
       "objectClass": "Keter",
       "rating": 11,
       "descriptionExcerpt": null,
@@ -82847,7 +82864,7 @@
       "extractedFrom": "joke-scps",
       "pageType": "joke-scps",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:18:58.743Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:31:55.554Z",
       "translatedLanguages": [
         "jp",
@@ -82864,7 +82881,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "joke-scps-006-cu-ex",
@@ -83247,7 +83265,7 @@
       "titleJP": "Uma P\u00e1lida Compara\u00e7\u00e3o",
       "urlEN": "http://scp-wiki.wikidot.com/scp-020-j",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-020-j",
-      "imageUrl": "http://scp-pt-br.wdfiles.com/local--resized-images/scp-020-pt-j/pichacao/medium.jpg",
+      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-020-j/bucket.jpg",
       "objectClass": "Seguro",
       "rating": 3,
       "descriptionExcerpt": null,
@@ -83267,7 +83285,7 @@
       "extractedFrom": "joke-scps",
       "pageType": "joke-scps",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:18:58.743Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:31:55.554Z",
       "translatedLanguages": [
         "jp",
@@ -83278,7 +83296,8 @@
         "pl",
         "pt",
         "vn"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "joke-scps-020-pt-j",
@@ -84007,7 +84026,7 @@
       "titleJP": "O SUPER MELHOR LARGATO DE TODOS",
       "urlEN": "http://scp-wiki.wikidot.com/scp-682-j",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-682-j",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-682-cu/682.png",
+      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-682-j/BigTeeth.png",
       "objectClass": "KITER",
       "rating": 6,
       "descriptionExcerpt": null,
@@ -84028,7 +84047,7 @@
       "extractedFrom": "joke-scps",
       "pageType": "joke-scps",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:18:58.743Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:31:55.554Z",
       "translatedLanguages": [
         "jp",
@@ -84044,7 +84063,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "joke-scps-682-cu",
@@ -87038,7 +87058,7 @@
       "titleJP": "Diabrete de Bolso",
       "urlEN": "http://scp-wiki.wikidot.com/scp-031-pt",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-031-pt",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv3.png",
+      "imageUrl": null,
       "objectClass": "s de Objetos N\u00edveis de Amea\u00e7a N\u00edveis de Acesso",
       "rating": 36,
       "descriptionExcerpt": null,
@@ -87054,11 +87074,12 @@
       "extractedFrom": "series-1-pt",
       "pageType": "scp-series-pt",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:19:59.225Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:34:11.738Z",
       "translatedLanguages": [
         "pt"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pt-032",
@@ -88656,7 +88677,7 @@
       "titleJP": "M\u00e1scara Adapt\u00e1vel",
       "urlEN": "http://scp-wiki.wikidot.com/scp-085-pt",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-085-pt",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv2.png",
+      "imageUrl": null,
       "objectClass": "s de Objetos N\u00edveis de Amea\u00e7a N\u00edveis de Acesso",
       "rating": 22,
       "descriptionExcerpt": null,
@@ -88676,11 +88697,12 @@
       "extractedFrom": "series-1-pt",
       "pageType": "scp-series-pt",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:19:59.225Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:34:11.738Z",
       "translatedLanguages": [
         "pt"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pt-086",
@@ -88782,7 +88804,7 @@
       "titleJP": "Amar-te-ei Eternamente",
       "urlEN": "http://scp-wiki.wikidot.com/scp-089-pt",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-089-pt",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv3.png",
+      "imageUrl": null,
       "objectClass": "s de Objetos N\u00edveis de Amea\u00e7a N\u00edveis de Acesso",
       "rating": 42,
       "descriptionExcerpt": null,
@@ -88802,11 +88824,12 @@
       "extractedFrom": "series-1-pt",
       "pageType": "scp-series-pt",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:19:59.225Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:34:11.738Z",
       "translatedLanguages": [
         "pt"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pt-090",
@@ -88907,7 +88930,7 @@
       "titleJP": "As Filhas de Asariel",
       "urlEN": "http://scp-wiki.wikidot.com/scp-093-pt",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-093-pt",
-      "imageUrl": "https://i.imgur.com/dCCuiIz.png",
+      "imageUrl": "https://i.imgur.com/aqp9byE.jpeg",
       "objectClass": "Keter",
       "rating": 22,
       "descriptionExcerpt": null,
@@ -88928,11 +88951,12 @@
       "extractedFrom": "series-1-pt",
       "pageType": "scp-series-pt",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:19:59.225Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:34:11.738Z",
       "translatedLanguages": [
         "pt"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pt-094",
@@ -89057,7 +89081,7 @@
       "titleJP": "O Jogo das Torres",
       "urlEN": "http://scp-wiki.wikidot.com/scp-098-pt",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-098-pt",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aearthworm/Transparent.gif",
+      "imageUrl": null,
       "objectClass": "Eucl\u00eddeo",
       "rating": 6,
       "descriptionExcerpt": null,
@@ -89074,11 +89098,12 @@
       "extractedFrom": "series-1-pt",
       "pageType": "scp-series-pt",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:19:59.225Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:34:11.738Z",
       "translatedLanguages": [
         "pt"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pt-099",
@@ -89279,7 +89304,7 @@
       "titleJP": "Legado Drac\u00f4nico",
       "urlEN": "http://scp-wiki.wikidot.com/scp-105-pt",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-105-pt",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv2.png",
+      "imageUrl": null,
       "objectClass": "s de Objetos N\u00edveis de Amea\u00e7a N\u00edveis de Acesso",
       "rating": 24,
       "descriptionExcerpt": null,
@@ -89295,11 +89320,12 @@
       "extractedFrom": "series-2-pt",
       "pageType": "scp-series-pt",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:21:05.777Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:36:31.770Z",
       "translatedLanguages": [
         "pt"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pt-106",
@@ -89494,7 +89520,7 @@
       "titleJP": "Ossos de Papai Noel",
       "urlEN": "http://scp-wiki.wikidot.com/scp-112-pt",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-112-pt",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv2.png",
+      "imageUrl": null,
       "objectClass": "s de Objetos N\u00edveis de Amea\u00e7a N\u00edveis de Acesso",
       "rating": 22,
       "descriptionExcerpt": null,
@@ -89514,11 +89540,12 @@
       "extractedFrom": "series-2-pt",
       "pageType": "scp-series-pt",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:21:05.777Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:36:31.770Z",
       "translatedLanguages": [
         "pt"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pt-113",
@@ -89839,7 +89866,7 @@
       "titleJP": "Dino Hazard",
       "urlEN": "http://scp-wiki.wikidot.com/scp-124-pt",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-124-pt",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv4.png",
+      "imageUrl": null,
       "objectClass": "s de Objetos N\u00edveis de Amea\u00e7a N\u00edveis de Acesso",
       "rating": 15,
       "descriptionExcerpt": null,
@@ -89857,11 +89884,12 @@
       "extractedFrom": "series-2-pt",
       "pageType": "scp-series-pt",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:21:05.777Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:36:31.770Z",
       "translatedLanguages": [
         "pt"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pt-125",
@@ -91137,7 +91165,7 @@
       "titleJP": "Floresta de Zorya",
       "urlEN": "http://scp-wiki.wikidot.com/scp-189-pt",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-189-pt",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv4.png",
+      "imageUrl": null,
       "objectClass": "s de Objetos N\u00edveis de Amea\u00e7a N\u00edveis de Acesso",
       "rating": 14,
       "descriptionExcerpt": null,
@@ -91157,11 +91185,12 @@
       "extractedFrom": "series-2-pt",
       "pageType": "scp-series-pt",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:21:05.777Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:36:31.770Z",
       "translatedLanguages": [
         "pt"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pt-190",
@@ -91295,7 +91324,7 @@
       "titleJP": "Monstro de Goianinha",
       "urlEN": "http://scp-wiki.wikidot.com/scp-194-pt",
       "urlJP": "http://scp-pt-br.wikidot.com/scp-194-pt",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv4.png",
+      "imageUrl": null,
       "objectClass": "s de Objetos N\u00edveis de Amea\u00e7a N\u00edveis de Acesso",
       "rating": 22,
       "descriptionExcerpt": null,
@@ -91310,11 +91339,12 @@
       "extractedFrom": "series-2-pt",
       "pageType": "scp-series-pt",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:21:05.777Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T13:36:31.770Z",
       "translatedLanguages": [
         "pt"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pt-195",

@@ -1,13 +1,13 @@
 {
   "totalCount": 1962,
   "language": "it",
-  "timestamp": "2026-11-10T00:49:26.482Z",
+  "timestamp": "2026-11-11T12:43:28.747Z",
   "duration": 1474,
   "status": "completed",
   "statistics": {
     "translated": 1962,
     "untranslated": 0,
-    "withImage": 802
+    "withImage": 789
   },
   "data": [
     {
@@ -32413,7 +32413,7 @@
       "titleJP": "Un Paio di Forbici",
       "urlEN": "http://scp-wiki.wikidot.com/scp-733",
       "urlJP": "http://fondazionescp.wikidot.com/scp-733",
-      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-300/AW-signature.png",
+      "imageUrl": null,
       "objectClass": "Safe",
       "rating": 1,
       "descriptionExcerpt": "SCP-733-01 \u00e8 un paio di forbici d'argento decorato, apparentemente realizzate intorno al 18\u2588\u2588. Quando utilizzato per [REDATTO PER ORDINE DEL COMANDO O5]\nQuando \u00e8 stato scoperto, SCP-733-01 era pressato tra le pagine di SCP-733-02, un libro rilegato in pelle fatto a mano composto da circa 80 pagine. Le pagine di SCP-733-02 contengono 33 fotografie in bianco e nero e 137 frammenti di testo scritto a mano. Gli autori del testo in SCP-733-02 sono stati fatti risalire a due individui non identificati",
@@ -32431,7 +32431,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:04:23.209Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T10:55:57.242Z",
       "translatedLanguages": [
         "jp",
@@ -32446,7 +32446,8 @@
         "ua",
         "zh-tr",
         "el"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-734",
@@ -47058,7 +47059,7 @@
       "titleJP": "Riscrittore di Memorie Vittoriano",
       "urlEN": "http://scp-wiki.wikidot.com/scp-1408",
       "urlJP": "http://fondazionescp.wikidot.com/scp-1408",
-      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-300/AW-signature.png",
+      "imageUrl": null,
       "objectClass": "Safe",
       "rating": 2,
       "descriptionExcerpt": "SCP-1408 \u00e8 un complesso dispositivo elettromeccanico che consiste in un'unit\u00e0 principale di 1 m x 1 m x 2 m realizzata in legno, ingranaggi e pulegge connessa attraverso numerosi cavi a un elmetto metallico. Sia sull'elmetto che sull'unit\u00e0 principale \u00e8 impresso un simbolo consistente nella lettera \"W\" con sopra di essa una \"A\" (in seguito stabilito essere il monogramma del Professor A\u2588\u2588\u2588\u2588\u2588\u2588 W\u2588\u2588\u2588\u2588\u2588, 1823-?, di [REDATTO], Inghilterra). SCP-1408, che al tempo era classificato come Artefatto Anomalo",
@@ -47077,7 +47078,7 @@
       "extractedFrom": "scp-series-2",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:16:24.553Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T10:56:06.675Z",
       "translatedLanguages": [
         "jp",
@@ -47090,7 +47091,8 @@
         "ru",
         "ua",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-1422",
@@ -50270,7 +50272,7 @@
       "titleJP": "Carta con Lato Singolo",
       "urlEN": "http://scp-wiki.wikidot.com/scp-2021",
       "urlJP": "http://fondazionescp.wikidot.com/scp-2021",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv1.png",
+      "imageUrl": null,
       "objectClass": "Safe",
       "rating": 2,
       "descriptionExcerpt": "SCP-2021 \u00e8 la designazione collettiva di 131 (precedentemente 140) fogli di carta da stampante in formato lettera U.S., rinvenuti all'interno di un box di cartone contrassegnato in pennarello indelebile come \"carta monolato, per favore reggere dai bordi, posto per le mie cose in attesa di brevetto\". Il lato anteriore dei fogli \u00e8 normale carta da stampante bianca, mentre il lato posteriore \u00e8 apparentemente \"invisibile\", o in altre parole costituito da spazio vuoto. Impilare i fogli uno sopra l'al",
@@ -50286,7 +50288,7 @@
       "extractedFrom": "scp-series-3",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:18:18.795Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T11:04:09.181Z",
       "translatedLanguages": [
         "jp",
@@ -50300,7 +50302,8 @@
         "ru",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-2022",
@@ -55305,7 +55308,7 @@
       "titleJP": "Ragazza in Fiamme",
       "urlEN": "http://scp-wiki.wikidot.com/scp-2984",
       "urlJP": "http://fondazionescp.wikidot.com/scp-2984",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv1.png",
+      "imageUrl": null,
       "objectClass": "Euclid",
       "rating": 1,
       "descriptionExcerpt": "SCP-2984 \u00e8 un esemplare di sesso femminile di Orangotango del Borneo (Pongo pygmaeus) interamente ricoperto da fiamme. Nonostante questo, SCP-2984 risulta apparentemente vivo e complessivamente in buona salute, e non dimostra alcun tipo di danno causato dal fuoco o dai fumi inalati. Il fuoco che avvolge il soggetto pu\u00f2 diffondersi e pu\u00f2 essere estinto in maniera convenzionale, seppure il soggetto ritorner\u00e0 a bruciare pochi secondi dopo, a meno che non sia totalmente immerso dentro dell'acqua.\nSC",
@@ -55323,7 +55326,7 @@
       "extractedFrom": "scp-series-3",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:18:18.795Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T11:04:09.181Z",
       "translatedLanguages": [
         "jp",
@@ -55336,7 +55339,8 @@
         "ru",
         "ua",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-2987",
@@ -57070,7 +57074,7 @@
       "titleJP": "Dove Andiamo Quando Scompariamo, Quando Svaniamo Nel Nulla",
       "urlEN": "http://scp-wiki.wikidot.com/scp-3309",
       "urlJP": "http://fondazionescp.wikidot.com/scp-3309",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aearthworm/Transparent.gif",
+      "imageUrl": null,
       "objectClass": "DI CONTENIMENTO: keter",
       "rating": 7,
       "descriptionExcerpt": "SCP-3309 \u00e8 un fenomeno in cui le anomalie catalogate scompaiono spontaneamente. Gli oggetti affetti da SCP-3309 includono oggetti anomali, entit\u00e0, luoghi e strutture concettuali. Le anomalie colpite da questo fenomeno sembrano mancare di una relazione causale; l'attivit\u00e0 di SCP-3309 \u00e8 indicata da una lettera di origine sconosciuta (indicata come\nTra le 24 e le 36 ore prima della scomparsa di un'anomalia, SCP-3309-1 appare in allegato al file dell'articolo. I documenti sottoposti a SCP-3309 vengo",
@@ -57092,7 +57096,7 @@
       "extractedFrom": "scp-series-4",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:20:01.114Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T11:09:09.643Z",
       "translatedLanguages": [
         "jp",
@@ -57107,7 +57111,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-3313",
@@ -57227,7 +57232,7 @@
       "titleJP": "Morte dell'Artista",
       "urlEN": "http://scp-wiki.wikidot.com/scp-3337",
       "urlJP": "http://fondazionescp.wikidot.com/scp-3337",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv1.png",
+      "imageUrl": null,
       "objectClass": "Safe",
       "rating": 3,
       "descriptionExcerpt": "SCP-3337 \u00e8 un fenomeno che si verifica ogni 23 maggio in un museo o una galleria degli Stati Uniti continentali che soddisfi certi criteri; gallerie e musei che soddisfano tali requisiti devono essere considerati potenziali istanze di SCP-3337-1. Le istanze di SCP-3337-1 devono esibire soprattutto opere d'arte realizzate nel XX e nel XXI secolo; almeno un\u2019opera esposta da SCP-3337-1 deve essere stata oggetto di significative controversie al momento della sua prima esposizione; un'istanza di SCP-",
@@ -57247,14 +57252,15 @@
       "extractedFrom": "scp-series-4",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:20:01.114Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T11:09:09.643Z",
       "translatedLanguages": [
         "jp",
         "en",
         "cn",
         "it"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-3340",
@@ -59932,7 +59938,7 @@
       "titleJP": "L'Impero Bizantino Era Segretamente Composto D'Alieni",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4066",
       "urlJP": "http://fondazionescp.wikidot.com/scp-4066",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv3.png",
+      "imageUrl": null,
       "objectClass": "Euclid",
       "rating": 4,
       "descriptionExcerpt": "SCP-4066 \u00e8 la designazione collettiva delle dinastie di imperatori bizantini che furono fondate, supportate, o composte da entit\u00e0 extraterrestri o extradimensionali. Tra l'ascensione di Costantino I come unico imperatore romano nel 312 e il sacco di Costantinopoli da parte dell'impero ottomano nel 1453, quasi ogni famiglia regnante nell'impero bizantino fu in qualche maniera associata ad attivit\u00e0 extraterrestri; durante questo periodo, ci fu ben poca attivit\u00e0 extraterrestre confermata da qualsia",
@@ -59951,14 +59957,15 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:21:15.356Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T11:15:12.765Z",
       "translatedLanguages": [
         "en",
         "cn",
         "es",
         "it"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4072",
@@ -60351,7 +60358,7 @@
       "titleJP": "Programma di Lezioni per la Contea di Calhoun",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4264",
       "urlJP": "http://fondazionescp.wikidot.com/scp-4264",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv1.png",
+      "imageUrl": null,
       "objectClass": "Safe",
       "rating": 1,
       "descriptionExcerpt": "SCP-4264 \u00e8 un insieme di programmi di lezioni per la Scuola Superiore Hampton nella Contea di Calhoun dello stato dell'Arkansas, USA, stampati su fogli formato lettera in uso negli Stati Uniti. I programmi contengono diversi esempi di domande che spesso implicano circostanze improbabili e occasionalmente impossibili.\nQuando la lezione \u00e8 svolta spiegandola ad un soggetto privo di conoscenza iniziale sull'argomento trattato, le circostanze descritte delle domande contenute si verificano nell'area ",
@@ -60372,7 +60379,7 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:21:15.356Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T11:15:12.765Z",
       "translatedLanguages": [
         "jp",
@@ -60382,7 +60389,8 @@
         "it",
         "ru",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4274",
@@ -60608,7 +60616,7 @@
       "titleJP": "Hai provato a sorridere di pi\u00f9?",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4376",
       "urlJP": "http://fondazionescp.wikidot.com/scp-4376",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv2.png",
+      "imageUrl": null,
       "objectClass": "Euclid",
       "rating": 2,
       "descriptionExcerpt": "SCP-4376 \u00e8 un maschio umano di 23 anni, di nome Wilhelm Schr\u00f6der. Sin dal 10/06/2019, il Sig. Schr\u00f6der possiede un'anormalit\u00e0 fisica: la sua testa si trova su di un secondo torso, il quale ha avuto origine dal collo del suo corpo originale. I corpi sono geneticamente e visivamente uguali.1 L'anamnesi di Wilhelm Sch\u00f6der mostra che gli \u00e8 stata diagnosticata depressione clinica all'et\u00e0 di 14 anni, con l'ultima valutazione psicologica all'et\u00e0 di 22 anni, mentre quelle nel corso del suo contenimento ",
@@ -60625,7 +60633,7 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:21:15.356Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T11:15:12.765Z",
       "translatedLanguages": [
         "jp",
@@ -60634,7 +60642,8 @@
         "de",
         "it",
         "ko"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4427",
@@ -61527,7 +61536,7 @@
       "titleJP": "Vecchie Lettere",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4758",
       "urlJP": "http://fondazionescp.wikidot.com/scp-4758",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv3.png",
+      "imageUrl": null,
       "objectClass": "Safe",
       "rating": 2,
       "descriptionExcerpt": "SCP-4758 \u00e8 una serie di 10 lettere scritte da o indirizzate a Charles Lafitte.1 Poich\u00e9 ogni istanza di SCP-4758 ha una propriet\u00e0 anomala diversa i cui effetti non sono abbastanza gravi per assegnarle una denominazione da anomalia separata, ciascuna ha ricevuto un nome in codice compreso fra Lettera 1 e Lettera 10. Al momento, \u00e8 stato concluso che Lettera 1 non \u00e8 anomala.\nLe istanze di SCP-4758-1 sono gli individui che leggono Lettera 10 o certi estratti dal Registro di Comunicazione 4758. SCP-47",
@@ -61554,14 +61563,15 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:21:15.356Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T11:15:12.765Z",
       "translatedLanguages": [
         "jp",
         "en",
         "cn",
         "it"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4776",
@@ -62000,7 +62010,7 @@
       "titleJP": "Sei Morto di Dissenteria",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4946",
       "urlJP": "http://fondazionescp.wikidot.com/scp-4946",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv3.png",
+      "imageUrl": null,
       "objectClass": "Keter Thaumiel",
       "rating": 2,
       "descriptionExcerpt": "SCP-4946 \u00e8 un'anomalia probabilistica osservata nelle morti di esseri umani dovute alle complicazioni riguardanti la dissenteria.\nA partire dal 06/06/2025, la somma del numero di decessi per dissenteria segnalati al giorno \u00e8 stata pari alla posizione n nella sequenza di Fibonacci, dove n \u00e8 uguale al numero di giorni trascorsi dal 06/06/2025. La ricerca su tali decessi rivela che, a parte l'errore statistico standard, tutti i decessi registrati prima dell'attuazione delle attuali procedure di con",
@@ -62019,7 +62029,7 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:21:15.356Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T11:15:12.765Z",
       "translatedLanguages": [
         "jp",
@@ -62032,7 +62042,8 @@
         "ru",
         "pl",
         "vn"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4955-coltello",
@@ -64619,7 +64630,7 @@
       "titleJP": "Telecomando Universale",
       "urlEN": "http://scp-wiki.wikidot.com/scp-5510",
       "urlJP": "http://fondazionescp.wikidot.com/scp-5510",
-      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/fragment:scp-4182-1/blank.png",
+      "imageUrl": null,
       "objectClass": "Safe",
       "rating": 4,
       "descriptionExcerpt": "SCP-5510 \u00e8 un telecomando per TV. L'elemento funziona come ci si aspetta, fatta eccezione per i suoi quattro pulsanti di navigazione dei media. Quando uno di questi viene premuto, il tempo soggettivo sperimentato dall'anomalia cambia.",
@@ -64636,7 +64647,7 @@
       "extractedFrom": "scp-series-6",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:22:15.387Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T11:16:13.474Z",
       "translatedLanguages": [
         "jp",
@@ -64655,7 +64666,8 @@
         "ua",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-5518",
@@ -70428,7 +70440,7 @@
       "titleJP": "Il Grosso Bottone Rosso",
       "urlEN": "http://scp-wiki.wikidot.com/scp-001-j",
       "urlJP": "http://fondazionescp.wikidot.com/scp-001-j",
-      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-001-ex-j/rockpainting.jpg",
+      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-001-j/001j-new.PNG",
       "objectClass": "Keter",
       "rating": 6,
       "descriptionExcerpt": "SCP-001-J \u00e8 un grande, rosso, brillante e stranamente invitante bottone che implora di essere schiacciato.\nSCP-001-J \u00e8 un meccanismo di autodistruzione che gli scienziati della Fondazione credono sia capace di distruggere la realt\u00e0 stessa, costituito da un pulsante rosso posto su una scatola in metallo. Assomiglia ad una caramella.\nIl meccanismo con cui SCP-001-J opera non \u00e8 del tutto chiaro, ma sarebbe fantastico scoprirlo.\nSCP-001-J induce una leggera costrizione psichica, in tutti i soggetti ",
@@ -70445,7 +70457,7 @@
       "extractedFrom": "joke-scps",
       "pageType": "joke-scps",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:24:58.723Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T11:35:39.614Z",
       "translatedLanguages": [
         "jp",
@@ -70462,7 +70474,8 @@
         "th",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "joke-scps-001-ex-j",
@@ -70513,7 +70526,7 @@
       "titleJP": "Trattamento Amnestico",
       "urlEN": "http://scp-wiki.wikidot.com/scp-002-j",
       "urlJP": "http://fondazionescp.wikidot.com/scp-002-j",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv5.png",
+      "imageUrl": null,
       "objectClass": "Safe",
       "rating": 1,
       "descriptionExcerpt": "SCP-002-J si riferisce a individui di diversa et\u00e0, sesso ed etnia che soffrono tutti di un qualche tipo di perdita di memoria. Fino al 20\u2588\u2588, le istanze di SCP-002-J erano impiegate dal personale della Fondazione come strumenti, somministrati a civili esposti ad anomalie e/o che hanno acquisito un'indebita conoscenza delle attivit\u00e0 della Fondazione come mezzo per prevenire la fuga di informazioni classificate.\nSe utilizzate correttamente, le istanze di SCP-002-J tra 4 e \u2588,\u2588\u25884 sciamano tra gli ind",
@@ -70532,7 +70545,7 @@
       "extractedFrom": "joke-scps",
       "pageType": "joke-scps",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:24:58.723Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T11:35:39.614Z",
       "translatedLanguages": [
         "jp",
@@ -70544,7 +70557,8 @@
         "fr",
         "it",
         "pt"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "joke-scps-003",
@@ -70676,7 +70690,7 @@
       "titleJP": "CHE CAZZO \u00c8 QUELLA ROBA",
       "urlEN": "http://scp-wiki.wikidot.com/scp-006-j",
       "urlJP": "http://fondazionescp.wikidot.com/scp-006-j",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-006-cu-ex/CU-EX3.jpg",
+      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-006-j/006-Centipede-new.jpg",
       "objectClass": "Keter",
       "rating": 12,
       "descriptionExcerpt": "SCP-006-J \u00e8 una serie di creature insettoidi che i ricercatori concordano far cacare addosso. Siamo quasi sicuri che sia memetico, ma siamo certi come l\u2019inferno che non andremo vicino a quelle cose. Penso di aver visto un pungiglione su uno di essi.",
@@ -70692,7 +70706,7 @@
       "extractedFrom": "joke-scps",
       "pageType": "joke-scps",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:24:58.723Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T11:35:39.614Z",
       "translatedLanguages": [
         "jp",
@@ -70709,7 +70723,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "joke-scps-8",
@@ -71693,7 +71708,7 @@
       "titleJP": "LA MIGLIORISSIMA LUCIERTOLA DI SEMPRE",
       "urlEN": "http://scp-wiki.wikidot.com/scp-682-j",
       "urlJP": "http://fondazionescp.wikidot.com/scp-682-j",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-682-cu/682.png",
+      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-682-j/BigTeeth.png",
       "objectClass": "KETUR",
       "rating": 7,
       "descriptionExcerpt": "LA MIGLIORISSIMA LUCIERTOLA DI SEMPRE E\u2019 UNA GRANDE LUCIERTOLA CON DENTI GRANDI E CHE NON PUO MORIRE PERCH\u2019 SI PUO\u2019 TRASFORMARE IN TUTTO. A VOLTE E\u2019 MOLTO PICCOLA PERCE\u2019 PUO\u2019 ESSERLO PERCE\u2019 PUO\u2019 ESSERE TUTTO.\nLA MIGLIORISSIMA LUCIERTOLA DI SEMPRE E\u2019 ANCHE MOLTO INTELLIGIENTE. HA UN QI DI UN BAZILLIONE E UN GIORNO A PARLATO CON UN COMPUTER MOLTO INTELLIGENTE ED ERANO ENTRAMBI DIVERTENTI.\nMANGIA DI TUTTO E USA IL SUO NASO PER FARE PASTI SPECIALI COSI\u2019 PUO\u2019 MANGIARE DI TUTTO.\nPUO\u2019 FARE TUUUUTO!\n\n\nL",
@@ -71715,7 +71730,7 @@
       "extractedFrom": "joke-scps",
       "pageType": "joke-scps",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:24:58.723Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T11:35:39.614Z",
       "translatedLanguages": [
         "jp",
@@ -71731,7 +71746,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "joke-scps-723",
@@ -75557,7 +75573,7 @@
       "titleJP": "Drago Solare",
       "urlEN": "http://scp-wiki.wikidot.com/scp-072-it",
       "urlJP": "http://fondazionescp.wikidot.com/scp-072-it",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Animals_in_Thailand_Photographs_by_Peak_Hora_%2826%29.jpg/1024px-Animals_in_Thailand_Photographs_by_Peak_Hora_%2826%29.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Animals_in_Thailand_Photographs_by_Peak_Hora_%2826%29.jpg/330px-Animals_in_Thailand_Photographs_by_Peak_Hora_%2826%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
       "objectClass": "Euclid",
       "rating": 12,
       "descriptionExcerpt": "SCP-072-IT \u00e8 una specie dall'aspetto simile a quello dei rettili quadrupedi del clade Toxicofera, nello specifico \u00e8 un ibrido tra Iguanidae e Varanidae. I maschi di SCP-072-IT sono lunghi circa 1,5m mentre le femmine arrivano a 1,3m di lunghezza. Gli esemplari maschi pesano in media 40kg, invece le femmine pesano in media 25kg. Le propriet\u00e0 anomale di questa specie sono da ricercarsi nella presenza di un apparato che rende SCP-072-IT capace di generare un raggio di radiazioni infrarosse che il s",
@@ -75577,11 +75593,12 @@
       "extractedFrom": "scp-it-serie-i",
       "pageType": "scp-series-it",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:25:52.883Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T11:38:47.939Z",
       "translatedLanguages": [
         "it"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-it-073",
@@ -77061,7 +77078,7 @@
       "titleJP": "Un Dono dalle Steppe",
       "urlEN": "http://scp-wiki.wikidot.com/scp-117-it",
       "urlJP": "http://fondazionescp.wikidot.com/scp-117-it",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Sergiy_Vasylkivskiy-_Cossack_Dunai.jpg/640px-Sergiy_Vasylkivskiy-_Cossack_Dunai.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/df/%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F._%D0%A3%D1%80%D0%B0%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D0%B7%D0%B0%D0%BA._%28%D1%81%29Kuhn_J.%2C_%D0%90%D1%82.%C2%AB%D0%91%D1%80%D0%B0%D1%82%D1%8C%D1%8F_%D0%B4%D0%B5_%D0%99%D0%BE%D0%BD%D0%B3%C2%BB._1892%D0%B3_%D0%93%D0%98%D0%9C_e1.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail_unscaled&_=20201004090025",
       "objectClass": "Safe",
       "rating": 21,
       "descriptionExcerpt": "SCP-117-IT appare come un\u2019uniforme da cavallerizzo cosacco tinta rosso cremisi, in perfette condizioni. L\u2019uniforme \u00e8 composta da: \u010docha1 in panno di canapa rosso, mantello in lana nero, colbacco in lana nero, pantaloni in panno di canapa celesti e stivali da cavalleria in pelle neri. La datazione al carbonio ha stabilito che la realizzazione di SCP-117-IT sia da datarsi alla seconda met\u00e0 del XVIII\u00b0 secolo.\nSCP-117-IT \u00e8 in grado di adattarsi alla stazza di chiunque vi entri in contatto diretto, m",
@@ -77081,11 +77098,12 @@
       "extractedFrom": "scp-it-serie-i",
       "pageType": "scp-series-it",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:25:52.883Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T11:38:47.939Z",
       "translatedLanguages": [
         "it"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-it-118",
@@ -77405,7 +77423,7 @@
       "titleJP": "Virus intestinale",
       "urlEN": "http://scp-wiki.wikidot.com/scp-127-it",
       "urlJP": "http://fondazionescp.wikidot.com/scp-127-it",
-      "imageUrl": "https://i.postimg.cc/jSxqzgtb/IMG-2781.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Hepatitis_A_virus_02.jpg?utm_source=it.wikipedia.org&utm_campaign=index&utm_content=original",
       "objectClass": "Safe",
       "rating": 13,
       "descriptionExcerpt": "SCP-127-IT \u00e8 un virus ad RNA con capside di forma icosaedrica, avvolto da un denso pericapside costellato da peplomeri1 bipartiti; \u00e8 dotato di un estensivo corredo genetico, ha un diametro di circa 200nm e possiede un caratteristico comportamento enterotropico2. L\u2019infezione da SCP-127-IT pu\u00f2 avvenire solo tramite inoculazione e colpisce strettamente l'essere umano.\nIn un arco di tempo di circa tre settimane, l\u2019infezione da SCP-127-IT causa un aumento del volume dell\u2019intestino tenue di circa cinq",
@@ -77422,11 +77440,12 @@
       "extractedFrom": "scp-it-serie-i",
       "pageType": "scp-series-it",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:25:52.883Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T11:38:47.939Z",
       "translatedLanguages": [
         "it"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-it-128",
@@ -77760,7 +77779,7 @@
       "titleJP": "Teschio Spaziale",
       "urlEN": "http://scp-wiki.wikidot.com/scp-138-it",
       "urlJP": "http://fondazionescp.wikidot.com/scp-138-it",
-      "imageUrl": "http://fondazionescp.wdfiles.com/local--files/scp-138-it/Skull2015-TB145-min.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Skull2015-TB145.jpg/960px-Skull2015-TB145.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "objectClass": "Keter",
       "rating": 16,
       "descriptionExcerpt": "SCP-138-IT, pi\u00f9 comunemente conosciuto come 2015 TB145, \u00e8 stato identificato dalla comunit\u00e0 scientifica internazionale come un asteroide di dimensioni pari a circa 650 metri, classificato come un oggetto near-Earth, potenzialmente pericoloso, facente parte degli asteroidi Apollo.\nLa Fondazione \u00e8 stata portata all\u2019attenzione dell\u2019elemento durante il suo passaggio del 31/10/2015, nel corso del quale \u00e8 stato responsabile di circa venti episodi isolati di isteria di massa, i quali si sono registrati",
@@ -77780,11 +77799,12 @@
       "extractedFrom": "scp-it-serie-i",
       "pageType": "scp-series-it",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:25:52.883Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T11:38:47.939Z",
       "translatedLanguages": [
         "it"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-it-139",

@@ -1,13 +1,13 @@
 {
   "totalCount": 2113,
   "language": "pl",
-  "timestamp": "2026-11-10T00:49:26.482Z",
+  "timestamp": "2026-11-11T12:43:28.747Z",
   "duration": 1371,
   "status": "completed",
   "statistics": {
     "translated": 2113,
     "untranslated": 0,
-    "withImage": 1222
+    "withImage": 1207
   },
   "data": [
     {
@@ -26268,7 +26268,7 @@
       "titleJP": "Scratch 'n' Sniff JPEG",
       "urlEN": "http://scp-wiki.wikidot.com/scp-1029",
       "urlJP": "http://scp-pl.wikidot.com/scp-1029",
-      "imageUrl": "http://scp-pl.wdfiles.com/local--files/scp-1029/scp-1029.jpg",
+      "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-1029/scp-1029.jpg",
       "objectClass": "Bezpieczne",
       "rating": 4,
       "descriptionExcerpt": "SCP-1029 to plik obrazu 683x1024 pikseli w standardzie Exif JPEG posiadaj\u0105cy sum\u0119 kontroln\u0105 MP5 bbb61a1033967e337e1c691bd1c860fe. Przedstawia on \u0142odyg\u0119 fioletowego kwiatu gatunku Hiacynt wschodni. Kiedy podmiot zostanie wy\u015bwietlony w pe\u0142nym rozmiarze na monitorze komputera, delikatne potarcie palcem (styczno\u015b\u0107 sk\u00f3ry z wy\u015bwietlaczem wydaje si\u0119 niezb\u0119dna do wywo\u0142ania reakcji) spowoduje uwolnienie charakterystycznego zapachu kwiat\u00f3w tak jak na materiale \u201escratch 'n' sniff\u201d.\nPr\u00f3bki powietrza zebrane",
@@ -26286,7 +26286,7 @@
       "extractedFrom": "scp-series-2",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:45:32.277Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:02:07.664Z",
       "translatedLanguages": [
         "jp",
@@ -26300,7 +26300,8 @@
         "ko",
         "ru",
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-1032",
@@ -45944,7 +45945,7 @@
       "titleJP": "Szturchanie \u015amierci patykiem",
       "urlEN": "http://scp-wiki.wikidot.com/scp-3984",
       "urlJP": "http://scp-pl.wikidot.com/scp-3984",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aearthworm/Transparent.gif",
+      "imageUrl": null,
       "objectClass": "Keter",
       "rating": 8,
       "descriptionExcerpt": "SCP-3984 odnosi si\u0119 do fenomenu, w kt\u00f3rym jakiekolwiek \u017cywe organizmy w kr\u00f3lestwie Zwierz\u0105t pod taksonomi\u0105 Cavalier-Smith'a1, wliczaj\u0105c w to ludzi, nie s\u0105 w stanie umrze\u0107.\nObecnie, wszystkie znane \u017cywe istoty w kr\u00f3lestwie Zwierz\u0105t s\u0105 pod dzia\u0142aniem efekt\u00f3w SCP-3984. Spe\u0142nia to kryteria na Scenariusz \"Ko\u0144ca \u015amierci\" Klasy \u03a9K.\n\u0179r\u00f3d\u0142o lub pochodzenie wyst\u0119powania SCP-3984 jest okre\u015blane jako \"\u03a9K\". Dok\u0142adna natura \u03a9K jest obecnie przedmiotem dyskusji. Ten dokument skupia si\u0119 tylko na SCP-3984 i jego",
@@ -45965,7 +45966,7 @@
       "extractedFrom": "scp-series-4",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:49:07.714Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:10:15.494Z",
       "translatedLanguages": [
         "jp",
@@ -45980,7 +45981,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-3999",
@@ -46684,7 +46686,7 @@
       "titleJP": "Tw\u00f3j przyjazny Keter z s\u0105siedztwa",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4051",
       "urlJP": "http://scp-pl.wikidot.com/scp-4051",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv2.png",
+      "imageUrl": null,
       "objectClass": "Keter",
       "rating": 6,
       "descriptionExcerpt": "SCP-4051 to humanoid p\u0142ci m\u0119skiej, kt\u00f3ry potrafi tworzy\u0107 chwilowe tunele czasoprzestrzenne Klasy E do pozawymiarowych przestrzeni wype\u0142nionych teoretycznie niesko\u0144czon\u0105 liczb\u0105 wyj\u0105tkowych przedmiot\u00f3w. Te przedmioty mo\u017cna wyj\u0105\u0107 z pozawymiarowych przestrzeni, je\u017celi fizycznie mog\u0105 si\u0119 zmie\u015bci\u0107 przez tunel. Badania wykaza\u0142y, \u017ce SCP-4051 nie potrafi zmieni\u0107 zawarto\u015bci pozawymiarowych przestrzeni po ich manifestacji.\nSCP-4051 by\u0142 w stanie wyj\u0105\u0107 poni\u017csze przedmioty podczas kontrolowanych bada\u0144 nadzoro",
@@ -46709,7 +46711,7 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:50:36.315Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:22:24.032Z",
       "translatedLanguages": [
         "jp",
@@ -46718,7 +46720,8 @@
         "de",
         "pl",
         "pt"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4054",
@@ -47494,7 +47497,7 @@
       "titleJP": "Nie ma O\u015brodka 5",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4182",
       "urlJP": "http://scp-pl.wikidot.com/scp-4182",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv4.png",
+      "imageUrl": null,
       "objectClass": "Keter",
       "rating": 11,
       "descriptionExcerpt": "SCP-4182 to fenomen, przez kt\u00f3ry wewn\u0119trzne dokumenty Fundacji s\u0105 cyklicznie zmieniane, by zawiera\u0107 wzmianki o nieistniej\u0105cym o\u015brodku (\"O\u015brodku 5\"). Mechanizm stoj\u0105cy za tym jest obecnie niepoznany.\nOpisy O\u015brodka 5 nie s\u0105 jednakowe, ale zazwyczaj jest opisywany jako wyspa stworzona przez cz\u0142owieka w celu magazynowania niebezpiecznych materia\u0142\u00f3w.1\nOd czasu jego odkrycia w 2018, ilo\u015b\u0107 przypadk\u00f3w SCP-4182 wzrasta wyk\u0142adniczo.\n\nPrzypisy\n1. Dok\u0142adniej o\u015brodek przechowawczy dla anomalnych odpad\u00f3w.",
@@ -47518,7 +47521,7 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:50:36.315Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:22:24.032Z",
       "translatedLanguages": [
         "jp",
@@ -47534,7 +47537,8 @@
         "pt",
         "th",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4183",
@@ -47898,7 +47902,7 @@
       "titleJP": "Poddyrektywa",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4260",
       "urlJP": "http://scp-pl.wikidot.com/scp-4260",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv2.png",
+      "imageUrl": null,
       "objectClass": "Euclid",
       "rating": 4,
       "descriptionExcerpt": "SCP-4260 odnosi si\u0119 do \u015bwiadomo\u015bci essofizycznego bytu, kt\u00f3ry przenikn\u0105\u0142 przez ca\u0142y znany wszech\u015bwiat. Wp\u0142yw istnienia SCP-4260 zosta\u0142 dobrze udokumentowany przez prawie ka\u017cd\u0105 kultur\u0119 \u015bwiadomych istot. Terminacja SCP-4260 poskutkowa\u0142a neutralizacj\u0105 jego g\u0142\u00f3wnych w\u0142a\u015bciwo\u015bci anomalnych, a\u017c do jego wskrzeszenia podczas Procedury 8917.",
@@ -47919,7 +47923,7 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:50:36.315Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:22:24.032Z",
       "translatedLanguages": [
         "jp",
@@ -47930,7 +47934,8 @@
         "ru",
         "pl",
         "vn"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4273",
@@ -48709,7 +48714,7 @@
       "titleJP": "Komora przechowawcza dla humanoid\u00f3w #\u03bb045",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4415",
       "urlJP": "http://scp-pl.wikidot.com/scp-4415",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv2.png",
+      "imageUrl": null,
       "objectClass": "Euclid",
       "rating": 4,
       "descriptionExcerpt": "SCP-4415 jest zbiorem pozawymiarowych lokacji, do kt\u00f3rych dost\u0119p jest mo\u017cliwy przez drzwi dawnej Jednostki Przechowawczej dla Humanoid\u00f3w #\u03bb045. Wn\u0119trze SCP-4415 s\u0142u\u017cy jako punkt nawigacyjny dla wielu pozaprzestrzennych i pozaczasowych miejsc, kt\u00f3re pojawiaj\u0105 si\u0119 p\u00f3\u0142losowo1 po ca\u0142kowitym zamkni\u0119ciu i ponownym otworzeniu drzwi od jednostki. Co wi\u0119cej, SCP-4415 jest wy\u0142\u0105cznie dost\u0119pny dla anomalnych humanoid\u00f3w: pr\u00f3by wej\u015bcia do SCP-4415 przez nieanomalne osoby zawsze ko\u0144cz\u0105 si\u0119 niepowodzeniem.\nRzec",
@@ -48728,7 +48733,7 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:50:36.315Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:22:24.032Z",
       "translatedLanguages": [
         "jp",
@@ -48738,7 +48743,8 @@
         "es",
         "pl",
         "pt"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4419",
@@ -51220,7 +51226,7 @@
       "titleJP": "ja irl :)",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4816",
       "urlJP": "http://scp-pl.wikidot.com/scp-4816",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-4816/mistake.png",
+      "imageUrl": "http://scpsandbox-pl.wikidot.com/local--files/filingpie/mistake.jpg",
       "objectClass": "Oczekiwane Bezpieczne Zneutralizowane (Prowizoryczne)",
       "rating": 3,
       "descriptionExcerpt": "SCP-4816 to nieanomalne zdj\u0119cie przedstawiaj\u0105ce drzwi i fraz\u0119 zapisan\u0105 bia\u0142ym tekstem. SCP-4816 by\u0142 poprzednio zdolny do modyfikowania swojej zawarto\u015bci i przyj\u0105\u0142 swoj\u0105 obecn\u0105 form\u0119 dnia 7 lipca 2018 roku. SCP-4816 wcze\u015bniej przedstawia\u0142 PoI-6888 \"kkrule\"1, znanego cz\u0142onka GoI-5869 \"Gamers Against Weed\". Miejsce wykonania SCP-4816 jest obecnie nieznane, uwa\u017ca si\u0119, \u017ce podmiot wykonany zosta\u0142 w prywatnym lokum.\nPo wi\u0119cej szczeg\u00f3\u0142\u00f3w patrz Dodatek 1.",
@@ -51240,7 +51246,7 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:50:36.315Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:22:24.032Z",
       "translatedLanguages": [
         "jp",
@@ -51250,7 +51256,8 @@
         "it",
         "ru",
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4826",
@@ -51968,7 +51975,7 @@
       "titleJP": "Zmar\u0142e\u015b na czerwonk\u0119",
       "urlEN": "http://scp-wiki.wikidot.com/scp-4946",
       "urlJP": "http://scp-pl.wikidot.com/scp-4946",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv3.png",
+      "imageUrl": null,
       "objectClass": "Keter Thaumiel",
       "rating": 2,
       "descriptionExcerpt": "SCP-4946 jest probabilistyczn\u0105 anomali\u0105 obserwowan\u0105 w zg\u0142aszanych zgonach ludzkich w wyniku czerwonki.\n\nOd 06.06.2025 r. \u0141\u0105czna liczba zg\u0142oszonych zgon\u00f3w z powodu czerwonki na dzie\u0144 by\u0142a r\u00f3wna pozycji n w sekwencji Fibonacciego, gdzie n by\u0142o r\u00f3wne liczbie dni od 06.06.2025. Badania nad takimi zgonami ujawniaj\u0105, \u017ce wszystkie odnotowane zgony przed momentem wprowadzenia obecnych procedur by\u0142y w wyniku nieanomalnej czerwonki.\nNale\u017cy zauwa\u017cy\u0107, \u017ce SCP-4946 nie reprezentuje rzeczywistej liczby ludzkic",
@@ -51987,7 +51994,7 @@
       "extractedFrom": "scp-series-5",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:50:36.315Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:22:24.032Z",
       "translatedLanguages": [
         "jp",
@@ -52000,7 +52007,8 @@
         "ru",
         "pl",
         "vn"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-4948",
@@ -54786,7 +54794,7 @@
       "titleJP": "Odwieczna koniunkcja",
       "urlEN": "http://scp-wiki.wikidot.com/scp-5486",
       "urlJP": "http://scp-pl.wikidot.com/scp-5486",
-      "imageUrl": "https://scptestwiki.wdfiles.com/local--files/jawn-one/reaganmain.png",
+      "imageUrl": "https://scp-wiki.wikidot.com/local--files/scp-5486/reaganmain.png",
       "objectClass": "Keter",
       "rating": 7,
       "descriptionExcerpt": "SCP-5486 jest desygnacj\u0105 na niematerialny, pozawymiarowy byt, kt\u00f3ry \u017cywi si\u0119 rozg\u0142osem. Anomalia \"op\u0119ta\" tylko jedn\u0105 osob\u0119 na raz \u2013 zazwyczaj s\u0105 to podmioty, kt\u00f3re s\u0105 na skraju b\u0105d\u017a w centrum uwagi opinii publicznej i/lub narastaj\u0105cej nies\u0142awy w\u015br\u00f3d danego spo\u0142ecze\u0144stwa.\nPrzebieg op\u0119tania jest zmienny, jednak cz\u0119sto przebiega wed\u0142ug podobnego schematu jak poni\u017cej:\n\nPodmiot zaczyna d\u0105\u017cy\u0107 do zaanga\u017cowania publicznego, w bardziej znacz\u0105cy spos\u00f3b ni\u017c wcze\u015bniej odnotowano;\nPozycja podmiotu w kulturze",
@@ -54809,7 +54817,7 @@
       "extractedFrom": "scp-series-6",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:52:20.451Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:22:26.285Z",
       "translatedLanguages": [
         "jp",
@@ -54820,7 +54828,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-5494",
@@ -54899,7 +54908,7 @@
       "titleJP": "Uniwersalny pilot",
       "urlEN": "http://scp-wiki.wikidot.com/scp-5510",
       "urlJP": "http://scp-pl.wikidot.com/scp-5510",
-      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/fragment:scp-4182-1/blank.png",
+      "imageUrl": null,
       "objectClass": "Bezpieczne (tymczasowo)",
       "rating": 6,
       "descriptionExcerpt": "SCP-5510 to pilot do telewizora. Obiekt dzia\u0142a tak jak powinien, pomijaj\u0105c jego cztery przyciski sterowania. Kiedy jeden z nich jest naci\u015bni\u0119ty, subiektywny czas do\u015bwiadczany przez anomali\u0119 zmienia si\u0119.",
@@ -54916,7 +54925,7 @@
       "extractedFrom": "scp-series-6",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:52:20.451Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:22:26.285Z",
       "translatedLanguages": [
         "jp",
@@ -54935,7 +54944,8 @@
         "ua",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-5511",
@@ -54943,7 +54953,7 @@
       "titleJP": "Kto b\u0119dzie ci\u0119 pami\u0119ta\u0142, gdy odejdziesz?",
       "urlEN": "http://scp-wiki.wikidot.com/scp-5511",
       "urlJP": "http://scp-pl.wikidot.com/scp-5511",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aclassified-decoration-base/classified-lv2.png",
+      "imageUrl": null,
       "objectClass": "Keter",
       "rating": 6,
       "descriptionExcerpt": "SCP-5511 to wydarzenie, kt\u00f3re mia\u0142o miejsce w nocy 12.02.2020, podczas kt\u00f3rego zgin\u0119\u0142o 84 cywil\u00f3w z powodu spontanicznego wybuchu g\u0142owy z si\u0142\u0105 oko\u0142o jednej militony TNT. Spowodowa\u0142o to kolejne 20 ofiar \u015bmiertelnych z powodu tej si\u0142y lub powsta\u0142ych od\u0142amk\u00f3w, a ponad 30 os\u00f3b zosta\u0142o rannych. Podczas tego wydarzenia na powierzchni Ksi\u0119\u017cyca pojawi\u0142a si\u0119 projekcja czerwonych liter (SCP-5511-1), sekwencja zmienia\u0142a si\u0119 z ka\u017cd\u0105 kolejn\u0105 ofiar\u0105. Pomi\u0119dzy ofiaraami nie znaleziono \u017cadnych powi\u0105za\u0144, kt\u00f3re m",
@@ -54960,7 +54970,7 @@
       "extractedFrom": "scp-series-6",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:52:20.451Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:22:26.285Z",
       "translatedLanguages": [
         "jp",
@@ -54971,7 +54981,8 @@
         "ru",
         "pl",
         "vn"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-5515",
@@ -55270,7 +55281,7 @@
       "titleJP": "I Ain't No Skeleton's Son",
       "urlEN": "http://scp-wiki.wikidot.com/scp-5572",
       "urlJP": "http://scp-pl.wikidot.com/scp-5572",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aearthworm/Transparent.gif",
+      "imageUrl": null,
       "objectClass": null,
       "rating": 6,
       "descriptionExcerpt": "SCP-5572 jest fenomenem objawiaj\u0105cym si\u0119, kiedy miejsce poch\u00f3wku danej osoby nie zawiera napisanej w pobli\u017cu frazy: \"Niech spoczywa w pokoju\"1. Zw\u0142oki osoby uprzednio pochowanej w takim miejscu s\u0105 przetransportowane do wcze\u015bniej nieznanej rzeczywisto\u015bci, od\u0142\u0105czonej od g\u0142\u00f3wnej bez innych mo\u017cliwo\u015bci dost\u0119pu, okre\u015blanej dalej jako SCP-5572-PRIME. W zwi\u0105zku z tym \u00f3w fenomen zosta\u0142 zaklasyfikowany jako anomalia klasy Terminal2.\nSCP-5572-1 jest grupow\u0105 desygnacj\u0105 na wszystkie zw\u0142oki przetransportowane",
@@ -55293,13 +55304,14 @@
       "extractedFrom": "scp-series-6",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:52:20.451Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:22:26.285Z",
       "translatedLanguages": [
         "en",
         "cn",
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-5592",
@@ -58746,7 +58758,7 @@
       "titleJP": "Jedyna prawdziwa anomalia",
       "urlEN": "http://scp-wiki.wikidot.com/scp-6383",
       "urlJP": "http://scp-pl.wikidot.com/scp-6383",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/STOP_sign.jpg/640px-STOP_sign.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f9/STOP_sign.jpg",
       "objectClass": "Nieanomalne",
       "rating": 2,
       "descriptionExcerpt": "SCP-6383 to nieanomalny znak stop stworzony z materia\u0142\u00f3w identycznych do innych znak\u00f3w tradycyjnie u\u017cywanych w Stanach Zjednoczonych. Wszystkie formy \u015bwiadomo\u015bci i prawie \u015bwiadomego \u017cycia (ludzie/anomalne byty/sztuczna inteligencja/ro\u015bliny) wykazuj\u0105 uczucie lub symptomy znacznego dyskomfortu i niepokoju w obecno\u015bci SCP-6383. Efekt ten nie jest anomalny i jest uwa\u017cany za fundamentaln\u0105 reakcj\u0119 istniej\u0105c\u0105 w naturze.\nPodczas test\u00f3w na anomalne w\u0142a\u015bciwo\u015bci SCP-6383 ci\u0105gle mia\u0142 negatywne wyniki w prze",
@@ -58761,7 +58773,7 @@
       "extractedFrom": "scp-series-7",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:53:42.717Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:24:21.880Z",
       "translatedLanguages": [
         "jp",
@@ -58775,7 +58787,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-6387",
@@ -59184,7 +59197,7 @@
       "titleJP": "T\u0119skni\u0119 za moim kotem :(",
       "urlEN": "http://scp-wiki.wikidot.com/scp-6449",
       "urlJP": "http://scp-pl.wikidot.com/scp-6449",
-      "imageUrl": "http://scp-pl.wdfiles.com/local--files/scp-6449/cat.jpg",
+      "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-6449/cat.jpg",
       "objectClass": "Euclid",
       "rating": 3,
       "descriptionExcerpt": "SCP-6449 to m\u0119\u017cczyzna w wieku 29 lat,1 narodowo\u015bci niemieckiej. SCP-6499 jest bieg\u0142y w pos\u0142ugiwaniu si\u0119 j\u0119zykiem angielskim, niemieckim i w\u0142oskim. SCP-6449 jest pod ka\u017cdym wzgl\u0119dem przeci\u0119tn\u0105 ludzk\u0105 istot\u0105, opr\u00f3cz zdolno\u015bci do produkcji SCP-6499-A.\n\n\n\nSCP-6449-A-011\n\n\n\nSCP-6449-A jest opisywany jako zbi\u00f3r 2382 rysunk\u00f3w kot\u00f3w. Ka\u017cdy kot ma ten sam wz\u00f3r futra. Te rysunki zdradzaj\u0105 prymitywne umiej\u0119tno\u015bci artystyczne i ograniczone pojmowanie teorii koloru3, chocia\u017c niekt\u00f3re obiekty przedstawiaj\u0105 r\u00f3",
@@ -59206,14 +59219,15 @@
       "extractedFrom": "scp-series-7",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:53:42.717Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:24:21.880Z",
       "translatedLanguages": [
         "en",
         "cn",
         "fr",
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-6451",
@@ -59340,7 +59354,7 @@
       "titleJP": "NIEMOWL\u0118?????",
       "urlEN": "http://scp-wiki.wikidot.com/scp-6469",
       "urlJP": "http://scp-pl.wikidot.com/scp-6469",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/calibri-bold-s-mega-cool-author-page/dababy.jpg",
+      "imageUrl": "https://scp-wiki.wikidot.com/local--files/scp-6469/SCP-6469.jpg",
       "objectClass": "Zlikwidowane",
       "rating": 7,
       "descriptionExcerpt": null,
@@ -59364,7 +59378,7 @@
       "extractedFrom": "scp-series-7",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:53:42.717Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:24:21.880Z",
       "translatedLanguages": [
         "jp",
@@ -59381,7 +59395,8 @@
         "ua",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-6470",
@@ -62869,7 +62884,7 @@
       "titleJP": "J jak \ud835\ude45\ud835\ude5a\ud835\ude69\ud835\ude68\ud835\ude56\ud835\ude62",
       "urlEN": "http://scp-wiki.wikidot.com/scp-7396",
       "urlJP": "http://scp-pl.wikidot.com/scp-7396",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aearthworm/Transparent.gif",
+      "imageUrl": null,
       "objectClass": "Cernunnos",
       "rating": 4,
       "descriptionExcerpt": null,
@@ -62887,7 +62902,7 @@
       "extractedFrom": "scp-series-8",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:55:00.740Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:26:23.075Z",
       "translatedLanguages": [
         "jp",
@@ -62900,7 +62915,8 @@
         "pl",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-7404",
@@ -63363,7 +63379,7 @@
       "titleJP": "O jak Otwory",
       "urlEN": "http://scp-wiki.wikidot.com/scp-7559",
       "urlJP": "http://scp-pl.wikidot.com/scp-7559",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aearthworm/Transparent.gif",
+      "imageUrl": null,
       "objectClass": "Keter",
       "rating": 2,
       "descriptionExcerpt": "SCP-7559 s\u0105 tunelami czasoprzestrzennymi otoczonymi zwieraczami, kt\u00f3re spontanicznie pojawiaj\u0105 si\u0119 w cia\u0142ach \u017cywych ludzi. Tunele te s\u0105 stabilne, a ich \u015brednica waha si\u0119 od 2 \u00b5m do 25 cm w najszerszym punkcie, s\u0105 one idealnie z\u0142\u0105czone z otaczaj\u0105c\u0105 je tkank\u0105.\nZwieracze SCP-7559 zazwyczaj \u0142\u0105cz\u0105 si\u0119 wy\u0142\u0105cznie z instancjami wyst\u0119puj\u0105cymi w cia\u0142ach innych ludzi. Cz\u0119sto prowadzi to do powik\u0142a\u0144, gdy p\u0142yny ustrojowe z jednego nosiciela przelewaj\u0105 si\u0119 do innego; jednym wartym odnotowania przypadkiem jest",
@@ -63381,7 +63397,7 @@
       "extractedFrom": "scp-series-8",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:55:00.740Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:26:23.075Z",
       "translatedLanguages": [
         "jp",
@@ -63393,7 +63409,8 @@
         "pl",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-7579",
@@ -64068,7 +64085,7 @@
       "titleJP": "V jak VVrogo\u015b\u0107",
       "urlEN": "http://scp-wiki.wikidot.com/scp-7841",
       "urlJP": "http://scp-pl.wikidot.com/scp-7841",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aearthworm/Transparent.gif",
+      "imageUrl": null,
       "objectClass": "Bezpieczne",
       "rating": 4,
       "descriptionExcerpt": "SCP-7841-ZA jest ludzkim m\u0119\u017cczyzn\u0105 o wyj\u0105tkowo wadliwej psychologii.\nSCP-7841-ZA posiada zdolno\u015b\u0107 \"emocjonalnego na\u015bladowania\" os\u00f3b znajduj\u0105cych si\u0119 w jego pobli\u017cu. Mimo \u017ce traumatyczne prze\u017cycia z jego m\u0142odo\u015bci sprawi\u0142y, \u017ce jest niech\u0119tny do wypowiadania si\u0119 na ten temat, SCP-7841-ZA po intensywnym przes\u0142uchaniu opisa\u0142 t\u0119 umiej\u0119tno\u015b\u0107 jako mo\u017cliwo\u015b\u0107 wyobra\u017cenia siebie na miejscu innego organizmu. Wierz\u0105c dok\u0142adno\u015bci tego opisu, to pozwala mu to na zrozumienie uczu\u0107 otaczaj\u0105cych go os\u00f3b i powierz",
@@ -64088,7 +64105,7 @@
       "extractedFrom": "scp-series-8",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:55:00.740Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:26:23.075Z",
       "translatedLanguages": [
         "jp",
@@ -64099,7 +64116,8 @@
         "pl",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-7884",
@@ -65621,7 +65639,7 @@
       "titleJP": "Onychofobia: Nieadaptacyjny samokanibalizm",
       "urlEN": "http://scp-wiki.wikidot.com/scp-8480",
       "urlJP": "http://scp-pl.wikidot.com/scp-8480",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-8480/473979858_c02810d200_c.jpg",
+      "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-8480/17968_lores_edit.jpg",
       "objectClass": "Keter",
       "rating": 4,
       "descriptionExcerpt": "SCP-8480 odnosi si\u0119 do anomalnego zaburzenia psychicznego, kt\u00f3re cz\u0119sto dokonuje manifestacji u dzieci w przedziale wiekowym od 3 do 14 lat. Zara\u017cone osoby, okre\u015blane jako instancje SCP-8480-1, przejawiaj\u0105 nast\u0119puj\u0105ce objawy:\n\nWyst\u0119powanie umiarkowanych lub ci\u0119\u017ckich stan\u00f3w l\u0119kowych;\nB\u00f3le g\u0142owy/migreny;\nUmiarkowana lub ci\u0119\u017cka onychofagia;\nUmiarkowana lub ci\u0119\u017cka dermatofagia;\nPrzy\u015bpieszona regeneracja kom\u00f3rek/gojenie si\u0119 ran;\nZnacznie zwi\u0119kszony pr\u00f3g b\u00f3lu, szczeg\u00f3lnie w palcach.\n\nUwa\u017ca si\u0119, \u017ce SCP",
@@ -65646,7 +65664,7 @@
       "extractedFrom": "scp-series-9",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:55:47.876Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:30:58.466Z",
       "translatedLanguages": [
         "jp",
@@ -65655,7 +65673,8 @@
         "de",
         "es",
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-8498",
@@ -67253,7 +67272,7 @@
       "titleJP": "Suzeren",
       "urlEN": "http://scp-wiki.wikidot.com/scp-9090",
       "urlJP": "http://scp-pl.wikidot.com/scp-9090",
-      "imageUrl": "https://iiif.wellcomecollection.org/image/V0020479/full/2048%2C/0/default.jpg",
+      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-9090/9090.jpg",
       "objectClass": null,
       "rating": 6,
       "descriptionExcerpt": "SCP-9090 jest organicznym humanoidem mierz\u0105cym 1,98 metra i wa\u017c\u0105cym 67,8 kilogram\u00f3w. Przejawia ograniczon\u0105 kontrol\u0119 ruchow\u0105, ale uwa\u017ca si\u0119, \u017ce jest rozumny i \u015bwiadomy swojego otoczenia.\nZewn\u0119trznie obiekt przypomina lwic\u0119 (Panthera leo) zar\u00f3wno wizualnie i genetycznie o przypominaj\u0105cej ludzkiej budowie i posturze. Sk\u00f3ra podmiotu zawiera \u015bladowe ilo\u015bci boraksu, formaldehydu i arszeniku, substancji chemicznych cz\u0119sto u\u017cywanych podczas procesu wypychania zwierz\u0105t, a jej wiek okre\u015blono na ponad pi\u0119\u0107",
@@ -67273,14 +67292,15 @@
       "extractedFrom": "scp-series-10",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:56:32.913Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:44:57.652Z",
       "translatedLanguages": [
         "en",
         "cn",
         "es",
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-9097",
@@ -67847,7 +67867,7 @@
       "titleJP": "Alex Thorley skacze za wysoko",
       "urlEN": "http://scp-wiki.wikidot.com/scp-9904",
       "urlJP": "http://scp-pl.wikidot.com/scp-9904",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--resized-images/scp-9904/Notes_260217_170855%281%29.jpg/medium.jpg",
+      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-9904/Notes_260217_170855%281%29.jpg",
       "objectClass": null,
       "rating": 1,
       "descriptionExcerpt": "SCP-9904 to poziomy skok wykonany przez Alex Thorley dnia \u2588\u2588.\u2588\u2588.20\u2588\u2588 o godzinie 14:12 czasu lokalnego.\nPodczas skoku:\n\nAlex Thorley oderwa\u0142o si\u0119 od ziemi obiema stopami.\nAlex Thorley wznios\u0142o si\u0119 na oko\u0142o 25 cm.\nAlex Thorley pozosta\u0142o w powietrzu przez oko\u0142o 2 sekundy.\nAlex Thorley pomy\u015blnie wyl\u0105dowa\u0142o z powrotem na ziemi bez zewn\u0119trznej pomocy.\n\nStatystyki te wskazuj\u0105 na 95-procentowe zmniejszenie przyspieszenia grawitacyjnego podczas fazy lotu Alex Thorley. Alex Thorley wyrazi\u0142o niepewno\u015b\u0107 co ",
@@ -67869,14 +67889,15 @@
       "extractedFrom": "scp-series-10",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:56:32.913Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:44:57.652Z",
       "translatedLanguages": [
         "jp",
         "en",
         "cn",
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-9942",
@@ -67989,7 +68010,7 @@
       "titleJP": "Du\u017cy czerwony przycisk",
       "urlEN": "http://scp-wiki.wikidot.com/scp-001-j",
       "urlJP": "http://scp-pl.wikidot.com/scp-001-j",
-      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-001-ex-j/rockpainting.jpg",
+      "imageUrl": "http://www.scpwiki.com/local--files/scp-001-j/001j-new.PNG",
       "objectClass": "Keter",
       "rating": 15,
       "descriptionExcerpt": "SCP-001-J jest du\u017cym, czerwonym, b\u0142yszcz\u0105cym, dziwnie poci\u0105gaj\u0105cym przyciskiem, kt\u00f3ry a\u017c si\u0119 prosi, \u017ceby go nacisn\u0105\u0107.\nSCP-001-J jest mechanizmem autodestrukcji i naukowcy Fundacji wierz\u0105, \u017ce jest wystarczaj\u0105co silny, aby zniszczy\u0107 sam\u0105 rzeczywisto\u015b\u0107. Sk\u0142ada si\u0119 z okr\u0105g\u0142ego, czerwonego przycisku, umieszczonego w metalowej obudowie. Wygl\u0105da jak cukierek.\nMechanizm dzia\u0142ania SCP-001-J nie jest w pe\u0142ni zrozumiany, ale by\u0142oby \u015bwietnie si\u0119 dowiedzie\u0107.\nSCP-001-J wywiera \u0142agodny przymus na psychik\u0119 wszy",
@@ -68008,7 +68029,7 @@
       "extractedFrom": "joke-scps",
       "pageType": "joke-scps",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:56:52.215Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:46:18.679Z",
       "translatedLanguages": [
         "jp",
@@ -68025,7 +68046,8 @@
         "th",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "joke-scps-001-ex-j",
@@ -68234,7 +68256,7 @@
       "titleJP": "CO TO, KURWA, JEST",
       "urlEN": "http://scp-wiki.wikidot.com/scp-006-j",
       "urlJP": "http://scp-pl.wikidot.com/scp-006-j",
-      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-006-cu-ex/CU-EX3.jpg",
+      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-006-j/006-Centipede-new.jpg",
       "objectClass": "Keter",
       "rating": 32,
       "descriptionExcerpt": "SCP-006-J to zbi\u00f3r insekt\u00f3w, kt\u00f3re badacze jednog\u0142o\u015bnie uznaj\u0105 za przera\u017caj\u0105ce do szpiku ko\u015bci. Jeste\u015bmy przekonani, \u017ce to efekt memetyczny, ale za \u017cadne skarby nie zbli\u017cymy si\u0119 do tych rzeczy. Na jednym czym\u015b widzia\u0142em chyba \u017c\u0105d\u0142o.",
@@ -68251,7 +68273,7 @@
       "extractedFrom": "joke-scps",
       "pageType": "joke-scps",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:56:52.215Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:46:18.679Z",
       "translatedLanguages": [
         "jp",
@@ -68268,7 +68290,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "joke-scps-006-cu-ex",
@@ -69160,7 +69183,7 @@
       "titleJP": "SUPER NAJLEPSZA JASZCZ\u00d3RKA NA \u015aWIECIE",
       "urlEN": "http://scp-wiki.wikidot.com/scp-682-j",
       "urlJP": "http://scp-pl.wikidot.com/scp-682-j",
-      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-682-cu/682.png",
+      "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-682-j/BigTeeth.png",
       "objectClass": "KETUR",
       "rating": 16,
       "descriptionExcerpt": "NAJLEPSIEJSZA JASZCZURKA KIEDYKOLWIEK JEST DU\u017b\u0104 JASZCZURK\u0104 Z DU\u017bYMI Z\u0118BAMI I NIE MO\u017bE UMRZE\u0106 PONIEWARZ MO\u017bE PRZERODZI\u0106 SI\u0118 WE WSZYSTKO. D\u017bASAMI JEST BARDZO MA\u0141A BO ON MO\u017bE BY\u0106 TYM I PONIEWARZ MOZE BY\u0106 WSZYSTKIM.\nNAJLEPSIEJSZA JASZCZURKA KIEDYKOLWIEK JEST TE\u017b BARDZO M\u0104DRA. MA BILJON IQ I PEWNEGO DNIA ROZMAWIA\u0141A Z BARDZO M\u0104DRYM KOMPUTEREM I BYLI OBAJ BARDZO M\u0104DRZY\nON JE WSZYSTKO I WYKORZYSTUJE SW\u00d3J NOS DO ROBIENIA SPECJALNEGO JEDZENIA WI\u0118C MORZE JE\u015a\u0106 WSZYSTKO.\nMORZE ROOBI\u0106 WSZYSTKO!\n\n\nNAJLEPSIEJSZ",
@@ -69181,7 +69204,7 @@
       "extractedFrom": "joke-scps",
       "pageType": "joke-scps",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:56:52.215Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:46:18.679Z",
       "translatedLanguages": [
         "jp",
@@ -69197,7 +69220,8 @@
         "pt",
         "vn",
         "zh-tr"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "joke-scps-682-cu",
@@ -71171,7 +71195,7 @@
       "titleJP": "Cmentarne zabawy",
       "urlEN": "http://scp-wiki.wikidot.com/scp-pl-010",
       "urlJP": "http://scp-pl.wikidot.com/scp-pl-010",
-      "imageUrl": "http://scp-pl.wdfiles.com/local--resized-images/scp-pl-010/grob2/medium.jpg",
+      "imageUrl": "https://scpsandbox-pl.wdfiles.com/local--files/pliki%3Adraven/grob2.jpg",
       "objectClass": null,
       "rating": 30,
       "descriptionExcerpt": "SCP-PL-010 to cmentarz znajduj\u0105cy si\u0119 na dawnym6 terenie wsi \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 w wojew\u00f3dztwie mazowieckim. Na czas pisania tego dokumentu jego powierzchnia wynosi 9,8ha.\nG\u0142\u00f3wna anomalna cecha podmiotu przejawia si\u0119, gdy dowolna osoba wejdzie na jego teren po zachodzie s\u0142o\u0144ca. Uruchamia wtedy ona SCP-PL-010-ALFA, wydarzenie przez SCP-PL-010-1 nazywane \"Zabaw\u0105\", podczas kt\u00f3rego zmuszona jest wykonywa\u0107 zadania zlecone przez instancj\u0119 pod gro\u017ab\u0105 asymilacji do anomalii (patrz: Dodatek PL-010.1, Dokument 010/1",
@@ -71195,11 +71219,12 @@
       "extractedFrom": "lista-pl",
       "pageType": "scp-series-pl",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:57:52.760Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:47:55.130Z",
       "translatedLanguages": [
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pl-011",
@@ -73421,7 +73446,7 @@
       "titleJP": "Do siego roku",
       "urlEN": "http://scp-wiki.wikidot.com/scp-pl-080",
       "urlJP": "http://scp-pl.wikidot.com/scp-pl-080",
-      "imageUrl": "http://scp-pl.wdfiles.com/local--files/scp-pl-080/sylwester.jpg",
+      "imageUrl": "https://scpsandbox-pl.wdfiles.com/local--files/pliki%3Adraven/sylwester.jpg",
       "objectClass": "Bezpieczne/G\u00f6del",
       "rating": 14,
       "descriptionExcerpt": "SCP-PL-080 to zbiorcza desygnacja anomalnych sztucznych ogni wyprodukowanych przez PoI-PL-767, Sylwestra Rut\u0119. Ich efekty \u015bwietlne i akustyczne znacznie r\u00f3\u017cni\u0105 si\u0119 od nieanomalnych wyrob\u00f3w pirotechnicznych, b\u0119d\u0105c w stanie odtwarza\u0107 skomplikowane, rozbudowane sceny i imitowa\u0107 dowolne d\u017awi\u0119ki. Odpady ezoteryczne pozosta\u0142e po u\u017cyciu podmiotu s\u0105 truj\u0105ce w przypadku dostania si\u0119 do organizmu ludzkiego lub zwierz\u0119cego, a w ekstremalnych przypadkach mog\u0105 nawet spowodowa\u0107 spontaniczny samozap\u0142on poszkod",
@@ -73441,11 +73466,12 @@
       "extractedFrom": "lista-pl",
       "pageType": "scp-series-pl",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:57:52.760Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:47:55.130Z",
       "translatedLanguages": [
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pl-081",
@@ -75397,7 +75423,7 @@
       "titleJP": "Straszny gbur",
       "urlEN": "http://scp-wiki.wikidot.com/scp-pl-141",
       "urlJP": "http://scp-pl.wikidot.com/scp-pl-141",
-      "imageUrl": "https://scpsandbox-pl.wdfiles.com/local--files/draven-addams/portrety.jpg",
+      "imageUrl": "https://scpsandbox-pl.wdfiles.com/local--files/pliki%3Adraven/zegar.jpg",
       "objectClass": "Bezpieczne",
       "rating": 10,
       "descriptionExcerpt": "SCP-PL-141 to zjawisko dziej\u0105ce si\u0119, gdy wszystkie trzy instancje sk\u0142adowe znajduj\u0105 si\u0119 w jednym pomieszczeniu, w kt\u00f3rym w danym momencie przebywa \u015bpi\u0105ca osoba. Zjawisko zachodzi wy\u0142\u0105cznie w p\u00f3\u017anych godzinach nocnych lub wczesnych godzinach porannych, przed wschodem s\u0142o\u0144ca. Instancje sk\u0142adowe s\u0105 nast\u0119puj\u0105ce:\n\nSCP-PL-141-1 \u2014 Stworzony wsp\u00f3\u0142cze\u015bnie zegar fletowy1. Jego mechanizm jest zepsuty, urz\u0105dzenie nie odmierza czasu.\nSCP-PL-141-2 \u2014 Owalny portret olejny datowany na oko\u0142o po\u0142ow\u0119 XVIII wieku, ",
@@ -75418,11 +75444,12 @@
       "extractedFrom": "lista-pl",
       "pageType": "scp-series-pl",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:57:52.760Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-09T08:04:00.851Z",
       "translatedLanguages": [
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pl-142",
@@ -76729,7 +76756,7 @@
       "titleJP": "Rakieta Stalina, albo koszmarny sen pijanego cukiernika",
       "urlEN": "http://scp-wiki.wikidot.com/scp-pl-181",
       "urlJP": "http://scp-pl.wikidot.com/scp-pl-181",
-      "imageUrl": "http://scp-pl.wdfiles.com/local--resized-images/scp-pl-181/palac/medium.jpg",
+      "imageUrl": "https://scpsandbox-pl.wdfiles.com/local--files/pliki%3Adraven/saturator.jpg",
       "objectClass": null,
       "rating": 20,
       "descriptionExcerpt": "SCP-PL-181 to zjawisko, kt\u00f3re zachodzi w odpowiednich warunkach meteorologicznych na szczycie Pa\u0142acu Kultury i Nauki w Warszawie (odt\u0105d nazywanego SCP-PL-181-1). Je\u015bli chmury znajduj\u0105 si\u0119 na wysoko\u015bci 180m od poziomu ulicy b\u0105d\u017a ni\u017cej, tak, \u017ce szczytowy segment budynku z zegarem i iglic\u0105 jest niewidoczny, owa cz\u0119\u015b\u0107 budynku staje si\u0119 \u0142\u0105cznikiem do kieszonkowego wymiaru. Je\u015bli podczas takich warunk\u00f3w pogodowych ktokolwiek dostanie si\u0119 do tej cz\u0119\u015bci SCP-PL-181-1, znajdzie si\u0119 on w owym wymiarze i po",
@@ -76756,11 +76783,12 @@
       "extractedFrom": "lista-pl",
       "pageType": "scp-series-pl",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:57:52.760Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:47:55.130Z",
       "translatedLanguages": [
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pl-182",
@@ -77525,7 +77553,7 @@
       "titleJP": "Vox machina",
       "urlEN": "http://scp-wiki.wikidot.com/scp-pl-205",
       "urlJP": "http://scp-pl.wikidot.com/scp-pl-205",
-      "imageUrl": "http://scp-pl.wdfiles.com/local--files/scp-pl-205/patafizyk.png",
+      "imageUrl": "https://scpsandbox-pl.wdfiles.com/local--files/pliki%3Adraven/patafizyk.png",
       "objectClass": null,
       "rating": 15,
       "descriptionExcerpt": "Libretto\nSceneria ta sama; ekrany mocniej migaj\u0105, pulsuje czerwone \u015bwiat\u0142o. PATAFIZYK wygl\u0105da na spi\u0119tego. W tle s\u0142ycha\u0107 przyt\u0142umione nerwowe krzyki i d\u017awi\u0119ki alarmu.\nWEBBER.AIC\n\nOpis.\nANONIMOWY PATAFIZYK\n\nEch\u2026 mam ma\u0142o czasu, wi\u0119c nagram tylko najwa\u017cniejsze informacje. Dok\u0142adniejszy opis napisze si\u0119 po ogarni\u0119ciu sytuacji\u2026 Chyba uda\u0142o mi si\u0119 opanowa\u0107 \u2014 zaczyna gra\u0107 muzyka a nie, szlag, nadal co\u015b gra w tle.\nChrz\u0105kni\u0119cie.\nSCP-PL-205 to zbieg\u0142y konstrukt sztucznej inteligencji znany jako Webber.ai",
@@ -77554,11 +77582,12 @@
       "extractedFrom": "lista-pl",
       "pageType": "scp-series-pl",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:57:52.760Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:47:55.130Z",
       "translatedLanguages": [
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pl-206",
@@ -77630,7 +77659,7 @@
       "titleJP": "masc na bul d*py od dado",
       "urlEN": "http://scp-wiki.wikidot.com/scp-pl-208",
       "urlJP": "http://scp-pl.wikidot.com/scp-pl-208",
-      "imageUrl": "http://scp-pl.wdfiles.com/local--resized-images/scp-pl-208/dado/medium.jpg",
+      "imageUrl": "https://scpsandbox-pl.wdfiles.com/local--files/pliki%3Adraven/dado.jpg",
       "objectClass": null,
       "rating": 66,
       "descriptionExcerpt": "SCP-PL-208 to zbiorcza desygnacja produktu wytworzonego przez PoI \u201cdado\u201d, sprzedawanego pod nazw\u0105 \"dado masc na bul d*py\" (sic). Pojedyncza instancja SCP-PL-208 to bia\u0142a tubka z tworzywa sztucznego o wymiarach 100 [mm] x 20 [mm] x 15 [mm], bez \u017cadnych napis\u00f3w opr\u00f3cz wy\u017cej wymienionej nazwy napisanej czerwon\u0105 czcionk\u0105 Comic Sans MS. Analiza chemiczna sk\u0142adu zawarto\u015bci tubki dowiod\u0142a, \u017ce owa \"ma\u015b\u0107\" przypomina struktur\u0105 klej cyjanoakrylowy, z dodatkiem anomalnego odczynnika tymczasowo nazwanego MBD",
@@ -77650,11 +77679,12 @@
       "extractedFrom": "lista-pl",
       "pageType": "scp-series-pl",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:57:52.760Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:47:55.130Z",
       "translatedLanguages": [
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pl-209",
@@ -79090,7 +79120,7 @@
       "titleJP": "Zawodowe Grzybobranie",
       "urlEN": "http://scp-wiki.wikidot.com/scp-pl-252",
       "urlJP": "http://scp-pl.wikidot.com/scp-pl-252",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aearthworm/Transparent.gif",
+      "imageUrl": null,
       "objectClass": "Sk\u00f3tos1",
       "rating": 13,
       "descriptionExcerpt": "SCP-PL-252 to osobnik grzyba anomalnego gatunku Kurzawka Szlachecka (Boletus Aridas),2 aktualnie znajduj\u0105cy si\u0119 pod budynkiem na terenie dzielnicy Tysi\u0105clecia w Cz\u0119stochowie, mierz\u0105cy 20 metr\u00f3w wysoko\u015bci.\nChocia\u017c obiekt sam w sobie, poza rozmiarem, nie r\u00f3\u017cni si\u0119 niczym od reszty przedstawicieli swojego gatunku, SCP-PL-252 wydaje si\u0119 posiada\u0107 anomaln\u0105 relacj\u0119 z lokaln\u0105 populacj\u0105 le\u015bnych Fae,3 kt\u00f3rych si\u0142y witalne wydaj\u0105 si\u0119 korelowa\u0107 z istnieniem obiektu w ich okolicy.",
@@ -79114,11 +79144,12 @@
       "extractedFrom": "lista-pl",
       "pageType": "scp-series-pl",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:57:52.760Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:47:55.130Z",
       "translatedLanguages": [
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pl-253",
@@ -79502,7 +79533,7 @@
       "titleJP": "Bilet Na Przeja\u017cd\u017ck\u0119",
       "urlEN": "http://scp-wiki.wikidot.com/scp-pl-265",
       "urlJP": "http://scp-pl.wikidot.com/scp-pl-265",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aearthworm/Transparent.gif",
+      "imageUrl": null,
       "objectClass": ">Keter",
       "rating": 11,
       "descriptionExcerpt": "SCP-PL-265 to fenomen, w kt\u00f3rym ludzie i przedmioty dokonuj\u0105 samoistnej dematerializacji i ponownej materializacji. Po znikni\u0119ciu, obiekty przenosz\u0105 si\u0119 do kieszonkowego wymiaru oznaczonego SCP-PL-265-\u03a9. Czas mi\u0119dzy dematerializacj\u0105, a ponownym pojawieniem waha si\u0119 mi\u0119dzy 10 sekundami, a 10 minutami. Zasi\u0119g dematerializacji ma charakter globalny na ca\u0142ej Ziemi, aczkolwiek przypadki, w kt\u00f3rych obiekty zanika\u0142y w atmosferze ziemskiej, nie s\u0105 niemo\u017cliwe. Zasi\u0119g anomalii graniczy z ko\u0144cow\u0105 odleg\u0142o\u015bc",
@@ -79519,11 +79550,12 @@
       "extractedFrom": "lista-pl",
       "pageType": "scp-series-pl",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:57:52.760Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:47:55.130Z",
       "translatedLanguages": [
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pl-266",
@@ -80171,7 +80203,7 @@
       "titleJP": "O Bo\u017ce, o kurwa",
       "urlEN": "http://scp-wiki.wikidot.com/scp-pl-284",
       "urlJP": "http://scp-pl.wikidot.com/scp-pl-284",
-      "imageUrl": "http://scp-pl.wdfiles.com/local--files/scp-pl-284/budynek.jpg",
+      "imageUrl": "https://scpsandbox-pl.wdfiles.com/local--files/pliki%3Adraven/budynek.jpg",
       "objectClass": "Archon",
       "rating": 15,
       "descriptionExcerpt": "SCP-PL-284 to opuszczona fabryka oleju przy ulicy \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 w \u0141odzi. W ci\u0105gu dnia nie zarejestrowano w niej aktywno\u015bci, ale podczas godzin nocnych jest regularnie obs\u0142ugiwana przez oko\u0142o 100 byt\u00f3w tartarejskich, odt\u0105d nazywanych SCP-PL-284-1. Byty te nie s\u0105 w ca\u0142o\u015bci materialne i wydaj\u0105 si\u0119 by\u0107 tylko po\u0142owicznie w bazowej rzeczywisto\u015bci, cho\u0107 u\u017cytkowane przez nie urz\u0105dzenia zdradzaj\u0105 faktyczne \u015blady u\u017cycia. SCP-PL-284-1 zajmuj\u0105 si\u0119 produkcj\u0105 SCP-PL-284-2, czyli oleistej substancji wytwarzanej z ",
@@ -80196,11 +80228,12 @@
       "extractedFrom": "lista-pl",
       "pageType": "scp-series-pl",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:57:52.760Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:47:55.130Z",
       "translatedLanguages": [
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pl-285",
@@ -82109,7 +82142,7 @@
       "titleJP": "Kim jest ten SCP i dlaczego posiada w\u0142asn\u0105 Fundacj\u0119?",
       "urlEN": "http://scp-wiki.wikidot.com/scp-pl-348",
       "urlJP": "http://scp-pl.wikidot.com/scp-pl-348",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/component%3Aearthworm/Transparent.gif",
+      "imageUrl": null,
       "objectClass": "Euclid",
       "rating": 9,
       "descriptionExcerpt": "SCP-PL-348 odnosi si\u0119 do potencjalnego fenomenu, zaklasyfikowanego jako obiekt konspiracyjny.Obiekty konspiracyjne to anomalie, kt\u00f3rych celem jest ujawnienie oraz rozpowszechnienie materia\u0142\u00f3w gromadzonych przez Fundacj\u0119, co mo\u017ce zagrozi\u0107 jej strukturze, pracownikom i funkcjonowaniu. Nie wiadomo, co powoduje nienawi\u015b\u0107 do Fundacji u obiekt\u00f3w konspiracyjnych, cho\u0107 niewykluczone, i\u017c ich zawi\u015b\u0107 dotyczy wydarze\u0144 z przesz\u0142o\u015bci, kt\u00f3rych tylko one pozostaj\u0105 \u015bwiadome., kt\u00f3ry obejmuje nag\u0142y nap\u0142yw podstawo",
@@ -82120,11 +82153,12 @@
       "extractedFrom": "lista-pl",
       "pageType": "scp-series-pl",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:57:52.760Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:47:55.130Z",
       "translatedLanguages": [
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pl-349",
@@ -82235,7 +82269,7 @@
       "titleJP": "Czaszka p\u0142anetnika",
       "urlEN": "http://scp-wiki.wikidot.com/scp-pl-353",
       "urlJP": "http://scp-pl.wikidot.com/scp-pl-353",
-      "imageUrl": "http://scp-pl.wdfiles.com/local--files/scp-pl-353/SCP-PL-353.jpg",
+      "imageUrl": "http://scpsandbox-pl.wikidot.com/local--files/pliki:draven/SCP-PL-353.jpg",
       "objectClass": "Thaumiel",
       "rating": 19,
       "descriptionExcerpt": "SCP-PL-353 to czaszka nale\u017c\u0105ca do \u017cyj\u0105cego w drugiej po\u0142owie XVII wieku cz\u0142owieka, pierwotnie zdradzaj\u0105ca \u015blady osteoporozy. Wykazuje silne anomalne oddzia\u0142ywanie na warunki pogodowe, b\u0119d\u0105c w stanie przywo\u0142a\u0107 lub uspokoi\u0107 wiatry, deszcze i burze, jak r\u00f3wnie\u017c opady \u015bniegu niezale\u017cnie od pory roku. SCP-PL-353 potrafi r\u00f3wnie\u017c zneutralizowa\u0107 pogod\u0119 anomaln\u0105, w zwi\u0105zku z czym ze wzgl\u0119du na trwaj\u0105cy Scenariusz Klasy IK-0 \"Ciemne Wieki\" zosta\u0142a nadana mu klasa Thaumiel i powinien by\u0107 w razie potrzeby w",
@@ -82258,11 +82292,12 @@
       "extractedFrom": "lista-pl",
       "pageType": "scp-series-pl",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:57:52.760Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:47:55.130Z",
       "translatedLanguages": [
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pl-354",
@@ -82397,7 +82432,7 @@
       "titleJP": "Ogniem i mi\u0119sem",
       "urlEN": "http://scp-wiki.wikidot.com/scp-pl-358",
       "urlJP": "http://scp-pl.wikidot.com/scp-pl-358",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c4/The_Martyrdom_of_St._Lawrence_by_Rubens_%281614%29_-_Alte_Pinakothek_-_Munich_-_Germany_2017.jpg",
+      "imageUrl": "https://scpsandbox-pl.wdfiles.com/local--files/pliki%3Adraven/wawrzyniec.jpg",
       "objectClass": null,
       "rating": 19,
       "descriptionExcerpt": "SCP-PL-358 to semi-humanoidalna istota identyfikuj\u0105ca si\u0119 jako Melchior Wawrzyniec \u017bmigrodzki herbu W\u0105\u017c, obecnie uwa\u017cana za za\u0142o\u017cyciela Wiekuistego Ko\u015bcio\u0142a M\u0119czennik\u00f3w \u015awi\u0119tego Jana, dalej oznaczanego jako SCP-PL-358-1. SCP-PL-358 powierzchownie r\u00f3\u017cni si\u0119 od przeci\u0119tnego, nieanomalnego cz\u0142owieka wieloma natychmiastowo zauwa\u017calnymi cechami fizycznymi; podmiot posiada:\n\nCztery r\u0119ce pokryte na d\u0142oniach i przedramionach czarnymi \u0142uskami i posiadaj\u0105ce pazury zamiast paznokci, dodatkowa para identycz",
@@ -82427,11 +82462,12 @@
       "extractedFrom": "lista-pl",
       "pageType": "scp-series-pl",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:57:52.760Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:47:55.130Z",
       "translatedLanguages": [
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pl-360",
@@ -82611,7 +82647,7 @@
       "titleJP": "Czyta\u0142a Krystyna Czub\u00f3wna",
       "urlEN": "http://scp-wiki.wikidot.com/scp-pl-366",
       "urlJP": "http://scp-pl.wikidot.com/scp-pl-366",
-      "imageUrl": "http://scp-pl.wdfiles.com/local--files/scp-pl-366/aeroplan.jpg",
+      "imageUrl": "https://scpsandbox-pl.wdfiles.com/local--files/pliki%3Adraven/aeroplan.jpg",
       "objectClass": null,
       "rating": 17,
       "descriptionExcerpt": "SCP-PL-366 jest zbiorczym identyfikatorem kilku anomalnych gatunk\u00f3w wywodz\u0105cych si\u0119 od wsp\u00f3lnego przodka (oznaczonego w dokumentacji jako SCP-PL-366-Alfa). Wszystkie osobniki SCP-PL-366 z wygl\u0105du do z\u0142udzenia przypominaj\u0105 stworzone przez cz\u0142owieka mechaniczne pojazdy, ale ich zachowanie jest w du\u017cej mierze r\u00f3wnowa\u017cne zachowaniu nieanomalnych zwierz\u0105t \u2014 poruszaj\u0105 si\u0119 samodzielnie, potrzebuj\u0105 po\u017cywienia, \u0142\u0105cz\u0105 si\u0119 w stada itd1. Ich obecno\u015b\u0107 rzekomo odkryto na ca\u0142ym \u015bwiecie, zazwyczaj w obszarach r",
@@ -82634,11 +82670,12 @@
       "extractedFrom": "lista-pl",
       "pageType": "scp-series-pl",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:57:52.760Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:47:55.130Z",
       "translatedLanguages": [
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pl-367",
@@ -83969,7 +84006,7 @@
       "titleJP": "Gdzie jest Ingvar Beck?",
       "urlEN": "http://scp-wiki.wikidot.com/scp-pl-421",
       "urlJP": "http://scp-pl.wikidot.com/scp-pl-421",
-      "imageUrl": "https://scp-pl.wdfiles.com/local--files/scp-pl-421/taksowkarz.jpg",
+      "imageUrl": "https://scpsandbox-pl.wdfiles.com/local--files/pliki%3Adraven/taksowkarz.jpg",
       "objectClass": "Euclid",
       "rating": 13,
       "descriptionExcerpt": "SCP-PL-421 to byt spektralny klasy V, manifestuj\u0105cy si\u0119 jako amalgamat cz\u0119\u015bciowy byt\u00f3w klas ni\u017cszych (wska\u017anik g\u0119sto\u015bci spektralnej podlega fluktuacji na obszarze 86-102 BSD). Poszczeg\u00f3lne byty sk\u0142adowe podmiotu podczas manifestacji s\u0105 widoczne i potrafi\u0105 dzia\u0142a\u0107 pozornie oddzielnie, lecz pozostaj\u0105 z\u0142\u0105czone z ca\u0142o\u015bci\u0105, na kt\u00f3r\u0105 sk\u0142ada si\u0119 szacunkowo oko\u0142o tysi\u0105ca byt\u00f3w spektralnych. SCP-PL-421 zachowuje si\u0119 charakterystycznie dla klasy III (poltergeist\u00f3w), wykazuj\u0105c wrogo\u015b\u0107 wobec ludzi, brak mo\u017c",
@@ -83989,11 +84026,12 @@
       "extractedFrom": "lista-pl",
       "pageType": "scp-series-pl",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:57:52.760Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:47:55.130Z",
       "translatedLanguages": [
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pl-430",
@@ -84341,7 +84379,7 @@
       "titleJP": "Dies Irae",
       "urlEN": "http://scp-wiki.wikidot.com/scp-pl-466",
       "urlJP": "http://scp-pl.wikidot.com/scp-pl-466",
-      "imageUrl": "https://scp-wiki.wdfiles.com/local--files/departments/raisa.png",
+      "imageUrl": "http://scpsandbox-pl.wikidot.com/local--files/pliki:draven/pieczatkawatykantlo.png",
       "objectClass": "Argus",
       "rating": 19,
       "descriptionExcerpt": "Obecny stan wiedzy Fundacji na temat SCP-PL-466 opiera si\u0119 na dokumencie archiwalnym z 1889 roku (SCP-PL-466-vARC), w kt\u00f3rym zawarta jest oryginalna umowa ze Stolic\u0105 Apostolsk\u0105 wspomniana w Specjalnych Czynno\u015bciach Przechowawczych wraz z opisem anomalii sporz\u0105dzonym przez \u00f3wczesn\u0105 pracowniczk\u0119 Fundacji. Dokument SCP-PL-466-vARC zagin\u0105\u0142 jednak w 1944 roku podczas wydarze\u0144 SCP-PL-399, kiedy budynek Archiwum Pa\u0144stwowego w Warszawie przez kilka minut zmieni\u0142 wewn\u0119trzn\u0105 geometri\u0119 w celu obrony znajdu",
@@ -84371,11 +84409,12 @@
       "extractedFrom": "lista-pl",
       "pageType": "scp-series-pl",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:57:52.760Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-30T09:18:46.192Z",
       "translatedLanguages": [
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "scp-series-pl-474",
@@ -85160,7 +85199,7 @@
       "titleJP": "Wykuta dla giganta",
       "urlEN": "http://scp-wiki.wikidot.com/scp-pl-1620-j",
       "urlJP": "http://scp-pl.wikidot.com/scp-pl-1620-j",
-      "imageUrl": "http://scp-pl.wdfiles.com/local--files/scp-pl-1620-j/WLADZIU.jpg",
+      "imageUrl": "https://scpsandbox-pl.wdfiles.com/local--files/pliki%3Adraven/WLADZIU.jpg",
       "objectClass": "Keter",
       "rating": 25,
       "descriptionExcerpt": "SCP-PL-1620-J to zbroja nale\u017c\u0105ca pierwotnie do W\u0142adys\u0142awa IV Wazy. Zbroja wywiera silny efekt anomalny, sprawiaj\u0105c, \u017ce osoby patrz\u0105ce na ni\u0105 czuj\u0105 siln\u0105 ch\u0119\u0107 za\u0142o\u017cenia jej, a gdy to si\u0119 wydarzy, podmiot b\u0119dzie w stanie wymawia\u0107 tylko jedno zdanie. Poni\u017cej znajduje si\u0119 log seksploracji zbroi.",
@@ -85182,11 +85221,12 @@
       "extractedFrom": "joke-scps-pl",
       "pageType": "joke-scps-pl",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:02:32.542Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:48:28.965Z",
       "translatedLanguages": [
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "joke-scps-pl-2004",
@@ -85257,7 +85297,7 @@
       "titleJP": "Mem z kotem [NIEBEZPIECZNE]",
       "urlEN": "http://scp-wiki.wikidot.com/scp-pl-6470-j",
       "urlJP": "http://scp-pl.wikidot.com/scp-pl-6470-j",
-      "imageUrl": "https://i.imgur.com/riqS0RH.jpg",
+      "imageUrl": "https://scpsandbox-pl.wdfiles.com/local--files/pliki%3Adraven/scp-pl-6470-j.jpg",
       "objectClass": "Zlikwidowane",
       "rating": 41,
       "descriptionExcerpt": "SCP-PL-6470-J to dokument posiadaj\u0105cy desygnacj\u0119 SCP-PL-KOT-J. Dokument ten zaprezentowany jest jako raport SCP, ale na jego tre\u015b\u0107 sk\u0142ada si\u0119 pojedyncze zdj\u0119cie przedstawiciela gatunku Felis catus o czarnym umaszczeniu siedz\u0105cego na czarnym krze\u015ble biurowym i patrz\u0105cego si\u0119 w prawo (z perspektywy czytaj\u0105cego). Ka\u017cda osoba, kt\u00f3ra nie przesz\u0142a odpowiedniego szkolenia memetycznego, a kt\u00f3ra spojrzy na SCP-PL-6470-J, odczuje siln\u0105 ch\u0119\u0107 chwalenia raportu jako najlepszego, jaki w \u017cyciu widzia\u0142o, oraz r",
@@ -85282,11 +85322,12 @@
       "extractedFrom": "joke-scps-pl",
       "pageType": "joke-scps-pl",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:02:32.542Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:48:28.965Z",
       "translatedLanguages": [
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     },
     {
       "itemId": "joke-scps-pl-173",
@@ -85493,7 +85534,7 @@
       "titleJP": "Zwyk\u0142e jaja",
       "urlEN": "http://scp-wiki.wikidot.com/scp-pl-3665-ex",
       "urlJP": "http://scp-pl.wikidot.com/scp-pl-3665-ex",
-      "imageUrl": "http://scp-pl.wdfiles.com/local--resized-images/scp-pl-3665-ex/jaujo/medium.jpg",
+      "imageUrl": "http://scpsandbox-pl.wikidot.com/local--files/pliki:draven/jaujo.jpg",
       "objectClass": "Zrozumiane",
       "rating": 17,
       "descriptionExcerpt": "s\u0105 nieaktualne.\n\nDo desygnacji podmiotu dodano jedynie znacznik -EX w celach katalogowych.",
@@ -85519,11 +85560,12 @@
       "extractedFrom": "scp-ex-pl",
       "pageType": "scp-pl-ex",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T05:02:48.901Z",
+      "lastUpdated": "2026-11-11T12:43:28.747Z",
       "createdAt": "2026-08-01T12:49:12.930Z",
       "translatedLanguages": [
         "pl"
-      ]
+      ],
+      "imageCheckedAt": "2026-11-11T12:43:28.747Z"
     }
   ],
   "tagSchemaVersion": 2
