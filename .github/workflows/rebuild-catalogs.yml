@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       refresh_joke_metadata:
-        description: 'Refetch image/title metadata for the five reported JP joke articles'
+        description: 'Refetch reported JP joke metadata, including 001 variants'
         type: boolean
         default: false
 
