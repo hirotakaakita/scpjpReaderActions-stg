@@ -1,0 +1,68 @@
+name: Audit and repair STG article images
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: image-metadata-audit
+  cancel-in-progress: false
+jobs:
+  audit:
+    if: github.repository == 'hirotakaakita/scpjpReaderActions-stg' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: node --test
+      - name: Audit all published viewing languages
+        run: node tool/audit-image-metadata.js audit partial-data/image-audit.json
+      - uses: actions/upload-artifact@v7
+        with:
+          name: image-metadata-audit
+          path: partial-data/image-audit.json
+          retention-days: 14
+  publish:
+    needs: audit
+    runs-on: ubuntu-latest
+    environment: stg
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    concurrency:
+      group: scp-data-update
+      cancel-in-progress: false
+      queue: max
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: master
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v7
+        with:
+          name: image-metadata-audit
+          path: partial-data
+      - run: node tool/audit-image-metadata.js apply partial-data/image-audit.json
+      - run: node merge-catalog-indexes.js
+      - run: node validate-catalog-indexes.js
+      - run: node validate-staging-catalogs.js
+      - run: node mobile-catalog.js
+      - run: node tool/audit-image-metadata.js verify partial-data/image-audit.json
+      - run: node research-board/validate.js
+      - name: Publish repaired staging data
+        run: |
+          git config user.name 'SCP Crawler Bot'
+          git config user.email 'scp-crawler@github-actions.bot'
+          git add local-data/
+          if ! git diff --staged --quiet; then
+            git commit -m "Repair article images across all STG languages - $(date -u +%Y%m%d%H%M%S)"
+            git push origin master
+          fi
