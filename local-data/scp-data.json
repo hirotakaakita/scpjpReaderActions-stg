@@ -1,7 +1,7 @@
 {
   "totalCount": 9621,
   "language": "jp",
-  "timestamp": "2026-11-10T00:49:26.482Z",
+  "timestamp": "2026-11-11T07:21:57.183Z",
   "duration": 7425,
   "status": "completed",
   "statistics": {
@@ -215344,7 +215344,7 @@
       "titleJP": "\u4e00\u4f53\u5168\u4f53\u30a2\u30ec\u306f\u30ca\u30cb\uff01",
       "urlEN": "http://scp-wiki.wikidot.com/scp-006-j",
       "urlJP": "http://scp-jp.wikidot.com/scp-006-j",
-      "imageUrl": "http://scp-jp.wdfiles.com/local--files/scp-006-cu-ex/CU-EX3.jpg",
+      "imageUrl": "https://scp-jp.wdfiles.com/local--files/scp-006-j/006-Centipede-new.jpg",
       "objectClass": "Keter",
       "rating": 50,
       "descriptionExcerpt": "SCP-006-J\u306f\u3081\u3061\u3083\u304f\u3061\u3083\u6050\u308d\u3057\u3044\u3068\u3044\u3046\u3053\u3068\u3067\u7814\u7a76\u8005\u305f\u3061\u306e\u610f\u898b\u304c\u4e00\u81f4\u3057\u3066\u3044\u308b\u866b\u578b\u751f\u7269\u306e\u53ce\u96c6\u7269\u3060\u3002\u305d\u308c\u306f\u30df\u30fc\u30e1\u30c6\u30a3\u30c3\u30af\u3067\u3042\u308b\u3053\u3068\u306b\u307e\u305a\u9593\u9055\u3044\u306a\u3044\u3068\u601d\u3046\u304c\u3001\u3057\u304b\u3057\u7d76\u5bfe\u3042\u306e\u7269\u4f53\u306b\u306f\u8fd1\u3065\u304d\u305f\u304f\u306a\u3044\u306e\u306f\u78ba\u304b\u3060\u3002\u4ffa\u306f\u30a2\u30ec\u306e\u3046\u3061\u306e\u4e00\u5339\u306b\u6bd2\u91dd\u304c\u3042\u308b\u306e\u3092\u898b\u305f\u3068\u601d\u3046\u3002",
@@ -215362,7 +215362,7 @@
       "extractedFrom": "joke-scps",
       "pageType": "joke-scps",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:03:25.333Z",
+      "lastUpdated": "2026-11-11T07:21:57.183Z",
       "createdAt": "2025-07-27T16:58:48.042Z",
       "translatedLanguages": [
         "jp",
@@ -217470,7 +217470,7 @@
       "titleJP": "\u3059\u30fc\u3071\u30fc\u3057\u3058\u3087\u3046\u3055\u3044\u304d\u3087\u304a\u306a\u3068\u304b\u3052",
       "urlEN": "http://scp-wiki.wikidot.com/scp-682-j",
       "urlJP": "http://scp-jp.wikidot.com/scp-682-j",
-      "imageUrl": "http://scp-jp.wdfiles.com/local--files/scp-682-cu/682.png",
+      "imageUrl": "https://scp-jp.wdfiles.com/local--files/scp-682-j/BigTeeth.png",
       "objectClass": "KETUR",
       "rating": 62,
       "descriptionExcerpt": "\u3059\u30fc\u3071\u30fc\u3057\u3058\u3087\u3046\u3055\u3044\u304d\u3087\u304a\u306a\u3068\u304b\u3052\u306f\u306f\u304c\u3067\u304b\u304f\u3066\u3059\u3050\u3082\u3068\u3069\u304a\u308a\u306b\u306a\u308b\u306e\u3067\u3057\u306b\u307e\u305b\u3093\u3002\u3068\u304d\u3069\u304d\u3068\u3066\u3082\u3061\u3044\u3055\u304f\u306a\u308a\u307e\u3059\u3069\u3046\u3057\u3066\u306a\u3093\u3067\u304b\u3066\u3044\u3046\u3068\u306a\u3093\u306b\u3067\u3082\u306a\u308c\u308b\u304b\u3089\u3067\u3059\u3002\n\u305d\u308c\u306b\u3059\u30fc\u3071\u30fc\u3057\u3058\u3087\u3046\u3055\u3044\u304d\u3087\u304a\u306a\u3068\u304b\u3052\u306f\u3068\u3066\u3082\u304b\u3057\u3053\u3044\u3067\u3059\u3002\u3053\u3044\u3064\u306e\u3061\u306e\u3046\u3057\u3059\u3046\u306f\u3044\u3061\u304a\u304f\u305b\u3093\u307e\u3093\u3042\u308a\u307e\u3059\u3042\u3068\u3053\u306e\u307e\u3048\u3059\u3054\u304f\u304b\u3057\u3053\u3044\u3053\u3093\u3074\u3085\u3046\u305f\u3042\u3068\u306f\u306a\u3057\u307e\u3057\u305f\u3042\u3068\u3053\u3044\u3064\u3089\u306f\u3068\u3063\u3066\u3082\u304b\u3057\u3053\u3044\u3067\u3059\u3002\u3053\u3044\u3064\u306f\u306a\u3093\u3067\u3082\u305f\u3079\u307e\u3059\u306a\u3093\u3067\u3082\u305f\u3079\u3089\u308c\u308b\u3088\u3046\u306b\u306f\u306a\u304a\u3064\u304b\u3044\u3059\u3054\u3044\u305f\u3079\u307e\u3059\u3002\n\u3053\u3044\u3064\u306f\u306a\u3093\u3060\u3063\u3066\u3067\u304d\u308b\uff01\n\n\n\u3055\u3044\u304d\u3087\u304a\u306e\u3068\u304b\u3052\u304c\u3046\u3061\u3085\u3046\u3067\u3078\u3093\u3057\u3093\u3057\u3066\u308b\u3068\u3053",
@@ -217490,7 +217490,7 @@
       "extractedFrom": "joke-scps",
       "pageType": "joke-scps",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:03:25.333Z",
+      "lastUpdated": "2026-11-11T07:21:57.183Z",
       "createdAt": "2025-07-27T16:58:48.042Z",
       "translatedLanguages": [
         "jp",
@@ -335002,10 +335002,10 @@
     {
       "itemId": "joke-scps-jp-3168",
       "numericItemId": 3168,
-      "titleJP": "",
+      "titleJP": "\u3053\u3090\u306c",
       "urlEN": "http://scp-wiki.wikidot.com/scp-3168-jp-j",
       "urlJP": "http://scp-jp.wikidot.com/scp-3168-jp-j",
-      "imageUrl": "https://scp-jp-storage.wdfiles.com/local--files/file%3A3705485-24-fin2/outdoor-puppy-dog-animal-pet-mammal-542273-pxhere.com.jpg",
+      "imageUrl": "https://scp-jp.wdfiles.com/local--resized-images/scp-3168-jp-j/{$url}/medium.jpg",
       "objectClass": null,
       "rating": 159,
       "descriptionExcerpt": null,
@@ -335023,7 +335023,7 @@
       "extractedFrom": "joke-scps-jp",
       "pageType": "joke-scps-jp",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:51:47.377Z",
+      "lastUpdated": "2026-11-11T07:21:57.183Z",
       "createdAt": "2025-07-27T16:58:57.527Z",
       "translatedLanguages": [
         "jp"
@@ -335032,10 +335032,10 @@
     {
       "itemId": "joke-scps-jp-3434",
       "numericItemId": 3434,
-      "titleJP": "",
+      "titleJP": "\u9774\u306e\u89d2\u5ea6",
       "urlEN": "http://scp-wiki.wikidot.com/scp-3434-jp-j",
       "urlJP": "http://scp-jp.wikidot.com/scp-3434-jp-j",
-      "imageUrl": "http://scp-jp-storage.wikidot.com/local--files/file:1997942-12-f3h8/AnyConv.com__%E9%9D%B4%E3%81%AE%E9%85%8D%E7%BD%AE%E7%94%BB%E5%83%8F.jpg",
+      "imageUrl": "https://scp-jp-storage.wikidot.com/local--files/file:1997942-12-f3h8/AnyConv.com__%E9%9D%B4%E3%81%AE%E9%85%8D%E7%BD%AE%E7%94%BB%E5%83%8F.jpg",
       "objectClass": "Euclid",
       "rating": 30,
       "descriptionExcerpt": "SCP-3434-JP-J\u306f\u7279\u5b9a\u306e\u9774\u306e\u914d\u7f6e\u306b\u3088\u308a\u767a\u751f\u3059\u308b\u8a8d\u8b58\u707d\u5bb3\u3067\u3059\u3002\u73fe\u5728\u3001\u8ca1\u56e3\u306fSCP-3434-JP-J\u306b\u3088\u308b\u5f71\u97ff\u3092\u53d7\u3051\u305f\u3068\u601d\u308f\u308c\u308b\u4eba\u959312\u540d\u3092\u53ce\u5bb9\u3057\u3066\u304a\u308a\u3001\u7d4c\u904e\u89b3\u5bdf\u3082\u542b\u3081\u3066\u7814\u7a76\u304c\u7d99\u7d9a\u3055\u308c\u3066\u3044\u307e\u3059\u3002\nSCP-3434-JP-J\u304c\u767a\u751f\u3057\u305f\u5834\u5408\u3001\u305d\u308c\u3092\u8996\u8a8d\u3057\u305f\u4eba\u9593\u306f\u305d\u306e\u9774\u304a\u3088\u3073\u305d\u308c\u306b\u4ed8\u968f\u3059\u308b\u72b6\u6cc1\u3084\u74b0\u5883\u306b\u5bfe\u3057\u3066\u6fc0\u3057\u3044\u611f\u60c5\u306e\u5909\u5316\u3084\u6027\u7684\u8208\u596e\u3092\u899a\u3048\u307e\u3059\u3002\u305d\u306e\u5f8c\u3001\u6052\u5e38\u7684\u306b\u305d\u308c\u3089\u306e\u75c7\u72b6\u3092\u767a\u75c7\u3057\u7d9a\u3051\u308b\u72b6\u614b\u3078\u3068\u79fb\u884c\u3057\u3001\u7279\u306b\u9774\u306e\u914d\u7f6e\u3084\u89d2\u5ea6\u306b\u5f37\u3044\u57f7\u7740\u5fc3\u3092\u62b1\u304f\u3088\u3046\u306b\u306a\u308a\u307e\u3059\u3002\u3053\u308c\u3089\u306e\u5f71\u97ff\u306f\u4e3b\u306b\u7537\u6027\u306b\u5bfe\u3057\u3066\u9855\u8457\u306b\u767a\u751f\u3057\u307e\u3059\u304c\u3001\u6642\u6298\u5973\u6027\u306b\u3082\u5f71\u97ff\u3092\u53ca\u307c\u3057\u307e\u3059\u3002\n\u73fe\u5728\u3001\u62c5\u5f53\u7814\u7a76\u73ed\u306e\u8abf\u67fb\u306b\u3088\u308aSCP-3434-JP-J\u306e\u52b9\u679c\u3092\u6700\u5927\u9650\u306b\u767a\u73fe\u3055\u305b\u308b\u89d2\u5ea6\u306e\u7279\u5b9a\u304c\u5b8c\u4e86\u3057\u3066\u3044\u307e\u3059\u3002\u306a\u304a\u3001\u4e00\u90e8\u306e\u91cd\u7be4\u306a\u75c7\u72b6\u3092\u767a\u75c7\u3057\u305f\u4eba\u9593\u306e\u73fe\u72b6\u306a\u3069\u304b\u3089\u4eca\u5f8c\u306e\u518d\u73fe\u5b9f\u9a13\u306f\u4e00\u90e8\u51cd\u7d50\u3055\u308c\u3066\u3044\u307e\u3059\u3002\n\u524d\u8ff0\u3057\u305f\u7570\u5e38\u6027\u306f\u8996\u8a8d\u3057\u305f\u4eba\u9593\u3059\u3079\u3066\u306b\u767a\u73fe\u3059\u308b\u308f\u3051\u3067\u306f\u306a\u304f\u3001\u4e00\u90e8\u306e\u4eba\u9593\u306b\u306f\u4e00\u5207\u75c7\u72b6\u304c\u73fe\u308c\u306a\u3044\u4e8b\u304c\u5224\u660e\u3057\u3066\u3044\u307e\u3059\u3002\u3057\u304b\u3057\u3001\u7570\u5e38\u6027\u306b\u66b4\u9732\u3057\u305f\u4eba\u9593\u304c\u901a\u5e38\u306e\u4eba\u9593\u3068\u63a5\u89e6\u3057\u304b\u3064SCP-3434-JP-J\u306b\u95a2\u3059\u308b\u5bfe\u8a71\u3084\u89e3\u8aac\u3092\u884c\u3063\u305f\u5834\u5408\u3001\u75c7\u72b6\u304c\u73fe\u308c\u306a\u304b\u3063\u305f\u4eba\u9593\u306b\u3082\u540c\u69d8\u306e\u7570\u5e38\u6027\u304c\u767a",
@@ -335051,7 +335051,7 @@
       "extractedFrom": "joke-scps-jp",
       "pageType": "joke-scps-jp",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:51:47.377Z",
+      "lastUpdated": "2026-11-11T07:21:57.183Z",
       "createdAt": "2025-07-27T16:58:57.527Z",
       "translatedLanguages": [
         "jp"
@@ -335060,7 +335060,7 @@
     {
       "itemId": "joke-scps-jp-3482",
       "numericItemId": 3482,
-      "titleJP": "",
+      "titleJP": "\ud83c\udf5b\u304b\u3089\u3044\u30c3",
       "urlEN": "http://scp-wiki.wikidot.com/scp-3482-jp-j",
       "urlJP": "http://scp-jp.wikidot.com/scp-3482-jp-j",
       "imageUrl": null,
@@ -335078,7 +335078,7 @@
       "extractedFrom": "joke-scps-jp",
       "pageType": "joke-scps-jp",
       "contentType": "scp",
-      "lastUpdated": "2026-11-08T04:51:47.377Z",
+      "lastUpdated": "2026-11-11T07:21:57.183Z",
       "createdAt": "2026-04-05T05:44:20.496Z",
       "translatedLanguages": [
         "jp"
