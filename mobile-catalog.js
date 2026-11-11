@@ -4,6 +4,7 @@ const zlib = require('node:zlib');
 const crypto = require('node:crypto');
 const { LANGUAGES } = require('./languages');
 const { reclassifyScpArticle } = require('./article-category');
+const { normalizedSourceListing } = require('./series-listing');
 const { readDictionary, updateDictionary, localizeTags, indexDictionary } = require('./tag-dictionary');
 const { normalize } = require('./related-documents');
 
@@ -36,14 +37,6 @@ function mobileCatalog(source, language) {
     ));
   });
   return { schemaVersion: 1, language, timestamp: source.timestamp, totalCount: data.length, data };
-}
-
-function normalizedSourceListing(row) {
-  const type=row.pageType,source=row.extractedFrom,n=row.numericItemId;
-  if(type!=='scp-series'&&!/^scp-series-[a-z][a-z-]*$/.test(type||''))return source;
-  if(source!=='api'&&source!==type&&source!==type+'-1')return source;
-  if(!Number.isSafeInteger(n)||n<0)return source;
-  return n>=1000?`${type}-${Math.floor(n/1000)+1}`:source==='api'?type:source;
 }
 
 function generateCatalogChannel(input, output, includeAdditional, sourceDirectory = 'related-documents', enrichTranslations = true, normalizeSeries = false) {
