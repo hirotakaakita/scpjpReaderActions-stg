@@ -1,6 +1,11 @@
 name: Audit and repair STG article images
 on:
   workflow_dispatch:
+    inputs:
+      missing_samples_per_language:
+        description: 'Original-page samples per language for articles without an image (0-100)'
+        type: number
+        default: 0
 permissions:
   contents: read
 concurrency:
@@ -21,6 +26,8 @@ jobs:
       - run: node --test
       - name: Audit all published viewing languages
         run: node tool/audit-image-metadata.js audit partial-data/image-audit.json
+        env:
+          IMAGE_AUDIT_MISSING_SAMPLE: ${{ inputs.missing_samples_per_language || 0 }}
       - uses: actions/upload-artifact@v7
         with:
           name: image-metadata-audit
