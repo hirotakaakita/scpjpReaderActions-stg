@@ -2,6 +2,11 @@ name: Rebuild STG catalogs
 
 on:
   workflow_dispatch:
+    inputs:
+      refresh_joke_metadata:
+        description: 'Refetch image/title metadata for the five reported JP joke articles'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -26,6 +31,9 @@ jobs:
           cache: npm
       - run: npm ci
       - run: node --test
+      - name: Refresh reported joke metadata from original pages
+        if: inputs.refresh_joke_metadata == true
+        run: node tool/refresh-joke-metadata.js
       - run: node merge-catalog-indexes.js
       - run: node validate-catalog-indexes.js
       - run: node validate-staging-catalogs.js
