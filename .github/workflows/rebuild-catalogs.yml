@@ -7,6 +7,10 @@ on:
         description: 'Refetch reported JP joke metadata, including 001 variants'
         type: boolean
         default: false
+      refresh_document_urls:
+        description: 'Existing indexed article URLs to refetch (comma or whitespace separated)'
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -31,6 +35,11 @@ jobs:
           cache: npm
       - run: npm ci
       - run: node --test
+      - name: Refetch selected indexed article metadata
+        if: inputs.refresh_document_urls != ''
+        env:
+          DOCUMENT_REFRESH_URLS: ${{ inputs.refresh_document_urls }}
+        run: node tool/refresh-document-metadata.js
       - name: Refresh reported joke metadata from original pages
         if: inputs.refresh_joke_metadata == true
         run: node tool/refresh-joke-metadata.js
