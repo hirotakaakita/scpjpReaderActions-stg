@@ -5,6 +5,10 @@ on:
     - cron: '0 0 * * 0'
   workflow_dispatch:
     inputs:
+      repair_excerpts_only:
+        description: 'Audit all languages and completely repair existing excerpts without a full site crawl'
+        type: boolean
+        default: false
       additional_sites_only:
         description: "Crawl only the 16 newly added viewing languages"
         required: false
@@ -66,7 +70,7 @@ jobs:
         run: node --test test/additional-sites.test.js
 
       - name: Check article metadata and series classification
-        run: node --test test/article-images.test.js test/image-policy.test.js test/crawler-tag-refresh.test.js test/series-listing.test.js test/scp-archive-classification.test.js test/russian-joke-classification.test.js test/russian-archive-classification.test.js test/scp-document-identity.test.js test/related-documents.test.js test/refresh-document-metadata.test.js
+        run: node --test test/article-images.test.js test/image-policy.test.js test/crawler-tag-refresh.test.js test/series-listing.test.js test/scp-archive-classification.test.js test/russian-joke-classification.test.js test/russian-archive-classification.test.js test/scp-document-identity.test.js test/related-documents.test.js test/refresh-document-metadata.test.js test/article-excerpts.test.js test/excerpt-repair.test.js
 
       - name: Generate matrix
         id: matrix
@@ -100,6 +104,7 @@ jobs:
       # createdAt・取得済み画像URLを引き継ぐ差分クロール
       # 並列実行のためエントリ間の待機を1000msに延長（レート制限対策）
       - name: Crawl ${{ matrix.lang }} site
+        if: inputs.repair_excerpts_only != true
         run: node language-crawler.js ${{ matrix.lang }}
         env:
           CRAWL_DELAY_MS: '1000'
@@ -111,6 +116,7 @@ jobs:
           FORCE_REFRESH_TAGS: ${{ inputs.force_refresh_tags == true && '1' || '0' }}
 
       - name: Crawl official article indexes
+        if: inputs.repair_excerpts_only != true
         continue-on-error: true
         run: node catalog-indexes.js ${{ matrix.lang }}
         env:
@@ -119,6 +125,7 @@ jobs:
           CRAWL_REQUEST_INTERVAL_MS: '500'
 
       - name: Refresh body links between existing catalog members
+        if: inputs.repair_excerpts_only != true
         run: node research-board/refresh-links.js ${{ matrix.lang }}
         env:
           BOARD_LINK_MAX_REQUESTS: '600'
@@ -126,12 +133,14 @@ jobs:
           CRAWL_REQUEST_INTERVAL_MS: '500'
 
       - name: Refresh identity metadata for unresolved collected translations
+        if: inputs.repair_excerpts_only != true
         run: node research-board/refresh-identities.js ${{ matrix.lang }}
         env:
           IDENTITY_MAX_REQUESTS: '150'
           IDENTITY_MAX_DURATION_MS: '180000'
 
       - name: Refresh attribution formats for unresolved articles
+        if: inputs.repair_excerpts_only != true
         continue-on-error: true
         run: node tool/refresh-attribution-evidence.js ${{ matrix.lang }}
         env:
@@ -139,13 +148,22 @@ jobs:
           ATTRIBUTION_MAX_DURATION_MS: '120000'
 
       - name: Resolve original sources from interwiki metadata
+        if: inputs.repair_excerpts_only != true
         continue-on-error: true
         run: node tool/enrich-origin-evidence.js ${{ matrix.lang }}
         env:
           ORIGIN_EVIDENCE_MAX_PAGES: '600'
           ORIGIN_EVIDENCE_MAX_DURATION_MS: '180000'
 
+      - name: Repair cached article excerpts
+        run: node tool/repair-catalog-excerpts.js ${{ matrix.lang }}
+        env:
+          EXCERPT_MAX_REQUESTS: ${{ inputs.repair_excerpts_only == true && '10000' || '200' }}
+          EXCERPT_REQUIRE_COMPLETE: ${{ inputs.repair_excerpts_only == true && '1' || '0' }}
+          CRAWL_REQUEST_INTERVAL_MS: '500'
+
       - name: Upload partial data
+        if: always()
         uses: actions/upload-artifact@v7
         with:
           name: partial-${{ matrix.lang }}
@@ -162,7 +180,7 @@ jobs:
       queue: max
     runs-on: ubuntu-latest
     needs: [setup, crawl]
-    if: always() && needs.setup.result == 'success' && needs.crawl.result != 'cancelled' && github.repository == 'hirotakaakita/scpjpReaderActions-stg' && github.ref == 'refs/heads/master'
+    if: always() && needs.setup.result == 'success' && needs.crawl.result != 'cancelled' && (inputs.repair_excerpts_only != true || needs.crawl.result == 'success') && github.repository == 'hirotakaakita/scpjpReaderActions-stg' && github.ref == 'refs/heads/master'
     environment: stg
     timeout-minutes: 15
     permissions:
@@ -197,10 +215,16 @@ jobs:
         run: node prepare-tag-dictionary.js
 
       - name: Merge partial data into local-data
+        if: inputs.repair_excerpts_only != true
         run: node merge-data.js
 
       - name: Apply manga availability flags
         run: node apply-manga-flags.js
+
+      - name: Apply excerpt repairs to sources and retained caches
+        run: node tool/apply-excerpt-repairs.js
+        env:
+          EXCERPT_REQUIRE_COMPLETE: ${{ inputs.repair_excerpts_only == true && '1' || '0' }}
 
       - name: Reject duplicate article IDs before publication
         run: node catalog-identity.js
@@ -222,7 +246,12 @@ jobs:
 
       # Compare against the latest master acquired after entering the publish lock.
       - name: Prepare notification queue
+        if: inputs.repair_excerpts_only != true
         run: node prepare-notification-queue.js
+
+      - name: Reject excerpts containing voting controls or metadata headers
+        if: inputs.repair_excerpts_only == true
+        run: node tool/apply-excerpt-repairs.js --audit-mobile
 
       - name: Configure Git
         run: |

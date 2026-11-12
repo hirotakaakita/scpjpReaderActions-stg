@@ -74,7 +74,7 @@ function extractHtml(url, html, now = new Date().toISOString(), existingDocument
     const links = bodyLinks.map(l => l.target);
     // Lazy import: the ordinary crawler also calls this extractor with its DOM.
     const metadata = require('./local-crawler');
-    const description = metadata.extractDescriptionAndTagsFromDocument(root).descriptionExcerpt || root.textContent.trim().replace(/\s+/g, ' ');
+    const description = metadata.extractDescriptionAndTagsFromDocument(root).descriptionExcerpt || '';
     return { ...page, title, tags, translations: [...new Set(translations)].sort(), authors,
       originProvenanceVersion:provenance.VERSION, originalSources:provenance.extractOriginalSources(d,page.url),
       attributionDiscussionUrl:provenance.discussionPage(d,page.url),
@@ -82,7 +82,7 @@ function extractHtml(url, html, now = new Date().toISOString(), existingDocument
       objectClass: metadata.extractObjectClassFromDocument(d), rating: metadata.extractRatingFromDocument(d),
       imageUrl: metadata.extractImageUrlFromDocument(d,page.url),
       links, bodyLinks, linkExtractionVersion: boardExtractor.EXTRACTOR_VERSION,identityMetadataVersion:1,
-      descriptionExcerpt: Array.from(description).slice(0, 250).join(''),
+      descriptionExcerpt: Array.from(description).slice(0, 250).join(''),descriptionVersion:require('./article-excerpts').VERSION,
       contentSha256: hash(String(html)), checkedAt: now, format: 'html', availabilityVersion: 1 };
   } finally { dom?.window.close(); }
 }
@@ -97,7 +97,7 @@ function extractApi(url, article, now = new Date().toISOString()) {
     objectClass: metadata.extractObjectClass(source),rating:metadata.normalizeRating(article.rating),imageUrl:metadata.extractImageUrl(source,page.slug),
     links: bodyLinks.map(l=>l.target), bodyLinks, linkExtractionVersion:boardExtractor.EXTRACTOR_VERSION,
     translations: [], originalSources:[], originProvenanceVersion:provenance.VERSION, authors: [], format: 'ftml', contentSha256: hash(source), checkedAt: now, availabilityVersion: 1,
-    descriptionExcerpt: source.replace(/\[\[[\s\S]*?\]\]/g, ' ').replace(/\s+/g, ' ').slice(0, 250) };
+    descriptionExcerpt: metadata.extractDescription(source) || '',descriptionVersion:require('./article-excerpts').VERSION };
 }
 
 function capture(url, body, format = 'html', directory = path.join(__dirname, 'partial-data/related-documents'), existingDocument = null) {
