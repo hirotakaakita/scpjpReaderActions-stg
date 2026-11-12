@@ -5,7 +5,7 @@ const crypto = require('node:crypto');
 const { LANGUAGES } = require('./languages');
 const { reclassifyScpArticle } = require('./article-category');
 const { normalizedSourceListing } = require('./series-listing');
-const { readDictionary, updateDictionary, localizeTags, indexDictionary } = require('./tag-dictionary');
+const { readDictionary, updateDictionary, localizeTags, restoreTagLabels, indexDictionary } = require('./tag-dictionary');
 const { normalize } = require('./related-documents');
 
 // This is a delivery format, never a replacement for the crawler's source data.
@@ -93,7 +93,10 @@ function generateCatalogChannel(input, output, includeAdditional, sourceDirector
       ids.add(row.itemId);
     }
     delivery.data.push(...documents);
-    if (includeAdditional && enrichTranslations) delivery.data = delivery.data.map(reclassifyScpArticle);
+    if (includeAdditional && enrichTranslations) delivery.data = delivery.data.map(row => ({
+      ...reclassifyScpArticle(row),
+      tags:restoreTagLabels(row.tags || [], language, dictionary, tagIndex, row.tagLabels),
+    }));
     if (includeAdditional && enrichTranslations) for (const row of delivery.data) {
       row.translatedLanguages = [...new Set([
         ...(row.translatedLanguages || []), ...(translations.get(row.itemId) || []),
