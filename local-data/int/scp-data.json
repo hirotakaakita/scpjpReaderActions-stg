@@ -1,7 +1,7 @@
 {
   "totalCount": 24,
   "language": "int",
-  "timestamp": "2026-11-10T00:49:26.482Z",
+  "timestamp": "2026-11-12T13:48:20.254Z",
   "duration": 20,
   "status": "completed",
   "statistics": {
@@ -252,7 +252,7 @@
       "imageUrl": "http://scp-int.wdfiles.com/local--files/scp-008-int/Denture_de_baudroie_commune_(5).jpg",
       "objectClass": "Euclid",
       "rating": 14,
-      "descriptionExcerpt": "SCP-008-INT is a shouldermounted living intelligent weapon incorporating biotechnological elements that mimic biological life. It is comprised of a wormlike structure analogous in function to a head, measuring 1 meter of length per .3 meter of diameter; four thin tentacles with 1.5 meter of length per .03 meter of diameter protruding from the base of its head; a flat, cloth-like body with several microscopic proboscides on its bottom-most side. The object displays several cavities in its sides, ",
+      "descriptionExcerpt": "SCP-008-INT is a shouldermounted living intelligent weapon incorporating biotechnological elements that mimic biological life. It is comprised of a wormlike structure analogous in function to a head, measuring 1 meter of length per .3 meter of diameter; four thin tentacles with 1.5 meter of length per .03 meter of diameter protruding from the base of its head; a flat, cloth-like body with several microscopic proboscides on its bottom-most side. The object displays several cavities in its sides,",
       "tags": [
         "alive",
         "co-authored",
@@ -279,7 +279,9 @@
       "createdAt": "2026-08-01T10:55:17.661Z",
       "translatedLanguages": [
         "int"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:33:03.577Z"
     },
     {
       "itemId": "scp-series-int-009",

@@ -1,7 +1,7 @@
 {
   "totalCount": 22,
   "language": "sh",
-  "timestamp": "2026-11-10T00:49:33.025Z",
+  "timestamp": "2026-11-12T13:48:20.254Z",
   "duration": 14,
   "status": "completed",
   "statistics": {
@@ -222,7 +222,7 @@
       "imageUrl": "https://scp-sh.wdfiles.com/local--files/scp-003/SCP-003a-new.jpg",
       "objectClass": "Euclid",
       "rating": 1,
-      "descriptionExcerpt": "SCP-003 se sastoji iz dve povezane komponente razli\u010ditog porekla, ozna\u010dene kao SCP-003-1 i SCP-003-2.\n\u010cini se da je SCP-003-1 sastavljena od hitina, dlaka i noktiju nepoznate biologije, raspore\u0111enih u konfiguraciju sli\u010dnu kompjuterskoj mati\u010dnoj plo\u010di. Testiranje je otkrilo da SCP-003-1 predatira najraniju poznatu \u0161tampanu plo\u010du za nekoliko hiljada godina. Smatra se da je SCP-003-1 svesna, ali nije aktivno opasna osim pod odre\u0111enim uslovima.\nSCP-003-1 je prona\u0111ena na kamenoj plo\u010di, SCP-003-2, na ",
+      "descriptionExcerpt": "SCP-003 se sastoji iz dve povezane komponente razli\u010ditog porekla, ozna\u010dene kao SCP-003-1 i SCP-003-2.\n\u010cini se da je SCP-003-1 sastavljena od hitina, dlaka i noktiju nepoznate biologije, raspore\u0111enih u konfiguraciju sli\u010dnu kompjuterskoj mati\u010dnoj plo\u010di. Testiranje je otkrilo da SCP-003-1 predatira najraniju poznatu \u0161tampanu plo\u010du za nekoliko hiljada godina. Smatra se da je SCP-003-1 svesna, ali nije aktivno opasna osim pod odre\u0111enim uslovima.\nSCP-003-1 je prona\u0111ena na kamenoj plo\u010di, SCP-003-2, na",
       "tags": [
         "biolosko",
         "direktorka-mus",
@@ -275,7 +275,9 @@
         "sl",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:42:49.119Z"
     },
     {
       "itemId": "scp-series-004",
@@ -611,7 +613,7 @@
       "imageUrl": "https://scp-sh.wdfiles.com/local--files/scp-009/009.png",
       "objectClass": "Euclid",
       "rating": 1,
-      "descriptionExcerpt": "SCP-009 je oko \u2588\u2588\u2588 litara supstance koja povr\u0161no li\u010di na destilovanu vodu (H2O), samo sa karakteristi\u010dnom jarko crvenom bojom. Ova crvena nijansa je primetna u svim agregatnim stanjima, i slu\u017ei kao najprakti\u010dniji metod za identifikovanje kontaminirane materije pre nego \u0161to se ispolje njene anomalne osobine. Nasuprot svakodnevnoj vodi, SCP-009 sti\u010de te\u010dno stanje na temperaturama izme\u0111u -100\u00b0C i 0\u00b0C, i \u010dvrsto stanje iznad tih temperatura. Na temperaturama ispod -100\u00b0C, SCP-009 isparava u gasovito ",
+      "descriptionExcerpt": "SCP-009 je oko \u2588\u2588\u2588 litara supstance koja povr\u0161no li\u010di na destilovanu vodu (H2O), samo sa karakteristi\u010dnom jarko crvenom bojom. Ova crvena nijansa je primetna u svim agregatnim stanjima, i slu\u017ei kao najprakti\u010dniji metod za identifikovanje kontaminirane materije pre nego \u0161to se ispolje njene anomalne osobine. Nasuprot svakodnevnoj vodi, SCP-009 sti\u010de te\u010dno stanje na temperaturama izme\u0111u -100\u00b0C i 0\u00b0C, i \u010dvrsto stanje iznad tih temperatura. Na temperaturama ispod -100\u00b0C, SCP-009 isparava u gasovito",
       "tags": [
         "euklid",
         "samo-replicirajuce",
@@ -668,7 +670,9 @@
         "vi",
         "zh",
         "zh_Hant"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:42:49.119Z"
     },
     {
       "itemId": "scp-series-010",
@@ -679,7 +683,7 @@
       "imageUrl": null,
       "objectClass": "Sigurna",
       "rating": 2,
-      "descriptionExcerpt": "SCP-010 se sastoji od serije \u0161est (6) naizgled identi\u010dnih livenih gvozdenih okovratnika sa numerisanim metalnim oznakama i jednog (1) daljinskog upravlja\u010da. Upravlja\u010d je SCP-010-1.\n\nOkovratnici su SCP-010-2 do 010-7. Okovratnici sadr\u017ee zamr\u0161ene elektronske komponente i napajaju ih male (pre\u010dnika 5mm i debljine 2mm) 100V baterije. Ove baterije su punjive.\nDaljinski je te\u0161ka crna kutija koja podse\u0107a na staromodni ru\u010dni radio oda\u0161ilja\u010d/primalac sa primitivnim plavo-belim katodnim ekranom i serijom ",
+      "descriptionExcerpt": "SCP-010 se sastoji od serije \u0161est (6) naizgled identi\u010dnih livenih gvozdenih okovratnika sa numerisanim metalnim oznakama i jednog (1) daljinskog upravlja\u010da. Upravlja\u010d je SCP-010-1.\n\nOkovratnici su SCP-010-2 do 010-7. Okovratnici sadr\u017ee zamr\u0161ene elektronske komponente i napajaju ih male (pre\u010dnika 5mm i debljine 2mm) 100V baterije. Ove baterije su punjive.\nDaljinski je te\u0161ka crna kutija koja podse\u0107a na staromodni ru\u010dni radio oda\u0161ilja\u010d/primalac sa primitivnim plavo-belim katodnim ekranom i serijom",
       "tags": [
         "artefakt",
         "elektronsko",
@@ -718,7 +722,9 @@
         "sl",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:42:49.119Z"
     },
     {
       "itemId": "scp-series-011",
@@ -989,7 +995,7 @@
       "imageUrl": "https://scp-sh.wdfiles.com/local--files/scp-173/SCP-173.jpg",
       "objectClass": null,
       "rating": 1,
-      "descriptionExcerpt": "Preba\u010den u Instituciju-19 1993. Poreklo je u trenutku pisanja nepoznato. Objekat je izgra\u0111en od betona I armature sa tragovima sprej farbe marke Krylon. SCP-173 je pokretan I izuzetno neprijateljski nastrojen. Predmet ne mo\u017ee da se pomera dok se nalazi u direktnoj liniji vida. Linija vida ne sme ni u kom trenutku biti prekinuta sa SCP-173-om. Osoblje odre\u0111eno za ulazak u kontejner dobija instrukcije da upozore jedno drugo pre treptanja. Prijavljeno je da objekat napada slamanjem vrata na osnovi ",
+      "descriptionExcerpt": "Preba\u010den u Instituciju-19 1993. Poreklo je u trenutku pisanja nepoznato. Objekat je izgra\u0111en od betona I armature sa tragovima sprej farbe marke Krylon. SCP-173 je pokretan I izuzetno neprijateljski nastrojen. Predmet ne mo\u017ee da se pomera dok se nalazi u direktnoj liniji vida. Linija vida ne sme ni u kom trenutku biti prekinuta sa SCP-173-om. Osoblje odre\u0111eno za ulazak u kontejner dobija instrukcije da upozore jedno drugo pre treptanja. Prijavljeno je da objekat napada slamanjem vrata na osnovi",
       "tags": [
         "autonomno",
         "euklid",
@@ -1038,7 +1044,9 @@
         "sv",
         "tok",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:42:49.119Z"
     },
     {
       "itemId": "scp-series-447",
@@ -1049,7 +1057,7 @@
       "imageUrl": null,
       "objectClass": "Bezbedno",
       "rating": 0,
-      "descriptionExcerpt": "SCP-447-1 je zelena kugla otprilike 5 cm u pre\u010dniku, sa sun\u0111erastom povr\u0161inskom teksturom i te\u017einom od 1.37 kg. Objekat je topao na dodir, otprilike iste temperature kao i ljudsko telo, iako je temperatura njegovog jezgra neznatno vi\u0161a. Osoblje koje radi sa SCP-447-1-om ne prijavljuje nikakva \u0161tetna dejstva, pod uslovom da SCP-447-1 ne do\u0111e u kontakt sa mrtvim telom.\nSCP-447 je povra\u0107en od strane agenata Fondacije datuma \u2588\u2588\u2588\u2588\u2588\u2588\u2588 u gradu \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 u Kaliforniji u Sjedinjenim Ameri\u010dkim Dr\u017eavama. ",
+      "descriptionExcerpt": "SCP-447-1 je zelena kugla otprilike 5 cm u pre\u010dniku, sa sun\u0111erastom povr\u0161inskom teksturom i te\u017einom od 1.37 kg. Objekat je topao na dodir, otprilike iste temperature kao i ljudsko telo, iako je temperatura njegovog jezgra neznatno vi\u0161a. Osoblje koje radi sa SCP-447-1-om ne prijavljuje nikakva \u0161tetna dejstva, pod uslovom da SCP-447-1 ne do\u0111e u kontakt sa mrtvim telom.\nSCP-447 je povra\u0107en od strane agenata Fondacije datuma \u2588\u2588\u2588\u2588\u2588\u2588\u2588 u gradu \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 u Kaliforniji u Sjedinjenim Ameri\u010dkim Dr\u017eavama.",
       "tags": [
         "ektoentropno",
         "sfera",
@@ -1102,7 +1110,9 @@
         "vi",
         "zh",
         "zh_Hant"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:42:49.119Z"
     },
     {
       "itemId": "scp-series-682",

@@ -1,7 +1,7 @@
 {
   "totalCount": 16,
   "language": "nl",
-  "timestamp": "2026-11-11T13:06:32.673Z",
+  "timestamp": "2026-11-12T13:48:20.254Z",
   "duration": 9,
   "status": "completed",
   "statistics": {
@@ -19,7 +19,7 @@
       "imageUrl": "https://scp-nl.wdfiles.com/local--resized-images/scp-002/800px-SCP002-new.jpeg/medium.jpg",
       "objectClass": "Euclid",
       "rating": 2,
-      "descriptionExcerpt": "SCP-002 lijkt op een tumor-achtig, vlezig groeisel met een volume van ongeveer 60 m3 (of 2000 ft3). Een ijzeren luik aan een kant lijdt tot de binnenkant die eruit ziet als een laag-huur appartement van bescheiden grootte, \u00e9\u00e9n muur van de kamer heeft een enkel raam, deze opening is echter niet zichtbaar van de buitenkant. De kamer is bemeubeld met meubels die, met dichter onderzoek, zijn opgebouwd met gebeeldhouwde botten, gevlochten haar en verschillende andere biologische stoffen geproduceerd ",
+      "descriptionExcerpt": "SCP-002 lijkt op een tumor-achtig, vlezig groeisel met een volume van ongeveer 60 m3 (of 2000 ft3). Een ijzeren luik aan een kant lijdt tot de binnenkant die eruit ziet als een laag-huur appartement van bescheiden grootte, \u00e9\u00e9n muur van de kamer heeft een enkel raam, deze opening is echter niet zichtbaar van de buitenkant. De kamer is bemeubeld met meubels die, met dichter onderzoek, zijn opgebouwd met gebeeldhouwde botten, gevlochten haar en verschillende andere biologische stoffen geproduceerd",
       "tags": [],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -75,7 +75,9 @@
         "vi",
         "zh",
         "zh_Hant"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:42:05.929Z"
     },
     {
       "itemId": "scp-series-003",

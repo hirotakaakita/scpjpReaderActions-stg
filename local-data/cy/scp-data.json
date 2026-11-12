@@ -1,7 +1,7 @@
 {
   "totalCount": 8,
   "language": "cy",
-  "timestamp": "2026-11-10T00:49:26.482Z",
+  "timestamp": "2026-11-12T13:48:20.254Z",
   "duration": 6,
   "status": "completed",
   "statistics": {
@@ -42,7 +42,7 @@
       "imageUrl": null,
       "objectClass": "Euclid",
       "rating": null,
-      "descriptionExcerpt": "Mae SCP-007 wedi'i leoli mewn twll yn yr abdomen y \"targed\". Mae'r \"targed\" yn wryw gwyn sy'n edrych tua 25 mlwydd oed mewn golwg (mynnu bod \"targed\" yn 28 mlwydd oed) ac mae 176 cm yn uchel. Mae'r rhan fwyaf o'r abdomen (croeniau, cyhyrau, ac organau) o'r \"targed\" ar goll, ond nid yw'r \"targed\" yn ymddangos yn boenus. Mae'r rhan sydd ar goll yn cynnwys cig a ph\u00eal o fwd a daear, ond ni fu'r pethau hyn yn gysylltiedig \u00e2'i gorff erioed. Mae'r b\u00eal ym mhob agwedd yn fodel o ffug y Ddaear, tua 60 cm ",
+      "descriptionExcerpt": "Mae SCP-007 wedi'i leoli mewn twll yn yr abdomen y \"targed\". Mae'r \"targed\" yn wryw gwyn sy'n edrych tua 25 mlwydd oed mewn golwg (mynnu bod \"targed\" yn 28 mlwydd oed) ac mae 176 cm yn uchel. Mae'r rhan fwyaf o'r abdomen (croeniau, cyhyrau, ac organau) o'r \"targed\" ar goll, ond nid yw'r \"targed\" yn ymddangos yn boenus. Mae'r rhan sydd ar goll yn cynnwys cig a ph\u00eal o fwd a daear, ond ni fu'r pethau hyn yn gysylltiedig \u00e2'i gorff erioed. Mae'r b\u00eal ym mhob agwedd yn fodel o ffug y Ddaear, tua 60 cm",
       "tags": [
         "byw",
         "euclid",
@@ -84,7 +84,9 @@
         "sl",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:40:55.807Z"
     },
     {
       "itemId": "scp-series-096",

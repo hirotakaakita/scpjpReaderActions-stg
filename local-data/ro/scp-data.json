@@ -1,7 +1,7 @@
 {
   "totalCount": 17,
   "language": "ro",
-  "timestamp": "2026-11-10T00:49:33.025Z",
+  "timestamp": "2026-11-12T13:48:20.254Z",
   "duration": 11,
   "status": "completed",
   "statistics": {
@@ -605,7 +605,7 @@
       "imageUrl": "https://scp-romanian.wdfiles.com/local--files/scp-096/SCP-096.png",
       "objectClass": "Euclid",
       "rating": 1,
-      "descriptionExcerpt": "SCP-096 este o creatur\u0103 umanoid\u0103, m\u0103sur\u00e2nd aproximativ 2,38 metri \u00een\u0103l\u021bime. Subiectul prezint\u0103 o mas\u0103 muscular\u0103 foarte mic\u0103, analiza preliminar\u0103 a masei corporale suger\u00e2nd o malnutri\u021bie u\u0219oar\u0103. Bra\u021bele sunt extrem de dispropor\u021bionate cu restul corpului subiectului, av\u00e2nd o lungime de aproximativ 1,5 metri fiecare. Pielea este \u00een cea mai mare parte lipsit\u0103 de pigmentare, f\u0103r\u0103 semne de p\u0103r pe corp.\nMaxilarul lui SCP-096 se poate deschide de patru (4) ori mai mult dec\u00e2t norma unui om de r\u00e2nd. Alte ",
+      "descriptionExcerpt": "SCP-096 este o creatur\u0103 umanoid\u0103, m\u0103sur\u00e2nd aproximativ 2,38 metri \u00een\u0103l\u021bime. Subiectul prezint\u0103 o mas\u0103 muscular\u0103 foarte mic\u0103, analiza preliminar\u0103 a masei corporale suger\u00e2nd o malnutri\u021bie u\u0219oar\u0103. Bra\u021bele sunt extrem de dispropor\u021bionate cu restul corpului subiectului, av\u00e2nd o lungime de aproximativ 1,5 metri fiecare. Pielea este \u00een cea mai mare parte lipsit\u0103 de pigmentare, f\u0103r\u0103 semne de p\u0103r pe corp.\nMaxilarul lui SCP-096 se poate deschide de patru (4) ori mai mult dec\u00e2t norma unui om de r\u00e2nd. Alte",
       "tags": [
         "cognitohazard",
         "doctorul-dan",
@@ -647,7 +647,9 @@
         "ro",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:42:37.979Z"
     },
     {
       "itemId": "scp-series-173",

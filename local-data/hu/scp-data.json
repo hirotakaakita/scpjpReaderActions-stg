@@ -1,7 +1,7 @@
 {
   "totalCount": 162,
   "language": "hu",
-  "timestamp": "2026-11-10T00:49:33.025Z",
+  "timestamp": "2026-11-12T13:48:20.254Z",
   "duration": 97,
   "status": "completed",
   "statistics": {
@@ -795,7 +795,7 @@
       "imageUrl": null,
       "objectClass": null,
       "rating": 0,
-      "descriptionExcerpt": "SCP-029-HU kin\u00e9zete legink\u00e1bb egy nemi jegyekkel nem rendelkez\u0151, kifejlett Canis Lupus1 egyedre hasonl\u00edt, azon elt\u00e9r\u00e9ssel, hogy az entit\u00e1s szeme egy\u00f6ntet\u0171 v\u00f6r\u00f6s testk\u00e9nt nem tartalmaz se pupill\u00e1t, se szaruh\u00e1rty\u00e1t. Ezen elv\u00e1ltoz\u00e1s azonban l\u00e1tsz\u00f3lag nem befoly\u00e1solja az anom\u00e1lia l\u00e1t\u00e1s\u00e1t, l\u00e1tsz\u00f3lag SCP-029-HU rendhagy\u00f3 m\u00f3don k\u00e9pes \u00e9rz\u00e9kelni a k\u00f6rnyezet\u00e9t. Ennek ellen\u00e9re SCP-029-HU els\u0151dleges rendellenes hat\u00e1s\u00e1t, \u00fagy t\u0171nik az entit\u00e1s l\u00e1t\u00f3szerve hozza m\u0171k\u00f6d\u00e9sbe, mely megfert\u0151z b\u00e1rmely \u00e9l\u0151 alanyt, aki ",
+      "descriptionExcerpt": "SCP-029-HU kin\u00e9zete legink\u00e1bb egy nemi jegyekkel nem rendelkez\u0151, kifejlett Canis Lupus1 egyedre hasonl\u00edt, azon elt\u00e9r\u00e9ssel, hogy az entit\u00e1s szeme egy\u00f6ntet\u0171 v\u00f6r\u00f6s testk\u00e9nt nem tartalmaz se pupill\u00e1t, se szaruh\u00e1rty\u00e1t. Ezen elv\u00e1ltoz\u00e1s azonban l\u00e1tsz\u00f3lag nem befoly\u00e1solja az anom\u00e1lia l\u00e1t\u00e1s\u00e1t, l\u00e1tsz\u00f3lag SCP-029-HU rendhagy\u00f3 m\u00f3don k\u00e9pes \u00e9rz\u00e9kelni a k\u00f6rnyezet\u00e9t. Ennek ellen\u00e9re SCP-029-HU els\u0151dleges rendellenes hat\u00e1s\u00e1t, \u00fagy t\u0171nik az entit\u00e1s l\u00e1t\u00f3szerve hozza m\u0171k\u00f6d\u00e9sbe, mely megfert\u0151z b\u00e1rmely \u00e9l\u0151 alanyt, aki",
       "tags": [
         "euklid",
         "tag-1e09c8297d3930ad583441a8",
@@ -814,7 +814,9 @@
       "createdAt": "2026-11-10T00:33:37.951Z",
       "translatedLanguages": [
         "hu"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:41:45.642Z"
     },
     {
       "itemId": "scp-series-hu-030",
@@ -825,7 +827,7 @@
       "imageUrl": "https://scp-hu.wdfiles.com/local--files/scp-030-hu/egri-n%C5%91k.jpg",
       "objectClass": null,
       "rating": 1,
-      "descriptionExcerpt": "SCP-030-HU egy SCP-056-HU k\u00eds\u00e9rletb\u0151l fennmaradt rendellenes hat\u00e1sokkal rendelkez\u0151 objektum, mi el\u0151zetesen SCP-056-HU-C-26-os besorol\u00e1ssal volt regisztr\u00e1lva az Alap\u00edtv\u00e1ny adatb\u00e1zis\u00e1ban. SCP-030-HU l\u00e1that\u00f3an Sz\u00e9kely Bertalan 1867-ben k\u00e9sz\u00fclt /Egri N\u0151k/ c\u00edm\u0171 festm\u00e9ny\u00e9nek egy gyenge reprodukci\u00f3j\u00e1nak t\u0171nik. Alkot\u00f3ja a 2. st\u00e1diumban l\u00e9v\u0151 SCP-056-A-17-es, aki azt az utas\u00edt\u00e1st kapta, hogy a t\u0151le telhet\u0151 legpontosabb m\u00e1solatot k\u00e9sz\u00edtse el az eredeti festm\u00e9nyr\u0151l, minek f\u0151 c\u00e9lja a fert\u0151z\u00f6tt egy\u00e9nek \u00e1ltal ",
+      "descriptionExcerpt": "SCP-030-HU egy SCP-056-HU k\u00eds\u00e9rletb\u0151l fennmaradt rendellenes hat\u00e1sokkal rendelkez\u0151 objektum, mi el\u0151zetesen SCP-056-HU-C-26-os besorol\u00e1ssal volt regisztr\u00e1lva az Alap\u00edtv\u00e1ny adatb\u00e1zis\u00e1ban. SCP-030-HU l\u00e1that\u00f3an Sz\u00e9kely Bertalan 1867-ben k\u00e9sz\u00fclt /Egri N\u0151k/ c\u00edm\u0171 festm\u00e9ny\u00e9nek egy gyenge reprodukci\u00f3j\u00e1nak t\u0171nik. Alkot\u00f3ja a 2. st\u00e1diumban l\u00e9v\u0151 SCP-056-A-17-es, aki azt az utas\u00edt\u00e1st kapta, hogy a t\u0151le telhet\u0151 legpontosabb m\u00e1solatot k\u00e9sz\u00edtse el az eredeti festm\u00e9nyr\u0151l, minek f\u0151 c\u00e9lja a fert\u0151z\u00f6tt egy\u00e9nek \u00e1ltal",
       "tags": [
         "keter",
         "tag-f9391d51e81936e92596d30e",
@@ -841,7 +843,9 @@
       "createdAt": "2026-11-10T00:33:37.951Z",
       "translatedLanguages": [
         "hu"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:41:45.642Z"
     },
     {
       "itemId": "scp-series-hu-031",
@@ -1100,7 +1104,7 @@
       "imageUrl": null,
       "objectClass": null,
       "rating": 4,
-      "descriptionExcerpt": "SCP-046-HU k\u00e9t t\u00e1rgyb\u00f3l \u00e1ll.\nSCP-046-HU-1 egy 7,62 cm \u00e1tm\u00e9r\u0151j\u0171, v\u00f6r\u00f6s, g\u00f6mb alak\u00fa kar\u00e1csonyfad\u00edsz, berillium bronz maggal, melyet a felfedez\u00e9sekor tal\u00e1lt inform\u00e1ci\u00f3 szerint az \"\u00c1llami Kuri\u00f3zumgy\u00e1r\"1 gy\u00e1rt\u00f3tt 1982 november 21.-\u00e9n.\nSCP-046-HU-2 egy rossz min\u0151s\u00e9g\u0171, 8x8 cm-es feny\u0151fadoboz, amelynek oldal\u00e1ra \u201e\u00c1KGY 1982-49\u201d van \u00edrva goly\u00f3stollal. SCP-046-HU-2 t\u0171z\u00e1ll\u00f3, valamint rendk\u00edv\u00fcli r\u00e1nehezed\u0151 nyom\u00e1st is s\u00e9rtetlen\u00fcl kib\u00edr.\nAmint SCP-046-HU-1 egy minimum 10 m2 alapter\u00fclettel rendelkez\u0151 helysz\u00ednre ",
+      "descriptionExcerpt": "SCP-046-HU k\u00e9t t\u00e1rgyb\u00f3l \u00e1ll.\nSCP-046-HU-1 egy 7,62 cm \u00e1tm\u00e9r\u0151j\u0171, v\u00f6r\u00f6s, g\u00f6mb alak\u00fa kar\u00e1csonyfad\u00edsz, berillium bronz maggal, melyet a felfedez\u00e9sekor tal\u00e1lt inform\u00e1ci\u00f3 szerint az \"\u00c1llami Kuri\u00f3zumgy\u00e1r\"1 gy\u00e1rt\u00f3tt 1982 november 21.-\u00e9n.\nSCP-046-HU-2 egy rossz min\u0151s\u00e9g\u0171, 8x8 cm-es feny\u0151fadoboz, amelynek oldal\u00e1ra \u201e\u00c1KGY 1982-49\u201d van \u00edrva goly\u00f3stollal. SCP-046-HU-2 t\u0171z\u00e1ll\u00f3, valamint rendk\u00edv\u00fcli r\u00e1nehezed\u0151 nyom\u00e1st is s\u00e9rtetlen\u00fcl kib\u00edr.\nAmint SCP-046-HU-1 egy minimum 10 m2 alapter\u00fclettel rendelkez\u0151 helysz\u00ednre",
       "tags": [
         "tag-d5225c7e6b8408e54600bf66",
         "tag-424da6ff602383ca7825c7aa",
@@ -1117,7 +1121,9 @@
       "createdAt": "2026-11-10T00:33:37.951Z",
       "translatedLanguages": [
         "hu"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:41:45.642Z"
     },
     {
       "itemId": "scp-series-hu-048",
@@ -1189,7 +1195,7 @@
       "imageUrl": null,
       "objectClass": null,
       "rating": 4,
-      "descriptionExcerpt": "SCP-055-HU egy egykori lak\u00f3h\u00e1z -1. emelete, mely a \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588on tal\u00e1lhat\u00f3, \u2588\u2588\u2588\u2588 v\u00e1ros\u00e1nak k\u00f6zpontj\u00e1ban \u00e9s ami az ut\u00f3lagos vizsg\u00e1latok alapj\u00e1n a f\u00f6ld magj\u00e1ba vezet. Az entit\u00e1s felfedez\u00e9se ut\u00e1n, az alap\u00edtv\u00e1ny ki\u00fcr\u00edtette a lak\u00f3\u00e9p\u00fcletet \u00e9s az amnesztia gy\u00f3gyszerek bead\u00e1sa ut\u00e1n, \u00e1tvette az \u00e9p\u00fclet feletti tulajdonjogokat, elker\u00fclve a civil \u00e9rintkez\u00e9seket az anom\u00e1li\u00e1val.\nSCP-055-HU kiz\u00e1r\u00f3lagosan az \u00e9p\u00fclet k\u00f6zponti lifth\u00e1l\u00f3zat\u00e1val \u00e9rhet\u0151 el csup\u00e1n. Az \u00e9rintett felvon\u00f3 gombeloszt\u00e1sa 12 emeletet k\u00fcl\u00f6n\u00edt ",
+      "descriptionExcerpt": "SCP-055-HU egy egykori lak\u00f3h\u00e1z -1. emelete, mely a \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588on tal\u00e1lhat\u00f3, \u2588\u2588\u2588\u2588 v\u00e1ros\u00e1nak k\u00f6zpontj\u00e1ban \u00e9s ami az ut\u00f3lagos vizsg\u00e1latok alapj\u00e1n a f\u00f6ld magj\u00e1ba vezet. Az entit\u00e1s felfedez\u00e9se ut\u00e1n, az alap\u00edtv\u00e1ny ki\u00fcr\u00edtette a lak\u00f3\u00e9p\u00fcletet \u00e9s az amnesztia gy\u00f3gyszerek bead\u00e1sa ut\u00e1n, \u00e1tvette az \u00e9p\u00fclet feletti tulajdonjogokat, elker\u00fclve a civil \u00e9rintkez\u00e9seket az anom\u00e1li\u00e1val.\nSCP-055-HU kiz\u00e1r\u00f3lagosan az \u00e9p\u00fclet k\u00f6zponti lifth\u00e1l\u00f3zat\u00e1val \u00e9rhet\u0151 el csup\u00e1n. Az \u00e9rintett felvon\u00f3 gombeloszt\u00e1sa 12 emeletet k\u00fcl\u00f6n\u00edt",
       "tags": [
         "tag-d5225c7e6b8408e54600bf66",
         "tag-fa1f724d579ef6ec783cc7c1",
@@ -1207,7 +1213,9 @@
       "createdAt": "2026-11-10T00:33:37.951Z",
       "translatedLanguages": [
         "hu"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:41:45.642Z"
     },
     {
       "itemId": "scp-series-hu-056",
@@ -1383,7 +1391,7 @@
       "imageUrl": null,
       "objectClass": "Euclid",
       "rating": 4,
-      "descriptionExcerpt": "SCP-077-HU egy csoport humanoid entit\u00e1sb\u00f3l \u00e1ll, amelyek pontos l\u00e9tsz\u00e1ma jelenleg ismeretlen. Az entit\u00e1sok \u00e1tlagos magass\u00e1ga 3 \u00e9s 3,5 m\u00e9ter k\u00f6z\u00f6tt van. Az SCP-077-Hu p\u00e9ld\u00e1nyok \u00e1ltal\u00e1ban n\u00e9gyk\u00e9zl\u00e1b k\u00f6zlekednek, \u00e9s elhagyatott, illetve erd\u0151s \u00fatszakaszokat kedvelnek. Egym\u00e1s k\u00f6z\u00f6tt verseng\u0151 magatart\u00e1st mutatnak, megpr\u00f3b\u00e1lj\u00e1k egym\u00e1st lehagyni fut\u00e1s k\u00f6zben.\nAz SCP-077-HU p\u00e9ld\u00e1nyok mind h\u00edmnem\u0171ek, nem viselnek ruh\u00e1t, \u00e9s teljesen sz\u0151rtelenek. Test\u00fcket tetov\u00e1l\u00e1sok bor\u00edtj\u00e1k, a t\u00f6rzs\u00fck oldal\u00e1n l\u00e1ngnyelvek, ",
+      "descriptionExcerpt": "SCP-077-HU egy csoport humanoid entit\u00e1sb\u00f3l \u00e1ll, amelyek pontos l\u00e9tsz\u00e1ma jelenleg ismeretlen. Az entit\u00e1sok \u00e1tlagos magass\u00e1ga 3 \u00e9s 3,5 m\u00e9ter k\u00f6z\u00f6tt van. Az SCP-077-Hu p\u00e9ld\u00e1nyok \u00e1ltal\u00e1ban n\u00e9gyk\u00e9zl\u00e1b k\u00f6zlekednek, \u00e9s elhagyatott, illetve erd\u0151s \u00fatszakaszokat kedvelnek. Egym\u00e1s k\u00f6z\u00f6tt verseng\u0151 magatart\u00e1st mutatnak, megpr\u00f3b\u00e1lj\u00e1k egym\u00e1st lehagyni fut\u00e1s k\u00f6zben.\nAz SCP-077-HU p\u00e9ld\u00e1nyok mind h\u00edmnem\u0171ek, nem viselnek ruh\u00e1t, \u00e9s teljesen sz\u0151rtelenek. Test\u00fcket tetov\u00e1l\u00e1sok bor\u00edtj\u00e1k, a t\u00f6rzs\u00fck oldal\u00e1n l\u00e1ngnyelvek,",
       "tags": [],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -1395,7 +1403,9 @@
       "createdAt": "2026-11-10T00:33:37.951Z",
       "translatedLanguages": [
         "hu"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:41:45.642Z"
     },
     {
       "itemId": "scp-series-hu-079",
@@ -1696,7 +1706,7 @@
       "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-003/SCP-003a-new.jpg",
       "objectClass": null,
       "rating": null,
-      "descriptionExcerpt": "SCP-003 kett\u0151 k\u00fcl\u00f6nb\u00f6z\u0151 eredet\u0171, egym\u00e1shoz kapcsolt t\u00e1rgyb\u00f3l \u00e1ll, melyekre SCP-003-1-k\u00e9nt, illetve SCP-003-2-k\u00e9nt hivatkozunk.\nSCP-003-1-t egy ismeretlen biol\u00f3gi\u00e1j\u00fa, l\u00e1tsz\u00f3lag kitinb\u0151l,hajb\u00f3l, \u00e9s k\u00f6r\u00f6mb\u0151l \u00e1ll\u00f3 anyag alkotja, mely egy sz\u00e1m\u00edt\u00f3g\u00e9p alaplapj\u00e1hoz hasonl\u00f3 alakot vesz fel. Tesztek kimutatt\u00e1k, hogy SCP-003-1 t\u00f6bbezer \u00e9vvel id\u0151sebb, mint a legr\u00e9gebbi ismert \u00e1ramk\u00f6r. SCP-003-1 \u00f6ntudattal rendelkezik, viszont egy\u00e1ltal\u00e1n nem vesz\u00e9lyes, kiv\u00e9ve bizonyos felt\u00e9telek egy\u00fcttes teljes\u00fcl\u00e9se eset\u00e9n.\n",
+      "descriptionExcerpt": "SCP-003 kett\u0151 k\u00fcl\u00f6nb\u00f6z\u0151 eredet\u0171, egym\u00e1shoz kapcsolt t\u00e1rgyb\u00f3l \u00e1ll, melyekre SCP-003-1-k\u00e9nt, illetve SCP-003-2-k\u00e9nt hivatkozunk.\nSCP-003-1-t egy ismeretlen biol\u00f3gi\u00e1j\u00fa, l\u00e1tsz\u00f3lag kitinb\u0151l,hajb\u00f3l, \u00e9s k\u00f6r\u00f6mb\u0151l \u00e1ll\u00f3 anyag alkotja, mely egy sz\u00e1m\u00edt\u00f3g\u00e9p alaplapj\u00e1hoz hasonl\u00f3 alakot vesz fel. Tesztek kimutatt\u00e1k, hogy SCP-003-1 t\u00f6bbezer \u00e9vvel id\u0151sebb, mint a legr\u00e9gebbi ismert \u00e1ramk\u00f6r. SCP-003-1 \u00f6ntudattal rendelkezik, viszont egy\u00e1ltal\u00e1n nem vesz\u00e9lyes, kiv\u00e9ve bizonyos felt\u00e9telek egy\u00fcttes teljes\u00fcl\u00e9se eset\u00e9n.",
       "tags": [
         "tag-411fc957622eba6e0b5b086f",
         "tag-3faad54bbccbb5ebc4c1ffa1",
@@ -1746,7 +1756,9 @@
         "sl",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:41:45.642Z"
     },
     {
       "itemId": "scp-series-004",
@@ -1882,7 +1894,7 @@
       "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-006/SCP006_stream-new.jpg",
       "objectClass": null,
       "rating": null,
-      "descriptionExcerpt": "SCP-006 egy nagyon kicsi forr\u00e1s, Asztrah\u00e1nt\u00f3l 60 km-re nyugatra. Az Alap\u00edtv\u00e1ny vezet\u0151s\u00e9ge a 19. sz\u00e1zad \u00f3ta tud l\u00e9tez\u00e9s\u00e9r\u0151l, azonban 1991-ig politikai okok miatt nem volt lehet\u0151s\u00e9ge elz\u00e1rni azt. A forr\u00e1s k\u00f6r\u00e9 \u00e1lc\u00e1z\u00e1sk\u00e9pp egy vegyi \u00fczem \u00e9p\u00fclt, mely dolgoz\u00f3inak nagy r\u00e9sze az Alap\u00edtv\u00e1ny vagy az orosz \u00e1llam alkalmazottja. Az 1992-es vizsg\u00e1latok alapj\u00e1n a forr\u00e1sb\u00f3l sz\u00e1rmaz\u00f3 folyad\u00e9k k\u00e9miailag egyszer\u0171 \u00e1sv\u00e1nyv\u00edz, azonban szokatlan m\u00f3don \"\u00e9ltet\u0151\" tulajdons\u00e1ggal b\u00edr.\nA folyad\u00e9k elfogyaszt\u00e1sa a k\u00f6vetkez\u0151 ",
+      "descriptionExcerpt": "SCP-006 egy nagyon kicsi forr\u00e1s, Asztrah\u00e1nt\u00f3l 60 km-re nyugatra. Az Alap\u00edtv\u00e1ny vezet\u0151s\u00e9ge a 19. sz\u00e1zad \u00f3ta tud l\u00e9tez\u00e9s\u00e9r\u0151l, azonban 1991-ig politikai okok miatt nem volt lehet\u0151s\u00e9ge elz\u00e1rni azt. A forr\u00e1s k\u00f6r\u00e9 \u00e1lc\u00e1z\u00e1sk\u00e9pp egy vegyi \u00fczem \u00e9p\u00fclt, mely dolgoz\u00f3inak nagy r\u00e9sze az Alap\u00edtv\u00e1ny vagy az orosz \u00e1llam alkalmazottja. Az 1992-es vizsg\u00e1latok alapj\u00e1n a forr\u00e1sb\u00f3l sz\u00e1rmaz\u00f3 folyad\u00e9k k\u00e9miailag egyszer\u0171 \u00e1sv\u00e1nyv\u00edz, azonban szokatlan m\u00f3don \"\u00e9ltet\u0151\" tulajdons\u00e1ggal b\u00edr.\nA folyad\u00e9k elfogyaszt\u00e1sa a k\u00f6vetkez\u0151",
       "tags": [
         "tag-d5225c7e6b8408e54600bf66",
         "tag-799aecc171eed8d2fb430fc2",
@@ -1943,7 +1955,9 @@
         "vi",
         "zh",
         "zh_Hant"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:41:45.642Z"
     },
     {
       "itemId": "scp-series-007",
@@ -2007,7 +2021,7 @@
       "imageUrl": "https://scp-hu.wdfiles.com/local--files/scp-008/Scp008.jpg",
       "objectClass": "Euclid",
       "rating": null,
-      "descriptionExcerpt": "SCP-008 egy \u00f6sszetett prion, melyb\u0151l minden egyes ismert G2-es telephelyen t\u00e1rolnak mint\u00e1kat. A rajta foly\u00f3 kutat\u00e1sok szigor\u00faan titkosak, \u00e9s els\u0151sorban az anyag j\u00f6v\u0151beli mesters\u00e9ges el\u0151\u00e1ll\u00edt\u00e1s\u00e1nak megakad\u00e1lyoz\u00e1s\u00e1ra ir\u00e1nyulnak. Az SCP-008 prion tulajdons\u00e1gai a k\u00f6vetkez\u0151k:\n\n100% fert\u0151z\u0151k\u00e9pess\u00e9g.\n100% hal\u00e1loz\u00e1si r\u00e1ta.\nA ny\u00e1lkah\u00e1rtya \u00e9s testnedvevek \u00e9rintkez\u00e9s\u00e9vel terjed\nLeveg\u0151ben illetve v\u00edzben nem terjed.\n\nAz SCP-008-fert\u0151z\u00e9s t\u00fcnetei \u00e9rintkez\u00e9s ut\u00e1n nem kevesebb, mint h\u00e1rom \u00f3ra alatt jeletkeznek, ",
+      "descriptionExcerpt": "SCP-008 egy \u00f6sszetett prion, melyb\u0151l minden egyes ismert G2-es telephelyen t\u00e1rolnak mint\u00e1kat. A rajta foly\u00f3 kutat\u00e1sok szigor\u00faan titkosak, \u00e9s els\u0151sorban az anyag j\u00f6v\u0151beli mesters\u00e9ges el\u0151\u00e1ll\u00edt\u00e1s\u00e1nak megakad\u00e1lyoz\u00e1s\u00e1ra ir\u00e1nyulnak. Az SCP-008 prion tulajdons\u00e1gai a k\u00f6vetkez\u0151k:\n\n100% fert\u0151z\u0151k\u00e9pess\u00e9g.\n100% hal\u00e1loz\u00e1si r\u00e1ta.\nA ny\u00e1lkah\u00e1rtya \u00e9s testnedvevek \u00e9rintkez\u00e9s\u00e9vel terjed\nLeveg\u0151ben illetve v\u00edzben nem terjed.\n\nAz SCP-008-fert\u0151z\u00e9s t\u00fcnetei \u00e9rintkez\u00e9s ut\u00e1n nem kevesebb, mint h\u00e1rom \u00f3ra alatt jeletkeznek,",
       "tags": [
         "tag-f10b4420f988541e15f7e9ce",
         "euklid",
@@ -2068,7 +2082,9 @@
         "vi",
         "zh",
         "zh_Hant"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:41:45.642Z"
     },
     {
       "itemId": "scp-series-009",
@@ -2633,7 +2649,7 @@
       "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-018/superball.jpg",
       "objectClass": "Euclid",
       "rating": null,
-      "descriptionExcerpt": "SCP-018 a Wham-O c\u00e9g 1969-es Elasztikus Goly\u00f3j\u00e1nak a kin\u00e9zet\u00e9vel rendelkezik. Hat (6) centim\u00e9teres az \u00e1tm\u00e9r\u0151je, \u00e9s piros. Akkor fedezt\u00e9k fel, amikor felb\u00e9relt\u00e9k a \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 c\u00e9get, hogy feltakar\u00edtsa a Wham-O rakt\u00e1rat, amelyben maradtak term\u00e9kek. SCP-018-at nagyon magas pattog\u00e1ssal \u00edrt\u00e1k le. El\u0151sz\u00f6r csak egy kellemes gyerekj\u00e1t\u00e9knak hitt\u00e9k, de SCP-018 k\u00e9pes volt kett\u0151sz\u00e1z sz\u00e1zal\u00e9kos (200%) hat\u00e9konys\u00e1gra (azaz, hogyha ledobt\u00e1k egy (1) m\u00e9terr\u0151l, akkor kett\u0151 (2) m\u00e9ter magasra pattant, azt\u00e1n n\u00e9gy (4) ",
+      "descriptionExcerpt": "SCP-018 a Wham-O c\u00e9g 1969-es Elasztikus Goly\u00f3j\u00e1nak a kin\u00e9zet\u00e9vel rendelkezik. Hat (6) centim\u00e9teres az \u00e1tm\u00e9r\u0151je, \u00e9s piros. Akkor fedezt\u00e9k fel, amikor felb\u00e9relt\u00e9k a \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 c\u00e9get, hogy feltakar\u00edtsa a Wham-O rakt\u00e1rat, amelyben maradtak term\u00e9kek. SCP-018-at nagyon magas pattog\u00e1ssal \u00edrt\u00e1k le. El\u0151sz\u00f6r csak egy kellemes gyerekj\u00e1t\u00e9knak hitt\u00e9k, de SCP-018 k\u00e9pes volt kett\u0151sz\u00e1z sz\u00e1zal\u00e9kos (200%) hat\u00e9konys\u00e1gra (azaz, hogyha ledobt\u00e1k egy (1) m\u00e9terr\u0151l, akkor kett\u0151 (2) m\u00e9ter magasra pattant, azt\u00e1n n\u00e9gy (4)",
       "tags": [
         "ektoentropikus",
         "euklid",
@@ -2691,7 +2707,9 @@
         "vi",
         "zh",
         "zh_Hant"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:41:45.642Z"
     },
     {
       "itemId": "scp-series-019",
@@ -3737,7 +3755,7 @@
       "imageUrl": null,
       "objectClass": null,
       "rating": null,
-      "descriptionExcerpt": "SCP-048-at az Alap\u00edtv\u00e1ny munkat\u00e1rsai m\u00e1r egy ideje csak az \"el\u00e1tkozott sz\u00e1m\"-k\u00e9nt nevezik. B\u00e1rmilyen anom\u00e1lia amelyet ezzel a sz\u00e1mmal jel\u00f6ltek megsemmis\u00fclt, leszerelt\u00e9k, ellopt\u00e1k, vagy elveszett, ez pedig \u00e1ltal\u00e1ban nem volt senkinek sem a hib\u00e1ja. Emellett minden SCP-048-k\u00e9nt jel\u00f6lt anom\u00e1li\u00e1val foglalkoz\u00f3 szem\u00e9lyzet 50%-kal nagyobb es\u00e9llyel hal\u00e1lozott el, csonkult meg, \u00e9s indultak ellen\u00fck fegyelmi elj\u00e1r\u00e1sok.\nNem tudni hogy a sz\u00e1m val\u00f3ban rendelkezik-e term\u00e9szetfeletti tulajdons\u00e1gokkal, azonban a ",
+      "descriptionExcerpt": "SCP-048-at az Alap\u00edtv\u00e1ny munkat\u00e1rsai m\u00e1r egy ideje csak az \"el\u00e1tkozott sz\u00e1m\"-k\u00e9nt nevezik. B\u00e1rmilyen anom\u00e1lia amelyet ezzel a sz\u00e1mmal jel\u00f6ltek megsemmis\u00fclt, leszerelt\u00e9k, ellopt\u00e1k, vagy elveszett, ez pedig \u00e1ltal\u00e1ban nem volt senkinek sem a hib\u00e1ja. Emellett minden SCP-048-k\u00e9nt jel\u00f6lt anom\u00e1li\u00e1val foglalkoz\u00f3 szem\u00e9lyzet 50%-kal nagyobb es\u00e9llyel hal\u00e1lozott el, csonkult meg, \u00e9s indultak ellen\u00fck fegyelmi elj\u00e1r\u00e1sok.\nNem tudni hogy a sz\u00e1m val\u00f3ban rendelkezik-e term\u00e9szetfeletti tulajdons\u00e1gokkal, azonban a",
       "tags": [
         "ezoterikus",
         "matematikai",
@@ -3776,7 +3794,9 @@
         "sl",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:41:45.642Z"
     },
     {
       "itemId": "scp-series-049",
@@ -3946,7 +3966,7 @@
       "imageUrl": null,
       "objectClass": "Euclid",
       "rating": null,
-      "descriptionExcerpt": "SCP-053 k\u00fclseje megegyezik egy 3 \u00e9ves kisl\u00e1ny\u00e9val. K\u00e9pes kezdetleges besz\u00e9dre \u00e9s a kor\u00e1hoz k\u00e9pest kicsivel \u00e1tlag feletti \u00e9rtelmi k\u00e9pess\u00e9geket mutat. Bar\u00e1ts\u00e1gos szem\u00e9lyis\u00e9ge van, csup\u00e1n ritk\u00e1n, nagysz\u00e1m\u00fa ember jelenl\u00e9tekor lesz ideges.\nB\u00e1rmilyen 3 \u00e9v f\u00f6l\u00f6tti ember, aki 10 percn\u00e9l hosszabb ideig SCP-053 k\u00f6zel\u00e9ben tart\u00f3zkodik vagy szem- ill. fizikai kontaktusban van vele, gyorsan logik\u00e1tlan, paranoi\u00e1s, gyilkos term\u00e9szet\u0171v\u00e9 v\u00e1lik. A legt\u00f6bb, ha nem az \u00f6sszes ilyen indulat SCP-053 fel\u00e9 ir\u00e1nyul, \u00e9s a ",
+      "descriptionExcerpt": "SCP-053 k\u00fclseje megegyezik egy 3 \u00e9ves kisl\u00e1ny\u00e9val. K\u00e9pes kezdetleges besz\u00e9dre \u00e9s a kor\u00e1hoz k\u00e9pest kicsivel \u00e1tlag feletti \u00e9rtelmi k\u00e9pess\u00e9geket mutat. Bar\u00e1ts\u00e1gos szem\u00e9lyis\u00e9ge van, csup\u00e1n ritk\u00e1n, nagysz\u00e1m\u00fa ember jelenl\u00e9tekor lesz ideges.\nB\u00e1rmilyen 3 \u00e9v f\u00f6l\u00f6tti ember, aki 10 percn\u00e9l hosszabb ideig SCP-053 k\u00f6zel\u00e9ben tart\u00f3zkodik vagy szem- ill. fizikai kontaktusban van vele, gyorsan logik\u00e1tlan, paranoi\u00e1s, gyilkos term\u00e9szet\u0171v\u00e9 v\u00e1lik. A legt\u00f6bb, ha nem az \u00f6sszes ilyen indulat SCP-053 fel\u00e9 ir\u00e1nyul, \u00e9s a",
       "tags": [
         "tag-3faad54bbccbb5ebc4c1ffa1",
         "euklid",
@@ -4008,7 +4028,9 @@
         "vi",
         "zh",
         "zh_Hant"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:41:45.642Z"
     },
     {
       "itemId": "scp-series-055",
@@ -4584,7 +4606,7 @@
       "imageUrl": "https://scp-hu.wdfiles.com/local--files/scp-087/2.png",
       "objectClass": "Euclid",
       "rating": null,
-      "descriptionExcerpt": "SCP-087 egy vil\u00e1g\u00edt\u00e1s n\u00e9lk\u00fcli l\u00e9pcs\u0151h\u00e1z. A l\u00e9pcs\u0151k 38 fokos sz\u00f6gben ereszkednek le 13 l\u00e9pcs\u0151fokon kereszt\u00fcl, ami ut\u00e1n egy k\u00f6r\u00fclbel\u00fcl 3 m\u00e9ter \u00e1tm\u00e9r\u0151j\u0171 f\u00e9lk\u00f6r alak\u00fa platform k\u00f6vetkezik. A s\u00fcllyed\u00e9s ir\u00e1nya lefel\u00e9 180 fokkal fordul el minden platformon. SCP-087 fel\u00e9p\u00edt\u00e9se miatt az alanyok l\u00e1t\u00e1sa megk\u00f6zel\u00edt\u0151leg 1.5 emeletre korl\u00e1toz\u00f3dik. Mivel sem vil\u00e1g\u00edt\u00e1s, sem ablakok nem tal\u00e1lhat\u00f3k SCP-087-ben, ez\u00e9rt felfedez\u00e9sekor az alanyt el kell l\u00e1tni valamilyen f\u00e9nyforr\u00e1ssal. 75 wattn\u00e1l vil\u00e1gosabb f\u00e9nyforr\u00e1s ",
+      "descriptionExcerpt": "SCP-087 egy vil\u00e1g\u00edt\u00e1s n\u00e9lk\u00fcli l\u00e9pcs\u0151h\u00e1z. A l\u00e9pcs\u0151k 38 fokos sz\u00f6gben ereszkednek le 13 l\u00e9pcs\u0151fokon kereszt\u00fcl, ami ut\u00e1n egy k\u00f6r\u00fclbel\u00fcl 3 m\u00e9ter \u00e1tm\u00e9r\u0151j\u0171 f\u00e9lk\u00f6r alak\u00fa platform k\u00f6vetkezik. A s\u00fcllyed\u00e9s ir\u00e1nya lefel\u00e9 180 fokkal fordul el minden platformon. SCP-087 fel\u00e9p\u00edt\u00e9se miatt az alanyok l\u00e1t\u00e1sa megk\u00f6zel\u00edt\u0151leg 1.5 emeletre korl\u00e1toz\u00f3dik. Mivel sem vil\u00e1g\u00edt\u00e1s, sem ablakok nem tal\u00e1lhat\u00f3k SCP-087-ben, ez\u00e9rt felfedez\u00e9sekor az alanyt el kell l\u00e1tni valamilyen f\u00e9nyforr\u00e1ssal. 75 wattn\u00e1l vil\u00e1gosabb f\u00e9nyforr\u00e1s",
       "tags": [
         "euklid",
         "tag-769e288d530f9194c9b1c1fb",
@@ -4626,7 +4648,9 @@
         "sl",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:41:45.642Z"
     },
     {
       "itemId": "scp-series-093",
@@ -4637,7 +4661,7 @@
       "imageUrl": null,
       "objectClass": "Euclid",
       "rating": null,
-      "descriptionExcerpt": "SCP-093 egy alapvet\u0151en v\u00f6r\u00f6s, cin\u00f3berre eml\u00e9keztet\u0151 k\u0151b\u0151l faragott korong, melynek teljes ker\u00fclet\u00e9t k\u00f6rk\u00f6r\u00f6s v\u00e9setek \u00e9s ismeretlen szimb\u00f3lumok bor\u00edtj\u00e1k. A v\u00e9setek legt\u00f6bbje 0,5 cm m\u00e9lys\u00e9g\u0171, de tal\u00e1lhat\u00f3ak rajta m\u00e9lyebb, 1-t\u0151l 1,5 cm m\u00e9lys\u00e9gig terjed\u0151 bev\u00e1g\u00e1sok is. SCP-093 7,62 cm \u00e1tm\u00e9r\u0151j\u0171; a legt\u00f6bb teny\u00e9rben k\u00e9nyelmesen, horzsol\u00e1s n\u00e9lk\u00fcl elf\u00e9r. SCP-093 megv\u00e1ltoztatja a sz\u00edn\u00e9t, amennyiben egy \u00e9l\u0151 szem\u00e9ly tartja mag\u00e1n\u00e1l. SCP-093 sz\u00ednei \u00e9s \u00f6sszef\u00fcgg\u00e9seik jelenleg is kutat\u00e1s t\u00e1rgy\u00e1t k\u00e9pezik. Jelen ",
+      "descriptionExcerpt": "SCP-093 egy alapvet\u0151en v\u00f6r\u00f6s, cin\u00f3berre eml\u00e9keztet\u0151 k\u0151b\u0151l faragott korong, melynek teljes ker\u00fclet\u00e9t k\u00f6rk\u00f6r\u00f6s v\u00e9setek \u00e9s ismeretlen szimb\u00f3lumok bor\u00edtj\u00e1k. A v\u00e9setek legt\u00f6bbje 0,5 cm m\u00e9lys\u00e9g\u0171, de tal\u00e1lhat\u00f3ak rajta m\u00e9lyebb, 1-t\u0151l 1,5 cm m\u00e9lys\u00e9gig terjed\u0151 bev\u00e1g\u00e1sok is. SCP-093 7,62 cm \u00e1tm\u00e9r\u0151j\u0171; a legt\u00f6bb teny\u00e9rben k\u00e9nyelmesen, horzsol\u00e1s n\u00e9lk\u00fcl elf\u00e9r. SCP-093 megv\u00e1ltoztatja a sz\u00edn\u00e9t, amennyiben egy \u00e9l\u0151 szem\u00e9ly tartja mag\u00e1n\u00e1l. SCP-093 sz\u00ednei \u00e9s \u00f6sszef\u00fcgg\u00e9seik jelenleg is kutat\u00e1s t\u00e1rgy\u00e1t k\u00e9pezik. Jelen",
       "tags": [
         "tag-842e6cf3f6586a0a46b05ed4",
         "tag-5b72b86749ec2314a31c7141",
@@ -4676,7 +4700,9 @@
         "hu",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:41:45.642Z"
     },
     {
       "itemId": "scp-series-096",
@@ -5037,7 +5063,7 @@
       "imageUrl": null,
       "objectClass": "Euclid",
       "rating": null,
-      "descriptionExcerpt": "A t\u00e1rgy ez sz\u00fcrke, 65 cm \u00e1tm\u00e9r\u0151j\u0171 geodetikus g\u00f6mb, mely hatvan h\u00e1romsz\u00f6gb\u0151l \u00e9p\u00fcl fel. A h\u00e1romsz\u00f6gek k\u00f6z\u00f6tti t\u00e9rr\u00e9sz \u00fcres, \u00edgy ezen \u00e1t l\u00e1that\u00f3 a g\u00f6mb k\u00f6z\u00e9ppontja. A g\u00f6mbben tal\u00e1lhat\u00f3 anyag ismeretlen \u00f6sszet\u00e9tel\u0171, \u00e9s vizsg\u00e1lata Dr. \u2588\u2588\u2588\u2588\u2588 javaslat\u00e1ra tov\u00e1bbi utas\u00edt\u00e1sig csup\u00e1n vizu\u00e1lis megfigyel\u00e9ssel t\u00f6rt\u00e9nhet. SCP-123 t\u00f6mege l\u00e1tsz\u00f3lag 3,62 kg, azonban \u00fagy hissz\u00fck, a val\u00f3di t\u00f6mege enn\u00e9l sokkal nagyobb.\nA geodetikus g\u00f6mb teljesen \u00fcreges annak k\u00f6z\u00e9ppontj\u00e1t lesz\u00e1m\u00edtva. SCP-123 k\u00f6z\u00e9ppontj\u00e1ban egy s\u00f6t\u00e9t ",
+      "descriptionExcerpt": "A t\u00e1rgy ez sz\u00fcrke, 65 cm \u00e1tm\u00e9r\u0151j\u0171 geodetikus g\u00f6mb, mely hatvan h\u00e1romsz\u00f6gb\u0151l \u00e9p\u00fcl fel. A h\u00e1romsz\u00f6gek k\u00f6z\u00f6tti t\u00e9rr\u00e9sz \u00fcres, \u00edgy ezen \u00e1t l\u00e1that\u00f3 a g\u00f6mb k\u00f6z\u00e9ppontja. A g\u00f6mbben tal\u00e1lhat\u00f3 anyag ismeretlen \u00f6sszet\u00e9tel\u0171, \u00e9s vizsg\u00e1lata Dr. \u2588\u2588\u2588\u2588\u2588 javaslat\u00e1ra tov\u00e1bbi utas\u00edt\u00e1sig csup\u00e1n vizu\u00e1lis megfigyel\u00e9ssel t\u00f6rt\u00e9nhet. SCP-123 t\u00f6mege l\u00e1tsz\u00f3lag 3,62 kg, azonban \u00fagy hissz\u00fck, a val\u00f3di t\u00f6mege enn\u00e9l sokkal nagyobb.\nA geodetikus g\u00f6mb teljesen \u00fcreges annak k\u00f6z\u00e9ppontj\u00e1t lesz\u00e1m\u00edtva. SCP-123 k\u00f6z\u00e9ppontj\u00e1ban egy s\u00f6t\u00e9t",
       "tags": [
         "euklid",
         "tag-c23b2a01c4a8bf4213ccb195",
@@ -5073,7 +5099,9 @@
         "hu",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:41:45.642Z"
     },
     {
       "itemId": "scp-series-131",
@@ -5084,7 +5112,7 @@
       "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-131/131volgun.png",
       "objectClass": null,
       "rating": null,
-      "descriptionExcerpt": "SCP-131-A \u00e9s SCP-131-B (szem\u00e9lyzet \u00e1ltal \"Szemgoly\u00f3knak\" bec\u00e9zve) egy p\u00e1r, k\u00f6nnycsepp-alak\u00fa el\u0151l\u00e9nyek, nagyj\u00e1b\u00f3l 30 cm (1 l\u00e1b) magasak, egy-egy darab k\u00e9k szemmel a test\u00fck k\u00f6zep\u00e9ben. SCP-131-A \u00e9gett narancs sz\u00edn\u0171, m\u00edg SCP-131-B must\u00e1rs\u00e1rga. Mindk\u00e9t \u00e9l\u0151l\u00e9ny als\u00f3 r\u00e9sz\u00e9n egy ker\u00e9k-szer\u0171 kiemelked\u00e9s tal\u00e1lhat\u00f3, ami a mozg\u00e1st lehet\u0151v\u00e9 teszi \u00e9s arra utal, hogy a l\u00e9nyek biomechanikai eredet\u0171ek lehetnek. Az egyedek meglep\u0151en gyorsan tudnak mozogni, meg tudnak t\u00f6bb, mint 60 m-t (200 l\u00e1b) tenni m\u00e1sodpercek ",
+      "descriptionExcerpt": "SCP-131-A \u00e9s SCP-131-B (szem\u00e9lyzet \u00e1ltal \"Szemgoly\u00f3knak\" bec\u00e9zve) egy p\u00e1r, k\u00f6nnycsepp-alak\u00fa el\u0151l\u00e9nyek, nagyj\u00e1b\u00f3l 30 cm (1 l\u00e1b) magasak, egy-egy darab k\u00e9k szemmel a test\u00fck k\u00f6zep\u00e9ben. SCP-131-A \u00e9gett narancs sz\u00edn\u0171, m\u00edg SCP-131-B must\u00e1rs\u00e1rga. Mindk\u00e9t \u00e9l\u0151l\u00e9ny als\u00f3 r\u00e9sz\u00e9n egy ker\u00e9k-szer\u0171 kiemelked\u00e9s tal\u00e1lhat\u00f3, ami a mozg\u00e1st lehet\u0151v\u00e9 teszi \u00e9s arra utal, hogy a l\u00e9nyek biomechanikai eredet\u0171ek lehetnek. Az egyedek meglep\u0151en gyorsan tudnak mozogni, meg tudnak t\u00f6bb, mint 60 m-t (200 l\u00e1b) tenni m\u00e1sodpercek",
       "tags": [
         "tag-842e6cf3f6586a0a46b05ed4",
         "tag-d5225c7e6b8408e54600bf66",
@@ -5121,7 +5149,9 @@
         "sl",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:41:45.642Z"
     },
     {
       "itemId": "scp-series-140",
@@ -5283,7 +5313,7 @@
       "imageUrl": "https://scp-hu.wdfiles.com/local--files/scp-201/005.jpg",
       "objectClass": "Euclid",
       "rating": null,
-      "descriptionExcerpt": "SCP-201 egy nagyon r\u00e9gi orvosi eszk\u00f6znek t\u0171nik, amely fel\u00fcletesen egy inf\u00fazi\u00f3s \u00e1llv\u00e1nyra hasonl\u00edt, amelyhez azonban sok m\u00e1s \u00fcveg- \u00e9s f\u00e9mt\u00e1rgy ker\u00fclt hozz\u00e1r\u00f6gz\u00edt\u00e9sre. SCP-201 1,8 m (6 ft) magas, t\u00f6mege 36,5 kg (80 lbs). A f\u00e9m r\u00e9szek ac\u00e9lb\u00f3l \u00e9s s\u00e1rgar\u00e9zb\u0151l k\u00e9sz\u00fcltek, t\u00f6bb k\u00fcl\u00f6nb\u00f6z\u0151 r\u00e9sz pedig gumics\u00f6vekkel van \u00f6sszek\u00f6tve. A k\u00e9t \u201einf\u00fazi\u00f3s zs\u00e1k\u201d porcel\u00e1nb\u00f3l k\u00e9sz\u00fclt \u00e9s fel\u00fcl nyitott. SCP-201 a \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 k\u00f3rh\u00e1zban, egy r\u00e9g\u00f3ta haszn\u00e1laton k\u00edv\u00fcli rakt\u00e1rban ker\u00fclt felfedez\u00e9sre. SCP-201 sehol sem ",
+      "descriptionExcerpt": "SCP-201 egy nagyon r\u00e9gi orvosi eszk\u00f6znek t\u0171nik, amely fel\u00fcletesen egy inf\u00fazi\u00f3s \u00e1llv\u00e1nyra hasonl\u00edt, amelyhez azonban sok m\u00e1s \u00fcveg- \u00e9s f\u00e9mt\u00e1rgy ker\u00fclt hozz\u00e1r\u00f6gz\u00edt\u00e9sre. SCP-201 1,8 m (6 ft) magas, t\u00f6mege 36,5 kg (80 lbs). A f\u00e9m r\u00e9szek ac\u00e9lb\u00f3l \u00e9s s\u00e1rgar\u00e9zb\u0151l k\u00e9sz\u00fcltek, t\u00f6bb k\u00fcl\u00f6nb\u00f6z\u0151 r\u00e9sz pedig gumics\u00f6vekkel van \u00f6sszek\u00f6tve. A k\u00e9t \u201einf\u00fazi\u00f3s zs\u00e1k\u201d porcel\u00e1nb\u00f3l k\u00e9sz\u00fclt \u00e9s fel\u00fcl nyitott. SCP-201 a \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 k\u00f3rh\u00e1zban, egy r\u00e9g\u00f3ta haszn\u00e1laton k\u00edv\u00fcli rakt\u00e1rban ker\u00fclt felfedez\u00e9sre. SCP-201 sehol sem",
       "tags": [
         "tag-f1f3ca4aff4854bfd13115bb",
         "euklid",
@@ -5318,7 +5348,9 @@
         "zh-tr",
         "el",
         "hu"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:41:45.642Z"
     },
     {
       "itemId": "scp-series-250",
@@ -6603,7 +6635,7 @@
       "imageUrl": null,
       "objectClass": "Keter",
       "rating": null,
-      "descriptionExcerpt": "SCP-1512 egy jelenleg nagyj\u00e1b\u00f3l 80000 tonna t\u00f6meg\u0171, gy\u00f6k\u00e9rszer\u0171 szerves k\u00e9pz\u0151dm\u00e9ny. N\u00e9h\u00e1ny m\u00e9terenk\u00e9nt el\u00e1gaz\u00f3, \u00e1gszer\u0171 ny\u00falv\u00e1nyokb\u00f3l \u00e1ll, melyek egyenk\u00e9nt t\u00f6bb sz\u00e1z m\u00e9ter hossz\u00faak, rajtuk pedig l\u00e1tsz\u00f3lag rendszertelen\u00fcl elhelyezked\u0151 csom\u00f3k illetve cikkcakk-szer\u0171 alakzatok figylehet\u0151k meg. A ny\u00falv\u00e1nyok \u00e1tm\u00e9r\u0151je h\u00e1rom \u00e9s \u00f6t centim\u00e9ter k\u00f6z\u00f6tt mozog. A k\u00fcls\u0151 r\u00e9teg\u00fck egy korroz\u00edv, kellemetlen szag\u00fa, sz\u00fcrke tixotr\u00f3p anyag, mely k\u00e9pes \u00e9g\u00e9si sebeket okozni; tov\u00e1bb\u00e1 a vele \u00e9rintkez\u0151 emberek agym\u0171k\u00f6d\u00e9se ",
+      "descriptionExcerpt": "SCP-1512 egy jelenleg nagyj\u00e1b\u00f3l 80000 tonna t\u00f6meg\u0171, gy\u00f6k\u00e9rszer\u0171 szerves k\u00e9pz\u0151dm\u00e9ny. N\u00e9h\u00e1ny m\u00e9terenk\u00e9nt el\u00e1gaz\u00f3, \u00e1gszer\u0171 ny\u00falv\u00e1nyokb\u00f3l \u00e1ll, melyek egyenk\u00e9nt t\u00f6bb sz\u00e1z m\u00e9ter hossz\u00faak, rajtuk pedig l\u00e1tsz\u00f3lag rendszertelen\u00fcl elhelyezked\u0151 csom\u00f3k illetve cikkcakk-szer\u0171 alakzatok figylehet\u0151k meg. A ny\u00falv\u00e1nyok \u00e1tm\u00e9r\u0151je h\u00e1rom \u00e9s \u00f6t centim\u00e9ter k\u00f6z\u00f6tt mozog. A k\u00fcls\u0151 r\u00e9teg\u00fck egy korroz\u00edv, kellemetlen szag\u00fa, sz\u00fcrke tixotr\u00f3p anyag, mely k\u00e9pes \u00e9g\u00e9si sebeket okozni; tov\u00e1bb\u00e1 a vele \u00e9rintkez\u0151 emberek agym\u0171k\u00f6d\u00e9se",
       "tags": [
         "tag-5b72b86749ec2314a31c7141",
         "keter",
@@ -6632,7 +6664,9 @@
         "ua",
         "vn",
         "hu"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:41:45.642Z"
     },
     {
       "itemId": "scp-series-1762",
@@ -6753,7 +6787,7 @@
       "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-1958/VWvangrey.jpg",
       "objectClass": null,
       "rating": null,
-      "descriptionExcerpt": "SCP-1958 egy 195\u2588-es Volkswagen Type 2 Samba-Bus (ismertebb nev\u00e9n \"mikrobusz\"), amely jelenleg k\u00f6r\u00fclbel\u00fcl 1,\u2588 CsE (\u2588\u2588\u2588 milli\u00f3 km) t\u00e1vols\u00e1gra tal\u00e1lhat\u00f3 a F\u00f6ld Napj\u00e1t\u00f3l, a Mars p\u00e1ly\u00e1j\u00e1nak k\u00f6zel\u00e9ben, a bolyg\u00f3k\u00f6zi t\u00e9r egy t\u00e9rs\u00e9g\u00e9ben. Az Alap\u00edtv\u00e1ny 20\u2588\u2588-ben megkezdett megfigyel\u00e9se el\u0151tt SCP-1958 nagyj\u00e1b\u00f3l 130 km/h \u00e1lland\u00f3 sebess\u00e9ggel t\u00e1volodott a Napt\u00f3l. Eltekintve az elszakadt h\u0171t\u0151vezet\u00e9kt\u0151l az alv\u00e1zon \u00e9s egy kisebb horpad\u00e1st\u00f3l a h\u00e1ts\u00f3 l\u00f6kh\u00e1r\u00edt\u00f3n, SCP-1958 l\u00e1tsz\u00f3lag nem szenvedett jelent\u0151s k\u00e1rokat. ",
+      "descriptionExcerpt": "SCP-1958 egy 195\u2588-es Volkswagen Type 2 Samba-Bus (ismertebb nev\u00e9n \"mikrobusz\"), amely jelenleg k\u00f6r\u00fclbel\u00fcl 1,\u2588 CsE (\u2588\u2588\u2588 milli\u00f3 km) t\u00e1vols\u00e1gra tal\u00e1lhat\u00f3 a F\u00f6ld Napj\u00e1t\u00f3l, a Mars p\u00e1ly\u00e1j\u00e1nak k\u00f6zel\u00e9ben, a bolyg\u00f3k\u00f6zi t\u00e9r egy t\u00e9rs\u00e9g\u00e9ben. Az Alap\u00edtv\u00e1ny 20\u2588\u2588-ben megkezdett megfigyel\u00e9se el\u0151tt SCP-1958 nagyj\u00e1b\u00f3l 130 km/h \u00e1lland\u00f3 sebess\u00e9ggel t\u00e1volodott a Napt\u00f3l. Eltekintve az elszakadt h\u0171t\u0151vezet\u00e9kt\u0151l az alv\u00e1zon \u00e9s egy kisebb horpad\u00e1st\u00f3l a h\u00e1ts\u00f3 l\u00f6kh\u00e1r\u00edt\u00f3n, SCP-1958 l\u00e1tsz\u00f3lag nem szenvedett jelent\u0151s k\u00e1rokat.",
       "tags": [
         "tag-d5225c7e6b8408e54600bf66",
         "felirat",
@@ -6791,7 +6825,9 @@
         "zh-tr",
         "hu",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:41:45.642Z"
     },
     {
       "itemId": "scp-series-1981",

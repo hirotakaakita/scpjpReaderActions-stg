@@ -1,7 +1,7 @@
 {
   "totalCount": 348,
   "language": "tr",
-  "timestamp": "2026-11-11T13:06:32.673Z",
+  "timestamp": "2026-11-12T13:48:20.254Z",
   "duration": 201,
   "status": "completed",
   "statistics": {
@@ -732,7 +732,7 @@
       "imageUrl": null,
       "objectClass": null,
       "rating": 3,
-      "descriptionExcerpt": "SCP-TR-057 \u0130ran'da bulunmu\u015f 48x74 cm\u00b2 b\u00fcy\u00fckl\u00fc\u011f\u00fcnde gri renkte bir yast\u0131k k\u0131l\u0131f\u0131d\u0131r. Maddenin bulunma yerinden \u00f6nce d\u00fcnyan\u0131n farkl\u0131 yerlerinde \u00f6l\u00fcmlere sebep oldu\u011fu tahmin ediliyor. SCP-TR-057 her gece i\u00e7indeki yast\u0131\u011f\u0131 t\u00fcketir, e\u011fer i\u00e7inde bir yast\u0131k bulunmad\u0131\u011f\u0131 durumda bir sonraki gece d\u00fcnya \u00fczerindeki ba\u015fka bir yast\u0131k k\u0131l\u0131f\u0131yla yer de\u011fi\u015ftirir, bunu \u00f6nlemek i\u00e7in her g\u00fcn bir personel SCP-TR-057'nin i\u00e7ine yeni bir yast\u0131k yerle\u015ftirmekle g\u00f6revlendirilmi\u015ftir.\nSCP-TR-057, \u00fczerine kafas\u0131n\u0131 yerle\u015ftirip ",
+      "descriptionExcerpt": "SCP-TR-057 \u0130ran'da bulunmu\u015f 48x74 cm\u00b2 b\u00fcy\u00fckl\u00fc\u011f\u00fcnde gri renkte bir yast\u0131k k\u0131l\u0131f\u0131d\u0131r. Maddenin bulunma yerinden \u00f6nce d\u00fcnyan\u0131n farkl\u0131 yerlerinde \u00f6l\u00fcmlere sebep oldu\u011fu tahmin ediliyor. SCP-TR-057 her gece i\u00e7indeki yast\u0131\u011f\u0131 t\u00fcketir, e\u011fer i\u00e7inde bir yast\u0131k bulunmad\u0131\u011f\u0131 durumda bir sonraki gece d\u00fcnya \u00fczerindeki ba\u015fka bir yast\u0131k k\u0131l\u0131f\u0131yla yer de\u011fi\u015ftirir, bunu \u00f6nlemek i\u00e7in her g\u00fcn bir personel SCP-TR-057'nin i\u00e7ine yeni bir yast\u0131k yerle\u015ftirmekle g\u00f6revlendirilmi\u015ftir.\nSCP-TR-057, \u00fczerine kafas\u0131n\u0131 yerle\u015ftirip",
       "tags": [
         "kabus",
         "seri-tr",
@@ -751,7 +751,9 @@
       "createdAt": "2026-11-10T00:40:12.918Z",
       "translatedLanguages": [
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-tr-061",
@@ -871,7 +873,7 @@
       "imageUrl": null,
       "objectClass": "Keter",
       "rating": 3,
-      "descriptionExcerpt": "SCP-TR-076, 1.71 boyunda erkek bir insand\u0131r. Transhuman Project'in ilk anomalilerinden biridir. SCP-TR-076 baz\u0131 psi\u015fik g\u00fc\u00e7leri kazanm\u0131\u015ft\u0131r. Telekinezi yetene\u011fi \u00e7ok y\u00fcksek seviyededir. Kendisi bile telekinezi yetene\u011fini kontrol edememektedir. Duygular\u0131 ve ruh hali telekinezi yetene\u011fini do\u011frudan etkilemektedir. SCP-TR-076 maddeleri do\u011frudan hareket ettirebilmektedir. Maddesel yap\u0131ya sahip t\u00fcm cisimleri kontrol edebilmektedir. SCP-TR-076'ya yakla\u015fmak olduk\u00e7a tehlikelidir. SCP-TR-076'n\u0131n telekinezi ",
+      "descriptionExcerpt": "SCP-TR-076, 1.71 boyunda erkek bir insand\u0131r. Transhuman Project'in ilk anomalilerinden biridir. SCP-TR-076 baz\u0131 psi\u015fik g\u00fc\u00e7leri kazanm\u0131\u015ft\u0131r. Telekinezi yetene\u011fi \u00e7ok y\u00fcksek seviyededir. Kendisi bile telekinezi yetene\u011fini kontrol edememektedir. Duygular\u0131 ve ruh hali telekinezi yetene\u011fini do\u011frudan etkilemektedir. SCP-TR-076 maddeleri do\u011frudan hareket ettirebilmektedir. Maddesel yap\u0131ya sahip t\u00fcm cisimleri kontrol edebilmektedir. SCP-TR-076'ya yakla\u015fmak olduk\u00e7a tehlikelidir. SCP-TR-076'n\u0131n telekinezi",
       "tags": [
         "keter",
         "seri-tr"
@@ -886,7 +888,9 @@
       "createdAt": "2026-11-10T00:40:12.918Z",
       "translatedLanguages": [
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-tr-077",
@@ -1462,7 +1466,7 @@
       "imageUrl": "https://scpvakfi.wdfiles.com/local--files/scp-006/SCP006_stream-new.jpg",
       "objectClass": "Safe",
       "rating": 17,
-      "descriptionExcerpt": "SCP-006 Astrakan'\u0131n 60 km bat\u0131s\u0131nda bulunan k\u00fc\u00e7\u00fck bir su kayna\u011f\u0131. Dernek y\u00f6netimi bu kayna\u011f\u0131n varl\u0131\u011f\u0131ndan 19. Y\u00fczy\u0131ldan beri haberdar, fakat 1991'e kadar politik sorunlardan \u00f6t\u00fcr\u00fc kayna\u011f\u0131 ele ge\u00e7iremedi. Kayna\u011f\u0131n oldu\u011fu noktada varl\u0131\u011f\u0131n\u0131 gizlemek i\u00e7in bir kimyasal fabrikas\u0131 kuruldu. Personel genel olarak SCP kurumu ve Rus H\u00fck\u00fcmeti taraf\u0131ndan se\u00e7ilmi\u015ftir. Kaynaktan \u00e7\u0131kan su incelendi\u011finde basit kaynak suyu oldu\u011fu ortaya \u00e7\u0131km\u0131\u015ft\u0131r. Fakat suyun \"sa\u011fl\u0131k\" konusunda de\u011fi\u015fik \u00f6zellikleri vard\u0131r.\nS\u0131v\u0131y\u0131 ",
+      "descriptionExcerpt": "SCP-006 Astrakan'\u0131n 60 km bat\u0131s\u0131nda bulunan k\u00fc\u00e7\u00fck bir su kayna\u011f\u0131. Dernek y\u00f6netimi bu kayna\u011f\u0131n varl\u0131\u011f\u0131ndan 19. Y\u00fczy\u0131ldan beri haberdar, fakat 1991'e kadar politik sorunlardan \u00f6t\u00fcr\u00fc kayna\u011f\u0131 ele ge\u00e7iremedi. Kayna\u011f\u0131n oldu\u011fu noktada varl\u0131\u011f\u0131n\u0131 gizlemek i\u00e7in bir kimyasal fabrikas\u0131 kuruldu. Personel genel olarak SCP kurumu ve Rus H\u00fck\u00fcmeti taraf\u0131ndan se\u00e7ilmi\u015ftir. Kaynaktan \u00e7\u0131kan su incelendi\u011finde basit kaynak suyu oldu\u011fu ortaya \u00e7\u0131km\u0131\u015ft\u0131r. Fakat suyun \"sa\u011fl\u0131k\" konusunda de\u011fi\u015fik \u00f6zellikleri vard\u0131r.\nS\u0131v\u0131y\u0131",
       "tags": [
         "casus-kurgusu",
         "tag-3b8f0fa723389415d7768fc9",
@@ -1524,7 +1528,9 @@
         "vi",
         "zh",
         "zh_Hant"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-007",
@@ -2292,7 +2298,7 @@
       "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-019/scp-019-new.jpg",
       "objectClass": "Keter",
       "rating": 2,
-      "descriptionExcerpt": "SCP-019, 1.8 m \u00e7ap\u0131nda ve 2.4 m y\u00fcksekli\u011finde \u00e7ok b\u00fcy\u00fck bir seramik vazo gibi g\u00f6r\u00fcnmektedir. Stil ve dekorasyon, klasik yunanda yarat\u0131ld\u0131\u011f\u0131n\u0131 g\u00f6sterir, ancak kesin tarihleme imkans\u0131zd\u0131r, \u00e7\u00fcnk\u00fc y\u00fczey bilinen herhangi bir y\u00f6ntemle tamamen k\u0131r\u0131lmazd\u0131r. Ba\u015far\u0131l\u0131 bir yol geli\u015ftirilirse SCP-019 yok edilecektir.\nSCP-019'dan periyodik olarak canl\u0131lar \u00e7\u0131kar. Toplu olarak, bunlar SCP-019-2 olarak adland\u0131r\u0131l\u0131r. Varl\u0131klar bir\u00e7ok y\u00f6nden farkl\u0131l\u0131k g\u00f6sterir, ancak k\u00fc\u00e7\u00fck, belirsiz insans\u0131 (hayvans\u0131 \u00f6zelliklere ",
+      "descriptionExcerpt": "SCP-019, 1.8 m \u00e7ap\u0131nda ve 2.4 m y\u00fcksekli\u011finde \u00e7ok b\u00fcy\u00fck bir seramik vazo gibi g\u00f6r\u00fcnmektedir. Stil ve dekorasyon, klasik yunanda yarat\u0131ld\u0131\u011f\u0131n\u0131 g\u00f6sterir, ancak kesin tarihleme imkans\u0131zd\u0131r, \u00e7\u00fcnk\u00fc y\u00fczey bilinen herhangi bir y\u00f6ntemle tamamen k\u0131r\u0131lmazd\u0131r. Ba\u015far\u0131l\u0131 bir yol geli\u015ftirilirse SCP-019 yok edilecektir.\nSCP-019'dan periyodik olarak canl\u0131lar \u00e7\u0131kar. Toplu olarak, bunlar SCP-019-2 olarak adland\u0131r\u0131l\u0131r. Varl\u0131klar bir\u00e7ok y\u00f6nden farkl\u0131l\u0131k g\u00f6sterir, ancak k\u00fc\u00e7\u00fck, belirsiz insans\u0131 (hayvans\u0131 \u00f6zelliklere",
       "tags": [
         "tag-4b4ca1b22933bd46dd3ddd87",
         "tag-4febee8a18fc106783b95984",
@@ -2348,7 +2354,9 @@
         "vi",
         "zh",
         "zh_Hant"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-020",
@@ -2476,7 +2484,7 @@
       "imageUrl": "https://scpvakfi.wdfiles.com/local--files/scp-022/SCP-022.png",
       "objectClass": null,
       "rating": 8,
-      "descriptionExcerpt": "SCP-022 \u0130ngiltere'de [SANS\u00dcRLENM\u0130\u015eT\u0130R] hastanesinin bodrum kat\u0131nda bulunan bir morgdur. 198\u2588, y\u0131l\u0131na kadar morg ile ilgili hi\u00e7bir anormal olay bildirilmemi\u015ftir. \u0130lk anormal olay Kas\u0131m 198\u2588 tarihinde ger\u00e7ekle\u015fmi\u015ftir. B\u00f6lge k\u0131sa s\u00fcre sonra vak\u0131f taraf\u0131ndan karantinaya al\u0131nm\u0131\u015ft\u0131r, sebep olarak binan\u0131n kamula\u015ft\u0131r\u0131lmas\u0131 g\u00f6sterilmi\u015ftir. Bu olay\u0131n birdenbire \u00e7\u0131kmas\u0131n\u0131n nedeni halen ara\u015ft\u0131r\u0131lmaktad\u0131r.\nZaman zaman morgun raflar\u0131ndan biri a\u00e7\u0131l\u0131p \u00fcst\u00fc \u00f6rt\u00fclm\u00fc\u015f bir kadavra ortaya \u00e7\u0131kar\u0131r. Yakla\u015f\u0131k 6 dakika ",
+      "descriptionExcerpt": "SCP-022 \u0130ngiltere'de [SANS\u00dcRLENM\u0130\u015eT\u0130R] hastanesinin bodrum kat\u0131nda bulunan bir morgdur. 198\u2588, y\u0131l\u0131na kadar morg ile ilgili hi\u00e7bir anormal olay bildirilmemi\u015ftir. \u0130lk anormal olay Kas\u0131m 198\u2588 tarihinde ger\u00e7ekle\u015fmi\u015ftir. B\u00f6lge k\u0131sa s\u00fcre sonra vak\u0131f taraf\u0131ndan karantinaya al\u0131nm\u0131\u015ft\u0131r, sebep olarak binan\u0131n kamula\u015ft\u0131r\u0131lmas\u0131 g\u00f6sterilmi\u015ftir. Bu olay\u0131n birdenbire \u00e7\u0131kmas\u0131n\u0131n nedeni halen ara\u015ft\u0131r\u0131lmaktad\u0131r.\nZaman zaman morgun raflar\u0131ndan biri a\u00e7\u0131l\u0131p \u00fcst\u00fc \u00f6rt\u00fclm\u00fc\u015f bir kadavra ortaya \u00e7\u0131kar\u0131r. Yakla\u015f\u0131k 6 dakika",
       "tags": [
         "tag-fabef588c1db79c3f5e296a2",
         "kadavra",
@@ -2515,7 +2523,9 @@
         "sl",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-023",
@@ -2722,7 +2732,7 @@
       "imageUrl": null,
       "objectClass": null,
       "rating": 2,
-      "descriptionExcerpt": "SCP-027 tek seferde bir insana ba\u011flanan (\u015fu anda 027-02) kayna\u011f\u0131 belirsiz bir olgudur. SCP-027'ye ev sahipli\u011fi yapan \u015fah\u0131s 027-02'nin bulundu\u011fu konuma s\u00fcrekli ha\u015farat ak\u0131n eder. \u015eahs\u0131n bu yarat\u0131klar\u0131 kontrol edebildi g\u00f6r\u00fclmemi\u015ftir ve hatta bu yarat\u0131klar taraf\u0131ndan sald\u0131r\u0131ya u\u011framaya meyilldir. Bu yarat\u0131klar\u0131n ayr\u0131ca fazla yakla\u015fan personele sald\u0131rd\u0131\u011f\u0131 da g\u00f6r\u00fclm\u00fc\u015ft\u00fcr.\n\u015eah\u0131s nerede olursa olsun, sivrisinek ve di\u011fer sinekler gibi u\u00e7an b\u00f6ceklerden olu\u015fan bir y\u0131\u011f\u0131n daima iki ile \u00fc\u00e7 dakika i\u00e7erisinde ",
+      "descriptionExcerpt": "SCP-027 tek seferde bir insana ba\u011flanan (\u015fu anda 027-02) kayna\u011f\u0131 belirsiz bir olgudur. SCP-027'ye ev sahipli\u011fi yapan \u015fah\u0131s 027-02'nin bulundu\u011fu konuma s\u00fcrekli ha\u015farat ak\u0131n eder. \u015eahs\u0131n bu yarat\u0131klar\u0131 kontrol edebildi g\u00f6r\u00fclmemi\u015ftir ve hatta bu yarat\u0131klar taraf\u0131ndan sald\u0131r\u0131ya u\u011framaya meyilldir. Bu yarat\u0131klar\u0131n ayr\u0131ca fazla yakla\u015fan personele sald\u0131rd\u0131\u011f\u0131 da g\u00f6r\u00fclm\u00fc\u015ft\u00fcr.\n\u015eah\u0131s nerede olursa olsun, sivrisinek ve di\u011fer sinekler gibi u\u00e7an b\u00f6ceklerden olu\u015fan bir y\u0131\u011f\u0131n daima iki ile \u00fc\u00e7 dakika i\u00e7erisinde",
       "tags": [
         "tag-c0da545510a5ea74956f8d9d",
         "tag-c1c2a6476bad30ee75edb254",
@@ -2762,7 +2772,9 @@
         "hu",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-028",
@@ -2971,7 +2983,7 @@
       "imageUrl": null,
       "objectClass": null,
       "rating": -3,
-      "descriptionExcerpt": "SCP-032, \u015fu anda bilinmeyen k\u00f6kenlere sahip bir F-Tipi (Kusurlu d\u0131\u015f benzerlik, i\u00e7sel olarak tutars\u0131z) bir insan simulakrumudur.1 D\u0131\u015f kabu\u011fu pigmentli silikondan (5,5 mm kal\u0131nl\u0131\u011f\u0131nda) ve \u00e7e\u015fitli plastik fiber polimerlerden olu\u015fur. G\u00f6r\u00fcn\u00fc\u015f\u00fc, 30 ya\u015f\u0131na yakla\u015fm\u0131\u015f beyaz tenli bir kad\u0131n g\u00f6r\u00fcn\u00fcm\u00fcndedir. SCP-032'nin i\u00e7i, iskeletten yoksun bir \u015fekilde tamamen s\u0131v\u0131 rafine ya\u011fdan olu\u015fur. Buna ra\u011fmen, SCP-032 hareket ve konu\u015fma yetene\u011fine sahiptir. SCP-032, orta mesafeden bir insana benzeyebilir ancak daha ",
+      "descriptionExcerpt": "SCP-032, \u015fu anda bilinmeyen k\u00f6kenlere sahip bir F-Tipi (Kusurlu d\u0131\u015f benzerlik, i\u00e7sel olarak tutars\u0131z) bir insan simulakrumudur.1 D\u0131\u015f kabu\u011fu pigmentli silikondan (5,5 mm kal\u0131nl\u0131\u011f\u0131nda) ve \u00e7e\u015fitli plastik fiber polimerlerden olu\u015fur. G\u00f6r\u00fcn\u00fc\u015f\u00fc, 30 ya\u015f\u0131na yakla\u015fm\u0131\u015f beyaz tenli bir kad\u0131n g\u00f6r\u00fcn\u00fcm\u00fcndedir. SCP-032'nin i\u00e7i, iskeletten yoksun bir \u015fekilde tamamen s\u0131v\u0131 rafine ya\u011fdan olu\u015fur. Buna ra\u011fmen, SCP-032 hareket ve konu\u015fma yetene\u011fine sahiptir. SCP-032, orta mesafeden bir insana benzeyebilir ancak daha",
       "tags": [
         "tag-be880d610a8dda6b1e3ed6e9",
         "biyotehlike",
@@ -3009,7 +3021,9 @@
         "el",
         "hu",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-033",
@@ -3020,7 +3034,7 @@
       "imageUrl": null,
       "objectClass": null,
       "rating": 1,
-      "descriptionExcerpt": "SCP-033, sadece y\u00fcksek e\u011fitimli matematik\u00e7iler taraf\u0131ndan yorumlanabilen karma\u015f\u0131k matematiksel semboller alan\u0131 olarak g\u00f6r\u00fcl\u00fcr. Sembollerin \"toplam\u0131\" \u2588 ve \u2588 aras\u0131ndaki orta de\u011ferde, \u00f6nceden bilinmeyen bir tam say\u0131ya (Prof. Hutchinson taraf\u0131ndan \"Theta Prime\" olarak adland\u0131r\u0131l\u0131r) e\u015fittir.\nT\u00fcm modern matematiksel hesaplamalar SCP-033'\u00fcn bilgisi veya kullan\u0131m\u0131ndan yoksun bir \u015fekilde yap\u0131l\u0131p organize edilen herhangi bir sisteme girili\u015fi, s\u00f6z konusu sistemin say\u0131sal ve nihayetinde yap\u0131sal b\u00fct\u00fcnl\u00fc\u011f\u00fcn\u00fc ",
+      "descriptionExcerpt": "SCP-033, sadece y\u00fcksek e\u011fitimli matematik\u00e7iler taraf\u0131ndan yorumlanabilen karma\u015f\u0131k matematiksel semboller alan\u0131 olarak g\u00f6r\u00fcl\u00fcr. Sembollerin \"toplam\u0131\" \u2588 ve \u2588 aras\u0131ndaki orta de\u011ferde, \u00f6nceden bilinmeyen bir tam say\u0131ya (Prof. Hutchinson taraf\u0131ndan \"Theta Prime\" olarak adland\u0131r\u0131l\u0131r) e\u015fittir.\nT\u00fcm modern matematiksel hesaplamalar SCP-033'\u00fcn bilgisi veya kullan\u0131m\u0131ndan yoksun bir \u015fekilde yap\u0131l\u0131p organize edilen herhangi bir sisteme girili\u015fi, s\u00f6z konusu sistemin say\u0131sal ve nihayetinde yap\u0131sal b\u00fct\u00fcnl\u00fc\u011f\u00fcn\u00fc",
       "tags": [
         "tag-120712231b9daae23df22e1b",
         "matematiksel",
@@ -3054,7 +3068,9 @@
         "el",
         "hu",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-034",
@@ -3892,7 +3908,7 @@
       "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-049/SCP-049-Image-2.png",
       "objectClass": null,
       "rating": 142,
-      "descriptionExcerpt": "SCP-049 1.9 metre civar\u0131nda, orta\u00e7a\u011f veba doktoru g\u00f6r\u00fcn\u00fcm\u00fcn\u00fc ta\u015f\u0131yan insans\u0131 bir varl\u0131kt\u0131r. SCP-049 bu mesle\u011fin g\u00f6stergesi olan c\u00fcbbe ve seramik bir maske giyiyor gibi g\u00f6z\u00fckse de bu giysiler SCP-049'un v\u00fccudunun bir par\u00e7as\u0131d\u0131r ve alt\u0131ndaki form neredeyse ay\u0131rt edilemez haldedir. Buna ra\u011fmen r\u00f6ntgenler SCP-049'un bu katman\u0131n alt\u0131nda insans\u0131 bir iskelete sahip oldu\u011funu g\u00f6stermektedir.\nSCP-049 \u00e7e\u015fitli dillerde konu\u015fma yetene\u011fine sahip olsa da \u0130ngilizce ve orta\u00e7a\u011f Frans\u0131zcas\u0131n\u0131 tercih etmektedir.1. ",
+      "descriptionExcerpt": "SCP-049 1.9 metre civar\u0131nda, orta\u00e7a\u011f veba doktoru g\u00f6r\u00fcn\u00fcm\u00fcn\u00fc ta\u015f\u0131yan insans\u0131 bir varl\u0131kt\u0131r. SCP-049 bu mesle\u011fin g\u00f6stergesi olan c\u00fcbbe ve seramik bir maske giyiyor gibi g\u00f6z\u00fckse de bu giysiler SCP-049'un v\u00fccudunun bir par\u00e7as\u0131d\u0131r ve alt\u0131ndaki form neredeyse ay\u0131rt edilemez haldedir. Buna ra\u011fmen r\u00f6ntgenler SCP-049'un bu katman\u0131n alt\u0131nda insans\u0131 bir iskelete sahip oldu\u011funu g\u00f6stermektedir.\nSCP-049 \u00e7e\u015fitli dillerde konu\u015fma yetene\u011fine sahip olsa da \u0130ngilizce ve orta\u00e7a\u011f Frans\u0131zcas\u0131n\u0131 tercih etmektedir.1.",
       "tags": [
         "tag-be880d610a8dda6b1e3ed6e9",
         "biyolojik",
@@ -3936,7 +3952,9 @@
         "pig",
         "sl",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-050",
@@ -3989,7 +4007,7 @@
       "imageUrl": null,
       "objectClass": "Safe",
       "rating": -3,
-      "descriptionExcerpt": "SCP-051 25 santim (10 in\u00e7) boyutunda, anatomik olarak do\u011fru, fildi\u015finden oyulmu\u015f ve Asyal\u0131 \u00f6zellikleri ta\u015f\u0131yan bir kad\u0131n modelidir. Mikroskopik analiz kafas\u0131ndaki sa\u00e7\u0131n insan sa\u00e7\u0131 oldu\u011funu g\u00f6steriyor. Modelin omuzlar\u0131nda,belinde ve dizlerinde ba\u011flant\u0131 noktalar\u0131 vard\u0131r. \u201cKar\u0131n\u201d b\u00f6lgesinde \u00e7\u0131kar\u0131labilir fildi\u015fi bir kapak vard\u0131r ve \u00e7\u0131kar\u0131ld\u0131\u011f\u0131nda detayl\u0131 bir kaburga,organ ve 2.5 santim (1 in\u00e7) boyutunda fildi\u015finden yap\u0131lm\u0131\u015f, deri bir ip ile ana fig\u00fcre ba\u011fl\u0131 bir fet\u00fcs ortaya \u00e7\u0131kar\u0131r.\nSCP-051 hamile ",
+      "descriptionExcerpt": "SCP-051 25 santim (10 in\u00e7) boyutunda, anatomik olarak do\u011fru, fildi\u015finden oyulmu\u015f ve Asyal\u0131 \u00f6zellikleri ta\u015f\u0131yan bir kad\u0131n modelidir. Mikroskopik analiz kafas\u0131ndaki sa\u00e7\u0131n insan sa\u00e7\u0131 oldu\u011funu g\u00f6steriyor. Modelin omuzlar\u0131nda,belinde ve dizlerinde ba\u011flant\u0131 noktalar\u0131 vard\u0131r. \u201cKar\u0131n\u201d b\u00f6lgesinde \u00e7\u0131kar\u0131labilir fildi\u015fi bir kapak vard\u0131r ve \u00e7\u0131kar\u0131ld\u0131\u011f\u0131nda detayl\u0131 bir kaburga,organ ve 2.5 santim (1 in\u00e7) boyutunda fildi\u015finden yap\u0131lm\u0131\u015f, deri bir ip ile ana fig\u00fcre ba\u011fl\u0131 bir fet\u00fcs ortaya \u00e7\u0131kar\u0131r.\nSCP-051 hamile",
       "tags": [
         "tag-ea37ba1679c77efd2127329b",
         "tag-3b8f0fa723389415d7768fc9",
@@ -4043,7 +4061,9 @@
         "vi",
         "zh",
         "zh_Hant"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-052",
@@ -4054,7 +4074,7 @@
       "imageUrl": null,
       "objectClass": null,
       "rating": 4,
-      "descriptionExcerpt": "SCP-052 R4 New York \u015eehri trenidir. Resmi kay\u0131tlar trenin 1932\u2019de \u00fcretildi\u011fini ve 1975\u2019te par\u00e7alara ayr\u0131ld\u0131\u011f\u0131n\u0131 s\u00f6yl\u00fcyor. Buna ra\u011fmen 59. Cadde ve 8. Cadde istasyonunda yer alan A/D yolu saat 23: 57'de her cumartesi g\u00f6z\u00fck\u00fcyor. Tren m\u00fckemmel durumda ve \u201cA\u201d treni olarak ge\u00e7iyor. SCP-052 belirlenen saatte ortaya \u00e7\u0131k\u0131yor. Yolcu almak/bindirmek ama\u00e7l\u0131 yakla\u015f\u0131k 5 dakika boyunca kap\u0131lar\u0131n\u0131 a\u00e7\u0131yor ard\u0131ndan kap\u0131lar\u0131n\u0131 kapat\u0131p kayboluyor. Tren ortaya \u00e7\u0131kt\u0131\u011f\u0131ndan inen yolcular\u0131n d\u0131\u015f\u0131nda hi\u00e7 yolcu i\u00e7eriyor ",
+      "descriptionExcerpt": "SCP-052 R4 New York \u015eehri trenidir. Resmi kay\u0131tlar trenin 1932\u2019de \u00fcretildi\u011fini ve 1975\u2019te par\u00e7alara ayr\u0131ld\u0131\u011f\u0131n\u0131 s\u00f6yl\u00fcyor. Buna ra\u011fmen 59. Cadde ve 8. Cadde istasyonunda yer alan A/D yolu saat 23: 57'de her cumartesi g\u00f6z\u00fck\u00fcyor. Tren m\u00fckemmel durumda ve \u201cA\u201d treni olarak ge\u00e7iyor. SCP-052 belirlenen saatte ortaya \u00e7\u0131k\u0131yor. Yolcu almak/bindirmek ama\u00e7l\u0131 yakla\u015f\u0131k 5 dakika boyunca kap\u0131lar\u0131n\u0131 a\u00e7\u0131yor ard\u0131ndan kap\u0131lar\u0131n\u0131 kapat\u0131p kayboluyor. Tren ortaya \u00e7\u0131kt\u0131\u011f\u0131ndan inen yolcular\u0131n d\u0131\u015f\u0131nda hi\u00e7 yolcu i\u00e7eriyor",
       "tags": [
         "tag-8fd55e80900c2a72f7bbdbd7",
         "tag-19ff0f7f50a413a2a45cc8e5",
@@ -4108,7 +4128,9 @@
         "vi",
         "zh",
         "zh_Hant"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-053",
@@ -4191,7 +4213,7 @@
       "imageUrl": null,
       "objectClass": "Safe",
       "rating": 2,
-      "descriptionExcerpt": "Varl\u0131k, suyun d\u0131\u015far\u0131s\u0131nda iken hacmi ortalama 90 litre olan tamamen sudan olu\u015fan insans\u0131 bir kad\u0131n fig\u00fcr\u00fc(genellikle geometrik \u015fekiller olmak \u00fczere di\u011fer formlarda da olabilir) olarak g\u00f6r\u00fclmektedir. Suya girdi\u011finde \u00e7evresinden ay\u0131rt edilemez hale gelmektedir. Varl\u0131k buharla\u015fmadan kaynaklanan kayb\u0131n\u0131 geri kazanmak i\u00e7in d\u00fczenli olarak suya d\u00f6nmek zorundad\u0131r. \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588'da bulunmu\u015f ve daha fazla inceleme i\u00e7in Site-08'e ta\u015f\u0131nm\u0131\u015ft\u0131r. Varl\u0131k ba\u015fta vak\u0131f personeline merakla yakla\u015fm\u0131\u015f, bak\u0131m personeli ve ",
+      "descriptionExcerpt": "Varl\u0131k, suyun d\u0131\u015far\u0131s\u0131nda iken hacmi ortalama 90 litre olan tamamen sudan olu\u015fan insans\u0131 bir kad\u0131n fig\u00fcr\u00fc(genellikle geometrik \u015fekiller olmak \u00fczere di\u011fer formlarda da olabilir) olarak g\u00f6r\u00fclmektedir. Suya girdi\u011finde \u00e7evresinden ay\u0131rt edilemez hale gelmektedir. Varl\u0131k buharla\u015fmadan kaynaklanan kayb\u0131n\u0131 geri kazanmak i\u00e7in d\u00fczenli olarak suya d\u00f6nmek zorundad\u0131r. \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588'da bulunmu\u015f ve daha fazla inceleme i\u00e7in Site-08'e ta\u015f\u0131nm\u0131\u015ft\u0131r. Varl\u0131k ba\u015fta vak\u0131f personeline merakla yakla\u015fm\u0131\u015f, bak\u0131m personeli ve",
       "tags": [
         "tag-be880d610a8dda6b1e3ed6e9",
         "tag-3d04d4a45688cecc855ed861",
@@ -4228,7 +4250,9 @@
         "el",
         "sh",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-055",
@@ -4511,7 +4535,7 @@
       "imageUrl": null,
       "objectClass": "Keter",
       "rating": -2,
-      "descriptionExcerpt": "SCP-060 on yedi beyaz me\u015fe a\u011fac\u0131n\u0131n korusudur (Quercus alba). Koru k\u0131rsal kuzeydo\u011fu Minnesota'da yakla\u015f\u0131k 8 d\u00f6n\u00fcm \u00fczerine yay\u0131lm\u0131\u015ft\u0131r.\n\nSCP-060 hakk\u0131nda bilgi almak i\u00e7in Vak\u0131f personeli taraf\u0131ndan tarand\u0131ktan sonra Satellite-Site 66-060'\u0131n yap\u0131m\u0131 s\u0131ras\u0131nda m\u00fclkteki bir ev y\u0131k\u0131ld\u0131. Eke bak\u0131n\u0131z.\nSCP-060 yak\u0131ld\u0131\u011f\u0131nda, SCP-060-Alpha olarak adland\u0131r\u0131lan bir varl\u0131k \u00fcretecektir. SCP-060-Alpha, yakla\u015f\u0131k 2.3 metre y\u00fcksekli\u011finde ve parlak beyaz alevlerle \u00e7evrili, hareketli bir yeti\u015fkin insan iskelet gibi ",
+      "descriptionExcerpt": "SCP-060 on yedi beyaz me\u015fe a\u011fac\u0131n\u0131n korusudur (Quercus alba). Koru k\u0131rsal kuzeydo\u011fu Minnesota'da yakla\u015f\u0131k 8 d\u00f6n\u00fcm \u00fczerine yay\u0131lm\u0131\u015ft\u0131r.\n\nSCP-060 hakk\u0131nda bilgi almak i\u00e7in Vak\u0131f personeli taraf\u0131ndan tarand\u0131ktan sonra Satellite-Site 66-060'\u0131n yap\u0131m\u0131 s\u0131ras\u0131nda m\u00fclkteki bir ev y\u0131k\u0131ld\u0131. Eke bak\u0131n\u0131z.\nSCP-060 yak\u0131ld\u0131\u011f\u0131nda, SCP-060-Alpha olarak adland\u0131r\u0131lan bir varl\u0131k \u00fcretecektir. SCP-060-Alpha, yakla\u015f\u0131k 2.3 metre y\u00fcksekli\u011finde ve parlak beyaz alevlerle \u00e7evrili, hareketli bir yeti\u015fkin insan iskelet gibi",
       "tags": [
         "tag-0a895725ba78104fa1367079",
         "tag-0fc9cffe4ccfa22694fb1fe8",
@@ -4552,7 +4576,9 @@
         "el",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-061",
@@ -4659,7 +4685,7 @@
       "imageUrl": null,
       "objectClass": null,
       "rating": 7,
-      "descriptionExcerpt": "SCP-063 s\u0131radan, soluk mavi bir di\u015f f\u0131r\u00e7as\u0131 gibi g\u00f6r\u00fcn\u00fcr. Nesnenin yan k\u0131sm\u0131nda \"D\u00fcnyan\u0131n en iyi di\u015f f\u0131r\u00e7as\u0131\" anlam\u0131na gelen \"The World's Best TothBrush [sic]\" c\u00fcmlesi bulunur. \"Toothbrush\" kelimesi hatal\u0131 yaz\u0131lm\u0131\u015ft\u0131r, fakat bunun nesnenin yarat\u0131c\u0131lar\u0131 taraf\u0131ndan yanl\u0131\u015fl\u0131kla m\u0131 yoksa kas\u0131tl\u0131 olarak m\u0131 yap\u0131ld\u0131\u011f\u0131 bilinmemektedir. SCP-063 zahmetsizce, efor sarfetmeden t\u00fcm \u00f6l\u00fc ve inorganik maddeleri par\u00e7alayabilme yetene\u011fi sergiler, bu yetene\u011finin odak noktas\u0131 k\u0131llar\u0131nda sakl\u0131d\u0131r. Bununla birlikte, ",
+      "descriptionExcerpt": "SCP-063 s\u0131radan, soluk mavi bir di\u015f f\u0131r\u00e7as\u0131 gibi g\u00f6r\u00fcn\u00fcr. Nesnenin yan k\u0131sm\u0131nda \"D\u00fcnyan\u0131n en iyi di\u015f f\u0131r\u00e7as\u0131\" anlam\u0131na gelen \"The World's Best TothBrush [sic]\" c\u00fcmlesi bulunur. \"Toothbrush\" kelimesi hatal\u0131 yaz\u0131lm\u0131\u015ft\u0131r, fakat bunun nesnenin yarat\u0131c\u0131lar\u0131 taraf\u0131ndan yanl\u0131\u015fl\u0131kla m\u0131 yoksa kas\u0131tl\u0131 olarak m\u0131 yap\u0131ld\u0131\u011f\u0131 bilinmemektedir. SCP-063 zahmetsizce, efor sarfetmeden t\u00fcm \u00f6l\u00fc ve inorganik maddeleri par\u00e7alayabilme yetene\u011fi sergiler, bu yetene\u011finin odak noktas\u0131 k\u0131llar\u0131nda sakl\u0131d\u0131r. Bununla birlikte,",
       "tags": [
         "alet",
         "ektoentropik",
@@ -4715,7 +4741,9 @@
         "vi",
         "zh",
         "zh_Hant"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-064",
@@ -4870,7 +4898,7 @@
       "imageUrl": null,
       "objectClass": "Safe",
       "rating": -2,
-      "descriptionExcerpt": "SCP-067 1. ve 2. D\u00fcnya Sava\u015flar\u0131 aras\u0131nda, Almanya'da \"Pelikan\" adl\u0131 bir \u015firket taraf\u0131ndan \u00fcretilen bir dolma kalemdir. Soluk ye\u015fil rengindedir ve tek bir k\u0131rm\u0131z\u0131 \u00e7izgi yanlardan a\u015fa\u011f\u0131ya do\u011fru inmektedir. Kabu\u011fu me\u015feden \u00fcretilmi\u015ftir ve ucu son derece keskindir. E\u011fer ucu insan tenine hafif\u00e7e bast\u0131r\u0131l\u0131rsa deriyi \u00e7abucak yarabilir. Ara\u015ft\u0131rmalara g\u00f6re herhangi bir haznesi olmamas\u0131na ra\u011fmen ucunda s\u00fcrekli taze ve kurumayan bir m\u00fcrekkep bulunur. Ek olarak kalem sanat\u00e7\u0131lar i\u00e7in uygun olan fakat normal ",
+      "descriptionExcerpt": "SCP-067 1. ve 2. D\u00fcnya Sava\u015flar\u0131 aras\u0131nda, Almanya'da \"Pelikan\" adl\u0131 bir \u015firket taraf\u0131ndan \u00fcretilen bir dolma kalemdir. Soluk ye\u015fil rengindedir ve tek bir k\u0131rm\u0131z\u0131 \u00e7izgi yanlardan a\u015fa\u011f\u0131ya do\u011fru inmektedir. Kabu\u011fu me\u015feden \u00fcretilmi\u015ftir ve ucu son derece keskindir. E\u011fer ucu insan tenine hafif\u00e7e bast\u0131r\u0131l\u0131rsa deriyi \u00e7abucak yarabilir. Ara\u015ft\u0131rmalara g\u00f6re herhangi bir haznesi olmamas\u0131na ra\u011fmen ucunda s\u00fcrekli taze ve kurumayan bir m\u00fcrekkep bulunur. Ek olarak kalem sanat\u00e7\u0131lar i\u00e7in uygun olan fakat normal",
       "tags": [
         "alet",
         "tag-8fd55e80900c2a72f7bbdbd7",
@@ -4906,7 +4934,9 @@
         "el",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-068",
@@ -4917,7 +4947,7 @@
       "imageUrl": "https://scpvakfi.wdfiles.com/local--files/scp-068/SCP068.jpg",
       "objectClass": "Safe",
       "rating": 0,
-      "descriptionExcerpt": "SCP-068 bilinmeyen bir metalden yap\u0131lm\u0131\u015f, 9.8 cm uzunlu\u011funda bir tel \u00e7\u00f6p adamd\u0131r. Fig\u00fcr\u00fcn yap\u0131m\u0131nda kullan\u0131lan tel d\u00f6n\u00fcp dola\u015f\u0131p tekrardan merkezine d\u00f6nmektedir. Telin kendisi ise bir\u00e7ok kez b\u00fck\u00fclm\u00fc\u015f bir g\u00f6r\u00fcn\u00fcme sahiptir.\nSCP-068'e bir elektrik ak\u0131m\u0131 verildi\u011finde SCP-068 canlan\u0131r ve kendili\u011finden hareket etmeye ba\u015flar. SCP-068'in \"uzuvlar\u0131\" t\u0131pk\u0131 bir insanda oldu\u011fu gibidir. SCP-068 aktifle\u015ftirildi\u011finde herhangi bir metal malzeme aramaya ba\u015flar. Buldu\u011funda ise, SCP-068 malzemeyi yo\u011furup i\u00e7inden ",
+      "descriptionExcerpt": "SCP-068 bilinmeyen bir metalden yap\u0131lm\u0131\u015f, 9.8 cm uzunlu\u011funda bir tel \u00e7\u00f6p adamd\u0131r. Fig\u00fcr\u00fcn yap\u0131m\u0131nda kullan\u0131lan tel d\u00f6n\u00fcp dola\u015f\u0131p tekrardan merkezine d\u00f6nmektedir. Telin kendisi ise bir\u00e7ok kez b\u00fck\u00fclm\u00fc\u015f bir g\u00f6r\u00fcn\u00fcme sahiptir.\nSCP-068'e bir elektrik ak\u0131m\u0131 verildi\u011finde SCP-068 canlan\u0131r ve kendili\u011finden hareket etmeye ba\u015flar. SCP-068'in \"uzuvlar\u0131\" t\u0131pk\u0131 bir insanda oldu\u011fu gibidir. SCP-068 aktifle\u015ftirildi\u011finde herhangi bir metal malzeme aramaya ba\u015flar. Buldu\u011funda ise, SCP-068 malzemeyi yo\u011furup i\u00e7inden",
       "tags": [
         "tag-3b8f0fa723389415d7768fc9",
         "tag-fabef588c1db79c3f5e296a2",
@@ -4954,7 +4984,9 @@
         "el",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-069",
@@ -5312,7 +5344,7 @@
       "imageUrl": null,
       "objectClass": "Keter",
       "rating": 23,
-      "descriptionExcerpt": "SCP-076 iki \u015feyden olu\u015fur: ta\u015ftan bir k\u00fcp (SCP-076-1) ve i\u00e7inde saklanan insan\u0131ms\u0131 varl\u0131k (SCP-076-2).\nSCP-076-1 3 m'lik siyah benekli metamorfik bir k\u00fcpt\u00fcr. SCP-076-1'in i\u00e7indeki ve d\u0131\u015f\u0131ndaki t\u00fcm y\u00fczeyler bilinmeyen bir medeniyete ait oyma yaz\u0131larla doludur. Radyoizotop analizi nesnenin yakla\u015f\u0131k olarak on bin (10,000) ya\u015f\u0131nda oldu\u011funu belirlemi\u015ftir. Bir taraf\u0131nda 0.5 metre geni\u015flikte bir kilit ve etraf\u0131nda yirmi (20) adet yuvarlak \u015fekilde s\u0131ralanm\u0131\u015f daha k\u00fc\u00e7\u00fck kilitlerle m\u00fch\u00fcrlenmi\u015f bir kap\u0131s\u0131 ",
+      "descriptionExcerpt": "SCP-076 iki \u015feyden olu\u015fur: ta\u015ftan bir k\u00fcp (SCP-076-1) ve i\u00e7inde saklanan insan\u0131ms\u0131 varl\u0131k (SCP-076-2).\nSCP-076-1 3 m'lik siyah benekli metamorfik bir k\u00fcpt\u00fcr. SCP-076-1'in i\u00e7indeki ve d\u0131\u015f\u0131ndaki t\u00fcm y\u00fczeyler bilinmeyen bir medeniyete ait oyma yaz\u0131larla doludur. Radyoizotop analizi nesnenin yakla\u015f\u0131k olarak on bin (10,000) ya\u015f\u0131nda oldu\u011funu belirlemi\u015ftir. Bir taraf\u0131nda 0.5 metre geni\u015flikte bir kilit ve etraf\u0131nda yirmi (20) adet yuvarlak \u015fekilde s\u0131ralanm\u0131\u015f daha k\u00fc\u00e7\u00fck kilitlerle m\u00fch\u00fcrlenmi\u015f bir kap\u0131s\u0131",
       "tags": [
         "tag-4b4ca1b22933bd46dd3ddd87",
         "duygulu",
@@ -5353,7 +5385,9 @@
         "hu",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-077",
@@ -5547,7 +5581,7 @@
       "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-081/scp081.png",
       "objectClass": null,
       "rating": 0,
-      "descriptionExcerpt": "SCP-081 \u2588\u2588\u2588\u2588\u2588\u2588\u2588 vir\u00fcs\u00fcn\u00fcn mutasyona u\u011fram\u0131\u015f hali gibi g\u00f6z\u00fcken, ama RNA's\u0131nda \u2588 yerine \u2588 par\u00e7alar\u0131 bulunan bula\u015f\u0131c\u0131 bir vir\u00fcst\u00fcr. Vir\u00fcs insanlar\u0131 etkiler, ama pasif ta\u015f\u0131y\u0131c\u0131 g\u00f6revi g\u00f6ren fareler taraf\u0131ndan yay\u0131l\u0131r. SCP-081 ayn\u0131 zamanda cinsel ili\u015fki ve enfekte kana maruz kalma arac\u0131l\u0131\u011f\u0131yla da yay\u0131labilir.\nSCP-081 adiposit ve l\u00f6kositleri enfekte edip ikisinin de b\u00fcy\u00fck \u00f6l\u00e7\u00fcde h\u0131zland\u0131r\u0131lm\u0131\u015f oranlarda besin t\u00fcketimine sebep olur. Besinler t\u00fcketilirken enfekte B-H\u00fccreleri b\u00fcy\u00fck miktarlarda, modifiye ",
+      "descriptionExcerpt": "SCP-081 \u2588\u2588\u2588\u2588\u2588\u2588\u2588 vir\u00fcs\u00fcn\u00fcn mutasyona u\u011fram\u0131\u015f hali gibi g\u00f6z\u00fcken, ama RNA's\u0131nda \u2588 yerine \u2588 par\u00e7alar\u0131 bulunan bula\u015f\u0131c\u0131 bir vir\u00fcst\u00fcr. Vir\u00fcs insanlar\u0131 etkiler, ama pasif ta\u015f\u0131y\u0131c\u0131 g\u00f6revi g\u00f6ren fareler taraf\u0131ndan yay\u0131l\u0131r. SCP-081 ayn\u0131 zamanda cinsel ili\u015fki ve enfekte kana maruz kalma arac\u0131l\u0131\u011f\u0131yla da yay\u0131labilir.\nSCP-081 adiposit ve l\u00f6kositleri enfekte edip ikisinin de b\u00fcy\u00fck \u00f6l\u00e7\u00fcde h\u0131zland\u0131r\u0131lm\u0131\u015f oranlarda besin t\u00fcketimine sebep olur. Besinler t\u00fcketilirken enfekte B-H\u00fccreleri b\u00fcy\u00fck miktarlarda, modifiye",
       "tags": [
         "tag-0a895725ba78104fa1367079",
         "tag-2d463175a1ea6188d107e7f9",
@@ -5582,7 +5616,9 @@
         "zh-tr",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-082",
@@ -5682,7 +5718,7 @@
       "imageUrl": null,
       "objectClass": null,
       "rating": -2,
-      "descriptionExcerpt": "SCP-084, b\u00fcy\u00fck ve a\u00e7\u0131k bir alan\u0131n ortas\u0131nda konumlanm\u0131\u015f, iki ek binas\u0131 olan b\u00fcy\u00fck bir radyo kulesidir. SCP-084'\u00fcn etraf\u0131nda yay\u0131lan etki y\u00fcz\u00fcnden do\u011frudan g\u00f6zlem ve \u00f6rnek al\u0131m\u0131 imkans\u0131zd\u0131r. SCP-084 yerel uzay-zaman/ger\u00e7ekli\u011fe zararl\u0131 olan bir t\u00fcr dalga ya da radyasyon yayar. Bunun en belirgin etkisi SCP-084'\u00fcn aktif b\u00f6lgesinde uzay\u0131n de\u011fi\u015fmesidir. D\u0131\u015far\u0131dan, aktif b\u00f6lge yakla\u015f\u0131k olarak 200 m \u00e7ap\u0131nda bir \"kubbe\" \u015fekli olu\u015fturur. SCP-084 bu b\u00f6lgede rastgele noktalarda g\u00f6r\u00fcn\u00fcr, rastgele zamanlarda ",
+      "descriptionExcerpt": "SCP-084, b\u00fcy\u00fck ve a\u00e7\u0131k bir alan\u0131n ortas\u0131nda konumlanm\u0131\u015f, iki ek binas\u0131 olan b\u00fcy\u00fck bir radyo kulesidir. SCP-084'\u00fcn etraf\u0131nda yay\u0131lan etki y\u00fcz\u00fcnden do\u011frudan g\u00f6zlem ve \u00f6rnek al\u0131m\u0131 imkans\u0131zd\u0131r. SCP-084 yerel uzay-zaman/ger\u00e7ekli\u011fe zararl\u0131 olan bir t\u00fcr dalga ya da radyasyon yayar. Bunun en belirgin etkisi SCP-084'\u00fcn aktif b\u00f6lgesinde uzay\u0131n de\u011fi\u015fmesidir. D\u0131\u015far\u0131dan, aktif b\u00f6lge yakla\u015f\u0131k olarak 200 m \u00e7ap\u0131nda bir \"kubbe\" \u015fekli olu\u015fturur. SCP-084 bu b\u00f6lgede rastgele noktalarda g\u00f6r\u00fcn\u00fcr, rastgele zamanlarda",
       "tags": [
         "radyoaktif",
         "uzayzaman",
@@ -5716,7 +5752,9 @@
         "zh-tr",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-085",
@@ -6002,7 +6040,7 @@
       "imageUrl": null,
       "objectClass": "Safe",
       "rating": null,
-      "descriptionExcerpt": "SCP-091, \u015fu anda bo\u015f olan bir \"Scotties\" marka doku kutusudur. SCP-091'i g\u00f6zlemledikten hemen sonra, izleyiciler ezici bir nostalji duygusu bildirdiler. Etkilenenler, SCP-091'e \"yak\u0131n olduklar\u0131\" zamanlar\u0131, o varken meydana gelen b\u00fcy\u00fck olaylar\u0131 veya bir \u015fekilde onunla ilgili olan insanlar\u0131 ve yerleri hat\u0131rlamaya ba\u015flarlar.\nSCP-091 ilk ba\u015fta anormal bir e\u015fya olarak kaydedildi ve Kurtarma ekibinin \u00fcyelerinden biri olan Yard\u0131mc\u0131 Ara\u015ft\u0131rmac\u0131 \u2588\u2588\u2588\u2588 - 199\u2588'daki d\u00fc\u011f\u00fcn\u00fcn\u00fcn kayd\u0131n\u0131 g\u00f6r\u00fcnt\u00fclerken SCP-091'i ",
+      "descriptionExcerpt": "SCP-091, \u015fu anda bo\u015f olan bir \"Scotties\" marka doku kutusudur. SCP-091'i g\u00f6zlemledikten hemen sonra, izleyiciler ezici bir nostalji duygusu bildirdiler. Etkilenenler, SCP-091'e \"yak\u0131n olduklar\u0131\" zamanlar\u0131, o varken meydana gelen b\u00fcy\u00fck olaylar\u0131 veya bir \u015fekilde onunla ilgili olan insanlar\u0131 ve yerleri hat\u0131rlamaya ba\u015flarlar.\nSCP-091 ilk ba\u015fta anormal bir e\u015fya olarak kaydedildi ve Kurtarma ekibinin \u00fcyelerinden biri olan Yard\u0131mc\u0131 Ara\u015ft\u0131rmac\u0131 \u2588\u2588\u2588\u2588 - 199\u2588'daki d\u00fc\u011f\u00fcn\u00fcn\u00fcn kayd\u0131n\u0131 g\u00f6r\u00fcnt\u00fclerken SCP-091'i",
       "tags": [
         "tag-1b7bc16f5ec8bf8c1cdf293d",
         "tag-e4c650f02d94ac2e4c283f20",
@@ -6039,7 +6077,9 @@
         "el",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-092",
@@ -6102,7 +6142,7 @@
       "imageUrl": null,
       "objectClass": null,
       "rating": 18,
-      "descriptionExcerpt": "SCP-093 temel olarak her taraf\u0131nda 0.5 cm derinli\u011finde bilinmeyen sembollerin ve dairesel \u00e7izimlerin yer ald\u0131\u011f\u0131 zincifre benzeri bir ta\u015f hammadesinden yap\u0131lm\u0131\u015f olan k\u0131rm\u0131z\u0131, yuvarlak bir disktir. Derinli\u011fi 1 ile 1.5 cm aras\u0131nda de\u011fi\u015fen daha da derin \u00e7izimler de \u00fczerinde yer almaktad\u0131r. SCP-093'\u00fcn \u00e7ap\u0131 7.62 cm'dir ve \u00e7o\u011fu avu\u00e7lara kesiklere sebep olmadan kolayca s\u0131\u011fmaktad\u0131r. SCP-093, ya\u015fayan bir birey taraf\u0131ndan tutuldu\u011funda renk de\u011fi\u015ftirir. SCP-093'\u00fcn ald\u0131\u011f\u0131 renklerin aras\u0131nda hala bir ba\u011flant\u0131 ",
+      "descriptionExcerpt": "SCP-093 temel olarak her taraf\u0131nda 0.5 cm derinli\u011finde bilinmeyen sembollerin ve dairesel \u00e7izimlerin yer ald\u0131\u011f\u0131 zincifre benzeri bir ta\u015f hammadesinden yap\u0131lm\u0131\u015f olan k\u0131rm\u0131z\u0131, yuvarlak bir disktir. Derinli\u011fi 1 ile 1.5 cm aras\u0131nda de\u011fi\u015fen daha da derin \u00e7izimler de \u00fczerinde yer almaktad\u0131r. SCP-093'\u00fcn \u00e7ap\u0131 7.62 cm'dir ve \u00e7o\u011fu avu\u00e7lara kesiklere sebep olmadan kolayca s\u0131\u011fmaktad\u0131r. SCP-093, ya\u015fayan bir birey taraf\u0131ndan tutuldu\u011funda renk de\u011fi\u015ftirir. SCP-093'\u00fcn ald\u0131\u011f\u0131 renklerin aras\u0131nda hala bir ba\u011flant\u0131",
       "tags": [
         "antik",
         "tag-e9411be711ea9e539aa899e6",
@@ -6145,7 +6185,9 @@
         "hu",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-094",
@@ -6862,7 +6904,7 @@
       "imageUrl": "https://scpvakfi.wdfiles.com/local--files/scp-109/SCP-109.jpg",
       "objectClass": null,
       "rating": 1,
-      "descriptionExcerpt": "SCP-109, kalay ala\u015f\u0131m\u0131ndan yap\u0131lm\u0131\u015f ve a\u011f\u0131r pamuklu kapak ve siyah deri kay\u0131\u015fla donat\u0131lm\u0131\u015f standart bir ABD Ordusu mataras\u0131d\u0131r (yakla\u015f\u0131k y\u0131l 1899). A\u00e7\u0131ld\u0131\u011f\u0131nda, nesnenin neredeyse a\u011fz\u0131na kadar su ile dolu oldu\u011fu g\u00f6r\u00fclmektedir. Nesnenin 3.16 kilograml\u0131k k\u00fctlesinden kaybetmeden, i\u00e7 haznesinden s\u0131n\u0131rs\u0131z miktarda su \u00e7\u0131kart\u0131labilmektedir. \u0130ncelemeler nesnenin i\u00e7 hacminin, d\u0131\u015f \u015fekliyle uyumlu olacak \u015fekilde 2.8 Litre oldu\u011funu g\u00f6stermi\u015ftir.\nSCP-109 i\u00e7indeki su, 20 ppm kalay ve 170 ppm di\u011fer elektrolit ",
+      "descriptionExcerpt": "SCP-109, kalay ala\u015f\u0131m\u0131ndan yap\u0131lm\u0131\u015f ve a\u011f\u0131r pamuklu kapak ve siyah deri kay\u0131\u015fla donat\u0131lm\u0131\u015f standart bir ABD Ordusu mataras\u0131d\u0131r (yakla\u015f\u0131k y\u0131l 1899). A\u00e7\u0131ld\u0131\u011f\u0131nda, nesnenin neredeyse a\u011fz\u0131na kadar su ile dolu oldu\u011fu g\u00f6r\u00fclmektedir. Nesnenin 3.16 kilograml\u0131k k\u00fctlesinden kaybetmeden, i\u00e7 haznesinden s\u0131n\u0131rs\u0131z miktarda su \u00e7\u0131kart\u0131labilmektedir. \u0130ncelemeler nesnenin i\u00e7 hacminin, d\u0131\u015f \u015fekliyle uyumlu olacak \u015fekilde 2.8 Litre oldu\u011funu g\u00f6stermi\u015ftir.\nSCP-109 i\u00e7indeki su, 20 ppm kalay ve 170 ppm di\u011fer elektrolit",
       "tags": [
         "ektoentropik",
         "konteyner",
@@ -6913,7 +6955,9 @@
         "vi",
         "zh",
         "zh_Hant"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-110",
@@ -7812,7 +7856,7 @@
       "imageUrl": null,
       "objectClass": "Safe",
       "rating": -4,
-      "descriptionExcerpt": "SCP-133 alt\u0131 y\u00fcz on \u00fc\u00e7 (613) adet 5 santimetre yar\u0131\u00e7apl\u0131 siyah, dairesel yap\u0131\u015fkan ka\u011f\u0131t benzeri materyallerden olu\u015fmaktad\u0131r. Kat\u0131 bir y\u00fczeye yerle\u015ftirildi\u011finde ve ovaland\u0131\u011f\u0131nda SCP-133 an\u0131nda y\u00fczeye transfer eder ve dairesel bir delik olu\u015fturur. Y\u00fcr\u00fct\u00fclen deneyler SCP-133'\u00fcn a\u015f\u0131r\u0131 yumu\u015fak veya y\u00fcksek yo\u011funlukta malzemeler kullan\u0131lmas\u0131na ra\u011fmen in\u015faat \u00e7eli\u011fine 61 santimetreye kadar n\u00fcfuz edebildi\u011fini g\u00f6stermi\u015ftir. SCP-133 taraf\u0131ndan a\u00e7\u0131lan deliklerin incelenmesi y\u00fczeysel olarak d\u00fczg\u00fcn g\u00f6r\u00fcnse de ",
+      "descriptionExcerpt": "SCP-133 alt\u0131 y\u00fcz on \u00fc\u00e7 (613) adet 5 santimetre yar\u0131\u00e7apl\u0131 siyah, dairesel yap\u0131\u015fkan ka\u011f\u0131t benzeri materyallerden olu\u015fmaktad\u0131r. Kat\u0131 bir y\u00fczeye yerle\u015ftirildi\u011finde ve ovaland\u0131\u011f\u0131nda SCP-133 an\u0131nda y\u00fczeye transfer eder ve dairesel bir delik olu\u015fturur. Y\u00fcr\u00fct\u00fclen deneyler SCP-133'\u00fcn a\u015f\u0131r\u0131 yumu\u015fak veya y\u00fcksek yo\u011funlukta malzemeler kullan\u0131lmas\u0131na ra\u011fmen in\u015faat \u00e7eli\u011fine 61 santimetreye kadar n\u00fcfuz edebildi\u011fini g\u00f6stermi\u015ftir. SCP-133 taraf\u0131ndan a\u00e7\u0131lan deliklerin incelenmesi y\u00fczeysel olarak d\u00fczg\u00fcn g\u00f6r\u00fcnse de",
       "tags": [
         "ektoentropik",
         "eser",
@@ -7847,7 +7891,9 @@
         "pig",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-134",
@@ -8362,7 +8408,7 @@
       "imageUrl": null,
       "objectClass": "Safe",
       "rating": 3,
-      "descriptionExcerpt": "199\u2588'da, kapat\u0131lm\u0131\u015f \u2588\u2588\u2588\u2588\u2588\u2588 \u0130lkokulu'nun temizli\u011fi s\u0131ras\u0131nda bir s\u0131ran\u0131n \u00fcst\u00fcnde bulunan SCP-168, #HP-28C model, Hewlett-Packard marka bir hesap makinesidir. \u0130lk denetlemede, \u00e7\u0131kar\u0131labilir kab\u0131n i\u00e7ine \"Eric\" isminin kaz\u0131nd\u0131\u011f\u0131 ke\u015ffedilmi\u015ftir. Her nas\u0131lsa, basit bir denklem girip (6\u00f73) \"=\" tu\u015funa bas\u0131ld\u0131\u011f\u0131nda cihaz\u0131n ekran\u0131 3 dakika 34 saniyeli\u011fine bo\u015f kald\u0131, sonra \"ek karakter tu\u015fu\" fonksiyonu devreye girip ekranda \u015fu mesaj\u0131 g\u00f6sterdi; \"SAAT KA\u00c7?\"\nKonu\u015fma kayd\u0131 i\u00e7in Eri\u015fim Yetki Seviyesi 2 olanlar ",
+      "descriptionExcerpt": "199\u2588'da, kapat\u0131lm\u0131\u015f \u2588\u2588\u2588\u2588\u2588\u2588 \u0130lkokulu'nun temizli\u011fi s\u0131ras\u0131nda bir s\u0131ran\u0131n \u00fcst\u00fcnde bulunan SCP-168, #HP-28C model, Hewlett-Packard marka bir hesap makinesidir. \u0130lk denetlemede, \u00e7\u0131kar\u0131labilir kab\u0131n i\u00e7ine \"Eric\" isminin kaz\u0131nd\u0131\u011f\u0131 ke\u015ffedilmi\u015ftir. Her nas\u0131lsa, basit bir denklem girip (6\u00f73) \"=\" tu\u015funa bas\u0131ld\u0131\u011f\u0131nda cihaz\u0131n ekran\u0131 3 dakika 34 saniyeli\u011fine bo\u015f kald\u0131, sonra \"ek karakter tu\u015fu\" fonksiyonu devreye girip ekranda \u015fu mesaj\u0131 g\u00f6sterdi; \"SAAT KA\u00c7?\"\nKonu\u015fma kayd\u0131 i\u00e7in Eri\u015fim Yetki Seviyesi 2 olanlar",
       "tags": [
         "tag-be880d610a8dda6b1e3ed6e9",
         "alet",
@@ -8397,7 +8443,9 @@
         "vn",
         "zh-tr",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-169",
@@ -8408,7 +8456,7 @@
       "imageUrl": "https://scpvakfi.wdfiles.com/local--files/scp-169/scp169spektogram.jpg",
       "objectClass": null,
       "rating": 8,
-      "descriptionExcerpt": "SCP-169, denizciler ve s\u00f6zl\u00fc tarihin nesiller boyu \"Leviathan\" olarak adland\u0131rd\u0131\u011f\u0131 dev bir deniz arthropodudur. \u0130lk olarak bir efsane oldu\u011fu d\u00fc\u015f\u00fcn\u00fcl\u00fcyordu ki SCP-169 \u2588/\u2588/19\u2588 tarihinde Mobil G\u00f6rev G\u00fcc\u00fc Gama-6 taraf\u0131ndan \u2588\u2588\u2588\u2588\u2588 \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 adalar\u0131 (koordinatlar \u2588\u2588\u00b0\u2588\u2588'S \u2588\u2588\u00b0\u2588\u2588'W) etraf\u0131nda paranormal olaylar\u0131 ara\u015ft\u0131r\u0131rken bulundu. \u0194-6'n\u0131n ara\u015ft\u0131rmas\u0131 s\u0131ras\u0131nda Dr. \u2588\u2588\u2588\u2588 \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 [\u01946-0912], adalar\u0131n orijinal konumundan en az \u00fc\u00e7 (3) kilometre uza\u011fa hareket etti\u011fini fark etti. Ba\u015flang\u0131\u00e7ta Dr. \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588, bu ",
+      "descriptionExcerpt": "SCP-169, denizciler ve s\u00f6zl\u00fc tarihin nesiller boyu \"Leviathan\" olarak adland\u0131rd\u0131\u011f\u0131 dev bir deniz arthropodudur. \u0130lk olarak bir efsane oldu\u011fu d\u00fc\u015f\u00fcn\u00fcl\u00fcyordu ki SCP-169 \u2588/\u2588/19\u2588 tarihinde Mobil G\u00f6rev G\u00fcc\u00fc Gama-6 taraf\u0131ndan \u2588\u2588\u2588\u2588\u2588 \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 adalar\u0131 (koordinatlar \u2588\u2588\u00b0\u2588\u2588'S \u2588\u2588\u00b0\u2588\u2588'W) etraf\u0131nda paranormal olaylar\u0131 ara\u015ft\u0131r\u0131rken bulundu. \u0194-6'n\u0131n ara\u015ft\u0131rmas\u0131 s\u0131ras\u0131nda Dr. \u2588\u2588\u2588\u2588 \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 [\u01946-0912], adalar\u0131n orijinal konumundan en az \u00fc\u00e7 (3) kilometre uza\u011fa hareket etti\u011fini fark etti. Ba\u015flang\u0131\u00e7ta Dr. \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588, bu",
       "tags": [
         "arthropod",
         "tag-4b4ca1b22933bd46dd3ddd87",
@@ -8445,7 +8493,9 @@
         "nl",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-173",
@@ -8744,7 +8794,7 @@
       "imageUrl": "https://scpvakfi.wdfiles.com/local--files/scp-185/105mb2yy9.jpg",
       "objectClass": "Safe",
       "rating": 1,
-      "descriptionExcerpt": "SCP-185, So\u011fuk Sava\u015f d\u00f6neminde kullan\u0131lan bir Rus R-105M radyosu gibi g\u00f6r\u00fcnmektedir, ancak \u00fczerine kabaca eklenmi\u015f bir tu\u015f tak\u0131m\u0131 ve LCD ekran bulunmaktad\u0131r. Nesne, \u015fifreli sinyaller de dahil olmak \u00fczere, \u00e7o\u011fu radyo yay\u0131n\u0131n\u0131 alabilir. \u015eifreleri nas\u0131l \u00e7\u00f6zd\u00fc\u011f\u00fc hen\u00fcz anla\u015f\u0131lamam\u0131\u015ft\u0131r. SCP-185, modern radyo ekipmanlar\u0131n\u0131n bile \u00f6tesine ge\u00e7en \u00e7ok uzun bir menzile sahiptir. Normal bir radyo gibi \u00e7al\u0131\u015f\u0131r, ancak tu\u015f tak\u0131m\u0131 \u00fczerinden veri girildi\u011finde farkl\u0131 davran\u0131r. E\u011fer tu\u015f tak\u0131m\u0131na bir y\u0131l girilirse, ",
+      "descriptionExcerpt": "SCP-185, So\u011fuk Sava\u015f d\u00f6neminde kullan\u0131lan bir Rus R-105M radyosu gibi g\u00f6r\u00fcnmektedir, ancak \u00fczerine kabaca eklenmi\u015f bir tu\u015f tak\u0131m\u0131 ve LCD ekran bulunmaktad\u0131r. Nesne, \u015fifreli sinyaller de dahil olmak \u00fczere, \u00e7o\u011fu radyo yay\u0131n\u0131n\u0131 alabilir. \u015eifreleri nas\u0131l \u00e7\u00f6zd\u00fc\u011f\u00fc hen\u00fcz anla\u015f\u0131lamam\u0131\u015ft\u0131r. SCP-185, modern radyo ekipmanlar\u0131n\u0131n bile \u00f6tesine ge\u00e7en \u00e7ok uzun bir menzile sahiptir. Normal bir radyo gibi \u00e7al\u0131\u015f\u0131r, ancak tu\u015f tak\u0131m\u0131 \u00fczerinden veri girildi\u011finde farkl\u0131 davran\u0131r. E\u011fer tu\u015f tak\u0131m\u0131na bir y\u0131l girilirse,",
       "tags": [
         "akustik",
         "elektronik",
@@ -8780,7 +8830,9 @@
         "zh-tr",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-198",
@@ -8920,7 +8972,7 @@
       "imageUrl": null,
       "objectClass": "Safe",
       "rating": 5,
-      "descriptionExcerpt": "SCP-210, bilinmeyen bir s\u0131v\u0131 maddeyle 4,35 metre derinli\u011fe kadar su alt\u0131nda kalm\u0131\u015f, iki katl\u0131 bir malikanedir. SCP-210-01 olarak adland\u0131r\u0131lan bu madde, suya neredeyse e\u015fit bir \u015feffakl\u0131k derecesine sahiptir. Bu s\u0131v\u0131 SCP-210'un d\u0131\u015f\u0131ndan g\u00f6r\u00fclemez ve kap\u0131 veya pencere a\u00e7\u0131ld\u0131\u011f\u0131nda SCP-210'dan d\u0131\u015far\u0131 ta\u015fmaz. SCP-210-01 ile temasa ge\u00e7en herhangi bir canl\u0131, uyku benzeri bir duruma girer ve havada as\u0131l\u0131 duruyormu\u015f gibi SCP-210-01 i\u00e7inde s\u00fcz\u00fclmeye ba\u015flar. Bu \u015fekilde hapsolmu\u015f varl\u0131klar SCP-210-02 olarak ",
+      "descriptionExcerpt": "SCP-210, bilinmeyen bir s\u0131v\u0131 maddeyle 4,35 metre derinli\u011fe kadar su alt\u0131nda kalm\u0131\u015f, iki katl\u0131 bir malikanedir. SCP-210-01 olarak adland\u0131r\u0131lan bu madde, suya neredeyse e\u015fit bir \u015feffakl\u0131k derecesine sahiptir. Bu s\u0131v\u0131 SCP-210'un d\u0131\u015f\u0131ndan g\u00f6r\u00fclemez ve kap\u0131 veya pencere a\u00e7\u0131ld\u0131\u011f\u0131nda SCP-210'dan d\u0131\u015far\u0131 ta\u015fmaz. SCP-210-01 ile temasa ge\u00e7en herhangi bir canl\u0131, uyku benzeri bir duruma girer ve havada as\u0131l\u0131 duruyormu\u015f gibi SCP-210-01 i\u00e7inde s\u00fcz\u00fclmeye ba\u015flar. Bu \u015fekilde hapsolmu\u015f varl\u0131klar SCP-210-02 olarak",
       "tags": [
         "bina",
         "tag-3b8f0fa723389415d7768fc9",
@@ -8953,7 +9005,9 @@
         "el",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-217",
@@ -9056,7 +9110,7 @@
       "imageUrl": "https://scpvakfi.wdfiles.com/local--files/scp-231/scp-blank.png",
       "objectClass": "Keter",
       "rating": 7,
-      "descriptionExcerpt": "SCP-231-7 \u2588 ve \u2588\u2588 ya\u015flar\u0131 aras\u0131nda olan \u2588\u2588\u2588\u2588\u2588 ve [B\u0130LG\u0130 \u00c7IKARILDI]'ya sahip olan bir kad\u0131nd\u0131r. Kral kur yapma k\u0131yafetlerine b\u00fcr\u00fcnm\u00fc\u015f, gelinler yataklar\u0131nda. do\u011fmam\u0131\u015f prensler hevesle kafalar\u0131n\u0131 \u00e7\u0131karmak i\u00e7in uykuda bekliyorlar.\n\nSCP-231-1'den 7'ye kadar olan SCP'ler \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588, \u2588\u2588'dan, Bir polis bask\u0131n\u0131 s\u0131ras\u0131nda K\u0131z\u0131l Kral'\u0131n \u00c7ocuklar\u0131 denilen bir organizasyonun(\u2588\u2588-\u2588\u2588-\u2588\u2588\u2588\u2588'daki \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 \u2588\u2588\u2588\u2588\u2588\u2588 gazetesindeki makaleye bak\u0131n\u0131z, \"Polis Satanik Sex Tarikat\u0131na Bask\u0131n Yapt\u0131, Yedi Ki\u015fiyi Kurtard\u0131\" ",
+      "descriptionExcerpt": "SCP-231-7 \u2588 ve \u2588\u2588 ya\u015flar\u0131 aras\u0131nda olan \u2588\u2588\u2588\u2588\u2588 ve [B\u0130LG\u0130 \u00c7IKARILDI]'ya sahip olan bir kad\u0131nd\u0131r. Kral kur yapma k\u0131yafetlerine b\u00fcr\u00fcnm\u00fc\u015f, gelinler yataklar\u0131nda. do\u011fmam\u0131\u015f prensler hevesle kafalar\u0131n\u0131 \u00e7\u0131karmak i\u00e7in uykuda bekliyorlar.\n\nSCP-231-1'den 7'ye kadar olan SCP'ler \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588, \u2588\u2588'dan, Bir polis bask\u0131n\u0131 s\u0131ras\u0131nda K\u0131z\u0131l Kral'\u0131n \u00c7ocuklar\u0131 denilen bir organizasyonun(\u2588\u2588-\u2588\u2588-\u2588\u2588\u2588\u2588'daki \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 \u2588\u2588\u2588\u2588\u2588\u2588 gazetesindeki makaleye bak\u0131n\u0131z, \"Polis Satanik Sex Tarikat\u0131na Bask\u0131n Yapt\u0131, Yedi Ki\u015fiyi Kurtard\u0131\"",
       "tags": [
         "tag-be880d610a8dda6b1e3ed6e9",
         "tag-4b4ca1b22933bd46dd3ddd87",
@@ -9095,7 +9149,9 @@
         "vn",
         "zh-tr",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-239",
@@ -9541,7 +9597,7 @@
       "imageUrl": null,
       "objectClass": "Keter",
       "rating": null,
-      "descriptionExcerpt": "SCP-293 \u015fu anda bir t\u00fcr maddi olmayan g\u00fc\u00e7 veya mevcudiyet olarak kabul edilmektedir. Dene\u011fin tepkileri \u0131\u015f\u0131\u011f\u0131nda SCP-293'\u00fcn arkas\u0131nda olas\u0131 bir zeka ile ilgili sorular g\u00fcndeme geldi; ancak bunlar hala as\u0131ls\u0131z. SCP-293 en \u00e7ok insan davran\u0131\u015f\u0131 \u00fczerindeki etkisinde g\u00f6r\u00fcl\u00fcr ve sadece \u00e7ok ileri vakalarda \u00e7ok hafif bir i\u015fitsel rahats\u0131zl\u0131k olarak saptanabilir. Bu varl\u0131k eksikli\u011fi, SCP-293 tespiti ile ilgili en b\u00fcy\u00fck sorunu olu\u015fturur, \u00e7\u00fcnk\u00fc uzun s\u00fcreli g\u00f6zlem olmaks\u0131z\u0131n nesnelerin veya insanlar\u0131n SCP-293 ",
+      "descriptionExcerpt": "SCP-293 \u015fu anda bir t\u00fcr maddi olmayan g\u00fc\u00e7 veya mevcudiyet olarak kabul edilmektedir. Dene\u011fin tepkileri \u0131\u015f\u0131\u011f\u0131nda SCP-293'\u00fcn arkas\u0131nda olas\u0131 bir zeka ile ilgili sorular g\u00fcndeme geldi; ancak bunlar hala as\u0131ls\u0131z. SCP-293 en \u00e7ok insan davran\u0131\u015f\u0131 \u00fczerindeki etkisinde g\u00f6r\u00fcl\u00fcr ve sadece \u00e7ok ileri vakalarda \u00e7ok hafif bir i\u015fitsel rahats\u0131zl\u0131k olarak saptanabilir. Bu varl\u0131k eksikli\u011fi, SCP-293 tespiti ile ilgili en b\u00fcy\u00fck sorunu olu\u015fturur, \u00e7\u00fcnk\u00fc uzun s\u00fcreli g\u00f6zlem olmaks\u0131z\u0131n nesnelerin veya insanlar\u0131n SCP-293",
       "tags": [
         "tag-1b7bc16f5ec8bf8c1cdf293d",
         "dokunsal",
@@ -9572,7 +9628,9 @@
         "vn",
         "ar",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-294",
@@ -9583,7 +9641,7 @@
       "imageUrl": "https://scpvakfi.wdfiles.com/local--files/scp-294/scp_294_by_staticfactory-d4xwn6e.jpg",
       "objectClass": null,
       "rating": 11,
-      "descriptionExcerpt": "SCP-294 QWERTY klavye tu\u015flar\u0131na sahip dokunmatik bir giri\u015f ekran\u0131na sahip olmas\u0131 d\u0131\u015f\u0131nda standart bir kahve otomat\u0131 gibi g\u00f6z\u00fckmektedir. Elli sent ABD para birimini madeni para giri\u015fine att\u0131ktan sonra kullan\u0131c\u0131n\u0131n dokunmatik y\u00fczeyi kullanarak bir s\u0131v\u0131n\u0131n ad\u0131n\u0131 girmesi beklenir. Sonras\u0131nda 350ml lik ka\u011f\u0131t bardak slota yerle\u015fir ve istenen s\u0131v\u0131 doldurulur. Ba\u015flang\u0131\u00e7ta doksan yedi test yap\u0131ld\u0131. Su, kahve, bira, soda gibi isteklerin yan\u0131 s\u0131ra t\u00fcketilemeyen s\u00fclf\u00fcrik asit, motor ya\u011f\u0131, silecek suyu gibi ",
+      "descriptionExcerpt": "SCP-294 QWERTY klavye tu\u015flar\u0131na sahip dokunmatik bir giri\u015f ekran\u0131na sahip olmas\u0131 d\u0131\u015f\u0131nda standart bir kahve otomat\u0131 gibi g\u00f6z\u00fckmektedir. Elli sent ABD para birimini madeni para giri\u015fine att\u0131ktan sonra kullan\u0131c\u0131n\u0131n dokunmatik y\u00fczeyi kullanarak bir s\u0131v\u0131n\u0131n ad\u0131n\u0131 girmesi beklenir. Sonras\u0131nda 350ml lik ka\u011f\u0131t bardak slota yerle\u015fir ve istenen s\u0131v\u0131 doldurulur. Ba\u015flang\u0131\u00e7ta doksan yedi test yap\u0131ld\u0131. Su, kahve, bira, soda gibi isteklerin yan\u0131 s\u0131ra t\u00fcketilemeyen s\u00fclf\u00fcrik asit, motor ya\u011f\u0131, silecek suyu gibi",
       "tags": [
         "borsa",
         "cihaz",
@@ -9619,7 +9677,9 @@
         "zh-tr",
         "hu",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-297",
@@ -9990,7 +10050,7 @@
       "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-354/redpool-new.jpg",
       "objectClass": "Keter",
       "rating": 8,
-      "descriptionExcerpt": "SCP-354, kuzey Kanada'da bulunan k\u0131rm\u0131z\u0131 s\u0131v\u0131 ile dolu bir g\u00f6lettir. Bu s\u0131v\u0131, insan kan\u0131na benzer bir yo\u011funlu\u011fa sahiptir (dolay\u0131s\u0131yla halk a\u011fz\u0131ndaki ad\u0131 Kan G\u00f6l\u00fc olmu\u015ftur), ancak biyolojik bir yap\u0131s\u0131 yoktur. SCP-354'\u00fcn belirli bir k\u0131y\u0131s\u0131 yoktur; toprak, s\u0131v\u0131 miktar\u0131n\u0131 ge\u00e7ip ve yer \u00e7o\u011funlukla kat\u0131 olana kadar s\u0131v\u0131 ile kar\u0131\u015f\u0131r. SCP-354'in daha derinine inildik\u00e7e s\u0131v\u0131 yo\u011funla\u015fmaktad\u0131r; dibi varsa, hen\u00fcz ula\u015f\u0131lamam\u0131\u015ft\u0131r.\nBelirli aral\u0131klarla, varl\u0131klar SCP-354'\u00fcn i\u00e7inden \u00e7\u0131kar ve muhafazadan ka\u00e7maya ",
+      "descriptionExcerpt": "SCP-354, kuzey Kanada'da bulunan k\u0131rm\u0131z\u0131 s\u0131v\u0131 ile dolu bir g\u00f6lettir. Bu s\u0131v\u0131, insan kan\u0131na benzer bir yo\u011funlu\u011fa sahiptir (dolay\u0131s\u0131yla halk a\u011fz\u0131ndaki ad\u0131 Kan G\u00f6l\u00fc olmu\u015ftur), ancak biyolojik bir yap\u0131s\u0131 yoktur. SCP-354'\u00fcn belirli bir k\u0131y\u0131s\u0131 yoktur; toprak, s\u0131v\u0131 miktar\u0131n\u0131 ge\u00e7ip ve yer \u00e7o\u011funlukla kat\u0131 olana kadar s\u0131v\u0131 ile kar\u0131\u015f\u0131r. SCP-354'in daha derinine inildik\u00e7e s\u0131v\u0131 yo\u011funla\u015fmaktad\u0131r; dibi varsa, hen\u00fcz ula\u015f\u0131lamam\u0131\u015ft\u0131r.\nBelirli aral\u0131klarla, varl\u0131klar SCP-354'\u00fcn i\u00e7inden \u00e7\u0131kar ve muhafazadan ka\u00e7maya",
       "tags": [
         "ektoentropik",
         "hareketsiz",
@@ -10027,7 +10087,9 @@
         "zh-tr",
         "el",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-358",
@@ -10162,7 +10224,7 @@
       "imageUrl": "https://scpvakfi.wdfiles.com/local--files/scp-372/4672099774_43981e976c.jpg",
       "objectClass": null,
       "rating": -1,
-      "descriptionExcerpt": "SCP-372, ba\u015f\u0131ndan kuyru\u011fa yakla\u015f\u0131k 2 metre uzunlu\u011funda ve yakla\u015f\u0131k 45 kilogram a\u011f\u0131rl\u0131\u011f\u0131nda, bilinmeyen bir cins olan bir yarat\u0131kt\u0131r. Sekiz \u00e7ift dar bacakl\u0131, uzun ve ince bir v\u00fccuda sahip.\nAnalizler, kas liflerinin son derece h\u0131zl\u0131 ve hassas hareketlere izin veren [SANS\u00dcRLEND\u0130] oldu\u011funu g\u00f6stermi\u015ftir. V\u00fccudun her k\u0131sm\u0131 anormal derecede esnektir ve uzuvlar hemen hemen her kat\u0131 y\u00fczeye yap\u0131\u015fan k\u00fc\u00e7\u00fck liflerle kapl\u0131d\u0131r.\nG\u00f6zlerin ya da kulaklar\u0131n yerine, [VER\u0130 \u00c7IKARILDI] vard\u0131r. Bu duyusal organ sadece ",
+      "descriptionExcerpt": "SCP-372, ba\u015f\u0131ndan kuyru\u011fa yakla\u015f\u0131k 2 metre uzunlu\u011funda ve yakla\u015f\u0131k 45 kilogram a\u011f\u0131rl\u0131\u011f\u0131nda, bilinmeyen bir cins olan bir yarat\u0131kt\u0131r. Sekiz \u00e7ift dar bacakl\u0131, uzun ve ince bir v\u00fccuda sahip.\nAnalizler, kas liflerinin son derece h\u0131zl\u0131 ve hassas hareketlere izin veren [SANS\u00dcRLEND\u0130] oldu\u011funu g\u00f6stermi\u015ftir. V\u00fccudun her k\u0131sm\u0131 anormal derecede esnektir ve uzuvlar hemen hemen her kat\u0131 y\u00fczeye yap\u0131\u015fan k\u00fc\u00e7\u00fck liflerle kapl\u0131d\u0131r.\nG\u00f6zlerin ya da kulaklar\u0131n yerine, [VER\u0130 \u00c7IKARILDI] vard\u0131r. Bu duyusal organ sadece",
       "tags": [
         "tag-be880d610a8dda6b1e3ed6e9",
         "tag-9b4e63bc98616de5c919766e",
@@ -10196,7 +10258,9 @@
         "zh-tr",
         "hu",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-376",
@@ -10379,7 +10443,7 @@
       "imageUrl": null,
       "objectClass": null,
       "rating": 0,
-      "descriptionExcerpt": "SCP-395, geli\u015fiminin yakla\u015f\u0131k 7. ay\u0131nda olan bir insan fet\u00fcs\u00fcd\u00fcr ve bir numune kavanozu i\u00e7inde muhafaza edilmektedir. Kavanoz, iz miktarda kan i\u00e7eren standart bir formaldehit \u00e7\u00f6zeltisiyle doldurulmu\u015ftur.\nBir kad\u0131n insan, kavanoza 5 metre mesafeye girdi\u011finde SCP-395, onu telepatik olarak etkileyebilmektedir. Bu noktada denek, SCP-395\u2019i kavanozundan \u00e7\u0131karma ve normal \u015fekilde beslenmesine izin verme ihtiyac\u0131 hisseder. Ya\u015f\u0131na veya t\u0131bbi durumuna bak\u0131lmaks\u0131z\u0131n t\u00fcm kad\u0131nlar, bu telepatik etki alt\u0131nda ",
+      "descriptionExcerpt": "SCP-395, geli\u015fiminin yakla\u015f\u0131k 7. ay\u0131nda olan bir insan fet\u00fcs\u00fcd\u00fcr ve bir numune kavanozu i\u00e7inde muhafaza edilmektedir. Kavanoz, iz miktarda kan i\u00e7eren standart bir formaldehit \u00e7\u00f6zeltisiyle doldurulmu\u015ftur.\nBir kad\u0131n insan, kavanoza 5 metre mesafeye girdi\u011finde SCP-395, onu telepatik olarak etkileyebilmektedir. Bu noktada denek, SCP-395\u2019i kavanozundan \u00e7\u0131karma ve normal \u015fekilde beslenmesine izin verme ihtiyac\u0131 hisseder. Ya\u015f\u0131na veya t\u0131bbi durumuna bak\u0131lmaks\u0131z\u0131n t\u00fcm kad\u0131nlar, bu telepatik etki alt\u0131nda",
       "tags": [
         "euclid",
         "tag-fabef588c1db79c3f5e296a2",
@@ -10409,7 +10473,9 @@
         "th",
         "zh-tr",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-397",
@@ -11323,7 +11389,7 @@
       "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-550/SCP-550.jpg",
       "objectClass": null,
       "rating": 1,
-      "descriptionExcerpt": "SCP-550, Avrupa Di\u015fbudak a\u011fac\u0131ndan elde edilen tahta tala\u015f\u0131ndan olu\u015fan bir insans\u0131d\u0131r. Boyu yakla\u015f\u0131k 2.1 metre, a\u011f\u0131rl\u0131\u011f\u0131 70 kg\u2019d\u0131r. SCP-550, ileri d\u00fczey kas erimesi ya\u015fam\u0131\u015f bir erkek insana olduk\u00e7a benzer; ancak d\u0131\u015f organlar\u0131 ve v\u00fccut organlar\u0131ndan tamamen yoksundur. SCP-550 genel olarak insanlara uyumlu davran\u0131r ancak sadece basit komutlar\u0131 yerine getirebilir. Alternatif ileti\u015fim sistemleri ile yap\u0131lan konu\u015fmalar, SCP-550\u2019nin bilin\u00e7li olup olmad\u0131\u011f\u0131n\u0131 belirleyememi\u015ftir. SCP-550\u2019nin herhangi bir ",
+      "descriptionExcerpt": "SCP-550, Avrupa Di\u015fbudak a\u011fac\u0131ndan elde edilen tahta tala\u015f\u0131ndan olu\u015fan bir insans\u0131d\u0131r. Boyu yakla\u015f\u0131k 2.1 metre, a\u011f\u0131rl\u0131\u011f\u0131 70 kg\u2019d\u0131r. SCP-550, ileri d\u00fczey kas erimesi ya\u015fam\u0131\u015f bir erkek insana olduk\u00e7a benzer; ancak d\u0131\u015f organlar\u0131 ve v\u00fccut organlar\u0131ndan tamamen yoksundur. SCP-550 genel olarak insanlara uyumlu davran\u0131r ancak sadece basit komutlar\u0131 yerine getirebilir. Alternatif ileti\u015fim sistemleri ile yap\u0131lan konu\u015fmalar, SCP-550\u2019nin bilin\u00e7li olup olmad\u0131\u011f\u0131n\u0131 belirleyememi\u015ftir. SCP-550\u2019nin herhangi bir",
       "tags": [
         "tag-146fe029907c1d939254876f"
       ],
@@ -11347,7 +11413,9 @@
         "pl",
         "pt",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-556",
@@ -11434,7 +11502,7 @@
       "imageUrl": null,
       "objectClass": null,
       "rating": -3,
-      "descriptionExcerpt": "SCP-567, [Veri Silinmi\u015f]'de Site-41'in alt\u0131ndaki zindanda yer almaktad\u0131r. SCP-567-8 ile SCP-567-1 olarak isimlendirilmi\u015f bir dizi sekiz h\u00fccreden olu\u015fur.\n\n\u0130nsanlar\u0131n / nesnelerin \u00e7o\u011funlu\u011fu ile h\u00fccreler haraketsiz kal\u0131r.Bununla birlikte, Ancak, belirli ko\u015fullara sahip bireyler bir h\u00fccre kap\u0131s\u0131n\u0131n 2.5 m yak\u0131n\u0131na geldi\u011finde,\n\nzincirler h\u00fccreden ge\u00e7er ve ki\u015fiyi/objeyi al\u0131koyup i\u00e7ine s\u00fcr\u00fckler. H\u00fccre kap\u0131s\u0131 kapand\u0131\u011f\u0131nda ve kilitlendi\u011finde, hem ki\u015fi/obje hem de zincirler yok olur ve hi\u00e7bir iz b\u0131rakmaz.\n",
+      "descriptionExcerpt": "SCP-567, [Veri Silinmi\u015f]'de Site-41'in alt\u0131ndaki zindanda yer almaktad\u0131r. SCP-567-8 ile SCP-567-1 olarak isimlendirilmi\u015f bir dizi sekiz h\u00fccreden olu\u015fur.\n\n\u0130nsanlar\u0131n / nesnelerin \u00e7o\u011funlu\u011fu ile h\u00fccreler haraketsiz kal\u0131r.Bununla birlikte, Ancak, belirli ko\u015fullara sahip bireyler bir h\u00fccre kap\u0131s\u0131n\u0131n 2.5 m yak\u0131n\u0131na geldi\u011finde,\n\nzincirler h\u00fccreden ge\u00e7er ve ki\u015fiyi/objeyi al\u0131koyup i\u00e7ine s\u00fcr\u00fckler. H\u00fccre kap\u0131s\u0131 kapand\u0131\u011f\u0131nda ve kilitlendi\u011finde, hem ki\u015fi/obje hem de zincirler yok olur ve hi\u00e7bir iz b\u0131rakmaz.",
       "tags": [
         "bina",
         "tag-90bd545b1cccf4e53c720de1"
@@ -11459,7 +11527,9 @@
         "pt",
         "vn",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-573",
@@ -12037,7 +12107,7 @@
       "imageUrl": null,
       "objectClass": "Safe",
       "rating": 1,
-      "descriptionExcerpt": "SCP-713, Windows 95 i\u015fletim sistemine sahip masa\u00fcst\u00fc bir bilgisayard\u0131r. Herhangi bir yap\u0131mc\u0131 marka logosu yoktur, bununla birlikte i\u00e7 k\u0131sm\u0131na yap\u0131lan incelemeler SCP-713'\u00fcn donan\u0131mlar\u0131n\u0131n, piyasaya 1990'l\u0131 y\u0131llarda \u00e7\u0131kan \u00fcr\u00fcnler ile uyu\u015ftu\u011funu g\u00f6stermi\u015ftir. Klavye ile farenin kablolar\u0131 yuvalar\u0131na lehimli halde olup kasada bir ekran soketi d\u0131\u015f\u0131nda ba\u015fka yuva yoktur. Bilgisayar\u0131n internet eri\u015fimi bulunmamaktad\u0131r. sabit diskin i\u00e7erisinde, o d\u00f6nemin piyasa yaz\u0131l\u0131mlar\u0131 yer almaktad\u0131r, \u00f6rne\u011fin [B\u0130LG\u0130 ",
+      "descriptionExcerpt": "SCP-713, Windows 95 i\u015fletim sistemine sahip masa\u00fcst\u00fc bir bilgisayard\u0131r. Herhangi bir yap\u0131mc\u0131 marka logosu yoktur, bununla birlikte i\u00e7 k\u0131sm\u0131na yap\u0131lan incelemeler SCP-713'\u00fcn donan\u0131mlar\u0131n\u0131n, piyasaya 1990'l\u0131 y\u0131llarda \u00e7\u0131kan \u00fcr\u00fcnler ile uyu\u015ftu\u011funu g\u00f6stermi\u015ftir. Klavye ile farenin kablolar\u0131 yuvalar\u0131na lehimli halde olup kasada bir ekran soketi d\u0131\u015f\u0131nda ba\u015fka yuva yoktur. Bilgisayar\u0131n internet eri\u015fimi bulunmamaktad\u0131r. sabit diskin i\u00e7erisinde, o d\u00f6nemin piyasa yaz\u0131l\u0131mlar\u0131 yer almaktad\u0131r, \u00f6rne\u011fin [B\u0130LG\u0130",
       "tags": [
         "bilgisayar",
         "elektronik",
@@ -12065,7 +12135,9 @@
         "pt",
         "th",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-714",
@@ -12411,7 +12483,7 @@
       "imageUrl": "https://scpvakfi.wdfiles.com/local--files/scp-882/Gears2.jpg",
       "objectClass": null,
       "rating": 5,
-      "descriptionExcerpt": "SCP-882, \u00e7e\u015fitli metallerin kar\u0131\u015f\u0131m\u0131ndan olu\u015fan, di\u015fli, kablo, kasnak, vida ve kay\u0131\u015flar\u0131n rastgele bir birle\u015fiminden olu\u015fan bir makinedir. Nesnenin yakalanma an\u0131ndaki boyutu yakla\u015f\u0131k seksen yedi metrek\u00fcpt\u00fc. \u015eu anki boyut yakla\u015f\u0131k on iki metrek\u00fcpt\u00fcr. SCP-882 deniz suyunda \u00e7abuk paslan\u0131r. Tan\u0131mlanabilen bir enerji kayna\u011f\u0131 bulunamam\u0131\u015ft\u0131r, ancak par\u00e7alar pasla kaplanmad\u0131\u011f\u0131 s\u00fcrece \u00e7al\u0131\u015f\u0131r. SCP-882, hangi aktiflik seviyesine ula\u015ft\u0131\u011f\u0131 \u00f6nemli olmaks\u0131z\u0131n her zaman tamamen sessizdir.\n\nNesneye dokunan her ",
+      "descriptionExcerpt": "SCP-882, \u00e7e\u015fitli metallerin kar\u0131\u015f\u0131m\u0131ndan olu\u015fan, di\u015fli, kablo, kasnak, vida ve kay\u0131\u015flar\u0131n rastgele bir birle\u015fiminden olu\u015fan bir makinedir. Nesnenin yakalanma an\u0131ndaki boyutu yakla\u015f\u0131k seksen yedi metrek\u00fcpt\u00fc. \u015eu anki boyut yakla\u015f\u0131k on iki metrek\u00fcpt\u00fcr. SCP-882 deniz suyunda \u00e7abuk paslan\u0131r. Tan\u0131mlanabilen bir enerji kayna\u011f\u0131 bulunamam\u0131\u015ft\u0131r, ancak par\u00e7alar pasla kaplanmad\u0131\u011f\u0131 s\u00fcrece \u00e7al\u0131\u015f\u0131r. SCP-882, hangi aktiflik seviyesine ula\u015ft\u0131\u011f\u0131 \u00f6nemli olmaks\u0131z\u0131n her zaman tamamen sessizdir.\n\nNesneye dokunan her",
       "tags": [
         "tag-72c12a1bcb29eca6518c030c",
         "tag-0987553514a1998dba17b2ca",
@@ -12450,7 +12522,9 @@
         "zh-tr",
         "el",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-894",
@@ -12753,7 +12827,7 @@
       "imageUrl": null,
       "objectClass": null,
       "rating": 1,
-      "descriptionExcerpt": "SCP-913 a\u015f\u0131r\u0131 h\u0131zl\u0131 bir metabolizmas\u0131 olan orta ya\u015fl\u0131 bir Afroamerikan erkektir. SCP-913, bir insan\u0131n g\u00fcnl\u00fck kalori ihtiyac\u0131n\u0131 2 saatte bir almak zorundad\u0131r. SCP-913'\u00fcn v\u00fccut s\u0131cakl\u0131\u011f\u0131n\u0131n [S\u0130L\u0130ND\u0130] kadar oldu\u011fu g\u00f6r\u00fclm\u00fc\u015ft\u00fcr.\nSCP-913, 2 saat i\u00e7erisinde yeterli d\u00fczeyde kalori alamazsa bir trans haline girer. Bu haldeyken SCP-913, g\u00f6r\u00fcn\u00fcrdeki t\u00fcm kat\u0131 maddeleri ayr\u0131\u015ft\u0131r\u0131p sindirir. Bu sindirim s\u00fcreci, nesnenin canl\u0131 veya cans\u0131z olmas\u0131na bakmaks\u0131z\u0131n ve materyal ayr\u0131m\u0131 yapmadan odun, plastik ve metal ",
+      "descriptionExcerpt": "SCP-913 a\u015f\u0131r\u0131 h\u0131zl\u0131 bir metabolizmas\u0131 olan orta ya\u015fl\u0131 bir Afroamerikan erkektir. SCP-913, bir insan\u0131n g\u00fcnl\u00fck kalori ihtiyac\u0131n\u0131 2 saatte bir almak zorundad\u0131r. SCP-913'\u00fcn v\u00fccut s\u0131cakl\u0131\u011f\u0131n\u0131n [S\u0130L\u0130ND\u0130] kadar oldu\u011fu g\u00f6r\u00fclm\u00fc\u015ft\u00fcr.\nSCP-913, 2 saat i\u00e7erisinde yeterli d\u00fczeyde kalori alamazsa bir trans haline girer. Bu haldeyken SCP-913, g\u00f6r\u00fcn\u00fcrdeki t\u00fcm kat\u0131 maddeleri ayr\u0131\u015ft\u0131r\u0131p sindirir. Bu sindirim s\u00fcreci, nesnenin canl\u0131 veya cans\u0131z olmas\u0131na bakmaks\u0131z\u0131n ve materyal ayr\u0131m\u0131 yapmadan odun, plastik ve metal",
       "tags": [
         "tag-be880d610a8dda6b1e3ed6e9",
         "tag-4b4ca1b22933bd46dd3ddd87",
@@ -12790,7 +12864,9 @@
         "zh-tr",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-914",
@@ -12896,7 +12972,7 @@
       "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-920/MrLost2.jpg",
       "objectClass": null,
       "rating": 2,
-      "descriptionExcerpt": "SCP-920 ya\u015f\u0131 tespit edilemeyen, Asya k\u00f6kenli bir erkektir. SCP-920'yi herhangi bir y\u00f6ne ta\u015f\u0131mak, hareket ettirmek, veya y\u00f6nlendirmek fiziksel anlamda imkans\u0131zd\u0131r. SCP-920, kendi hareketlerini kontrol etmekte g\u00fc\u00e7l\u00fck ya\u015famaktad\u0131r; bundan dolay\u0131 \u00e7o\u011funlukla gidece\u011fi yere karar veremeden ortal\u0131kta \"ba\u015f\u0131bo\u015f\" bir \u015fekilde dola\u015f\u0131r.\nSCP-920'yi herhangi bir yere ta\u015f\u0131ma giri\u015fimleri, onu ta\u015f\u0131maya yeltenen bireylerin kaybolmas\u0131 ile sonu\u00e7lan\u0131r. SCP-920'yi bir y\u00f6ne do\u011fru hareket ettirme giri\u015fimleri, SCP-920'in ",
+      "descriptionExcerpt": "SCP-920 ya\u015f\u0131 tespit edilemeyen, Asya k\u00f6kenli bir erkektir. SCP-920'yi herhangi bir y\u00f6ne ta\u015f\u0131mak, hareket ettirmek, veya y\u00f6nlendirmek fiziksel anlamda imkans\u0131zd\u0131r. SCP-920, kendi hareketlerini kontrol etmekte g\u00fc\u00e7l\u00fck ya\u015famaktad\u0131r; bundan dolay\u0131 \u00e7o\u011funlukla gidece\u011fi yere karar veremeden ortal\u0131kta \"ba\u015f\u0131bo\u015f\" bir \u015fekilde dola\u015f\u0131r.\nSCP-920'yi herhangi bir yere ta\u015f\u0131ma giri\u015fimleri, onu ta\u015f\u0131maya yeltenen bireylerin kaybolmas\u0131 ile sonu\u00e7lan\u0131r. SCP-920'yi bir y\u00f6ne do\u011fru hareket ettirme giri\u015fimleri, SCP-920'in",
       "tags": [
         "dr-wondertainment",
         "tag-72c12a1bcb29eca6518c030c",
@@ -12932,7 +13008,9 @@
         "vn",
         "zh-tr",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-939",
@@ -12991,7 +13069,7 @@
       "imageUrl": "https://scpvakfi.wdfiles.com/local--resized-images/scp-944/labirent/medium.jpg",
       "objectClass": null,
       "rating": 0,
-      "descriptionExcerpt": "SCP-944, ge\u00e7mi\u015ftet \u2588\u2588\u2588 \u2588\u2588\u2588\u2588\u2588 adresindeki, \u2588\u2588\u2588\u2588\u2588\u2588\u2588 \u2588\u2588\u2588\u2588\u2588\u2588 Lunapark'\u0131nda bulunan \"Ayna Labirent\" olarak tasarlanm\u0131\u015f tek katl\u0131 bir binad\u0131r. Bir dizi anomali g\u00f6zlemlendikten sonra bina Vak\u0131f taraf\u0131ndan koruma alt\u0131na al\u0131nm\u0131\u015ft\u0131r. Etkinin lokal olarak g\u00f6zlemlenebilmesi nedeniyle lunapark\u0131n geri kalan\u0131 kamuya a\u00e7\u0131kt\u0131r.\nBelirli zaman aral\u0131klar\u0131nda, SCP-944'e giri\u015f yapan bireyler labirent boyunca belirlenen yollardan ge\u00e7erek aynalar\u0131n i\u00e7ine girebilmektedir. Kapsaml\u0131 deneylere ra\u011fmen, Vak\u0131f anomalilerin ne ",
+      "descriptionExcerpt": "SCP-944, ge\u00e7mi\u015ftet \u2588\u2588\u2588 \u2588\u2588\u2588\u2588\u2588 adresindeki, \u2588\u2588\u2588\u2588\u2588\u2588\u2588 \u2588\u2588\u2588\u2588\u2588\u2588 Lunapark'\u0131nda bulunan \"Ayna Labirent\" olarak tasarlanm\u0131\u015f tek katl\u0131 bir binad\u0131r. Bir dizi anomali g\u00f6zlemlendikten sonra bina Vak\u0131f taraf\u0131ndan koruma alt\u0131na al\u0131nm\u0131\u015ft\u0131r. Etkinin lokal olarak g\u00f6zlemlenebilmesi nedeniyle lunapark\u0131n geri kalan\u0131 kamuya a\u00e7\u0131kt\u0131r.\nBelirli zaman aral\u0131klar\u0131nda, SCP-944'e giri\u015f yapan bireyler labirent boyunca belirlenen yollardan ge\u00e7erek aynalar\u0131n i\u00e7ine girebilmektedir. Kapsaml\u0131 deneylere ra\u011fmen, Vak\u0131f anomalilerin ne",
       "tags": [],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -13014,7 +13092,9 @@
         "th",
         "zh-tr",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-953",
@@ -13163,7 +13243,7 @@
       "imageUrl": null,
       "objectClass": null,
       "rating": 5,
-      "descriptionExcerpt": "SCP-970, odalar\u0131n birbirini devaml\u0131 tekrar etti\u011fi boyutsal bir anormalliktir. Anormallik, duvarlarda d\u00fcz bir \u00e7izgide birbiri ard\u0131na beliren kap\u0131lardan meydana gelmektedir. Kap\u0131lardan birinden giren birey, kendisini di\u011fer kap\u0131dan \u00e7\u0131karken bulur. B\u00f6ylelikle kap\u0131lara devaml\u0131 olarak sonsuza dek girilebilmektedir. Var olan bu d\u00f6ng\u00fc, etkilenen odaya biti\u015fik odalarda herhangi bir de\u011fi\u015fikli\u011fe sebep olmaz. Bu anormalli\u011fin nas\u0131l meydana geldi\u011fi hen\u00fcz bilinmemektedir.\nSCP-970-01, Sekt\u00f6r 19\u2019da yer alan bir ",
+      "descriptionExcerpt": "SCP-970, odalar\u0131n birbirini devaml\u0131 tekrar etti\u011fi boyutsal bir anormalliktir. Anormallik, duvarlarda d\u00fcz bir \u00e7izgide birbiri ard\u0131na beliren kap\u0131lardan meydana gelmektedir. Kap\u0131lardan birinden giren birey, kendisini di\u011fer kap\u0131dan \u00e7\u0131karken bulur. B\u00f6ylelikle kap\u0131lara devaml\u0131 olarak sonsuza dek girilebilmektedir. Var olan bu d\u00f6ng\u00fc, etkilenen odaya biti\u015fik odalarda herhangi bir de\u011fi\u015fikli\u011fe sebep olmaz. Bu anormalli\u011fin nas\u0131l meydana geldi\u011fi hen\u00fcz bilinmemektedir.\nSCP-970-01, Sekt\u00f6r 19\u2019da yer alan bir",
       "tags": [
         "tag-6369fa64549a5208a5076021",
         "boyutsal",
@@ -13195,7 +13275,9 @@
         "th",
         "ua",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-973",
@@ -13669,7 +13751,7 @@
       "imageUrl": null,
       "objectClass": null,
       "rating": 5,
-      "descriptionExcerpt": "SCP-1033, New York'ta ke\u015ffedildi ve birka\u00e7 tan\u0131\u011fa g\u00f6re \"yolun ortas\u0131nda maddele\u015fti\". Tan\u0131klarla yap\u0131lan g\u00f6r\u00fc\u015fmelere g\u00f6re, b\u00f6lgedeki insanlar\u0131n k\u00f6reltici bir fla\u015f patlamas\u0131 ve bununla birlikte iki saniyelik, her y\u00f6nden gelen bir statik sese maruz kald\u0131klar\u0131 neticesine var\u0131lm\u0131\u015ft\u0131r. Tan\u0131klara, g\u00f6r\u00fc\u015fmenin tamamlanmas\u0131n\u0131n ard\u0131ndan A S\u0131n\u0131f\u0131 amnestik verildi ve ard\u0131ndan olayla ilgili medya karartma uyguland\u0131.\nMaddele\u015fme alan\u0131ndaki ilk incelemede, Vak\u0131f ara\u015ft\u0131rmac\u0131lar\u0131 SCP-1033'\u00fcn y\u00fcksek enerjili gama, ",
+      "descriptionExcerpt": "SCP-1033, New York'ta ke\u015ffedildi ve birka\u00e7 tan\u0131\u011fa g\u00f6re \"yolun ortas\u0131nda maddele\u015fti\". Tan\u0131klarla yap\u0131lan g\u00f6r\u00fc\u015fmelere g\u00f6re, b\u00f6lgedeki insanlar\u0131n k\u00f6reltici bir fla\u015f patlamas\u0131 ve bununla birlikte iki saniyelik, her y\u00f6nden gelen bir statik sese maruz kald\u0131klar\u0131 neticesine var\u0131lm\u0131\u015ft\u0131r. Tan\u0131klara, g\u00f6r\u00fc\u015fmenin tamamlanmas\u0131n\u0131n ard\u0131ndan A S\u0131n\u0131f\u0131 amnestik verildi ve ard\u0131ndan olayla ilgili medya karartma uyguland\u0131.\nMaddele\u015fme alan\u0131ndaki ilk incelemede, Vak\u0131f ara\u015ft\u0131rmac\u0131lar\u0131 SCP-1033'\u00fcn y\u00fcksek enerjili gama,",
       "tags": [
         "anormal-olay",
         "tag-19ff0f7f50a413a2a45cc8e5",
@@ -13700,7 +13782,9 @@
         "pt",
         "zh-tr",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-1045",
@@ -14031,7 +14115,7 @@
       "imageUrl": "http://scp-wiki.wdfiles.com/local--files/adoption-poster-bandit/raccoon.jpg",
       "objectClass": "Safe",
       "rating": -2,
-      "descriptionExcerpt": "SCP-1152, y\u00fczeysel olarak Procyon lotor (yayg\u0131n rakun) t\u00fcrlerinin standart \u00fcyelerine benziyordur. SCP-1152, burundan kuyru\u011funun ucuna kadar sadece 60 cm olmas\u0131na ve mevcut yetersiz beslenme durumuna ra\u011fmen yakla\u015f\u0131k 75 kg a\u011f\u0131rl\u0131\u011f\u0131ndad\u0131r. SCP-1152, t\u00fcr\u00fcn\u00fcn di\u011fer \u00fcyerlerinin genomuna sahip de\u011fildir, ancak insanlar\u0131nkiyle neredeyse ayn\u0131 genoma sahiptir. SCP-1152'nin genomunu Vak\u0131f Veritaban\u0131na girdikten sonra, genetik kodunun \u00f6lm\u00fc\u015f Ajan \u2588\u2588\u2588\u2588'inkiyle %99.87 ayn\u0131 oldu\u011fu ke\u015ffedilmi\u015fti.1 \u0130nsan DNA's\u0131na ",
+      "descriptionExcerpt": "SCP-1152, y\u00fczeysel olarak Procyon lotor (yayg\u0131n rakun) t\u00fcrlerinin standart \u00fcyelerine benziyordur. SCP-1152, burundan kuyru\u011funun ucuna kadar sadece 60 cm olmas\u0131na ve mevcut yetersiz beslenme durumuna ra\u011fmen yakla\u015f\u0131k 75 kg a\u011f\u0131rl\u0131\u011f\u0131ndad\u0131r. SCP-1152, t\u00fcr\u00fcn\u00fcn di\u011fer \u00fcyerlerinin genomuna sahip de\u011fildir, ancak insanlar\u0131nkiyle neredeyse ayn\u0131 genoma sahiptir. SCP-1152'nin genomunu Vak\u0131f Veritaban\u0131na girdikten sonra, genetik kodunun \u00f6lm\u00fc\u015f Ajan \u2588\u2588\u2588\u2588'inkiyle %99.87 ayn\u0131 oldu\u011fu ke\u015ffedilmi\u015fti.1 \u0130nsan DNA's\u0131na",
       "tags": [
         "tag-be880d610a8dda6b1e3ed6e9",
         "tag-1b7bc16f5ec8bf8c1cdf293d",
@@ -14065,7 +14149,9 @@
         "pt",
         "th",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-1171",
@@ -14428,7 +14514,7 @@
       "imageUrl": "https://scpvakfi.wdfiles.com/local--files/scp-1489/scp-1489.jpg",
       "objectClass": null,
       "rating": 2,
-      "descriptionExcerpt": "SCP-1489 soyut bir demiryolu trenidir. SCP-1489, 18 demiryolu vagonundan olu\u015fan bir buharl\u0131 lokomotifi takip eder ve bunlar yakla\u015f\u0131k 40 km/s h\u0131zla s\u00fcrekli hareket ederler. Lokomotif, do\u011frudan g\u00f6zlemleyen insanlar taraf\u0131ndan g\u00f6r\u00fclebilir ve duyulabilirken, t\u00fcm dolayl\u0131 veya kay\u0131tl\u0131 g\u00f6zlem bi\u00e7imlerinde tamamen g\u00f6r\u00fcnmezdir. SCP-1489'un g\u00f6r\u00fcn\u00fcrde hi\u00e7bir fiziksel maddesi yoktur ve yoluna \u00e7\u0131kan herhangi bir malzemeden kolayca ge\u00e7ebilir. Ancak, 1860 ile 1870 y\u0131llar\u0131 aras\u0131nda bilinmeyen bir tarihten \u00f6nce ",
+      "descriptionExcerpt": "SCP-1489 soyut bir demiryolu trenidir. SCP-1489, 18 demiryolu vagonundan olu\u015fan bir buharl\u0131 lokomotifi takip eder ve bunlar yakla\u015f\u0131k 40 km/s h\u0131zla s\u00fcrekli hareket ederler. Lokomotif, do\u011frudan g\u00f6zlemleyen insanlar taraf\u0131ndan g\u00f6r\u00fclebilir ve duyulabilirken, t\u00fcm dolayl\u0131 veya kay\u0131tl\u0131 g\u00f6zlem bi\u00e7imlerinde tamamen g\u00f6r\u00fcnmezdir. SCP-1489'un g\u00f6r\u00fcn\u00fcrde hi\u00e7bir fiziksel maddesi yoktur ve yoluna \u00e7\u0131kan herhangi bir malzemeden kolayca ge\u00e7ebilir. Ancak, 1860 ile 1870 y\u0131llar\u0131 aras\u0131nda bilinmeyen bir tarihten \u00f6nce",
       "tags": [
         "tag-8fd55e80900c2a72f7bbdbd7",
         "tag-146fe029907c1d939254876f",
@@ -14461,7 +14547,9 @@
         "ua",
         "vn",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-1504",
@@ -15259,7 +15347,7 @@
       "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-1799/1799.jpg",
       "objectClass": "Safe",
       "rating": 1,
-      "descriptionExcerpt": "SCP-1799, 1.2 metre boyunda ve 58kg a\u011f\u0131rl\u0131\u011f\u0131nda olan erkek bir insans\u0131d\u0131r. SCP-1799'un fiziksel \u00f6zellikleri bir palya\u00e7oyu and\u0131r\u0131r: Sa\u00e7\u0131 uzamaz, derisinin rengi yoktur, burnu k\u0131pk\u0131rm\u0131z\u0131d\u0131r ve uzun ayaklar\u0131 vard\u0131r. Y\u00fcz\u00fcn\u00fcn rengi, sirk oyuncular\u0131 taraf\u0131ndan kullan\u0131lan makyaj\u0131 and\u0131r\u0131r.\nSCP-1799'un a\u011fz\u0131ndan \u00e7\u0131kan s\u00f6zler onu dinleyen birey taraf\u0131ndan bir \u015faka olarak alg\u0131lan\u0131r. SCP-1799 konu\u015fmaya devam ettik\u00e7e \"\u015fakalar\" gitgide daha komik bir hal al\u0131r ve en sonunda birey g\u00fclmekten kendini kaybeder. Bu ",
+      "descriptionExcerpt": "SCP-1799, 1.2 metre boyunda ve 58kg a\u011f\u0131rl\u0131\u011f\u0131nda olan erkek bir insans\u0131d\u0131r. SCP-1799'un fiziksel \u00f6zellikleri bir palya\u00e7oyu and\u0131r\u0131r: Sa\u00e7\u0131 uzamaz, derisinin rengi yoktur, burnu k\u0131pk\u0131rm\u0131z\u0131d\u0131r ve uzun ayaklar\u0131 vard\u0131r. Y\u00fcz\u00fcn\u00fcn rengi, sirk oyuncular\u0131 taraf\u0131ndan kullan\u0131lan makyaj\u0131 and\u0131r\u0131r.\nSCP-1799'un a\u011fz\u0131ndan \u00e7\u0131kan s\u00f6zler onu dinleyen birey taraf\u0131ndan bir \u015faka olarak alg\u0131lan\u0131r. SCP-1799 konu\u015fmaya devam ettik\u00e7e \"\u015fakalar\" gitgide daha komik bir hal al\u0131r ve en sonunda birey g\u00fclmekten kendini kaybeder. Bu",
       "tags": [
         "tag-4b4ca1b22933bd46dd3ddd87",
         "doktor-gears",
@@ -15298,7 +15386,9 @@
         "vn",
         "zh-tr",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-1833",
@@ -15309,7 +15399,7 @@
       "imageUrl": "https://scpvakfi.wdfiles.com/local--files/scp-1833/1833-new.jpg",
       "objectClass": "Safe",
       "rating": 2,
-      "descriptionExcerpt": "SCP-1833 \u2588\u2588\u2588\u2588\u2588\u2588\u2588 Lisesi'nin 1976 y\u0131ll\u0131\u011f\u0131n\u0131n bir kopyas\u0131d\u0131r. G\u00f6r\u00fcn\u00fc\u015f\u00fc di\u011fer kopyalarla tutar\u0131ld\u0131r ve ya\u015f\u0131na g\u00f6re normal kullan\u0131m y\u0131pranmalar\u0131 g\u00f6z\u00fckmektedir. Y\u0131ll\u0131\u011f\u0131n ba\u015fl\u0131\u011f\u0131 \"Reflections of '76\"'d\u0131r. Sert kapakl\u0131d\u0131r ve tam olarak elli sayfa i\u00e7ermektedir. Y\u0131ll\u0131k 5 b\u00f6l\u00fcme ayr\u0131lm\u0131\u015ft\u0131r: t\u00fcm \u00f6\u011frencilerin foto\u011fraflar\u0131n\u0131n bulundu\u011fu bir alb\u00fcm, e\u011fitim-\u00f6\u011fretim y\u0131l\u0131 boyunca \u00e7ekilen foto\u011fraflar, kul\u00fcp foto\u011fraflar\u0131, spor etkinliklerinden foto\u011fraflar ve bir imza b\u00f6l\u00fcm\u00fc.\nSCP-1833 lise mezunu herhangi bir birey ",
+      "descriptionExcerpt": "SCP-1833 \u2588\u2588\u2588\u2588\u2588\u2588\u2588 Lisesi'nin 1976 y\u0131ll\u0131\u011f\u0131n\u0131n bir kopyas\u0131d\u0131r. G\u00f6r\u00fcn\u00fc\u015f\u00fc di\u011fer kopyalarla tutar\u0131ld\u0131r ve ya\u015f\u0131na g\u00f6re normal kullan\u0131m y\u0131pranmalar\u0131 g\u00f6z\u00fckmektedir. Y\u0131ll\u0131\u011f\u0131n ba\u015fl\u0131\u011f\u0131 \"Reflections of '76\"'d\u0131r. Sert kapakl\u0131d\u0131r ve tam olarak elli sayfa i\u00e7ermektedir. Y\u0131ll\u0131k 5 b\u00f6l\u00fcme ayr\u0131lm\u0131\u015ft\u0131r: t\u00fcm \u00f6\u011frencilerin foto\u011fraflar\u0131n\u0131n bulundu\u011fu bir alb\u00fcm, e\u011fitim-\u00f6\u011fretim y\u0131l\u0131 boyunca \u00e7ekilen foto\u011fraflar, kul\u00fcp foto\u011fraflar\u0131, spor etkinliklerinden foto\u011fraflar ve bir imza b\u00f6l\u00fcm\u00fc.\nSCP-1833 lise mezunu herhangi bir birey",
       "tags": [
         "tag-9c30aa24f15d6a26b9581147",
         "tag-da3b31ed5c6e478a093f44cd",
@@ -15345,7 +15435,9 @@
         "vn",
         "zh-tr",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-1867",
@@ -15589,7 +15681,7 @@
       "imageUrl": "https://scpvakfi.wdfiles.com/local--files/scp-1960/scp-1960-small.gif",
       "objectClass": null,
       "rating": -1,
-      "descriptionExcerpt": "SCP-1960, Nept\u00fcn gezegeninin y\u00fcksek \u00e7\u00f6z\u00fcn\u00fcrl\u00fckl\u00fc foto\u011fraflar\u0131n\u0131n \u00fczerinde olan, k\u0131sa metin ifadeleri \u015feklinde tezah\u00fcr eden, do\u011fas\u0131 veya k\u00f6keni bilinmeyen ak\u0131ll\u0131 bir varl\u0131kt\u0131r. SCP-1960'tan gelen ileti\u015fimler, Nept\u00fcn'\u00fcn [\u00c7IKARILDI] de\u011ferinden daha y\u00fcksek bir \u00e7\u00f6z\u00fcn\u00fcrl\u00fckte \u00e7ekilen t\u00fcm foto\u011fraflar\u0131nda g\u00f6r\u00fcn\u00fcr, Voyager 2 uzay arac\u0131 taraf\u0131ndan 1989 u\u00e7u\u015fu s\u0131ras\u0131nda \u00e7ekilen gezegenin t\u00fcm foto\u011fraflar\u0131 ve Hubble Uzay Teleskobu'ndan ve d\u00fc\u015f\u00fck D\u00fcnya y\u00f6r\u00fcngesindeki di\u011fer teleskoplardan \u00e7ekilen birka\u00e7 foto\u011fraf ",
+      "descriptionExcerpt": "SCP-1960, Nept\u00fcn gezegeninin y\u00fcksek \u00e7\u00f6z\u00fcn\u00fcrl\u00fckl\u00fc foto\u011fraflar\u0131n\u0131n \u00fczerinde olan, k\u0131sa metin ifadeleri \u015feklinde tezah\u00fcr eden, do\u011fas\u0131 veya k\u00f6keni bilinmeyen ak\u0131ll\u0131 bir varl\u0131kt\u0131r. SCP-1960'tan gelen ileti\u015fimler, Nept\u00fcn'\u00fcn [\u00c7IKARILDI] de\u011ferinden daha y\u00fcksek bir \u00e7\u00f6z\u00fcn\u00fcrl\u00fckte \u00e7ekilen t\u00fcm foto\u011fraflar\u0131nda g\u00f6r\u00fcn\u00fcr, Voyager 2 uzay arac\u0131 taraf\u0131ndan 1989 u\u00e7u\u015fu s\u0131ras\u0131nda \u00e7ekilen gezegenin t\u00fcm foto\u011fraflar\u0131 ve Hubble Uzay Teleskobu'ndan ve d\u00fc\u015f\u00fck D\u00fcnya y\u00f6r\u00fcngesindeki di\u011fer teleskoplardan \u00e7ekilen birka\u00e7 foto\u011fraf",
       "tags": [
         "tag-be880d610a8dda6b1e3ed6e9",
         "tag-6b31efa431acc365feb08872",
@@ -15618,7 +15710,9 @@
         "pl",
         "th",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     },
     {
       "itemId": "scp-series-1981",
@@ -15629,7 +15723,7 @@
       "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-1981/ronreagancutupfs.jpg",
       "objectClass": "Safe",
       "rating": 2,
-      "descriptionExcerpt": "SCP-1981, standart bir Betamax kasetidir. \"RONALD REGAN CUT UP WHILE TALKING\" ke\u00e7eli kalemle yap\u0131\u015fkanl\u0131 etiketin \u00fczerine el yaz\u0131s\u0131 ile yaz\u0131lm\u0131\u015ft\u0131r. Laboratuvar analizi, SCP-1981'in s\u0131radan bir malzemeden yap\u0131ld\u0131\u011f\u0131n\u0131 ve seri numaralar\u0131n\u0131n Eyl\u00fcl 1980'de \u00fcretilen ev kasetlerine kar\u015f\u0131l\u0131k geldi\u011fini g\u00f6steriyor. SCP-1981 ile ilk olarak 1991'de Ronald Reagan Ba\u015fkanl\u0131k K\u00fct\u00fcphanesi'nde bir dosyalama g\u00f6revlisi kar\u015f\u0131la\u015ft\u0131 ve onu izledikten sonra kasetin yarat\u0131c\u0131s\u0131 \u00fczerinde \"m\u00fcstehcenlik su\u00e7lamas\u0131\" bulunmak ",
+      "descriptionExcerpt": "SCP-1981, standart bir Betamax kasetidir. \"RONALD REGAN CUT UP WHILE TALKING\" ke\u00e7eli kalemle yap\u0131\u015fkanl\u0131 etiketin \u00fczerine el yaz\u0131s\u0131 ile yaz\u0131lm\u0131\u015ft\u0131r. Laboratuvar analizi, SCP-1981'in s\u0131radan bir malzemeden yap\u0131ld\u0131\u011f\u0131n\u0131 ve seri numaralar\u0131n\u0131n Eyl\u00fcl 1980'de \u00fcretilen ev kasetlerine kar\u015f\u0131l\u0131k geldi\u011fini g\u00f6steriyor. SCP-1981 ile ilk olarak 1991'de Ronald Reagan Ba\u015fkanl\u0131k K\u00fct\u00fcphanesi'nde bir dosyalama g\u00f6revlisi kar\u015f\u0131la\u015ft\u0131 ve onu izledikten sonra kasetin yarat\u0131c\u0131s\u0131 \u00fczerinde \"m\u00fcstehcenlik su\u00e7lamas\u0131\" bulunmak",
       "tags": [
         "gizem",
         "tag-e4c650f02d94ac2e4c283f20",
@@ -15667,7 +15761,9 @@
         "zh-tr",
         "hu",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:38.863Z"
     }
   ],
   "tagSchemaVersion": 2

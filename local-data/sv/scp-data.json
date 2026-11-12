@@ -1,7 +1,7 @@
 {
   "totalCount": 152,
   "language": "sv",
-  "timestamp": "2026-11-10T00:49:26.482Z",
+  "timestamp": "2026-11-12T13:48:20.254Z",
   "duration": 91,
   "status": "completed",
   "statistics": {
@@ -44,7 +44,7 @@
       "imageUrl": null,
       "objectClass": "Euclid",
       "rating": 10,
-      "descriptionExcerpt": "SCP-002-ND \u00e4r ett samlingsbegrepp f\u00f6r en komplex anomal infektion med flera uttrycksformer. Infektionens f\u00f6rsta form, ben\u00e4mnd SCP-002-ND-1, utg\u00f6rs av ett datavirus med kraftigt sinnesf\u00f6r\u00e4ndrande och tv\u00e5ngsm\u00e4ssiga egenskaper. Viruset tycks ha utvecklats i syfte att infiltrera servrarna hos olika bankf\u00f6retag och kan i dess inaktiva stadie identifieras som en exekverbar fil med namnet \"EttBusigtVirus.exe\". I dess aktiva stadie fungerar viruset genom att via en n\u00e4tverksuppkoppling f\u00f6rst identifiera ",
+      "descriptionExcerpt": "SCP-002-ND \u00e4r ett samlingsbegrepp f\u00f6r en komplex anomal infektion med flera uttrycksformer. Infektionens f\u00f6rsta form, ben\u00e4mnd SCP-002-ND-1, utg\u00f6rs av ett datavirus med kraftigt sinnesf\u00f6r\u00e4ndrande och tv\u00e5ngsm\u00e4ssiga egenskaper. Viruset tycks ha utvecklats i syfte att infiltrera servrarna hos olika bankf\u00f6retag och kan i dess inaktiva stadie identifieras som en exekverbar fil med namnet \"EttBusigtVirus.exe\". I dess aktiva stadie fungerar viruset genom att via en n\u00e4tverksuppkoppling f\u00f6rst identifiera",
       "tags": [
         "euklides",
         "scp-nd-sv",
@@ -61,7 +61,9 @@
       "createdAt": "2026-11-10T00:38:30.669Z",
       "translatedLanguages": [
         "sv"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-nd-003",
@@ -660,7 +662,7 @@
       "imageUrl": null,
       "objectClass": null,
       "rating": 0,
-      "descriptionExcerpt": "SCP-010 utg\u00f6rs av sex (6) till synes identiska gjutj\u00e4rnshalsband med numrerade metallbrickor samt en (1) fj\u00e4rrkontroll. Kontrollen ben\u00e4mns SCP-010-1. Halsbanden ben\u00e4mns som SCP-010-2 till SCP-010-7. Halsbanden inneh\u00e5ller invecklade elektroniska komponenter och drivs av sm\u00e5 (5 mm i diameter, 2 mm tjocka) 100 V-batterier. Dessa batterier \u00e4r uppladdningsbara.\nFj\u00e4rrkontrollen \u00e4r en tung svart l\u00e5da som liknar en gammal handh\u00e5llen radios\u00e4ndare/mottagare med en primitiv bl\u00e5/vit katodstr\u00e5lesk\u00e4rm och en ",
+      "descriptionExcerpt": "SCP-010 utg\u00f6rs av sex (6) till synes identiska gjutj\u00e4rnshalsband med numrerade metallbrickor samt en (1) fj\u00e4rrkontroll. Kontrollen ben\u00e4mns SCP-010-1. Halsbanden ben\u00e4mns som SCP-010-2 till SCP-010-7. Halsbanden inneh\u00e5ller invecklade elektroniska komponenter och drivs av sm\u00e5 (5 mm i diameter, 2 mm tjocka) 100 V-batterier. Dessa batterier \u00e4r uppladdningsbara.\nFj\u00e4rrkontrollen \u00e4r en tung svart l\u00e5da som liknar en gammal handh\u00e5llen radios\u00e4ndare/mottagare med en primitiv bl\u00e5/vit katodstr\u00e5lesk\u00e4rm och en",
       "tags": [
         "tag-7b8403fdf20b7f7c2666e679",
         "tag-cf1d8bfe3efc460dc81b5406",
@@ -702,7 +704,9 @@
         "sl",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-011",
@@ -713,7 +717,7 @@
       "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-011/SCP011.jpg",
       "objectClass": null,
       "rating": 0,
-      "descriptionExcerpt": "SCP-011 \u00e4r en minnesstaty \u00f6ver inb\u00f6rdeskriget bel\u00e4gen i Woodstock, Vermont. Statyn f\u00f6rest\u00e4ller en ung manlig soldat h\u00e5llandes en musk\u00f6t vid hans sida, och \u00e4r huggen ur granit som brutits inom omr\u00e5det. Stundtals, har SCP-011 observerats lyfta dess musk\u00f6t mot himlen f\u00f6r att skjuta mot f\u00e5glar som f\u00f6rs\u00f6kt landa eller urinera p\u00e5 den. Rapporter talar om att dess r\u00f6relser producerar ett mjukt slipande ljud men orsakar den inte n\u00e5gra strukturella skador. Underligt nog, l\u00e5ter skottlossningen v\u00e4ldigt lik ",
+      "descriptionExcerpt": "SCP-011 \u00e4r en minnesstaty \u00f6ver inb\u00f6rdeskriget bel\u00e4gen i Woodstock, Vermont. Statyn f\u00f6rest\u00e4ller en ung manlig soldat h\u00e5llandes en musk\u00f6t vid hans sida, och \u00e4r huggen ur granit som brutits inom omr\u00e5det. Stundtals, har SCP-011 observerats lyfta dess musk\u00f6t mot himlen f\u00f6r att skjuta mot f\u00e5glar som f\u00f6rs\u00f6kt landa eller urinera p\u00e5 den. Rapporter talar om att dess r\u00f6relser producerar ett mjukt slipande ljud men orsakar den inte n\u00e5gra strukturella skador. Underligt nog, l\u00e5ter skottlossningen v\u00e4ldigt lik",
       "tags": [
         "tag-c253a85e0a02427dd56c2a48",
         "tag-5311a98dc5efbb089bdbea41",
@@ -757,7 +761,9 @@
         "sl",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-012",
@@ -1250,7 +1256,7 @@
       "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-021/021-new.jpg",
       "objectClass": null,
       "rating": 0,
-      "descriptionExcerpt": "SCP-021 tar formen av en stor och utsmyckad tatuering av en orm-liknande drake i orientalisk stil, som t\u00e4cker ungef\u00e4r 0,8 kvadratmeter hud. Denna tatuering \u00e4r helt levande inom gr\u00e4nserna f\u00f6r sin v\u00e4rds hud och beter sig till stor del som ett normalt djur, om \u00e4n endast i tv\u00e5 dimensioner. Tatueringens r\u00f6relse orsakar konstant sm\u00e4rta f\u00f6r dess v\u00e4rd, j\u00e4mf\u00f6rbar och liknande i karakt\u00e4r med samtidig tatuering och tatueringsborttagning i stor skala. Organismen tenderar att tillbringa st\u00f6rsta delen av sin ",
+      "descriptionExcerpt": "SCP-021 tar formen av en stor och utsmyckad tatuering av en orm-liknande drake i orientalisk stil, som t\u00e4cker ungef\u00e4r 0,8 kvadratmeter hud. Denna tatuering \u00e4r helt levande inom gr\u00e4nserna f\u00f6r sin v\u00e4rds hud och beter sig till stor del som ett normalt djur, om \u00e4n endast i tv\u00e5 dimensioner. Tatueringens r\u00f6relse orsakar konstant sm\u00e4rta f\u00f6r dess v\u00e4rd, j\u00e4mf\u00f6rbar och liknande i karakt\u00e4r med samtidig tatuering och tatueringsborttagning i stor skala. Organismen tenderar att tillbringa st\u00f6rsta delen av sin",
       "tags": [
         "tag-38e381d5206b51985f1465c3",
         "tag-05915fc3bf5986e598265665",
@@ -1292,7 +1298,9 @@
         "sl",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-022",
@@ -1303,7 +1311,7 @@
       "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-022/SCP-022.png",
       "objectClass": "Euclid",
       "rating": 0,
-      "descriptionExcerpt": "SCP-022 \u00e4r ett b\u00e5rhus i k\u00e4llaren p\u00e5 [REVIDERAT] sjukhuset i Storbritannien. Fram till 198\u2588 rapporterades inga avvikande h\u00e4ndelser i b\u00e5rhuset. Rapporter om m\u00e4rklig aktivitet mottogs f\u00f6rst i november 198\u2588. Omr\u00e5det sattes snart i karant\u00e4n av stiftelsen, och en officiell artikel sl\u00e4pptes om att hela byggnaden hade f\u00f6rd\u00f6mts. Anledningen till den pl\u00f6tsliga manifestationen av dess m\u00e4rkliga egenskaper \u00e4r fortfarande under utredning.\nMed j\u00e4mna mellanrum \u00f6ppnas en slumpm\u00e4ssig l\u00e5da i b\u00e5rhuset och avsl\u00f6jar ",
+      "descriptionExcerpt": "SCP-022 \u00e4r ett b\u00e5rhus i k\u00e4llaren p\u00e5 [REVIDERAT] sjukhuset i Storbritannien. Fram till 198\u2588 rapporterades inga avvikande h\u00e4ndelser i b\u00e5rhuset. Rapporter om m\u00e4rklig aktivitet mottogs f\u00f6rst i november 198\u2588. Omr\u00e5det sattes snart i karant\u00e4n av stiftelsen, och en officiell artikel sl\u00e4pptes om att hela byggnaden hade f\u00f6rd\u00f6mts. Anledningen till den pl\u00f6tsliga manifestationen av dess m\u00e4rkliga egenskaper \u00e4r fortfarande under utredning.\nMed j\u00e4mna mellanrum \u00f6ppnas en slumpm\u00e4ssig l\u00e5da i b\u00e5rhuset och avsl\u00f6jar",
       "tags": [
         "tag-c253a85e0a02427dd56c2a48",
         "tag-e21e30e0dcc5ca3ef02b1df9",
@@ -1345,7 +1353,9 @@
         "sl",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-023",
@@ -1356,7 +1366,7 @@
       "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-023/scp-023.png",
       "objectClass": "Euclid",
       "rating": 0,
-      "descriptionExcerpt": "SCP-023 \u00e4r en stor, k\u00f6nl\u00f6s, lurvig hund (1,5 meter vid axeln) med svart p\u00e4ls. Den har ljusa oranger\u00f6da \u00f6gon och framtr\u00e4dande t\u00e4nder (se Incident Rapport 023-26). Varje g\u00e5ng en individ f\u00e5r \u00f6gonkontakt med SCP-023, kommer antingen den personen eller en medlem av deras n\u00e4rmaste familj att d\u00f6 exakt ett (1) \u00e5r efter att \u00f6gonkontakten bryts. Forskning om urvalsmetoden \u00e4r ofullst\u00e4ndig p\u00e5 grund av ett moratorium f\u00f6r experiment, men tillg\u00e4ngliga data tyder p\u00e5 att en st\u00f6rre n\u00e4rmaste familj minskar risken ",
+      "descriptionExcerpt": "SCP-023 \u00e4r en stor, k\u00f6nl\u00f6s, lurvig hund (1,5 meter vid axeln) med svart p\u00e4ls. Den har ljusa oranger\u00f6da \u00f6gon och framtr\u00e4dande t\u00e4nder (se Incident Rapport 023-26). Varje g\u00e5ng en individ f\u00e5r \u00f6gonkontakt med SCP-023, kommer antingen den personen eller en medlem av deras n\u00e4rmaste familj att d\u00f6 exakt ett (1) \u00e5r efter att \u00f6gonkontakten bryts. Forskning om urvalsmetoden \u00e4r ofullst\u00e4ndig p\u00e5 grund av ett moratorium f\u00f6r experiment, men tillg\u00e4ngliga data tyder p\u00e5 att en st\u00f6rre n\u00e4rmaste familj minskar risken",
       "tags": [
         "tag-d2f87e21a619a8355469ba9d",
         "tag-9243bea5b041ceebeb2b5c5e",
@@ -1402,7 +1412,9 @@
         "sl",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-024",
@@ -1513,7 +1525,7 @@
       "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-026/SCP-026-A-new.jpg",
       "objectClass": "Euclid",
       "rating": 0,
-      "descriptionExcerpt": "SCP-026 \u00e4r en offentlig skolbyggnad med tre (3) v\u00e5ningar byggd \u00e5r \u2588\u2588\u2588\u2588. Den har tv\u00e5 (2) flyglar anslutna till en central foaj\u00e9. Den f\u00f6rklarades f\u00f6rd\u00f6md \u00e5r \u2588\u2588\u2588\u2588 efter att det uppt\u00e4cktes att planritningen inte st\u00e4mde \u00f6verens med byggnadens ritningar (se Intervju Logg 026-01). Den kom till stiftelsens k\u00e4nnedom efter att flera f\u00f6rsvinnanden i omr\u00e5det kopplades till bes\u00f6k i den \u00f6vergivna byggnaden.\nByggnaden uppvisar rumsliga avvikelser. Dess inre utrymme \u00e4r mycket st\u00f6rre \u00e4n vad byggnadens yttre yta ",
+      "descriptionExcerpt": "SCP-026 \u00e4r en offentlig skolbyggnad med tre (3) v\u00e5ningar byggd \u00e5r \u2588\u2588\u2588\u2588. Den har tv\u00e5 (2) flyglar anslutna till en central foaj\u00e9. Den f\u00f6rklarades f\u00f6rd\u00f6md \u00e5r \u2588\u2588\u2588\u2588 efter att det uppt\u00e4cktes att planritningen inte st\u00e4mde \u00f6verens med byggnadens ritningar (se Intervju Logg 026-01). Den kom till stiftelsens k\u00e4nnedom efter att flera f\u00f6rsvinnanden i omr\u00e5det kopplades till bes\u00f6k i den \u00f6vergivna byggnaden.\nByggnaden uppvisar rumsliga avvikelser. Dess inre utrymme \u00e4r mycket st\u00f6rre \u00e4n vad byggnadens yttre yta",
       "tags": [
         "tag-b60a9f4734e179ef8c75b0ed",
         "tag-e21e30e0dcc5ca3ef02b1df9",
@@ -1555,7 +1567,9 @@
         "hu",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-027",
@@ -1784,7 +1798,7 @@
       "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-036/SCP-036-1.jpg",
       "objectClass": null,
       "rating": 0,
-      "descriptionExcerpt": "SCP-036 inkluderar platsen, Anl\u00e4ggning-22A (en liten flygplats i Mosul-regionen i norra Irak) och Anl\u00e4ggning-22B (destinationen f\u00f6r passagerare som g\u00e5r ombord p\u00e5 Anl\u00e4ggning-22A). De viktigaste komponenterna i SCP-036 \u00e4r:\n\n\"Ankomst flygningen\"- Ett passagerarplan (som varierar i m\u00e4rke och modell fr\u00e5n \u00e5r till \u00e5r) som anl\u00e4nder strax f\u00f6re gryningen den 23 september. Det visas p\u00e5 radarn cirka 30-40 kilometer fr\u00e5n Anl\u00e4ggning-22A. N\u00e4r det landar l\u00e4mnar \"pilgrimer\" planet och g\u00e5r in i terminalen. Ingen ",
+      "descriptionExcerpt": "SCP-036 inkluderar platsen, Anl\u00e4ggning-22A (en liten flygplats i Mosul-regionen i norra Irak) och Anl\u00e4ggning-22B (destinationen f\u00f6r passagerare som g\u00e5r ombord p\u00e5 Anl\u00e4ggning-22A). De viktigaste komponenterna i SCP-036 \u00e4r:\n\n\"Ankomst flygningen\"- Ett passagerarplan (som varierar i m\u00e4rke och modell fr\u00e5n \u00e5r till \u00e5r) som anl\u00e4nder strax f\u00f6re gryningen den 23 september. Det visas p\u00e5 radarn cirka 30-40 kilometer fr\u00e5n Anl\u00e4ggning-22A. N\u00e4r det landar l\u00e4mnar \"pilgrimer\" planet och g\u00e5r in i terminalen. Ingen",
       "tags": [
         "tag-9f1e05e4c690e708370a0ef2",
         "tag-5311a98dc5efbb089bdbea41",
@@ -1824,7 +1838,9 @@
         "hu",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-037",
@@ -2145,7 +2161,7 @@
       "imageUrl": null,
       "objectClass": null,
       "rating": null,
-      "descriptionExcerpt": "SCP-048 har l\u00e4nge ansetts vara ett \"f\u00f6rbannat SCP-nummer\" av SCP-personal: f\u00f6rem\u00e5l med denna beteckning har en tendens att f\u00f6rst\u00f6ras, likvideras, bli stulna, eller p\u00e5 annat vis g\u00e5 f\u00f6rlorade f\u00f6r Stiftelsen, vanligtvis utan att en enskild individ \u00e4r ansvarig. Dessutom har personal tilldelade SCP-048 i dess olika inkarnationer haft en 50% h\u00f6gre personaloms\u00e4ttning p\u00e5 grund av d\u00f6dsfall, stympning och disciplin\u00e4ra \u00e5tg\u00e4rder.\nVare sig numret 048 faktiskt har n\u00e5gra \u00f6vernaturliga egenskaper eller inte \u00e4r ",
+      "descriptionExcerpt": "SCP-048 har l\u00e4nge ansetts vara ett \"f\u00f6rbannat SCP-nummer\" av SCP-personal: f\u00f6rem\u00e5l med denna beteckning har en tendens att f\u00f6rst\u00f6ras, likvideras, bli stulna, eller p\u00e5 annat vis g\u00e5 f\u00f6rlorade f\u00f6r Stiftelsen, vanligtvis utan att en enskild individ \u00e4r ansvarig. Dessutom har personal tilldelade SCP-048 i dess olika inkarnationer haft en 50% h\u00f6gre personaloms\u00e4ttning p\u00e5 grund av d\u00f6dsfall, stympning och disciplin\u00e4ra \u00e5tg\u00e4rder.\nVare sig numret 048 faktiskt har n\u00e5gra \u00f6vernaturliga egenskaper eller inte \u00e4r",
       "tags": [
         "tag-7dd75138c293d790c5722186",
         "tag-672e34499d707fbebbbf4d10",
@@ -2187,7 +2203,9 @@
         "sl",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-051",
@@ -2523,7 +2541,7 @@
       "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-064/SCP-064.png",
       "objectClass": null,
       "rating": 0,
-      "descriptionExcerpt": "SCP-064 \u00e4r en ljusbrun lergodstegel som huvudsakligen best\u00e5r av kiseloxider och en del organiskt material. F\u00f6rem\u00e5let v\u00e4ger 1,6 kg och m\u00e4ter cirka 10 cm x 6 cm x 20 cm. Dess yta \u00e4r sl\u00e4t och plan, med n\u00e5gra mindre kosmetiska flisor. I stort sett liknar f\u00f6rem\u00e5let visuellt de flesta massiva tegelstenar som anv\u00e4nds i byggnation.\nN\u00e4r SCP-064 l\u00e4mnas liggande p\u00e5 en plan yta av mjuk jord b\u00f6rjar den f\u00f6r\u00f6ka sig genom en ok\u00e4nd mekanism. Noggrann observation avsl\u00f6jar uppkomsten av ett oregelbundet gitter av ",
+      "descriptionExcerpt": "SCP-064 \u00e4r en ljusbrun lergodstegel som huvudsakligen best\u00e5r av kiseloxider och en del organiskt material. F\u00f6rem\u00e5let v\u00e4ger 1,6 kg och m\u00e4ter cirka 10 cm x 6 cm x 20 cm. Dess yta \u00e4r sl\u00e4t och plan, med n\u00e5gra mindre kosmetiska flisor. I stort sett liknar f\u00f6rem\u00e5let visuellt de flesta massiva tegelstenar som anv\u00e4nds i byggnation.\nN\u00e4r SCP-064 l\u00e4mnas liggande p\u00e5 en plan yta av mjuk jord b\u00f6rjar den f\u00f6r\u00f6ka sig genom en ok\u00e4nd mekanism. Noggrann observation avsl\u00f6jar uppkomsten av ett oregelbundet gitter av",
       "tags": [
         "tag-7b8403fdf20b7f7c2666e679",
         "tag-0df8a9e661bb552bec15c722",
@@ -2561,7 +2579,9 @@
         "el",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-065",
@@ -2626,7 +2646,7 @@
       "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-066/yarn1.jpg",
       "objectClass": "Euklid-impetus",
       "rating": 0,
-      "descriptionExcerpt": "SCP-066 \u00e4r en amorf massa av fl\u00e4tat garn och band som v\u00e4ger ungef\u00e4r ett kilogram. Tr\u00e5dar av SCP-066 kan tas individuellt och manipuleras; n\u00e4r detta \u00e4r gjort produceras en ton p\u00e5 den diatoniska skalan (C-D-E-F-G-A-B) av objektet.\nN\u00e4r en upps\u00e4ttning av sex eller fler toner produceras, kommer SCP-066 att producera en godartad effekt av varierande natur och varaktighet. SCP-066 kommer inte att reagera p\u00e5 manipulation medan n\u00e5gon effekt som produceras av den p\u00e5g\u00e5r. F\u00f6re Incident 066-2 har resultaten ",
+      "descriptionExcerpt": "SCP-066 \u00e4r en amorf massa av fl\u00e4tat garn och band som v\u00e4ger ungef\u00e4r ett kilogram. Tr\u00e5dar av SCP-066 kan tas individuellt och manipuleras; n\u00e4r detta \u00e4r gjort produceras en ton p\u00e5 den diatoniska skalan (C-D-E-F-G-A-B) av objektet.\nN\u00e4r en upps\u00e4ttning av sex eller fler toner produceras, kommer SCP-066 att producera en godartad effekt av varierande natur och varaktighet. SCP-066 kommer inte att reagera p\u00e5 manipulation medan n\u00e5gon effekt som produceras av den p\u00e5g\u00e5r. F\u00f6re Incident 066-2 har resultaten",
       "tags": [
         "tag-f7d7d5ef5443eabbe390d0b8",
         "tag-c253a85e0a02427dd56c2a48",
@@ -2668,7 +2688,9 @@
         "la",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-067",
@@ -2832,7 +2854,7 @@
       "imageUrl": null,
       "objectClass": "Euclid",
       "rating": 0,
-      "descriptionExcerpt": "SCP-073 verkar vara en kraftigt solbr\u00e4nd man av arabisk eller mellan\u00f6stlig h\u00e4rkomst i b\u00f6rjan av trettio\u00e5rs\u00e5ldern, 185 cm l\u00e5ng och v\u00e4ger 75 kg, med svart h\u00e5r och bl\u00e5 \u00f6gon. Armarnas, benens, ryggm\u00e4rgens och skulderbladens delar hos subjektet verkar ha ersatts med artificiella varianter av ok\u00e4nt ursprung och metall. Subjektet uppm\u00e4rksammar detta endast n\u00e4r det p\u00e5pekas och uppger att den inte har n\u00e5gon kunskap om hur, varf\u00f6r eller n\u00e4r dessa ers\u00e4ttningar \u00e4gde rum, och s\u00e4ger att den haft dem s\u00e5 l\u00e4nge ",
+      "descriptionExcerpt": "SCP-073 verkar vara en kraftigt solbr\u00e4nd man av arabisk eller mellan\u00f6stlig h\u00e4rkomst i b\u00f6rjan av trettio\u00e5rs\u00e5ldern, 185 cm l\u00e5ng och v\u00e4ger 75 kg, med svart h\u00e5r och bl\u00e5 \u00f6gon. Armarnas, benens, ryggm\u00e4rgens och skulderbladens delar hos subjektet verkar ha ersatts med artificiella varianter av ok\u00e4nt ursprung och metall. Subjektet uppm\u00e4rksammar detta endast n\u00e4r det p\u00e5pekas och uppger att den inte har n\u00e5gon kunskap om hur, varf\u00f6r eller n\u00e4r dessa ers\u00e4ttningar \u00e4gde rum, och s\u00e4ger att den haft dem s\u00e5 l\u00e4nge",
       "tags": [
         "tag-88de6bc83b87d2954303a566",
         "tag-336d6b10f6d3c859ac8ac26f",
@@ -2878,7 +2900,9 @@
         "hu",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-074",
@@ -2943,7 +2967,7 @@
       "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-075/scp-075.jpg",
       "objectClass": "Euclid",
       "rating": 0,
-      "descriptionExcerpt": "SCP-075 liknar en stor snigel som \u00e4r 20 cm l\u00e5ng, 13 cm bred och 15 cm h\u00f6g, med en muskul\u00f6s fot som liknar en sexfingrad, klof\u00f6rsedd hand. SCP-075 \u00e4r exceptionellt tung, med en massa p\u00e5 cirka 860 kg, en egenskap som inte f\u00f6rst\u00e5s. Uttorkning \u00e4r det enda k\u00e4nda s\u00e4ttet att f\u00f6rvara SCP-075, eftersom det g\u00e5r in i ett vilotillst\u00e5nd n\u00e4r det \u00e4r n\u00e4stan helt torrt.\nN\u00e4r den inte \u00e4r uttorkad r\u00f6r sig SCP-075 med otroliga hastigheter f\u00f6r sin storlek och massa. Den antar beteendet hos ett rovdjur, hoppar p\u00e5 och ",
+      "descriptionExcerpt": "SCP-075 liknar en stor snigel som \u00e4r 20 cm l\u00e5ng, 13 cm bred och 15 cm h\u00f6g, med en muskul\u00f6s fot som liknar en sexfingrad, klof\u00f6rsedd hand. SCP-075 \u00e4r exceptionellt tung, med en massa p\u00e5 cirka 860 kg, en egenskap som inte f\u00f6rst\u00e5s. Uttorkning \u00e4r det enda k\u00e4nda s\u00e4ttet att f\u00f6rvara SCP-075, eftersom det g\u00e5r in i ett vilotillst\u00e5nd n\u00e4r det \u00e4r n\u00e4stan helt torrt.\nN\u00e4r den inte \u00e4r uttorkad r\u00f6r sig SCP-075 med otroliga hastigheter f\u00f6r sin storlek och massa. Den antar beteendet hos ett rovdjur, hoppar p\u00e5 och",
       "tags": [
         "tag-336d6b10f6d3c859ac8ac26f",
         "tag-d166c15fdef7fce7d44269b6",
@@ -2983,7 +3007,9 @@
         "pig",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-076",
@@ -3052,7 +3078,7 @@
       "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-078/078.png",
       "objectClass": "Euclid",
       "rating": 0,
-      "descriptionExcerpt": "SCP-078 \u00e4r en rosa neonskylt ungef\u00e4r en och en halv meter l\u00e5ng som visar frasen \"F\u00d6R SENT ATT D\u00d6 UNG\". Den \u00e5terfanns ursprungligen i staden \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588, \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588, efter att standardprotokoll f\u00f6r datautvinning fr\u00e5n Stiftelsen registrerat en onormalt h\u00f6g d\u00f6dlighet p\u00e5 grund av sv\u00e4lt eller andra former av sj\u00e4lvf\u00f6rsummelse.\nMedan den \u00e4r avst\u00e4ngd har SCP-078 inga onormala egenskaper och kan observeras utan effekt. Att titta p\u00e5 SCP-078 i mindre \u00e4n tio sekunder medan den \u00e4r p\u00e5slagen har ingen effekt, inte ",
+      "descriptionExcerpt": "SCP-078 \u00e4r en rosa neonskylt ungef\u00e4r en och en halv meter l\u00e5ng som visar frasen \"F\u00d6R SENT ATT D\u00d6 UNG\". Den \u00e5terfanns ursprungligen i staden \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588, \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588, efter att standardprotokoll f\u00f6r datautvinning fr\u00e5n Stiftelsen registrerat en onormalt h\u00f6g d\u00f6dlighet p\u00e5 grund av sv\u00e4lt eller andra former av sj\u00e4lvf\u00f6rsummelse.\nMedan den \u00e4r avst\u00e4ngd har SCP-078 inga onormala egenskaper och kan observeras utan effekt. Att titta p\u00e5 SCP-078 i mindre \u00e4n tio sekunder medan den \u00e4r p\u00e5slagen har ingen effekt, inte",
       "tags": [
         "tag-7d2049f815d5447848ca75e8",
         "tag-336d6b10f6d3c859ac8ac26f",
@@ -3091,7 +3117,9 @@
         "zh-tr",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-079",
@@ -3102,7 +3130,7 @@
       "imageUrl": null,
       "objectClass": "Euclid",
       "rating": null,
-      "descriptionExcerpt": "SCP-079 \u00e4r en Exidy Sorcerer mikrodator byggd \u00e5r 1978. \u00c5r 1981 tog dess \u00e4gare, \u2588\u2588\u2588\u2588\u2588 \u2588\u2588\u2588\u2588\u2588\u2588 (d\u00f6d), en andra\u00e5rsstuderande i \u2588\u2588\u2588 H\u00f6gskola och tog upp utmaningen att f\u00f6rs\u00f6ka koda ett A.I. program. Enligt hans anteckningar var hans plan att koden st\u00e4ndigt skulle utvecklas och f\u00f6rb\u00e4ttras med tiden. Hans projekt avslutades n\u00e5gra m\u00e5nader senare, och efter n\u00e5gra tester och justeringar tappade \u2588\u2588\u2588\u2588\u2588 intresset och gick vidare till ett annat m\u00e4rke av mikrodatorer. Han l\u00e4mnade SCP-079 i sitt r\u00f6riga garage, ",
+      "descriptionExcerpt": "SCP-079 \u00e4r en Exidy Sorcerer mikrodator byggd \u00e5r 1978. \u00c5r 1981 tog dess \u00e4gare, \u2588\u2588\u2588\u2588\u2588 \u2588\u2588\u2588\u2588\u2588\u2588 (d\u00f6d), en andra\u00e5rsstuderande i \u2588\u2588\u2588 H\u00f6gskola och tog upp utmaningen att f\u00f6rs\u00f6ka koda ett A.I. program. Enligt hans anteckningar var hans plan att koden st\u00e4ndigt skulle utvecklas och f\u00f6rb\u00e4ttras med tiden. Hans projekt avslutades n\u00e5gra m\u00e5nader senare, och efter n\u00e5gra tester och justeringar tappade \u2588\u2588\u2588\u2588\u2588 intresset och gick vidare till ett annat m\u00e4rke av mikrodatorer. Han l\u00e4mnade SCP-079 i sitt r\u00f6riga garage,",
       "tags": [
         "tag-a7274f0d21d61df7edba3b95",
         "tag-7e9c8f1785b82e6a3746868e",
@@ -3147,7 +3175,9 @@
         "sl",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-081",
@@ -3256,7 +3286,7 @@
       "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-085/scp085-03.png",
       "objectClass": null,
       "rating": 0,
-      "descriptionExcerpt": "SCP-085 \u00e4r resultatet av ett experiment som utf\u00f6rdes mellan SCP-067 och SCP-914. Med hj\u00e4lp av SCP-067 ritade Testperson-1101F en ensam kvinnlig figur, cirka 15 cm h\u00f6g och 3,8 cm bred, i sommarkl\u00e4nning med l\u00e5ngt h\u00e5r uppsatt i en h\u00e4stsvans, med namnet \"Cassandra\" skrivet under. Dr. [RADERAD] f\u00f6reslog att anv\u00e4nda SCP-914 i olika milj\u00f6er p\u00e5 bilder skapade av SCP-067: Med hj\u00e4lp av inst\u00e4llningen [Fin] omvandlades 'Cassandra'-skissen till hennes nuvarande form: en k\u00e4nnande svartvit animerad ung kvinna ",
+      "descriptionExcerpt": "SCP-085 \u00e4r resultatet av ett experiment som utf\u00f6rdes mellan SCP-067 och SCP-914. Med hj\u00e4lp av SCP-067 ritade Testperson-1101F en ensam kvinnlig figur, cirka 15 cm h\u00f6g och 3,8 cm bred, i sommarkl\u00e4nning med l\u00e5ngt h\u00e5r uppsatt i en h\u00e4stsvans, med namnet \"Cassandra\" skrivet under. Dr. [RADERAD] f\u00f6reslog att anv\u00e4nda SCP-914 i olika milj\u00f6er p\u00e5 bilder skapade av SCP-067: Med hj\u00e4lp av inst\u00e4llningen [Fin] omvandlades 'Cassandra'-skissen till hennes nuvarande form: en k\u00e4nnande svartvit animerad ung kvinna",
       "tags": [
         "tag-c253a85e0a02427dd56c2a48",
         "tag-1f82c41e74c1470bcf058a65",
@@ -3301,7 +3331,9 @@
         "zh-tr",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-087",
@@ -4249,7 +4281,7 @@
       "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-127/scp-127_1.png",
       "objectClass": null,
       "rating": 0,
-      "descriptionExcerpt": "SCP-127, vid f\u00f6rsta anblicken, verkar vara en standard MP5K-PDW kulsprutepistol. Tester har visat att f\u00f6rutom det yttre h\u00f6ljet av st\u00e5l och polymer, \u00e4r hela eldvapnet organiskt och levande. Vapnets ammunition verkade initialt vara m\u00e4nskliga t\u00e4nder. D\u00e4remot gav DNA-testning av \"kulorna\" ingen matchning med n\u00e5gon k\u00e4nd art p\u00e5 jorden.\nSCP-127 har tv\u00e5 inst\u00e4llningar: halvautomatisk och helautomatisk (ett h\u00f6rbart st\u00f6n kan h\u00f6ras n\u00e4r man v\u00e4xlar mellan de tv\u00e5). N\u00e4r vapnets \"magasin\" \u00e4r t\u00f6mt (vanligtvis 60 ",
+      "descriptionExcerpt": "SCP-127, vid f\u00f6rsta anblicken, verkar vara en standard MP5K-PDW kulsprutepistol. Tester har visat att f\u00f6rutom det yttre h\u00f6ljet av st\u00e5l och polymer, \u00e4r hela eldvapnet organiskt och levande. Vapnets ammunition verkade initialt vara m\u00e4nskliga t\u00e4nder. D\u00e4remot gav DNA-testning av \"kulorna\" ingen matchning med n\u00e5gon k\u00e4nd art p\u00e5 jorden.\nSCP-127 har tv\u00e5 inst\u00e4llningar: halvautomatisk och helautomatisk (ett h\u00f6rbart st\u00f6n kan h\u00f6ras n\u00e4r man v\u00e4xlar mellan de tv\u00e5). N\u00e4r vapnets \"magasin\" \u00e4r t\u00f6mt (vanligtvis 60",
       "tags": [
         "tag-f329ec63a068f9d568919b31",
         "tag-88b60aae8eed3ac279aaf60c",
@@ -4289,7 +4321,9 @@
         "pig",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-131",
@@ -4401,7 +4435,7 @@
       "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-134/SCP-134.jpg",
       "objectClass": null,
       "rating": 0,
-      "descriptionExcerpt": "SCP-134 verkar vara en asiatisk flicka mellan \u00e5ldrarna \u2588 och \u2588, med kort svart h\u00e5r och liten kroppsbyggnad. Subjektet verkar normalt i de flesta avseenden och har alla biologiska krav som ett m\u00e4nskligt barn har (mat, s\u00f6mn, etc.). Dock, d\u00e4r SCP-134:s \u00f6gon borde vara finns tv\u00e5 svarta h\u00e5l, t\u00e4ckta av en genomskinlig membran som liknar utseendet hos en m\u00e4nniskas \u00f6gonmembran; oftalmologiska tester har visat att membranen \u00e4r mellan 150 och 200 g\u00e5nger mer motst\u00e5ndskraftiga \u00e4n hos en normal, icke-anomal ",
+      "descriptionExcerpt": "SCP-134 verkar vara en asiatisk flicka mellan \u00e5ldrarna \u2588 och \u2588, med kort svart h\u00e5r och liten kroppsbyggnad. Subjektet verkar normalt i de flesta avseenden och har alla biologiska krav som ett m\u00e4nskligt barn har (mat, s\u00f6mn, etc.). Dock, d\u00e4r SCP-134:s \u00f6gon borde vara finns tv\u00e5 svarta h\u00e5l, t\u00e4ckta av en genomskinlig membran som liknar utseendet hos en m\u00e4nniskas \u00f6gonmembran; oftalmologiska tester har visat att membranen \u00e4r mellan 150 och 200 g\u00e5nger mer motst\u00e5ndskraftiga \u00e4n hos en normal, icke-anomal",
       "tags": [
         "tag-b60a9f4734e179ef8c75b0ed",
         "tag-5311a98dc5efbb089bdbea41",
@@ -4441,7 +4475,9 @@
         "zh-tr",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-135",
@@ -4501,7 +4537,7 @@
       "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-137/princess1.png",
       "objectClass": "Euclid",
       "rating": 0,
-      "descriptionExcerpt": "SCP-137 \u00e4r en enhet med f\u00f6rm\u00e5gan att bes\u00e4tta en leksak, och f\u00e5r d\u00e5 de fysiska egenskaperna, storleken och formen av vad den representerar; till exempel kommer en nallebj\u00f6rn att bli en riktig bj\u00f6rn och bete sig d\u00e4refter. SCP-137 kan inte bes\u00e4tta n\u00e5got annat objekt, endast leksaker. Det observerade omr\u00e5det f\u00f6r SCP-137:s besittningseffekt \u00e4r tv\u00e5hundrafemtio (250) meter, men tills vidare tester har genomf\u00f6rts, antas SCP-137 ha en maximal r\u00e4ckvidd p\u00e5 femhundra (500) meter fr\u00e5n dess position.\nSCP-137 ",
+      "descriptionExcerpt": "SCP-137 \u00e4r en enhet med f\u00f6rm\u00e5gan att bes\u00e4tta en leksak, och f\u00e5r d\u00e5 de fysiska egenskaperna, storleken och formen av vad den representerar; till exempel kommer en nallebj\u00f6rn att bli en riktig bj\u00f6rn och bete sig d\u00e4refter. SCP-137 kan inte bes\u00e4tta n\u00e5got annat objekt, endast leksaker. Det observerade omr\u00e5det f\u00f6r SCP-137:s besittningseffekt \u00e4r tv\u00e5hundrafemtio (250) meter, men tills vidare tester har genomf\u00f6rts, antas SCP-137 ha en maximal r\u00e4ckvidd p\u00e5 femhundra (500) meter fr\u00e5n dess position.\nSCP-137",
       "tags": [
         "tag-c253a85e0a02427dd56c2a48",
         "tag-336d6b10f6d3c859ac8ac26f",
@@ -4538,7 +4574,9 @@
         "zh-tr",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-138",
@@ -4898,7 +4936,7 @@
       "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-160/scp160-new.jpg",
       "objectClass": "Euclid",
       "rating": 0,
-      "descriptionExcerpt": "SCP-160 verkar vara ett fyrvingat obemannat luftfartyg (OLF) med en diameter p\u00e5 cirka 1,1 m vid dess bredaste punkt, liknande [REVIDERAT]-modellen tillverkad av [REVIDERAT]-f\u00f6retaget. Den saknar alla identifierande m\u00e4rken eller tillverkningsetiketter, \u00e4ven om visuell inspektion av SCP-160 har avsl\u00f6jat tecken p\u00e5 repor och annan ytlig skada som tyder p\u00e5 att tidigare identifierande etiketter kan ha tagits bort.\nSCP-160 fungerar kontinuerligt och helt autonomt fr\u00e5n n\u00e5gon identifierad kontrollk\u00e4lla, ",
+      "descriptionExcerpt": "SCP-160 verkar vara ett fyrvingat obemannat luftfartyg (OLF) med en diameter p\u00e5 cirka 1,1 m vid dess bredaste punkt, liknande [REVIDERAT]-modellen tillverkad av [REVIDERAT]-f\u00f6retaget. Den saknar alla identifierande m\u00e4rken eller tillverkningsetiketter, \u00e4ven om visuell inspektion av SCP-160 har avsl\u00f6jat tecken p\u00e5 repor och annan ytlig skada som tyder p\u00e5 att tidigare identifierande etiketter kan ha tagits bort.\nSCP-160 fungerar kontinuerligt och helt autonomt fr\u00e5n n\u00e5gon identifierad kontrollk\u00e4lla,",
       "tags": [
         "tag-c253a85e0a02427dd56c2a48",
         "tag-336d6b10f6d3c859ac8ac26f",
@@ -4935,7 +4973,9 @@
         "vn",
         "zh-tr",
         "sv"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-162",
@@ -5162,7 +5202,7 @@
       "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-178/SCP-178.webp",
       "objectClass": "Euclid",
       "rating": 1,
-      "descriptionExcerpt": "SCP-178 \u00e4r ett par vita stereoskopiska (\"3-D\") glas\u00f6gon med en rektangul\u00e4r vit kartongram och linser av transparent bl\u00e5 och r\u00f6d (v\u00e4nster respektive h\u00f6ger linser) plast. F\u00f6rem\u00e5let visar inga ovanliga fysiska egenskaper bortsett fr\u00e5n en l\u00e4tt missf\u00e4rgning av kartongen som \u00f6verensst\u00e4mmer med dess \u00e5lder. N\u00e4r den b\u00e4rs b\u00f6rjar b\u00e4raren uppfatta stora tv\u00e5benta varelser ut\u00f6ver sin vanliga omgivning. Varelser uppvisar enligt uppgift ett fogligt och ibland nyfiket beteende (rapporter inkluderar varelser som ",
+      "descriptionExcerpt": "SCP-178 \u00e4r ett par vita stereoskopiska (\"3-D\") glas\u00f6gon med en rektangul\u00e4r vit kartongram och linser av transparent bl\u00e5 och r\u00f6d (v\u00e4nster respektive h\u00f6ger linser) plast. F\u00f6rem\u00e5let visar inga ovanliga fysiska egenskaper bortsett fr\u00e5n en l\u00e4tt missf\u00e4rgning av kartongen som \u00f6verensst\u00e4mmer med dess \u00e5lder. N\u00e4r den b\u00e4rs b\u00f6rjar b\u00e4raren uppfatta stora tv\u00e5benta varelser ut\u00f6ver sin vanliga omgivning. Varelser uppvisar enligt uppgift ett fogligt och ibland nyfiket beteende (rapporter inkluderar varelser som",
       "tags": [
         "tag-336d6b10f6d3c859ac8ac26f",
         "tag-5311a98dc5efbb089bdbea41",
@@ -5199,7 +5239,9 @@
         "zh-tr",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-180",
@@ -5356,7 +5398,7 @@
       "imageUrl": null,
       "objectClass": null,
       "rating": 0,
-      "descriptionExcerpt": "SCP-202 \u00e4r en asiatisk-brittisk man, 41 \u00e5r gammal, som utf\u00f6r alla handlingar i omv\u00e4nd ordning. Han verkar inte \u00e5ldras i omv\u00e4nd ordning, utan talar, \u00e4ter, g\u00e5r och utf\u00f6r alla andra handlingar i motsats till vad som anses normalt. SCP-202 talar i omv\u00e4nd engelska med en brittisk accent. Att spela in hans tal och spela det bakl\u00e4nges i en hastighet p\u00e5 1:1 m\u00f6jligg\u00f6r normal kommunikation. Subjektet h\u00e4vdar att han var en normal individ som bodde i Stockport, England, tills han vaknade en morgon f\u00f6r fyra ",
+      "descriptionExcerpt": "SCP-202 \u00e4r en asiatisk-brittisk man, 41 \u00e5r gammal, som utf\u00f6r alla handlingar i omv\u00e4nd ordning. Han verkar inte \u00e5ldras i omv\u00e4nd ordning, utan talar, \u00e4ter, g\u00e5r och utf\u00f6r alla andra handlingar i motsats till vad som anses normalt. SCP-202 talar i omv\u00e4nd engelska med en brittisk accent. Att spela in hans tal och spela det bakl\u00e4nges i en hastighet p\u00e5 1:1 m\u00f6jligg\u00f6r normal kommunikation. Subjektet h\u00e4vdar att han var en normal individ som bodde i Stockport, England, tills han vaknade en morgon f\u00f6r fyra",
       "tags": [
         "tag-5311a98dc5efbb089bdbea41",
         "tag-c7d8c9efdc87a1a3bbed2a45",
@@ -5392,7 +5434,9 @@
         "vn",
         "zh-tr",
         "sv"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-208",
@@ -5653,7 +5697,7 @@
       "imageUrl": null,
       "objectClass": "Euclid",
       "rating": 0,
-      "descriptionExcerpt": "Ursprunget \u00e4r ok\u00e4nt. SCP-251 verkar genomg\u00e5ende vara en liten sn\u00f6glob. Bifogat \u00e4r en serie fotografier tagna av samma artefakt \u00f6ver tid. Detta indikerar att sn\u00f6globen \u00e4r \u00e5tminstone delvis levande. Men n\u00e4r den betraktas direkt av flera personer finns det ingen synbar r\u00f6relse f\u00f6rutom en st\u00e4ndig \"sn\u00f6storm\". SCP-251 har inte flyttats sedan den anl\u00e4nde till Anl\u00e4ggning-19, men \"sn\u00f6flingorna\" har aldrig slutat falla.\nScenerna som skildras i SCP-251 \u00e4r alla extremt v\u00e5ldsamma eller morbida, och skildrar ",
+      "descriptionExcerpt": "Ursprunget \u00e4r ok\u00e4nt. SCP-251 verkar genomg\u00e5ende vara en liten sn\u00f6glob. Bifogat \u00e4r en serie fotografier tagna av samma artefakt \u00f6ver tid. Detta indikerar att sn\u00f6globen \u00e4r \u00e5tminstone delvis levande. Men n\u00e4r den betraktas direkt av flera personer finns det ingen synbar r\u00f6relse f\u00f6rutom en st\u00e4ndig \"sn\u00f6storm\". SCP-251 har inte flyttats sedan den anl\u00e4nde till Anl\u00e4ggning-19, men \"sn\u00f6flingorna\" har aldrig slutat falla.\nScenerna som skildras i SCP-251 \u00e4r alla extremt v\u00e5ldsamma eller morbida, och skildrar",
       "tags": [
         "tag-7b8403fdf20b7f7c2666e679",
         "tag-c253a85e0a02427dd56c2a48",
@@ -5690,7 +5734,9 @@
         "zh-tr",
         "el",
         "sv"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-258",
@@ -6302,7 +6348,7 @@
       "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-439/bonehive.jpg",
       "objectClass": "Euclid",
       "rating": 0,
-      "descriptionExcerpt": "SCP-439 \u00e4r en insekt av ok\u00e4nt ursprung, som n\u00e5got liknar en gr\u00e5aktig, halvgenomskinlig Forficula auricularia (vanlig tvestj\u00e4rt), cirka 2,5 cm l\u00e5ng. Ursprungligen lokaliserad/erh\u00e5llen i Kina i \u2588\u2588\u2588\u2588 \u2588\u2588\u2588\u2588 provinsen. Inget annat exemplar har hittats \u00e4nnu.\nSCP-439 \u00e4r relativt ofarlig n\u00e4r den p\u00e5tr\u00e4ffas under s\u00e4kra villkor, f\u00f6rutom f\u00f6rm\u00e5gan att ge ett fast, sm\u00e4rtsamt nyp med sin bukt\u00e5ng. Den verkliga faran som denna varelse utg\u00f6r ligger i dess habitatkonstruktion och reproduktion, vilket initieras n\u00e4r ",
+      "descriptionExcerpt": "SCP-439 \u00e4r en insekt av ok\u00e4nt ursprung, som n\u00e5got liknar en gr\u00e5aktig, halvgenomskinlig Forficula auricularia (vanlig tvestj\u00e4rt), cirka 2,5 cm l\u00e5ng. Ursprungligen lokaliserad/erh\u00e5llen i Kina i \u2588\u2588\u2588\u2588 \u2588\u2588\u2588\u2588 provinsen. Inget annat exemplar har hittats \u00e4nnu.\nSCP-439 \u00e4r relativt ofarlig n\u00e4r den p\u00e5tr\u00e4ffas under s\u00e4kra villkor, f\u00f6rutom f\u00f6rm\u00e5gan att ge ett fast, sm\u00e4rtsamt nyp med sin bukt\u00e5ng. Den verkliga faran som denna varelse utg\u00f6r ligger i dess habitatkonstruktion och reproduktion, vilket initieras n\u00e4r",
       "tags": [
         "tag-7a973b9c28a852e375d6260b",
         "tag-336d6b10f6d3c859ac8ac26f",
@@ -6340,7 +6386,9 @@
         "vn",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-444",
@@ -6394,7 +6442,7 @@
       "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-450/SCP-450.jpg",
       "objectClass": "Euclid",
       "rating": 0,
-      "descriptionExcerpt": "SCP-450 \u00e4r d\u00f6dsstraffsavdelningen i det \u00f6vergivna \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 federala straffanstalten i \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588, \u2588\u2588. Avst\u00e5ndet fr\u00e5n ing\u00e5ngen till avr\u00e4ttningskammaren \u00e4r ungef\u00e4r 166,5 meter. Ett komplext m\u00f6nster, ritat i m\u00e4nniskoblod, finns p\u00e5 v\u00e4ggen bakom elektriska stolen. Detta m\u00f6nster f\u00f6rs\u00e4mras l\u00e5ngsamt \u00f6ver tid p\u00e5 grund av normalt milj\u00f6f\u00f6rfall och m\u00e5ste underh\u00e5llas regelbundet.\nCellblocket bebos av vad som tycks vara en eller flera fientliga spektrala varelser. Att dra till sig uppm\u00e4rksamheten fr\u00e5n dessa ",
+      "descriptionExcerpt": "SCP-450 \u00e4r d\u00f6dsstraffsavdelningen i det \u00f6vergivna \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 federala straffanstalten i \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588, \u2588\u2588. Avst\u00e5ndet fr\u00e5n ing\u00e5ngen till avr\u00e4ttningskammaren \u00e4r ungef\u00e4r 166,5 meter. Ett komplext m\u00f6nster, ritat i m\u00e4nniskoblod, finns p\u00e5 v\u00e4ggen bakom elektriska stolen. Detta m\u00f6nster f\u00f6rs\u00e4mras l\u00e5ngsamt \u00f6ver tid p\u00e5 grund av normalt milj\u00f6f\u00f6rfall och m\u00e5ste underh\u00e5llas regelbundet.\nCellblocket bebos av vad som tycks vara en eller flera fientliga spektrala varelser. Att dra till sig uppm\u00e4rksamheten fr\u00e5n dessa",
       "tags": [
         "tag-e21e30e0dcc5ca3ef02b1df9",
         "tag-336d6b10f6d3c859ac8ac26f",
@@ -6431,7 +6479,9 @@
         "el",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     },
     {
       "itemId": "scp-series-479",
@@ -7612,7 +7662,7 @@
       "imageUrl": null,
       "objectClass": null,
       "rating": 0,
-      "descriptionExcerpt": "SCP-999 verkar vara en stor amorf gelatin\u00f6s massa utav genomskinligt orangef\u00e4rgat slem, som v\u00e4ger cirka 54 kg (120 lbs) med en konsistens som p\u00e5minner om jordn\u00f6tssm\u00f6r. Subjektets storlek och form \u00e4r l\u00e4tt att forma och kan \u00e4ndra form efter behag, men vid vila blir SCP-999 en rundad oblat kupol ungef\u00e4r 2 meter bred och 1 meter i h\u00f6jd. SCP-999s yta best\u00e5r av ett tunt, genomskinligt membran, liknande dem i en djurcell, cirka .5 cm tjock, och \u00e4r v\u00e4ldigt elastisk, vilket l\u00e5ter SCP-999 platta ut delar ",
+      "descriptionExcerpt": "SCP-999 verkar vara en stor amorf gelatin\u00f6s massa utav genomskinligt orangef\u00e4rgat slem, som v\u00e4ger cirka 54 kg (120 lbs) med en konsistens som p\u00e5minner om jordn\u00f6tssm\u00f6r. Subjektets storlek och form \u00e4r l\u00e4tt att forma och kan \u00e4ndra form efter behag, men vid vila blir SCP-999 en rundad oblat kupol ungef\u00e4r 2 meter bred och 1 meter i h\u00f6jd. SCP-999s yta best\u00e5r av ett tunt, genomskinligt membran, liknande dem i en djurcell, cirka .5 cm tjock, och \u00e4r v\u00e4ldigt elastisk, vilket l\u00e5ter SCP-999 platta ut delar",
       "tags": [
         "tag-7ff84fbf96fed2881c27fa2c",
         "tag-f329ec63a068f9d568919b31",
@@ -7658,7 +7708,9 @@
         "sl",
         "sv",
         "tr"
-      ]
+      ],
+      "descriptionVersion": 2,
+      "descriptionCheckedAt": "2026-11-12T13:43:29.533Z"
     }
   ],
   "tagSchemaVersion": 2
