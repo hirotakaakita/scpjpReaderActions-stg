@@ -9,6 +9,10 @@ on:
         description: 'Audit all languages and completely repair existing excerpts without a full site crawl'
         type: boolean
         default: false
+      excerpt_repair_run:
+        description: 'Optional earlier repair run ID whose completed results can be reused'
+        type: string
+        default: ''
       additional_sites_only:
         description: "Crawl only the 16 newly added viewing languages"
         required: false
@@ -155,12 +159,24 @@ jobs:
           ORIGIN_EVIDENCE_MAX_PAGES: '600'
           ORIGIN_EVIDENCE_MAX_DURATION_MS: '180000'
 
+      - name: Restore earlier excerpt repair checkpoints
+        if: inputs.repair_excerpts_only == true && inputs.excerpt_repair_run != ''
+        continue-on-error: true
+        uses: actions/download-artifact@v7
+        with:
+          repository: hirotakaakita/scpjpReaderActions-stg
+          run-id: ${{ inputs.excerpt_repair_run }}
+          github-token: ${{ github.token }}
+          name: partial-${{ matrix.lang }}
+          path: excerpt-previous
+
       - name: Repair cached article excerpts
         run: node tool/repair-catalog-excerpts.js ${{ matrix.lang }}
         env:
           EXCERPT_MAX_REQUESTS: ${{ inputs.repair_excerpts_only == true && '10000' || '200' }}
           EXCERPT_REQUIRE_COMPLETE: ${{ inputs.repair_excerpts_only == true && '1' || '0' }}
           CRAWL_REQUEST_INTERVAL_MS: '500'
+          EXCERPT_PREVIOUS_REPAIRS: excerpt-previous/excerpt-repairs/${{ matrix.lang }}.json.gz
 
       - name: Upload partial data
         if: always()
