@@ -85,7 +85,10 @@ function generateCatalogChannel(input, output, includeAdditional, sourceDirector
     const delivery = mobileCatalog(source, language);
     const ids = new Set(delivery.data.map(r => r.itemId));
     const pageUrls = new Set(source.data.map(r => normalize(r.isTranslatedJP !== false && r.urlJP ? r.urlJP : r.urlEN)?.url));
-    const documents = (additional?.data || []).filter(r => r.language === language && !pageUrls.has(r.url) && !ids.has(r.itemId)).map(r => ({
+    const documents = (additional?.data || []).filter(r => r.language === language && !pageUrls.has(r.url) && !ids.has(r.itemId)).map(original => {
+      // Classify raw branch/type evidence before localizeTags hides those tags.
+      const r=includeAdditional&&enrichTranslations?reclassifyScpArticle({...original,urlJP:original.url},reservedByLanguage.get(language)):original;
+      return ({
       itemId: r.itemId, titleJP: r.title, urlJP: r.url, isTranslatedJP: true,
       extractedFrom: r.pageType, pageType: r.pageType, contentType: r.contentType,
       lastUpdated: r.lastUpdated, descriptionExcerpt: r.descriptionExcerpt,
@@ -94,10 +97,10 @@ function generateCatalogChannel(input, output, includeAdditional, sourceDirector
       ...(r.imageUrl ? { imageUrl:r.imageUrl } : {}),
       ...(r.contentType === 'scp' ? { numericItemId: r.numericItemId } : {}),
       tags: localizeTags(r.tags || [], language, dictionary, tagIndex),
-    }));
+    });});
     for (const row of documents) {
-      const validId = row.itemId.startsWith('document-') || /^(?:scp-series-|joke-scps-|scp-(?:[a-z]+-)?ex-)[a-z0-9][a-z0-9_-]*$/.test(row.itemId);
-      if (!validId || ids.has(row.itemId) || REQUIRED_STRINGS.some(k => typeof row[k] !== 'string') || !row.titleJP || !Number.isFinite(Date.parse(row.lastUpdated)) || !normalize(row.urlJP)) throw Error(`Invalid additional article: ${row.itemId}`);
+      const validId = row.itemId.startsWith('document-') || /^(?:scp-series-|joke-scps-|scp-(?:[a-z]+-)?ex-)[a-z0-9][a-z0-9_.-]*$/.test(row.itemId);
+      if (!validId || (!enrichTranslations&&ids.has(row.itemId)) || REQUIRED_STRINGS.some(k => typeof row[k] !== 'string') || !row.titleJP || !Number.isFinite(Date.parse(row.lastUpdated)) || !normalize(row.urlJP)) throw Error(`Invalid additional article: ${row.itemId}`);
       ids.add(row.itemId);
     }
     delivery.data.push(...documents);
@@ -105,6 +108,7 @@ function generateCatalogChannel(input, output, includeAdditional, sourceDirector
       ...reclassifyScpArticle(row, reservedByLanguage.get(language)),
       tags:restoreTagLabels(row.tags || [], language, dictionary, tagIndex, row.tagLabels),
     }));
+    if(includeAdditional&&enrichTranslations)delivery.data=require('./article-metadata').deduplicateReclassifiedArticles(delivery.data);
     if (includeAdditional && enrichTranslations) for (const row of delivery.data) {
       row.translatedLanguages = [...new Set([
         ...(row.translatedLanguages || []), ...(translations.get(row.itemId) || []),
@@ -135,6 +139,7 @@ function generateCatalogChannel(input, output, includeAdditional, sourceDirector
         else if(sourceTime<priorTime)delivery.timestamp=previousManifest.timestamp;
       }
     }
+    if(includeAdditional&&enrichTranslations)require('./catalog-classification-version').advanceClassificationTimestamp(delivery,path.join(output,language));
     const json = Buffer.from(JSON.stringify(delivery), 'utf8');
     const compressed = zlib.gzipSync(json, { level: 9 });
     if (delivery.totalCount > 200000 || json.length > 128 * 1024 * 1024 || compressed.length > 32 * 1024 * 1024) {
