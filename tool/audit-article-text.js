@@ -13,6 +13,7 @@ function audit({root=path.resolve(__dirname,'..'),input=path.join(root,'local-da
   const manifest=read(pointer),rows=read(path.join(path.dirname(pointer),manifest.fileName)).data;
   const verified=new Set(previousEmpty);const repair=path.join(root,'partial-data/excerpt-repairs',language+'.json.gz');
   if(fs.existsSync(repair))for(const edit of read(repair).edits||[])if(!edit.text&&(edit.descriptionStatus==='no_prose'||edit.method==='no_prose'))verified.add(normalize(edit.url)?.url);
+  if(fs.existsSync(repair))for(const r of read(repair).recoveredArticles||[])if(!r.descriptionExcerpt&&r.descriptionStatus==='redirect_only')verified.add(normalize(r.url)?.url);
   const stats={total:rows.length,missingTitles:0,emptyBodies:0,verifiedEmptyBodies:0,contaminated:0};report.languages[language]=stats;
   for(const row of rows){report.total++;const url=row.urlJP||row.urlEN,body=String(row.descriptionExcerpt||'').trim(),title=row.titleJP,issues=[];
    if(titleNeedsRepair(title)){stats.missingTitles++;issues.push('missing_or_technical_title');}

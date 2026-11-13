@@ -41,12 +41,12 @@ function articleFetchTarget(value) {
     if (u.username || u.password || u.port || !['http:', 'https:'].includes(u.protocol)) return null;
     if (u.hostname.startsWith('www.') && hosts.has(u.hostname.slice(4))) u.hostname = u.hostname.slice(4);
     if (normalize(u.href)) return u.href;
-    if (u.search || !/^\/[^/]+(?:\/(?:p|offset|page\d+_limit)\/\d+)+(?:\/noredirect\/true)?$/.test(u.pathname)) return null;
+    if (u.search || !/^\/[^/]+(?:(?:\/(?:p|offset|page\d+_limit)\/\d+)+(?:\/noredirect\/true)?|\/noredirect\/true)$/.test(u.pathname)) return null;
     return normalize(u.origin + '/' + u.pathname.split('/')[1]) ? u.href : null;
   } catch { return null; }
 }
 
-function extractHtml(url, html, now = new Date().toISOString(), existingDocument = null) {
+function extractHtml(url, html, now = new Date().toISOString(), existingDocument = null, {redirectTarget=null} = {}) {
   const page = normalize(url);
   if (!page) throw Error('Unsupported document URL');
   const dom = existingDocument ? null : new JSDOM(String(html).replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, ''), { url: page.url, virtualConsole: new VirtualConsole() });
@@ -58,10 +58,11 @@ function extractHtml(url, html, now = new Date().toISOString(), existingDocument
       const error=Error('Unavailable article: '+availability.reason);error.articleUnavailable=availability.terminal;error.articleTitle=title;throw error;
     }
     const block=d.querySelector('#page-content .error-block,.page-not-found');
+    const redirectNotice=!!redirectTarget&&/redirect|리다이렉트|リダイレクト|重定向|перенаправ/iu.test(block?.textContent||'');
     const substantive = root?.cloneNode(true);
     if (substantive) for (const n of substantive.querySelectorAll(excluded + ',.error-block')) n.remove();
     const errorOnly = block && !substantive?.textContent.trim() && !substantive?.querySelector('img,svg,canvas,video,audio,iframe');
-    if(!root||!title||errorOnly){const error=Error('Unrecognized article structure');
+    if(!root||!title||(errorOnly&&!redirectNotice)){const error=Error('Unrecognized article structure');
       error.articleUnavailable=!!block&&/not found|does not exist|no existe|存在しません/i.test(block.textContent);throw error;}
     const tags = [...d.querySelectorAll('.page-tags a')].map(a => a.textContent.trim()).filter(Boolean);
     const translations = [...d.querySelectorAll('a[rel~="alternate"][hreflang],link[rel~="alternate"][hreflang],.translation-source a[href],a[data-translation-source]')]
@@ -76,6 +77,7 @@ function extractHtml(url, html, now = new Date().toISOString(), existingDocument
     const metadata = require('./local-crawler');
     const description = metadata.extractDescriptionAndTagsFromDocument(root).descriptionExcerpt || '';
     return { ...page, title, tags, translations: [...new Set(translations)].sort(), authors,
+      ...(redirectTarget?{redirectTarget}:{}),...(!description&&redirectNotice?{descriptionStatus:'redirect_only'}:{}),
       originProvenanceVersion:provenance.VERSION, originalSources:provenance.extractOriginalSources(d,page.url),
       attributionDiscussionUrl:provenance.discussionPage(d,page.url),
       ...provenance.extractAuthorCredits(d),
@@ -291,6 +293,7 @@ function buildCatalogs(catalogs, records, attempts, now = new Date().toISOString
 async function fetchRecord(url, captureDirectory = null, {rawDirectory=null,metadataDirectory=null} = {}) {
   const page = normalize(url);
   if (!page) throw Error('Unsupported URL');
+  let redirectTarget=null;
   function saveRaw(body,format){if(!rawDirectory)return;fs.mkdirSync(rawDirectory,{recursive:true});
     fs.writeFileSync(path.join(rawDirectory,hash(page.url)+'.'+format+'.gz'),zlib.gzipSync(typeof body==='string'?body:JSON.stringify(body)));}
   function saveMetadata(record,body,format){if(!metadataDirectory)return;
@@ -304,7 +307,15 @@ async function fetchRecord(url, captureDirectory = null, {rawDirectory=null,meta
     if (!target || depth > 5) throw Error('Unsupported redirect');
     const response = await axios.get(target, { timeout: 20000, maxRedirects: 0, maxContentLength: 12 * 1024 * 1024,
       validateStatus: s => (s >= 200 && s < 400), headers: { 'User-Agent': 'SCPReaderCatalog/1.0', Accept: 'text/html,application/json' } });
-    if (response.status >= 300) return request(new URL(response.headers.location, target).href, depth + 1);
+    if (response.status >= 300) {
+      const destination=new URL(response.headers.location,target).href,normalized=normalize(destination);
+      const listing=normalized&&normalized.slug!==page.slug&&/^(?:joke-scps|scp-series(?:-[a-z\d-]+)?|foundation-tales|scp-ex|archived-scps|main|start)$/.test(normalized.slug);
+      if((!articleFetchTarget(destination)||listing)&&!target.endsWith('/noredirect/true')){
+        redirectTarget=destination;
+        return request(page.url+'/noredirect/true',depth+1);
+      }
+      return request(destination,depth+1);
+    }
     return response.data;
   };
   if (page.language === 'ru') {
@@ -321,7 +332,7 @@ async function fetchRecord(url, captureDirectory = null, {rawDirectory=null,meta
   }
   const configuredScheme = new URL(LANGUAGES[page.language].baseUrl).protocol;
   const html = await request(url.replace(/^http:/, 'https:'));
-  const record = extractHtml(url, html);
+  const record = extractHtml(url, html,undefined,null,{redirectTarget});
   if(!record.descriptionExcerpt)record.descriptionExcerpt=await require('./article-frames').extractOwnedFrameProse(url,html)||'';
   saveRaw(html,'html');
   saveMetadata(record,html,'html');

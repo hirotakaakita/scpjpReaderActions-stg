@@ -6,12 +6,14 @@ const {readState,writeState}=require('../catalog-indexes');
 const {read,hash}=require('./repair-catalog-excerpts');
 const {VERSION,repairStoredExcerpt,titleNeedsRepair}=require('../article-excerpts');
 function apply({root=path.resolve(__dirname,'..'),requireComplete=false,now=new Date().toISOString()}={}){
- const reports=[],edits=new Map(),counts={primary:0,index:0,cache:0,additional:0,removedPrimary:0,removedIndex:0,removedAdditional:0};
+ const reports=[],edits=new Map(),recoveries=new Map(),counts={primary:0,index:0,cache:0,additional:0,removedPrimary:0,removedIndex:0,removedAdditional:0};
  for(const language of Object.keys(LANGUAGES)){
   const file=path.join(root,'partial-data/excerpt-repairs',language+'.json.gz');
   if(!fs.existsSync(file)){if(requireComplete)throw Error('Missing excerpt repair: '+language);continue;}
   const report=read(file);if(report.version!==VERSION||report.language!==language)throw Error('Wrong excerpt repair version/language');
+  const recovered=require('./article-text-recovery').recoverReport(root,report);
   if(requireComplete&&(report.failed.length||report.pending.length))throw Error('Incomplete excerpt repair: '+language);
+  if(recovered.changed){fs.writeFileSync(file,z.gzipSync(JSON.stringify(report),{level:9}));for(const [url,observation]of recovered.records)recoveries.set(url,observation.record);console.log(JSON.stringify({language,recoveredFailures:report.recoveredFailures.length,observations:recovered.records.size}));}
   reports.push({...report,edits:report.edits.length});
   for(const edit of report.edits)edits.set(edit.url+':'+hash(edit.before),{...edit,at:report.at});
  }
@@ -21,7 +23,16 @@ function apply({root=path.resolve(__dirname,'..'),requireComplete=false,now=new 
  const retiredRow=row=>retired.has(normalize(row.urlJP||row.urlEN||row.url)?.url);
  function patch(row,kind){
   const url=normalize(row.urlJP||row.urlEN||row.url)?.url;if(!url)return false;
-  const edit=edits.get(url+':'+hash(String(row.descriptionExcerpt||'')));if(!edit)return false;
+  const recovery=recoveries.get(url);
+  const edit=recovery?{text:recovery.descriptionExcerpt,sourceHash:recovery.contentSha256,title:recovery.title,at:recovery.checkedAt,refreshTitle:true,descriptionStatus:recovery.descriptionExcerpt?'success':'no_prose'}:edits.get(url+':'+hash(String(row.descriptionExcerpt||'')));if(!edit)return false;
+  if(recovery){
+   if(kind==='primary'){
+    const dictionary=require('../tag-dictionary').readDictionary(path.join(root,'tag-dictionary.json'));
+    row.tags=require('../tag-dictionary').localizeTags(recovery.tags||[],normalize(url).language,dictionary);
+    row.rating=recovery.rating;row.imageUrl=recovery.imageUrl||null;row.objectClass=recovery.objectClass||null;row.tagFetchStatus='success';
+   }else for(const key of ['tags','authors','objectClass','rating','imageUrl','links','bodyLinks','contentSha256','checkedAt','format','availabilityVersion','originalSources','originProvenanceVersion','redirectTarget'])if(key in recovery)row[key]=recovery[key];
+   row.descriptionSourceStatus=recovery.descriptionStatus;
+  }
   row.descriptionExcerpt=new URL(url).hostname==='scpfoundation.net'?require('../article-excerpts').normalizeFtmlPreview(edit.text):edit.text;row.descriptionVersion=VERSION;row.descriptionCheckedAt=edit.at;
   if(edit.descriptionStatus)row.descriptionStatus=edit.descriptionStatus;
   if(edit.title){const field='titleJP'in row?'titleJP':'title';if(titleNeedsRepair(row[field])||(edit.refreshTitle&&field==='title'))row[field]=edit.title;}
