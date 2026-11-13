@@ -47,7 +47,7 @@ function cleanWikiText(value) {
     .replace(/##[^|#]+\|([\s\S]*?)##/g,'$1')
     .replace(/^\s*[=<>]\s*$/gm,'')
     .replace(/^\s*\+{1,6}\s+/gm,'')
-    .replace(/\[\[(?:\/|>|<|div\b|span\b|table\b|row\b|col\b|collapsible\b)[^\]]*\]\]/gi, ' ')
+    .replace(/\[\[(?:\/|[=<>]+|size\b|div\b|span\b|table\b|row\b|col\b|collapsible\b)[^\]]*\]\]/gi, ' ')
     .replace(/\[\[image\s+[^\]]+\]\]/gi, ' ')
     .replace(/\[\[include\s+[^\]]+\]\]/gi, ' ')
     .replace(/\[\[module\s+[^\]]+\]\]/gi, ' ')

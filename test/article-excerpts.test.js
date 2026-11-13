@@ -30,6 +30,17 @@ test('blank titles fall back to the actual source heading and literal Untitled i
  }
 });
 
+test('FTML alignment and font-size commands never become visible text',()=>{
+ const r=extractApi('https://scpfoundation.net/scp-001',{title:'SCP-001',source:'[[=]]\n[[size 200%]]A classified article with actual narrative text and readable words.[[/size]]\n[[/=]]'});
+ assert.equal(r.descriptionExcerpt,'A classified article with actual narrative text and readable words.');
+ assert.equal(require('../article-excerpts').normalizeFtmlPreview('=\nHeading\nsize 200%Actual words'),'Heading\nActual words');
+});
+
+test('RTL description headings accept the colon before the label',()=>{
+ const r=extractHtml('https://scp-ar.wikidot.com/scp-ar-010','<div id="page-title">SCP-AR-010</div><div id="page-content"><p>SCP-AR-010: رقم الصنف</p><h1>:الوصف</h1><p>هذا هو الوصف الفعلي للعنصر وليس رأس البيانات.</p></div>');
+ assert.equal(r.descriptionExcerpt,'هذا هو الوصف الفعلي للعنصر وليس رأس البيانات.');
+});
+
 test('fragment shells use only their declared children and owned HTML frames',async()=>{
  const ru=require('../rufoundation-crawler');
  const text=await ru.extractApiDescription({source:'[[module ListPages category="fragment" parent="."]]\n%%content%%\n[[/module]]',children:['https://evil.example/x','fragment:story-1']},async url=>{assert.equal(url,'https://scpfoundation.net/api/articles/fragment%3Astory-1');return {source:'**Описание:** The actual transcluded description.'};});

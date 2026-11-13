@@ -64,7 +64,7 @@ async function repair({root=path.resolve(__dirname,'..'),language,maxRequests=10
  }
  if(previousFile&&fs.existsSync(previousFile)){
   const prior=read(previousFile);if(prior.language!==language||prior.version>VERSION)throw Error('Invalid previous excerpt repairs');
-  for(const edit of prior.edits){const clean=repairStoredExcerpt(edit.text);if(!clean.needsFetch&&clean.text===edit.text)previous.set(edit.url+':'+hash(edit.before),edit);}
+  for(const edit of prior.edits){const clean=repairStoredExcerpt(edit.text);const observed=!force||['refetch','no_prose','unavailable'].includes(edit.method);if(observed&&!clean.needsFetch&&clean.text===edit.text)previous.set(edit.url+':'+hash(edit.before),edit);}
  }
  const report={language,version:VERSION,force,at:now,inspected:collected.inspected,published:collected.published,uniqueTargets:collected.uniqueTargets,targets:collected.targets.length,requests:0,freshCaptures:fetched.size,edits,failed,pending,unavailable:[]};
  for(const [index,target]of collected.targets.entries()){

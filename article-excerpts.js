@@ -2,7 +2,7 @@
 
 const VERSION = 3;
 const DESCRIPTION_LABELS = 'description|説明|描述|popis|beschreibung|descripción|descrição|descrizione|opis|설명|รายละเอียด|описание|опис|mô tả|الوصف|وصف|disgrifiad|beskrivelse|περιγραφή|leírás|descriptio|beschrijving|descrierea?|beskrivning|açıklama|escriptionday';
-const INLINE_DESCRIPTION = new RegExp('^(?:'+DESCRIPTION_LABELS+')\\s*[:：]\\s*([\\s\\S]+)$','iu');
+const INLINE_DESCRIPTION = new RegExp('^(?:(?:'+DESCRIPTION_LABELS+')\\s*[:：]\\s*|[:：]\\s*(?:'+DESCRIPTION_LABELS+')\\s+)([\\s\\S]+)$','iu');
 const DESCRIPTION_BOUNDARY = new RegExp('(?:'+DESCRIPTION_LABELS+')\\s*[:：]\\s*','iu');
 const HEADER = /^(?:item\s*(?:#|(?:number|no\.?)\s*[:：])|アイテム番号\s*[:：]|(?:项目|項目)(?:编号|編號|編号)\s*[:：]|(?:object|containment|disruption|risk)\s*class\s*[:：]|(?:オブジェクトクラス|对象等级|對象等級|项目等级|項目等級)\s*[:：]|объект\s*(?:№|#)|класс\s+объекта\s*[:：]|objekt(?:nummer|-nr\.?|klasse)\s*[:：]|(?:classe\s+(?:d['’]objet|dell['’]oggetto)|classificazione|klassifizierung)\s*[:：]|(?:ítem|objet|objeto|artículo|elemento)\s*(?:#|n[º°])|(?:clase\s+de\s+objeto|clasificación\s+del\s+objeto)\s*[:：]|(?:numer|klasa)\s+obiektu\s*[:：]|(?:일련번호|등급)\s*[:：])/iu;
 const BODY_BOUNDARY = /(?:special\s+containment\s+procedures|特別収容プロトコル|特殊收容措施|特殊收容程序|особые\s+условия\s+содержания|sicherheitsmaßnahmen|procedimientos\s+especiales\s+de\s+contención|procédures\s+de\s+confinement\s+spéciales|procedure\s+speciali\s+di\s+contenimento|특수\s*격리\s*절차)\s*[:：]\s*/iu;
@@ -15,6 +15,7 @@ const TECHNICAL = /@(?:import\s+(?:url|["'])|media\s*[^{}]*\{|font-face\s*\{)|(?
 function technicalExcerpt(value){return TECHNICAL.test(String(value||''))||/^(?:\s*(?:\[\[)?module\s+css\b|\s*\[!--|\s*<!--|\s*\/\*\s*(?:source:|[\s\S]{0,180}(?:Wikidot Theme|THEME|CSS)))/iu.test(String(value||''));}
 function titleNeedsRepair(value){return !String(value||'').trim()||TECHNICAL.test(String(value))||/^\s*(?:<script\b|\[!--|<!--|\{\$[\w-]+\})/iu.test(String(value));}
 function datePrefix(value){return /^(?:\d{1,4}[年月/.-]\d{1,2}[月/.-]\d{1,4}|\d{1,2}\s+[A-Za-z]{3,}\s+\d{4}|(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\w*,?\s+\d)/iu.test(String(value||''));}
+function normalizeFtmlPreview(value){return String(value||'').replace(/^(?:\s*=+\s*\n)+/u,'').replace(/(^|\n)[ \t]*size[ \t]+\d+(?:%|px|em)[ \t]*/giu,'$1').trim();}
 
 function headerText(value){return String(value||'').replace(/^[\s*_]+/u,'');}
 function repairStoredExcerpt(value){
@@ -60,4 +61,4 @@ function inlineDescription(root){
  }
  return null;
 }
-module.exports={VERSION,DESCRIPTION_LABELS,EXCLUDED,HEADER,DESCRIPTION_BOUNDARY,cleanExcerptRoot,inlineDescription,repairStoredExcerpt,technicalExcerpt,titleNeedsRepair,datePrefix};
+module.exports={VERSION,DESCRIPTION_LABELS,EXCLUDED,HEADER,DESCRIPTION_BOUNDARY,cleanExcerptRoot,inlineDescription,repairStoredExcerpt,technicalExcerpt,titleNeedsRepair,datePrefix,normalizeFtmlPreview};
