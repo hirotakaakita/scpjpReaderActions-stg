@@ -290,7 +290,7 @@ function buildCatalogs(catalogs, records, attempts, now = new Date().toISOString
       discoveredDocuments: sources.size, classified: data.filter(r => r.originBranch).length, unclassified: data.filter(r => !r.originBranch).length, pending: pending.length } };
 }
 
-async function fetchRecord(url, captureDirectory = null, {rawDirectory=null,metadataDirectory=null} = {}) {
+async function fetchRecord(url, captureDirectory = null, {rawDirectory=null,metadataDirectory=null,timeoutMs=20000} = {}) {
   const page = normalize(url);
   if (!page) throw Error('Unsupported URL');
   let redirectTarget=null;
@@ -305,7 +305,7 @@ async function fetchRecord(url, captureDirectory = null, {rawDirectory=null,meta
   const request = async (target, depth = 0) => {
     target = articleFetchTarget(target);
     if (!target || depth > 5) throw Error('Unsupported redirect');
-    const response = await axios.get(target, { timeout: 20000, maxRedirects: 0, maxContentLength: 12 * 1024 * 1024,
+    const response = await axios.get(target, { timeout: timeoutMs, maxRedirects: 0, maxContentLength: 12 * 1024 * 1024,
       validateStatus: s => (s >= 200 && s < 400), headers: { 'User-Agent': 'SCPReaderCatalog/1.0', Accept: 'text/html,application/json' } });
     if (response.status >= 300) {
       const destination=new URL(response.headers.location,target).href,normalized=normalize(destination);
@@ -321,17 +321,25 @@ async function fetchRecord(url, captureDirectory = null, {rawDirectory=null,meta
   if (page.language === 'ru') {
     // This endpoint is deliberately constructed here, never accepted as a discovered URL.
     const response = await axios.get(`https://scpfoundation.net/api/articles/${encodeURIComponent(page.slug)}`, {
-      timeout: 20000, maxRedirects: 0, maxContentLength: 12 * 1024 * 1024, headers: { Accept: 'application/json' },
+      timeout: timeoutMs, maxRedirects: 0, maxContentLength: 12 * 1024 * 1024, headers: { Accept: 'application/json' },
     });
     const record = extractApi(url, response.data);
-    if(!record.descriptionExcerpt||record.descriptionExcerpt.length<20)record.descriptionExcerpt=await require('./rufoundation-crawler').extractApiDescription(response.data,async target=>(await axios.get(target,{timeout:20000,maxRedirects:0,headers:{Accept:'application/json'}})).data)||'';
+    if(!record.descriptionExcerpt||record.descriptionExcerpt.length<20)record.descriptionExcerpt=await require('./rufoundation-crawler').extractApiDescription(response.data,async target=>(await axios.get(target,{timeout:timeoutMs,maxRedirects:0,headers:{Accept:'application/json'}})).data)||'';
     saveRaw(response.data,'json');
     saveMetadata(record,response.data,'ftml');
     if (captureDirectory) require('./research-board/source-store').capture(url, JSON.stringify(response.data), 'ftml', captureDirectory);
     return record;
   }
   const configuredScheme = new URL(LANGUAGES[page.language].baseUrl).protocol;
-  const html = await request(url.replace(/^http:/, 'https:'));
+  let html;
+  try{html=await request(url.replace(/^http:/,'https:'));}
+  catch(error){
+    const transient=[429,500,502,503,504].includes(error.response?.status)||['ECONNRESET','ETIMEDOUT','ECONNABORTED','EAI_AGAIN'].includes(error.code);
+    if(!transient||!new URL(page.url).hostname.endsWith('.wikidot.com'))throw error;
+    // Fetch the same owned page through Wikidot's no-redirect view. This can
+    // remain available while its normal rendering endpoint is failing.
+    html=await request(page.url+'/noredirect/true');
+  }
   const record = extractHtml(url, html,undefined,null,{redirectTarget});
   if(!record.descriptionExcerpt)record.descriptionExcerpt=await require('./article-frames').extractOwnedFrameProse(url,html)||'';
   saveRaw(html,'html');

@@ -85,7 +85,7 @@ async function repair({root=path.resolve(__dirname,'..'),language,maxRequests=10
     let record=null,error;
     for(let retry=0;retry<3;retry++){
      const pause=Math.max(0,last+intervalMs-Date.now());if(pause)await new Promise(r=>setTimeout(r,pause));last=Date.now();attempts++;report.requests++;
-     try{record=await request(target.url);error=null;break;}catch(e){error=e;if([404,410].includes(e.response?.status)||e.articleUnavailable===true){fetched.set(target.url,{unavailable:true,title:e.articleTitle,statusCode:e.response?.status||null,reason:e.message==='Unavailable article: not_found'?'not_found':'no_prose'});break;}
+     try{record=await request(target.url,null,{timeoutMs:20000*(retry+1)});error=null;break;}catch(e){error=e;if([404,410].includes(e.response?.status)||e.articleUnavailable===true){fetched.set(target.url,{unavailable:true,title:e.articleTitle,statusCode:e.response?.status||null,reason:e.message==='Unavailable article: not_found'?'not_found':'no_prose'});break;}
       const delay=retryDelayMs(e,retry);if(retry<2&&delay){console.warn(`[${language}] temporary fetch failure ${target.url}: ${e.response?.status||e.code}; retry in ${delay}ms`);await wait(delay);}
      }
     }
