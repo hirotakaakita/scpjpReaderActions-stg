@@ -15,6 +15,21 @@ function concurrency(block) {
   return Object.fromEntries([...match[2].matchAll(/ +([\w-]+): ([^\n]+)/g)].map(m => [m[1], m[2]]));
 }
 
+test('resuming a crawl preserves incoming articles through retrieval and publication', () => {
+  const workflow = read('scp-crawler.yml');
+  const crawl = job(workflow, 'crawl');
+  const refresh = job(workflow, 'refresh-article-text');
+  const publisher = job(workflow, 'merge-and-deploy');
+  assert.match(crawl, /run-id: \$\{\{ inputs.resume_crawl_run \}\}/);
+  assert.match(crawl, /name: partial-\$\{\{ matrix.lang \}\}\n +path: partial-data/);
+  assert.match(crawl, /if: always\(\) && \(inputs.repair_excerpts_only != true \|\| inputs.resume_crawl_run != ''\)/);
+  assert.match(refresh, /name: Download current language crawl data\n +if: inputs.repair_excerpts_only != true \|\| inputs.resume_crawl_run != ''/);
+  for (const step of ['Download all partial data', 'Merge partial data into local-data', 'Prepare notification queue']) {
+    assert.ok(publisher.includes(`name: ${step}\n        if: inputs.repair_excerpts_only != true || inputs.resume_crawl_run != ''`), step);
+  }
+  assert.match(refresh, /name: article-text-\$\{\{ matrix.lang \}\}\n +path: excerpt-previous\/excerpt-repairs/);
+});
+
 test('long crawls never hold the notification write lock', () => {
   const crawler = read('scp-crawler.yml');
   const notification = read('scheduled-notifications.yml');

@@ -13,6 +13,10 @@ on:
         description: 'Optional earlier repair run ID whose completed results can be reused'
         type: string
         default: ''
+      resume_crawl_run:
+        description: 'With repair_excerpts_only, restore and publish crawl artifacts from this earlier run'
+        type: string
+        default: ''
       additional_sites_only:
         description: "Crawl only the 16 newly added viewing languages"
         required: false
@@ -64,6 +68,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Validate crawl resume options
+        env:
+          RESUME_CRAWL_RUN: ${{ inputs.resume_crawl_run }}
+          REPAIR_EXCERPTS_ONLY: ${{ inputs.repair_excerpts_only == true && '1' || '0' }}
+        run: |
+          node -e "const id=process.env.RESUME_CRAWL_RUN;if(id&&(!/^\d+$/.test(id)||process.env.REPAIR_EXCERPTS_ONLY!=='1'))throw Error('resume_crawl_run requires a numeric run ID and repair_excerpts_only=true')"
+
       - name: Check public tag filtering
         run: node --test test/public-tags.test.js test/tag-dictionary.test.js test/rufoundation-crawler.test.js
 
@@ -108,6 +119,16 @@ jobs:
       # local-data/<lang>/scp-data.json（checkout済み）を参照して
       # createdAt・取得済み画像URLを引き継ぐ差分クロール
       # 並列実行のためエントリ間の待機を1000msに延長（レート制限対策）
+      - name: Restore previous crawl data for this language
+        if: inputs.repair_excerpts_only == true && inputs.resume_crawl_run != ''
+        uses: actions/download-artifact@v7
+        with:
+          repository: hirotakaakita/scpjpReaderActions-stg
+          run-id: ${{ inputs.resume_crawl_run }}
+          github-token: ${{ github.token }}
+          name: partial-${{ matrix.lang }}
+          path: partial-data
+
       - name: Crawl ${{ matrix.lang }} site
         if: inputs.repair_excerpts_only != true
         run: node language-crawler.js ${{ matrix.lang }}
@@ -162,7 +183,7 @@ jobs:
           ORIGIN_EVIDENCE_MAX_DURATION_MS: '180000'
 
       - name: Upload partial data
-        if: always() && inputs.repair_excerpts_only != true
+        if: always() && (inputs.repair_excerpts_only != true || inputs.resume_crawl_run != '')
         uses: actions/upload-artifact@v7
         with:
           name: partial-${{ matrix.lang }}
@@ -193,7 +214,7 @@ jobs:
         run: npm ci
 
       - name: Download current language crawl data
-        if: inputs.repair_excerpts_only != true
+        if: inputs.repair_excerpts_only != true || inputs.resume_crawl_run != ''
         uses: actions/download-artifact@v7
         with:
           name: partial-${{ matrix.lang }}
@@ -269,7 +290,7 @@ jobs:
         run: npm ci
 
       - name: Download all partial data
-        if: inputs.repair_excerpts_only != true
+        if: inputs.repair_excerpts_only != true || inputs.resume_crawl_run != ''
         uses: actions/download-artifact@v7
         with:
           pattern: partial-*
@@ -290,7 +311,7 @@ jobs:
         run: node prepare-tag-dictionary.js
 
       - name: Merge partial data into local-data
-        if: inputs.repair_excerpts_only != true
+        if: inputs.repair_excerpts_only != true || inputs.resume_crawl_run != ''
         run: node merge-data.js
 
       - name: Apply manga availability flags
@@ -321,7 +342,7 @@ jobs:
 
       # Compare against the latest master acquired after entering the publish lock.
       - name: Prepare notification queue
-        if: inputs.repair_excerpts_only != true
+        if: inputs.repair_excerpts_only != true || inputs.resume_crawl_run != ''
         run: node prepare-notification-queue.js
 
       - name: Audit every delivered article title and excerpt

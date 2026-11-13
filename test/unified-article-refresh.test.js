@@ -2,6 +2,19 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),os=require('node:os'),crypto=require('node:crypto');
 const {refreshArticleText}=require('../tool/refresh-article-text');
 const {VERSION}=require('../article-excerpts');
+
+test('a resumed full refresh fetches only unfinished articles and retains successful source edits',async t=>{
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),'article-resume-'));t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
+ const dir=path.join(root,'local-data/jp');fs.mkdirSync(dir,{recursive:true});
+ const urls=['https://scp-jp.wikidot.com/scp-173','https://scp-jp.wikidot.com/scp-174'];
+ fs.writeFileSync(path.join(dir,'scp-data.json'),JSON.stringify({data:urls.map(url=>({urlJP:url,titleJP:'A title',descriptionExcerpt:'The old body.'}))}));
+ const {repair}=require('../tool/repair-catalog-excerpts');
+ const first=await repair({root,language:'jp',force:true,maxRequests:1,intervalMs:0,request:async url=>({url,title:'Source title',descriptionExcerpt:'First observed source body.'})});
+ assert.equal(first.edits.length,1);assert.equal(first.pending.length,1);
+ const calls=[];
+ const report=await refreshArticleText({root,language:'jp',intervalMs:0,previousFile:path.join(root,'partial-data/excerpt-repairs/jp.json.gz'),request:async url=>{calls.push(url);return {url,title:'Second source title',descriptionExcerpt:'Second observed source body.'};}});
+ assert.deepEqual(calls,[urls[1]]);assert.equal(report.edits.length,2);assert.equal(report.edits[0].text,'First observed source body.');assert.equal(report.failed.length,0);assert.equal(report.pending.length,0);
+});
 test('SCP, Joke, EX, Tale and GoI all refetch even when their cached text is healthy',async t=>{
  const root=fs.mkdtempSync(path.join(os.tmpdir(),'all-article-refresh-'));t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
  const dir=path.join(root,'local-data/jp');fs.mkdirSync(dir,{recursive:true});
