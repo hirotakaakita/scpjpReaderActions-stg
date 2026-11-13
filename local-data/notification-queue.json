@@ -2,23 +2,208 @@
   "version": 1,
   "pending": {
     "jp": {
-      "items": [],
+      "items": [
+        {
+          "itemId": "scp-series-2629",
+          "titleJP": "The Twenty-Nine Year Paintball War"
+        },
+        {
+          "itemId": "scp-series-4499",
+          "titleJP": "なんと、お値段たったの44.99ドル！"
+        },
+        {
+          "itemId": "scp-series-4638",
+          "titleJP": "ただのホウレンソウですやん"
+        },
+        {
+          "itemId": "scp-series-5067",
+          "titleJP": "核の記憶"
+        },
+        {
+          "itemId": "scp-series-8792",
+          "titleJP": "我らの見つけた墓。"
+        },
+        {
+          "itemId": "scp-series-9124",
+          "titleJP": "SELECT * FROM SharingConsents WHERE UserInterconnectId IN (SELECT InterconnectId FROM UserInterconnects WHERE UserId IN (SELECT UserId FROM Users WHERE IsConfidant = true))"
+        },
+        {
+          "itemId": "joke-scps-1638",
+          "titleJP": "謎に包まれし漆黒の印刷版"
+        },
+        {
+          "itemId": "scp-ex-970",
+          "titleJP": "SCP-970-EX"
+        },
+        {
+          "itemId": "scp-series-jp-2574",
+          "titleJP": "ネットワークシステム"
+        },
+        {
+          "itemId": "scp-series-jp-3294",
+          "titleJP": "犬又"
+        },
+        {
+          "itemId": "scp-series-jp-4244",
+          "titleJP": "被食家ども"
+        },
+        {
+          "itemId": "scp-series-jp-4287",
+          "titleJP": "黒猫、暁に消ゆ"
+        },
+        {
+          "itemId": "scp-series-jp-4323",
+          "titleJP": "彼岸行"
+        },
+        {
+          "itemId": "scp-series-jp-4453",
+          "titleJP": "言語汚染ゴミクソ害虫"
+        },
+        {
+          "itemId": "scp-series-jp-4460",
+          "titleJP": "あなたの耳の中にいるキモい虫 〜クモの巻〜"
+        },
+        {
+          "itemId": "scp-series-jp-4461",
+          "titleJP": "あなたの耳の中にいるキモい虫 〜カタツムリの巻〜"
+        },
+        {
+          "itemId": "scp-series-jp-4987",
+          "titleJP": "また自殺か"
+        },
+        {
+          "itemId": "scp-series-jp-4988",
+          "titleJP": "[アクセス拒否]"
+        }
+      ],
       "lastSentWindow": "2026-11-08"
     },
     "en": {
-      "items": [],
+      "items": [
+        {
+          "itemId": "scp-series-8758",
+          "titleJP": "The Cursed Trumpet"
+        },
+        {
+          "itemId": "scp-series-9419",
+          "titleJP": "\"The Day the Sun Fell and the Day the World Ended.\""
+        },
+        {
+          "itemId": "scp-series-9467",
+          "titleJP": "[ACCESS DENIED]"
+        },
+        {
+          "itemId": "scp-series-9720",
+          "titleJP": "Retcon Cube"
+        },
+        {
+          "itemId": "scp-series-9845",
+          "titleJP": "The Ghost."
+        },
+        {
+          "itemId": "scp-series-9847",
+          "titleJP": "The Word Eater"
+        },
+        {
+          "itemId": "scp-series-9858",
+          "titleJP": "A Midnight Run"
+        }
+      ],
       "lastSentWindow": "2026-11-08"
     },
     "cn": {
-      "items": [],
+      "items": [
+        {
+          "itemId": "scp-series-3926",
+          "titleJP": "《与你的主持人Tyal'k'nec共度的周六之夜》"
+        },
+        {
+          "itemId": "scp-series-6730",
+          "titleJP": "不可触碰者"
+        },
+        {
+          "itemId": "scp-series-6805",
+          "titleJP": "安全港"
+        },
+        {
+          "itemId": "scp-series-8171",
+          "titleJP": "有染原罪"
+        },
+        {
+          "itemId": "scp-series-8174",
+          "titleJP": "方舟"
+        },
+        {
+          "itemId": "scp-series-8192",
+          "titleJP": "休谟坍缩"
+        },
+        {
+          "itemId": "scp-series-9395",
+          "titleJP": "[拒绝访问]"
+        },
+        {
+          "itemId": "scp-series-9801",
+          "titleJP": "玫瑰之影"
+        },
+        {
+          "itemId": "scp-series-9819",
+          "titleJP": "一个肖像家庭"
+        },
+        {
+          "itemId": "joke-scps-1551",
+          "titleJP": "重要的事"
+        },
+        {
+          "itemId": "scp-series-cn-4147",
+          "titleJP": "抑郁症"
+        },
+        {
+          "itemId": "scp-series-cn-4218",
+          "titleJP": "等你长大就明白了"
+        },
+        {
+          "itemId": "scp-series-cn-4523",
+          "titleJP": "谢尔盖"
+        },
+        {
+          "itemId": "scp-series-cn-4775",
+          "titleJP": "巨人后代"
+        },
+        {
+          "itemId": "scp-series-cn-4964",
+          "titleJP": "星葬礼物"
+        }
+      ],
       "lastSentWindow": "2026-11-08"
     },
     "cs": {
-      "items": [],
+      "items": [
+        {
+          "itemId": "scp-series-118",
+          "titleJP": "Jaderní protisté"
+        },
+        {
+          "itemId": "scp-ex-001",
+          "titleJP": "Hodný kluk"
+        }
+      ],
       "lastSentWindow": "2026-11-08"
     },
     "de": {
-      "items": [],
+      "items": [
+        {
+          "itemId": "scp-series-748",
+          "titleJP": "Industrieller Zerfall"
+        },
+        {
+          "itemId": "scp-series-de-356",
+          "titleJP": "Glístrimaphobie"
+        },
+        {
+          "itemId": "scp-series-de-476",
+          "titleJP": "Athazagoraphobie: Alles wird vergessen"
+        }
+      ],
       "lastSentWindow": "2026-11-08"
     },
     "es": {
@@ -38,15 +223,58 @@
       "lastSentWindow": "2026-11-08"
     },
     "ko": {
-      "items": [],
+      "items": [
+        {
+          "itemId": "scp-series-4915",
+          "titleJP": "1성급 격리"
+        },
+        {
+          "itemId": "scp-series-ko-1257",
+          "titleJP": "금쪽같은 내새끼: 매일 울어제끼는 검은 달 편"
+        },
+        {
+          "itemId": "scp-series-ko-1536",
+          "titleJP": "THE FOUNDATION 2 All Bosses + Ending [No damage]"
+        },
+        {
+          "itemId": "scp-series-ko-1658",
+          "titleJP": "독자 연주 피아노"
+        },
+        {
+          "itemId": "scp-series-ko-1785",
+          "titleJP": "확정적 XK 크리스티아누 호날두"
+        },
+        {
+          "itemId": "scp-series-ko-1881",
+          "titleJP": "제발요 네? 전역하기직전인데에"
+        }
+      ],
       "lastSentWindow": "2026-11-08"
     },
     "pl": {
-      "items": [],
+      "items": [
+        {
+          "itemId": "scp-series-4244",
+          "titleJP": "Muzyka w dobrym smaku"
+        },
+        {
+          "itemId": "scp-series-9453",
+          "titleJP": "Zamknięty pokój w Stambule"
+        }
+      ],
       "lastSentWindow": "2026-11-08"
     },
     "pt": {
-      "items": [],
+      "items": [
+        {
+          "itemId": "scp-series-356",
+          "titleJP": "Figuras na Costa"
+        },
+        {
+          "itemId": "scp-series-5444",
+          "titleJP": "Como Desaparecer Completamente"
+        }
+      ],
       "lastSentWindow": "2026-11-08"
     },
     "th": {
@@ -66,7 +294,384 @@
       "lastSentWindow": "2026-11-08"
     },
     "ru": {
-      "items": [],
+      "items": [
+        {
+          "itemId": "joke-scps-1d6",
+          "titleJP": "SCP-1D6-J - Придурь Гайгэкса"
+        },
+        {
+          "itemId": "joke-scps-003",
+          "titleJP": "SCP-:3-J - Меметическая языковая конструкция"
+        },
+        {
+          "itemId": "joke-scps-3v1l",
+          "titleJP": "SCP-3JIO-J - Хитрый план"
+        },
+        {
+          "itemId": "joke-scps-100",
+          "titleJP": "SCP-100-J - Вонючая куча навоза"
+        },
+        {
+          "itemId": "joke-scps-5555",
+          "titleJP": "SCP-5555-J - Чибинатор"
+        },
+        {
+          "itemId": "joke-scps-big-egg-j",
+          "titleJP": "SCP-Большое яйцо"
+        },
+        {
+          "itemId": "joke-scps-botnik",
+          "titleJP": "SCP-\\̅\\̅\\̅\\̅-J - Субъект осведомлён"
+        },
+        {
+          "itemId": "joke-scps-cn-20210401",
+          "titleJP": "SCP-CN-20210401-J - Супер Том!"
+        },
+        {
+          "itemId": "joke-scps-cn-jpg",
+          "titleJP": "SCP-CN-JPG-J - Самогенерируемый мем"
+        },
+        {
+          "itemId": "joke-scps-damej",
+          "titleJP": "SCP-варуйубевай-J - Варуй-убевай робат"
+        },
+        {
+          "itemId": "joke-scps-de-008",
+          "titleJP": "SCP-008-DE-J - Дерьмо?"
+        },
+        {
+          "itemId": "joke-scps-ducks",
+          "titleJP": "SCP-Утки-J - УБИЙСТВЕННЫЕ СКИДКИ В ЗОНЕ 19!!!"
+        },
+        {
+          "itemId": "joke-scps-even-number-j",
+          "titleJP": "SCP-[ВСТАВЬТЕ НОМЕР]-J"
+        },
+        {
+          "itemId": "joke-scps-fr-017",
+          "titleJP": "SCP-017-FR-J - Святой Патрик"
+        },
+        {
+          "itemId": "joke-scps-fr-096",
+          "titleJP": "SCP-096-FR-J - Метаморфные конфеты"
+        },
+        {
+          "itemId": "joke-scps-fr-240",
+          "titleJP": "SCP-240-FR-J - Кликни здесь! Скачать бесплатно! Невероятно!"
+        },
+        {
+          "itemId": "joke-scps-in-a-box-j",
+          "titleJP": "SCP-????-J - Хрень какая-то в коробке"
+        },
+        {
+          "itemId": "joke-scps-j",
+          "titleJP": "SCP-____-J - Прокрастина"
+        },
+        {
+          "itemId": "joke-scps-jp-014",
+          "titleJP": "SCP-014-JP-J - Необычная японская школьница"
+        },
+        {
+          "itemId": "joke-scps-jp-710",
+          "titleJP": "SCP-710-JP-J - Путь ученого"
+        },
+        {
+          "itemId": "joke-scps-jp-1210",
+          "titleJP": "SCP-1210-JP-J - Уж не химера ли это?"
+        },
+        {
+          "itemId": "joke-scps-k9-j-ex",
+          "titleJP": "SCP-К9-J-EX - Дом с привидениями"
+        },
+        {
+          "itemId": "joke-scps-ko-420",
+          "titleJP": "SCP-420-KO-J - Марихуанская впадина"
+        },
+        {
+          "itemId": "joke-scps-ko-555",
+          "titleJP": "SCP-555-KO-J - Ответ на проблемы SCP"
+        },
+        {
+          "itemId": "joke-scps-meow",
+          "titleJP": "SCP-МЯУ-J - Мяу"
+        },
+        {
+          "itemId": "joke-scps-minus-1-j",
+          "titleJP": "SCP-(-1)-J - Аэрозольная краска-невидимка решает все проблемы!"
+        },
+        {
+          "itemId": "joke-scps-mystery",
+          "titleJP": "SCP-ЗАГАДКА-J - Загадочный местозаниматель"
+        },
+        {
+          "itemId": "joke-scps-o5-council-j",
+          "titleJP": "SCP-Совет О5-J - Совет О5"
+        },
+        {
+          "itemId": "joke-scps-pl-000",
+          "titleJP": "SCP-PL-000-J - Нет здесь никакого SCP"
+        },
+        {
+          "itemId": "joke-scps-pl-kot",
+          "titleJP": "SCP-PL-КОТ-J - Это социальный эксперимент"
+        },
+        {
+          "itemId": "joke-scps-ru-0133",
+          "titleJP": "SCP-0133-RU-J - Аномальная магнитуда"
+        },
+        {
+          "itemId": "joke-scps-ru-294",
+          "titleJP": "SCP-294-RU-J - Официальное объявление войны между человеком и кофемашиной (спойлер: человек проиграл)"
+        },
+        {
+          "itemId": "joke-scps-ru-1000",
+          "titleJP": "SCP-1000-RU-J - Для того чтобы стать магом, достаточно простой советской..."
+        },
+        {
+          "itemId": "joke-scps-ru-1004",
+          "titleJP": "SCP-1004-RU-J - Слесарь-сантехник"
+        },
+        {
+          "itemId": "joke-scps-ru-1025",
+          "titleJP": "SCP-1025-RU-J - Чайник №25"
+        },
+        {
+          "itemId": "joke-scps-ru-1080",
+          "titleJP": "SCP-1080-RU-J - Неприкрытая жестокость"
+        },
+        {
+          "itemId": "joke-scps-ru-1100",
+          "titleJP": "SCP-1100-RU-J - Внезапный песец"
+        },
+        {
+          "itemId": "joke-scps-ru-1122",
+          "titleJP": "SCP-1122-RU-J - Не"
+        },
+        {
+          "itemId": "joke-scps-ru-1128",
+          "titleJP": "SCP-1128-RU-J - \"Непереносимая зубная боль\""
+        },
+        {
+          "itemId": "joke-scps-ru-1138",
+          "titleJP": "SCP-1138-RU-J - Дух Чистоты"
+        },
+        {
+          "itemId": "joke-scps-ru-1144",
+          "titleJP": "SCP-1144-RU-J - Квасной патриотизм"
+        },
+        {
+          "itemId": "joke-scps-ru-1146",
+          "titleJP": "SCP-1146-RU-J - Частушки-Фондовушки"
+        },
+        {
+          "itemId": "joke-scps-ru-1148",
+          "titleJP": "SCP-1148-RU-J - Ретро"
+        },
+        {
+          "itemId": "joke-scps-ru-1155",
+          "titleJP": "SCP-1155-RU-J - Пельмени-захватчики"
+        },
+        {
+          "itemId": "joke-scps-ru-1190",
+          "titleJP": "SCP-1190-RU-J - Поваренная книга"
+        },
+        {
+          "itemId": "joke-scps-ru-1234",
+          "titleJP": "SCP-1234-RU-J - Антикетерский механизм"
+        },
+        {
+          "itemId": "joke-scps-ru-1250",
+          "titleJP": "SCP-1250-RU-J - Кукурузник"
+        },
+        {
+          "itemId": "joke-scps-ru-1318",
+          "titleJP": "SCP-1318-RU-J - Зонт от дождя"
+        },
+        {
+          "itemId": "joke-scps-ru-1382",
+          "titleJP": "SCP-1382-RU-J - Ночные жонглёры"
+        },
+        {
+          "itemId": "joke-scps-ru-1506",
+          "titleJP": "SCP-1506-RU-J - Большая Затычка"
+        },
+        {
+          "itemId": "joke-scps-ru-1567",
+          "titleJP": "SCP-1567-RU-J - Особое время"
+        },
+        {
+          "itemId": "joke-scps-ru-1576",
+          "titleJP": "SCP-1576-RU-J - АК-47"
+        },
+        {
+          "itemId": "joke-scps-ru-1733",
+          "titleJP": "SCP-1733-RU-J - \"Кот в мешке\""
+        },
+        {
+          "itemId": "joke-scps-ru-1743",
+          "titleJP": "SCP-1743-RU-J - Смешная коробочка"
+        },
+        {
+          "itemId": "joke-scps-ru-1800",
+          "titleJP": "SCP-1800-RU-J - Вечная партия"
+        },
+        {
+          "itemId": "joke-scps-ru-1924",
+          "titleJP": "SCP-1924-RU-J - Призрак Коммунизма"
+        },
+        {
+          "itemId": "joke-scps-ru-1969",
+          "titleJP": "SCP-1969-RU-J - Отель"
+        },
+        {
+          "itemId": "joke-scps-ru-1973",
+          "titleJP": "SCP-1973-RU-J - Панчлайн"
+        },
+        {
+          "itemId": "joke-scps-ru-1990",
+          "titleJP": "SCP-1990-RU-J - Средоточие аномалий"
+        },
+        {
+          "itemId": "joke-scps-ru-2000",
+          "titleJP": "SCP-2000-RU-J - Мокбастер"
+        },
+        {
+          "itemId": "joke-scps-ru-2001",
+          "titleJP": "SCP-2001-RU-J - Доминирующая форма жизни"
+        },
+        {
+          "itemId": "joke-scps-ru-2002",
+          "titleJP": "SCP-2002-RU-J - Новое руководство для авторов"
+        },
+        {
+          "itemId": "joke-scps-ru-2021",
+          "titleJP": "SCP-2021-RU-J - Закрытая информация"
+        },
+        {
+          "itemId": "joke-scps-ru-2233",
+          "titleJP": "SCP-2233-RU-J - Лукоморье"
+        },
+        {
+          "itemId": "joke-scps-ru-2356",
+          "titleJP": "SCP-2356-RU-J - Безопасность превыше всего"
+        },
+        {
+          "itemId": "joke-scps-ru-2761",
+          "titleJP": "SCP-2761-RU-J - Рояль в кустах"
+        },
+        {
+          "itemId": "joke-scps-ru-3000",
+          "titleJP": "SCP-3000-RU-J - Коробка"
+        },
+        {
+          "itemId": "joke-scps-ru-3003",
+          "titleJP": "SCP-3003-RU-J - Вам, наверное, интересно, как я оказался в такой ситуации"
+        },
+        {
+          "itemId": "joke-scps-ru-3074",
+          "titleJP": "SCP-3074-RU-J - Роковое письмо"
+        },
+        {
+          "itemId": "joke-scps-ru-3100",
+          "titleJP": "SCP-3100-RU-J - Утонул чайный гриб — что делать?"
+        },
+        {
+          "itemId": "joke-scps-ru-3112-j-d",
+          "titleJP": "SCP-3112-RU-J-D - Бывший даритель"
+        },
+        {
+          "itemId": "joke-scps-ru-3321",
+          "titleJP": "SCP-3321-RU-J - Ужасные насекомые!!!"
+        },
+        {
+          "itemId": "joke-scps-ru-3366",
+          "titleJP": "SCP-3366-RU-J - Сфера, нарушающая законы физики"
+        },
+        {
+          "itemId": "joke-scps-ru-3930",
+          "titleJP": "SCP-3930-RU-J - Источник переводческого крика"
+        },
+        {
+          "itemId": "joke-scps-ru-4209",
+          "titleJP": "SCP-4209-RU-J - Межгалактический корабль"
+        },
+        {
+          "itemId": "joke-scps-ru-6789",
+          "titleJP": "SCP-6789-RU-J - Гиблое болото"
+        },
+        {
+          "itemId": "joke-scps-ru-6969",
+          "titleJP": "SCP-6969-RU-J - «Странствующий герой»"
+        },
+        {
+          "itemId": "joke-scps-ru-8700",
+          "titleJP": "SCP-8700-RU-J - Жуть, загадка, плохое освещение"
+        },
+        {
+          "itemId": "joke-scps-ru-9999",
+          "titleJP": "SCP-9999-RU-J - Музей Славы и Всякой Всячины"
+        },
+        {
+          "itemId": "joke-scps-ru-10001",
+          "titleJP": "SCP-10001-RU-J - Генераторы состояний"
+        },
+        {
+          "itemId": "joke-scps-scp",
+          "titleJP": "SCP-SCP-J - Это Сцапка!"
+        },
+        {
+          "itemId": "joke-scps-spooky",
+          "titleJP": "SCP-ЖУТКО-J - Ветеран скелетной войны"
+        },
+        {
+          "itemId": "joke-scps-ttku",
+          "titleJP": "SCP-ТЧТУ-J (то есть то, что тебя убивает)"
+        },
+        {
+          "itemId": "joke-scps-ua-705",
+          "titleJP": "SCP-705-UA-J - Боевой диван"
+        },
+        {
+          "itemId": "joke-scps-wtf",
+          "titleJP": "SCP-WTF-J - Худший из объектов"
+        },
+        {
+          "itemId": "joke-scps-xxxx",
+          "titleJP": "SCP-XXXX-J - Ты нужен мне для написания SCP!"
+        },
+        {
+          "itemId": "scp-series-1048-ru:victor-and-victoria",
+          "titleJP": "SCP-████ – Виктор и Виктория Митрукины"
+        },
+        {
+          "itemId": "scp-series-1439-ru",
+          "titleJP": "SCP-1439-RU - полный графин карфентанила🩸"
+        },
+        {
+          "itemId": "scp-series-1537-ru",
+          "titleJP": "SCP-1537-RU - Власть достойных"
+        },
+        {
+          "itemId": "scp-series-5242",
+          "titleJP": "SCP-ЧИСЛО"
+        },
+        {
+          "itemId": "scp-series-5356",
+          "titleJP": "SCP-███ - [УДАЛЕНО]"
+        },
+        {
+          "itemId": "scp-series-5789",
+          "titleJP": "SCP-𝕐 - Каннибалистическая математика"
+        },
+        {
+          "itemId": "scp-series-6445",
+          "titleJP": "SCP-⌘ - Под Трепещущим королевством"
+        },
+        {
+          "itemId": "scp-series-8909",
+          "titleJP": "SCP-NaN - А Н Т И Ф Р А Г М Е Н Т"
+        }
+      ],
       "lastSentWindow": "2026-11-08"
     },
     "ar": {
@@ -134,5 +739,5 @@
       "lastSentWindow": "2026-11-08"
     }
   },
-  "updatedAt": "2026-11-10T20:08:06.913Z"
+  "updatedAt": "2026-11-13T18:04:02.348Z"
 }

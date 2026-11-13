@@ -6925,6 +6925,12 @@
       ],
       "labels": {}
     },
+    "ektentropisch": {
+      "aliases": [
+        "ektentropisch"
+      ],
+      "labels": {}
+    },
     "ektoentropic": {
       "aliases": [
         "ektoentropic"
@@ -7867,6 +7873,12 @@
       ],
       "labels": {}
     },
+    "euclideo": {
+      "aliases": [
+        "euclideo"
+      ],
+      "labels": {}
+    },
     "euclidyay": {
       "aliases": [
         "euclidyay"
@@ -8080,6 +8092,12 @@
     "fabbrica": {
       "aliases": [
         "fabbrica"
+      ],
+      "labels": {}
+    },
+    "fabrik": {
+      "aliases": [
+        "fabrik"
       ],
       "labels": {}
     },
@@ -20233,6 +20251,14 @@
       ],
       "labels": {}
     },
+    "tag-06775cb1fc46fb6621c223c2": {
+      "aliases": [
+        "свойство:еда"
+      ],
+      "labels": {
+        "ru": "свойство:еда"
+      }
+    },
     "tag-0682c9583852ff394d0a3e23": {
       "aliases": [
         "喜劇"
@@ -25318,6 +25344,12 @@
     "tag-29a95d7d43d3731db9772390": {
       "aliases": [
         "可視光"
+      ],
+      "labels": {}
+    },
+    "tag-29e748f1f4bed8c83328a3de": {
+      "aliases": [
+        "chuyển-hướng"
       ],
       "labels": {}
     },
@@ -40320,6 +40352,12 @@
     "tag-90513296900ccbde920592ca": {
       "aliases": [
         "全球轰炸联盟"
+      ],
+      "labels": {}
+    },
+    "tag-905ede64437573f8e854eee1": {
+      "aliases": [
+        "001-návrh"
       ],
       "labels": {}
     },
