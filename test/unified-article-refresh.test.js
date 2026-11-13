@@ -3,6 +3,24 @@ const {test}=require('node:test'),assert=require('node:assert/strict'),fs=requir
 const {refreshArticleText}=require('../tool/refresh-article-text');
 const {VERSION}=require('../article-excerpts');
 
+test('new native articles are refreshed before publication and observed empty bodies pass the audit',async t=>{
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),'incoming-native-text-'));t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
+ const partial=path.join(root,'partial-data');fs.mkdirSync(partial,{recursive:true});
+ const {partialFileName}=require('../partial-file'),{LANGUAGES}=require('../languages');
+ const urls=['https://scpfoundation.net/scp-new-image-j','https://scpfoundation.net/scp-new-text-j'];
+ const rows=urls.map((url,i)=>({itemId:'new-'+i,urlJP:url,titleJP:'New article',descriptionExcerpt:'',isTranslatedJP:true}));
+ fs.writeFileSync(path.join(partial,partialFileName('ru',LANGUAGES.ru.pages[0].path)),JSON.stringify({data:rows}));
+ const calls=[];const report=await refreshArticleText({root,language:'ru',intervalMs:0,request:async url=>{calls.push(url);return {url,title:'New article',descriptionExcerpt:url===urls[0]?'':'A newly discovered narrative.'};}});
+ assert.deepEqual(calls,urls);assert.equal(report.edits.length,2);assert.equal(report.edits[0].descriptionStatus,'no_prose');
+ // Simulate the native merge followed by the normal apply and delivery stages.
+ const local=path.join(root,'local-data/ru');fs.mkdirSync(local,{recursive:true});fs.writeFileSync(path.join(local,'scp-data.json'),JSON.stringify({data:rows}));fs.writeFileSync(path.join(local,'meta.json'),'{}');
+ require('../tool/apply-excerpt-repairs').apply({root});
+ const updated=JSON.parse(fs.readFileSync(path.join(local,'scp-data.json'))).data;
+ assert.equal(updated[0].descriptionStatus,'no_prose');assert.equal(updated[1].descriptionExcerpt,'A newly discovered narrative.');
+ const mobile=path.join(root,'local-data/mobile-v3/ru');fs.mkdirSync(mobile,{recursive:true});fs.writeFileSync(path.join(mobile,'manifest.json'),JSON.stringify({fileName:'catalog.json'}));fs.writeFileSync(path.join(mobile,'catalog.json'),JSON.stringify({data:updated}));
+ const audit=require('../tool/audit-article-text').audit({root,strict:true,writeReport:false});assert.equal(audit.problems.length,0);assert.equal(audit.emptySourceBodies.length,1);
+});
+
 test('a resumed full refresh fetches only unfinished articles and retains successful source edits',async t=>{
  const root=fs.mkdtempSync(path.join(os.tmpdir(),'article-resume-'));t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
  const dir=path.join(root,'local-data/jp');fs.mkdirSync(dir,{recursive:true});
