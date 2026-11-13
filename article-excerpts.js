@@ -10,7 +10,7 @@ const RATING_LABEL = '(?:rating|notation|評価|评分|評分|評價|평가|bewe
 const WIDGET = new RegExp('^(?:'+RATING_LABEL+'\\s*[:：]\\s*){1,3}[+−–-]?\\s*\\d+\\s*\\+\\s*[−–-]\\s*[x×]\\s*','iu');
 const CREDIT_CONTROLS = /^fermer\s+Crédits\s+close\s*/iu;
 const EMBEDDED_WIDGET = /[+−–-]?\d+\s*\+\s*[−–-]\s*[x×]/u;
-const EXCLUDED = 'script,style,noscript,iframe,.page-tags,.page-rate-widget-box,.creditRate,.licensebox,.license-box,.credit,.credit-box,#u-credit-view,.info-container,.footer-wikiwalk-nav,.page-navigation,.interwiki-box,[role="navigation"],#toc,.toc,#anom-bar-container,.anom-bar-container,.acs-container,.acs-header,.adult-warning,.adult-warning-box,#adult-warning,.content-warning,.content-warning-box,.odate,.collapsible-block-folded,.collapsible-block-unfolded-link';
+const EXCLUDED = 'script,style,noscript,iframe,.page-tags,.page-rate-widget-box,.creditRate,.licensebox,.license-box,.credit,.credit-box,#u-credit-view,.info-container,.footer-wikiwalk-nav,.page-navigation,.interwiki-box,[role="navigation"],#toc,.toc,#anom-bar-container,.anom-bar-container,.acs-container,.acs-header,.adult-warning,.adult-warning-box,#adult-warning,.content-warning,.content-warning-box,.odate,.collapsible-block-folded,.collapsible-block-unfolded-link,.error-block,.ko-footer';
 const TECHNICAL = /@(?:import\s+(?:url|["'])|media\s*[^{}]*\{|font-face\s*\{)|(?:[.#][\w-]+|:root|body|html)[^{}]{0,100}\{\s*(?:--[\w-]+|font[\w-]*|background[\w-]*|color|margin[\w-]*|padding[\w-]*|display|position|width|height|border[\w-]*|content)\s*:/iu;
 function technicalExcerpt(value){return TECHNICAL.test(String(value||''))||/^(?:\s*(?:\[\[)?module\s+css\b|\s*\[!--|\s*<!--|\s*\/\*\s*(?:source:|[\s\S]{0,180}(?:Wikidot Theme|THEME|CSS)))/iu.test(String(value||''));}
 function titleNeedsRepair(value){return !String(value||'').trim()||TECHNICAL.test(String(value))||/^\s*(?:<script\b|\[!--|<!--|\{\$[\w-]+\})/iu.test(String(value));}
@@ -30,6 +30,7 @@ function repairStoredExcerpt(value){
 function cleanExcerptRoot(document){
  const source=document.querySelector('#page-content')||document.body||document;
  const root=source.cloneNode(true);
+ for(const node of root.querySelectorAll('p'))if(node.querySelector('.printuser')&&/창작하였습니다/u.test(node.textContent))node.remove();
  for(const node of root.querySelectorAll('[style]'))if(/display\s*:\s*none/i.test(node.getAttribute('style'))&&technicalExcerpt(node.textContent)&&/\[\[include\s+[^\]]*theme:/.test(node.textContent))node.remove();
  for(const node of root.querySelectorAll('#u-adult-warning'))(node.closest('.modal-wrapper')||node).remove();
  for(const node of root.querySelectorAll(EXCLUDED))node.remove();
