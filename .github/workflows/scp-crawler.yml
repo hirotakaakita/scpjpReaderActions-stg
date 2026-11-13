@@ -161,8 +161,58 @@ jobs:
           ORIGIN_EVIDENCE_MAX_PAGES: '600'
           ORIGIN_EVIDENCE_MAX_DURATION_MS: '180000'
 
+      - name: Upload partial data
+        if: always() && inputs.repair_excerpts_only != true
+        uses: actions/upload-artifact@v7
+        with:
+          name: partial-${{ matrix.lang }}
+          path: partial-data/
+          retention-days: 3
+          if-no-files-found: error
+
+  # Separate discovery and full text retrieval so each has its own time budget.
+  refresh-article-text:
+    runs-on: ubuntu-latest
+    needs: [setup, crawl]
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix: ${{ fromJSON(needs.setup.outputs.matrix) }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download current language crawl data
+        if: inputs.repair_excerpts_only != true
+        uses: actions/download-artifact@v7
+        with:
+          name: partial-${{ matrix.lang }}
+          path: partial-data
+
       - name: Restore earlier excerpt repair checkpoints
+        id: restore_text_checkpoint
         if: inputs.repair_excerpts_only == true && inputs.excerpt_repair_run != ''
+        continue-on-error: true
+        uses: actions/download-artifact@v7
+        with:
+          repository: hirotakaakita/scpjpReaderActions-stg
+          run-id: ${{ inputs.excerpt_repair_run }}
+          github-token: ${{ github.token }}
+          name: article-text-${{ matrix.lang }}
+          path: excerpt-previous/excerpt-repairs
+
+      - name: Restore checkpoints from workflows before the job split
+        if: inputs.repair_excerpts_only == true && inputs.excerpt_repair_run != '' && steps.restore_text_checkpoint.outcome == 'failure'
         continue-on-error: true
         uses: actions/download-artifact@v7
         with:
@@ -180,25 +230,24 @@ jobs:
           CRAWL_REQUEST_INTERVAL_MS: '500'
           EXCERPT_PREVIOUS_REPAIRS: excerpt-previous/excerpt-repairs/${{ matrix.lang }}.json.gz
 
-      - name: Upload partial data
+      - name: Upload article text checkpoints
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: partial-${{ matrix.lang }}
-          path: partial-data/
+          name: article-text-${{ matrix.lang }}
+          path: partial-data/excerpt-repairs/
           retention-days: 3
           if-no-files-found: error
 
-  # 言語単位で全ページのクロールが成功した言語のみ結合・配備する
-  # （ある言語で1ページでも失敗するとその言語はスキップされ、local-dataは前回のまま維持される）
+  # Publish only when discovery and full text retrieval both succeeded.
   merge-and-deploy:
     concurrency:
       group: scp-data-update
       cancel-in-progress: false
       queue: max
     runs-on: ubuntu-latest
-    needs: [setup, crawl]
-    if: always() && needs.setup.result == 'success' && needs.crawl.result != 'cancelled' && (inputs.repair_excerpts_only != true || needs.crawl.result == 'success') && github.repository == 'hirotakaakita/scpjpReaderActions-stg' && github.ref == 'refs/heads/master'
+    needs: [setup, crawl, refresh-article-text]
+    if: always() && needs.setup.result == 'success' && needs.crawl.result == 'success' && needs.refresh-article-text.result == 'success' && github.repository == 'hirotakaakita/scpjpReaderActions-stg' && github.ref == 'refs/heads/master'
     environment: stg
     timeout-minutes: 15
     permissions:
@@ -220,10 +269,18 @@ jobs:
         run: npm ci
 
       - name: Download all partial data
+        if: inputs.repair_excerpts_only != true
         uses: actions/download-artifact@v7
         with:
           pattern: partial-*
           path: partial-data
+          merge-multiple: true
+
+      - name: Download all article text results
+        uses: actions/download-artifact@v7
+        with:
+          pattern: article-text-*
+          path: partial-data/excerpt-repairs
           merge-multiple: true
 
       - name: Test localized catalog generation
