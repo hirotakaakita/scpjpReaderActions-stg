@@ -12,7 +12,7 @@ function fixture(t) {
       else process.env[key] = original;
     });
   }
-  const crawler = new LocalSCPCrawler('jp');
+  const crawler = new LocalSCPCrawler('jp',{metadataDirectory:null});
   crawler.startTime = new Date();
   crawler.totalUrls = 1;
   crawler.entryDelayMs = 0;
@@ -67,7 +67,7 @@ test('named joke links and Unicode hyphens retain their actual titles', t => {
 
 test('exhausted retries report failure without a current tag version', async t => {
   const f = fixture(t); f.setFailure(true);
-  const result = await f.extractDetails('https://example.invalid/scp-002', 2);
+  const result = await f.extractDetails('https://scp-jp.wikidot.com/scp-002', 2);
   assert.equal(f.requests(), 2);
   assert.equal(result.fetchSucceeded, false);
   assert.equal(result.tagVersion, null);

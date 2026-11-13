@@ -22,13 +22,20 @@ only explicitly missing source pages are retired. Each observation is applied
 only to matching source URLs and prior excerpt hashes in the primary, indexed
 and retained caches. Checkpoints can resume failed repair runs.
 
-Normal runs perform a bounded repair and record the full audit. Dispatching
-`scp-crawler.yml` with `repair_excerpts_only=true` scans all languages, repairs
-the complete candidate set and requires the final audit to pass before publishing.
-Use `excerpt_repair_run` to reuse successful observations from a prior run.
+The weekly `scp-crawler.yml` refreshes all published article kinds through the
+same `refresh-article-text.js` stage. SCP, Joke and EX page fetching uses the same
+`fetchRecord` transport/parser as Tales, GoI, hubs and supplements. Previews use
+the same 500-code-point limit. Only article URL discovery differs by source.
+Official-index discovery no longer has its own 600-article content queue; the
+common refresh stage reads every collected URL. Successful captures from the
+current invocation avoid fetching numbered SCP pages twice; old healthy caches
+do not exempt any kind of article. Incomplete refreshes prevent publication.
+The normal weekly schedule stays unchanged. The legacy `repair_excerpts_only`
+switch can skip discovery when resuming, and `excerpt_repair_run` reuses earlier
+completed observations.
 
 ```sh
 node --test
-node tool/repair-catalog-excerpts.js jp
+node tool/refresh-article-text.js jp
 node tool/audit-article-text.js --strict
 ```

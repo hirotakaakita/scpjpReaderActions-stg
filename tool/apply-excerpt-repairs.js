@@ -24,7 +24,7 @@ function apply({root=path.resolve(__dirname,'..'),requireComplete=false,now=new 
   const edit=edits.get(url+':'+hash(String(row.descriptionExcerpt||'')));if(!edit)return false;
   row.descriptionExcerpt=edit.text;row.descriptionVersion=VERSION;row.descriptionCheckedAt=edit.at;
   if(edit.descriptionStatus)row.descriptionStatus=edit.descriptionStatus;
-  if(edit.title){const field='titleJP'in row?'titleJP':'title';if(titleNeedsRepair(row[field]))row[field]=edit.title;}
+  if(edit.title){const field='titleJP'in row?'titleJP':'title';if(titleNeedsRepair(row[field])||(edit.refreshTitle&&field==='title'))row[field]=edit.title;}
   if(edit.sourceHash)row.descriptionContentSha256=edit.sourceHash;
   counts[kind]++;return true;
  }

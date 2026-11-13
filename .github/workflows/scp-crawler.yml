@@ -120,13 +120,14 @@ jobs:
           FORCE_REFRESH_DESCRIPTION: ${{ inputs.force_refresh_description == true && '1' || '0' }}
           FORCE_REFRESH_TAGS: ${{ inputs.force_refresh_tags == true && '1' || '0' }}
 
-      - name: Crawl official article indexes
+      - name: Discover article URLs from official indexes
         if: inputs.repair_excerpts_only != true
         continue-on-error: true
         run: node catalog-indexes.js ${{ matrix.lang }}
         env:
-          INDEX_MAX_REQUESTS: '600'
-          INDEX_MAX_DURATION_MS: '300000'
+          INDEX_MAX_REQUESTS: '0'
+          INDEX_MAX_DURATION_MS: '3600000'
+          FORCE_REFRESH_ARTICLE_INDEXES: '1'
           CRAWL_REQUEST_INTERVAL_MS: '500'
 
       - name: Refresh body links between existing catalog members
@@ -171,11 +172,11 @@ jobs:
           name: partial-${{ matrix.lang }}
           path: excerpt-previous
 
-      - name: Repair cached article excerpts
-        run: node tool/repair-catalog-excerpts.js ${{ matrix.lang }}
+      - name: Refresh titles and excerpts for every article kind
+        run: node tool/refresh-article-text.js ${{ matrix.lang }}
         env:
-          EXCERPT_MAX_REQUESTS: ${{ inputs.repair_excerpts_only == true && '10000' || '200' }}
-          EXCERPT_REQUIRE_COMPLETE: ${{ inputs.repair_excerpts_only == true && '1' || '0' }}
+          EXCERPT_MAX_REQUESTS: '100000'
+          EXCERPT_REQUIRE_COMPLETE: '1'
           CRAWL_REQUEST_INTERVAL_MS: '500'
           EXCERPT_PREVIOUS_REPAIRS: excerpt-previous/excerpt-repairs/${{ matrix.lang }}.json.gz
 
@@ -241,7 +242,7 @@ jobs:
       - name: Apply excerpt repairs to sources and retained caches
         run: node tool/apply-excerpt-repairs.js
         env:
-          EXCERPT_REQUIRE_COMPLETE: ${{ inputs.repair_excerpts_only == true && '1' || '0' }}
+          EXCERPT_REQUIRE_COMPLETE: '1'
 
       - name: Reject duplicate article IDs before publication
         run: node catalog-identity.js
@@ -269,7 +270,7 @@ jobs:
       - name: Audit every delivered article title and excerpt
         run: node tool/audit-article-text.js
         env:
-          ARTICLE_TEXT_REQUIRE_COMPLETE: ${{ inputs.repair_excerpts_only == true && '1' || '0' }}
+          ARTICLE_TEXT_REQUIRE_COMPLETE: '1'
 
       - name: Configure Git
         run: |
