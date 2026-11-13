@@ -81,6 +81,7 @@ jobs:
         run: echo "matrix=$(node print-matrix.js)" >> "$GITHUB_OUTPUT"
         env:
           ADDITIONAL_SITES_ONLY: ${{ inputs.additional_sites_only == true && '1' || '0' }}
+          REPAIR_EXCERPTS_ONLY: ${{ inputs.repair_excerpts_only == true && '1' || '0' }}
 
   crawl:
     runs-on: ubuntu-latest
@@ -265,9 +266,10 @@ jobs:
         if: inputs.repair_excerpts_only != true
         run: node prepare-notification-queue.js
 
-      - name: Reject excerpts containing voting controls or metadata headers
-        if: inputs.repair_excerpts_only == true
-        run: node tool/apply-excerpt-repairs.js --audit-mobile
+      - name: Audit every delivered article title and excerpt
+        run: node tool/audit-article-text.js
+        env:
+          ARTICLE_TEXT_REQUIRE_COMPLETE: ${{ inputs.repair_excerpts_only == true && '1' || '0' }}
 
       - name: Configure Git
         run: |

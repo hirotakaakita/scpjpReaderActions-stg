@@ -52,10 +52,10 @@ function extractHtml(url, html, now = new Date().toISOString(), existingDocument
   const dom = existingDocument ? null : new JSDOM(String(html).replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, ''), { url: page.url, virtualConsole: new VirtualConsole() });
   try {
     const d = existingDocument || dom.window.document, root = d.querySelector('#page-content')?.cloneNode(true);
-    const title = (d.querySelector('#page-title')?.textContent || d.title || '').trim();
+    const title = require('./article-titles').extractArticleTitle(d,url);
     const availability = inspectArticlePage(d);
     if (!availability.usable) {
-      const error=Error('Unavailable article: '+availability.reason);error.articleUnavailable=availability.terminal;throw error;
+      const error=Error('Unavailable article: '+availability.reason);error.articleUnavailable=availability.terminal;error.articleTitle=title;throw error;
     }
     const block=d.querySelector('#page-content .error-block,.page-not-found');
     const substantive = root?.cloneNode(true);
@@ -297,7 +297,7 @@ async function fetchRecord(url, captureDirectory = null, {rawDirectory=null} = {
   const request = async (target, depth = 0) => {
     target = articleFetchTarget(target);
     if (!target || depth > 5) throw Error('Unsupported redirect');
-    const response = await axios.get(target, { timeout: 20000, maxRedirects: 0, maxContentLength: 4 * 1024 * 1024,
+    const response = await axios.get(target, { timeout: 20000, maxRedirects: 0, maxContentLength: 12 * 1024 * 1024,
       validateStatus: s => (s >= 200 && s < 400), headers: { 'User-Agent': 'SCPReaderCatalog/1.0', Accept: 'text/html,application/json' } });
     if (response.status >= 300) return request(new URL(response.headers.location, target).href, depth + 1);
     return response.data;
@@ -305,16 +305,18 @@ async function fetchRecord(url, captureDirectory = null, {rawDirectory=null} = {
   if (page.language === 'ru') {
     // This endpoint is deliberately constructed here, never accepted as a discovered URL.
     const response = await axios.get(`https://scpfoundation.net/api/articles/${encodeURIComponent(page.slug)}`, {
-      timeout: 20000, maxRedirects: 0, maxContentLength: 4 * 1024 * 1024, headers: { Accept: 'application/json' },
+      timeout: 20000, maxRedirects: 0, maxContentLength: 12 * 1024 * 1024, headers: { Accept: 'application/json' },
     });
     const record = extractApi(url, response.data);
+    if(!record.descriptionExcerpt||record.descriptionExcerpt.length<20)record.descriptionExcerpt=await require('./rufoundation-crawler').extractApiDescription(response.data,async target=>(await axios.get(target,{timeout:20000,maxRedirects:0,headers:{Accept:'application/json'}})).data)||'';
     saveRaw(response.data,'json');
     if (captureDirectory) require('./research-board/source-store').capture(url, JSON.stringify(response.data), 'ftml', captureDirectory);
     return record;
   }
   const configuredScheme = new URL(LANGUAGES[page.language].baseUrl).protocol;
-  const html = await request(url.replace(/^https:/, configuredScheme));
+  const html = await request(url.replace(/^http:/, 'https:'));
   const record = extractHtml(url, html);
+  if(!record.descriptionExcerpt)record.descriptionExcerpt=await require('./article-frames').extractOwnedFrameProse(url,html)||'';
   saveRaw(html,'html');
   if (captureDirectory) require('./research-board/source-store').capture(url, html, 'html', captureDirectory);
   return record;
