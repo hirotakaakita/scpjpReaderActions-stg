@@ -1,0 +1,23 @@
+'use strict';
+const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),os=require('node:os'),crypto=require('node:crypto');
+const {refreshArticleText}=require('../tool/refresh-article-text');
+const {VERSION}=require('../article-excerpts');
+test('SCP, Joke, EX, Tale and GoI all refetch even when their cached text is healthy',async t=>{
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),'all-article-refresh-'));t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
+ const dir=path.join(root,'local-data/jp');fs.mkdirSync(dir,{recursive:true});
+ const types=['scp-series','joke-scps','scp-ex','related-document-jp','related-document-jp'];
+ const paths=['scp-001','scp-002-j','scp-003-ex','a-tale','a-goi-format'];
+ const rows=paths.map((p,i)=>({itemId:p,pageType:types[i],urlJP:'https://scp-jp.wikidot.com/'+p,titleJP:'Current title',descriptionExcerpt:'An already cached, otherwise healthy description.',descriptionVersion:VERSION}));
+ fs.writeFileSync(path.join(dir,'scp-data.json'),JSON.stringify({data:rows}));
+ const calls=[];const report=await refreshArticleText({root,language:'jp',intervalMs:0,request:async url=>{calls.push(url);return {url,title:'Source title',descriptionExcerpt:'A freshly retrieved description for '+url};}});
+ assert.deepEqual(new Set(calls),new Set(rows.map(r=>r.urlJP)));assert.equal(report.force,true);assert.equal(report.uniqueTargets,5);assert.equal(report.edits.length,5);
+});
+test('only a current invocation capture can satisfy a full refresh without a second network request',async t=>{
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),'article-current-capture-'));t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
+ const dir=path.join(root,'local-data/jp'),captures=path.join(root,'partial-data/related-documents');fs.mkdirSync(dir,{recursive:true});fs.mkdirSync(captures,{recursive:true});
+ const url='https://scp-jp.wikidot.com/scp-173';fs.writeFileSync(path.join(dir,'scp-data.json'),JSON.stringify({data:[{urlJP:url,titleJP:'A valid title',descriptionExcerpt:'A cached description that must not skip this run.'}]}));
+ const fresh={url,title:'SCP-173',descriptionVersion:VERSION,descriptionExcerpt:'The actual text fetched during this invocation.',contentSha256:'a'.repeat(64)};
+ fs.writeFileSync(path.join(captures,crypto.createHash('sha256').update(url).digest('hex')+'.json'),JSON.stringify(fresh));
+ const report=await refreshArticleText({root,language:'jp',intervalMs:0,request:async()=>{throw Error('Already fetched in this invocation');}});
+ assert.equal(report.freshCaptures,1);assert.equal(report.requests,0);assert.equal(report.edits[0].text,fresh.descriptionExcerpt);
+});

@@ -289,6 +289,6 @@ async function crawl(language, { root = __dirname, now = new Date().toISOString(
 }
 if (require.main === module) {
   crawl(process.argv[2], { maxRequests: Number(process.env.INDEX_MAX_REQUESTS || 600), maxDurationMs: Number(process.env.INDEX_MAX_DURATION_MS || 300000),
-    intervalMs: Number(process.env.CRAWL_REQUEST_INTERVAL_MS || 500) }).catch(e => { console.error(e); process.exitCode = 1; });
+    intervalMs: Number(process.env.CRAWL_REQUEST_INTERVAL_MS || 500),force:process.env.FORCE_REFRESH_ARTICLE_INDEXES==='1' }).catch(e => { console.error(e); process.exitCode = 1; });
 }
 module.exports = { parseIndex, crawl, readState, writeState, eligibleRecord, isExcluded, originHint, isPager, requestHtml };

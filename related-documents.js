@@ -82,7 +82,7 @@ function extractHtml(url, html, now = new Date().toISOString(), existingDocument
       objectClass: metadata.extractObjectClassFromDocument(d), rating: metadata.extractRatingFromDocument(d),
       imageUrl: metadata.extractImageUrlFromDocument(d,page.url),
       links, bodyLinks, linkExtractionVersion: boardExtractor.EXTRACTOR_VERSION,identityMetadataVersion:1,
-      descriptionExcerpt: Array.from(description).slice(0, 250).join(''),descriptionVersion:require('./article-excerpts').VERSION,
+      descriptionExcerpt: Array.from(description).slice(0, 500).join(''),descriptionVersion:require('./article-excerpts').VERSION,
       contentSha256: hash(String(html)), checkedAt: now, format: 'html', availabilityVersion: 1 };
   } finally { dom?.window.close(); }
 }
@@ -288,11 +288,16 @@ function buildCatalogs(catalogs, records, attempts, now = new Date().toISOString
       discoveredDocuments: sources.size, classified: data.filter(r => r.originBranch).length, unclassified: data.filter(r => !r.originBranch).length, pending: pending.length } };
 }
 
-async function fetchRecord(url, captureDirectory = null, {rawDirectory=null} = {}) {
+async function fetchRecord(url, captureDirectory = null, {rawDirectory=null,metadataDirectory=null} = {}) {
   const page = normalize(url);
   if (!page) throw Error('Unsupported URL');
   function saveRaw(body,format){if(!rawDirectory)return;fs.mkdirSync(rawDirectory,{recursive:true});
     fs.writeFileSync(path.join(rawDirectory,hash(page.url)+'.'+format+'.gz'),zlib.gzipSync(typeof body==='string'?body:JSON.stringify(body)));}
+  function saveMetadata(record,body,format){if(!metadataDirectory)return;
+    fs.mkdirSync(metadataDirectory,{recursive:true});const file=path.join(metadataDirectory,hash(record.url)+'.json');
+    fs.writeFileSync(file+'.tmp',JSON.stringify(record));fs.renameSync(file+'.tmp',file);
+    require('./research-board/source-store').capture(record.url,typeof body==='string'?body:JSON.stringify(body),format,path.join(metadataDirectory,'research-board'));
+  }
   // Validate every redirect so an allowlisted link cannot redirect requests to arbitrary hosts.
   const request = async (target, depth = 0) => {
     target = articleFetchTarget(target);
@@ -310,6 +315,7 @@ async function fetchRecord(url, captureDirectory = null, {rawDirectory=null} = {
     const record = extractApi(url, response.data);
     if(!record.descriptionExcerpt||record.descriptionExcerpt.length<20)record.descriptionExcerpt=await require('./rufoundation-crawler').extractApiDescription(response.data,async target=>(await axios.get(target,{timeout:20000,maxRedirects:0,headers:{Accept:'application/json'}})).data)||'';
     saveRaw(response.data,'json');
+    saveMetadata(record,response.data,'ftml');
     if (captureDirectory) require('./research-board/source-store').capture(url, JSON.stringify(response.data), 'ftml', captureDirectory);
     return record;
   }
@@ -318,6 +324,7 @@ async function fetchRecord(url, captureDirectory = null, {rawDirectory=null} = {
   const record = extractHtml(url, html);
   if(!record.descriptionExcerpt)record.descriptionExcerpt=await require('./article-frames').extractOwnedFrameProse(url,html)||'';
   saveRaw(html,'html');
+  saveMetadata(record,html,'html');
   if (captureDirectory) require('./research-board/source-store').capture(url, html, 'html', captureDirectory);
   return record;
 }
