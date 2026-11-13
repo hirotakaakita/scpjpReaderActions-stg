@@ -171,7 +171,7 @@ function extractObjectClassFromDocument(document) {
   return null;
 }
 
-const DESCRIPTION_LABEL_PATTERN = new RegExp('^(?:'+require('./article-excerpts').DESCRIPTION_LABELS+')\\s*[:：]?$','iu');
+const DESCRIPTION_LABEL_PATTERN = new RegExp('^[:：]?\\s*(?:'+require('./article-excerpts').DESCRIPTION_LABELS+')\\s*[:：]?$','iu');
 
 const TAG_RULE_VERSION = 3;
 function textContentPreservingBreaks(node) {

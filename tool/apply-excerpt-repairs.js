@@ -22,7 +22,7 @@ function apply({root=path.resolve(__dirname,'..'),requireComplete=false,now=new 
  function patch(row,kind){
   const url=normalize(row.urlJP||row.urlEN||row.url)?.url;if(!url)return false;
   const edit=edits.get(url+':'+hash(String(row.descriptionExcerpt||'')));if(!edit)return false;
-  row.descriptionExcerpt=edit.text;row.descriptionVersion=VERSION;row.descriptionCheckedAt=edit.at;
+  row.descriptionExcerpt=new URL(url).hostname==='scpfoundation.net'?require('../article-excerpts').normalizeFtmlPreview(edit.text):edit.text;row.descriptionVersion=VERSION;row.descriptionCheckedAt=edit.at;
   if(edit.descriptionStatus)row.descriptionStatus=edit.descriptionStatus;
   if(edit.title){const field='titleJP'in row?'titleJP':'title';if(titleNeedsRepair(row[field])||(edit.refreshTitle&&field==='title'))row[field]=edit.title;}
   if(edit.sourceHash)row.descriptionContentSha256=edit.sourceHash;
