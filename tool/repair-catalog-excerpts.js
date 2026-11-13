@@ -50,7 +50,14 @@ function collect(root,language,{force=false}={}){
  }
  return {inspected,published:published.length,uniqueTargets:new Set([...targets.values()].map(t=>t.url)).size,targets:[...targets.values()]};
 }
-async function repair({root=path.resolve(__dirname,'..'),language,maxRequests=10000,intervalMs=500,request=fetchRecord,previousFile=null,force=false,now=new Date().toISOString()}={}){
+function retryDelayMs(error,retry,now=Date.now()){
+ const status=error.response?.status;
+ if(![429,500,502,503,504].includes(status)&&!['ECONNRESET','ETIMEDOUT','ECONNABORTED','EAI_AGAIN'].includes(error.code))return 0;
+ const value=error.response?.headers?.['retry-after'];
+ const retryAfter=value==null?0:/^\d+(?:\.\d+)?$/.test(String(value))?Number(value)*1000:Math.max(0,Date.parse(value)-now)||0;
+ return Math.min(60000,Math.max(5000*3**retry,retryAfter));
+}
+async function repair({root=path.resolve(__dirname,'..'),language,maxRequests=10000,intervalMs=500,request=fetchRecord,previousFile=null,force=false,now=new Date().toISOString(),wait=ms=>new Promise(resolve=>setTimeout(resolve,ms))}={}){
  if(!LANGUAGES[language]||!Number.isInteger(maxRequests)||maxRequests<0||intervalMs<0)throw Error('Invalid excerpt repair options');
  const file=path.join(root,'partial-data/excerpt-repairs',language+'.json.gz');
  const collected=collect(root,language,{force}),edits=[],failed=[],pending=[],fetched=new Map(),previous=new Map();let attempts=0,last=0;
@@ -78,7 +85,9 @@ async function repair({root=path.resolve(__dirname,'..'),language,maxRequests=10
     let record=null,error;
     for(let retry=0;retry<3;retry++){
      const pause=Math.max(0,last+intervalMs-Date.now());if(pause)await new Promise(r=>setTimeout(r,pause));last=Date.now();attempts++;report.requests++;
-     try{record=await request(target.url);error=null;break;}catch(e){error=e;if([404,410].includes(e.response?.status)||e.articleUnavailable===true){fetched.set(target.url,{unavailable:true,title:e.articleTitle,statusCode:e.response?.status||null,reason:e.message==='Unavailable article: not_found'?'not_found':'no_prose'});break;}}
+     try{record=await request(target.url);error=null;break;}catch(e){error=e;if([404,410].includes(e.response?.status)||e.articleUnavailable===true){fetched.set(target.url,{unavailable:true,title:e.articleTitle,statusCode:e.response?.status||null,reason:e.message==='Unavailable article: not_found'?'not_found':'no_prose'});break;}
+      const delay=retryDelayMs(e,retry);if(retry<2&&delay){console.warn(`[${language}] temporary fetch failure ${target.url}: ${e.response?.status||e.code}; retry in ${delay}ms`);await wait(delay);}
+     }
     }
     if(fetched.get(target.url)?.unavailable){}
     else if(error)fetched.set(target.url,{error:error.message});
@@ -97,4 +106,4 @@ async function repair({root=path.resolve(__dirname,'..'),language,maxRequests=10
  return report;
 }
 if(require.main===module)repair({language:process.argv[2],maxRequests:Number(process.env.EXCERPT_MAX_REQUESTS||10000),intervalMs:Number(process.env.CRAWL_REQUEST_INTERVAL_MS||500),previousFile:process.env.EXCERPT_PREVIOUS_REPAIRS||null,force:process.env.FORCE_REFRESH_ARTICLE_TEXT==='1'}).then(report=>{if(process.env.EXCERPT_REQUIRE_COMPLETE==='1'&&(report.failed.length||report.pending.length))process.exitCode=1;}).catch(e=>{console.error(e);process.exitCode=1;});
-module.exports={repair,collect,read,write,hash};
+module.exports={repair,collect,read,write,hash,retryDelayMs};
