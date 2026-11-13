@@ -40,12 +40,13 @@ test('temporary source failures wait before retrying and share the result across
  const root=fs.mkdtempSync(path.join(os.tmpdir(),'article-transient-retry-'));t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
  const dir=path.join(root,'local-data/jp');fs.mkdirSync(dir,{recursive:true});
  const url='https://scp-jp.wikidot.com/scp-173';fs.writeFileSync(path.join(dir,'scp-data.json'),JSON.stringify({data:[{urlJP:url,titleJP:'An article',descriptionExcerpt:'First cached body.'},{urlJP:url,titleJP:'An article',descriptionExcerpt:'Another cached body.'}]}));
- let calls=0;const waits=[];
- const report=await refreshArticleText({root,language:'jp',intervalMs:0,wait:async ms=>waits.push(ms),request:async()=>{
+ let calls=0;const waits=[],timeouts=[];
+ const report=await refreshArticleText({root,language:'jp',intervalMs:0,wait:async ms=>waits.push(ms),request:async(url,captureDirectory,options)=>{
+  timeouts.push(options.timeoutMs);
   calls++;if(calls<3){const error=Error('Service unavailable');error.response={status:503,headers:{}};throw error;}
   return {url,title:'SCP-173',descriptionExcerpt:'Actual source prose after recovery.'};
  }});
- assert.equal(calls,3);assert.deepEqual(waits,[5000,15000]);assert.equal(report.failed.length,0);assert.equal(report.edits.length,2);assert.ok(report.edits.every(e=>e.text==='Actual source prose after recovery.'));
+ assert.equal(calls,3);assert.deepEqual(waits,[5000,15000]);assert.deepEqual(timeouts,[20000,40000,60000]);assert.equal(report.failed.length,0);assert.equal(report.edits.length,2);assert.ok(report.edits.every(e=>e.text==='Actual source prose after recovery.'));
 });
 
 test('retry delays respect bounded server guidance and do not retry permanent errors with backoff',()=>{
