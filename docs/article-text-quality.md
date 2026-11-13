@@ -30,6 +30,15 @@ Official-index discovery no longer has its own 600-article content queue; the
 common refresh stage reads every collected URL. Successful captures from the
 current invocation avoid fetching numbered SCP pages twice; old healthy caches
 do not exempt any kind of article. Incomplete refreshes prevent publication.
+To resume a full crawl after article retrieval failures, dispatch the current
+`master` with `repair_excerpts_only=true`, `resume_crawl_run=<earlier run ID>`,
+and `excerpt_repair_run=<earlier run ID>`. The crawl artifacts (including new
+articles and index membership) are restored and passed through publication;
+validated successful text edits are reused and unfinished retrievals are retried.
+All language reports must complete before publication. Source artifacts must
+still be available (retention is three days). No run-specific failure exemptions
+are applied.
+
 The normal weekly schedule stays unchanged. The legacy `repair_excerpts_only`
 switch can skip discovery when resuming, and `excerpt_repair_run` reuses earlier
 completed observations.
