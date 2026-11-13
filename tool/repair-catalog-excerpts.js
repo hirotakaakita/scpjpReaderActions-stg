@@ -18,6 +18,14 @@ function collect(root,language,{force=false}={}){
  const pointer=path.join(root,'local-data/mobile-v3',language,'manifest.json');
  if(fs.existsSync(pointer)){const manifest=read(pointer);for(const row of read(path.join(path.dirname(pointer),manifest.fileName)).data){published.push(row);const page=normalize(row.urlJP||row.urlEN);if(page)active.add(page.url);trust(row);}}
  const primary=path.join(root,'local-data',language,'scp-data.json'),primaryRows=fs.existsSync(primary)?read(primary).data:[];
+ // Include newly crawled native articles before merge-data writes local-data.
+ // Their URL/text variants also need source observations and empty-body checks.
+ for(const page of LANGUAGES[language].pages){
+  const file=path.join(root,'partial-data',require('../partial-file').partialFileName(language,page.path));
+  if(!fs.existsSync(file))continue;const incoming=read(file);
+  if(!Array.isArray(incoming.data))throw Error('Invalid incoming native catalog: '+file);
+  primaryRows.push(...incoming.data);
+ }
  for(const row of primaryRows)if(row.isTranslatedJP!==false){const page=normalize(row.urlJP||row.urlEN);if(page)active.add(page.url);trust(row);}
  for(const stateFile of [path.join(root,'local-data/catalog-indexes',language+'.json.gz'),path.join(root,'partial-data/catalog-indexes',language+'.json.gz')]){
   if(!fs.existsSync(stateFile))continue;const state=readState(stateFile);states.push(state);
