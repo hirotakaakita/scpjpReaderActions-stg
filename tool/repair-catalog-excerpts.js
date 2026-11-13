@@ -3,7 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),z=require('node:zlib'),cry
 const {LANGUAGES}=require('../languages');
 const {normalize,fetchRecord}=require('../related-documents');
 const {readState}=require('../catalog-indexes');
-const {VERSION,repairStoredExcerpt}=require('../article-excerpts');
+const {VERSION,repairStoredExcerpt,titleNeedsRepair,datePrefix}=require('../article-excerpts');
 const hash=text=>crypto.createHash('sha256').update(text).digest('hex');
 function read(file){return JSON.parse(file.endsWith('.gz')?z.gunzipSync(fs.readFileSync(file)):fs.readFileSync(file,'utf8'));}
 function write(file,value){fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file+'.tmp',z.gzipSync(JSON.stringify(value),{level:9}));fs.renameSync(file+'.tmp',file);}
@@ -11,7 +11,7 @@ function collect(root,language){
  const targets=new Map(),active=new Set(),states=[],trusted=new Map(),ambiguous=new Set();let inspected=0;
  function trust(row){
   const url=normalize(row.urlJP||row.urlEN||row.url)?.url,text=typeof row.descriptionExcerpt==='string'?row.descriptionExcerpt.trim():'';
-  if(!url||!text||ambiguous.has(url))return;const clean=repairStoredExcerpt(text);if(clean.needsFetch||clean.text!==text)return;
+  if(!url||!text||ambiguous.has(url)||/^[®:：;；]+$/u.test(text))return;const clean=repairStoredExcerpt(text);if(clean.needsFetch||clean.text!==text)return;
   const old=trusted.get(url);if(old&&old!==text&&!old.startsWith(text)&&!text.startsWith(old)){trusted.delete(url);ambiguous.add(url);return;}
   if(!old||text.length>old.length)trusted.set(url,text);
  }
@@ -28,14 +28,20 @@ function collect(root,language){
  }
  function add(row){
   const url=normalize(row.urlJP||row.urlEN||row.url)?.url;
-  if(!url||normalize(url).language!==language||typeof row.descriptionExcerpt!=='string')return;
-  inspected++;const repaired=repairStoredExcerpt(row.descriptionExcerpt);
+  if(!url||normalize(url).language!==language)return;
+  const before=String(row.descriptionExcerpt||'');
+  const needsTitle=('titleJP'in row||'title'in row)&&titleNeedsRepair(row.titleJP??row.title);
+  const empty=!before.trim()&&(row.descriptionStatus!=='no_prose'||row.descriptionVersion!==VERSION);
+  const tiny=/^[®:：;；]+$/u.test(before)&&row.descriptionStatus!=='source_literal';
+  const inspectLiteral=before&&row.descriptionVersion!==VERSION&&(datePrefix(before)||Array.from(before).length<20);
+  inspected++;const repaired=repairStoredExcerpt(before);
+  repaired.needsFetch ||= empty||needsTitle||tiny||!!inspectLiteral;
   if(!repaired.changed&&!repaired.needsFetch)return;
   // Old caches retain removed pages for provenance. Do not refetch those pages
   // unless they are published now or belong to the current incoming scope.
   if(repaired.needsFetch&&!active.has(url))return;
-  if(repaired.needsFetch&&trusted.has(url)){repaired.text=trusted.get(url);repaired.needsFetch=false;repaired.method='matching_article';}
-  const key=url+':'+hash(row.descriptionExcerpt);if(!targets.has(key))targets.set(key,{url,before:row.descriptionExcerpt,...repaired});
+  if(repaired.needsFetch&&trusted.has(url)&&!needsTitle&&!inspectLiteral){repaired.text=trusted.get(url);repaired.needsFetch=false;repaired.method='matching_article';}
+  const key=url+':'+hash(before);if(!targets.has(key))targets.set(key,{url,before,...repaired});
  }
  primaryRows.forEach(add);for(const state of states)Object.values(state.records).forEach(add);
  for(const dir of ['related-documents','related-documents-v2']){
@@ -64,19 +70,19 @@ async function repair({root=path.resolve(__dirname,'..'),language,maxRequests=10
     let record=null,error;
     for(let retry=0;retry<3;retry++){
      const pause=Math.max(0,last+intervalMs-Date.now());if(pause)await new Promise(r=>setTimeout(r,pause));last=Date.now();attempts++;report.requests++;
-     try{record=await request(target.url);error=null;break;}catch(e){error=e;if([404,410].includes(e.response?.status)||e.articleUnavailable===true){fetched.set(target.url,{unavailable:true,statusCode:e.response?.status||null,reason:e.message==='Unavailable article: not_found'?'not_found':'no_prose'});break;}}
+     try{record=await request(target.url);error=null;break;}catch(e){error=e;if([404,410].includes(e.response?.status)||e.articleUnavailable===true){fetched.set(target.url,{unavailable:true,title:e.articleTitle,statusCode:e.response?.status||null,reason:e.message==='Unavailable article: not_found'?'not_found':'no_prose'});break;}}
     }
     if(fetched.get(target.url)?.unavailable){}
     else if(error)fetched.set(target.url,{error:error.message});
     else if(record?.url!==target.url||repairStoredExcerpt(record.descriptionExcerpt).needsFetch)fetched.set(target.url,{error:'Extraction still contains metadata'});
-    else fetched.set(target.url,{text:record.descriptionExcerpt||'',sourceHash:record.contentSha256});
+    else fetched.set(target.url,{text:record.descriptionExcerpt||'',title:record.title,sourceHash:record.contentSha256});
    }
    const result=fetched.get(target.url);
    if(result.error){failed.push({url:target.url,reason:result.error});continue;}
-   if(result.unavailable){const missing=[404,410].includes(result.statusCode)||result.reason==='not_found';if(missing&&!report.unavailable.includes(target.url))report.unavailable.push(target.url);edits.push({url:target.url,before:target.before,text:'',method:missing?'unavailable':'no_prose',sourceHash:null,statusCode:result.statusCode,reason:result.reason});continue;}
+   if(result.unavailable){const missing=[404,410].includes(result.statusCode)||result.reason==='not_found';if(missing&&!report.unavailable.includes(target.url))report.unavailable.push(target.url);edits.push({url:target.url,before:target.before,text:'',method:missing?'unavailable':'no_prose',descriptionStatus:'no_prose',sourceHash:null,statusCode:result.statusCode,reason:result.reason,...(result.title?{title:result.title}:{})});continue;}
    text=result.text;sourceHash=result.sourceHash;
   }
-  edits.push({url:target.url,before:target.before,text,method,sourceHash});
+  edits.push({url:target.url,before:target.before,text,method,sourceHash,...(fetched.get(target.url)?.title?{title:fetched.get(target.url).title}:{}),...(!text?{descriptionStatus:'no_prose'}:text===target.before&&/^[®:：;；]+$/u.test(text)?{descriptionStatus:'source_literal'}:{})});
   if(index%100===0){write(file,report);console.log(`[${language}] excerpt repairs ${index+1}/${collected.targets.length}, requests=${report.requests}, failures=${failed.length}`);}
  }
  write(file,report);console.log(JSON.stringify({language,inspected:report.inspected,targets:report.targets,repaired:edits.length,requests:report.requests,failed:failed.length,pending:pending.length}));

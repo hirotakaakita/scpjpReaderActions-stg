@@ -48,7 +48,7 @@ test('successful article fetch repairs a cached image and clears removed images;
   const wrong = { ...original, imageUrl:'https://scp-jp.wdfiles.com/local--files/scp-002-cu/wrong.jpg' };
   f.setHtml('<div id="page-content"><img src="/local--resized-images/scp-002/{$url}/medium.jpg"><img src="/local--resized-images/scp-002/%7B%24url%7D/medium.jpg"><img src="/local--files/scp-002/correct.jpg"><p>Article</p></div>');
   const repaired = await f.crawl(wrong);
-  assert.equal(repaired.imageUrl, 'http://scp-jp.wikidot.com/local--files/scp-002/correct.jpg');
+  assert.equal(repaired.imageUrl, 'https://scp-jp.wikidot.com/local--files/scp-002/correct.jpg');
   f.setFailure(true);
   assert.equal((await f.crawl(repaired)).imageUrl,repaired.imageUrl);
   f.setFailure(false);
