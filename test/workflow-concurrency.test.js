@@ -41,3 +41,23 @@ test('writers load current master after acquiring the lock and never force confl
   }
   assert.ok(publisher.indexOf('ref: master') < publisher.indexOf('node prepare-notification-queue.js'));
 });
+
+
+test('full text retrieval has its own time budget and preserves current-run crawl captures', () => {
+  const workflow = read('scp-crawler.yml');
+  const crawl = job(workflow, 'crawl');
+  const refresh = job(workflow, 'refresh-article-text');
+  const publish = job(workflow, 'merge-and-deploy');
+  assert.doesNotMatch(crawl, /run: node tool\/refresh-article-text/);
+  assert.match(refresh, /needs: \[setup, crawl\]/);
+  assert.match(refresh, /timeout-minutes: 360/);
+  assert.match(refresh, /name: partial-\$\{\{ matrix.lang \}\}\n +path: partial-data/);
+  assert.match(refresh, /run: node tool\/refresh-article-text.js/);
+  assert.match(refresh, /CRAWL_REQUEST_INTERVAL_MS: '500'/);
+  assert.match(refresh, /if: always\(\)\n +uses: actions\/upload-artifact/);
+  assert.match(refresh, /name: article-text-\$\{\{ matrix.lang \}\}\n +path: partial-data\/excerpt-repairs\//);
+  assert.match(publish, /needs: \[setup, crawl, refresh-article-text\]/);
+  assert.match(publish, /needs.refresh-article-text.result == 'success'/);
+  assert.match(publish, /pattern: article-text-\*\n +path: partial-data\/excerpt-repairs/);
+  assert.ok(publish.indexOf('pattern: article-text-*') < publish.indexOf('node tool/apply-excerpt-repairs.js'));
+});
