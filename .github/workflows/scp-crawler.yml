@@ -250,7 +250,7 @@ jobs:
 
       - name: Merge catalogs collected from official article indexes
         run: |
-          node --test test/catalog-indexes.test.js test/article-page.test.js
+          node --test test/catalog-indexes.test.js test/article-page.test.js test/reviewed-article-classifications.test.js
           node merge-catalog-indexes.js
           node validate-catalog-indexes.js
 
