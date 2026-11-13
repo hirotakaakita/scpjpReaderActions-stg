@@ -21,3 +21,27 @@ test('only a current invocation capture can satisfy a full refresh without a sec
  const report=await refreshArticleText({root,language:'jp',intervalMs:0,request:async()=>{throw Error('Already fetched in this invocation');}});
  assert.equal(report.freshCaptures,1);assert.equal(report.requests,0);assert.equal(report.edits[0].text,fresh.descriptionExcerpt);
 });
+
+
+test('temporary source failures wait before retrying and share the result across cache variants',async t=>{
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),'article-transient-retry-'));t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
+ const dir=path.join(root,'local-data/jp');fs.mkdirSync(dir,{recursive:true});
+ const url='https://scp-jp.wikidot.com/scp-173';fs.writeFileSync(path.join(dir,'scp-data.json'),JSON.stringify({data:[{urlJP:url,titleJP:'An article',descriptionExcerpt:'First cached body.'},{urlJP:url,titleJP:'An article',descriptionExcerpt:'Another cached body.'}]}));
+ let calls=0;const waits=[];
+ const report=await refreshArticleText({root,language:'jp',intervalMs:0,wait:async ms=>waits.push(ms),request:async()=>{
+  calls++;if(calls<3){const error=Error('Service unavailable');error.response={status:503,headers:{}};throw error;}
+  return {url,title:'SCP-173',descriptionExcerpt:'Actual source prose after recovery.'};
+ }});
+ assert.equal(calls,3);assert.deepEqual(waits,[5000,15000]);assert.equal(report.failed.length,0);assert.equal(report.edits.length,2);assert.ok(report.edits.every(e=>e.text==='Actual source prose after recovery.'));
+});
+
+test('retry delays respect bounded server guidance and do not retry permanent errors with backoff',()=>{
+ const {retryDelayMs}=require('../tool/repair-catalog-excerpts');
+ const error=(status,value)=>({response:{status,headers:{'retry-after':value}}});
+ assert.equal(retryDelayMs(error(503,'30'),0),30000);
+ assert.equal(retryDelayMs(error(429,'600'),1),60000);
+ const now=Date.parse('2026-11-13T00:00:00Z');assert.equal(retryDelayMs(error(503,'Fri, 13 Nov 2026 00:00:40 GMT'),0,now),40000);
+ assert.equal(retryDelayMs(error(503,'invalid'),1),15000);
+ assert.equal(retryDelayMs(error(404,'30'),0),0);
+ assert.equal(retryDelayMs(Error('Unsupported redirect'),0),0);
+});
