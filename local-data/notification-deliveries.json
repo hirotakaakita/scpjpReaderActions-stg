@@ -7604,6 +7604,28 @@
       "startedAt": "2026-11-15T21:17:43.549Z",
       "messageName": "projects/scpjp-reader-stg/messages/8495254461319333725",
       "sentAt": "2026-11-15T21:17:45.887Z"
+    },
+    {
+      "id": "de/2026-11-15",
+      "lang": "de",
+      "window": "2026-11-15",
+      "items": [
+        {
+          "itemId": "scp-series-748",
+          "titleJP": "Industrieller Zerfall"
+        },
+        {
+          "itemId": "scp-series-de-356",
+          "titleJP": "Glístrimaphobie"
+        },
+        {
+          "itemId": "scp-series-de-476",
+          "titleJP": "Athazagoraphobie: Alles wird vergessen"
+        }
+      ],
+      "attempts": 1,
+      "status": "sending",
+      "startedAt": "2026-11-15T21:17:43.549Z"
     }
   ]
 }
