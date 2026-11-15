@@ -7628,6 +7628,24 @@
       "startedAt": "2026-11-15T21:17:43.549Z",
       "messageName": "projects/scpjp-reader-stg/messages/8077017082481039269",
       "sentAt": "2026-11-15T21:17:49.832Z"
+    },
+    {
+      "id": "pl/2026-11-15",
+      "lang": "pl",
+      "window": "2026-11-15",
+      "items": [
+        {
+          "itemId": "scp-series-4244",
+          "titleJP": "Muzyka w dobrym smaku"
+        },
+        {
+          "itemId": "scp-series-9453",
+          "titleJP": "Zamknięty pokój w Stambule"
+        }
+      ],
+      "attempts": 1,
+      "status": "sending",
+      "startedAt": "2026-11-15T21:17:43.549Z"
     }
   ]
 }
