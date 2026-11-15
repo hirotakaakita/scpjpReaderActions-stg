@@ -78,6 +78,38 @@ function noNetwork() {
   assert.fail('No authentication or FCM request should be made');
 }
 
+test('enabling extra branches preserves history and queues only articles added after the published baseline', t => {
+  const f = fixture(t);
+  const codes = Object.keys(require('../additional-sites.json'));
+  for (const code of codes) {
+    const directory = path.join(f.cwd, 'local-data', code);
+    fs.mkdirSync(directory, { recursive: true });
+    fs.writeFileSync(path.join(directory, 'scp-data.json'), JSON.stringify({ data: [
+      { itemId: 'scp-series-1', titleJP: 'Already published' },
+    ] }));
+  }
+  f.seed();
+  const before = f.readQueue();
+  before.pending.jp.lastSentWindow = '2026-10-04';
+  fs.writeFileSync(f.queuePath, JSON.stringify(before));
+  fs.writeFileSync(f.ledgerPath, JSON.stringify({ version: 1, deliveries: [] }));
+  const ledger = fs.readFileSync(f.ledgerPath, 'utf8');
+  f.generate();
+  assert.deepEqual(f.readQueue().pending.jp, before.pending.jp);
+  for (const code of codes) assert.equal(f.readQueue().pending[code].items.length, 0, code);
+  for (const code of codes) {
+    fs.writeFileSync(path.join(f.cwd, 'local-data', code, 'scp-data.json'), JSON.stringify({ data: [
+      { itemId: 'scp-series-1', titleJP: 'Already published' },
+      { itemId: 'scp-series-2', titleJP: 'New article' },
+    ] }));
+  }
+  f.generate(); f.generate();
+  const after = f.readQueue();
+  assert.deepEqual(after.pending.jp, before.pending.jp);
+  for (const code of codes) assert.deepEqual(after.pending[code].items.map(row => row.itemId), ['scp-series-2'], code);
+  assert.equal(fs.readFileSync(f.ledgerPath, 'utf8'), ledger);
+});
+
 test('missing and empty queues perform no network or persistence operations', async t => {
   const f = fixture(t);
   const options = { ...f.options, getAccessToken: noNetwork, sendRequest: noNetwork, persist: noNetwork };
