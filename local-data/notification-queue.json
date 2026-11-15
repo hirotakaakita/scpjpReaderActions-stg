@@ -177,17 +177,8 @@
       "lastSentWindow": "2026-11-08"
     },
     "cs": {
-      "items": [
-        {
-          "itemId": "scp-series-118",
-          "titleJP": "Jaderní protisté"
-        },
-        {
-          "itemId": "scp-ex-001",
-          "titleJP": "Hodný kluk"
-        }
-      ],
-      "lastSentWindow": "2026-11-08"
+      "items": [],
+      "lastSentWindow": "2026-11-15"
     },
     "de": {
       "items": [
@@ -739,5 +730,5 @@
       "lastSentWindow": "2026-11-08"
     }
   },
-  "updatedAt": "2026-11-13T18:04:02.348Z"
+  "updatedAt": "2026-11-15T21:17:43.549Z"
 }
