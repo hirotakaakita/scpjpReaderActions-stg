@@ -7648,6 +7648,44 @@
       "startedAt": "2026-11-15T21:17:43.549Z",
       "messageName": "projects/scpjp-reader-stg/messages/6437042600676252377",
       "sentAt": "2026-11-15T21:17:53.354Z"
+    },
+    {
+      "id": "en/2026-11-15",
+      "lang": "en",
+      "window": "2026-11-15",
+      "items": [
+        {
+          "itemId": "scp-series-8758",
+          "titleJP": "The Cursed Trumpet"
+        },
+        {
+          "itemId": "scp-series-9419",
+          "titleJP": "\"The Day the Sun Fell and the Day the World Ended.\""
+        },
+        {
+          "itemId": "scp-series-9467",
+          "titleJP": "[ACCESS DENIED]"
+        },
+        {
+          "itemId": "scp-series-9720",
+          "titleJP": "Retcon Cube"
+        },
+        {
+          "itemId": "scp-series-9845",
+          "titleJP": "The Ghost."
+        },
+        {
+          "itemId": "scp-series-9847",
+          "titleJP": "The Word Eater"
+        },
+        {
+          "itemId": "scp-series-9858",
+          "titleJP": "A Midnight Run"
+        }
+      ],
+      "attempts": 1,
+      "status": "sending",
+      "startedAt": "2026-11-16T01:15:53.516Z"
     }
   ]
 }
