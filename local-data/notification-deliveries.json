@@ -7688,6 +7688,24 @@
       "startedAt": "2026-11-16T01:15:53.516Z",
       "messageName": "projects/scpjp-reader-stg/messages/6403654165759842377",
       "sentAt": "2026-11-16T01:15:56.109Z"
+    },
+    {
+      "id": "pt/2026-11-15",
+      "lang": "pt",
+      "window": "2026-11-15",
+      "items": [
+        {
+          "itemId": "scp-series-356",
+          "titleJP": "Figuras na Costa"
+        },
+        {
+          "itemId": "scp-series-5444",
+          "titleJP": "Como Desaparecer Completamente"
+        }
+      ],
+      "attempts": 1,
+      "status": "sending",
+      "startedAt": "2026-11-16T01:15:53.516Z"
     }
   ]
 }
