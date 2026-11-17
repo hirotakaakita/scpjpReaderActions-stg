@@ -1,7 +1,7 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),zlib=require('node:zlib');
-const {makeRecord,normalizePage,digest,extractFtml}=require('../research-board/extract');
+const {makeRecord,normalizePage,digest,extractFtml,EXTRACTOR_VERSION}=require('../research-board/extract');
 const {buildBoard}=require('../research-board/catalog');
 const {saveSources,readSources,merge}=require('../research-board/source-store');
 const {importCatalogSources}=require('../research-board/catalog-sources');
@@ -18,7 +18,7 @@ test('body extraction excludes navigation, credits, translations, missing pages,
     '<div class="creditRate"><a href="/credit-target">credit</a></div><div class="translation-source"><a href="/origin">origin</a></div>'+
     '<div class="interwiki-box"><a href="/interwiki">lang</a></div><div class="toc"><a href="/toc-target">toc</a></div>'+
     '<a class="newpage" href="/missing">missing</a><a href="#x">local</a><a href="/scp-003?action=edit">edit</a><a href="https://outside.example/a">external</a>');
-  assert.equal(r.linkExtractionVersion,6);assert.equal(r.links.length,1);
+  assert.equal(r.linkExtractionVersion,EXTRACTOR_VERSION);assert.equal(r.links.length,1);
   assert.equal(r.links[0].target,base+'scp-002');assert.equal(r.links[0].quote,'Two');
 });
 test('FTML uses explicit links only and excludes comments, code and includes',()=>{
@@ -55,4 +55,21 @@ test('backfill visits only catalog pages, resumes and applies a strict request b
   const a=await refresh({root,language:'en',maxRequests:1,intervalMs:0,now:stamp,request});assert.equal(a.updated,1);
   const b=await refresh({root,language:'en',maxRequests:10,intervalMs:0,now:stamp,request});assert.equal(b.updated,1);
   assert.deepEqual(calls,[base+'scp-001',base+'scp-002']);
+});
+
+test('older same-content metadata cannot reintroduce removed navigation links', t => {
+  const root=fs.mkdtempSync(path.join(os.tmpdir(),'board-nav-metadata-'));t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
+  const current=record('scp-001','<p>≪ <a href="/scp-002">Previous</a> | SCP-001 | <a href="/scp-003">Next</a> ≫</p>');
+  const legacy={...current,checkedAt:'2026-11-09T00:00:00Z',linkExtractionVersion:6,
+    bodyLinks:[{target:base+'scp-002',quote:'Previous',location:'article_body',method:'body_hyperlink_v6'}]};
+  legacy.links=legacy.bodyLinks;
+  const map=sources([current]);
+  merge(map,{record:legacy,lastAttempt:{status:'success',at:legacy.checkedAt}});
+  assert.deepEqual(map.get(current.pageId).record.links,[]);
+  assert.equal(map.get(current.pageId).record.linkExtractionVersion,EXTRACTOR_VERSION);
+  fs.mkdirSync(path.join(root,'catalog-indexes'));
+  fs.writeFileSync(path.join(root,'catalog-indexes/en.json.gz'),zlib.gzipSync(JSON.stringify({records:{[current.url]:legacy}})));
+  importCatalogSources(map,root,[catalog([row('scp-001'),row('scp-002'),row('scp-003')])]);
+  assert.deepEqual(map.get(current.pageId).record.links,[]);
+  assert.equal(map.get(current.pageId).record.linkExtractionVersion,EXTRACTOR_VERSION);
 });

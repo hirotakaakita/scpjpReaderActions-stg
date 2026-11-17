@@ -61,7 +61,7 @@ function importCatalogSources(sources, input, catalogs) {
     for(const r of Object.values(state.records||{})){
       const p=normalizePage(r.url),saved=p&&sources.get(p.id);
       if(saved?.record&&members.has(p.id)&&saved.record.contentSha256===r.contentSha256&&r.originalSources?.length)saved.record.originalSources=r.originalSources;
-      if(saved?.record&&members.has(p.id)&&saved.record.contentSha256===r.contentSha256&&r.linkExtractionVersion>=6){
+      if(saved?.record&&members.has(p.id)&&saved.record.contentSha256===r.contentSha256&&r.linkExtractionVersion>=6&&r.linkExtractionVersion>=(saved.record.linkExtractionVersion||0)){
         saved.record.links=r.bodyLinks||[];
         saved.record.linkExtractionVersion=r.linkExtractionVersion;
       }

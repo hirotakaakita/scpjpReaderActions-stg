@@ -55,7 +55,12 @@ function merge(sources, state) {
   if (!page || (state.record && (state.record.pageId !== page.id ||
       !/^[a-f0-9]{64}$/.test(state.record.contentSha256)))) throw Error('Invalid research source');
   const old = sources.get(page.id);
-  const record = !old?.record || state.record?.checkedAt > old.record.checkedAt ? state.record : old.record;
+  let record = !old?.record || state.record?.checkedAt > old.record.checkedAt ? state.record : old.record;
+  const other = record === state.record ? old?.record : state.record;
+  if (record && other && record.contentSha256 === other.contentSha256 &&
+      (other.linkExtractionVersion || 0) > (record.linkExtractionVersion || 0) && Array.isArray(other.links)) {
+    record = {...record, links: other.links, linkExtractionVersion: other.linkExtractionVersion};
+  }
   const lastAttempt = !old?.lastAttempt || state.lastAttempt?.at > old.lastAttempt.at ? state.lastAttempt : old.lastAttempt;
   sources.set(page.id, { url: page.url, record: record || null, lastAttempt });
 }

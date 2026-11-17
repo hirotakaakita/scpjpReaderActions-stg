@@ -3,7 +3,7 @@
 const fs=require('node:fs'),path=require('node:path');
 const {loadCatalogs}=require('./catalog');
 const {readSources,importDirectory,merge,captureFailure}=require('./source-store');
-const {normalizePage,digest,EXTRACTOR_VERSION}=require('./extract');
+const {normalizePage,digest,EXTRACTOR_VERSION,FTML_LINK_VERSION}=require('./extract');
 const {fetchRecord}=require('../related-documents');
 async function refresh({root=path.join(__dirname,'..'),language,maxRequests=600,maxDurationMs=300000,
   intervalMs=500,now=new Date().toISOString(),request}={}){
@@ -18,13 +18,14 @@ async function refresh({root=path.join(__dirname,'..'),language,maxRequests=600,
     if(p?.branch===language)pages.set(p.id,p);
   }
   const cutoff=Date.parse(now)-28*86400000,retry=Date.parse(now)-86400000;
+  const required=p=>p.branch==='ru'?FTML_LINK_VERSION:EXTRACTOR_VERSION;
   const queue=[...pages.values()].filter(p=>{
     const s=sources.get(p.id),r=s?.record;
     if(s?.lastAttempt&&!['success','not_modified'].includes(s.lastAttempt.status)&&Date.parse(s.lastAttempt.at)>retry)return false;
-    return !(r?.linkExtractionVersion>=EXTRACTOR_VERSION) || Date.parse(r.checkedAt)<cutoff;
+    return !(r?.linkExtractionVersion>=required(p)) || Date.parse(r.checkedAt)<cutoff;
   }).sort((a,b)=>{
     const ra=sources.get(a.id)?.record,rb=sources.get(b.id)?.record;
-    return Number(ra?.linkExtractionVersion>=EXTRACTOR_VERSION)-Number(rb?.linkExtractionVersion>=EXTRACTOR_VERSION)||
+    return Number(ra?.linkExtractionVersion>=required(a))-Number(rb?.linkExtractionVersion>=required(b))||
       (ra?.checkedAt||'').localeCompare(rb?.checkedAt||'')||a.id.localeCompare(b.id,'en');
   });
   const fetch=request|| (async url=>{
@@ -43,7 +44,7 @@ async function refresh({root=path.join(__dirname,'..'),language,maxRequests=600,
     report.attempted++;
     try{
       const record=await fetch(p.url);
-      if(record?.pageId!==p.id||!(record.linkExtractionVersion>=EXTRACTOR_VERSION)||!Array.isArray(record.links))throw Error('Invalid current body-link capture');
+      if(record?.pageId!==p.id||!(record.linkExtractionVersion>=required(p))||!Array.isArray(record.links))throw Error('Invalid current body-link capture');
       const state={record,lastAttempt:{status:'success',at:record.checkedAt}};
       merge(sources,state);fs.mkdirSync(incoming,{recursive:true});
       const file=path.join(incoming,digest(p.id)+'.json');

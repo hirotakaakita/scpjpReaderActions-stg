@@ -2,9 +2,11 @@
 const crypto = require('node:crypto');
 const { JSDOM, VirtualConsole } = require('jsdom');
 const { LANGUAGES } = require('../languages');
+const { removeHtmlNavigation, removeFtmlNavigation } = require('./chapter-navigation');
 
 const { assertions } = require('./semantics');
-const EXTRACTOR_VERSION = 6;
+const EXTRACTOR_VERSION = 8;
+const FTML_LINK_VERSION = 9;
 const HOSTS = new Map(Object.entries(LANGUAGES).map(([lang, config]) =>
   [new URL(config.baseUrl).hostname, lang]));
 HOSTS.set('scpfoundation.net', 'ru');
@@ -44,6 +46,7 @@ const EXCLUDED = [
 ].join(',');
 
 function bodyLinks(root, source) {
+  removeHtmlNavigation(root, source, normalizePage);
   const links = new Map();
   for (const a of root.querySelectorAll('a[href]')) {
     const href = a.getAttribute('href').trim();
@@ -60,8 +63,35 @@ function bodyLinks(root, source) {
 function ftmlLinks(text, source) {
   // Parse explicit links only. Includes, code/HTML and link-looking comments are
   // not expanded or crawled; plain SCP identifiers never become connections.
-  const body = text.replace(/\[!--[\s\S]*?--\]/g, '')
-    .replace(/\[\[(code|html)\b[^\]]*\]\][\s\S]*?\[\[\/\1\]\]/gi, '');
+  let body = text.replace(/\[!--[\s\S]*?--\]/g, '')
+    .replace(/\[\[(code|html)\b[^\]]*\]\][\s\S]*?\[\[\/\1\]\]/gi, '')
+    .replace(/@@[\s\S]*?@@/g,'');
+  // Respect explicit credit/navigation containers, including nested divs.
+  const tokens=/(?<!\[)\[\[(\/)?(div|span|section)\b([^\]]*)\]\]/gi,stack=[];
+  let filtered='',cursor=0;
+  for(const m of body.matchAll(tokens)){
+    if(!stack.at(-1)?.drop)filtered+=body.slice(cursor,m.index);
+    const tag=m[2].toLowerCase();
+    if(m[1]){const i=stack.map(x=>x.tag).lastIndexOf(tag);if(i>=0)stack.splice(i);}
+    else {
+      const classes=/\bclass\s*=\s*["']([^"']*)["']/i.exec(m[3])?.[1]?.toLowerCase().split(/\s+/)||[];
+      const drop=classes.some(c=>/^(?:licensebox.*|license-box|credit|credit-box|creditrate|credit-rate|footer-wikiwalk-nav|wikiwalk-nav|scp-footer|page-navigation|interwiki-box|toc)$/.test(c))||/\brole\s*=\s*["']navigation["']/i.test(m[3]);
+      stack.push({tag,drop:drop||!!stack.at(-1)?.drop});
+    }
+    cursor=m.index+m[0].length;
+  }
+  if(!stack.at(-1)?.drop)filtered+=body.slice(cursor);body=filtered;
+  body = removeFtmlNavigation(body, source, normalizePage);
+  // Handwritten chapter controls are not wrapped in a navigation class. Only
+  // remove a terminal centered block made solely of links and separators.
+  for(const m of [...body.matchAll(/\[\[=\]\]([\s\S]*?)\[\[\/=\]\]/g)].reverse()){
+    if(body.slice(m.index+m[0].length).trim())continue;
+    const links=[...m[1].matchAll(/\[\[\[([^\]|]+)(?:\|([^\]]*))?\]\]\]/g)];
+    const controls=links.some(x=>/^(?:назад|далее|previous|next|back)$/iu.test((x[2]||'').trim()));
+    const remainder=m[1].replace(/\[\[\[([^\]|]+)(?:\|([^\]]*))?\]\]\]/g,'');
+    if(controls&&links.length<=5&&/^[\s*|<>«»←→-]*$/u.test(remainder))body=body.slice(0,m.index);
+    break;
+  }
   const links = new Map();
   const add = (href, label) => {
     href = href.trim().replace(/^\*/, '');
@@ -108,7 +138,7 @@ function extractHtml(html, url, existingDocument = null) {
     if(source.host==='scp-wiki.wikidot.com' && breadcrumbLinks[0]?.slug==='canon-hub' && breadcrumbLinks[1]?.slug==='resurrection') {
       semanticRelations.push({target:breadcrumbLinks[1].url,type:'canon_member',quote:document.querySelector('#breadcrumbs').textContent.trim().replace(/\s+/g,' '),note:'出版社のカノン階層。本文中に登場する全SCPへカノンを転写しない。',location:'publisher_breadcrumb',sourceAnchor:'breadcrumbs',method:'explicit_canon_breadcrumb'});
     }
-    return { title, tags: [...new Set(tags)].sort(), authors, links:bodyLinks(root, source),
+    return { title, tags: [...new Set(tags)].sort(), authors, links:bodyLinks(root, {...source, title}),
       linkExtractionVersion: EXTRACTOR_VERSION,
       originalSources: require('../origin-provenance').extractOriginalSources(document,source.url),
       ...require('../origin-provenance').extractAuthorCredits(document),
@@ -123,7 +153,7 @@ function extractFtml(detail, url) {
   if (!source || (detail.pageId && (typeof detail.pageId !== 'string' || detail.pageId.toLowerCase() !== source.slug))) throw new Error('RuFoundation page mismatch');
   return { title: detail.title || source.slug, tags: (detail.tags || []).map(t => typeof t === 'string' ? t : t.name).filter(Boolean),
     authors: [detail.author, ...(detail.authors || [])].filter(Boolean).map(a => ({ name: typeof a === 'string' ? a : a.name || a.username || '', url: null })),
-    links:ftmlLinks(detail.source, source), linkExtractionVersion: EXTRACTOR_VERSION,
+    links:ftmlLinks(detail.source, {...source, title:detail.title}), linkExtractionVersion: FTML_LINK_VERSION,
     translations: [], limitations: ['ftml_templates_not_expanded'] };
 }
 
@@ -131,9 +161,9 @@ function makeRecord(url, body, format = 'html', now = new Date().toISOString(), 
   const page = normalizePage(url);
   if (!page) throw new Error('Unsupported source URL');
   const content = format === 'ftml' ? extractFtml(JSON.parse(body), page.url) : extractHtml(body, page.url, existingDocument);
-  return { schemaVersion: 1, extractorVersion: EXTRACTOR_VERSION, identityMetadataVersion:1, pageId: page.id, url: page.url,
+  return { schemaVersion: 1, extractorVersion: format==='ftml'?FTML_LINK_VERSION:EXTRACTOR_VERSION, identityMetadataVersion:1, pageId: page.id, url: page.url,
     fetchedAt: now, checkedAt: now, contentSha256: digest(body), format,
     etag: response.etag || null, lastModified: response.lastModified || null,
     ...content };
 }
-module.exports = { EXTRACTOR_VERSION, HOSTS, normalizePage, digest, extractHtml, extractFtml, makeRecord, EXCLUDED, bodyLinks, ftmlLinks };
+module.exports = { EXTRACTOR_VERSION, FTML_LINK_VERSION, HOSTS, normalizePage, digest, extractHtml, extractFtml, makeRecord, EXCLUDED, bodyLinks, ftmlLinks };
