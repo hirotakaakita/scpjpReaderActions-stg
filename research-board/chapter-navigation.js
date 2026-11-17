@@ -56,7 +56,8 @@ function removeFtmlNavigation(body, source, normalizePage) {
     };
     text = text.replace(/\[\[\[([^\]|]+)(?:\|[^\]]*)?\]\]\]/g, replace)
       .replace(/(?<!\[)\[(https?:\/\/[^\s\]]+)(?:\s+[^\]]*)?\](?!\])/g, replace)
-      .replace(/\[\[\/?(?:(?:div|span|section|size)\b[^\]]*|[=<>])\]\]/g, '');
+      .replace(/\[\[\/?(?:(?:div|span|section|size)\b[^\]]*|[=<>])\]\]/g, '')
+      .replace(/^[ \t]*=[ \t]+/gm, '');
     return isChapterNavigation(text, source, hasCurrent);
   }
   body = body.replace(/\[\[=\]\]([\s\S]*?)\[\[\/=\]\]/g,

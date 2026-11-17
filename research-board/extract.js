@@ -6,7 +6,7 @@ const { removeHtmlNavigation, removeFtmlNavigation } = require('./chapter-naviga
 
 const { assertions } = require('./semantics');
 const EXTRACTOR_VERSION = 8;
-const FTML_LINK_VERSION = 9;
+const FTML_LINK_VERSION = 10;
 const HOSTS = new Map(Object.entries(LANGUAGES).map(([lang, config]) =>
   [new URL(config.baseUrl).hostname, lang]));
 HOSTS.set('scpfoundation.net', 'ru');

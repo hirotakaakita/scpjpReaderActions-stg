@@ -55,6 +55,18 @@ test('FTML chapter controls without navigation classes are excluded while body r
   assert.deepEqual(r.links.map(l => l.target), ['https://scpfoundation.net/scp-173', 'https://scpfoundation.net/scp-3112', 'https://scpfoundation.net/scp-682']);
 });
 
+test('SCP-3113 style single-line centered FTML navigation is excluded', () => {
+  const r = extractFtml({title:'SCP-3113',source:
+    'Body text.\n\n= [[size 90%]]**<< [[[SCP-3112]]] | SCP-3113 | [[[SCP-3114]]] >>**[[/size]]'},
+    'https://scpfoundation.net/scp-3113');
+  assert.deepEqual(r.links, []);
+  const narrative = extractFtml({title:'SCP-3113',source:
+    'Experiment: [[[SCP-3112|genuine reference]]].\n\n' +
+    '= [[size 90%]]**<< [[[SCP-3112]]] | SCP-3113 | [[[SCP-3114]]] >>**[[/size]]'},
+    'https://scpfoundation.net/scp-3113');
+  assert.deepEqual(narrative.links.map(link=>link.target),['https://scpfoundation.net/scp-3112']);
+});
+
 test('navigation-only links do not become board connections or evidence', () => {
   const record = extract('<p>≪ <a href="/scp-3112">3112</a> | SCP-3113 | <a href="/scp-3114">3114</a> ≫</p>' +
     '<p>Test: <a href="/scp-682">SCP-682</a>.</p>');
