@@ -3,10 +3,11 @@ const crypto = require('node:crypto');
 const { JSDOM, VirtualConsole } = require('jsdom');
 const { LANGUAGES } = require('../languages');
 const { removeHtmlNavigation, removeFtmlNavigation } = require('./chapter-navigation');
+const { removeAuxiliaryContent, isAuxiliaryClass } = require('./auxiliary-content');
 
 const { assertions } = require('./semantics');
-const EXTRACTOR_VERSION = 8;
-const FTML_LINK_VERSION = 10;
+const EXTRACTOR_VERSION = 11;
+const FTML_LINK_VERSION = 12;
 const HOSTS = new Map(Object.entries(LANGUAGES).map(([lang, config]) =>
   [new URL(config.baseUrl).hostname, lang]));
 HOSTS.set('scpfoundation.net', 'ru');
@@ -46,6 +47,7 @@ const EXCLUDED = [
 ].join(',');
 
 function bodyLinks(root, source) {
+  removeAuxiliaryContent(root);
   removeHtmlNavigation(root, source, normalizePage);
   const links = new Map();
   for (const a of root.querySelectorAll('a[href]')) {
@@ -75,7 +77,7 @@ function ftmlLinks(text, source) {
     if(m[1]){const i=stack.map(x=>x.tag).lastIndexOf(tag);if(i>=0)stack.splice(i);}
     else {
       const classes=/\bclass\s*=\s*["']([^"']*)["']/i.exec(m[3])?.[1]?.toLowerCase().split(/\s+/)||[];
-      const drop=classes.some(c=>/^(?:licensebox.*|license-box|credit|credit-box|creditrate|credit-rate|footer-wikiwalk-nav|wikiwalk-nav|scp-footer|page-navigation|interwiki-box|toc)$/.test(c))||/\brole\s*=\s*["']navigation["']/i.test(m[3]);
+      const drop=isAuxiliaryClass(classes)||classes.some(c=>/^(?:licensebox.*|license-box|credit|credit-box|creditrate|credit-rate|footer-wikiwalk-nav|wikiwalk-nav|scp-footer|page-navigation|interwiki-box|toc)$/.test(c))||/\brole\s*=\s*["']navigation["']/i.test(m[3]);
       stack.push({tag,drop:drop||!!stack.at(-1)?.drop});
     }
     cursor=m.index+m[0].length;
@@ -131,6 +133,7 @@ function extractHtml(html, url, existingDocument = null) {
         location: 'explicit_translation_metadata', language: a.getAttribute('hreflang') || null });
     }
     const includes = root.querySelectorAll('iframe').length;
+    removeAuxiliaryContent(root);
     for (const node of root.querySelectorAll(EXCLUDED)) node.remove();
     const semanticRelations = assertions(source.url, root.textContent);
     // Only explicit publisher canon breadcrumbs, with a reviewed hub allowlist.
@@ -166,4 +169,4 @@ function makeRecord(url, body, format = 'html', now = new Date().toISOString(), 
     etag: response.etag || null, lastModified: response.lastModified || null,
     ...content };
 }
-module.exports = { EXTRACTOR_VERSION, FTML_LINK_VERSION, HOSTS, normalizePage, digest, extractHtml, extractFtml, makeRecord, EXCLUDED, bodyLinks, ftmlLinks };
+module.exports = { EXTRACTOR_VERSION, FTML_LINK_VERSION, HOSTS, normalizePage, digest, extractHtml, extractFtml, makeRecord, EXCLUDED, bodyLinks, ftmlLinks, removeAuxiliaryContent };

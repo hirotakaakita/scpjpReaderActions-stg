@@ -70,6 +70,7 @@ function extractHtml(url, html, now = new Date().toISOString(), existingDocument
     const authors = [...d.querySelectorAll('.licensebox a,.credit a,#u-credit-view a')]
       .filter(a => /wikidot\.com\/user:info\//i.test(a.href)).map(a => ({ name: a.textContent.trim(), url: a.href }));
     const boardExtractor = require('./research-board/extract');
+    boardExtractor.removeAuxiliaryContent(root);
     for (const n of root.querySelectorAll(excluded + ',' + boardExtractor.EXCLUDED)) n.remove();
     const bodyLinks = boardExtractor.bodyLinks(root, boardExtractor.normalizePage(page.url));
     const links = bodyLinks.map(l => l.target);
@@ -93,11 +94,11 @@ function extractApi(url, article, now = new Date().toISOString()) {
   const page = normalize(url);
   if (!page || !article?.title || typeof article.source !== 'string' || !article.source.trim()) throw Error('Invalid API article');
   const source = article.source, boardExtractor=require('./research-board/extract');
-  const bodyLinks=boardExtractor.ftmlLinks(source,boardExtractor.normalizePage(page.url));
+  const bodyLinks=boardExtractor.ftmlLinks(source,{...boardExtractor.normalizePage(page.url),title:article.title});
   const metadata = require('./rufoundation-crawler');
   return { ...page, title: article.title, tags: (article.tags || []).map(t => typeof t === 'string' ? t : t.name).filter(Boolean),
     objectClass: metadata.extractObjectClass(source),rating:metadata.normalizeRating(article.rating),imageUrl:metadata.extractImageUrl(source,page.slug),
-    links: bodyLinks.map(l=>l.target), bodyLinks, linkExtractionVersion:boardExtractor.EXTRACTOR_VERSION,
+    links: bodyLinks.map(l=>l.target), bodyLinks, linkExtractionVersion:boardExtractor.FTML_LINK_VERSION,
     translations: [], originalSources:[], originProvenanceVersion:provenance.VERSION, authors: [], format: 'ftml', contentSha256: hash(source), checkedAt: now, availabilityVersion: 1,
     descriptionExcerpt: metadata.extractDescription(source) || '',descriptionVersion:require('./article-excerpts').VERSION };
 }

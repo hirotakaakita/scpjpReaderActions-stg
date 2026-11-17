@@ -336,7 +336,7 @@ jobs:
 
       - name: Generate combined compatible mobile catalogs
         run: |
-          node --test test/mobile-catalog.test.js test/research-board.test.js test/research-board-links.test.js test/research-board-navigation.test.js
+          node --test test/mobile-catalog.test.js test/research-board.test.js test/research-board-links.test.js test/research-board-navigation.test.js test/research-board-auxiliary-content.test.js
           node mobile-catalog.js
           node research-board/validate.js
 
