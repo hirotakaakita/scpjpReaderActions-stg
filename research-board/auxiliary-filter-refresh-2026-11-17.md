@@ -1,4 +1,4 @@
-# Auxiliary link filter refresh ? 2026-11-17
+# Auxiliary link filter refresh - 2026-11-17
 
 ## Scope
 
@@ -23,7 +23,7 @@ unchanged non-extraction metadata. Ordinary language catalogs are unchanged.
 - Previous revision: 62b852305d34eb381071.
 - Revision: be96f7d1e68e7a928120.
 - Nodes: 57659; the same catalog aliases and work identities are retained.
-- Reference edges: 189,427 ? 102,250.
+- Reference edges: 189,427 -> 102,250.
 - Removed reference edges: 87,177; added: 0.
 - Wire edges: 102252 (client displays reference relations only).
 - Gzip bytes: 9687941; decoded bytes: 66833641.
@@ -48,3 +48,11 @@ revision changes and triggers the normal client update.
 
 The new regression suite is also included in the scheduled crawler workflow.
 The prior payload is retained for cached manifests.
+
+## Publication verification
+
+Published to STG master in commit 2b041833. The normal application manifest URL
+returned this revision and the gzip matched its SHA-256 and byte length exactly.
+Restarted the connected STG Android application and confirmed its active.json
+switched to be96f7d1e68e7a928120 through normal catalog synchronization.
+No application reinstall or user-data reset was needed.
