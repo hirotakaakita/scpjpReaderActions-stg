@@ -291,7 +291,7 @@ function buildCatalogs(catalogs, records, attempts, now = new Date().toISOString
       discoveredDocuments: sources.size, classified: data.filter(r => r.originBranch).length, unclassified: data.filter(r => !r.originBranch).length, pending: pending.length } };
 }
 
-async function fetchRecord(url, captureDirectory = null, {rawDirectory=null,metadataDirectory=null,timeoutMs=20000} = {}) {
+async function fetchRecord(url, captureDirectory = null, {rawDirectory=null,metadataDirectory=null,timeoutMs=20000,beforeRequest=async()=>{},expandDescriptions=true} = {}) {
   const page = normalize(url);
   if (!page) throw Error('Unsupported URL');
   let redirectTarget=null;
@@ -306,6 +306,7 @@ async function fetchRecord(url, captureDirectory = null, {rawDirectory=null,meta
   const request = async (target, depth = 0) => {
     target = articleFetchTarget(target);
     if (!target || depth > 5) throw Error('Unsupported redirect');
+    await beforeRequest(target);
     const response = await axios.get(target, { timeout: timeoutMs, maxRedirects: 0, maxContentLength: 12 * 1024 * 1024,
       validateStatus: s => (s >= 200 && s < 400), headers: { 'User-Agent': 'SCPReaderCatalog/1.0', Accept: 'text/html,application/json' } });
     if (response.status >= 300) {
@@ -321,11 +322,12 @@ async function fetchRecord(url, captureDirectory = null, {rawDirectory=null,meta
   };
   if (page.language === 'ru') {
     // This endpoint is deliberately constructed here, never accepted as a discovered URL.
+    await beforeRequest(page.url);
     const response = await axios.get(`https://scpfoundation.net/api/articles/${encodeURIComponent(page.slug)}`, {
       timeout: timeoutMs, maxRedirects: 0, maxContentLength: 12 * 1024 * 1024, headers: { Accept: 'application/json' },
     });
     const record = extractApi(url, response.data);
-    if(!record.descriptionExcerpt||record.descriptionExcerpt.length<20)record.descriptionExcerpt=await require('./rufoundation-crawler').extractApiDescription(response.data,async target=>(await axios.get(target,{timeout:timeoutMs,maxRedirects:0,headers:{Accept:'application/json'}})).data)||'';
+    if(expandDescriptions&&(!record.descriptionExcerpt||record.descriptionExcerpt.length<20))record.descriptionExcerpt=await require('./rufoundation-crawler').extractApiDescription(response.data,async target=>{await beforeRequest(target);return (await axios.get(target,{timeout:timeoutMs,maxRedirects:0,headers:{Accept:'application/json'}})).data;})||'';
     saveRaw(response.data,'json');
     saveMetadata(record,response.data,'ftml');
     if (captureDirectory) require('./research-board/source-store').capture(url, JSON.stringify(response.data), 'ftml', captureDirectory);
@@ -335,14 +337,14 @@ async function fetchRecord(url, captureDirectory = null, {rawDirectory=null,meta
   let html;
   try{html=await request(url.replace(/^http:/,'https:'));}
   catch(error){
-    const transient=[429,500,502,503,504].includes(error.response?.status)||['ECONNRESET','ETIMEDOUT','ECONNABORTED','EAI_AGAIN'].includes(error.code);
+    const transient=[500,502,503,504].includes(error.response?.status)||['ECONNRESET','ETIMEDOUT','ECONNABORTED','EAI_AGAIN'].includes(error.code);
     if(!transient||!new URL(page.url).hostname.endsWith('.wikidot.com'))throw error;
     // Fetch the same owned page through Wikidot's no-redirect view. This can
     // remain available while its normal rendering endpoint is failing.
     html=await request(page.url+'/noredirect/true');
   }
   const record = extractHtml(url, html,undefined,null,{redirectTarget});
-  if(!record.descriptionExcerpt)record.descriptionExcerpt=await require('./article-frames').extractOwnedFrameProse(url,html)||'';
+  if(expandDescriptions&&!record.descriptionExcerpt)record.descriptionExcerpt=await require('./article-frames').extractOwnedFrameProse(url,html,async target=>{await beforeRequest(target);return (await axios.get(target,{timeout:timeoutMs,maxRedirects:0,maxContentLength:12*1024*1024})).data;})||'';
   saveRaw(html,'html');
   saveMetadata(record,html,'html');
   if (captureDirectory) require('./research-board/source-store').capture(url, html, 'html', captureDirectory);

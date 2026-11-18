@@ -38,12 +38,32 @@ test('long crawls never hold the notification write lock', () => {
   const sendLock = concurrency(job(notification, 'send'));
   assert.notEqual(crawlLock.group, sendLock.group);
   assert.equal(publishLock.group, sendLock.group);
-  assert.doesNotMatch(job(crawler, 'crawl'), /concurrency:/);
+  const publisherReadLock=concurrency(job(crawler,'crawl'));
+  assert.notEqual(publisherReadLock.group,sendLock.group);
+  assert.equal(publisherReadLock.group,'scp-publisher-${{ matrix.host }}');
+  assert.equal(concurrency(job(crawler,'refresh-article-text')).group,publisherReadLock.group);
   assert.doesNotMatch(notification.split('\njobs:')[0], /concurrency:/);
-  for (const lock of [crawlLock, publishLock, sendLock]) {
+  for (const lock of [crawlLock, publishLock, sendLock, publisherReadLock]) {
     assert.equal(lock['cancel-in-progress'], 'false');
     assert.equal(lock.queue, 'max');
   }
+});
+
+test('body-link completion shares the crawl lock, groups hosts, publishes without notifications and continues checkpoints',()=>{
+  const workflow=read('research-board-body-links.yml'),normal=read('scp-crawler.yml');
+  assert.equal(concurrency(workflow.split('\njobs:')[0]).group,concurrency(normal.split('\njobs:')[0]).group);
+  const collect=job(workflow,'collect'),publish=job(workflow,'publish');
+  assert.match(collect,/max-parallel: 3/);
+  assert.match(collect,/BOARD_LINK_MAX_REQUESTS: '0'/);
+  assert.match(collect,/BOARD_LINK_MAX_DURATION_MS: '0'/);
+  assert.match(collect,/CRAWL_REQUEST_INTERVAL_MS: '1000'/);
+  assert.match(collect,/if: always\(\)/);
+  assert.equal(concurrency(publish).group,'scp-data-update');
+  assert.match(publish,/generateResearchBoard/);
+  assert.match(publish,/research-board\/validate.js/);
+  assert.match(publish,/r.stopReason==='checkpoint'/);
+  assert.match(publish,/gh workflow run research-board-body-links.yml/);
+  assert.doesNotMatch(publish,/prepare-notification-queue|send-notifications|send-staging/);
 });
 
 test('writers load current master after acquiring the lock and never force conflict resolution', () => {
