@@ -8,6 +8,25 @@ const html=body=>'<title>SCP-3169</title><div id="page-content"><p>'+ 'Narrative
 const record=body=>makeRecord(base+'scp-3169',html(body));
 const targets=r=>r.links.map(link=>link.target);
 
+test('earthworm previous/hub/next navigation is excluded while the same narrative reference survives',()=>{
+ const r=record('<p>Discussed by <a href="/omega-k">the research team</a>.</p><div class="earthworm earthworm--old-syntax-hub-yes">'+
+ '<div class="first earthworm__previous"><a href="/previous">Previous tale</a></div><div class="hub"><a href="/end-of-death-hub">Hub</a></div><div class="last earthworm__next"><a href="/omega-k">ΩK</a></div></div>');
+ assert.deepEqual(targets(r),[base+'omega-k']);assert.equal(r.links[0].quote,'the research team');
+});
+
+test('article breadcrumbs are excluded without dropping hub member lists or prose',()=>{
+ const r=record('<div><a href="/canon-hub">Canons</a> » <a href="/end-of-death-hub">End of Death</a> » SCP-3169</div>'+
+ '<p>This narrative cites <a href="/end-of-death-hub">the hub</a> for context.</p><ul><li><a href="/scp-3984">SCP-3984</a></li></ul>');
+ assert.deepEqual(targets(r),[base+'end-of-death-hub',base+'scp-3984']);assert.equal(r.links[0].quote,'the hub');
+ const nav=record('<p><a href="/end-of-death-hub">Hub</a> » SCP-3169</p>');assert.deepEqual(targets(nav),[]);
+});
+
+test('FTML breadcrumbs and earthworm containers do not produce references',()=>{
+ const r=extractFtml({title:'SCP-3984',source:'[[div style="margin: 0"]]\n[[[end-of-death-hub|Хаб]]] » SCP-3984\n[[/div]]\n'+
+ '[[div class="earthworm"]][[[omega-k|ΩK]]][[/div]]\nActual study: [[[scp-682|SCP-682]]].'},'https://scpfoundation.net/scp-3984');
+ assert.deepEqual(targets(r),['https://scpfoundation.net/scp-682']);
+});
+
 test('SCP-3169 author collection is excluded while its narrative Site-196 link survives',()=>{
   const r=record('<p>Acquired by <a href="/scp-7793">Site-196</a>.</p>'+
     '<div class="collection"><div class="collapsible-block"><a class="collapsible-block-link">More&nbsp;From&nbsp;This&nbsp;Author</a>'+

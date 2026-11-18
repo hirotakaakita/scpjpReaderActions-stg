@@ -104,7 +104,7 @@ function collapseWorks(pages, candidates, catalogEntries) {
     const sameScpIdentity=edge.proof?.[5]==='catalog_scp_identifier'&&
       [0,8,9].includes(source.kindIndex)&&source.kindIndex===target.kindIndex&&source.branch!=='other'&&
       source.branch===target.branch&&source.pageType===target.pageType&&scpIdentityKey(source)===scpIdentityKey(target);
-    const originalCatalogPath=['origin_path_and_author','full_numbered_original_catalog_path','origin_and_original_catalog_path'].includes(edge.proof?.[5])&&
+    const originalCatalogPath=['origin_path_and_author','full_numbered_original_catalog_path','origin_and_original_catalog_path','interwiki_original_metadata'].includes(edge.proof?.[5])&&
       source.slug===target.slug&&source.branch!=='other'&&source.branch===target.branch&&native(target);
     if(a===b)continue;
     if (source.classificationSourceId || target.classificationSourceId ||

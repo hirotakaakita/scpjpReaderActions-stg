@@ -27,7 +27,7 @@ test('AELIANA original and three translations form one JP work with all old iden
 test('same slug without confirmed origin, incompatible author or original branch is not merged',()=>{
  for(const mode of ['unknown','author','branch']){
    const jp=fixture('jp'),cn=fixture('cn');
-   if(mode==='unknown')delete cn.state.record.catalogIdentity;
+   if(mode==='unknown'){delete cn.state.record.catalogIdentity;cn.state.record.tags=[];}
    if(mode==='author')cn.state.record.authors=[{url:'https://www.wikidot.com/user:info/another-author'}];
    if(mode==='branch')cn.row.pageType='related-document-cn';
    assert.equal(board([jp,cn]).nodes.length,2,mode);
@@ -43,7 +43,7 @@ test('work identity is independent of differing document categories when the aut
 test('a distinctive hub with explicit publisher origin joins its native work without author metadata',()=>{
  const jp=fixture('jp','distinct-canon-hub','jp',{contentType:'hub'}),cn=fixture('cn','distinct-canon-hub','jp',{contentType:'hub'});
  jp.state.record.authors=[];cn.state.record.authors=[];assert.equal(board([jp,cn]).nodes.length,1);
- delete cn.state.record.catalogIdentity;assert.equal(board([jp,cn]).nodes.length,2);
+ delete cn.state.record.catalogIdentity;cn.state.record.tags=[];assert.equal(board([jp,cn]).nodes.length,2);
 });
 
 test('numbered document/log paths join a native catalog work despite legacy SCP category and absent provenance metadata',()=>{
@@ -58,14 +58,68 @@ test('numbered document/log paths join a native catalog work despite legacy SCP 
 test('a category difference cannot split a distinctive work with confirmed origin and exact native path',()=>{
  const jp=fixture('jp'),cn=fixture('cn');cn.row.contentType='record';jp.state.record.authors=[];cn.state.record.authors=[];
  assert.equal(board([jp,cn]).nodes.length,1);
- delete cn.state.record.catalogIdentity;assert.equal(board([jp,cn]).nodes.length,2);
+ delete cn.state.record.catalogIdentity;cn.state.record.tags=[];assert.equal(board([jp,cn]).nodes.length,2);
 });
 
 test('two collected translations join without inventing a native node when origin, full path and author agree',()=>{
  const cn=fixture('cn'),intl=fixture('int');
  const b=board([cn,intl]);assert.equal(b.nodes.length,1);assert.equal(b.nodes[0][13].length,2);
  assert(b.nodes[0][13].every(p=>p[0]!=='jp'));
- intl.state.record.authors=[];assert.equal(board([cn,intl]).nodes.length,2);
+ intl.state.record.authors=[];assert.equal(board([cn,intl]).nodes.length,1);
+ intl.state.record.catalogIdentity.basis='publisher_default_origin';intl.state.record.tags=[];assert.equal(board([cn,intl]).nodes.length,2);
+});
+
+test('verified interwiki original pointers merge renamed translations and preserve legacy aliases',()=>{
+ const jp=fixture('jp','original'),cn=fixture('cn','renamed-translation');
+ cn.state.record.authors=[];
+ cn.state.record.catalogIdentity={originBranch:'jp',basis:'interwiki_original_metadata',originalSources:[{url:jp.row.urlJP,method:'interwiki_original_metadata'}]};
+ const b=board([jp,cn]);assert.equal(b.nodes.length,1);assert.equal(b.nodes[0][13].length,2);
+ assert(b.nodes[0][14][2].includes('catalog:related-document-jp:document-cn--renamed-translation'));
+ cn.state.record.originalSources=[{url:'https://scp-jp.wikidot.com/not-collected',method:'credit_original_label'}];
+ assert.equal(board([jp,cn]).nodes.length,2,'current explicit credits override older interwiki metadata');
+});
+
+test('verified shared metadata can join two translations of an uncollected original across renamed paths',()=>{
+ const cn=fixture('cn','translated-a'),es=fixture('es','translated-b');
+ for(const x of [cn,es])x.state.record.catalogIdentity={originBranch:'jp',basis:'interwiki_original_metadata',originalSources:[{url:'https://scp-jp.wikidot.com/original-not-collected',method:'interwiki_original_metadata'}]};
+ assert.equal(board([cn,es]).nodes.length,1);
+ es.state.record.catalogIdentity.originalSources[0].url='https://scp-jp.wikidot.com/different';assert.equal(board([cn,es]).nodes.length,2);
+});
+
+test('a shared original with one credit and one metadata pointer is recorded as a mixed metadata proof',()=>{
+ const cn=fixture('cn','mixed-a'),es=fixture('es','mixed-b'),url='https://scp-jp.wikidot.com/not-collected';
+ cn.state.record.originalSources=[{url,method:'credit_original_label'}];
+ es.state.record.catalogIdentity={originBranch:'jp',basis:'interwiki_original_metadata',originalSources:[{url,method:'interwiki_original_metadata'}]};
+ const b=board([cn,es]);assert.equal(b.nodes.length,1);
+ assert(b.workIdentityProofs.some(p=>p.method==='shared_verified_original_metadata'));
+ assert(!b.workIdentityProofs.some(p=>p.method==='shared_explicit_original_credit'));
+});
+
+test('distinctive translated hubs with two explicit publisher origins merge without author metadata',()=>{
+ const cn=fixture('cn','end-of-death-hub','jp',{contentType:'hub'}),es=fixture('es','end-of-death-hub','jp',{contentType:'hub'});
+ cn.state.record.authors=[];es.state.record.authors=[];
+ assert.equal(board([cn,es]).nodes.length,1);
+ es.state.record.catalogIdentity.basis='publisher_default_origin';es.state.record.tags=[];assert.equal(board([cn,es]).nodes.length,2);
+ es.state.record.catalogIdentity.basis='publisher_origin_tag';es.state.record.tags=[];assert.equal(board([cn,es]).nodes.length,2);
+});
+
+test('missing-original fallback still rejects conflicting authors and generic resource paths',()=>{
+ const cn=fixture('cn'),es=fixture('es');es.state.record.authors=[{url:'https://www.wikidot.com/user:info/different'}];
+ assert.equal(board([cn,es]).nodes.length,2);
+ assert.equal(board([fixture('cn','canon-hub'),fixture('es','canon-hub')]).nodes.length,2);
+});
+
+test('asset-only authors never create a false conflict against a translated article creator',()=>{
+ const jp=fixture('jp'),cn=fixture('cn');jp.state.record.authorCreditVersion=2;
+ jp.state.record.originalAuthors=[];jp.state.record.authors=[{id:'image-maker'}];jp.state.record.assetAuthors=[{id:'image-maker'}];
+ assert.equal(board([jp,cn]).nodes.length,1);
+});
+
+test('publisher origin tags identify full unusual joke paths without numeric catalog metadata',()=>{
+ hosts.en='scp-wiki.wikidot.com';hosts.ru='scpfoundation.net';
+ const en=fixture('en','scp-botnik-j','en',{contentType:'scp',pageType:'joke-scps'}),ru=fixture('ru','scp-botnik-j','en',{contentType:'scp',pageType:'joke-scps'});
+ delete ru.state.record.catalogIdentity;ru.state.record.tags=['филиал:en'];ru.state.record.authors=[];
+ assert.equal(board([en,ru]).nodes.length,1);
 });
 
 test('translations with the same explicit original credit join across different paths even when the original is uncollected',()=>{
@@ -109,10 +163,11 @@ test('shared deletion notices or collection credits cannot combine different wor
  assert(b.nodes.every(n=>new Set(n[13].map(p=>p[2])).size===1));
  assert(b.identityReview.some(r=>r.reason==='non_unique_original_credit'));
 });
-test('generic hubs, different proposal paths and translation-only catalogs remain separate',()=>{
+test('generic hubs, different proposal paths and uncorroborated translation-only catalogs remain separate',()=>{
  assert.equal(board([fixture('jp','groups-of-interest'),fixture('cn','groups-of-interest')]).nodes.length,2);
  assert.equal(board([fixture('jp','scp-001-proposal-a'),fixture('cn','scp-001-proposal-b')]).nodes.length,2);
- assert.equal(board([fixture('cn'),fixture('es')]).nodes.length,2);
+ const es=fixture('es');es.state.record.catalogIdentity.basis='official_index_section';es.state.record.tags=[];
+ assert.equal(board([fixture('cn'),es]).nodes.length,2);
 });
 test('explicit original credit handles changed translation URLs but never creates uncataloged nodes',()=>{
  const jp=fixture('jp'),cn=fixture('cn','translated-name');cn.state.record.originalSources=[{url:jp.row.urlJP,method:'credit_original_label',quote:'原文:'}];

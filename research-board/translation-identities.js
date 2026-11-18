@@ -1,12 +1,13 @@
 'use strict';
 const {normalizePage}=require('./extract');
 const {originalPage}=require('../origin-provenance');
+const {publisherOriginTags}=require('../catalog-origin');
 const site=code=>code==='zh-tr'?'zh':code;
 const native=p=>site(p.siteBranch)===p.branch||(p.siteBranch==='cs'&&p.branch==='sk');
 const generic=/^(?:main|index|home|start|about|groups-of-interest|foundation-tales|canon-hub|series-archive|personnel-and-character-dossier|task-forces|secure-facilities-locations|goi-formats)(?:-[a-z]{2})?$/;
 const userId=a=>a.id||/wikidot\.com\/user:info\/([^/?#]+)/i.exec(a.url||'')?.[1]?.toLowerCase();
 const authorIds=r=>{
- const translators=new Set((r?.translators||[]).map(userId));
+ const translators=new Set([...(r?.translators||[]),...(r?.assetAuthors||[])].map(userId));
  const users=r?.originalAuthors?.length?r.originalAuthors:r?.authors||[];
  return new Set(users.map(userId).filter(id=>id&&(!translators.has(id)||r?.originalAuthors?.some(a=>userId(a)===id))));
 };
@@ -16,8 +17,18 @@ const consistentCredit=(p,r)=>{
  const q=originalPage(raw[0]?.url);
  return q?.hostBranch===p.branch&&decodeURIComponent(new URL(q.url).pathname).slice(1)===p.slug;
 };
-const originEvidence=(p,r)=>r?.catalogIdentity?.originBranch===p.branch&&
+const originEvidence=(p,r)=>explicitPublisherOrigin(p,r)||r?.catalogIdentity?.originBranch===p.branch&&
  ['publisher_origin_tag','official_index_section','publisher_default_origin','native_official_collection','explicit_original_credit','explicit_translation_metadata','catalog_page_type'].includes(r.catalogIdentity.basis);
+const metadataOriginals=r=>(r?.catalogIdentity?.originalSources||[]).filter(s=>s.method==='interwiki_original_metadata');
+const rawOriginalClaims=r=>{
+ const credits=(r?.originalSources||[]).filter(s=>s.method==='credit_original_label');
+ return credits.length?credits:metadataOriginals(r);
+};
+const explicitPublisherOrigin=(p,r)=>{
+ if(!r)return false;
+ const tags=publisherOriginTags(p.url,r);
+ return tags.origins.length===1&&tags.origins[0]===p.branch&&!tags.conflicts.length&&!tags.unsupported.length;
+};
 function scpIdentityKey(p){
  const m=/^scp-(?:([a-z]{2,5})-)?(\d+)(.*)$/.exec(p.slug);
  let identifier=p.slug;
@@ -33,7 +44,7 @@ function translationIdentities(pages,sources){
  for(const p of pages){const key=p.branch+'\0'+p.slug;if(!versions.has(key))versions.set(key,[]);versions.get(key).push(p);}
  const creditClaims=new Map(),ambiguousCredits=new Set();
  for(const p of pages){
-   const r=sources.get(p.id)?.record,raw=(r?.originalSources||[]).filter(x=>x.method==='credit_original_label');
+   const r=sources.get(p.id)?.record,raw=rawOriginalClaims(r);
    if(new Set(raw.map(x=>x.url)).size!==1)continue;
    const url=originalPage(raw[0]?.url)?.url||raw[0]?.url;if(!url)continue;
    if(!creditClaims.has(url))creditClaims.set(url,new Map());const hosts=creditClaims.get(url);
@@ -45,9 +56,9 @@ function translationIdentities(pages,sources){
  for(const p of pages){
    const state=sources.get(p.id),r=state?.record;
    if(p.branch==='other'||!p.pageType?.startsWith('related-document-')||!r||['not_found','not_article','unavailable'].includes(state.lastAttempt?.status))continue;
-   const all=(r.originalSources||[]).filter(x=>x.method==='credit_original_label');
+   const all=rawOriginalClaims(r);
    if(new Set(all.map(x=>x.url)).size!==1)continue;
-   const raw=identityCredits(r).filter(x=>x.method==='credit_original_label');
+   const raw=all.filter(x=>!ambiguousCredits.has(originalPage(x.url)?.url||x.url));
    if(new Set(raw.map(x=>x.url)).size!==1)continue;
    const originals=[...new Set(raw.map(x=>originalPage(x.url)?.url).filter(Boolean))];
    if(originals.length!==1)continue;
@@ -57,7 +68,8 @@ function translationIdentities(pages,sources){
    group.sort((a,b)=>a.id.localeCompare(b.id,'en'));
    for(let i=1;i<group.length;i++){
      const p=group[i],q=group[0],r=sources.get(p.id).record;
-     if(p.siteBranch!==q.siteBranch)candidates.push({source:p.id,target:q.id,type:'translation_assertion',proof:[p.url,q.url,'shared_original_credit',r.contentSha256,'','shared_explicit_original_credit',r.checkedAt]});
+     const bothCredits=[p,q].every(page=>rawOriginalClaims(sources.get(page.id).record).every(x=>x.method==='credit_original_label'));
+     if(p.siteBranch!==q.siteBranch)candidates.push({source:p.id,target:q.id,type:'translation_assertion',proof:[p.url,q.url,'shared_original_credit',r.contentSha256,'',bothCredits?'shared_explicit_original_credit':'shared_verified_original_metadata',r.checkedAt]});
    }
  }
  const scpGroups=new Map();
@@ -87,6 +99,14 @@ function translationIdentities(pages,sources){
    if(new Set(creditTargets.map(e=>e.target)).size>1){review.push({url:p.url,reason:'conflicting_original_credits'});continue;}
    candidates.push(...creditTargets);
    if(credits.length)continue; // A work-specific explicit original overrides path conventions.
+   const metadata=metadataOriginals(r).filter(x=>!ambiguousCredits.has(originalPage(x.url)?.url||x.url));
+   if(!r.originalSources?.length&&metadata.length){
+     const urls=[...new Set(metadata.map(x=>originalPage(x.url)?.url).filter(Boolean))];
+     if(urls.length!==1){review.push({url:p.url,reason:'conflicting_interwiki_originals'});continue;}
+     const target=normalizePage(urls[0]),q=target&&byId.get(target.id);
+     if(q&&q.id!==p.id&&q.branch===p.branch)candidates.push({source:p.id,target:q.id,type:'translation_assertion',proof:[p.url,q.url,'verified_translation_original',r.contentSha256,'','interwiki_original_metadata',r.checkedAt]});
+     continue; // An exact metadata pointer also overrides matching local paths.
+   }
    if(!p.pageType||p.branch==='other'||native(p))continue;
    const possible=originals.get(p.branch+'\0'+p.slug)||[];
    if(!possible.length){
@@ -96,8 +116,23 @@ function translationIdentities(pages,sources){
      if(!p.pageType.startsWith('related-document-')||generic.test(p.slug)||!originEvidence(p,r))continue;
      const a=authorIds(r);
      const matches=(versions.get(p.branch+'\0'+p.slug)||[]).filter(q=>q.id!==p.id&&q.pageType?.startsWith('related-document-')&&q.siteBranch!==p.siteBranch)
-       .filter(q=>{const state=sources.get(q.id),qr=state?.record;return qr&&!['not_found','not_article','unavailable'].includes(state.lastAttempt?.status)&&(!identityCredits(qr).length||consistentCredit(q,qr))&&originEvidence(q,qr)&&[...authorIds(qr)].some(id=>a.has(id));});
-     for(const q of matches)if(p.id<q.id||identityCredits(sources.get(q.id).record).length)candidates.push({source:p.id,target:q.id,type:'translation_assertion',proof:[p.url,q.url,'translated_catalog_identity',r.contentSha256,'','translation_path_shared_author',r.checkedAt]});
+       .filter(q=>{
+         const state=sources.get(q.id),qr=state?.record;
+         if(!qr||['not_found','not_article','unavailable'].includes(state.lastAttempt?.status)||
+            (identityCredits(qr).length&&!consistentCredit(q,qr))||!originEvidence(q,qr))return false;
+         const b=authorIds(qr),shared=[...b].some(id=>a.has(id));
+         if(a.size&&b.size&&!shared){
+           if(p.id<q.id)review.push({url:p.url,original:q.url,reason:'author_conflict'});
+           return false;
+         }
+         const proven=shared||explicitPublisherOrigin(p,r)&&explicitPublisherOrigin(q,qr);
+         if(!proven&&p.id<q.id)review.push({url:p.url,original:q.url,reason:'missing_translated_identity_evidence'});
+         return proven;
+       });
+     for(const q of matches)if(p.id<q.id||identityCredits(sources.get(q.id).record).length){
+       const shared=[...authorIds(sources.get(q.id).record)].some(id=>a.has(id));
+       candidates.push({source:p.id,target:q.id,type:'translation_assertion',proof:[p.url,q.url,'translated_catalog_identity',r.contentSha256,'',shared?'translation_path_shared_author':'explicit_origin_and_translation_path',r.checkedAt]});
+     }
      continue;
    }
    if(possible.length!==1){review.push({url:p.url,reason:'ambiguous_original'});continue;}
@@ -107,7 +142,7 @@ function translationIdentities(pages,sources){
    if(a.size&&b.size&&!shared.length){review.push({url:p.url,original:q.url,reason:'author_conflict'});continue;}
    const numberedPath=/^scp-(?:[a-z]{2,5}-)?\d+(?:-[\p{L}\p{N}_-]+)?$/u.test(p.slug);
    const originProof=originEvidence(p,r)||(numberedPath&&meta?.originBranch===p.branch&&meta.basis==='scp_identifier');
-   const explicitOrigin=originProof&&meta.basis==='publisher_origin_tag';
+   const explicitOrigin=explicitPublisherOrigin(p,r);
    // A category is presentation metadata, not work identity. Explicit origin
    // and an exact original path still identify a work when local tags differ.
    // A slug alone, a title, or an unverified origin is never enough.
@@ -118,4 +153,4 @@ function translationIdentities(pages,sources){
  }
  return {candidates,review};
 }
-module.exports={translationIdentities,native,scpIdentityKey};
+module.exports={translationIdentities,native,scpIdentityKey,generic};

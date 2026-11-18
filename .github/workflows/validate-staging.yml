@@ -18,6 +18,7 @@ jobs:
       - run: node --test
       - run: node validate-catalog-indexes.js
       - run: node research-board/validate.js
+      - run: node tool/audit-research-board-identities.js
       - name: Validate catalog and staging status
         run: node validate-staging-catalogs.js
   firebase:

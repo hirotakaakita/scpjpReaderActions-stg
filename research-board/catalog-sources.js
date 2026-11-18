@@ -5,6 +5,8 @@ const path = require('node:path');
 const zlib = require('node:zlib');
 const { normalizePage } = require('./extract');
 const { merge } = require('./source-store');
+const { verifiedCatalogOriginals } = require('./identity-metadata');
+const {originalPage}=require('../origin-provenance');
 function importCatalogSources(sources, input, catalogs) {
   const members = new Set(catalogs.flatMap(c => c.data.map(row =>
     normalizePage(row.isTranslatedJP !== false && row.urlJP ? row.urlJP : row.urlEN)?.id)).filter(Boolean));
@@ -49,10 +51,15 @@ function importCatalogSources(sources, input, catalogs) {
   }
   // Work identity metadata is independent of semantic/body-link coverage.
   const additional=path.join(input,'related-documents/catalog.json.gz');
-  if(fs.existsSync(additional))for(const row of JSON.parse(zlib.gunzipSync(fs.readFileSync(additional))).data){
+  const documents=fs.existsSync(additional)?JSON.parse(zlib.gunzipSync(fs.readFileSync(additional))).data:[];
+  const originsByUrl=new Map(documents.filter(r=>r.originBranch&&r.originBranch!=='other')
+    .map(r=>[originalPage(r.url)?.url,r.originBranch]));
+  for(const row of documents){
     const p=normalizePage(row.url),state=p&&sources.get(p.id);
     if(!state?.record||!members.has(p.id))continue;
     state.record.catalogIdentity={originBranch:row.originBranch,basis:row.classification?.basis};
+    const originals=verifiedCatalogOriginals(row,originsByUrl);
+    if(originals.length)state.record.catalogIdentity.originalSources=originals;
     // Preserve explicit original credits even if the semantic snapshot has the
     // same timestamp and was therefore retained above.
   }
@@ -65,12 +72,13 @@ function importCatalogSources(sources, input, catalogs) {
         saved.record.links=r.bodyLinks||[];
         saved.record.linkExtractionVersion=r.linkExtractionVersion;
       }
-      if(saved?.record&&members.has(p.id)&&saved.record.contentSha256===r.contentSha256&&r.authorCreditVersion>=1){
+      if(saved?.record&&members.has(p.id)&&saved.record.contentSha256===r.contentSha256&&r.authorCreditVersion>=1&&r.authorCreditVersion>=(saved.record.authorCreditVersion||0)){
         saved.record.identityMetadataVersion=r.identityMetadataVersion;
         saved.record.authorCreditVersion=r.authorCreditVersion;
         saved.record.originalAuthors=r.originalAuthors||[];
         saved.record.upstreamAuthors=r.upstreamAuthors||[];
         saved.record.translators=r.translators||[];
+        saved.record.assetAuthors=r.assetAuthors||[];
       }
     }
   }

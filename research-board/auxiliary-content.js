@@ -2,14 +2,14 @@
 
 // These publisher components provide site navigation or promote an author's
 // other work. Their links are independent of an article's narrative.
-const UI_CLASSES = new Set(['multibranch-wrapper', 'rnb-navbar']);
+const UI_CLASSES = new Set(['multibranch-wrapper', 'rnb-navbar', 'earthworm']);
 
 function isAuxiliaryClass(classes) {
-  return classes.some(name => UI_CLASSES.has(name.toLowerCase()));
+  return classes.some(name => UI_CLASSES.has(name.toLowerCase()) || /^earthworm(?:__|--)/i.test(name));
 }
 
 function removeAuxiliaryContent(root) {
-  for (const panel of root.querySelectorAll('.multibranch-wrapper, .rnb-navbar')) {
+  for (const panel of root.querySelectorAll('.multibranch-wrapper, .rnb-navbar, .earthworm, [class*="earthworm__"]')) {
     panel.remove();
   }
   for (const panel of root.querySelectorAll('.collection')) {

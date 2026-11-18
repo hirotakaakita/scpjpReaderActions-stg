@@ -61,6 +61,12 @@ function merge(sources, state) {
       (other.linkExtractionVersion || 0) > (record.linkExtractionVersion || 0) && Array.isArray(other.links)) {
     record = {...record, links: other.links, linkExtractionVersion: other.linkExtractionVersion};
   }
+  if(record&&other&&record.contentSha256===other.contentSha256&&
+      (other.authorCreditVersion||0)>(record.authorCreditVersion||0)){
+    record={...record,authorCreditVersion:other.authorCreditVersion,
+      originalAuthors:other.originalAuthors||[],upstreamAuthors:other.upstreamAuthors||[],
+      translators:other.translators||[],assetAuthors:other.assetAuthors||[]};
+  }
   const lastAttempt = !old?.lastAttempt || state.lastAttempt?.at > old.lastAttempt.at ? state.lastAttempt : old.lastAttempt;
   sources.set(page.id, { url: page.url, record: record || null, lastAttempt });
 }

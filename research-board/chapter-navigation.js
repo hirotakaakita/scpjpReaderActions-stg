@@ -27,6 +27,16 @@ function isChapterNavigation(text, source, hasCurrentLink = false, labels = []) 
     !!source.title && identity(parts[1]) === identity(source.title));
 }
 
+// A pure hub/category breadcrumb ending in this article is navigation. The
+// same destination in narrative text or an ordinary hub member list survives.
+function isBreadcrumb(text, source, lastIsCurrent) {
+  const parts = text.normalize('NFKC').trim().split(/\s*[»›>]\s*/u);
+  if (parts.length < 2 || parts.length > 5 || parts.slice(0, -1).some(p => p.trim() !== LINK)) return false;
+  const last = parts.at(-1).trim();
+  return last === LINK ? lastIsCurrent : !!last &&
+    (identity(last) === identity(source.slug) || !!source.title && identity(last) === identity(source.title));
+}
+
 function removeHtmlNavigation(root, source, normalizePage) {
   for (const a of [...root.querySelectorAll('a[href]')]) {
     if (!root.contains(a)) continue;
@@ -38,11 +48,13 @@ function removeHtmlNavigation(root, source, normalizePage) {
       if (!block.matches('p, div, section, footer, center, td, tr, li')) continue;
       const anchors = [...block.querySelectorAll('a[href]')];
       if (anchors.length > 5) break;
-      if (anchors.length < 2) continue;
+      if (anchors.length < 1) continue;
       const hasCurrent = anchors.some(link => normalizePage(link.getAttribute('href'), source.url)?.id === source.id);
       const copy = block.cloneNode(true);
       for (const link of copy.querySelectorAll('a[href]')) link.replaceWith(LINK);
-      if (isChapterNavigation(copy.textContent, source, hasCurrent,
+      if (isBreadcrumb(copy.textContent, source,
+          normalizePage(anchors.at(-1).getAttribute('href'), source.url)?.id === source.id) ||
+          isChapterNavigation(copy.textContent, source, hasCurrent,
           anchors.map(link => link.textContent.replace(/\s+/g, ' ')))) {
         block.remove();
         break;
@@ -54,9 +66,11 @@ function removeHtmlNavigation(root, source, normalizePage) {
 function removeFtmlNavigation(body, source, normalizePage) {
   function navigation(text) {
     let hasCurrent = false;
+    let lastIsCurrent = false;
     const labels = [];
     const replace = (_, href, label) => {
-      if (normalizePage(href.trim().replace(/^\*/, ''), source.url)?.id === source.id) hasCurrent = true;
+      lastIsCurrent = normalizePage(href.trim().replace(/^\*/, ''), source.url)?.id === source.id;
+      if (lastIsCurrent) hasCurrent = true;
       labels.push(label || href);
       return LINK;
     };
@@ -64,7 +78,7 @@ function removeFtmlNavigation(body, source, normalizePage) {
       .replace(/(?<!\[)\[(https?:\/\/[^\s\]]+)(?:\s+([^\]]*))?\](?!\])/g, replace)
       .replace(/\[\[\/?(?:(?:div|span|section|size)\b[^\]]*|[=<>])\]\]/g, '')
       .replace(/^[ \t]*=[ \t]+/gm, '');
-    return isChapterNavigation(text, source, hasCurrent, labels);
+    return isBreadcrumb(text, source, lastIsCurrent) || isChapterNavigation(text, source, hasCurrent, labels);
   }
   body = body.replace(/\[\[=\]\]([\s\S]*?)\[\[\/=\]\]/g,
     (block, content) => navigation(content) ? '' : block);

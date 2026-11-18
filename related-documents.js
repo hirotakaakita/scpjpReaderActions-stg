@@ -72,7 +72,7 @@ function extractHtml(url, html, now = new Date().toISOString(), existingDocument
     const boardExtractor = require('./research-board/extract');
     boardExtractor.removeAuxiliaryContent(root);
     for (const n of root.querySelectorAll(excluded + ',' + boardExtractor.EXCLUDED)) n.remove();
-    const bodyLinks = boardExtractor.bodyLinks(root, boardExtractor.normalizePage(page.url));
+    const bodyLinks = boardExtractor.bodyLinks(root, {...boardExtractor.normalizePage(page.url),title});
     const links = bodyLinks.map(l => l.target);
     // Lazy import: the ordinary crawler also calls this extractor with its DOM.
     const metadata = require('./local-crawler');

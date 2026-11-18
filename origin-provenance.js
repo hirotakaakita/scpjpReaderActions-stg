@@ -76,7 +76,7 @@ function extractDiscussionSources(document,articleUrl,threadUrl){
     .map(p=>({...p,method:'credit_original_label',quote:'Oryginał',attributionPage:threadUrl,postId:post.id}));
 }
 function extractAuthorCredits(document){
-  const authors=new Map(),translators=new Map(),derivativeAuthors=new Map();
+  const authors=new Map(),translators=new Map(),derivativeAuthors=new Map(),assetAuthors=new Map();
   for(const a of document.querySelectorAll('.licensebox a[href],.license-box a[href],.credit a[href],.credit-box a[href],#u-credit-view a[href]')){
     const id=/wikidot\.com\/user:info\/([^/?#]+)/i.exec(a.getAttribute('href')||'')?.[1]?.toLowerCase();
     if(!id)continue;
@@ -87,9 +87,12 @@ function extractAuthorCredits(document){
     const derivative=/^(?:衍生作品作者|derivative(?: work)? author)\s*[:：]/iu;
     const translator=/^(?:translator(?:s)?|translated by|翻訳(?:者|責任者)?|訳者|译者|譯者|traducteur|traductor|traduttore|переводчик|dịch giả)\s*[:：]/iu;
     const value={id,name:a.textContent.trim()||a.querySelector('img')?.getAttribute('alt')||id,url:'https://www.wikidot.com/user:info/'+id};
-    if(translator.test(line))translators.set(id,value);else if(derivative.test(line))derivativeAuthors.set(id,value);else if(author.test(line))authors.set(id,value);
+    const assetLabel=/(?:^|[\r\n])\s*(?:filename|file name|image name|ファイル名|画像名|nom du fichier|nombre del archivo|nome do arquivo)\s*[:：]/iu;
+    const asset=assetLabel.test(prefix)||assetLabel.test((a.closest('blockquote')||container).textContent.trim());
+    if(asset)assetAuthors.set(id,value);else if(translator.test(line))translators.set(id,value);else if(derivative.test(line))derivativeAuthors.set(id,value);else if(author.test(line))authors.set(id,value);
   }
-  return {authorCreditVersion:1,originalAuthors:[...(derivativeAuthors.size?derivativeAuthors:authors).values()].sort((a,b)=>a.id.localeCompare(b.id)),
-    upstreamAuthors:derivativeAuthors.size?[...authors.values()]:[],translators:[...translators.values()].sort((a,b)=>a.id.localeCompare(b.id))};
+  return {authorCreditVersion:2,originalAuthors:[...(derivativeAuthors.size?derivativeAuthors:authors).values()].sort((a,b)=>a.id.localeCompare(b.id)),
+    upstreamAuthors:derivativeAuthors.size?[...authors.values()]:[],translators:[...translators.values()].sort((a,b)=>a.id.localeCompare(b.id)),
+    assetAuthors:[...assetAuthors.values()].sort((a,b)=>a.id.localeCompare(b.id))};
 }
 module.exports={VERSION,originalPage,extractOriginalSources,extractAuthorCredits,discussionPage,extractDiscussionSources,validDiscussionUrl};

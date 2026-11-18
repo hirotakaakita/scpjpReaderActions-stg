@@ -3,6 +3,17 @@ const {test}=require('node:test'),assert=require('node:assert/strict');
 const {JSDOM}=require('jsdom');
 const {extractOriginalSources,extractAuthorCredits}=require('../origin-provenance');
 const user=id=>`<a href="https://www.wikidot.com/user:info/${id}">${id}</a>`;
+
+test('license-box image creators are asset authors, not authors of the article',()=>{
+ const dom=new JSDOM(`<div class="licensebox"><p>Author: ${user('writer')}</p><blockquote><p><strong>Filename:</strong> Logo<br><strong>Author:</strong> ${user('artist')}<br>License: CC BY-SA</p></blockquote></div>`);
+ const r=extractAuthorCredits(dom.window.document);assert.equal(r.authorCreditVersion,2);
+ assert.deepEqual(r.originalAuthors.map(a=>a.id),['writer']);assert.deepEqual(r.assetAuthors.map(a=>a.id),['artist']);dom.window.close();
+});
+
+test('an article creator who also provided an image remains an original author',()=>{
+ const dom=new JSDOM(`<div class="licensebox"><p>Author: ${user('writer')}</p><p>Filename: sketch<br>Author: ${user('writer')}</p></div>`);
+ const r=extractAuthorCredits(dom.window.document);assert.deepEqual(r.originalAuthors.map(a=>a.id),['writer']);assert.deepEqual(r.assetAuthors.map(a=>a.id),['writer']);dom.window.close();
+});
 test('credit author and translator roles exclude illustration and unlabelled contributors',()=>{
  const dom=new JSDOM(`<div class="credit"><p><strong>著者:</strong> ${user('author-a')} ${user('author-b')}<br>
  <strong>翻訳責任者:</strong> ${user('translator')}<br>画像: ${user('artist')}</p></div>
