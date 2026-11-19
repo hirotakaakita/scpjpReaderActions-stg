@@ -15,7 +15,7 @@ test('normalization strips fragment / allowed tracking, but blocks query operati
   assert.equal(normalizedUrl('http://scpwiki.com/scp-002#note'),en+'scp-002');
   assert.equal(normalizedUrl('/scp-002?utm_source=test',en),en+'scp-002');
   assert.equal(normalizedUrl('/scp-002?action=edit',en),null);
-  assert.equal(normalizedUrl('https://scp-wiki.wikidot.com:443/scp-002'),null);
+  assert.equal(normalizedUrl('https://scp-wiki.wikidot.com:8443/scp-002'),null);
 });
 test('independent HTML parser identifies article references, skipping auxiliary and self-work links',()=>{
   const {workByUrl,supportedHosts}=index();
