@@ -38,8 +38,8 @@ jobs:
         run: node research-board/verification/audit.js --inventory --out research-board/verification/audit-results
       - name: Audit live publisher pages (read only)
         env:
-          LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.limit || 25 }}
-          SEED: ${{ github.event_name == 'workflow_dispatch' && inputs.seed || 'branch-smoke-2026-11-19' }}
+          LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.limit || 500 }}
+          SEED: ${{ github.event_name == 'workflow_dispatch' && inputs.seed || '2026-11-19-initial' }}
         run: node research-board/verification/audit.js --limit "$LIMIT" --seed "$SEED" --delay-ms 1250 --out research-board/verification/audit-results
       - name: Preserve reports even if audit fails
         if: always()

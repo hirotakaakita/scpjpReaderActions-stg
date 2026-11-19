@@ -140,7 +140,8 @@ function makeInventory(coverage,out){
   const totals={};
   for(const row of rows) totals[row.reason]=(totals[row.reason]||0)+1;
   return {totalPages:coverage?.totalPages??null,checkedPages:coverage?.checkedPages??null,
-    pendingPages:coverage?.pendingPages??null,unresolvedByReason:totals};
+    pendingPages:coverage?.pendingPages??null,unresolvedByReason:totals,
+    unavailableSandboxPages:rows.filter(r=>r.reason==='unavailable'&&/\/sandbox:/i.test(r.url)).length};
 }
 function recordState(sources,url){
   const id='page:'+normalizedUrl(url).slice('https://'.length);
@@ -225,7 +226,7 @@ async function run(options=parseArgs()){
   const samples=[],differences=[],gate=asyncClock(options.requestDelayMs),blockedHosts=new Set();
   const counters={sampled:plan.pages.length,fetched:0,unchanged:0,contentChanged:0,fetchFailed:0,
     noSnapshot:0,matched:0,mismatched:0,tp:0,fp:0,fn:0,outsideCatalog:0,
-    ignoredNavigation:0,warnings:0};
+    ignoredNavigation:0,warnings:0,liveTp:0,liveFp:0,liveFn:0,liveMatched:0,liveMismatched:0};
   for(let i=0;i<plan.pages.length;i++){
     const page=plan.pages[i],previous=recordState(sources,page.url),host=new URL(page.url).hostname;
     const row={url:page.url,language:page.language,profile:page.profile,workId:page.workId,
@@ -241,6 +242,9 @@ async function run(options=parseArgs()){
         fromHtml(capture.content,page.url,index.workByUrl,index.supportedHosts);
       const delta=compare(page.expected,parsed.links.keys());
       row.actualCount=parsed.links.size;row.fp=delta.fp.length;row.fn=delta.fn.length;
+      row.liveMatch=delta.fp.length===0&&delta.fn.length===0;
+      counters.liveTp+=delta.tp.length;counters.liveFp+=delta.fp.length;counters.liveFn+=delta.fn.length;
+      counters[row.liveMatch?'liveMatched':'liveMismatched']++;
       row.warning=parsed.warnings;row.ignored=parsed.counts;
       counters.warnings+=parsed.warnings.length;
       counters.outsideCatalog+=parsed.counts.outside_catalog||0;
@@ -276,9 +280,13 @@ async function run(options=parseArgs()){
   const metrics={precision:precisionDen?counters.tp/precisionDen:null,
     recall:recallDen?counters.tp/recallDen:null,
     precisionDenominator:precisionDen,recallDenominator:recallDen};
+  const livePrecisionDen=counters.liveTp+counters.liveFp,liveRecallDen=counters.liveTp+counters.liveFn;
+  const liveMetrics={precision:livePrecisionDen?counters.liveTp/livePrecisionDen:null,
+    recall:liveRecallDen?counters.liveTp/liveRecallDen:null,
+    precisionDenominator:livePrecisionDen,recallDenominator:liveRecallDen};
   const result={schemaVersion:1,generatedAt:new Date().toISOString(),revision:board.revision,
     manifestSha256:manifest.sha256,seed:options.seed,requested:options.limit,allocations:plan.allocations,
-    inventory,counters,metrics,samples};
+    inventory,counters,metrics,liveMetrics,samples};
   safeWrite(path.join(out,'audit.json'),JSON.stringify(result,null,2)+'\n');
   safeWrite(path.join(out,'differences.csv'),csv(differences,['sourceUrl','language','profile','sourceWork',
     'targetWork','result','targetUrl','href','quote','selector','sourceElement']));
@@ -296,17 +304,24 @@ async function run(options=parseArgs()){
     '- False negative edges: '+counters.fn,
     '- Precision: '+(metrics.precision===null?'N/A':(100*metrics.precision).toFixed(2)+'%'),
     '- Recall: '+(metrics.recall===null?'N/A':(100*metrics.recall).toFixed(2)+'%'),
+    '- Live matching pages (including hash-changed pages): '+counters.liveMatched+' / '+counters.fetched,
+    '- Live disagreement pages: '+counters.liveMismatched,
+    '- Live edge precision (time drift possible): '+(liveMetrics.precision===null?'N/A':(100*liveMetrics.precision).toFixed(2)+'%'),
+    '- Live edge recall (time drift possible): '+(liveMetrics.recall===null?'N/A':(100*liveMetrics.recall).toFixed(2)+'%'),
     '- Links to catalog-absent pages (diagnostic, not false negatives): '+counters.outsideCatalog,
     '- Unresolved source pages in coverage snapshot: '+inventory.pendingPages,
+    '- Unavailable sandbox: URLs among them: '+inventory.unavailableSandboxPages,
     '',
-    'Precision/recall are computed ONLY on sampled pages with byte-identical source snapshots.',
+    'Strict precision/recall are computed ONLY on pages with byte-identical source snapshots.',
+    'Live agreement compares current public pages to saved graph edges and is NOT a historical accuracy guarantee.',
+    'The full-page SHA may change due to global page chrome even when article links are unchanged.',
     'These are sample diagnostics, not whole-corpus accuracy or a confidence interval.',
     'A matching link parser is not proof that the site renders exactly the same content to every viewer.',
     '',
     'See audit.json (page classifications), differences.csv (evidence), unresolved-pages.csv (coverage).'];
   safeWrite(path.join(out,'SUMMARY.md'),md.join('\n')+'\n');
   if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,md.join('\n')+'\n');
-  return {inventory,counters,metrics,output:out};
+  return {inventory,counters,metrics,liveMetrics,output:out};
 }
 if(require.main===module)run().then(summary=>console.log(JSON.stringify(summary,null,2)))
   .catch(e=>{console.error(e);process.exitCode=1;});
