@@ -1,7 +1,7 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const {normalizedUrl,fromHtml,fromFtml}=require('./reference');
-const {compare,samplePages,allocate,csv}=require('./audit');
+const {compare,samplePages,allocate,parseArgs,csv}=require('./audit');
 
 const en='https://scp-wiki.wikidot.com/';
 const jp='https://scp-jp.wikidot.com/';
@@ -68,11 +68,18 @@ test('deterministic selection, fixed allocation, holdout exclusion and branch co
   const b=samplePages({pages},{limit:100,seed:'seed'});
   assert.deepEqual(a.pages.map(x=>x.url),b.pages.map(x=>x.url));
   assert.equal(new Set(a.pages.map(x=>x.url)).size,100);
-  for(const lang of ['jp','en','ru','fr'])assert(a.pages.some(p=>p.language===lang));
+  for(const lang of ['jp','en','fr'])assert(a.pages.some(p=>p.language===lang));
+  assert(!a.pages.some(p=>p.language==='ru'),'RU excluded by default');
+  const opted=samplePages({pages},{limit:100,seed:'seed',excludedLanguages:new Set()});
+  assert(opted.pages.some(p=>p.language==='ru'),'RU explicitly enabled');
   const c=samplePages({pages},{limit:30,seed:'different',excluded:new Set(a.pages.map(x=>x.url))});
   assert.equal(c.pages.length,30);
   assert(c.pages.every(p=>!a.pages.some(o=>o.url===p.url)));
   assert.equal(Object.values(allocate(500)).reduce((x,y)=>x+y,0),500);
+});
+test('CLI excludes RU by default, with an explicit API/FTML opt-in',()=>{
+  assert.equal(parseArgs([]).includeRu,false);
+  assert.equal(parseArgs(['--include-ru','--limit','25']).includeRu,true);
 });
 test('CSV output preserves quotes and embedded delimiters',()=>{
   assert.equal(csv([{url:'a,b',note:'"quoted"'}],['url','note']),'"url","note"\n"a,b","""quoted"""\n');

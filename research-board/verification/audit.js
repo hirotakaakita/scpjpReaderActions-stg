@@ -73,9 +73,9 @@ function allocate(limit) {
   }
   return allocations;
 }
-function samplePages(index,{limit=500,seed='2026-11-19-initial',excluded=new Set()}={}){
+function samplePages(index,{limit=500,seed='2026-11-19-initial',excluded=new Set(),excludedLanguages=new Set(['ru'])}={}){
   if(!Number.isSafeInteger(limit)||limit<1||limit>5000)throw Error('Invalid sample limit');
-  const eligible=index.pages.filter(p=>!excluded.has(p.url)),selected=[],chosen=new Set();
+  const eligible=index.pages.filter(p=>!excluded.has(p.url)&&!excludedLanguages.has(p.language)),selected=[],chosen=new Set();
   const allocation=allocate(limit);
   function take(name,candidates,n){
     const pool=sorted(candidates.filter(p=>!chosen.has(p.url)),seed+' '+name);
@@ -110,7 +110,7 @@ function samplePages(index,{limit=500,seed='2026-11-19-initial',excluded=new Set
 }
 function parseArgs(args=process.argv.slice(2)){
   const options={limit:500,seed:'2026-11-19-initial',out:'audit-results',inventory:false,
-    exclude:null,requestDelayMs:1250,timeoutMs:20000};
+    exclude:null,includeRu:false,requestDelayMs:1250,timeoutMs:20000};
   for(let i=0;i<args.length;i++){
     const v=args[i],next=()=>args[++i];
     if(v==='--limit')options.limit=Number(next());
@@ -118,6 +118,7 @@ function parseArgs(args=process.argv.slice(2)){
     else if(v==='--out')options.out=next();
     else if(v==='--exclude')options.exclude=next();
     else if(v==='--inventory')options.inventory=true;
+    else if(v==='--include-ru')options.includeRu=true;
     else if(v==='--delay-ms')options.requestDelayMs=Number(next());
     else throw Error('Unknown argument '+v);
   }
@@ -222,7 +223,8 @@ async function run(options=parseArgs()){
     const prior=JSON.parse(fs.readFileSync(path.resolve(options.exclude),'utf8'));
     excludes=new Set((prior.samples||[]).map(p=>p.url));
   }
-  const plan=samplePages(index,{limit:options.limit,seed:options.seed,excluded:excludes});
+  const excludedLanguages=options.includeRu?new Set():new Set(['ru']);
+  const plan=samplePages(index,{limit:options.limit,seed:options.seed,excluded:excludes,excludedLanguages});
   const samples=[],differences=[],gate=asyncClock(options.requestDelayMs),blockedHosts=new Set();
   const counters={sampled:plan.pages.length,fetched:0,unchanged:0,contentChanged:0,fetchFailed:0,
     noSnapshot:0,matched:0,mismatched:0,tp:0,fp:0,fn:0,outsideCatalog:0,
@@ -285,7 +287,8 @@ async function run(options=parseArgs()){
     recall:liveRecallDen?counters.liveTp/liveRecallDen:null,
     precisionDenominator:livePrecisionDen,recallDenominator:liveRecallDen};
   const result={schemaVersion:1,generatedAt:new Date().toISOString(),revision:board.revision,
-    manifestSha256:manifest.sha256,seed:options.seed,requested:options.limit,allocations:plan.allocations,
+    manifestSha256:manifest.sha256,seed:options.seed,requested:options.limit,
+    excludedLanguages:[...excludedLanguages],allocations:plan.allocations,
     inventory,counters,metrics,liveMetrics,samples};
   safeWrite(path.join(out,'audit.json'),JSON.stringify(result,null,2)+'\n');
   safeWrite(path.join(out,'differences.csv'),csv(differences,['sourceUrl','language','profile','sourceWork',
@@ -294,6 +297,7 @@ async function run(options=parseArgs()){
     '',
     '- Revision: '+board.revision,
     '- Sample requested: '+options.limit+' (seed: '+options.seed+')',
+    '- Excluded languages: '+([...excludedLanguages].join(', ')||'none'),
     '- Live fetched: '+counters.fetched,
     '- Unchanged content, comparable: '+counters.unchanged,
     '- Changed content (not scored): '+counters.contentChanged,
@@ -318,10 +322,11 @@ async function run(options=parseArgs()){
     'These are sample diagnostics, not whole-corpus accuracy or a confidence interval.',
     'A matching link parser is not proof that the site renders exactly the same content to every viewer.',
     '',
+    'Coverage inventory remains global; excluding RU from the audit does not remove its unresolved URLs.',
     'See audit.json (page classifications), differences.csv (evidence), unresolved-pages.csv (coverage).'];
   safeWrite(path.join(out,'SUMMARY.md'),md.join('\n')+'\n');
   if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,md.join('\n')+'\n');
-  return {inventory,counters,metrics,liveMetrics,output:out};
+  return {inventory,excludedLanguages:[...excludedLanguages],counters,metrics,liveMetrics,output:out};
 }
 if(require.main===module)run().then(summary=>console.log(JSON.stringify(summary,null,2)))
   .catch(e=>{console.error(e);process.exitCode=1;});
