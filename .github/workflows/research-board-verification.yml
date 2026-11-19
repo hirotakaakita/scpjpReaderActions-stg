@@ -1,0 +1,51 @@
+name: Research board independent verification
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: Number of sampled pages (1-5000)
+        type: number
+        default: 500
+      seed:
+        description: Deterministic selection seed
+        type: string
+        default: 2026-11-19-initial
+  push:
+    branches:
+      - audit/research-board-verification-20261119
+    paths:
+      - 'research-board/verification/**'
+      - '.github/workflows/research-board-verification.yml'
+permissions:
+  contents: read
+concurrency:
+  group: research-board-verification-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Run independent audit unit tests
+        run: node --test research-board/verification/verification.test.js
+      - name: Inventory unresolved pages
+        run: node research-board/verification/audit.js --inventory --out research-board/verification/audit-results
+      - name: Audit live publisher pages (read only)
+        env:
+          LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.limit || 25 }}
+          SEED: ${{ github.event_name == 'workflow_dispatch' && inputs.seed || 'branch-smoke-2026-11-19' }}
+        run: node research-board/verification/audit.js --limit "$LIMIT" --seed "$SEED" --delay-ms 1250 --out research-board/verification/audit-results
+      - name: Preserve reports even if audit fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: research-board-verification-${{ github.run_id }}
+          path: research-board/verification/audit-results/
+          retention-days: 14
+          if-no-files-found: warn
