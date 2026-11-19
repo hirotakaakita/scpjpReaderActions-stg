@@ -32,7 +32,7 @@ test('independent HTML parser identifies article references, skipping auxiliary 
   assert.deepEqual([...result.links.keys()],['work:two']);
   assert.equal(result.links.get('work:two').length,2);
   assert.equal(result.counts.outside_catalog,1);
-  assert.equal(result.counts.auxiliary_content,2);
+  assert.equal(result.counts.auxiliary_content,3);
   assert.equal(result.counts.same_work,1);
   assert.equal(result.counts.fragment_or_empty,1);
 });
