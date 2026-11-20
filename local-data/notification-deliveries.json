@@ -8180,6 +8180,76 @@
       "startedAt": "2026-11-20T12:37:44.769Z",
       "messageName": "projects/scpjp-reader-stg/messages/6142409382313839398",
       "sentAt": "2026-11-20T12:37:46.558Z"
+    },
+    {
+      "id": "cn/2026-11-15",
+      "lang": "cn",
+      "window": "2026-11-15",
+      "items": [
+        {
+          "itemId": "scp-series-3926",
+          "titleJP": "《与你的主持人Tyal'k'nec共度的周六之夜》"
+        },
+        {
+          "itemId": "scp-series-6730",
+          "titleJP": "不可触碰者"
+        },
+        {
+          "itemId": "scp-series-6805",
+          "titleJP": "安全港"
+        },
+        {
+          "itemId": "scp-series-8171",
+          "titleJP": "有染原罪"
+        },
+        {
+          "itemId": "scp-series-8174",
+          "titleJP": "方舟"
+        },
+        {
+          "itemId": "scp-series-8192",
+          "titleJP": "休谟坍缩"
+        },
+        {
+          "itemId": "scp-series-9395",
+          "titleJP": "[拒绝访问]"
+        },
+        {
+          "itemId": "scp-series-9801",
+          "titleJP": "玫瑰之影"
+        },
+        {
+          "itemId": "scp-series-9819",
+          "titleJP": "一个肖像家庭"
+        },
+        {
+          "itemId": "joke-scps-1551",
+          "titleJP": "重要的事"
+        },
+        {
+          "itemId": "scp-series-cn-4147",
+          "titleJP": "抑郁症"
+        },
+        {
+          "itemId": "scp-series-cn-4218",
+          "titleJP": "等你长大就明白了"
+        },
+        {
+          "itemId": "scp-series-cn-4523",
+          "titleJP": "谢尔盖"
+        },
+        {
+          "itemId": "scp-series-cn-4775",
+          "titleJP": "巨人后代"
+        },
+        {
+          "itemId": "scp-series-cn-4964",
+          "titleJP": "星葬礼物"
+        }
+      ],
+      "attempts": 1,
+      "status": "sending",
+      "startedAt": "2026-11-20T12:37:44.769Z"
     }
   ]
 }
