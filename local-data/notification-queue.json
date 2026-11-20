@@ -2,81 +2,8 @@
   "version": 1,
   "pending": {
     "jp": {
-      "items": [
-        {
-          "itemId": "scp-series-2629",
-          "titleJP": "The Twenty-Nine Year Paintball War"
-        },
-        {
-          "itemId": "scp-series-4499",
-          "titleJP": "なんと、お値段たったの44.99ドル！"
-        },
-        {
-          "itemId": "scp-series-4638",
-          "titleJP": "ただのホウレンソウですやん"
-        },
-        {
-          "itemId": "scp-series-5067",
-          "titleJP": "核の記憶"
-        },
-        {
-          "itemId": "scp-series-8792",
-          "titleJP": "我らの見つけた墓。"
-        },
-        {
-          "itemId": "scp-series-9124",
-          "titleJP": "SELECT * FROM SharingConsents WHERE UserInterconnectId IN (SELECT InterconnectId FROM UserInterconnects WHERE UserId IN (SELECT UserId FROM Users WHERE IsConfidant = true))"
-        },
-        {
-          "itemId": "joke-scps-1638",
-          "titleJP": "謎に包まれし漆黒の印刷版"
-        },
-        {
-          "itemId": "scp-ex-970",
-          "titleJP": "SCP-970-EX"
-        },
-        {
-          "itemId": "scp-series-jp-2574",
-          "titleJP": "ネットワークシステム"
-        },
-        {
-          "itemId": "scp-series-jp-3294",
-          "titleJP": "犬又"
-        },
-        {
-          "itemId": "scp-series-jp-4244",
-          "titleJP": "被食家ども"
-        },
-        {
-          "itemId": "scp-series-jp-4287",
-          "titleJP": "黒猫、暁に消ゆ"
-        },
-        {
-          "itemId": "scp-series-jp-4323",
-          "titleJP": "彼岸行"
-        },
-        {
-          "itemId": "scp-series-jp-4453",
-          "titleJP": "言語汚染ゴミクソ害虫"
-        },
-        {
-          "itemId": "scp-series-jp-4460",
-          "titleJP": "あなたの耳の中にいるキモい虫 〜クモの巻〜"
-        },
-        {
-          "itemId": "scp-series-jp-4461",
-          "titleJP": "あなたの耳の中にいるキモい虫 〜カタツムリの巻〜"
-        },
-        {
-          "itemId": "scp-series-jp-4987",
-          "titleJP": "また自殺か"
-        },
-        {
-          "itemId": "scp-series-jp-4988",
-          "titleJP": "[アクセス拒否]"
-        }
-      ],
-      "lastSentWindow": "2026-11-08"
+      "items": [],
+      "lastSentWindow": "2026-11-15"
     },
     "en": {
       "items": [],
@@ -293,5 +220,5 @@
       "lastSentWindow": "2026-11-08"
     }
   },
-  "updatedAt": "2026-11-16T18:29:54.352Z"
+  "updatedAt": "2026-11-20T12:37:44.769Z"
 }
