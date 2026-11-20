@@ -18,8 +18,27 @@ const AUX_SELECTORS = [
   '.interwiki-box', '#interwiki', '.translation-source',
   '.credit-back', '.acs-hybrid-text-bar', '.classification-decoration',
   '.error-block', '.collapsible-block-link', 'script', 'style',
-  '.licensebox-credits'
+  '.licensebox-credits', '.multibranch-wrapper', '.rnb-navbar',
+  '.earthworm', '[class*="earthworm__"]'
 ].join(',');
+
+// A repeated image-only gallery linking to category directories is a site menu,
+// not a story reference. Require a cluster of >=8 distinct targets, not merely
+// an image anchor: image-based narrative links must remain eligible.
+const DIRECTORY_SLUG=/^(?:groups-of-interest|task-forces|personnel-and-character-dossier|canon-hub|log-of-anomalous-items|log-of-extranormal-events|log-of-unexplained-locations|secure-facilities-locations)(?:-[a-z\d-]+)?$/i;
+function isDirectoryIcon(anchor) {
+  if (!anchor.querySelector('img') || anchor.textContent.trim()) return false;
+  try {return DIRECTORY_SLUG.test(decodeURIComponent(new URL(anchor.getAttribute('href'),anchor.ownerDocument.baseURI).pathname).replace(/^\/+|\/+$/g,''));}
+  catch (_) {return false;}
+}
+function isImageDirectoryMenu(anchor,root) {
+  if (!isDirectoryIcon(anchor)) return false;
+  for(let parent=anchor.parentElement;parent&&parent!==root;parent=parent.parentElement){
+    const icons=[...parent.querySelectorAll('a[href]')].filter(isDirectoryIcon);
+    if(new Set(icons.map(a=>a.getAttribute('href'))).size>=8) return true;
+  }
+  return false;
+}
 
 function normalizedUrl(raw, from) {
   try {
@@ -87,6 +106,7 @@ function fromHtml(html,source,workByUrl,supportedHosts) {
       else if (a.classList.contains('newpage')) skip='missing_page_link';
       else if (a.matches('[rel~="alternate"],[data-translation-source]')) skip='translation_metadata';
       else if (a.closest(AUX_SELECTORS) || [...a.parentElement?.classList||[]].some(c=>/^(licensebox|creditRate)/i.test(c))) skip='auxiliary_content';
+      else if (isImageDirectoryMenu(a,root)) skip='image_directory_navigation';
       raw.push({
         href,quote:(a.textContent||'').replace(/\s+/g,' ').trim().slice(0,180),
         selector:selectorFor(a),sourceElement:a.outerHTML.slice(0,450),skip
@@ -138,4 +158,4 @@ function fromFtml(sourceText,source,workByUrl,supportedHosts) {
   }
   return resultFromRaw(raw,source,workByUrl,supportedHosts,warnings);
 }
-module.exports={normalizedUrl,fromHtml,fromFtml,resultFromRaw};
+module.exports={normalizedUrl,fromHtml,fromFtml,resultFromRaw,isDirectoryIcon,isImageDirectoryMenu};
