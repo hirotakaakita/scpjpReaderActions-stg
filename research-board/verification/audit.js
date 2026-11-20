@@ -110,7 +110,7 @@ function samplePages(index,{limit=500,seed='2026-11-19-initial',excluded=new Set
 }
 function parseArgs(args=process.argv.slice(2)){
   const options={limit:500,seed:'2026-11-19-initial',out:'audit-results',inventory:false,
-    exclude:null,includeRu:false,requestDelayMs:1250,timeoutMs:20000};
+    exclude:null,includeRu:false,urls:[],requestDelayMs:1250,timeoutMs:20000};
   for(let i=0;i<args.length;i++){
     const v=args[i],next=()=>args[++i];
     if(v==='--limit')options.limit=Number(next());
@@ -119,6 +119,7 @@ function parseArgs(args=process.argv.slice(2)){
     else if(v==='--exclude')options.exclude=next();
     else if(v==='--inventory')options.inventory=true;
     else if(v==='--include-ru')options.includeRu=true;
+    else if(v==='--url')options.urls.push(next());
     else if(v==='--delay-ms')options.requestDelayMs=Number(next());
     else throw Error('Unknown argument '+v);
   }
@@ -224,7 +225,15 @@ async function run(options=parseArgs()){
     excludes=new Set((prior.samples||[]).map(p=>p.url));
   }
   const excludedLanguages=options.includeRu?new Set():new Set(['ru']);
-  const plan=samplePages(index,{limit:options.limit,seed:options.seed,excluded:excludes,excludedLanguages});
+  let plan;
+  if(options.urls.length){
+    const wanted=new Set(options.urls.map(value=>normalizedUrl(value)));
+    if(wanted.has(null)||wanted.size!==options.urls.length)throw Error('Invalid or duplicate --url');
+    const pages=index.pages.filter(page=>wanted.has(page.url)&&!excludedLanguages.has(page.language));
+    if(pages.length!==wanted.size)throw Error('Targeted URL missing from catalog or excluded');
+    plan={requested:options.urls.length,allocations:{targeted:pages.length},
+      pages:pages.map(page=>({...page,profile:'targeted'}))};
+  }else plan=samplePages(index,{limit:options.limit,seed:options.seed,excluded:excludes,excludedLanguages});
   const samples=[],differences=[],gate=asyncClock(options.requestDelayMs),blockedHosts=new Set();
   const counters={sampled:plan.pages.length,fetched:0,unchanged:0,contentChanged:0,fetchFailed:0,
     noSnapshot:0,matched:0,mismatched:0,tp:0,fp:0,fn:0,outsideCatalog:0,
@@ -287,7 +296,7 @@ async function run(options=parseArgs()){
     recall:liveRecallDen?counters.liveTp/liveRecallDen:null,
     precisionDenominator:livePrecisionDen,recallDenominator:liveRecallDen};
   const result={schemaVersion:1,generatedAt:new Date().toISOString(),revision:board.revision,
-    manifestSha256:manifest.sha256,seed:options.seed,requested:options.limit,
+    manifestSha256:manifest.sha256,seed:options.seed,requested:plan.requested,
     excludedLanguages:[...excludedLanguages],allocations:plan.allocations,
     inventory,counters,metrics,liveMetrics,samples};
   safeWrite(path.join(out,'audit.json'),JSON.stringify(result,null,2)+'\n');
@@ -296,7 +305,7 @@ async function run(options=parseArgs()){
   const md=['# Research board independent verification',
     '',
     '- Revision: '+board.revision,
-    '- Sample requested: '+options.limit+' (seed: '+options.seed+')',
+    '- Sample requested: '+plan.requested+' (seed: '+options.seed+')',
     '- Excluded languages: '+([...excludedLanguages].join(', ')||'none'),
     '- Live fetched: '+counters.fetched,
     '- Unchanged content, comparable: '+counters.unchanged,
