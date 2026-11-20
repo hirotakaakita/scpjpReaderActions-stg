@@ -18,6 +18,7 @@ on:
       - '.github/workflows/research-board-verification.yml'
 permissions:
   contents: read
+  actions: read
 concurrency:
   group: research-board-verification-${{ github.ref }}
   cancel-in-progress: false
@@ -36,11 +37,50 @@ jobs:
         run: node --test research-board/verification/verification.test.js
       - name: Inventory unresolved pages
         run: node research-board/verification/audit.js --inventory --out research-board/verification/audit-results
-      - name: Audit live publisher pages (read only)
+      - name: Download frozen RU-excluded 500-page baseline audit
+        uses: actions/download-artifact@v4
+        with:
+          name: research-board-verification-44535992868
+          run-id: 44535992868
+          github-token: ${{ github.token }}
+          path: research-board/verification/baseline-audit
+      - name: Classify all 719 previous discrepancy candidates
+        run: |
+          node research-board/verification/triage.js \
+            --audit research-board/verification/baseline-audit/audit.json \
+            --differences research-board/verification/baseline-audit/differences.csv \
+            --out research-board/verification/audit-results/baseline-triage
+      - name: Reproduce targeted ZH-TR, CN and chapter-navigation cases
+        if: github.event_name == 'push'
+        run: |
+          node research-board/verification/audit.js \
+            --url https://scp-zh-tr.wikidot.com/scp-179 \
+            --url https://scp-zh-tr.wikidot.com/a-thin-dangerous-line \
+            --url https://scp-wiki-cn.wikidot.com/tool-box \
+            --url https://scp-wiki.wikidot.com/march-of-the-fire-ants \
+            --url https://scpko.wikidot.com/goc-hub-page \
+            --delay-ms 1250 \
+            --out research-board/verification/audit-results/targeted
+      - name: Triage targeted live differences
+        if: github.event_name == 'push'
+        run: |
+          node research-board/verification/triage.js \
+            --audit research-board/verification/audit-results/targeted/audit.json \
+            --differences research-board/verification/audit-results/targeted/differences.csv \
+            --out research-board/verification/audit-results/targeted-triage
+      - name: Optional full 500-page live audit
+        if: github.event_name == 'workflow_dispatch'
         env:
-          LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.limit || 500 }}
-          SEED: ${{ github.event_name == 'workflow_dispatch' && inputs.seed || '2026-11-19-initial' }}
-        run: node research-board/verification/audit.js --limit "$LIMIT" --seed "$SEED" --delay-ms 1250 --out research-board/verification/audit-results
+          LIMIT: ${{ inputs.limit }}
+          SEED: ${{ inputs.seed }}
+        run: node research-board/verification/audit.js --limit "$LIMIT" --seed "$SEED" --delay-ms 1250 --out research-board/verification/audit-results/full
+      - name: Triage optional full audit
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          node research-board/verification/triage.js \
+            --audit research-board/verification/audit-results/full/audit.json \
+            --differences research-board/verification/audit-results/full/differences.csv \
+            --out research-board/verification/audit-results/full-triage
       - name: Preserve reports even if audit fails
         if: always()
         uses: actions/upload-artifact@v4
