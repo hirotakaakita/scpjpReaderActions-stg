@@ -2,6 +2,7 @@
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const {normalizedUrl,fromHtml,fromFtml}=require('./reference');
 const {compare,samplePages,allocate,parseArgs,csv}=require('./audit');
+const {parseCsv,triage}=require('./triage');
 
 const en='https://scp-wiki.wikidot.com/';
 const jp='https://scp-jp.wikidot.com/';
@@ -80,6 +81,54 @@ test('deterministic selection, fixed allocation, holdout exclusion and branch co
 test('CLI excludes RU by default, with an explicit API/FTML opt-in',()=>{
   assert.equal(parseArgs([]).includeRu,false);
   assert.equal(parseArgs(['--include-ru','--limit','25']).includeRu,true);
+});
+test('image-only international directory gallery excluded, but prose reference preserved',()=>{
+  const {workByUrl,supportedHosts}=index();
+  const nav=Array.from({length:10},(_,i)=>
+    '<div><a href="/groups-of-interest-'+i+'"><img alt="flag" src="/flag'+i+'.svg"></a></div>').join('');
+  for(let i=0;i<10;i++)workByUrl.set(jp+'groups-of-interest-'+i,'dir:'+i);
+  const html='<div id="page-title">Article</div><div id="page-content">'+
+    '<div class="directory-grid">'+nav+'</div>'+
+    '<p>See <a href="/groups-of-interest-1">this directory</a> in the story.</p>'+
+    '<p>Also see <a href="/scp-002">SCP-002</a>.</p></div>';
+  const out=fromHtml(html,jp+'scp-001',workByUrl,supportedHosts);
+  assert.equal(out.counts.image_directory_navigation,10);
+  assert.deepEqual([...out.links.keys()],['dir:1','work:two']);
+});
+test('small illustrated narrative references must NOT be dropped as navigation',()=>{
+  const {workByUrl,supportedHosts}=index();
+  workByUrl.set(jp+'groups-of-interest-1','dir:1');
+  const html='<div id="page-title">Article</div><div id="page-content">'+
+    '<a href="/groups-of-interest-1"><img src="/illustration.png"></a></div>';
+  const out=fromHtml(html,jp+'scp-001',workByUrl,supportedHosts);
+  assert.deepEqual([...out.links.keys()],['dir:1']);
+});
+test('recognizes named shared navigation components while preserving narrative',()=>{
+  const {workByUrl,supportedHosts}=index();
+  const html='<div id="page-title">Article</div><div id="page-content">'+
+    '<div class="multibranch-wrapper"><a href="/scp-003">nav</a></div>'+
+    '<div class="earthworm"><a href="/scp-003">nav</a></div>'+
+    '<p>See <a href="/scp-002">Two</a></p></div>';
+  const out=fromHtml(html,en+'scp-001',workByUrl,supportedHosts);
+  assert.deepEqual([...out.links.keys()],['work:two']);
+  assert.equal(out.counts.auxiliary_content,2);
+});
+test('CSV discrepancy triage classifies repeated image-directory links conservatively',()=>{
+  const sample={sourceUrl:jp+'scp-001',language:'zh-tr',result:'changed_since_capture',
+    href:'/groups-of-interest-zh',quote:'',targetWork:'some:work',
+    selector:'div > a',sourceElement:'<a href="/groups-of-interest-zh"><img src="logo.svg"></a>'};
+  const diffs=Array.from({length:9},(_,i)=>({...sample,sourceUrl:'https://scp-zh-tr.wikidot.com/page-'+i}));
+  diffs.push({...sample,sourceUrl:'https://scp-zh-tr.wikidot.com/narrative',
+    href:'/scp-179',quote:'SCP-179',sourceElement:'<a href="/scp-179">SCP-179</a>'});
+  const audit={samples:diffs.map(x=>({url:x.sourceUrl,status:'content_changed',warning:[],expectedCount:0,actualCount:1}))};
+  const t=triage(audit,diffs);
+  assert.equal(t.counts.verifier_noise_global_image_menu,9);
+  assert.equal(t.counts.individual_content_review,1);
+  const original=csv([{quote:'embedded,"quote"\nline'}],['quote']);
+  assert.deepEqual(parseCsv(original),[{quote:'embedded,"quote"\nline'}]);
+});
+test('CLI accepts targeted catalog URLs',()=>{
+  assert.deepEqual(parseArgs(['--url',jp+'scp-001','--url',jp+'scp-002']).urls,[jp+'scp-001',jp+'scp-002']);
 });
 test('CSV output preserves quotes and embedded delimiters',()=>{
   assert.equal(csv([{url:'a,b',note:'"quoted"'}],['url','note']),'"url","note"\n"a,b","""quoted"""\n');
