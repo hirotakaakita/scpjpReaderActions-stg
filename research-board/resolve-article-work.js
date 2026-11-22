@@ -3,7 +3,7 @@
 // itemIds and the board's opaque work IDs. Does not alter existing user data.
 // Source URL is authoritative: a reused catalog alias can belong to another work.
 const {normalizePage}=require('./extract');
-function buildArticleWorkResolver(board){
+function buildArticleWorkResolver(board,{catalogs=null}={}){
   if(!board||board.schemaVersion!==3||!Array.isArray(board.nodes))
     throw Error('Unsupported board schema');
   const byUrl=new Map(),byRawItemId=new Map();
@@ -15,14 +15,18 @@ function buildArticleWorkResolver(board){
       if(byUrl.has(canonical))throw Error('Duplicate source URL '+canonical);
       byUrl.set(canonical,{workId,index,sourceUrl:canonical});
     }
-    for(const alias of node[14]?.[2]||[]){
-      if(!alias.startsWith('catalog:'))continue;
-      const separator=alias.indexOf(':',8);
-      if(separator<0)continue;
-      const itemId=alias.slice(separator+1);
-      if(!byRawItemId.has(itemId))byRawItemId.set(itemId,new Set());
-      byRawItemId.get(itemId).add(index);
-    }
+  }
+  // Work aliases are not sufficient to disambiguate raw mobile itemIds: a
+  // moved article can retain a catalog itemId while its historical alias
+  // belongs to an unrelated native work. Build raw-ID mapping from the exact
+  // mobile catalogs, never infer it from board workKeys.
+  if(catalogs)for(const c of catalogs)for(const row of c.data||[]){
+    if(!row.itemId)continue;
+    const url=normalizePage(row.isTranslatedJP!==false&&row.urlJP?row.urlJP:row.urlEN)?.url;
+    const match=byUrl.get(url);
+    if(!match)continue;
+    if(!byRawItemId.has(row.itemId))byRawItemId.set(row.itemId,new Set());
+    byRawItemId.get(row.itemId).add(match.index);
   }
   function resolve({articleUrl,itemId}={}){
     // Never guess a version from a numeric identifier; exact source wins.
@@ -34,6 +38,7 @@ function buildArticleWorkResolver(board){
       return {status:'source_not_in_catalog',workId:null};
     }
     if(!itemId||typeof itemId!=='string')return {status:'missing_article_identity',workId:null};
+    if(!catalogs)return {status:'item_id_requires_catalog_context',workId:null};
     const candidates=byRawItemId.get(itemId);
     if(!candidates?.size)return {status:'unknown_item_id',workId:null};
     if(candidates.size>1)return {status:'ambiguous_item_id',workId:null,
