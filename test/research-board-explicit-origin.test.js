@@ -87,6 +87,14 @@ test('ordinary same-number translated SCPs remain grouped without new exceptions
  ],index(record(original),record(translated)));
  assert.equal(find(board,original)[14][0],find(board,translated)[14][0]);
 });
+test('nonstandard namespace paths retain historical identities rather than silently moving',()=>{
+ const original=en+'scp-002',translated='https://scp-nd.wikidot.com/sv:scp-002';
+ const src=index(record(translated,'',[original]));
+ const p={...normalizePage(translated),siteBranch:'nd',branch:'en',pageType:'scp-series',kindIndex:0};
+ const native={...normalizePage(original),siteBranch:'en',branch:'en',pageType:'scp-series',kindIndex:0};
+ const pages=new Map([[p.id,p],[native.id,native]]);
+ assert.equal(verifiedScpOriginal(p,pages,src),null);
+});
 test('missing target, cross-branch credit and non-native target are not auto trusted',()=>{
  const f=esCase();
  const src=index(record(f.translated,'',[f.original]));
