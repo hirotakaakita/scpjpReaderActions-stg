@@ -91,6 +91,9 @@ jobs:
       - name: Audit original SCP work identity and provenance
         if: always()
         run: node research-board/verification/identity-check.js research-board/verification/audit-results/identity
+      - name: Recursively validate original-author credit relationships
+        if: always()
+        run: node research-board/verification/identity-provenance.js research-board/verification/audit-results/identity-provenance
       - name: Preserve reports even if audit fails
         if: always()
         uses: actions/upload-artifact@v4

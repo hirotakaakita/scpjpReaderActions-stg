@@ -141,6 +141,13 @@ test('same-snapshot 3-way comparison distinguishes published-only vs verifier-on
     published_only_both_absent:1,both_current_only:1,
     primary_only_candidate:1,independent_only_candidate:1});
 });
+test('recursive source-credit tracing detects terminal roots and cycles',()=>{
+  const {traceRoot}=require('./identity-provenance');
+  const x=new Map([['a','b'],['b','c']]);
+  assert.deepEqual(traceRoot('a',x),{status:'terminal',root:'c',path:['a','b','c']});
+  x.set('c','b');
+  assert.equal(traceRoot('a',x).status,'cycle');
+});
 test('CSV output preserves quotes and embedded delimiters',()=>{
   assert.equal(csv([{url:'a,b',note:'"quoted"'}],['url','note']),'"url","note"\n"a,b","""quoted"""\n');
 });
