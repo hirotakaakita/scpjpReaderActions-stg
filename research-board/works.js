@@ -3,7 +3,7 @@ const { branchForPageType } = require('./classification');
 const {native,scpIdentityKey}=require('./translation-identities');
 const {KIND_BY_CATEGORY,homeCategory}=require('./article-categories');
 const {digest}=require('./extract');
-const {verifiedScpOriginal}=require('./explicit-scp-origin');
+const {verifiedScpOriginal,verifiedTransitiveScpOriginal}=require('./explicit-scp-origin');
 
 // Ledger identity, not a bare SCP number. Each variant/proposal and branch
 // namespace keeps its own itemId. Unverified document translations stay apart.
@@ -11,10 +11,14 @@ function collapseWorks(pages, candidates, catalogEntries, sources = new Map()) {
   const pageKeys = new Map(), ledger = new Map(), aliases = new Map(), equivalentKeys = [],extraAliases=new Map();
   const eligibleByPage=new Map(),keyClaims=new Map(),keyOwners=new Map();
   const byPage=new Map(pages.map(p=>[p.id,p]));
-  const originalOverrides=new Map();
+  const originalOverrides=new Map(),transitiveSources=new Set();
   for(const page of pages){
-    const original=verifiedScpOriginal(page,byPage,sources);
-    if(original&&scpIdentityKey(original)!==scpIdentityKey(page))originalOverrides.set(page.id,original.id);
+    const direct=verifiedScpOriginal(page,byPage,sources);
+    const traced=direct?null:verifiedTransitiveScpOriginal(page,byPage,sources);
+    const original=direct||traced?.original;
+    if(!original||scpIdentityKey(original)===scpIdentityKey(page))continue;
+    originalOverrides.set(page.id,original.id);
+    if(traced)transitiveSources.add(page.id);
   }
   const signature=p=>[0,8,9].includes(p.kindIndex)?
     scpIdentityKey(byPage.get(originalOverrides.get(p.id))||p):p.branch+'\0'+p.pageType+'\0'+p.slug;
@@ -24,7 +28,7 @@ function collapseWorks(pages, candidates, catalogEntries, sources = new Map()) {
       (scp?KIND_BY_CATEGORY[homeCategory(e.pageType,e.contentType)]===page.kindIndex:branchForPageType(e.pageType)===page.branch));
     const own=entries.filter(e=>e.language===page.siteBranch),eligible=own.length?own:entries;
     eligibleByPage.set(page.id,eligible);
-    if(scp)for(const e of eligible){
+    if(scp&&!originalOverrides.has(page.id))for(const e of eligible){
       const key=`catalog:${e.pageType}:${e.itemId}`,sig=signature(page);
       if(!keyClaims.has(key))keyClaims.set(key,new Map());
       const score=Number(branchForPageType(e.pageType)===page.branch)*4+Number(native(page)&&e.language===page.siteBranch)*2;
@@ -41,7 +45,7 @@ function collapseWorks(pages, candidates, catalogEntries, sources = new Map()) {
     const scp=[0,8,9].includes(page.kindIndex)&&page.pageType;
     const eligible=(eligibleByPage.get(page.id)||[]).filter(e=>!scp||keyOwners.get(`catalog:${e.pageType}:${e.itemId}`)===signature(page));
     const keys = [...new Set(eligible.map(e => `catalog:${e.pageType}:${e.itemId}`))];
-    if (keys.length >= 1) {
+    if (keys.length >= 1&&!originalOverrides.has(page.id)) {
       keys.sort();
       const key = keys[0];
       for (const entry of eligible) ledger.set(`catalog:${entry.pageType}:${entry.itemId}`, {
@@ -126,24 +130,31 @@ function collapseWorks(pages, candidates, catalogEntries, sources = new Map()) {
       originalOverrides.get(source.id)===target.id&&
       [0,8,9].includes(source.kindIndex)&&source.kindIndex===target.kindIndex&&
       source.branch===target.branch&&source.pageType===target.pageType;
+    const transitiveScpIdentity=edge.proof?.[5]==='explicit_transitive_scp_original_credit'&&
+      transitiveSources.has(source.id)&&originalOverrides.get(source.id)===target.id&&
+      [0,8,9].includes(source.kindIndex)&&source.kindIndex===target.kindIndex&&native(target)&&
+      source.siteBranch!==target.siteBranch;
     const originalCatalogPath=['origin_path_and_author','full_numbered_original_catalog_path','origin_and_original_catalog_path','interwiki_original_metadata'].includes(edge.proof?.[5])&&
       source.slug===target.slug&&source.branch!=='other'&&source.branch===target.branch&&native(target);
     if(a===b)continue;
     if (source.classificationSourceId || target.classificationSourceId ||
-        (bothCatalogued && !explicitDocumentTranslations && !sameScpIdentity&&!originalCatalogPath&&!explicitScpIdentity) || (source.siteBranch === target.siteBranch&&!sameScpIdentity) ||
-        (source.branch !== 'other' && target.branch !== 'other' && source.branch !== target.branch)) {identityReview.push({url:source.url,original:target.url,reason:'incompatible_translation_scope'});continue;}
+        (bothCatalogued && !explicitDocumentTranslations && !sameScpIdentity&&!originalCatalogPath&&!explicitScpIdentity&&!transitiveScpIdentity) || (source.siteBranch === target.siteBranch&&!sameScpIdentity) ||
+        (source.branch !== 'other' && target.branch !== 'other' && source.branch !== target.branch&&!transitiveScpIdentity)) {identityReview.push({url:source.url,original:target.url,reason:'incompatible_translation_scope'});continue;}
     const left=[...(components.get(a)||[])].map(id=>byPage.get(id));
     const right=[...(components.get(b)||[])].map(id=>byPage.get(id));
     // An identity component cannot contain two distinct pages on one site, or
     // acquire incompatible origins through a chain of translation assertions.
     if(left.some(p=>right.some(q=>p.siteBranch===q.siteBranch&&p.id!==q.id))&&!(sameScpIdentity&&[...left,...right].every(p=>scpIdentityKey(p)===scpIdentityKey(source)))){identityReview.push({url:source.url,original:target.url,reason:'same_site_identity_collision'});continue;}
     const origins=new Set([...left,...right].map(p=>p.branch).filter(b=>b!=='other'));
-    if(origins.size>1){identityReview.push({url:source.url,original:target.url,reason:'conflicting_component_origins'});continue;}
+    if(origins.size>1&&!(transitiveScpIdentity&&left.length===1&&
+       left[0].id===source.id&&right.every(p=>p.branch===target.branch))){
+      identityReview.push({url:source.url,original:target.url,reason:'conflicting_component_origins'});continue;
+    }
     // Prefer a catalog-backed identity over a URL-only identity.
     const canonicalKey=k=>ledger.has(k)&&k.startsWith('catalog:'+ledger.get(k).pageType+':');
     // An explicit credited native original wins over the delivery page's
     // legacy numbered key. Never reassign the native original to that key.
-    const first = explicitScpIdentity?b:bothCatalogued ? canonicalKey(a)!==canonicalKey(b)?canonicalKey(a)?a:b:nativeKeys.has(a)!==nativeKeys.has(b)?nativeKeys.has(a)?a:b:[a,b].sort()[0] : ledger.has(a)?a:ledger.has(b)?b:[a,b].sort()[0];
+    const first = explicitScpIdentity||transitiveScpIdentity?b:bothCatalogued ? canonicalKey(a)!==canonicalKey(b)?canonicalKey(a)?a:b:nativeKeys.has(a)!==nativeKeys.has(b)?nativeKeys.has(a)?a:b:[a,b].sort()[0] : ledger.has(a)?a:ledger.has(b)?b:[a,b].sort()[0];
     const second=first===a?b:a;
     parent.set(second,first);
     components.set(first,new Set([...(components.get(a)||[]),...(components.get(b)||[])]));components.delete(second);
