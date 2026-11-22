@@ -148,6 +148,34 @@ test('recursive source-credit tracing detects terminal roots and cycles',()=>{
   x.set('c','b');
   assert.equal(traceRoot('a',x).status,'cycle');
 });
+test('independent validator ignores chapter bars and credit links, not inline narrative',()=>{
+  const {workByUrl,supportedHosts}=index();
+  const html='<div id="page-title">Testing</div><div id="page-content">'+
+    '<p>« <a href="/scp-002">Previous</a> | <a href="/scp-003">Hub</a> | <a href="/scp-002">Next</a> »</p>'+
+    '<p>原文來源：<a href="/scp-003">http://scpwiki.com/</a>。授權方式為 CC-BY-SA。</p>'+
+    '<p>The story mentions <a href="/scp-002">SCP-002</a>.</p></div>';
+  const v=fromHtml(html,en+'scp-001',workByUrl,supportedHosts);
+  assert.equal(v.counts.chapter_navigation,3);
+  assert.equal(v.counts.source_credit_metadata,1);
+  assert.deepEqual([...v.links.keys()],['work:two']);
+});
+test('chapter-like prose without arrow-and-divider structure is kept',()=>{
+  const {workByUrl,supportedHosts}=index();
+  const html='<div id="page-title">Testing</div><div id="page-content">'+
+    '<p>« In this study, <a href="/scp-002">SCP-002</a> is explained in relation to '+
+    '<a href="/scp-003">SCP-003</a> »</p></div>';
+  const v=fromHtml(html,en+'scp-001',workByUrl,supportedHosts);
+  assert.deepEqual([...v.links.keys()],['work:two','work:three']);
+});
+test('one-link title breadcrumb is excluded but unrelated single links survive',()=>{
+  const {workByUrl,supportedHosts}=index();
+  const html='<div id="page-title">Testing</div><div id="page-content">'+
+    '<p><a href="/scp-002">SCP-002</a> » Testing</p>'+
+    '<p>Refer to <a href="/scp-003">SCP-003</a> instead.</p></div>';
+  const v=fromHtml(html,en+'scp-001',workByUrl,supportedHosts);
+  assert.equal(v.counts.breadcrumb_navigation,1);
+  assert.deepEqual([...v.links.keys()],['work:three']);
+});
 test('CSV output preserves quotes and embedded delimiters',()=>{
   assert.equal(csv([{url:'a,b',note:'"quoted"'}],['url','note']),'"url","note"\n"a,b","""quoted"""\n');
 });

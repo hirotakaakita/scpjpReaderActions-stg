@@ -88,6 +88,21 @@ jobs:
             --baseline research-board/verification/baseline-audit/audit.json \
             --controls 10 \
             --out research-board/verification/audit-results/same-snapshot
+      - name: Download 58 previously captured HTML snapshots
+        id: frozen
+        if: github.event_name == 'push'
+        uses: actions/download-artifact@v4
+        with:
+          name: research-board-verification-45008914452
+          run-id: 45008914452
+          github-token: ${{ github.token }}
+          path: research-board/verification/frozen-snapshot
+      - name: Replay identical frozen HTML after verifier fixes
+        if: github.event_name == 'push'
+        run: |
+          node research-board/verification/replay.js \
+            research-board/verification/frozen-snapshot/same-snapshot \
+            research-board/verification/audit-results/frozen-replay
       - name: Audit original SCP work identity and provenance
         if: always()
         run: node research-board/verification/identity-check.js research-board/verification/audit-results/identity
