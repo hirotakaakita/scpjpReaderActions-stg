@@ -7,6 +7,7 @@ on:
       - 'research-board/**'
       - 'tool/preview-research-board-origin-fix.js'
       - 'test/research-board-explicit-origin.test.js'
+      - 'test/research-board-article-work-resolver.test.js'
       - '.github/workflows/research-board-origin-preview.yml'
   workflow_dispatch:
 permissions:
