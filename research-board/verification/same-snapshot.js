@@ -44,7 +44,7 @@ function report(dir,baseline,revision,rows){
   for(const page of rows)for(const [key,n] of Object.entries(page.totals||{}))total[key]=(total[key]||0)+n;
   const summary={revision,seed:baseline.seed,generatedAt:new Date().toISOString(),
     pageCount:rows.length,compared:rows.filter(x=>x.status==='compared').length,
-    errors:rows.filter(x=>x.status==='error').length,totals,
+    errors:rows.filter(x=>x.status==='error').length,totals:total,
     rows:rows.map(({findings,...r})=>r)};
   save(path.join(dir,'same-snapshot-summary.json'),JSON.stringify(summary,null,2)+'\n');
   const flat=rows.flatMap(p=>(p.findings||[]).map(f=>({sourceUrl:p.url,language:p.language,...f})));
