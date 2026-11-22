@@ -47,8 +47,8 @@ function validate(root = path.join(__dirname, '..')) {
   const sources=readSources(path.join(input,'research-board-sources'));
   const pageMetadata=new Map(board.nodes.flatMap(node=>node[13].map(v=>{
     const p=normalizePage(v[1]);
-    return [p&&[p.id,{...p,siteBranch:v[0],branch:node[8],pageType:node[12],kindIndex:node[3]}]];
-  }).filter(Boolean)));
+    return p?[[p.id,{...p,siteBranch:v[0],branch:node[8],pageType:node[12],kindIndex:node[3]}]]:[];
+  })));
   const scpOwners=new Map();
   for(const node of board.nodes)if([0,8,9].includes(node[3])&&node[12])for(const version of node[13]){
     const page=pageMetadata.get(normalizePage(version[1])?.id);
