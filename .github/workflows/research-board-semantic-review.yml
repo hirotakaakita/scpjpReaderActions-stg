@@ -5,6 +5,7 @@ on:
     paths:
       - 'tool/review-research-board-origin-diff.js'
       - 'tool/audit-board-reading-itemids.js'
+      - 'tool/validate-board-article-resolver.js'
       - 'test/research-board-reading-itemid.test.js'
       - '.github/workflows/research-board-semantic-review.yml'
   workflow_dispatch:
@@ -35,6 +36,8 @@ jobs:
         run: node tool/review-research-board-origin-diff.js original-preview-input original-preview-semantic
       - name: Audit raw mobile itemId collisions across the exact same catalog snapshot
         run: node tool/audit-board-reading-itemids.js original-preview-input original-preview-semantic/itemid-compat
+      - name: Check URL-first resolver against the complete catalog
+        run: node tool/validate-board-article-resolver.js original-preview-input original-preview-semantic/resolver
       - name: Preserve semantic evidence
         if: always()
         uses: actions/upload-artifact@v7
