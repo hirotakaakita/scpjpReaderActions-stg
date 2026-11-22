@@ -28,7 +28,7 @@ function collapseWorks(pages, candidates, catalogEntries, sources = new Map()) {
       (scp?KIND_BY_CATEGORY[homeCategory(e.pageType,e.contentType)]===page.kindIndex:branchForPageType(e.pageType)===page.branch));
     const own=entries.filter(e=>e.language===page.siteBranch),eligible=own.length?own:entries;
     eligibleByPage.set(page.id,eligible);
-    if(scp&&!originalOverrides.has(page.id))for(const e of eligible){
+    if(scp&&!transitiveSources.has(page.id))for(const e of eligible){
       const key=`catalog:${e.pageType}:${e.itemId}`,sig=signature(page);
       if(!keyClaims.has(key))keyClaims.set(key,new Map());
       const score=Number(branchForPageType(e.pageType)===page.branch)*4+Number(native(page)&&e.language===page.siteBranch)*2;
@@ -45,7 +45,7 @@ function collapseWorks(pages, candidates, catalogEntries, sources = new Map()) {
     const scp=[0,8,9].includes(page.kindIndex)&&page.pageType;
     const eligible=(eligibleByPage.get(page.id)||[]).filter(e=>!scp||keyOwners.get(`catalog:${e.pageType}:${e.itemId}`)===signature(page));
     const keys = [...new Set(eligible.map(e => `catalog:${e.pageType}:${e.itemId}`))];
-    if (keys.length >= 1&&!originalOverrides.has(page.id)) {
+    if (keys.length >= 1&&!transitiveSources.has(page.id)) {
       keys.sort();
       const key = keys[0];
       for (const entry of eligible) ledger.set(`catalog:${entry.pageType}:${entry.itemId}`, {
