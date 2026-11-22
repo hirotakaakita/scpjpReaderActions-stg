@@ -2,6 +2,7 @@
 const {normalizePage}=require('./extract');
 const {originalPage}=require('../origin-provenance');
 const {publisherOriginTags}=require('../catalog-origin');
+const {verifiedScpOriginal}=require('./explicit-scp-origin');
 const site=code=>code==='zh-tr'?'zh':code;
 const native=p=>site(p.siteBranch)===p.branch||(p.siteBranch==='cs'&&p.branch==='sk');
 const generic=/^(?:main|index|home|start|about|groups-of-interest|foundation-tales|canon-hub|series-archive|personnel-and-character-dossier|task-forces|secure-facilities-locations|goi-formats)(?:-[a-z]{2})?$/;
@@ -72,8 +73,21 @@ function translationIdentities(pages,sources){
      if(p.siteBranch!==q.siteBranch)candidates.push({source:p.id,target:q.id,type:'translation_assertion',proof:[p.url,q.url,'shared_original_credit',r.contentSha256,'',bothCredits?'shared_explicit_original_credit':'shared_verified_original_metadata',r.checkedAt]});
    }
  }
+ // An SCP published under a number different from its unique, verified native
+ // original must NOT be grouped with an unrelated native item of that number.
+ // This is evidence-backed, unlike a matching slug or an ordinary hyperlink.
+ const explicitNumberOverrides=new Map();
+ for(const p of pages){
+   const original=verifiedScpOriginal(p,byId,sources);
+   if(!original||scpIdentityKey(original)===scpIdentityKey(p))continue;
+   const r=sources.get(p.id).record;
+   explicitNumberOverrides.set(p.id,original);
+   candidates.push({source:p.id,target:original.id,type:'translation_assertion',
+     proof:[p.url,original.url,'verified_original_article',r.contentSha256,'',
+       'explicit_scp_original_credit',r.checkedAt]});
+ }
  const scpGroups=new Map();
- for(const p of pages)if([0,8,9].includes(p.kindIndex)&&p.branch!=='other'&&/^(?:scp-series(?:-[a-z-]+)?|joke-scps(?:-[a-z-]+)?|scp-(?:[a-z-]+-)?ex)$/.test(p.pageType||'')){
+ for(const p of pages)if(!explicitNumberOverrides.has(p.id)&&[0,8,9].includes(p.kindIndex)&&p.branch!=='other'&&/^(?:scp-series(?:-[a-z-]+)?|joke-scps(?:-[a-z-]+)?|scp-(?:[a-z-]+-)?ex)$/.test(p.pageType||'')){
    // Full identifier, including proposal/variant suffixes, never number alone.
    const key=scpIdentityKey(p);
    if(!scpGroups.has(key))scpGroups.set(key,[]);scpGroups.get(key).push(p);
@@ -88,6 +102,9 @@ function translationIdentities(pages,sources){
  for(const p of pages){
    const state=sources.get(p.id),r=state?.record;
    if(!r||['not_found','not_article','unavailable'].includes(state.lastAttempt?.status))continue;
+   // Already recorded a stricter native-SCP proof above; emitting another
+   // generic claim could attach the page to its reused catalog number.
+   if(explicitNumberOverrides.has(p.id))continue;
    const creditTargets=[];
    if(new Set((r.originalSources||[]).filter(s=>s.method==='credit_original_label').map(s=>s.url)).size>1){review.push({url:p.url,reason:'conflicting_original_credits'});continue;}
    const credits=identityCredits(r);
