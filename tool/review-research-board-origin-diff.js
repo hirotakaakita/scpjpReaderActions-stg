@@ -2,6 +2,8 @@
 // Deterministic semantic guards over the immutable, already-validated dry run.
 // This never publishes, recrawls, or edits the board.
 const fs=require('node:fs'),path=require('node:path'),zlib=require('node:zlib'),assert=require('node:assert/strict');
+const {readSources}=require('../research-board/source-store');
+const {originalPage}=require('../origin-provenance');
 function csvRead(s){
  const rows=[];let row=[],v='',quoted=false;
  for(let i=0;i<s.length;i++){const c=s[i];
@@ -85,6 +87,29 @@ function review(root,out){
  const reviewCounts={};
  for(const r of prioritized)reviewCounts[r.priorityCategory]=(reviewCounts[r.priorityCategory]||0)+1;
  const originalsOutsideCatalog=credits.results.filter(x=>x.after==='original_not_cataloged');
+ // Every historic assertion is reattached to the actual stored capture.
+ // This is stronger than a normalized URL alone; never promote a claim
+ // without knowing its exact source hash, time and surrounding attribution.
+ const sourceStates=readSources(path.join(__dirname,'../local-data/research-board-sources'));
+ const sourceRecords=new Map([...sourceStates.values()].filter(s=>s.record?.url)
+  .map(s=>[s.record.url,s]));
+ const allCreditClaims=[...prioritized,...originalsOutsideCatalog];
+ const originalCreditEvidence=allCreditClaims.map(x=>{
+  const state=sourceRecords.get(x.source),r=state?.record;
+  const canonical=originalPage(x.creditedOriginal)?.url;
+  const originalClaims=(r?.originalSources||[]).filter(c=>c.method==='credit_original_label');
+  const matched=originalClaims.filter(c=>originalPage(c.url)?.url===canonical);
+  return {source:x.source,creditedOriginal:x.creditedOriginal,after:x.after,
+   category:x.priorityCategory||'original_not_cataloged',
+   checkedAt:r?.checkedAt||'',captureHash:r?.contentSha256||'',
+   lastStatus:state?.lastAttempt?.status||'',claimCount:originalClaims.length,
+   exactCreditInCapturedRecord:matched.length>0,
+   creditQuote:matched.map(c=>c.quote||'').join(' | ').slice(0,500),
+   originalAuthors:(r?.originalAuthors||[]).map(a=>a.name||a.id).join(' | ').slice(0,500),
+   nativeCatalogBasis:r?.catalogIdentity?.basis||'',
+   title:r?.title||''};
+ });
+ const evidenceWithHash=originalCreditEvidence.filter(e=>e.captureHash&&e.exactCreditInCapturedRecord).length;
  const categories=Object.fromEntries([...new Set(inspected.map(x=>x.reviewLabel))].map(k=>
   [k,inspected.filter(x=>x.reviewLabel===k).length]));
  const result={revision:summary.revisionAfter,inspectedMoves:inspected.length,categories,
@@ -92,7 +117,8 @@ function review(root,out){
   inspectedEdges:edges.length,unrelatedEdges:unexpected.length,remainingCreditReview:outstanding.length,
   noticeRedirects:notice.length,transitiveCandidates:transitive.length,
   transitiveWithoutSameSiteCollision:transitive.filter(x=>!x.siteCollision).length,
-  priorityReviewCounts:reviewCounts,originalNotCataloged:originalsOutsideCatalog.length};
+  priorityReviewCounts:reviewCounts,originalNotCataloged:originalsOutsideCatalog.length,
+  creditClaimsWithCapturedHash:evidenceWithHash,creditClaimsReviewed:originalCreditEvidence.length};
  fs.mkdirSync(out,{recursive:true});
  fs.writeFileSync(path.join(out,'SEMANTIC_SUMMARY.json'),JSON.stringify(result,null,2)+'\n');
  fs.writeFileSync(path.join(out,'SEMANTIC_REVIEW.csv'),csvWrite(inspected,
@@ -106,6 +132,9 @@ function review(root,out){
    'siteCollisionCount','oldWork','newWork','originalOldWork','originalNewWork','path']));
  fs.writeFileSync(path.join(out,'ORIGINAL_NOT_CATALOGED.csv'),csvWrite(originalsOutsideCatalog,
   ['source','creditedOriginal','resolvedOriginal','before','after','oldWork','newWork','path']));
+ fs.writeFileSync(path.join(out,'CREDIT_EVIDENCE.csv'),csvWrite(originalCreditEvidence,
+  ['source','creditedOriginal','category','checkedAt','captureHash','lastStatus',
+   'exactCreditInCapturedRecord','claimCount','creditQuote','title','nativeCatalogBasis','originalAuthors']));
  fs.writeFileSync(path.join(out,'REVIEW.md'),[
   '# Original-work semantic difference review','',
   'Evidence: immutable research-board-original-preview artifact, revision '+result.revision,
@@ -126,6 +155,7 @@ function review(root,out){
   '| Same-site identity review | '+(reviewCounts.same_host_collision||0)+' |',
   '| Remaining manual content/identity review | '+(reviewCounts.manual_content_or_identity_review||0)+' |',
   '| Original credits with catalog absent | '+originalsOutsideCatalog.length+' |',
+  '| Claims carrying exact stored capture evidence | '+evidenceWithHash+'/'+originalCreditEvidence.length+' |',
   '',
   'Caution: site-conflict protection is mechanically verified. The historical legitimacy',
   'of each original credit or the links of a deleted page requires independent publisher evidence.',
