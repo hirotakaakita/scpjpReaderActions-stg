@@ -63,18 +63,39 @@ function review(root,out){
     after:r.after,siteCollision:siblings.length>0,
     category:siblings.length?'needs_collision_review':'transitive_credit_candidate',
     firstWork:r.newWork,ultimateWork:r.originalNewWork,chain:r.path};});
+ const unresolved=credits.results.filter(x=>x.after==='split_work'||x.after==='conflicting_native_work');
+ const prioritized=unresolved.map(item=>{
+  const u=new URL(item.source),origin=owners.get(item.resolvedOriginal);
+  const siteSiblings=(origin?.[13]||[]).filter(v=>new URL(v[1]).hostname===u.hostname);
+  const category=item.creditedOriginal==='https://scp-wiki.wikidot.com/bright-works-message'?
+    'retired_redirect_notice':
+    u.hostname==='scp-nd.wikidot.com'&&u.pathname.includes(':')?
+    'nordic_namespaced_legacy':
+    item.path.split(' > ').length>=3?'transitive_original_chain':
+    siteSiblings.length>0?'same_host_collision':'manual_content_or_identity_review';
+  return {...item,priorityCategory:category,siteCollisionCount:siteSiblings.length};
+ });
+ const reviewCounts={};
+ for(const r of prioritized)reviewCounts[r.priorityCategory]=(reviewCounts[r.priorityCategory]||0)+1;
+ const originalsOutsideCatalog=credits.results.filter(x=>x.after==='original_not_cataloged');
  const categories=Object.fromEntries([...new Set(inspected.map(x=>x.reviewLabel))].map(k=>
   [k,inspected.filter(x=>x.reviewLabel===k).length]));
  const result={revision:summary.revisionAfter,inspectedMoves:inspected.length,categories,
   inspectedEdges:edges.length,unrelatedEdges:unexpected.length,remainingCreditReview:outstanding.length,
   noticeRedirects:notice.length,transitiveCandidates:transitive.length,
-  transitiveWithoutSameSiteCollision:transitive.filter(x=>!x.siteCollision).length};
+  transitiveWithoutSameSiteCollision:transitive.filter(x=>!x.siteCollision).length,
+  priorityReviewCounts:reviewCounts,originalNotCataloged:originalsOutsideCatalog.length};
  fs.mkdirSync(out,{recursive:true});
  fs.writeFileSync(path.join(out,'SEMANTIC_SUMMARY.json'),JSON.stringify(result,null,2)+'\n');
  fs.writeFileSync(path.join(out,'SEMANTIC_REVIEW.csv'),csvWrite(inspected,
   ['url','reviewLabel','sourceCredit','original','previousWork','nextWork','conflictingPage','chain']));
  fs.writeFileSync(path.join(out,'TRANSITIVE_REVIEW.csv'),csvWrite(transitive,
   ['source','firstOriginal','ultimateOriginal','after','siteCollision','category','firstWork','ultimateWork','chain']));
+ fs.writeFileSync(path.join(out,'REMAINING_307_PRIORITIZED.csv'),csvWrite(prioritized,
+  ['source','creditedOriginal','resolvedOriginal','before','after','priorityCategory',
+   'siteCollisionCount','oldWork','newWork','originalOldWork','originalNewWork','path']));
+ fs.writeFileSync(path.join(out,'ORIGINAL_NOT_CATALOGED.csv'),csvWrite(originalsOutsideCatalog,
+  ['source','creditedOriginal','resolvedOriginal','before','after','oldWork','newWork','path']));
  fs.writeFileSync(path.join(out,'REVIEW.md'),[
   '# Original-work semantic difference review','',
   'Evidence: immutable research-board-original-preview artifact, revision '+result.revision,
@@ -88,6 +109,12 @@ function review(root,out){
   '| Deletion-notice redirect pseudo-originals | '+result.noticeRedirects+' |',
   '| Transitive origin chains to review | '+result.transitiveCandidates+' |',
   '| Without site collisions | '+result.transitiveWithoutSameSiteCollision+' |',
+  '| Nordic namespace review | '+(reviewCounts.nordic_namespaced_legacy||0)+' |',
+  '| Deleted-page notice redirects | '+(reviewCounts.retired_redirect_notice||0)+' |',
+  '| Transitive identity review | '+(reviewCounts.transitive_original_chain||0)+' |',
+  '| Same-site identity review | '+(reviewCounts.same_host_collision||0)+' |',
+  '| Remaining manual content/identity review | '+(reviewCounts.manual_content_or_identity_review||0)+' |',
+  '| Original credits with catalog absent | '+originalsOutsideCatalog.length+' |',
   '',
   'Caution: site-conflict protection is mechanically verified. The historical legitimacy',
   'of each original credit or the links of a deleted page requires independent publisher evidence.',
