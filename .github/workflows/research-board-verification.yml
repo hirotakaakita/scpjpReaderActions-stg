@@ -20,7 +20,7 @@ permissions:
   contents: read
   actions: read
 concurrency:
-  group: research-board-verification-${{ github.ref }}
+  group: research-board-verification-paired-v2-${{ github.ref }}
   cancel-in-progress: false
 jobs:
   audit:
@@ -88,6 +88,9 @@ jobs:
             --baseline research-board/verification/baseline-audit/audit.json \
             --controls 10 \
             --out research-board/verification/audit-results/same-snapshot
+      - name: Audit original SCP work identity and provenance
+        if: always()
+        run: node research-board/verification/identity-check.js research-board/verification/audit-results/identity
       - name: Preserve reports even if audit fails
         if: always()
         uses: actions/upload-artifact@v4
