@@ -8,8 +8,8 @@ const {normalizePage}=require('../research-board/extract');
 const {csvRead}=require('./review-research-board-origin-diff');
 function run(dir,out){
  const board=JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(dir,'preview-board.json.gz'))));
- const resolver=buildArticleWorkResolver(board);
  const catalogs=loadCatalogs(path.resolve(__dirname,'../local-data'));
+ const resolver=buildArticleWorkResolver(board,{catalogs});
  const expected=new Map(board.nodes.flatMap(n=>n[13].map(p=>[p[1],n[14][0]])));
  const allIds=new Map();
  let pageCount=0,matches=0;
