@@ -30,6 +30,11 @@ function review(root,out){
   if(owners.has(version[1]))throw Error('Duplicate owner: '+version[1]);
   owners.set(version[1],node);
  }
+ const aliases=new Map();
+ for(const node of board.nodes)for(const a of node[14][2]){
+  assert(!aliases.has(a),'Duplicate catalog alias '+a);
+  aliases.set(a,node[14][0]);
+ }
  const metadata=new Map(credits.results.map(r=>[r.source,r]));
  const inspected=moves.map(move=>{
   const r=metadata.get(move.url);
@@ -43,6 +48,8 @@ function review(root,out){
   if(attached)assert.equal(sibling.length,0,'Unexpected same-host collision on merged work');
   else assert(sibling.length>0,'Work split lacks same-host collision: '+move.url);
   return {url:move.url,reviewLabel:attached?'native_original_merged':'same_host_collision_isolated',
+   oldWorkAliasOwnerAfter:aliases.get(move.previousWork)||null,
+   oldWorkAliasMatchesMovedPage:aliases.get(move.previousWork)===move.nextWork,
    original:r.resolvedOriginal,sourceCredit:r.creditedOriginal,
    previousWork:move.previousWork,nextWork:move.nextWork,
    conflictingPage:sibling.join(' | '),chain:r.path};
@@ -81,6 +88,7 @@ function review(root,out){
  const categories=Object.fromEntries([...new Set(inspected.map(x=>x.reviewLabel))].map(k=>
   [k,inspected.filter(x=>x.reviewLabel===k).length]));
  const result={revision:summary.revisionAfter,inspectedMoves:inspected.length,categories,
+  oldWorkAliasesDifferentFromMovedPage:inspected.filter(x=>!x.oldWorkAliasMatchesMovedPage).length,
   inspectedEdges:edges.length,unrelatedEdges:unexpected.length,remainingCreditReview:outstanding.length,
   noticeRedirects:notice.length,transitiveCandidates:transitive.length,
   transitiveWithoutSameSiteCollision:transitive.filter(x=>!x.siteCollision).length,
@@ -89,6 +97,8 @@ function review(root,out){
  fs.writeFileSync(path.join(out,'SEMANTIC_SUMMARY.json'),JSON.stringify(result,null,2)+'\n');
  fs.writeFileSync(path.join(out,'SEMANTIC_REVIEW.csv'),csvWrite(inspected,
   ['url','reviewLabel','sourceCredit','original','previousWork','nextWork','conflictingPage','chain']));
+ fs.writeFileSync(path.join(out,'WORK_ID_LOOKUP_RISKS.csv'),csvWrite(inspected,
+   ['url','previousWork','nextWork','oldWorkAliasOwnerAfter','oldWorkAliasMatchesMovedPage']));
  fs.writeFileSync(path.join(out,'TRANSITIVE_REVIEW.csv'),csvWrite(transitive,
   ['source','firstOriginal','ultimateOriginal','after','siteCollision','category','firstWork','ultimateWork','chain']));
  fs.writeFileSync(path.join(out,'REMAINING_307_PRIORITIZED.csv'),csvWrite(prioritized,
@@ -105,6 +115,7 @@ function review(root,out){
   '| Same-host protected splits | '+(categories.same_host_collision_isolated||0)+' |',
   '| Changed edges tied to impacted works | '+result.inspectedEdges+' |',
   '| Unrelated changes | '+result.unrelatedEdges+' |',
+  '| Old work aliases still resolving away from moved page | '+result.oldWorkAliasesDifferentFromMovedPage+' |',
   '| Original-credit review records not yet fully explained | '+result.remainingCreditReview+' |',
   '| Deletion-notice redirect pseudo-originals | '+result.noticeRedirects+' |',
   '| Transitive origin chains to review | '+result.transitiveCandidates+' |',
@@ -119,7 +130,9 @@ function review(root,out){
   'Caution: site-conflict protection is mechanically verified. The historical legitimacy',
   'of each original credit or the links of a deleted page requires independent publisher evidence.',
   'The notice page must not be treated as one original shared by redirected works.',
-  'Transitive credits are flagged, NOT automatically merged; validate each source and intermediate credit.','',
+  'Transitive credits are flagged, NOT automatically merged; validate each source and intermediate credit.',
+  'The Flutter app stores bookmarks/read status by catalog itemId, not the board workId.',
+  'Work-ID-only board navigation still needs a URL-scoped resolution contract before release.','',
   '## All changed source pages','',
   ...inspected.map(x=>'- '+x.url+' — '+x.reviewLabel+'; original '+x.original+
      (x.conflictingPage?'; site sibling '+x.conflictingPage:'')),
