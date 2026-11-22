@@ -20,6 +20,8 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '24'
+      - name: Install parser dependencies for original-source and catalog evidence
+        run: npm ci
       - name: Download verified immutable full-board preview artifact
         uses: actions/download-artifact@v4
         with:
