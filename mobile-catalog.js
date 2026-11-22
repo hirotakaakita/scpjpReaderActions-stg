@@ -3,6 +3,7 @@ const path = require('node:path');
 const zlib = require('node:zlib');
 const crypto = require('node:crypto');
 const { LANGUAGES } = require('./languages');
+const { readDelivery, applyArrivalDates } = require('./catalog-arrivals');
 const { reclassifyScpArticle } = require('./article-category');
 const { normalizedSourceListing } = require('./series-listing');
 const { readDictionary, updateDictionary, localizeTags, restoreTagLabels, indexDictionary } = require('./tag-dictionary');
@@ -102,6 +103,7 @@ function generateCatalogChannel(input, output, includeAdditional, sourceDirector
       itemId: r.itemId, titleJP: r.title, urlJP: r.url, isTranslatedJP: true,
       extractedFrom: r.pageType, pageType: r.pageType, contentType: r.contentType,
       lastUpdated: r.lastUpdated, descriptionExcerpt: r.descriptionExcerpt,
+      ...(r.createdAt ? { createdAt: r.createdAt } : {}),
       ...(r.objectClass ? { objectClass:r.objectClass } : {}),
       ...(r.rating != null ? { rating:r.rating } : {}),
       ...(r.imageUrl ? { imageUrl:r.imageUrl } : {}),
@@ -151,6 +153,9 @@ function generateCatalogChannel(input, output, includeAdditional, sourceDirector
       }
     }
     if(includeAdditional&&enrichTranslations)require('./catalog-classification-version').advanceClassificationTimestamp(delivery,path.join(output,language));
+    if (includeAdditional && enrichTranslations) {
+      applyArrivalDates(delivery, readDelivery(path.join(output, language)));
+    }
     const json = Buffer.from(JSON.stringify(delivery), 'utf8');
     const compressed = zlib.gzipSync(json, { level: 9 });
     if (delivery.totalCount > 200000 || json.length > 128 * 1024 * 1024 || compressed.length > 32 * 1024 * 1024) {
