@@ -81,6 +81,13 @@ jobs:
             --audit research-board/verification/audit-results/full/audit.json \
             --differences research-board/verification/audit-results/full/differences.csv \
             --out research-board/verification/audit-results/full-triage
+      - name: Recheck all 48 mismatch pages against two parsers on identical responses
+        if: github.event_name == 'push'
+        run: |
+          node research-board/verification/same-snapshot.js \
+            --baseline research-board/verification/baseline-audit/audit.json \
+            --controls 10 \
+            --out research-board/verification/audit-results/same-snapshot
       - name: Preserve reports even if audit fails
         if: always()
         uses: actions/upload-artifact@v4

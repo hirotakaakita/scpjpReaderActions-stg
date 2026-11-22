@@ -130,6 +130,17 @@ test('CSV discrepancy triage classifies repeated image-directory links conservat
 test('CLI accepts targeted catalog URLs',()=>{
   assert.deepEqual(parseArgs(['--url',jp+'scp-001','--url',jp+'scp-002']).urls,[jp+'scp-001',jp+'scp-002']);
 });
+test('same-snapshot 3-way comparison distinguishes published-only vs verifier-only',()=>{
+  const {compareThree}=require('./same-snapshot');
+  const graph=new Set(['a','b','c','d']);
+  const primary=new Map([['a',[]],['b',[]],['e',[]],['f',[]]]);
+  const independent={links:new Map([['a',[]],['c',[]],['e',[]],['g',[]]])};
+  const r=compareThree(graph,primary,independent);
+  assert.deepEqual(r.totals,{
+    independent_parser_omission:1,primary_parser_exclusion_conflict:1,
+    published_only_both_absent:1,both_current_only:1,
+    primary_only_candidate:1,independent_only_candidate:1});
+});
 test('CSV output preserves quotes and embedded delimiters',()=>{
   assert.equal(csv([{url:'a,b',note:'"quoted"'}],['url','note']),'"url","note"\n"a,b","""quoted"""\n');
 });
