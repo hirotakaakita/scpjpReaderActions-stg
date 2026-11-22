@@ -6,6 +6,7 @@ const { readSources } = require('./source-store');
 const { branchForPageType } = require('./classification');
 const {CATEGORY_ORDER, KIND_BY_CATEGORY, homeCategory} = require('./article-categories');
 const {scpIdentityKey}=require('./translation-identities');
+const {verifiedScpOriginal}=require('./explicit-scp-origin');
 const {originalPage}=require('../origin-provenance');
 function validate(root = path.join(__dirname, '..')) {
   const input = path.join(root, 'local-data'), directory = path.join(input, 'mobile-v3/research-board');
@@ -43,10 +44,18 @@ function validate(root = path.join(__dirname, '..')) {
   for(const node of board.nodes){
     if(node[14][2].length<1)throw Error('Work lost its original catalog identity');
   }
+  const sources=readSources(path.join(input,'research-board-sources'));
+  const pageMetadata=new Map(board.nodes.flatMap(node=>node[13].map(v=>{
+    const p=normalizePage(v[1]);
+    return [p&&[p.id,{...p,siteBranch:v[0],branch:node[8],pageType:node[12],kindIndex:node[3]}]];
+  }).filter(Boolean)));
   const scpOwners=new Map();
-  for(const node of board.nodes)if([0,8,9].includes(node[3])&&node[12])for(const page of node[13]){
-    const key=scpIdentityKey({branch:node[8],pageType:node[12],slug:page[2]}),owner=scpOwners.get(key);
-    if(owner&&owner!==node[14][0])throw Error('Duplicate full SCP identity: '+key.replaceAll('\0',' / '));
+  for(const node of board.nodes)if([0,8,9].includes(node[3])&&node[12])for(const version of node[13]){
+    const page=pageMetadata.get(normalizePage(version[1])?.id);
+    const exactOriginal=verifiedScpOriginal(page,pageMetadata,sources);
+    const key=scpIdentityKey(exactOriginal&&scpIdentityKey(exactOriginal)!==scpIdentityKey(page)?exactOriginal:page);
+    const owner=scpOwners.get(key);
+    if(owner&&owner!==node[14][0])throw Error('Duplicate verified SCP identity: '+key.replaceAll('\0',' / '));
     scpOwners.set(key,node[14][0]);
   }
   const catalogs = loadCatalogs(input);
@@ -86,7 +95,6 @@ function validate(root = path.join(__dirname, '..')) {
     throw Error('Uncollected entity or excluded hyperlink relations');
   }
   if(board.overview.linkPolicy!=='catalog_members_body_links_v6')throw Error('Invalid body link policy');
-  const sources=readSources(path.join(input,'research-board-sources'));
   require('./validate-identity-proofs').validateIdentityProofs(board,sources);
   for(const edge of board.edges){
     if(edge[0]===edge[1] || !board.nodes[edge[0]] || !board.nodes[edge[1]])throw Error('Invalid catalog link endpoints');
