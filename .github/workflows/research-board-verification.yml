@@ -20,7 +20,7 @@ permissions:
   contents: read
   actions: read
 concurrency:
-  group: research-board-verification-paired-v2-${{ github.ref }}
+  group: research-board-verification-frozen-replay-v3-${{ github.ref }}
   cancel-in-progress: false
 jobs:
   audit:
@@ -81,8 +81,8 @@ jobs:
             --audit research-board/verification/audit-results/full/audit.json \
             --differences research-board/verification/audit-results/full/differences.csv \
             --out research-board/verification/audit-results/full-triage
-      - name: Recheck all 48 mismatch pages against two parsers on identical responses
-        if: github.event_name == 'push'
+      - name: Optional live same-response audit of 48 previous discrepancies
+        if: github.event_name == 'workflow_dispatch'
         run: |
           node research-board/verification/same-snapshot.js \
             --baseline research-board/verification/baseline-audit/audit.json \
