@@ -87,6 +87,20 @@ test('ordinary same-number translated SCPs remain grouped without new exceptions
  ],index(record(original),record(translated)));
  assert.equal(find(board,original)[14][0],find(board,translated)[14][0]);
 });
+test('a two-hop international credit cannot invalidate a proven direct original identity',()=>{
+ const f=esCase();
+ const zh=normalizePage(f.zh);
+ const record=makeRecord(f.zh,html(''), 'html',stamp);
+ record.originalSources=[{url:f.translated,method:'credit_original_label',quote:'Original Article'}];
+ f.src.set(zh.id,{record,lastAttempt:{status:'success',at:stamp}});
+ const b=buildBoard(f.catalogs,f.src);
+ assert.equal(find(b,f.translated)[14][0],find(b,f.original)[14][0],
+  'direct native-original work must remain intact');
+ assert.notEqual(find(b,f.translated)[14][0],find(b,f.other)[14][0]);
+ // Future two-hop support must be proven across branch classification and
+ // component collisions: do not silently join ZH with ES merely by URL chain.
+ assert(!b.workIdentityProofs.some(p=>p.method==='explicit_transitive_scp_original_credit'));
+});
 test('nonstandard namespace paths retain historical identities rather than silently moving',()=>{
  const original=en+'scp-002',translated='https://scp-nd.wikidot.com/sv:scp-002';
  const src=index(record(translated,'',[original]));
