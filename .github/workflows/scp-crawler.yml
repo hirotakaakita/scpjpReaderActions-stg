@@ -2,7 +2,8 @@ name: SCP Crawler STG
 
 on:
   schedule:
-    - cron: '0 0 * * 0'
+    # Friday 00:00 UTC (09:00 JST); publish before Saturday notifications.
+    - cron: '0 0 * * 5'
   workflow_dispatch:
     inputs:
       repair_excerpts_only:
