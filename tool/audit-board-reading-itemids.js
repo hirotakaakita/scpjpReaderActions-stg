@@ -58,6 +58,16 @@ function run(input,out){
  const moved=csvRead(fs.readFileSync(path.join(input,'moved-page-owners.csv'),'utf8'));
  const catalogs=loadCatalogs(path.resolve(__dirname,'../local-data'));
  const result=audit(catalogs,board,moved);
+ const {board:published}=require('./preview-research-board-origin-fix')
+  .loadPublished(path.resolve(__dirname,'../local-data'));
+ const baseline=audit(catalogs,published,[]);
+ const oldCollisions=new Set(baseline.collisions.map(x=>x.itemId));
+ const nowCollisions=new Set(result.collisions.map(x=>x.itemId));
+ const introduced=result.collisions.filter(x=>!oldCollisions.has(x.itemId));
+ const resolved=baseline.collisions.filter(x=>!nowCollisions.has(x.itemId));
+ result.summary.publishedRawItemIdCollisions=baseline.summary.globalAmbiguousItemIds;
+ result.summary.newlyAmbiguousRawItemIds=introduced.length;
+ result.summary.resolvedAmbiguousRawItemIds=resolved.length;
  assert.equal(result.summary.foundMovedUrls,moved.length,
   'Moved source article missing from the same catalog snapshot');
  fs.mkdirSync(out,{recursive:true});
@@ -66,6 +76,10 @@ function run(input,out){
   ['url','language','rawItemId','pageType','title','previousWork','nextWork',
    'rawItemIdIsAmbiguous','workCountForItemId','conflictingWorks','otherCatalogPages']));
  fs.writeFileSync(path.join(out,'AMBIGUOUS_ITEMIDS_ALL.csv'),csvWrite(result.collisions,
+  ['itemId','workCount','catalogRows','workIds','samplePages']));
+ fs.writeFileSync(path.join(out,'NEWLY_AMBIGUOUS_ITEMIDS.csv'),csvWrite(introduced,
+  ['itemId','workCount','catalogRows','workIds','samplePages']));
+ fs.writeFileSync(path.join(out,'RESOLVED_AMBIGUOUS_ITEMIDS.csv'),csvWrite(resolved,
   ['itemId','workCount','catalogRows','workIds','samplePages']));
  const s=result.summary;
  fs.writeFileSync(path.join(out,'ITEMID_COMPAT.md'),[
@@ -76,6 +90,9 @@ function run(input,out){
   '| Catalog page URLs | '+s.knownArticleUrls+' |',
   '| Distinct raw itemIds | '+s.globalRawItemIds+' |',
   '| Raw itemIds associated with multiple graph works | '+s.globalAmbiguousItemIds+' |',
+  '| Previous published raw itemIds spanning multiple works | '+s.publishedRawItemIdCollisions+' |',
+  '| Newly ambiguous raw itemIds in this fix | '+s.newlyAmbiguousRawItemIds+' |',
+  '| Previously ambiguous raw itemIds resolved by this fix | '+s.resolvedAmbiguousRawItemIds+' |',
   '| Moved graph page URLs analyzed | '+s.foundMovedUrls+' |',
   '| Catalog rows associated with these moved pages | '+s.movedCatalogRows+' |',
   '| Distinct itemIds on moved pages | '+s.affectedRawItemIds+' |',
