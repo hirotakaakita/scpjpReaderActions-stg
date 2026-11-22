@@ -50,10 +50,17 @@ function validate(root = path.join(__dirname, '..')) {
     return p?[[p.id,{...p,siteBranch:v[0],branch:node[8],pageType:node[12],kindIndex:node[3]}]]:[];
   })));
   const scpOwners=new Map();
+  const inheritedOrigins=new Map((board.workIdentityProofs||[])
+    .filter(p=>p.method==='explicit_transitive_scp_original_credit')
+    .map(p=>[p.source,p.target]));
   for(const node of board.nodes)if([0,8,9].includes(node[3])&&node[12])for(const version of node[13]){
     const page=pageMetadata.get(normalizePage(version[1])?.id);
     const exactOriginal=verifiedScpOriginal(page,pageMetadata,sources);
-    const key=scpIdentityKey(exactOriginal&&scpIdentityKey(exactOriginal)!==scpIdentityKey(page)?exactOriginal:page);
+    const transitiveTarget=inheritedOrigins.get(version[1]);
+    const inherited=transitiveTarget&&pageMetadata.get(normalizePage(transitiveTarget)?.id);
+    if(transitiveTarget&&!inherited)throw Error('Missing validated native original target');
+    const key=scpIdentityKey(inherited||
+      (exactOriginal&&scpIdentityKey(exactOriginal)!==scpIdentityKey(page)?exactOriginal:page));
     const owner=scpOwners.get(key);
     if(owner&&owner!==node[14][0])throw Error('Duplicate verified SCP identity: '+key.replaceAll('\0',' / '));
     scpOwners.set(key,node[14][0]);
