@@ -11,6 +11,9 @@ function nativeBranch(page) {
 }
 function verifiedScpOriginal(page, pagesById, sources) {
   if(!page||![0,8,9].includes(page.kindIndex)||!page.pageType||!page.id)return null;
+  // Namespaces (sv:scp-002, draft:scp-...) and nonstandard slugs have
+  // existing distinct ledger identities. Do not migrate them implicitly.
+  if(!/^scp-(?:[a-z]{2,5}-)?\d+(?:-[\p{L}\p{N}_-]+)?$/u.test(page.slug))return null;
   const state=sources?.get(page.id),record=state?.record;
   if(!record || ['unavailable','not_found','not_article'].includes(state?.lastAttempt?.status))return null;
   const claims=(record.originalSources||[]).filter(x=>x.method==='credit_original_label');
