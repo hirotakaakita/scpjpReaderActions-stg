@@ -1,0 +1,42 @@
+name: Research board transitive-credit experiment
+on:
+  push:
+    branches: [experiment/research-board-transitive-credit-20261122]
+    paths:
+      - 'research-board/**'
+      - 'tool/preview-research-board-origin-fix.js'
+      - 'test/research-board-transitive-original.test.js'
+      - '.github/workflows/research-board-transitive-preview.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: research-board-transitive-experiment-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  dry-run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NODE_OPTIONS: --max-old-space-size=5500
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Prove both hops and deny ambiguous/colliding credits
+        run: node --test test/research-board-transitive-original.test.js test/research-board-explicit-origin.test.js
+      - name: Execute existing full unit suite
+        run: node --test
+      - name: Isolated full catalog rebuild and comparison
+        run: node tool/preview-research-board-origin-fix.js transitive-preview
+      - name: Preserve all artifacts, even if validation fails
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: research-board-transitive-preview-${{ github.run_id }}
+          path: transitive-preview/
+          retention-days: 21
+          if-no-files-found: warn
