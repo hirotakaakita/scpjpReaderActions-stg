@@ -5,7 +5,7 @@ const os = require('node:os');
 const path = require('node:path');
 const zlib = require('node:zlib');
 const crypto = require('node:crypto');
-const { mobileCatalog, generateMobileCatalogs, generateMobileV3Catalogs } = require('../mobile-catalog');
+const { mobileCatalog, generateMobileCatalogs, generateMobileV3Catalogs, validateTagLabels } = require('../mobile-catalog');
 
 function catalog() {
   return { language: 'jp', timestamp: '2026-11-03T00:00:00Z', totalCount: 1,
@@ -61,6 +61,14 @@ test('delivery projection preserves reader fields without mutating crawler state
   assert.equal(mobile.statistics, undefined);
   assert.throws(() => mobileCatalog({ ...source, totalCount: 2 }, 'jp'));
   assert.throws(() => mobileCatalog({ ...source, data: [source.data[0], source.data[0]], totalCount: 2 }, 'jp'));
+});
+
+test('v3 delivery validation rejects tags that still lack display labels after restoration', () => {
+  for (const tag of ['humanoid', { id: 'humanoid' }, { id: 'humanoid', label: ' ' }]) {
+    const source = catalog();
+    source.data[0].tags = [tag];
+    assert.throws(() => validateTagLabels(source, 'jp'), /Missing localized tag label/);
+  }
 });
 
 test('gzip manifest is deterministic, verifiable and leaves legacy files byte-identical', t => {

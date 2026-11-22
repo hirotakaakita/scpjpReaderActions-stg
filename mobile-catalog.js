@@ -39,6 +39,16 @@ function mobileCatalog(source, language) {
   return { schemaVersion: 1, language, timestamp: source.timestamp, totalCount: data.length, data };
 }
 
+function validateTagLabels(catalog, language) {
+  for (const article of catalog.data) {
+    if ((article.tags || []).some(tag =>
+      !tag || typeof tag.id !== 'string' || !tag.id.trim() ||
+      typeof tag.label !== 'string' || !tag.label.trim())) {
+      throw new Error(`Missing localized tag label: ${language}/${article.itemId}`);
+    }
+  }
+}
+
 function generateCatalogChannel(input, output, includeAdditional, sourceDirectory = 'related-documents', enrichTranslations = true, normalizeSeries = false) {
   const reports = [];
   const additionalFile = path.join(input, sourceDirectory, 'catalog.json');
@@ -108,6 +118,7 @@ function generateCatalogChannel(input, output, includeAdditional, sourceDirector
       ...reclassifyScpArticle(row, reservedByLanguage.get(language)),
       tags:restoreTagLabels(row.tags || [], language, dictionary, tagIndex, row.tagLabels),
     }));
+    if (includeAdditional && enrichTranslations) validateTagLabels(delivery, language);
     if(includeAdditional&&enrichTranslations)delivery.data=require('./article-metadata').deduplicateReclassifiedArticles(delivery.data);
     if (includeAdditional && enrichTranslations) for (const row of delivery.data) {
       row.translatedLanguages = [...new Set([
@@ -191,4 +202,4 @@ if (require.main === module) {
   const researchBoard = require('./research-board/catalog').generateResearchBoard(input, path.join(path.dirname(output || path.join(input, 'mobile-v1')), 'mobile-v3'));
   console.log(JSON.stringify({catalogs, researchBoard}, null, 2));
 }
-module.exports = { mobileCatalog, generateMobileCatalogs, generateMobileV3Catalogs, normalizedSourceListing };
+module.exports = { mobileCatalog, generateMobileCatalogs, generateMobileV3Catalogs, normalizedSourceListing, validateTagLabels };
