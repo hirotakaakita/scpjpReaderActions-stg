@@ -27,4 +27,26 @@ function verifiedScpOriginal(page, pagesById, sources) {
      original.kindIndex!==page.kindIndex) return null;
   return original;
 }
-module.exports={nativeBranch,verifiedScpOriginal};
+
+// Follow exactly two publisher-credit hops only when the intermediate
+// article is itself a proven translation of an extant native SCP. Restrict
+// the first hop to the same delivery slug and the branch named by that
+// intermediate site's publisher, never arbitrary body links.
+function verifiedTransitiveScpOriginal(page,pagesById,sources){
+ if(!page||![0,8,9].includes(page.kindIndex)||!page.id||!page.pageType||
+    !/^scp-(?:[a-z]{2,5}-)?\d+(?:-[\p{L}\p{N}_-]+)?$/u.test(page.slug))return null;
+ const state=sources.get(page.id),record=state?.record;
+ if(!record||['unavailable','not_found','not_article'].includes(state?.lastAttempt?.status))return null;
+ const credits=(record.originalSources||[]).filter(x=>x.method==='credit_original_label');
+ const urls=[...new Set(credits.map(x=>originalPage(x.url)?.url).filter(Boolean))];
+ if(!credits.length||credits.some(x=>!originalPage(x.url))||urls.length!==1)return null;
+ const intermediateUrl=normalizePage(urls[0]),intermediate=intermediateUrl&&pagesById.get(intermediateUrl.id);
+ if(!intermediate||intermediate.id===page.id||nativeBranch(intermediate)||
+    intermediate.siteBranch===page.siteBranch||
+    intermediate.siteBranch!==page.branch||intermediate.slug!==page.slug||
+    intermediate.kindIndex!==page.kindIndex)return null;
+ const original=verifiedScpOriginal(intermediate,pagesById,sources);
+ if(!original||original.id===page.id||original.siteBranch===page.siteBranch)return null;
+ return {original,intermediate};
+}
+module.exports={nativeBranch,verifiedScpOriginal,verifiedTransitiveScpOriginal};
