@@ -31,6 +31,22 @@ function validateIdentityProofs(board,sources){
      throw Error('Unproven exact original SCP credit');
    }
   }
+  if(proof.method==='explicit_transitive_scp_original_credit'){
+    const a=normalizePage(proof.source),b=normalizePage(proof.target);
+    const src=record(proof.source);
+    const first=(src?.originalSources||[]).filter(x=>x.method==='credit_original_label');
+    const firstUrls=[...new Set(first.map(x=>originalPage(x.url)?.url).filter(Boolean))];
+    if(!a||!b||!first.length||firstUrls.length!==1||first.some(x=>!originalPage(x.url)))
+      throw Error('Ambiguous first-hop SCP original');
+    const via=normalizePage(firstUrls[0]),intermediate=via&&record(via.url);
+    const second=(intermediate?.originalSources||[]).filter(x=>x.method==='credit_original_label');
+    const secondUrls=[...new Set(second.map(x=>originalPage(x.url)?.url).filter(Boolean))];
+    if(!via||via.slug!==a.slug||via.host===a.host||via.host===b.host||
+       !second.length||secondUrls.length!==1||secondUrls[0]!==b.url||
+       second.some(x=>!originalPage(x.url))||
+       owners.get(proof.source)!==owners.get(via.url)||owners.get(via.url)!==owners.get(proof.target))
+      throw Error('Unproven two-hop original SCP credit');
+  }
   if(proof.method==='interwiki_original_metadata'){
    const r=record(proof.source);
    if(r?.originalSources?.length||original(proof.source,true)!==originalPage(proof.target)?.url)throw Error('Unproven interwiki original identity');
