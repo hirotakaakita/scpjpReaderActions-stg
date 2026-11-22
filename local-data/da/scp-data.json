@@ -1,8 +1,8 @@
 {
   "totalCount": 7,
   "language": "da",
-  "timestamp": "2026-11-13T17:59:08.589Z",
-  "duration": 5,
+  "timestamp": "2026-11-22T14:12:40.130Z",
+  "duration": 6,
   "status": "completed",
   "statistics": {
     "translated": 7,
@@ -28,15 +28,15 @@
       "extractedFrom": "da:scp-series-nd",
       "pageType": "scp-series-nd",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:27:48.449Z",
+      "lastUpdated": "2026-11-22T09:53:02.118Z",
       "createdAt": "2026-11-10T00:33:40.457Z",
       "translatedLanguages": [
         "da",
         "no",
         "sv"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.346Z",
-      "descriptionContentSha256": "68afb2896aaa1234fd1010190359ed59a45f263764d396f48baa342934ce38d9"
+      "descriptionCheckedAt": "2026-11-22T13:55:27.640Z",
+      "descriptionContentSha256": "542ca9b5eb8416d01e097e114bd0eef8e0474c2899bdb765b852fee202ea59eb"
     },
     {
       "itemId": "scp-series-nd-004",
@@ -50,9 +50,18 @@
       "descriptionExcerpt": "SCP-004-ND er en r\u00f8d boks. P\u00e5 overfladen af SCP-004-ND er en s\u00e6tning skrevet i blod:\u00c5ben mig ikke.N\u00e5r du ser SCP-004-ND-overfladen, fors\u00f8ger den at \u00e5bne SCP-004-ND. N\u00e5r du har \u00e5bnet SCP-004-ND, d\u00f8r personen direkte. P\u00e5 grund af dette ved vi ikke, hvad der er inde i SCP-004-ND, og ingen t\u00f8r at se p\u00e5 det.\nSCP-004-ND \u00e6ndrer sin position kl. 4:00 p\u00e5 fredag. Det vil teleportere fra SCP-004-ND kabinettet til gulvet, og det er umuligt at se SCP-004-ND. Ideen om at oprette et kamera i kabinettet SCP -00",
       "descriptionVersion": 3,
       "tags": [
-        "dansk",
-        "euclid",
-        "scp-nd-da"
+        {
+          "id": "dansk",
+          "label": "dansk"
+        },
+        {
+          "id": "euclid",
+          "label": "euclid"
+        },
+        {
+          "id": "scp-nd-da",
+          "label": "scp-nd-da"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -60,13 +69,13 @@
       "extractedFrom": "da:scp-series-nd",
       "pageType": "scp-series-nd",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:27:48.449Z",
+      "lastUpdated": "2026-11-22T09:53:02.118Z",
       "createdAt": "2026-11-10T00:33:40.457Z",
       "translatedLanguages": [
         "da"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.346Z",
-      "descriptionContentSha256": "646bc3aa097905b66620d7662cd84f95554500daae9eae2996f375e4cace953d"
+      "descriptionCheckedAt": "2026-11-22T13:55:27.640Z",
+      "descriptionContentSha256": "b80faaf025c9b6a49ebfade8609d93e01dfc6be45c889c192c9f09839ebc06a3"
     },
     {
       "itemId": "scp-series-001",
@@ -86,7 +95,7 @@
       "extractedFrom": "da:scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:27:50.335Z",
+      "lastUpdated": "2026-11-22T09:53:04.294Z",
       "createdAt": "2026-11-10T00:33:42.801Z",
       "translatedLanguages": [
         "jp",
@@ -117,8 +126,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.346Z",
-      "descriptionContentSha256": "2b1995930c3eb9e92a979aeee10cc318962eb4c1c473571ed39e60cdd2006605"
+      "descriptionCheckedAt": "2026-11-22T13:55:27.640Z",
+      "descriptionContentSha256": "edd8f560b84020bfddf86ea1bd24ef5534236aba454566df0914023461d2f505"
     },
     {
       "itemId": "scp-series-002",
@@ -138,7 +147,7 @@
       "extractedFrom": "da:scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:27:50.335Z",
+      "lastUpdated": "2026-11-22T09:53:04.294Z",
       "createdAt": "2026-11-10T00:33:42.801Z",
       "translatedLanguages": [
         "jp",
@@ -169,8 +178,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.346Z",
-      "descriptionContentSha256": "7f7f3f3157335932e9d35dd990ddc67847866c710dfefd4054096ffb9f53fc25"
+      "descriptionCheckedAt": "2026-11-22T13:55:27.640Z",
+      "descriptionContentSha256": "1ae52af3f0659f5c18cf618e32ee805d8e5641024927bc021992f367c49a3672"
     },
     {
       "itemId": "scp-series-003",
@@ -190,7 +199,7 @@
       "extractedFrom": "da:scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:27:50.335Z",
+      "lastUpdated": "2026-11-22T09:53:04.294Z",
       "createdAt": "2026-11-10T00:33:42.801Z",
       "translatedLanguages": [
         "jp",
@@ -220,8 +229,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.346Z",
-      "descriptionContentSha256": "9f024ad61c053e2780bcd2ae7808ded270d8a37d71f4821e5d4d6f9691988d67"
+      "descriptionCheckedAt": "2026-11-22T13:55:27.640Z",
+      "descriptionContentSha256": "d3e38fc8252779835a2906e52296de9f9aa1aefa4619707452c509ee41163f09"
     },
     {
       "itemId": "scp-series-037",
@@ -241,7 +250,7 @@
       "extractedFrom": "da:scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:27:50.335Z",
+      "lastUpdated": "2026-11-22T09:53:04.294Z",
       "createdAt": "2026-11-10T00:33:42.801Z",
       "translatedLanguages": [
         "jp",
@@ -266,8 +275,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.346Z",
-      "descriptionContentSha256": "18f3e4d10dd12d4a276eb9235c083ccc0d20186aad1731bc28c98d3432aec582"
+      "descriptionCheckedAt": "2026-11-22T13:55:27.640Z",
+      "descriptionContentSha256": "ed43e1a024aaa36975b88f4f34624eee0e2fb34a52b7888a47ac53e7f24bfc7a"
     },
     {
       "itemId": "scp-series-173",
@@ -287,7 +296,7 @@
       "extractedFrom": "da:scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:27:50.335Z",
+      "lastUpdated": "2026-11-22T09:53:04.294Z",
       "createdAt": "2026-11-10T00:33:42.801Z",
       "translatedLanguages": [
         "jp",
@@ -322,8 +331,8 @@
         "tok",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.346Z",
-      "descriptionContentSha256": "bfc3e86a7727cca5d19bfc2689144ea72f59c5b489383b07fcbac07e4533043c"
+      "descriptionCheckedAt": "2026-11-22T13:55:27.640Z",
+      "descriptionContentSha256": "609d06f23ef4db816951215fb7f3eb01b25476799b86fb4315e7f2ca04cdc8e7"
     }
   ],
   "tagSchemaVersion": 2
