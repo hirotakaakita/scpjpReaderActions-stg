@@ -339,4 +339,4 @@ async function run(options=parseArgs()){
 }
 if(require.main===module)run().then(summary=>console.log(JSON.stringify(summary,null,2)))
   .catch(e=>{console.error(e);process.exitCode=1;});
-module.exports={loadBoard,loadCoverage,buildIndex,allocate,samplePages,compare,parseArgs,csv,run};
+module.exports={loadBoard,loadCoverage,buildIndex,allocate,samplePages,compare,parseArgs,csv,networkCapture,run};
