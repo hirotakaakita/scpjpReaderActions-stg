@@ -1,0 +1,37 @@
+name: Research board identity semantic-review
+on:
+  push:
+    branches: [fix/research-board-explicit-origin-identity-20261122]
+    paths:
+      - 'tool/review-research-board-origin-diff.js'
+      - '.github/workflows/research-board-semantic-review.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Download verified immutable full-board preview artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: research-board-original-preview-45022044107
+          run-id: 45022044107
+          github-token: ${{ github.token }}
+          path: original-preview-input
+      - name: Review all changed work ownership and edge changes
+        run: node tool/review-research-board-origin-diff.js original-preview-input original-preview-semantic
+      - name: Preserve semantic evidence
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: research-board-semantic-review-${{ github.run_id }}
+          path: original-preview-semantic/
+          retention-days: 21
+          if-no-files-found: warn
