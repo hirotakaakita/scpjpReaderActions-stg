@@ -2,7 +2,7 @@
 const {normalizePage}=require('./extract');
 const {originalPage}=require('../origin-provenance');
 const {publisherOriginTags}=require('../catalog-origin');
-const {verifiedScpOriginal}=require('./explicit-scp-origin');
+const {verifiedScpOriginal,verifiedTransitiveScpOriginal}=require('./explicit-scp-origin');
 const site=code=>code==='zh-tr'?'zh':code;
 const native=p=>site(p.siteBranch)===p.branch||(p.siteBranch==='cs'&&p.branch==='sk');
 const generic=/^(?:main|index|home|start|about|groups-of-interest|foundation-tales|canon-hub|series-archive|personnel-and-character-dossier|task-forces|secure-facilities-locations|goi-formats)(?:-[a-z]{2})?$/;
@@ -78,13 +78,16 @@ function translationIdentities(pages,sources){
  // This is evidence-backed, unlike a matching slug or an ordinary hyperlink.
  const explicitNumberOverrides=new Map();
  for(const p of pages){
-   const original=verifiedScpOriginal(p,byId,sources);
+   const direct=verifiedScpOriginal(p,byId,sources);
+   const transitive=direct?null:verifiedTransitiveScpOriginal(p,byId,sources);
+   const original=direct||transitive?.original;
    if(!original||scpIdentityKey(original)===scpIdentityKey(p))continue;
    const r=sources.get(p.id).record;
    explicitNumberOverrides.set(p.id,original);
    candidates.push({source:p.id,target:original.id,type:'translation_assertion',
-     proof:[p.url,original.url,'verified_original_article',r.contentSha256,'',
-       'explicit_scp_original_credit',r.checkedAt]});
+     proof:[p.url,original.url,transitive?'via '+transitive.intermediate.url:'verified_original_article',
+       r.contentSha256,'',transitive?'explicit_transitive_scp_original_credit':
+         'explicit_scp_original_credit',r.checkedAt]});
  }
  const scpGroups=new Map();
  for(const p of pages)if(!explicitNumberOverrides.has(p.id)&&[0,8,9].includes(p.kindIndex)&&p.branch!=='other'&&/^(?:scp-series(?:-[a-z-]+)?|joke-scps(?:-[a-z-]+)?|scp-(?:[a-z-]+-)?ex)$/.test(p.pageType||'')){
