@@ -4,6 +4,8 @@ on:
     branches: [fix/research-board-explicit-origin-identity-20261122]
     paths:
       - 'tool/review-research-board-origin-diff.js'
+      - 'tool/audit-board-reading-itemids.js'
+      - 'test/research-board-reading-itemid.test.js'
       - '.github/workflows/research-board-semantic-review.yml'
   workflow_dispatch:
 permissions:
@@ -25,8 +27,12 @@ jobs:
           run-id: 45022044107
           github-token: ${{ github.token }}
           path: original-preview-input
+      - name: Verify reading-itemId compatibility fixtures
+        run: node --test test/research-board-reading-itemid.test.js
       - name: Review all changed work ownership and edge changes
         run: node tool/review-research-board-origin-diff.js original-preview-input original-preview-semantic
+      - name: Audit raw mobile itemId collisions across the exact same catalog snapshot
+        run: node tool/audit-board-reading-itemids.js original-preview-input original-preview-semantic/itemid-compat
       - name: Preserve semantic evidence
         if: always()
         uses: actions/upload-artifact@v7
