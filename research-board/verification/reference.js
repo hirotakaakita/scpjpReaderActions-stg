@@ -91,6 +91,34 @@ function resultFromRaw(raw, source, workByUrl, supportedHosts, warnings) {
   }
   return {links,all,counts,warnings};
 }
+// These are independently recognized publisher UI blocks. We do not import
+// chapter-navigation.js: independent extraction must not share its bug surface.
+function isChapterBar(anchor) {
+  const parent=anchor.closest('p');
+  if(!parent)return false;
+  const links=[...parent.querySelectorAll('a[href]')];
+  if(links.length<2||links.length>5)return false;
+  const clone=parent.cloneNode(true);
+  for(const link of clone.querySelectorAll('a[href]'))link.replaceWith('\uFFFC');
+  const flat=clone.textContent.normalize('NFKC').replace(/\s+/g,'').trim();
+  if(!/^[«‹<]/.test(flat)||!/[»›>]$/.test(flat))return false;
+  if(!flat.includes('|'))return false;
+  return /^[«»‹›<>|\/.,:;·•\-\u2013\u2014\u2190\u2192\uFFFC]+$/u.test(flat);
+}
+function isBreadcrumbBanner(anchor,title) {
+  const p=anchor.closest('p');
+  if(!p||p.querySelectorAll('a[href]').length!==1||!title)return false;
+  const text=p.textContent.replace(/\s+/g,' ').trim(),label=anchor.textContent.replace(/\s+/g,' ').trim();
+  return label.length>0&&text.startsWith(label+' » ')&&
+    text.slice(label.length+3).trim().toLowerCase()===title.trim().toLowerCase();
+}
+function isAttributionParagraph(anchor) {
+  const p=anchor.closest('p');
+  if(!p)return false;
+  const text=p.textContent.replace(/\s+/g,' ').trim();
+  return /(?:原文來源|original source|original article)/i.test(text) &&
+    /(?:CC[\s-]*BY[\s-]*SA|授權方式|license)/i.test(text);
+}
 function fromHtml(html,source,workByUrl,supportedHosts) {
   const doc = new JSDOM(html,{url:source,virtualConsole:new VirtualConsole()});
   try {
@@ -107,6 +135,9 @@ function fromHtml(html,source,workByUrl,supportedHosts) {
       else if (a.matches('[rel~="alternate"],[data-translation-source]')) skip='translation_metadata';
       else if (a.closest(AUX_SELECTORS) || [...a.parentElement?.classList||[]].some(c=>/^(licensebox|creditRate)/i.test(c))) skip='auxiliary_content';
       else if (isImageDirectoryMenu(a,root)) skip='image_directory_navigation';
+      else if (isChapterBar(a)) skip='chapter_navigation';
+      else if (isBreadcrumbBanner(a,title)) skip='breadcrumb_navigation';
+      else if (isAttributionParagraph(a)) skip='source_credit_metadata';
       raw.push({
         href,quote:(a.textContent||'').replace(/\s+/g,' ').trim().slice(0,180),
         selector:selectorFor(a),sourceElement:a.outerHTML.slice(0,450),skip
@@ -158,4 +189,4 @@ function fromFtml(sourceText,source,workByUrl,supportedHosts) {
   }
   return resultFromRaw(raw,source,workByUrl,supportedHosts,warnings);
 }
-module.exports={normalizedUrl,fromHtml,fromFtml,resultFromRaw,isDirectoryIcon,isImageDirectoryMenu};
+module.exports={normalizedUrl,fromHtml,fromFtml,resultFromRaw,isDirectoryIcon,isImageDirectoryMenu,isChapterBar,isBreadcrumbBanner,isAttributionParagraph};
