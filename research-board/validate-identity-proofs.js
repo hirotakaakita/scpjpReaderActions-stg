@@ -45,7 +45,7 @@ function validateIdentityProofs(board,sources){
        !second.length||secondUrls.length!==1||secondUrls[0]!==b.url||
        second.some(x=>!originalPage(x.url))||
        owners.get(proof.source)!==owners.get(via.url)||owners.get(via.url)!==owners.get(proof.target))
-      throw Error('Unproven two-hop original SCP credit');
+      throw Error('Unproven two-hop original SCP credit: '+proof.source+' via '+(via?.url||'missing')+' to '+proof.target+'; claimed '+(secondUrls[0]||'none')+'; owners '+[owners.get(proof.source)?.[14]?.[0],owners.get(via?.url)?.[14]?.[0],owners.get(proof.target)?.[14]?.[0]].join(' / '));
   }
   if(proof.method==='interwiki_original_metadata'){
    const r=record(proof.source);

@@ -203,6 +203,8 @@ function run(output){
  'A credit discrepancy is a review candidate, not automatically a confirmed defect.',
  ''];
  fs.writeFileSync(path.join(output,'REVIEW.md'),md.join('\n'));
+ // Retain the preview for offline diagnosis when a read-only safety check fails.
+ fs.writeFileSync(path.join(output,'preview-board.json.gz'),zlib.gzipSync(JSON.stringify(after),{level:6}));
  try {
   checkBoard(before,after,sources);
   summary.validated=true;emitJson('SUMMARY.json',summary);
