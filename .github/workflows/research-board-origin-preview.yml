@@ -1,0 +1,43 @@
+name: Research board original identity dry run
+on:
+  push:
+    branches:
+      - fix/research-board-explicit-origin-identity-20261122
+    paths:
+      - 'research-board/**'
+      - 'tool/preview-research-board-origin-fix.js'
+      - 'test/research-board-explicit-origin.test.js'
+      - '.github/workflows/research-board-origin-preview.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: research-board-original-preview-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NODE_OPTIONS: --max-old-space-size=5500
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Explicit original credit regression suite
+        run: node --test test/research-board-explicit-origin.test.js
+      - name: Full test suite
+        run: node --test
+      - name: Rebuild full board in memory, validate and report diff (NO PUBLISH)
+        run: node tool/preview-research-board-origin-fix.js research-board-origin-preview
+      - name: Upload preview, exact graph diff and original-credit review
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: research-board-original-preview-${{ github.run_id }}
+          path: research-board-origin-preview/
+          retention-days: 14
+          if-no-files-found: warn
