@@ -57,7 +57,18 @@ function collapseWorks(pages, candidates, catalogEntries, sources = new Map()) {
   for (const page of pages) if (!pageKeys.has(page.id)) {
     const known = aliases.get(signature(page));
     if (!page.classificationSourceId && [0,8,9].includes(page.kindIndex) && page.branch !== 'other') {
-      if (known?.size) pageKeys.set(page.id, [...known].sort()[0]);
+      if (originalOverrides.has(page.id)) {
+        // Keep this delivery page separate until its exact original-credit
+        // assertion is validated and recorded as a work-identity proof.
+        // Reusing the original's alias here would silently join without proof.
+        const e=(eligibleByPage.get(page.id)||[])[0];
+        const key=(e?`catalog:${e.pageType}:${e.itemId}`:page.id)+
+          '@original-'+digest(page.id).slice(0,12);
+        ledger.set(key,{articleId:e?.itemId||'',articleNumber:e?.articleNumber,
+          pageType:page.pageType,branch:page.branch});
+        pageKeys.set(page.id,key);extraAliases.set(page.id,[key]);
+      }
+      else if (known?.size) pageKeys.set(page.id, [...known].sort()[0]);
       else if((eligibleByPage.get(page.id)||[]).length){
         const e=eligibleByPage.get(page.id)[0];
         let key=`catalog:${page.pageType}:${e.itemId}`;
