@@ -1,0 +1,29 @@
+name: Verify public STG board delivery and compatibility
+on:
+  push:
+    branches: [audit/postmerge-delivery-and-origin-20261123]
+    paths:
+      - 'tool/verify-research-board-public-delivery.js'
+      - '.github/workflows/research-board-public-delivery.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  public-cdn:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Exact STG manifest URL and board binary SHA-256
+        run: node tool/verify-research-board-public-delivery.js delivery-check
+      - name: Preserve remote HTTP, production isolation and board checksum evidence
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: staging-board-remote-delivery-${{ github.run_id }}
+          path: delivery-check/
+          retention-days: 21
+          if-no-files-found: warn
