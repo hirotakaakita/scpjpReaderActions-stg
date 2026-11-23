@@ -7,17 +7,43 @@ const { branchForPageType } = require('./classification');
 const {CATEGORY_ORDER, KIND_BY_CATEGORY, homeCategory} = require('./article-categories');
 const {scpIdentityKey}=require('./translation-identities');
 const {verifiedScpOriginal}=require('./explicit-scp-origin');
-const {originalPage}=require('../origin-provenance');
-function validate(root = path.join(__dirname, '..')) {
-  const input = path.join(root, 'local-data'), directory = path.join(input, 'mobile-v3/research-board');
-  const manifest = JSON.parse(fs.readFileSync(path.join(directory, 'manifest.json')));
-  if (manifest.fileName !== `board-${manifest.sha256}.json.gz`) throw Error('Invalid board pointer');
-  const bytes = fs.readFileSync(path.join(directory, manifest.fileName));
-  if (bytes.length !== manifest.bytes || digest(bytes) !== manifest.sha256) throw Error('Board checksum mismatch');
-  const decoded = zlib.gunzipSync(bytes);
-  if (decoded.length !== manifest.decodedBytes) throw Error('Board decoded size mismatch');
-  const board = JSON.parse(decoded);
-  if (board.revision !== manifest.revision || board.nodes.length !== manifest.nodeCount || board.edges.length !== manifest.edgeCount) throw Error('Board metadata mismatch');
+function validateScpIdentities(board, sources) {
+  const pages = new Map(), owners = new Map();
+  for (const node of board.nodes) for (const version of node[13]) {
+    const p = normalizePage(version[1]);
+    if (!p || pages.has(p.id)) throw Error('Invalid or duplicate source page: '+version[1]);
+    pages.set(p.id, {...p, siteBranch:version[0], branch:node[8], pageType:node[12], kindIndex:node[3]});
+    owners.set(p.id, node);
+  }
+  const proven = new Set((board.workIdentityProofs||[])
+    .filter(p=>p.method==='explicit_scp_original_credit').map(p=>p.source+'\0'+p.target));
+  const scpOwners = new Map();
+  for (const page of pages.values()) if ([0,8,9].includes(page.kindIndex) && page.pageType) {
+    const node = owners.get(page.id), original = verifiedScpOriginal(page, pages, sources);
+    let key = scpIdentityKey(page);
+    if (original && scpIdentityKey(original)!==key) {
+      const target = owners.get(original.id);
+      if (node===target) {
+        if (!proven.has(page.url+'\0'+original.url)) throw Error('Missing exact original SCP proof: '+page.url);
+        key = scpIdentityKey(original);
+      } else {
+        // A conflicting page already occupies the same publisher site in the
+        // original's component. The generator deliberately keeps this claim
+        // separate; it is not an accepted work-equivalence assertion.
+        const collision = target[13].some(v=>v[0]===page.siteBranch && normalizePage(v[1])?.id!==page.id);
+        if (!collision) throw Error('Verified original SCP left in another work: '+page.url);
+        key = 'protected_original_split\0'+page.id;
+      }
+    }
+    const owner = scpOwners.get(key);
+    if (owner && owner!==node[14][0]) throw Error('Duplicate verified SCP identity: '+key.replaceAll('\0',' / '));
+    scpOwners.set(key, node[14][0]);
+  }
+}
+
+// Both persisted publication validation and the isolated preview use these
+// same checks. Preview callers already built this board from the exact inputs.
+function validateBoard(board, catalogs, sources, {rebuild=true}={}) {
   if (board.overview.classification !== 'reading_record_page_type') throw Error('Missing ledger classification');
   if (board.schemaVersion !== 3 || board.overview.identity !== 'ledger_work') throw Error('Missing work identity');
   const workIds = new Set(), pageUrls = new Set(), aliases = new Set();
@@ -44,21 +70,7 @@ function validate(root = path.join(__dirname, '..')) {
   for(const node of board.nodes){
     if(node[14][2].length<1)throw Error('Work lost its original catalog identity');
   }
-  const sources=readSources(path.join(input,'research-board-sources'));
-  const pageMetadata=new Map(board.nodes.flatMap(node=>node[13].map(v=>{
-    const p=normalizePage(v[1]);
-    return p?[[p.id,{...p,siteBranch:v[0],branch:node[8],pageType:node[12],kindIndex:node[3]}]]:[];
-  })));
-  const scpOwners=new Map();
-  for(const node of board.nodes)if([0,8,9].includes(node[3])&&node[12])for(const version of node[13]){
-    const page=pageMetadata.get(normalizePage(version[1])?.id);
-    const exactOriginal=verifiedScpOriginal(page,pageMetadata,sources);
-    const key=scpIdentityKey(exactOriginal&&scpIdentityKey(exactOriginal)!==scpIdentityKey(page)?exactOriginal:page);
-    const owner=scpOwners.get(key);
-    if(owner&&owner!==node[14][0])throw Error('Duplicate verified SCP identity: '+key.replaceAll('\0',' / '));
-    scpOwners.set(key,node[14][0]);
-  }
-  const catalogs = loadCatalogs(input);
+  validateScpIdentities(board, sources);
   if (JSON.stringify(board.overview.categoryOrder) !== JSON.stringify(CATEGORY_ORDER)) throw Error('HOME category order mismatch');
   const catalogWorks = new Map();
   const catalogById=new Map();
@@ -109,9 +121,26 @@ function validate(root = path.join(__dirname, '..')) {
   }
   // Exercise the real generation path against committed evidence and catalogs.
   // This runs in the existing staging validation workflow without recrawling.
-  const rebuilt = buildBoard(catalogs, sources);
-  if (JSON.stringify(board) !== JSON.stringify(rebuilt)) throw Error('Published board does not match current crawler inputs');
-  console.log(JSON.stringify({ revision: board.revision, nodes: board.nodes.length, edges: board.edges.length, verified: true }));
+  if (rebuild) {
+    const rebuilt = buildBoard(catalogs, sources);
+    if (JSON.stringify(board) !== JSON.stringify(rebuilt)) throw Error('Published board does not match current crawler inputs');
+  }
+  return {revision:board.revision, nodes:board.nodes.length, edges:board.edges.length, verified:true};
+}
+
+function validate(root = path.join(__dirname, '..')) {
+  const input = path.join(root, 'local-data'), directory = path.join(input, 'mobile-v3/research-board');
+  const manifest = JSON.parse(fs.readFileSync(path.join(directory, 'manifest.json')));
+  if (manifest.fileName !== `board-${manifest.sha256}.json.gz`) throw Error('Invalid board pointer');
+  const bytes = fs.readFileSync(path.join(directory, manifest.fileName));
+  if (bytes.length !== manifest.bytes || digest(bytes) !== manifest.sha256) throw Error('Board checksum mismatch');
+  const decoded = zlib.gunzipSync(bytes);
+  if (decoded.length !== manifest.decodedBytes) throw Error('Board decoded size mismatch');
+  const board = JSON.parse(decoded);
+  if (board.revision !== manifest.revision || board.nodes.length !== manifest.nodeCount || board.edges.length !== manifest.edgeCount) throw Error('Board metadata mismatch');
+  const result = validateBoard(board, loadCatalogs(input), readSources(path.join(input, 'research-board-sources')));
+  console.log(JSON.stringify(result));
+  return result;
 }
 if (require.main === module) validate();
-module.exports = { validate };
+module.exports = { validate, validateBoard, validateScpIdentities };

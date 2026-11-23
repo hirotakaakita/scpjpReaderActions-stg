@@ -1,8 +1,11 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
+const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),zlib=require('node:zlib');
 const {buildBoard}=require('../research-board/catalog');
-const {makeRecord,normalizePage}=require('../research-board/extract');
+const {makeRecord,normalizePage,digest}=require('../research-board/extract');
 const {verifiedScpOriginal}=require('../research-board/explicit-scp-origin');
+const {validate,validateBoard,validateScpIdentities}=require('../research-board/validate');
+const {saveSources}=require('../research-board/source-store');
 const en='https://scp-wiki.wikidot.com/',es='https://lafundacionscp.wikidot.com/';
 const cn='https://scp-wiki-cn.wikidot.com/',jp='https://scp-jp.wikidot.com/';
 const stamp='2026-11-22T00:00:00Z';
@@ -50,6 +53,58 @@ test('the EN SCP-179 with verified original ES-026 never merges into native ES-1
     board.nodes[e[0]][14][0]===other[14][0]&&
     board.nodes[e[1]][14][0]===orig[14][0]),'references now correctly connect two different works');
  assert(!board.nodes.some(n=>n[13].length!==new Set(n[13].map(v=>v[1])).size));
+ assert.equal(validateBoard(board,f.catalogs,f.src).verified,true,
+   'the real validator must accept the generated identity and reference proofs');
+});
+
+test('the real validator accepts a protected same-site split without accepting the original claim',()=>{
+ const original='https://fondationscp.wikidot.com/scp-655-fr';
+ const existing=en+'scp-655-fr',conflict=en+'scp-705-fr';
+ const catalogs=[catalog('fr',[row(original,'scp-series-fr','scp-series-fr-655')]),
+   catalog('en',[row(existing,'scp-series-fr','scp-series-fr-655'),
+     row(conflict,'scp-series-fr','scp-series-fr-705')])];
+ const sources=index(record(original),record(existing),record(conflict,'',[original]));
+ const board=buildBoard(catalogs,sources);
+ assert.equal(find(board,original)[14][0],find(board,existing)[14][0]);
+ assert.notEqual(find(board,conflict)[14][0],find(board,original)[14][0]);
+ assert(board.identityReview.some(r=>r.url===conflict&&r.reason==='same_site_identity_collision'));
+ assert.equal(validateBoard(board,catalogs,sources).verified,true);
+});
+
+test('an original-number merge needs its exact proof and an isolated claim needs a real site collision',()=>{
+ const f=esCase(),board=buildBoard(f.catalogs,f.src);
+ const withoutProof=structuredClone(board);
+ withoutProof.workIdentityProofs=withoutProof.workIdentityProofs.filter(p=>p.method!=='explicit_scp_original_credit');
+ assert.throws(()=>validateBoard(withoutProof,f.catalogs,f.src),/Missing exact original SCP proof/);
+ const separate=structuredClone(board),original=find(separate,f.original);
+ const version=original[13].find(v=>v[1]===f.translated);
+ original[13]=original[13].filter(v=>v[1]!==f.translated);
+ const split=structuredClone(original);split[13]=[version];split[14][0]='isolated-without-collision';
+ separate.nodes.push(split);
+ assert.throws(()=>validateScpIdentities(separate,f.src),/Verified original SCP left in another work/);
+});
+
+test('persisted board validation checks the corrected graph, its source shards and its checksum',t=>{
+ const f=esCase(),board=buildBoard(f.catalogs,f.src);
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),'scp-origin-validation-'));
+ t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
+ const input=path.join(root,'local-data');
+ function writePayload(directory,prefix,value,extra={}){
+   fs.mkdirSync(directory,{recursive:true});
+   const json=Buffer.from(JSON.stringify(value)),bytes=zlib.gzipSync(json),sha256=digest(bytes);
+   const fileName=prefix+'-'+sha256+'.json.gz';
+   fs.writeFileSync(path.join(directory,fileName),bytes);
+   fs.writeFileSync(path.join(directory,'manifest.json'),JSON.stringify({fileName,sha256,
+     bytes:bytes.length,decodedBytes:json.length,...extra}));
+   return path.join(directory,fileName);
+ }
+ for(const c of f.catalogs)writePayload(path.join(input,'mobile-v3',c.language),'catalog',c);
+ saveSources(f.src,path.join(input,'research-board-sources'));
+ const payload=writePayload(path.join(input,'mobile-v3/research-board'),'board',board,
+   {revision:board.revision,nodeCount:board.nodes.length,edgeCount:board.edges.length});
+ assert.equal(validate(root).verified,true);
+ fs.appendFileSync(payload,'corrupted');
+ assert.throws(()=>validate(root),/Board checksum mismatch/);
 });
 test('EN SCP-179 has an exact cataloged native original, not an inferred numeric match',()=>{
  const f=esCase();

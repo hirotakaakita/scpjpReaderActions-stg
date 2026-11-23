@@ -6,9 +6,8 @@ const assert=require('node:assert/strict');
 const {buildBoard,loadCatalogs}=require('../research-board/catalog');
 const {readSources}=require('../research-board/source-store');
 const {importCatalogSources}=require('../research-board/catalog-sources');
-const {validateIdentityProofs}=require('../research-board/validate-identity-proofs');
+const {validateBoard}=require('../research-board/validate');
 const {originalPage}=require('../origin-provenance');
-const {normalizePage}=require('../research-board/extract');
 
 const root=path.resolve(__dirname,'..');
 function loadPublished(input) {
@@ -96,7 +95,8 @@ function csv(file,rows,fields){
  const q=x=>'"'+String(x??'').replace(/"/g,'""')+'"';
  fs.writeFileSync(file,[fields.map(q).join(','),...rows.map(x=>fields.map(f=>q(x[f])).join(','))].join('\n')+'\n');
 }
-function checkBoard(before,after,sources){
+function checkBoard(before,after,sources,catalogs){
+ validateBoard(after,catalogs,sources,{rebuild:false});
  const a=ownership(before),b=ownership(after);
  assert.equal(a.owners.size,b.owners.size,'No new/lost official catalog member URLs');
  for(const url of a.owners.keys())assert(b.owners.has(url),'Missing official catalog member '+url);
@@ -115,19 +115,6 @@ function checkBoard(before,after,sources){
   const owners=b.owners;
   for(const proof of board.workIdentityProofs||[])
    assert.equal(owners.get(proof.source),owners.get(proof.target),'Broken work identity proof '+proof.source);
-  validateIdentityProofs(board,sources);
-  for(const e of board.edges){
-   if(board.overview.types[e[2]]!=='references')continue;
-   const targetUrls=new Set(board.nodes[e[1]][13].map(v=>v[1]));
-   for(const id of e[4]){
-    const proof=board.proofs[id],source=normalizePage(proof[0]),r=sources.get(source?.id)?.record;
-    assert(r&&r.contentSha256===proof[3],'Reference proof lost stored source hash');
-    assert.equal(owners.get(proof[0]),board.nodes[e[0]][14][0],
-      'Reference proof source has wrong work');
-    assert((r.links||[]).some(link=>link.method==='body_hyperlink_v6'&&
-      targetUrls.has(normalizePage(link.target)?.url)),'Unproven reference edge');
-   }
-  }
  }
  function owner(url,graph){return ownership(graph).owners.get(url);}
  const en='https://scp-wiki.wikidot.com/scp-179';
@@ -204,7 +191,7 @@ function run(output){
  ''];
  fs.writeFileSync(path.join(output,'REVIEW.md'),md.join('\n'));
  try {
-  checkBoard(before,after,sources);
+  checkBoard(before,after,sources,catalogs);
   summary.validated=true;emitJson('SUMMARY.json',summary);
  } catch(e){
   summary.validated=false;summary.validationFailure=e.message;emitJson('SUMMARY.json',summary);

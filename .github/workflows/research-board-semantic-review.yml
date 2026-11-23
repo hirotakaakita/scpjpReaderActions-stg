@@ -1,48 +1,10 @@
 name: Research board identity semantic-review
 on:
-  push:
-    branches: [fix/research-board-explicit-origin-identity-20261122]
-    paths:
-      - 'tool/review-research-board-origin-diff.js'
-      - 'tool/audit-board-reading-itemids.js'
-      - 'tool/validate-board-article-resolver.js'
-      - 'test/research-board-reading-itemid.test.js'
-      - '.github/workflows/research-board-semantic-review.yml'
   workflow_dispatch:
 permissions:
   contents: read
-  actions: read
 jobs:
   review:
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v6
-        with:
-          node-version: '24'
-      - name: Install parser dependencies for original-source and catalog evidence
-        run: npm ci
-      - name: Download verified immutable full-board preview artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: research-board-original-preview-45022044107
-          run-id: 45022044107
-          github-token: ${{ github.token }}
-          path: original-preview-input
-      - name: Verify reading-itemId compatibility fixtures
-        run: node --test test/research-board-reading-itemid.test.js
-      - name: Review all changed work ownership and edge changes
-        run: node tool/review-research-board-origin-diff.js original-preview-input original-preview-semantic
-      - name: Audit raw mobile itemId collisions across the exact same catalog snapshot
-        run: node tool/audit-board-reading-itemids.js original-preview-input original-preview-semantic/itemid-compat
-      - name: Check URL-first resolver against the complete catalog
-        run: node tool/validate-board-article-resolver.js original-preview-input original-preview-semantic/resolver
-      - name: Preserve semantic evidence
-        if: always()
-        uses: actions/upload-artifact@v7
-        with:
-          name: research-board-semantic-review-${{ github.run_id }}
-          path: original-preview-semantic/
-          retention-days: 21
-          if-no-files-found: warn
+    # Reuse the complete pipeline at this ref, including a fresh preview.
+    # Older run artifacts and their retention periods are never inputs.
+    uses: ./.github/workflows/research-board-origin-preview.yml
