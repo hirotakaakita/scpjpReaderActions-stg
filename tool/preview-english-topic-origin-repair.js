@@ -89,6 +89,12 @@ function run(out) {
    codePlusCatalog:{moved:combined.moved?.length,stillPig:combined.pigStillIncorrect?.length,
      validated:combined.validated,lostAliases:combined.lostAliases?.length||0,
      error:combined.validationFailure||combined.buildFailure||null}});
+ if(affected.length!==23 || catalogEdits.length!==0 ||
+    codeOnly.moved?.length!==24 || codeOnly.pigStillIncorrect?.length!==0 ||
+    codeOnly.lostAliases?.length!==0 || codeOnly.lostPages?.length!==0 ||
+    !codeOnly.validated || !combined.validated ||
+    combined.lostAliases?.length!==0 || combined.pigStillIncorrect?.length!==0)
+   throw Error('Legacy EN topic-tag correction does not preserve all source URLs, 24 old aliases and proof integrity');
 }
 if(require.main===module)try{run(path.resolve(process.argv[2]||'origin-pig-preview'));}
 catch(e){console.error(e);process.exitCode=1;}
