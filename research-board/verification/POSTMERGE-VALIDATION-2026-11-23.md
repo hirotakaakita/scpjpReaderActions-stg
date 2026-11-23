@@ -81,4 +81,4 @@ EN SCP-179、ES SCP-ES-026、ES SCP-ES-179、ZH-TR SCP-179、CN `tool-box`、EN 
 - [独立500記事のレポートと差分CSV・同一本文キャプチャ](https://github.com/hirotakaakita/scpjpReaderActions-stg/actions/runs/45170473146/artifacts/14818295426)
 - [重点8記事の検証証拠](https://github.com/hirotakaakita/scpjpReaderActions-stg/actions/runs/45170473146/artifacts/14816881682)
 - [全量整合性・原作関係の検証証拠](https://github.com/hirotakaakita/scpjpReaderActions-stg/actions/runs/45170473146/artifacts/14816861825)
-- [SCP-179の26言語版・原作クレジット一覧](https://github.com/hirotakaakita/scpjpReaderActions-stg/actions/runs/45171453579/artifacts/14817765972)
+- [SCP-179の関連26URL・原作クレジット一覧](https://github.com/hirotakaakita/scpjpReaderActions-stg/actions/runs/45171453579/artifacts/14817765972)
