@@ -18,6 +18,19 @@ function validateIdentityProofs(board,sources){
    const a=original(proof.source,metadata),b=original(proof.target,metadata);
    if(!a||a!==b)throw Error('Unproven shared original identity');
   }
+  if(proof.method==='explicit_scp_original_credit'){
+   const source=normalizePage(proof.source),target=normalizePage(proof.target);
+   const r=source&&sources.get(source.id)?.record;
+   const credits=(r?.originalSources||[]).filter(x=>x.method==='credit_original_label');
+   const urls=[...new Set(credits.map(x=>originalPage(x.url)?.url).filter(Boolean))];
+   const src=owners.get(proof.source),dst=owners.get(proof.target);
+   if(!source||!target||credits.length===0||urls.length!==1||urls[0]!==target.url||
+      credits.some(x=>!originalPage(x.url))||!src||!dst||src!==dst||
+      ![0,8,9].includes(src[3])||src[3]!==dst[3]||
+      proof.source===proof.target){
+     throw Error('Unproven exact original SCP credit');
+   }
+  }
   if(proof.method==='interwiki_original_metadata'){
    const r=record(proof.source);
    if(r?.originalSources?.length||original(proof.source,true)!==originalPage(proof.target)?.url)throw Error('Unproven interwiki original identity');

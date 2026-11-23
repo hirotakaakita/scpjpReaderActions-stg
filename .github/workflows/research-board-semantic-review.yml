@@ -1,0 +1,10 @@
+name: Research board identity semantic-review
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  review:
+    # Reuse the complete pipeline at this ref, including a fresh preview.
+    # Older run artifacts and their retention periods are never inputs.
+    uses: ./.github/workflows/research-board-origin-preview.yml

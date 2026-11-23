@@ -99,7 +99,7 @@ function buildBoard(catalogs, sources) {
   });
   const identities=translationIdentities(sourcePages,sources);
   candidates.push(...identities.candidates);
-  const collapsed = collapseWorks(sourcePages, candidates, catalogEntries);
+  const collapsed = collapseWorks(sourcePages, candidates, catalogEntries, sources);
   const { nodes, sourcePageCount, internalReferences } = collapsed;
   const byWork = new Map();
   for (const entries of catalogEntries.values()) for (const entry of entries) {

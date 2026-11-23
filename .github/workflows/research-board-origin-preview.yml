@@ -1,0 +1,64 @@
+name: Research board original identity dry run
+on:
+  push:
+    branches:
+      - fix/research-board-explicit-origin-identity-20261122
+    paths:
+      - 'research-board/**'
+      - 'tool/preview-research-board-origin-fix.js'
+      - 'tool/review-research-board-origin-diff.js'
+      - 'tool/audit-board-reading-itemids.js'
+      - 'tool/validate-board-article-resolver.js'
+      - 'test/research-board-*.test.js'
+      - '.github/workflows/research-board-origin-preview.yml'
+      - '.github/workflows/research-board-semantic-review.yml'
+  workflow_dispatch:
+  workflow_call:
+permissions:
+  contents: read
+concurrency:
+  group: research-board-original-preview-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Full repository tests (reported independently of preview evidence)
+        run: node --test
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NODE_OPTIONS: --max-old-space-size=5500
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Explicit original credit regression suite
+        run: node --test test/research-board-explicit-origin.test.js test/research-board-article-work-resolver.test.js test/research-board-reading-itemid.test.js
+      - name: Rebuild full board in memory, validate and report diff (NO PUBLISH)
+        run: node tool/preview-research-board-origin-fix.js research-board-origin-preview
+      - name: Review changes from this checkout's rebuilt graph
+        run: node tool/review-research-board-origin-diff.js research-board-origin-preview research-board-origin-preview/semantic
+      - name: Audit raw mobile itemIds against this checkout's catalogs
+        run: node tool/audit-board-reading-itemids.js research-board-origin-preview research-board-origin-preview/itemid-compat
+      - name: Check URL-first resolver against this checkout's complete catalog
+        run: node tool/validate-board-article-resolver.js research-board-origin-preview research-board-origin-preview/resolver
+      - name: Upload preview, exact graph diff and original-credit review
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: research-board-original-preview-${{ github.run_id }}
+          path: research-board-origin-preview/
+          retention-days: 14
+          if-no-files-found: warn
