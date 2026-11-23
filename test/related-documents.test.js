@@ -10,7 +10,7 @@ const seed = 'https://scp-wiki.wikidot.com/scp-682';
 const log = 'https://scp-wiki.wikidot.com/experiment-log-t-98816-oc108-682';
 const date = '2026-11-05T00:00:00.000Z';
 const row = { itemId: 'scp-series-682', language: 'en', urlEN: seed, pageType: 'scp-series', isTranslatedJP: false };
-const html = body => `<div id="page-title">Document title</div><div id="page-content">${body}</div><div class="page-tags"><a>en</a></div>`;
+const html = body => `<div id="page-title">Document title</div><div id="page-content">${body}</div><div class="page-tags"><a>_en</a></div>`;
 
 test('incubator translations resolve the preserved original name against native SCP catalogs',()=>{
  const url='https://scp-int.wikidot.com/unofficial:ca:scp-682';
@@ -134,9 +134,9 @@ test('origin follows explicit evidence, not hosting site or a single referenced 
   const records = new Map([[log, { tags: [], translations: [], links: [seed] }]]);
   const catalog = new Map([[seed, [row]]]);
   assert.equal(classify(log, records, catalog).branch, null);
-  records.get(log).tags = ['jp'];
+  records.get(log).tags = ['_jp'];
   assert.equal(classify(log, records, catalog).branch, 'jp');
-  records.get(log).tags = ['jp', 'en'];
+  records.get(log).tags = ['_jp', '_en'];
   assert.equal(classify(log, records, catalog).branch, null);
   records.get(log).tags = []; records.get(log).translations = [seed];
   assert.equal(classify(log, records, catalog).branch, 'en');
