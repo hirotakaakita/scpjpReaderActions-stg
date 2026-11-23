@@ -47,13 +47,14 @@ jobs:
       - run: node validate-catalog-indexes.js
       - run: node validate-staging-catalogs.js
       - run: node mobile-catalog.js
+      - run: node refresh-weekly-features.js
       - run: node prepare-notification-queue.js
       - run: node research-board/validate.js
       - name: Commit regenerated staging catalogs
         run: |
           git config user.name 'SCP Crawler Bot'
           git config user.email 'scp-crawler@github-actions.bot'
-          git add local-data/
+          git add local-data/ features/planned/
           if ! git diff --staged --quiet; then
             git commit -m "Rebuild STG article classifications - $(date -u +%Y%m%d%H%M%S)"
             git push origin master

@@ -36,7 +36,7 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '24'
-      - run: node --test test/weekly-features.test.js test/notifications.test.js test/notification-branches.test.js
+      - run: node --test test/weekly-features.test.js test/weekly-feature-refresh.test.js test/notifications.test.js test/notification-branches.test.js
         env:
           FEATURE_PUBLICATION_RUN: '1'
       - name: Configure checkpoints
@@ -46,6 +46,7 @@ jobs:
       - name: Publish updated features and queue only changed languages
         if: inputs.recovery_delivery == ''
         run: |
+          node refresh-weekly-features.js
           node publish-weekly-features.js
           git add features/ local-data/feature-notification-queue.json
           if ! git diff --staged --quiet; then

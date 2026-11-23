@@ -352,6 +352,7 @@ jobs:
         run: |
           node --test test/mobile-catalog.test.js test/catalog-arrivals.test.js test/research-board.test.js test/research-board-links.test.js test/research-board-navigation.test.js test/research-board-auxiliary-content.test.js test/research-board-identity-metadata.test.js test/research-board-identity-audit.test.js test/translation-identities.test.js test/identity-credit-metadata.test.js
           node mobile-catalog.js
+          node refresh-weekly-features.js
           node research-board/validate.js
           node tool/audit-research-board-identities.js --output partial-data/research-board-identity-audit.json
 
@@ -375,7 +376,7 @@ jobs:
 
       - name: Commit and push results
         run: |
-          git add local-data/ tag-dictionary.json tag-translations-pending.json
+          git add local-data/ features/planned/ tag-dictionary.json tag-translations-pending.json
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else

@@ -350,11 +350,11 @@
           ]
         },
         {
-          "itemId": "scp-series-550",
-          "title": "The Ghûl",
-          "blurb": "SCP-550, Avrupa Dişbudak ağacından elde edilen tahta talaşından oluşan bir insansıdır.Boyu yaklaşık 2.1 metre, ağırlığı 70 kg’dır.",
-          "url": "https://scpvakfi.wikidot.com/scp-550",
-          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-550/SCP-550.jpg",
+          "itemId": "scp-series-086",
+          "title": "Dr. [ÇIKARILMIŞTIR]'ın Ofisi",
+          "blurb": "Bu organizma, eski bir Vakıf yöneticisi olan Dr. [GİZLENMİŞ]’in (1907-1978) bilincini taşıdığını iddia eder.",
+          "url": "https://scpvakfi.wikidot.com/scp-086",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-086/rotary.JPG",
           "sourceTags": [
             "sentient",
             "biological"
@@ -2656,11 +2656,11 @@
           ]
         },
         {
-          "itemId": "scp-series-550",
-          "title": "The Ghûl",
-          "blurb": "SCP-550, Avrupa Dişbudak ağacından elde edilen tahta talaşından oluşan bir insansıdır.Boyu yaklaşık 2.1 metre, ağırlığı 70 kg’dır.",
-          "url": "https://scpvakfi.wikidot.com/scp-550",
-          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-550/SCP-550.jpg",
+          "itemId": "scp-series-638",
+          "title": "The Roaring One",
+          "blurb": "AÇIKLAMA: SCP-638, daha büyük Şikago Ruhu'nun bir parçası olarak 1910'larda aktif olan organize suç ekibi Pulaski Ekibi'ydi.",
+          "url": "https://scpvakfi.wikidot.com/scp-638",
+          "imageUrl": "https://scpvakfi.wdfiles.com/local--files/scp-638/bagels.jpg",
           "sourceTags": [
             "humanoid",
             "sentient"
