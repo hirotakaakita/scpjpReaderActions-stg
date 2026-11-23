@@ -102,6 +102,7 @@ function buildBoard(catalogs, sources) {
   candidates.push(...identities.candidates);
   const collapsed = collapseWorks(sourcePages, candidates, catalogEntries, sources);
   const { nodes, sourcePageCount, internalReferences } = collapsed;
+  require('./legacy-work-aliases').applyLegacyWorkAliases(nodes);
   const byWork = new Map();
   for (const entries of catalogEntries.values()) for (const entry of entries) {
     const key = `catalog:${entry.pageType}:${entry.itemId}`;

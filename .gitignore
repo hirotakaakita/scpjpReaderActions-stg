@@ -31,3 +31,9 @@ partial-data/
 /local-data/catalog-indexes/*.bak
 /local-data/catalog-indexes/*.tmp
 /local-data/catalog-indexes/*.corrupt-*
+
+# Reproducible local diagnostics and Python caches.
+/relations/
+/.board-*.cjs
+__pycache__/
+*.py[cod]
