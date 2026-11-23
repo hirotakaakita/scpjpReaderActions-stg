@@ -6,6 +6,7 @@ on:
       - 'catalog-origin.js'
       - 'test/catalog-origin.test.js'
       - 'test/related-documents.test.js'
+      - 'tool/preview-english-topic-origin-repair.js'
       - '.github/workflows/catalog-origin-topic-audit.yml'
   workflow_dispatch:
 permissions:
@@ -65,15 +66,17 @@ jobs:
             [fields.map(q).join(','),...allBare.map(o=>fields.map(k=>q(o[k])).join(','))].join('\n')+'\n');
           console.log(JSON.stringify(summary,null,2));
           NODE
-      - name: Verify existing published graph and catalogs remain internally consistent
-        run: |
-          node validate-catalog-indexes.js
-          node research-board/validate.js
+      - name: Confirm published official catalog indexes remain internally valid
+        run: node validate-catalog-indexes.js
+      - name: Compare existing published board with two isolated read-only rebuilds
+        run: node tool/preview-english-topic-origin-repair.js topic-origin-preview
       - name: Persist comprehensive tag collision audit and test outputs
         if: always()
         uses: actions/upload-artifact@v7
         with:
           name: en-tag-origin-collision-${{ github.run_id }}
-          path: topic-origin-audit/
+          path: |
+            topic-origin-audit/
+            topic-origin-preview/
           retention-days: 21
           if-no-files-found: warn
