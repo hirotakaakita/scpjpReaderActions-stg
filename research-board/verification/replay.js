@@ -14,10 +14,14 @@ function replay(input,out){
   for(const row of snapshot.rows){
     if(row.status!=='compared')continue;
     const page=pages.get(row.url);if(!page)throw Error('Source no longer in graph '+row.url);
-    const source=fs.readFileSync(path.join(input,'raw',row.sha+'.html.gz'));
-    const html=zlib.gunzipSync(source).toString('utf8');
-    const primary=prod.extractHtml(html,page.url);
-    const independent=ref.fromHtml(html,page.url,index.workByUrl,index.supportedHosts);
+    const format=row.format||'html';
+    const source=fs.readFileSync(path.join(input,'raw',row.sha+'.'+format+'.gz'));
+    const body=zlib.gunzipSync(source).toString('utf8');
+    const metadata=path.join(input,'raw',row.sha+'.api.json.gz');
+    const detail=fs.existsSync(metadata)?JSON.parse(zlib.gunzipSync(fs.readFileSync(metadata))):{source:body};
+    const primary=format==='html'?prod.extractHtml(body,page.url):prod.extractFtml(detail,page.url);
+    const independent=format==='html'?ref.fromHtml(body,page.url,index.workByUrl,index.supportedHosts):
+      ref.fromFtml(body,page.url,index.workByUrl,index.supportedHosts,detail.title);
     const primarySet=primaryWorks(primary.links,page,index);
     const comparison=compareThree(page.expected,primarySet,independent);
     const parserDiff=[...new Set([...primarySet.keys(),...independent.links.keys()])]

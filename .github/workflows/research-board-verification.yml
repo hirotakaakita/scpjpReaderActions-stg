@@ -36,7 +36,7 @@ jobs:
         run: node --test research-board/verification/verification.test.js
       - name: Inventory unresolved pages
         run: node research-board/verification/audit.js --inventory --out research-board/verification/audit-results
-      - name: Reproduce targeted ZH-TR, CN and chapter-navigation cases
+      - name: Reproduce targeted ZH-TR, CN, RU and chapter-navigation cases
         if: github.event_name == 'push'
         run: |
           node research-board/verification/audit.js \
@@ -45,6 +45,7 @@ jobs:
             --url https://scp-wiki-cn.wikidot.com/tool-box \
             --url https://scp-wiki.wikidot.com/march-of-the-fire-ants \
             --url https://scpko.wikidot.com/goc-hub-page \
+            --url https://scpfoundation.net/scp-173 \
             --delay-ms 1250 \
             --out research-board/verification/audit-results/current
       - name: Optional full 500-page live audit

@@ -40,6 +40,13 @@ test('a theme with fewer than five eligible articles is removed from the plan',(
  const result=reconcile(plan(),rows().slice(0,4),[theme]);
  assert.deepEqual(result.catalog.features,[]);
  assert.equal(result.changes[0].removed,true);
+ assert.deepEqual(result.catalog.deferredFeatures,plan().features);
+ assert.deepEqual(reconcile(result.catalog,rows().slice(0,4),[theme]).changes,[]);
+ const recovered=reconcile(result.catalog,rows(),[theme]);
+ assert.deepEqual(recovered.catalog.features,plan().features);
+ assert.equal(recovered.changes[0].restored,true);
+ assert.equal(recovered.catalog.deferredFeatures,undefined);
+ assert.deepEqual(reconcile(recovered.catalog,rows(),[theme]).changes,[]);
 });
 
 test('reviewed editorial selections fail closed and all languages are checked before any writes',t=>{

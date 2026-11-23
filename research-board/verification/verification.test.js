@@ -52,11 +52,45 @@ test('non-html code/FTML comments ignored, explicit FTML links detected',()=>{
   assert.equal(result.counts.auxiliary_content,1);
   assert(result.warnings.includes('ftml_includes_not_expanded'));
 });
+
+test('independent FTML navigation excludes centered chapter bars while retaining narrative references',()=>{
+ const {workByUrl,supportedHosts}=index();
+ const text='[[=]]\n<< [[[scp-002|Previous]]] | Article | [[[scp-003|Next]]] >>\n[[/=]]\n\n'+
+   'The experiment compares [[[scp-002|Two]]] with [[[scp-003|Three]]].';
+ const result=fromFtml(text,en+'scp-001',workByUrl,supportedHosts,'Article');
+ assert.equal(result.counts.chapter_navigation,2);
+ assert.deepEqual([...result.links.keys()],['work:two','work:three']);
+ const ordinary=fromFtml('This study mentions [[[scp-002|Previous]]] and [[[scp-003|Next]]] in its narrative.',en+'scp-001',workByUrl,supportedHosts);
+ assert.deepEqual([...ordinary.links.keys()],['work:two','work:three']);
+});
 test('comparison exposes both published-only and missing links',()=>{
   const difference=compare(['work:a','work:b'],['work:b','work:c']);
   assert.deepEqual(difference.tp,['work:b']);
   assert.deepEqual(difference.fp,['work:a']);
   assert.deepEqual(difference.fn,['work:c']);
+});
+
+test('plain-text chapter hubs and author collections are UI, with narrative links preserved',()=>{
+ const {workByUrl,supportedHosts}=index();
+ const html='<div id="page-title">Article</div><div id="page-content">'+
+   '<p>« <a href="/scp-002">Previous</a> | Plain hub title | <a href="/scp-003">Next</a> »</p>'+
+   '<div class="collection"><a class="collapsible-block-link">More&nbsp;From&nbsp;This&nbsp;Author</a>'+
+   '<p><a href="/scp-003">Other work</a></p></div>'+
+   '<div class="collection"><p>A narrative collection mentions <a href="/scp-002">Two</a>.</p></div></div>';
+ const result=fromHtml(html,en+'scp-001',workByUrl,supportedHosts);
+ assert.deepEqual([...result.links.keys()],['work:two']);
+ assert.equal(result.counts.chapter_navigation,2);
+ assert.equal(result.counts.author_collection,1);
+});
+
+test('asset source links in an explicit attribution record are excluded, inline references survive',()=>{
+ const {workByUrl,supportedHosts}=index();
+ const html='<div id="page-content"><blockquote><p>Filename: image.png Name: Picture '+
+   'Author: Artist License: CC BY-SA 3.0 Source Link: <a href="/scp-003">Three</a></p></blockquote>'+
+   '<p>The source link for this experiment is <a href="/scp-002">Two</a>.</p></div>';
+ const result=fromHtml(html,en+'scp-001',workByUrl,supportedHosts);
+ assert.deepEqual([...result.links.keys()],['work:two']);
+ assert.equal(result.counts.source_credit_metadata,1);
 });
 test('deterministic selection, fixed allocation, holdout exclusion and branch coverage',()=>{
   const pages=[];
@@ -69,18 +103,18 @@ test('deterministic selection, fixed allocation, holdout exclusion and branch co
   const b=samplePages({pages},{limit:100,seed:'seed'});
   assert.deepEqual(a.pages.map(x=>x.url),b.pages.map(x=>x.url));
   assert.equal(new Set(a.pages.map(x=>x.url)).size,100);
-  for(const lang of ['jp','en','fr'])assert(a.pages.some(p=>p.language===lang));
-  assert(!a.pages.some(p=>p.language==='ru'),'RU excluded by default');
-  const opted=samplePages({pages},{limit:100,seed:'seed',excludedLanguages:new Set()});
-  assert(opted.pages.some(p=>p.language==='ru'),'RU explicitly enabled');
+  for(const lang of ['jp','en','fr','ru'])assert(a.pages.some(p=>p.language===lang));
+  const excluded=samplePages({pages},{limit:100,seed:'seed',excludedLanguages:new Set(['ru'])});
+  assert(!excluded.pages.some(p=>p.language==='ru'),'explicit language exclusion');
   const c=samplePages({pages},{limit:30,seed:'different',excluded:new Set(a.pages.map(x=>x.url))});
   assert.equal(c.pages.length,30);
   assert(c.pages.every(p=>!a.pages.some(o=>o.url===p.url)));
   assert.equal(Object.values(allocate(500)).reduce((x,y)=>x+y,0),500);
 });
-test('CLI excludes RU by default, with an explicit API/FTML opt-in',()=>{
-  assert.equal(parseArgs([]).includeRu,false);
+test('CLI includes RU API/FTML by default, with an explicit opt-out',()=>{
+  assert.equal(parseArgs([]).includeRu,true);
   assert.equal(parseArgs(['--include-ru','--limit','25']).includeRu,true);
+  assert.equal(parseArgs(['--exclude-ru']).includeRu,false);
 });
 test('image-only international directory gallery excluded, but prose reference preserved',()=>{
   const {workByUrl,supportedHosts}=index();
@@ -147,6 +181,20 @@ test('recursive source-credit tracing detects terminal roots and cycles',()=>{
   assert.deepEqual(traceRoot('a',x),{status:'terminal',root:'c',path:['a','b','c']});
   x.set('c','b');
   assert.equal(traceRoot('a',x).status,'cycle');
+});
+
+test('every unresolved original credit retains a disposition and captured evidence',()=>{
+ const {classify}=require('./identity-provenance');
+ const source=en+'scp-001',target=en+'missing-original';
+ const record={contentSha256:'a'.repeat(64),checkedAt:'2026-11-23T00:00:00Z',
+   originalSources:[{url:target,method:'credit_original_label'}]};
+ const idx={pages:[{url:source,workId:'source'}],workByUrl:new Map([[source,'source']])};
+ const result=classify(idx,new Map([[source,target]]),new Map([[source,record]]));
+ assert.equal(result.review.length,1);
+ assert.equal(result.review[0].disposition,'hold_outside_catalog');
+ assert.equal(result.review[0].contentSha256,record.contentSha256);
+ assert.deepEqual(result.review[0].claims,record.originalSources);
+ assert.deepEqual(result.review[0].chain,[source,target]);
 });
 test('independent validator ignores chapter bars and credit links, not inline narrative',()=>{
   const {workByUrl,supportedHosts}=index();

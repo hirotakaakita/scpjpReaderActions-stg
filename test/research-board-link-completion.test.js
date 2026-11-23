@@ -5,6 +5,7 @@ const {refresh,checked,retryAfter}=require('../research-board/refresh-links');
 const {audit}=require('../tool/research-board-body-link-coverage');
 const {normalizePage,digest,EXTRACTOR_VERSION}=require('../research-board/extract');
 const {saveSources}=require('../research-board/source-store');
+const {generateResearchBoard}=require('../research-board/catalog');
 const base='https://scp-wiki.wikidot.com/',stamp='2026-11-19T00:00:00Z';
 function fixture(t,count){
   const root=fs.mkdtempSync(path.join(os.tmpdir(),'board-completion-'));
@@ -64,4 +65,19 @@ test('HTTP 429 is not bypassed through an immediate alternate page request',asyn
   axios.get=async()=>{calls++;throw Object.assign(Error('busy'),{response:{status:429}});};
   await assert.rejects(require('../related-documents').fetchRecord(base+'scp-0',null,{beforeRequest:async()=>{gates++;},expandDescriptions:false}));
   assert.equal(calls,1);assert.equal(gates,1);
+});
+
+test('publication and independent inventory use the same current catalog/source coverage',t=>{
+ const root=fixture(t,2),input=path.join(root,'local-data');
+ const url=base+'scp-0',r={...record(url),limitations:[]};
+ saveSources(new Map([[r.pageId,{record:r,lastAttempt:{status:'success',at:stamp}}]]),path.join(input,'research-board-sources'));
+ const stale=path.join(input,'research-board-body-link-coverage.json.gz');
+ fs.writeFileSync(stale,z.gzipSync(JSON.stringify({totalPages:99,pendingPages:0,unresolved:[]})));
+ generateResearchBoard(input,path.join(input,'mobile-v3'));
+ const published=JSON.parse(z.gunzipSync(fs.readFileSync(stale)));
+ assert.equal(published.totalPages,2);assert.equal(published.checkedPages,1);assert.equal(published.pendingPages,1);
+ fs.writeFileSync(stale,z.gzipSync(JSON.stringify({totalPages:99,pendingPages:0,unresolved:[]})));
+ const current=require('../research-board/verification/audit').loadCoverage(root);
+ assert.equal(current.totalPages,2);assert.equal(current.pendingPages,1);
+ assert.equal(current.unresolved[0].url,base+'scp-1');
 });

@@ -122,13 +122,17 @@ function collapseWorks(pages, candidates, catalogEntries, sources = new Map()) {
     const sameScpIdentity=edge.proof?.[5]==='catalog_scp_identifier'&&
       [0,8,9].includes(source.kindIndex)&&source.kindIndex===target.kindIndex&&source.branch!=='other'&&
       source.branch===target.branch&&source.pageType===target.pageType&&scpIdentityKey(source)===scpIdentityKey(target);
-    const explicitScpIdentity=edge.proof?.[5]==='explicit_scp_original_credit'&&
+    const explicitScpIdentity=['explicit_scp_original_credit','explicit_transitive_scp_original_credit'].includes(edge.proof?.[5])&&
       originalOverrides.get(source.id)===target.id&&
       [0,8,9].includes(source.kindIndex)&&source.kindIndex===target.kindIndex&&
       source.branch===target.branch&&source.pageType===target.pageType;
     const originalCatalogPath=['origin_path_and_author','full_numbered_original_catalog_path','origin_and_original_catalog_path','interwiki_original_metadata'].includes(edge.proof?.[5])&&
       source.slug===target.slug&&source.branch!=='other'&&source.branch===target.branch&&native(target);
-    if(a===b)continue;
+    if(a===b){
+      if(explicitScpIdentity)identityProofs.push({source:source.url,target:target.url,method:edge.proof[5],
+        ...(edge.creditChain?{chain:edge.creditChain}:{})});
+      continue;
+    }
     if (source.classificationSourceId || target.classificationSourceId ||
         (bothCatalogued && !explicitDocumentTranslations && !sameScpIdentity&&!originalCatalogPath&&!explicitScpIdentity) || (source.siteBranch === target.siteBranch&&!sameScpIdentity) ||
         (source.branch !== 'other' && target.branch !== 'other' && source.branch !== target.branch)) {identityReview.push({url:source.url,original:target.url,reason:'incompatible_translation_scope'});continue;}
@@ -148,9 +152,25 @@ function collapseWorks(pages, candidates, catalogEntries, sources = new Map()) {
     parent.set(second,first);
     components.set(first,new Set([...(components.get(a)||[]),...(components.get(b)||[])]));components.delete(second);
     if(nativeKeys.has(a)||nativeKeys.has(b))nativeKeys.add(first);
-    identityProofs.push({source:source.url,target:target.url,method:edge.proof?.[5]||edge.proof?.[2]||'explicit_translation_metadata'});
+    identityProofs.push({source:source.url,target:target.url,method:edge.proof?.[5]||edge.proof?.[2]||'explicit_translation_metadata',
+      ...(edge.creditChain?{chain:edge.creditChain}:{})});
   }
 
+  // Nordic delivery namespaces used to receive an opaque scoped key when a
+  // raw catalog ID was already owned by the native original. Keep that exact
+  // key as an alias after an explicit credit joins the two pages.
+  for(const page of pages)if(originalOverrides.has(page.id)&&
+      page.host==='scp-nd.wikidot.com'&&page.slug.startsWith('sv:')){
+    const e=(eligibleByPage.get(page.id)||[])[0];
+    if(!e)continue;
+    const base=`catalog:${page.pageType}:${e.itemId}`;
+    if(!ledger.has(base))continue;
+    const alias=base+'@work-'+digest(scpIdentityKey(page)).slice(0,12);
+    if(parent.has(alias)&&root(alias)!==root(pageKeys.get(page.id)))throw Error('Conflicting historical Nordic alias');
+    ledger.set(alias,{articleId:e.itemId,articleNumber:e.articleNumber,pageType:page.pageType,branch:page.branch});
+    parent.set(alias,root(pageKeys.get(page.id)));
+    extraAliases.set(page.id,[...(extraAliases.get(page.id)||[]),alias]);
+  }
   const groups = new Map();
   for (const page of pages) {
     const key = root(pageKeys.get(page.id));

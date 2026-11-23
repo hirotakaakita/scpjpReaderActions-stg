@@ -3,9 +3,13 @@ const {normalizePage}=require('./extract');
 const {originalPage}=require('../origin-provenance');
 const {publisherOriginTags}=require('../catalog-origin');
 const {generic}=require('./translation-identities');
+const {verifiedScpOriginal}=require('./explicit-scp-origin');
 function validateIdentityProofs(board,sources){
  const owners=new Map(board.nodes.flatMap(n=>n[13].map(p=>[p[1],n])));
  const record=url=>sources.get(normalizePage(url)?.id)?.record;
+ const pages=new Map(board.nodes.flatMap(n=>n[13].map(v=>{
+  const p=normalizePage(v[1]);return [p.id,{...p,siteBranch:v[0],branch:n[8],pageType:n[12],kindIndex:n[3]}];
+ })));
  const original=(url,metadata)=>{
   const r=record(url),credits=(r?.originalSources||[]).filter(x=>x.method==='credit_original_label');
   const raw=credits.length?credits:metadata?(r?.catalogIdentity?.originalSources||[]).filter(x=>x.method==='interwiki_original_metadata'):[];
@@ -13,6 +17,13 @@ function validateIdentityProofs(board,sources){
   return urls.length===1?urls[0]:null;
  };
  for(const proof of board.workIdentityProofs||[]){
+  if(proof.method==='explicit_transitive_scp_original_credit'){
+   const source=normalizePage(proof.source),p=source&&pages.get(source.id);
+   const original=verifiedScpOriginal(p,pages,sources);
+   if(!original?.creditChain||original.url!==proof.target||
+      JSON.stringify(original.creditChain)!==JSON.stringify(proof.chain)||
+      owners.get(proof.source)!==owners.get(proof.target))throw Error('Unproven transitive original SCP credit');
+  }
   if(['shared_explicit_original_credit','shared_verified_original_metadata'].includes(proof.method)){
    const metadata=proof.method==='shared_verified_original_metadata';
    const a=original(proof.source,metadata),b=original(proof.target,metadata);

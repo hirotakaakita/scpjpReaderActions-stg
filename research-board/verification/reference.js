@@ -103,6 +103,11 @@ function isChapterBar(anchor) {
   const flat=clone.textContent.normalize('NFKC').replace(/\s+/g,'').trim();
   if(!/^[«‹<]/.test(flat)||!/[»›>]$/.test(flat))return false;
   if(!flat.includes('|'))return false;
+  // Two outer chapter links may surround a plain-text hub title. This is
+  // still a navigation bar; a narrative paragraph lacks the bounded triplet.
+  const slots=flat.replace(/^[«‹<]+|[»›>]+$/gu,'').split('|');
+  if(slots.length===3&&slots[0]==='\uFFFC'&&slots[2]==='\uFFFC'&&
+      slots[1].length>0&&slots[1].length<=160)return true;
   return /^[«»‹›<>|\/.,:;·•\-\u2013\u2014\u2190\u2192\uFFFC]+$/u.test(flat);
 }
 function isBreadcrumbBanner(anchor,title) {
@@ -116,8 +121,17 @@ function isAttributionParagraph(anchor) {
   const p=anchor.closest('p');
   if(!p)return false;
   const text=p.textContent.replace(/\s+/g,' ').trim();
+  if(/\bFilename\s*:/i.test(text)&&/\bAuthor\s*:/i.test(text)&&
+      /\bSource Link\s*:/i.test(text)&&/\bLicense\s*:\s*CC[\s-]*BY[\s-]*SA/i.test(text))return true;
   return /(?:原文來源|original source|original article)/i.test(text) &&
     /(?:CC[\s-]*BY[\s-]*SA|授權方式|license)/i.test(text);
+}
+function isAuthorCollection(anchor) {
+  const panel=anchor.closest('.collection');
+  if(!panel)return false;
+  const titles=[...panel.querySelectorAll('.collapsible-block-link,summary,h1,h2,h3,h4,h5,h6')];
+  return titles.some(n=>/\bmore (?:from|by) (?:this|the) author\b/i.test(n.textContent.replace(/\s+/g,' ')))||
+    !!panel.querySelector('th.articlecolumn,td.articlecolumn');
 }
 function fromHtml(html,source,workByUrl,supportedHosts) {
   const doc = new JSDOM(html,{url:source,virtualConsole:new VirtualConsole()});
@@ -135,6 +149,7 @@ function fromHtml(html,source,workByUrl,supportedHosts) {
       else if (a.matches('[rel~="alternate"],[data-translation-source]')) skip='translation_metadata';
       else if (a.closest(AUX_SELECTORS) || [...a.parentElement?.classList||[]].some(c=>/^(licensebox|creditRate)/i.test(c))) skip='auxiliary_content';
       else if (isImageDirectoryMenu(a,root)) skip='image_directory_navigation';
+      else if (isAuthorCollection(a)) skip='author_collection';
       else if (isChapterBar(a)) skip='chapter_navigation';
       else if (isBreadcrumbBanner(a,title)) skip='breadcrumb_navigation';
       else if (isAttributionParagraph(a)) skip='source_credit_metadata';
@@ -149,9 +164,37 @@ function fromHtml(html,source,workByUrl,supportedHosts) {
     return resultFromRaw(raw,source,workByUrl,supportedHosts,warnings);
   } finally { doc.window.close(); }
 }
-function fromFtml(sourceText,source,workByUrl,supportedHosts) {
+function ftmlNavigationRanges(text,source,title='') {
+  const ranges=[],identity=s=>s.normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]/gu,'');
+  const slug=decodeURIComponent(new URL(source).pathname).split('/').at(-1);
+  function inspect(value,start,end){
+    const labels=[];let self=false;
+    let flat=value.replace(/\[\[\[([^\]|]+)(?:\|([^\]]*))?\]\]\]|\[(https?:\/\/[^\s\]]+)(?:\s+([^\]]*))?\]/gi,
+      (_,href,label,url,caption)=>{labels.push(label||caption||href||url);if(normalizedUrl(href||url,source)===normalizedUrl(source))self=true;return '\uFFFC';});
+    flat=flat.replace(/\[\[\/?(?:(?:div|span|section|size)\b|=)[^\]]*\]\]/gi,'')
+      .normalize('NFKC').replace(/\*\*|__|\/\//g,'').replace(/^\s*=\s+/,'').replace(/\s+/g,' ').trim();
+    const count=[...flat].filter(c=>c==='\uFFFC').length;
+    if(count===1&&/^\uFFFC\s*[»›>]\s*/u.test(flat)){
+      const tail=flat.replace(/^\uFFFC\s*[»›>]\s*/u,'');
+      if(identity(tail)===identity(title||slug))ranges.push([start,end]);
+      return;
+    }
+    if(count<2||count>5)return;
+    const arrows=/^[<«‹〈《≪←]/u.test(flat)&&/[>»›〉》≫→]$/u.test(flat);
+    const inner=flat.replace(/^[<«‹〈《≪←]+\s*/u,'').replace(/\s*[>»›〉》≫→]+$/u,'');
+    const parts=inner.split('|').map(s=>s.trim()),triplet=parts.length===3&&parts[0]==='\uFFFC'&&parts[2]==='\uFFFC';
+    const symbols=/^[\s\uFFFC|/,:;·•\-–—]+$/u.test(inner);
+    const named=labels.some(s=>/^(?:previous(?: page| chapter)?|prev|назад|предыдущая)\s*$/iu.test(s))&&
+      labels.some(s=>/^(?:next(?: page| chapter)?|далее|следующая|вперёд)\s*$/iu.test(s));
+    if(arrows&&(symbols||triplet&&parts[1].length<=160)||named&&symbols||
+      triplet&&(parts[1]==='\uFFFC'?self:identity(parts[1])===identity(title||slug)))ranges.push([start,end]);
+  }
+  for(const m of text.matchAll(/\[\[=\]\][\s\S]*?\[\[\/=\]\]|[^\r\n]+/g))inspect(m[0],m.index,m.index+m[0].length);
+  return ranges;
+}
+function fromFtml(sourceText,source,workByUrl,supportedHosts,title='') {
   if (typeof sourceText!=='string') throw new Error('missing_ftml_source');
-  const raw=[],stack=[],warnings=[];
+  const raw=[],stack=[],warnings=[],navigation=ftmlNavigationRanges(sourceText,source,title);
   if (/\[\[include\b/i.test(sourceText)) warnings.push('ftml_includes_not_expanded');
   if (/\[\[module\b/i.test(sourceText)) warnings.push('ftml_modules_not_expanded');
   // Independent token scanner; ignores comments and literal code/html blocks.
@@ -183,7 +226,8 @@ function fromFtml(sourceText,source,workByUrl,supportedHosts) {
       if (!split) continue;
       href=split[1];quote=split[2]||href;
     }
-    const skip=stack.some(x=>x.drop)?'auxiliary_content':href.startsWith('#')?'fragment_or_empty':null;
+    const skip=stack.some(x=>x.drop)?'auxiliary_content':href.startsWith('#')?'fragment_or_empty':
+      navigation.some(([start,end])=>match.index>=start&&match.index<end)?'chapter_navigation':null;
     raw.push({href,quote:quote.slice(0,180),selector:'FTML offset '+match.index,
       sourceElement:token.slice(0,450),skip});
   }

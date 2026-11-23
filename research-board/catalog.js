@@ -97,6 +97,7 @@ function buildBoard(catalogs, sources) {
       }
     }
   });
+  require('./explicit-scp-origin').inheritTransitiveOrigins(sourcePages,sources);
   const identities=translationIdentities(sourcePages,sources);
   candidates.push(...identities.candidates);
   const collapsed = collapseWorks(sourcePages, candidates, catalogEntries, sources);
@@ -206,6 +207,10 @@ function generateResearchBoard(input, output, { incoming = path.join(input, '../
     fileName, bytes: bytes.length, decodedBytes: json.length, sha256,
     nodeCount: board.nodes.length, edgeCount: board.edges.length };
   saveSources(sources, sourceDir);
+  const coverageFile=path.join(input,'research-board-body-link-coverage.json.gz');
+  const coverage=require('./link-coverage').buildCoverage(catalogs,sources);
+  fs.writeFileSync(coverageFile+'.tmp',zlib.gzipSync(JSON.stringify(coverage)+'\n'));
+  fs.renameSync(coverageFile+'.tmp',coverageFile);
   fs.writeFileSync(path.join(directory, 'manifest.json.tmp'), JSON.stringify(manifest) + '\n');
   fs.renameSync(path.join(directory, 'manifest.json.tmp'), path.join(directory, 'manifest.json'));
   // Retain the last published payload so a cached pointer can still be used.

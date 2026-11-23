@@ -82,9 +82,9 @@ function translationIdentities(pages,sources){
    if(!original||scpIdentityKey(original)===scpIdentityKey(p))continue;
    const r=sources.get(p.id).record;
    explicitNumberOverrides.set(p.id,original);
-   candidates.push({source:p.id,target:original.id,type:'translation_assertion',
+   candidates.push({source:p.id,target:original.id,type:'translation_assertion',creditChain:original.creditChain,
      proof:[p.url,original.url,'verified_original_article',r.contentSha256,'',
-       'explicit_scp_original_credit',r.checkedAt]});
+       original.creditChain?'explicit_transitive_scp_original_credit':'explicit_scp_original_credit',r.checkedAt]});
  }
  const scpGroups=new Map();
  for(const p of pages)if(!explicitNumberOverrides.has(p.id)&&[0,8,9].includes(p.kindIndex)&&p.branch!=='other'&&/^(?:scp-series(?:-[a-z-]+)?|joke-scps(?:-[a-z-]+)?|scp-(?:[a-z-]+-)?ex)$/.test(p.pageType||'')){
