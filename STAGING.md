@@ -7,7 +7,9 @@ Initial snapshot: production commit `4dcfb1fc466685375897d2a2930cfb1b8542da74` (
 - Firebase project: `scpjp-reader-stg`
 - Public data: `https://raw.githubusercontent.com/hirotakaakita/scpjpReaderActions-stg/refs/heads/master`
 - Catalog, manga and maintenance configuration are served from this repository only.
-- `SCP Crawler STG` runs manually on master; automatic scheduled crawling is disabled.
+- `SCP Crawler STG` refreshes data every Friday at 00:00 UTC (09:00 JST) on master; manual runs remain available.
+- New SCP notifications are sent only on Saturday at 19:00–19:59 in each language's configured timezone. Late runs retain pending articles until the next Saturday.
+- Weekly feature notifications are sent only on Wednesday at 19:00–19:59 in each language's configured timezone. The feature workflow uses the `stg` environment and staging-only Firebase credentials.
 - Pushes run `Validate staging`, which checks catalogs and notification isolation without crawling or sending messages.
 - Notification topics: `stg_new_scp_<language>`; titles start with `[STG]`.
 - The crawler's `stg` GitHub environment uses the `STG_FIREBASE_SERVICE_ACCOUNT_JSON` secret, never production credentials.

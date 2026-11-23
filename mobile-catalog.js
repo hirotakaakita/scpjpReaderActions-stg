@@ -3,6 +3,7 @@ const path = require('node:path');
 const zlib = require('node:zlib');
 const crypto = require('node:crypto');
 const { LANGUAGES } = require('./languages');
+const { readDelivery, applyArrivalDates } = require('./catalog-arrivals');
 const { reclassifyScpArticle } = require('./article-category');
 const { normalizedSourceListing } = require('./series-listing');
 const { readDictionary, updateDictionary, localizeTags, restoreTagLabels, indexDictionary } = require('./tag-dictionary');
@@ -37,6 +38,16 @@ function mobileCatalog(source, language) {
     ));
   });
   return { schemaVersion: 1, language, timestamp: source.timestamp, totalCount: data.length, data };
+}
+
+function validateTagLabels(catalog, language) {
+  for (const article of catalog.data) {
+    if ((article.tags || []).some(tag =>
+      !tag || typeof tag.id !== 'string' || !tag.id.trim() ||
+      typeof tag.label !== 'string' || !tag.label.trim())) {
+      throw new Error(`Missing localized tag label: ${language}/${article.itemId}`);
+    }
+  }
 }
 
 function generateCatalogChannel(input, output, includeAdditional, sourceDirectory = 'related-documents', enrichTranslations = true, normalizeSeries = false) {
@@ -92,6 +103,7 @@ function generateCatalogChannel(input, output, includeAdditional, sourceDirector
       itemId: r.itemId, titleJP: r.title, urlJP: r.url, isTranslatedJP: true,
       extractedFrom: r.pageType, pageType: r.pageType, contentType: r.contentType,
       lastUpdated: r.lastUpdated, descriptionExcerpt: r.descriptionExcerpt,
+      ...(r.createdAt ? { createdAt: r.createdAt } : {}),
       ...(r.objectClass ? { objectClass:r.objectClass } : {}),
       ...(r.rating != null ? { rating:r.rating } : {}),
       ...(r.imageUrl ? { imageUrl:r.imageUrl } : {}),
@@ -108,6 +120,7 @@ function generateCatalogChannel(input, output, includeAdditional, sourceDirector
       ...reclassifyScpArticle(row, reservedByLanguage.get(language)),
       tags:restoreTagLabels(row.tags || [], language, dictionary, tagIndex, row.tagLabels),
     }));
+    if (includeAdditional && enrichTranslations) validateTagLabels(delivery, language);
     if(includeAdditional&&enrichTranslations)delivery.data=require('./article-metadata').deduplicateReclassifiedArticles(delivery.data);
     if (includeAdditional && enrichTranslations) for (const row of delivery.data) {
       row.translatedLanguages = [...new Set([
@@ -140,6 +153,9 @@ function generateCatalogChannel(input, output, includeAdditional, sourceDirector
       }
     }
     if(includeAdditional&&enrichTranslations)require('./catalog-classification-version').advanceClassificationTimestamp(delivery,path.join(output,language));
+    if (includeAdditional && enrichTranslations) {
+      applyArrivalDates(delivery, readDelivery(path.join(output, language)));
+    }
     const json = Buffer.from(JSON.stringify(delivery), 'utf8');
     const compressed = zlib.gzipSync(json, { level: 9 });
     if (delivery.totalCount > 200000 || json.length > 128 * 1024 * 1024 || compressed.length > 32 * 1024 * 1024) {
@@ -191,4 +207,4 @@ if (require.main === module) {
   const researchBoard = require('./research-board/catalog').generateResearchBoard(input, path.join(path.dirname(output || path.join(input, 'mobile-v1')), 'mobile-v3'));
   console.log(JSON.stringify({catalogs, researchBoard}, null, 2));
 }
-module.exports = { mobileCatalog, generateMobileCatalogs, generateMobileV3Catalogs, normalizedSourceListing };
+module.exports = { mobileCatalog, generateMobileCatalogs, generateMobileV3Catalogs, normalizedSourceListing, validateTagLabels };

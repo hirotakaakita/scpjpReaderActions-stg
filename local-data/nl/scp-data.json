@@ -1,7 +1,7 @@
 {
   "totalCount": 16,
   "language": "nl",
-  "timestamp": "2026-11-13T17:59:08.589Z",
+  "timestamp": "2026-11-22T14:12:40.130Z",
   "duration": 10,
   "status": "completed",
   "statistics": {
@@ -28,7 +28,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:32:43.035Z",
+      "lastUpdated": "2026-11-22T10:11:34.505Z",
       "createdAt": "2026-11-10T00:34:46.327Z",
       "translatedLanguages": [
         "jp",
@@ -89,8 +89,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:27.105Z",
-      "descriptionContentSha256": "df1dda3f9086651087ed7f25da0cbdda8b374548128767edca6f69d2cdc08166"
+      "descriptionCheckedAt": "2026-11-22T14:01:11.356Z",
+      "descriptionContentSha256": "1371f64eac7b094728c5b7066de4b342af8c021fec871033d4749500a7eb0dc5"
     },
     {
       "itemId": "scp-series-003",
@@ -104,18 +104,54 @@
       "descriptionExcerpt": "SCP-003 bestaat uit twee verwante componenten van afzonderlijke oorsprong, aangeduid als SCP-003-1 en SCP-003-2.\nSCP-003-1 lijkt te bestaan uit chitine, haar en nagels van onbekende biologie, gerangschikt in een configuratie die lijkt op die van een computermotherboard. Testen onthult SCP-003-1 om de vroegst bekende printplaten met een factor van duizenden jaren te dateren. SCP-003-1 wordt beschouwd als gevoelig maar niet actief gevaarlijk behalve onder bepaalde voorwaarden.\nSCP-003-1 werd gevon",
       "descriptionVersion": 3,
       "tags": [
-        "biologisch",
-        "computer",
-        "euclid",
-        "k-class-scenario",
-        "levend",
-        "mind-invloed",
-        "organisch",
-        "radioactieve",
-        "telepathisch",
-        "transfiguratie",
-        "warmte",
-        "zelfreplicerende"
+        {
+          "id": "biologisch",
+          "label": "biologisch"
+        },
+        {
+          "id": "computer",
+          "label": "computer"
+        },
+        {
+          "id": "euclid",
+          "label": "euclid"
+        },
+        {
+          "id": "k-class-scenario",
+          "label": "k-class-scenario"
+        },
+        {
+          "id": "levend",
+          "label": "levend"
+        },
+        {
+          "id": "mind-invloed",
+          "label": "mind-invloed"
+        },
+        {
+          "id": "organisch",
+          "label": "organisch"
+        },
+        {
+          "id": "radioactieve",
+          "label": "radioactieve"
+        },
+        {
+          "id": "telepathisch",
+          "label": "telepathisch"
+        },
+        {
+          "id": "transfiguratie",
+          "label": "transfiguratie"
+        },
+        {
+          "id": "warmte",
+          "label": "warmte"
+        },
+        {
+          "id": "zelfreplicerende",
+          "label": "zelfreplicerende"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -123,7 +159,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:32:43.035Z",
+      "lastUpdated": "2026-11-22T10:11:34.505Z",
       "createdAt": "2026-11-10T00:34:46.327Z",
       "translatedLanguages": [
         "jp",
@@ -153,8 +189,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:27.105Z",
-      "descriptionContentSha256": "20199e72367dc9af54eb5308d67e43fe96fca2cd5e1003fba50084e804ff0634"
+      "descriptionCheckedAt": "2026-11-22T14:01:11.356Z",
+      "descriptionContentSha256": "ba70316b66047be13592e2aec55f9764282e021dfd6a6278d7da40cb1be11bb5"
     },
     {
       "itemId": "scp-series-004",
@@ -168,15 +204,42 @@
       "descriptionExcerpt": "SCP-004 bestaat uit een oude, houten schuurdeur(SCP-004-1) en een set van 12 verroeste stalen sleutels (SCP-004-2 tot SCP-004-13). De deur zelf is de toegang tot een verlaten fabriek in [GEGEVENS VERWIJDERD].",
       "descriptionVersion": 3,
       "tags": [
-        "bouwen",
-        "euclid",
-        "tag-5e833e579cfdb537163adee9",
-        "oooo",
-        "portal",
-        "ruimte-tijd",
-        "sleutel",
-        "temporeel",
-        "vertaald"
+        {
+          "id": "bouwen",
+          "label": "bouwen"
+        },
+        {
+          "id": "euclid",
+          "label": "euclid"
+        },
+        {
+          "id": "tag-5e833e579cfdb537163adee9",
+          "label": "ghost-be\u00efnvloedende"
+        },
+        {
+          "id": "oooo",
+          "label": "oooo"
+        },
+        {
+          "id": "portal",
+          "label": "portal"
+        },
+        {
+          "id": "ruimte-tijd",
+          "label": "ruimte-tijd"
+        },
+        {
+          "id": "sleutel",
+          "label": "sleutel"
+        },
+        {
+          "id": "temporeel",
+          "label": "temporeel"
+        },
+        {
+          "id": "vertaald",
+          "label": "vertaald"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -184,7 +247,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:32:43.035Z",
+      "lastUpdated": "2026-11-22T10:11:34.505Z",
       "createdAt": "2026-11-10T00:34:46.327Z",
       "translatedLanguages": [
         "jp",
@@ -213,8 +276,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:27.105Z",
-      "descriptionContentSha256": "ba7491e7a8e5b4c30ab56b140c28163f4338d50f96bbe11857441ae5c3bd74d1"
+      "descriptionCheckedAt": "2026-11-22T14:01:11.356Z",
+      "descriptionContentSha256": "f0562ccc526e45df271b7ba0c6c57df62a8c16ecb87df4db26b810083629ee5c"
     },
     {
       "itemId": "scp-series-005",
@@ -228,12 +291,30 @@
       "descriptionExcerpt": "In uiterlijk lijkt SCP-005 op een sierlijke sleutel, die de kenmerken van een typische massa geproduceerde sleutel toont die in de jaren 1920 werd gebruikt. De sleutel werd ontdekt toen een burger het gebruikte om een hoog beveiliging gebouw te infiltreren.SCP-005 lijkt de unieke mogelijkheid te hebben om alle soorten vergrendelingen (zie bijlage A), mechanisch of digitaal, met relatief gemak te openen. De oorsprong van deze vermogen moet nog worden bepaald.",
       "descriptionVersion": 3,
       "tags": [
-        "adaptieve",
-        "bewust",
-        "metalen",
-        "o",
-        "toets",
-        "veilig"
+        {
+          "id": "adaptieve",
+          "label": "adaptieve"
+        },
+        {
+          "id": "bewust",
+          "label": "bewust"
+        },
+        {
+          "id": "metalen",
+          "label": "metalen"
+        },
+        {
+          "id": "o",
+          "label": "o"
+        },
+        {
+          "id": "toets",
+          "label": "toets"
+        },
+        {
+          "id": "veilig",
+          "label": "veilig"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -241,7 +322,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:32:43.035Z",
+      "lastUpdated": "2026-11-22T10:11:34.505Z",
       "createdAt": "2026-11-10T00:34:46.327Z",
       "translatedLanguages": [
         "jp",
@@ -302,8 +383,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:27.105Z",
-      "descriptionContentSha256": "48f6f2ed5a7f70962f0ccd2eb8cb361bf9ffe1619810f65e620371f6f98b451a"
+      "descriptionCheckedAt": "2026-11-22T14:01:11.356Z",
+      "descriptionContentSha256": "84064aca39d2bf134cac3a463b8a2d1087f259816d03b0475f0bdfaf46e2a595"
     },
     {
       "itemId": "scp-series-008",
@@ -317,12 +398,30 @@
       "descriptionExcerpt": "SCP-008 is een complexe prion waarvan samples op elke G2-site te vinden zijn. De studie van SCP-008 is zeer geclassificeerd en is primair gericht op het voorkomen van onderzoek dat zou kunnen leiden tot de synthese van SCP-008 in de verre toekomst. De kenmerken van de SCP-008 Prion zijn:\n\n100% besmettelijk.\n100% dodelijk.\nOverdracht door blootgestelde slijmvliezen en eventuele lichaamsvloeistoffen.\nNiet overdraagbaar door lucht of water.\n\nSymptomen van SCP-008 infectie manifesteren zich binnen d",
       "descriptionVersion": 3,
       "tags": [
-        "besmetting",
-        "biohazard",
-        "euclid",
-        "levend",
-        "reanimatie",
-        "transfiguratie"
+        {
+          "id": "besmetting",
+          "label": "besmetting"
+        },
+        {
+          "id": "biohazard",
+          "label": "biohazard"
+        },
+        {
+          "id": "euclid",
+          "label": "euclid"
+        },
+        {
+          "id": "levend",
+          "label": "levend"
+        },
+        {
+          "id": "reanimatie",
+          "label": "reanimatie"
+        },
+        {
+          "id": "transfiguratie",
+          "label": "transfiguratie"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -330,7 +429,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:32:43.035Z",
+      "lastUpdated": "2026-11-22T10:11:34.505Z",
       "createdAt": "2026-11-10T00:34:46.327Z",
       "translatedLanguages": [
         "jp",
@@ -389,8 +488,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:27.105Z",
-      "descriptionContentSha256": "2d77ee2c18b7a4c76a6dd8bfdcbce439c65634327de22ab059d80ea27f9cd7e2"
+      "descriptionCheckedAt": "2026-11-22T14:01:11.356Z",
+      "descriptionContentSha256": "40e07cdab9749ce4984a8dd64c71aac6efd5465d2f998f793e4c3a7cedcf36e5"
     },
     {
       "itemId": "scp-series-009",
@@ -404,12 +503,30 @@
       "descriptionExcerpt": "Objectnr.: SCP-009 Klasse: Euclid Speciale Veiligheidsmaatregelen: Onderwerp zal worden ingesloten in een verzegelde opslagtank gemaakt van hittebestendige legering met dimensies van niet minder dan 14 m3. Onder geen situatie zal SCP-009 worden blootgesteld tegen temperaturen hoger dan 0\u00b0C wanneer er geen tests plaatsvinden en geen alledaagse vloeistoffen in vaste staat (vooral bevroren water) mogen binnen 30 meter van het insluitingsgebied van het onderwerp worden toegelaten.De kamer van onderw",
       "descriptionVersion": 3,
       "tags": [
-        "euclid",
-        "liquid",
-        "oooo",
-        "thermisch",
-        "vertaald",
-        "zelfduplicaat"
+        {
+          "id": "euclid",
+          "label": "euclid"
+        },
+        {
+          "id": "liquid",
+          "label": "liquid"
+        },
+        {
+          "id": "oooo",
+          "label": "oooo"
+        },
+        {
+          "id": "thermisch",
+          "label": "thermisch"
+        },
+        {
+          "id": "vertaald",
+          "label": "vertaald"
+        },
+        {
+          "id": "zelfduplicaat",
+          "label": "zelfduplicaat"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -417,7 +534,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:32:43.035Z",
+      "lastUpdated": "2026-11-22T10:11:34.505Z",
       "createdAt": "2026-11-10T00:34:46.327Z",
       "translatedLanguages": [
         "jp",
@@ -474,8 +591,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:27.105Z",
-      "descriptionContentSha256": "787e026a5b4c207b871eb1c0554bfb014d3203eec25f6067fb573d24f6e1f419"
+      "descriptionCheckedAt": "2026-11-22T14:01:11.356Z",
+      "descriptionContentSha256": "3734b94e4e813f4a70755bad8ba24f9f4da018573c989be96b1448e39914cb36"
     },
     {
       "itemId": "scp-series-031",
@@ -489,14 +606,38 @@
       "descriptionExcerpt": "SCP-031 is een amorf organisme, met een massa van 75 kilogram. SCP-031 kan met een snelheid van 3 km / h bewegen en laat een oliespoor achter als het beweegt. Het is alleen in staat tot rudimentaire fysieke beweging. Testen van teruggewonnen weefselmonsters heeft aangetoond dat SCP-031 ten minste gedeeltelijk is samengesteld uit menselijke spieren en epidermaal weefsel. SCP-031 is in staat menselijke spraak te reproduceren in elke toonhoogte of toon, hoewel het momenteel niet bekend is hoe de bi",
       "descriptionVersion": 3,
       "tags": [
-        "akoestiek",
-        "amorfe",
-        "cognitohazard",
-        "seksueel",
-        "sensorische",
-        "telepathische",
-        "veilig",
-        "visueel"
+        {
+          "id": "akoestiek",
+          "label": "akoestiek"
+        },
+        {
+          "id": "amorfe",
+          "label": "amorfe"
+        },
+        {
+          "id": "cognitohazard",
+          "label": "cognitohazard"
+        },
+        {
+          "id": "seksueel",
+          "label": "seksueel"
+        },
+        {
+          "id": "sensorische",
+          "label": "sensorische"
+        },
+        {
+          "id": "telepathische",
+          "label": "telepathische"
+        },
+        {
+          "id": "veilig",
+          "label": "veilig"
+        },
+        {
+          "id": "visueel",
+          "label": "visueel"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -504,7 +645,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:32:43.035Z",
+      "lastUpdated": "2026-11-22T10:11:34.505Z",
       "createdAt": "2026-11-10T00:34:46.327Z",
       "translatedLanguages": [
         "jp",
@@ -528,8 +669,8 @@
         "sl",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:27.105Z",
-      "descriptionContentSha256": "9005375a524ba60b6480ca46306d302e12a99c72f52154ae0d5b8fae5b2ba421"
+      "descriptionCheckedAt": "2026-11-22T14:01:11.356Z",
+      "descriptionContentSha256": "3fc46b2b44603a3f6fb0bd692b1fea11669630ea47e6bcbe9cca5977b60d57aa"
     },
     {
       "itemId": "scp-series-049",
@@ -549,7 +690,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:32:43.035Z",
+      "lastUpdated": "2026-11-22T10:11:34.505Z",
       "createdAt": "2026-11-10T00:34:46.327Z",
       "translatedLanguages": [
         "jp",
@@ -575,8 +716,8 @@
         "sl",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:27.105Z",
-      "descriptionContentSha256": "fde1027f82096acb08e02c75717f335e2785d9aaaf1aedf05291787b94f637cf"
+      "descriptionCheckedAt": "2026-11-22T14:01:11.356Z",
+      "descriptionContentSha256": "418bfcfbb1fc228e8855329eb10448ca3a110e8d2c7a34da56369fb26bb41ab7"
     },
     {
       "itemId": "scp-series-055",
@@ -590,12 +731,30 @@
       "descriptionExcerpt": "SCP-055 is een \"zelfbewust geheim\" of \"anti-meme\". Informatie over het fysieke uiterlijk van de SCP-055, evenals de aard, het gedrag en de oorsprong is zelf classificerend. Verduidelijken:\n\nHoe Lokatie 19 oorspronkelijk aan SCP-055 kwam, is onbekend.\n\n\nWanneer SCP-055 werd verkregen en door wie, is onbekend.\n\n\nSCP-055's fysieke verschijning is onbekend. Het is niet onbeschrijfelijk of onzichtbaar: individuen zijn perfect in staat om de container van de SCP-055 binnen te gaan en te observeren, me",
       "descriptionVersion": 3,
       "tags": [
-        "antimemetis",
-        "erfgoed",
-        "infohazard",
-        "keter",
-        "memory-invloed",
-        "meta"
+        {
+          "id": "antimemetis",
+          "label": "antimemetis"
+        },
+        {
+          "id": "erfgoed",
+          "label": "erfgoed"
+        },
+        {
+          "id": "infohazard",
+          "label": "infohazard"
+        },
+        {
+          "id": "keter",
+          "label": "keter"
+        },
+        {
+          "id": "memory-invloed",
+          "label": "memory-invloed"
+        },
+        {
+          "id": "meta",
+          "label": "meta"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -603,7 +762,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:32:43.035Z",
+      "lastUpdated": "2026-11-22T10:11:34.505Z",
       "createdAt": "2026-11-10T00:34:46.327Z",
       "translatedLanguages": [
         "jp",
@@ -630,8 +789,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:27.105Z",
-      "descriptionContentSha256": "9d4d71c771275ea36c30934559f9e9ce35004ca6419a5ea6ee25a26234322903"
+      "descriptionCheckedAt": "2026-11-22T14:01:11.356Z",
+      "descriptionContentSha256": "d0bb10f512d9069914527149271af6aaa3405da3abf2996fde44623ea63aeef8"
     },
     {
       "itemId": "scp-series-087",
@@ -645,13 +804,34 @@
       "descriptionExcerpt": "SCP-087 is een onverlichte platformtrap. Trappen dalen 13 treden af in een hoek van 38 graden voordat ze een halfrond platform van ongeveer 3 meter in diameter bereiken. De afdaling richting draait 180 graden op elk platform. Het ontwerp van de SCP-087 beperkt de onderwerpen tot een visueel bereik van ongeveer 1,5 vluchten. Een lichtbron is vereist voor alle onderwerpen die SCP-087 verkennen, omdat er geen verlichtingsarmaturen of vensters aanwezig zijn. Verlichtingsbronnen die helderder zijn da",
       "descriptionVersion": 3,
       "tags": [
-        "akoestisch",
-        "erfgoed",
-        "euclid",
-        "gebouw",
-        "licht",
-        "plaats",
-        "ruimte-tijd"
+        {
+          "id": "akoestisch",
+          "label": "akoestisch"
+        },
+        {
+          "id": "erfgoed",
+          "label": "erfgoed"
+        },
+        {
+          "id": "euclid",
+          "label": "euclid"
+        },
+        {
+          "id": "gebouw",
+          "label": "gebouw"
+        },
+        {
+          "id": "licht",
+          "label": "licht"
+        },
+        {
+          "id": "plaats",
+          "label": "plaats"
+        },
+        {
+          "id": "ruimte-tijd",
+          "label": "ruimte-tijd"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -659,7 +839,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:32:43.035Z",
+      "lastUpdated": "2026-11-22T10:11:34.505Z",
       "createdAt": "2026-11-10T00:34:46.327Z",
       "translatedLanguages": [
         "jp",
@@ -685,8 +865,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:27.105Z",
-      "descriptionContentSha256": "cf3ad05d8b869709aa798653a066eec3b723c716728ae574d0d5bf2af15c2e8f"
+      "descriptionCheckedAt": "2026-11-22T14:01:11.356Z",
+      "descriptionContentSha256": "dfb0af4ad2087327500027ab8ebd717816b26a9c378ae60fac20bf7f85320ee6"
     },
     {
       "itemId": "scp-series-096",
@@ -706,7 +886,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:32:43.035Z",
+      "lastUpdated": "2026-11-22T10:11:34.505Z",
       "createdAt": "2026-11-10T00:34:46.327Z",
       "translatedLanguages": [
         "jp",
@@ -734,8 +914,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:27.105Z",
-      "descriptionContentSha256": "bc3142b3fbfac16a645c65b035300ff53a3754b54e06978d32111d86617a9162"
+      "descriptionCheckedAt": "2026-11-22T14:01:11.356Z",
+      "descriptionContentSha256": "5ead6863cfdf5f09d0e6d60496b5da2a4658e7faaefb776cbbce0ec55ecb8e28"
     },
     {
       "itemId": "scp-series-169",
@@ -755,7 +935,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:32:43.035Z",
+      "lastUpdated": "2026-11-22T10:11:34.505Z",
       "createdAt": "2026-11-10T00:34:46.327Z",
       "translatedLanguages": [
         "jp",
@@ -778,8 +958,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:27.105Z",
-      "descriptionContentSha256": "db995f18fabb1ebd1ad3ae0ae951840b4a00bec8cbcbaa1e9a1ffde88a257989"
+      "descriptionCheckedAt": "2026-11-22T14:01:11.356Z",
+      "descriptionContentSha256": "51b5d66ba1810886c5ed16ca64c7e9c0fdafd1be76a336becfc6596156dc41ea"
     },
     {
       "itemId": "scp-series-173",
@@ -793,11 +973,26 @@
       "descriptionExcerpt": "Overgebracht naar Site-19 in 1993. Herkomst onbekend tot nu toe. Het bestaat uit wapeningsstaal en beton met sporen van spuitverf van het merk Krylon. SCP-173 is geanimeerd en uiterst vijandig. Het object kan niet bewegen zolang het zich in een direct gezichtsveld bevindt. Het is absoluut noodzakelijk dat het visuele contact met SCP-173 niet wordt onderbroken. Medewerkers die zijn aangewezen om de container te betreden, moeten elkaar waarschuwen vooraleer ze knipperen met de ogen. Het object val",
       "descriptionVersion": 3,
       "tags": [
-        "autonoom",
-        "erfgoed",
-        "euclid",
-        "observationeel",
-        "sculptuur"
+        {
+          "id": "autonoom",
+          "label": "autonoom"
+        },
+        {
+          "id": "erfgoed",
+          "label": "erfgoed"
+        },
+        {
+          "id": "euclid",
+          "label": "euclid"
+        },
+        {
+          "id": "observationeel",
+          "label": "observationeel"
+        },
+        {
+          "id": "sculptuur",
+          "label": "sculptuur"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -805,7 +1000,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:32:43.035Z",
+      "lastUpdated": "2026-11-22T10:11:34.505Z",
       "createdAt": "2026-11-10T00:34:46.327Z",
       "translatedLanguages": [
         "jp",
@@ -840,8 +1035,8 @@
         "tok",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:27.105Z",
-      "descriptionContentSha256": "074b57ec365e5840b2119fc85e7603a93aebd9820b899e2db49735594f346664"
+      "descriptionCheckedAt": "2026-11-22T14:01:11.356Z",
+      "descriptionContentSha256": "e5771fb5adc343636799ab1176cc04b6b52f55c1d8f16a5b803772f7bd35de75"
     },
     {
       "itemId": "scp-series-239",
@@ -855,16 +1050,46 @@
       "descriptionExcerpt": "SCP-239 lijkt een 8-jarig meisje te zijn, 1 meter in de hoogte en 20 kilo in gewicht. Onderwerp heeft schouderlengte blond haar. Bij nadere inspectie, de ogen van het onderwerp \"glanst\" een grijsgroene tint. Het subject lijkt een nog niet ontdekte vorm van straling uit te zenden, die \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 wordt genoemd. Deze golven lijken onschadelijk in lage concentraties, maar in hogere concentraties kunnen ze de materie op een subatomisch niveau afbreken.\nSCP-239 heeft schijnbaar het vermogen om te doe",
       "descriptionVersion": 3,
       "tags": [
-        "ectoentropic",
-        "erfgoed",
-        "humanoid",
-        "keter",
-        "levend",
-        "ontokinetic",
-        "telekinetische",
-        "transfiguratie",
-        "voelend",
-        "wijze"
+        {
+          "id": "ectoentropic",
+          "label": "ectoentropic"
+        },
+        {
+          "id": "erfgoed",
+          "label": "erfgoed"
+        },
+        {
+          "id": "humanoid",
+          "label": "humanoid"
+        },
+        {
+          "id": "keter",
+          "label": "keter"
+        },
+        {
+          "id": "levend",
+          "label": "levend"
+        },
+        {
+          "id": "ontokinetic",
+          "label": "ontokinetic"
+        },
+        {
+          "id": "telekinetische",
+          "label": "telekinetische"
+        },
+        {
+          "id": "transfiguratie",
+          "label": "transfiguratie"
+        },
+        {
+          "id": "voelend",
+          "label": "voelend"
+        },
+        {
+          "id": "wijze",
+          "label": "wijze"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -872,7 +1097,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:32:43.035Z",
+      "lastUpdated": "2026-11-22T10:11:34.505Z",
       "createdAt": "2026-11-10T00:34:46.327Z",
       "translatedLanguages": [
         "jp",
@@ -895,8 +1120,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:27.105Z",
-      "descriptionContentSha256": "6934928908e8d8c2125fb65031193f1bea79c857c2cd4184c268f618c4925f68"
+      "descriptionCheckedAt": "2026-11-22T14:01:11.356Z",
+      "descriptionContentSha256": "645b00a475957413ba5833dfeaca06279676485ab5d2c1281832cbc14072e616"
     },
     {
       "itemId": "scp-series-500",
@@ -910,11 +1135,26 @@
       "descriptionExcerpt": "SCP-500 is een plastic doos die op het moment van schrijven van dit rapport zevenenveertig (47) rode pillen bevat. E\u00e9n pil, indien oraal ingenomen, geneest effectief het onderwerp van alle ziekten binnen twee uur, de exacte tijd afhankelijk van de ernst en het aantal van de omstandigheden van het subject. Ondanks vele pogingen zijn alle pogingen om te synthetiseren wat het actieve ingredi\u00ebnt in SCP-500 lijkt te zijn, niet succesvol geweest.",
       "descriptionVersion": 3,
       "tags": [
-        "chemisch",
-        "erfgoed",
-        "houder",
-        "medisch",
-        "veilig"
+        {
+          "id": "chemisch",
+          "label": "chemisch"
+        },
+        {
+          "id": "erfgoed",
+          "label": "erfgoed"
+        },
+        {
+          "id": "houder",
+          "label": "houder"
+        },
+        {
+          "id": "medisch",
+          "label": "medisch"
+        },
+        {
+          "id": "veilig",
+          "label": "veilig"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -922,7 +1162,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:32:43.035Z",
+      "lastUpdated": "2026-11-22T10:11:34.505Z",
       "createdAt": "2026-11-10T00:34:46.327Z",
       "translatedLanguages": [
         "jp",
@@ -978,8 +1218,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:27.105Z",
-      "descriptionContentSha256": "0f035b2c119e625427a60b26fd4ad1697df0a70d033e63df247411f87e0e39b4"
+      "descriptionCheckedAt": "2026-11-22T14:01:11.356Z",
+      "descriptionContentSha256": "9bc413e752fcdd429568d2f52bcf98ee8f87a3328a73b699cc7ba11c52a847c9"
     },
     {
       "itemId": "scp-series-963",
@@ -999,7 +1239,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:32:43.035Z",
+      "lastUpdated": "2026-11-22T10:11:34.505Z",
       "createdAt": "2026-11-10T00:34:46.327Z",
       "translatedLanguages": [
         "jp",
@@ -1019,8 +1259,8 @@
         "hu",
         "nl"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:27.105Z",
-      "descriptionContentSha256": "997e050e4459ac6b02adf8da343ef1926d33372ac7796d9755f39c99e05d49cd"
+      "descriptionCheckedAt": "2026-11-22T14:01:11.356Z",
+      "descriptionContentSha256": "1d68b07f0fb456b4ba8264bf6e3c098737be2bc6348b44a3f52aea6ba36b5aa6"
     }
   ],
   "tagSchemaVersion": 2

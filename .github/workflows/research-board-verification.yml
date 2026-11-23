@@ -1,0 +1,81 @@
+name: Research board independent verification
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: Number of sampled pages (1-5000)
+        type: number
+        default: 500
+      seed:
+        description: Deterministic selection seed
+        type: string
+        default: 2026-11-19-initial
+  push:
+    branches:
+      - audit/research-board-verification-20261119
+    paths:
+      - 'research-board/verification/**'
+      - '.github/workflows/research-board-verification.yml'
+permissions:
+  contents: read
+concurrency:
+  group: research-board-verification-current-v3-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Run independent audit unit tests
+        run: node --test research-board/verification/verification.test.js
+      - name: Inventory unresolved pages
+        run: node research-board/verification/audit.js --inventory --out research-board/verification/audit-results
+      - name: Reproduce targeted ZH-TR, CN and chapter-navigation cases
+        if: github.event_name == 'push'
+        run: |
+          node research-board/verification/audit.js \
+            --url https://scp-zh-tr.wikidot.com/scp-179 \
+            --url https://scp-zh-tr.wikidot.com/a-thin-dangerous-line \
+            --url https://scp-wiki-cn.wikidot.com/tool-box \
+            --url https://scp-wiki.wikidot.com/march-of-the-fire-ants \
+            --url https://scpko.wikidot.com/goc-hub-page \
+            --delay-ms 1250 \
+            --out research-board/verification/audit-results/current
+      - name: Optional full 500-page live audit
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          LIMIT: ${{ inputs.limit }}
+          SEED: ${{ inputs.seed }}
+        run: node research-board/verification/audit.js --limit "$LIMIT" --seed "$SEED" --delay-ms 1250 --out research-board/verification/audit-results/current
+      - name: Triage current audit
+        run: |
+          node research-board/verification/triage.js \
+            --audit research-board/verification/audit-results/current/audit.json \
+            --differences research-board/verification/audit-results/current/differences.csv \
+            --out research-board/verification/audit-results/current-triage
+      - name: Compare both parsers using this run's current baseline
+        run: |
+          node research-board/verification/same-snapshot.js \
+            --baseline research-board/verification/audit-results/current/audit.json \
+            --controls 10 \
+            --out research-board/verification/audit-results/same-snapshot
+      - name: Audit original SCP work identity and provenance
+        if: always()
+        run: node research-board/verification/identity-check.js research-board/verification/audit-results/identity
+      - name: Recursively validate original-author credit relationships
+        if: always()
+        run: node research-board/verification/identity-provenance.js research-board/verification/audit-results/identity-provenance
+      - name: Preserve reports even if audit fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: research-board-verification-${{ github.run_id }}
+          path: research-board/verification/audit-results/
+          retention-days: 14
+          if-no-files-found: warn

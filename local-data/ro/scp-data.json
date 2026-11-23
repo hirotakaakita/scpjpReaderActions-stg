@@ -1,8 +1,8 @@
 {
   "totalCount": 17,
   "language": "ro",
-  "timestamp": "2026-11-13T17:59:08.589Z",
-  "duration": 12,
+  "timestamp": "2026-11-22T14:12:40.130Z",
+  "duration": 17,
   "status": "completed",
   "statistics": {
     "translated": 17,
@@ -22,8 +22,14 @@
       "descriptionExcerpt": "URM\u0102TOARELE FI\u0218IERE AU FOST CLASIFICATE TOP SECRET PRIN ORDONAN\u021aA CONSILIULUI C5 NOTIFICARE GENERAL\u0102 RO-001-\u039e: Pentru a evita diseminarea informa\u021biilor despre SCP-RO-001, mai multe fi\u0219iere false SCP-RO-001 nu au fost create \u00eempreun\u0103 cu fi\u0219ierele/fi\u0219ierele adev\u0103rate/veridice. Toate fi\u0219ierele despre natura SCP-RO-001, inclusiv cele fictive, sunt protejate de un agent letal memetic gata s\u0103 cauzeze stop cardiac imediat la orice personal neautorizat care \u00eencearc\u0103 s\u0103 acceseze fi\u0219ierul. Dezv\u0103luirea ade",
       "descriptionVersion": 3,
       "tags": [
-        "hub",
-        "serie-ro"
+        {
+          "id": "hub",
+          "label": "hub"
+        },
+        {
+          "id": "serie-ro",
+          "label": "serie-ro"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -31,13 +37,13 @@
       "extractedFrom": "scp-series-ro",
       "pageType": "scp-series-ro",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:35:45.382Z",
+      "lastUpdated": "2026-11-22T10:18:43.492Z",
       "createdAt": "2026-11-10T00:36:44.976Z",
       "translatedLanguages": [
         "ro"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:13.494Z",
-      "descriptionContentSha256": "86e1811db1fb7c2c172b50db7938cffc3e0f846b27d3817bb74ae7e70dbd3342"
+      "descriptionCheckedAt": "2026-11-22T14:04:20.838Z",
+      "descriptionContentSha256": "944959c3744aba143e10c3a3234f2369f144c2dfe6bcbdfb16592ef04beac2d8"
     },
     {
       "itemId": "scp-series-ro-004",
@@ -51,8 +57,14 @@
       "descriptionExcerpt": "SCP-RO-004 este o specie anormal\u0103 de animale, const\u00e2nd din realit\u0103\u021bi virtuale. Exemplarele SCP-RO-004 se pot hr\u0103ni doar cu alimente \u00een realitatea virtual\u0103, tipul de hran\u0103 variaz\u0103 \u00een func\u021bie de speciile \u00een care sunt reprezentate.\nToate cazurile de SCP-RO-004 reprezint\u0103 acela\u0219i animal, \u0219i toate exemplarele pot suferi muta\u021bii, schimb\u00e2nd specii. Nu a fost posibil s\u0103 se \u00eenregistreze perechi \u00eentre specimene SCP-RO-004, a fost posibil s\u0103 se disting\u0103 sexul lor1.",
       "descriptionVersion": 3,
       "tags": [
-        "euclid",
-        "scp-ro"
+        {
+          "id": "euclid",
+          "label": "euclid"
+        },
+        {
+          "id": "scp-ro",
+          "label": "scp-ro"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -60,13 +72,13 @@
       "extractedFrom": "scp-series-ro",
       "pageType": "scp-series-ro",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:35:45.382Z",
+      "lastUpdated": "2026-11-22T10:18:43.492Z",
       "createdAt": "2026-11-10T00:36:44.976Z",
       "translatedLanguages": [
         "ro"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:13.494Z",
-      "descriptionContentSha256": "6ac019522226ab39552c13e97c7c70f99c463f74110d322508b8ec7e74a04835"
+      "descriptionCheckedAt": "2026-11-22T14:04:20.838Z",
+      "descriptionContentSha256": "b68de9d32cd8084779603a9bf75d9cb28162e43037c85196eafed52780f1b2d9"
     },
     {
       "itemId": "scp-series-ro-006",
@@ -80,8 +92,14 @@
       "descriptionExcerpt": "SCP-RO-006 este o cryptocurrency numit\u0103 LaughCoin, moneda este valabil\u0103 numai \u00een Rom\u00e2nia, iar simbolul valutar este o modificare a simbolului BitCoin, cu \u00een loc de B, un emoticon r\u00e2s.\nSCP-RO-006 pot fi ob\u021binute prin schimb \u0219i de tranzac\u021bionare pe site-ul oficial al monedei \u00een sine, sau prin minerit pe site-uri externe; valoarea de un ban de LaughCoin (numit LaughPenny) este egal\u0103 cu valoarea de 3.40 euro, deci un LaughCoin este egal cu 340 de euro. \u00cen ciuda valorii relativ ridicate a acestei mon",
       "descriptionVersion": 3,
       "tags": [
-        "euclid",
-        "serie-ro"
+        {
+          "id": "euclid",
+          "label": "euclid"
+        },
+        {
+          "id": "serie-ro",
+          "label": "serie-ro"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -89,13 +107,13 @@
       "extractedFrom": "scp-series-ro",
       "pageType": "scp-series-ro",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:35:45.382Z",
+      "lastUpdated": "2026-11-22T10:18:43.492Z",
       "createdAt": "2026-11-10T00:36:44.976Z",
       "translatedLanguages": [
         "ro"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:13.494Z",
-      "descriptionContentSha256": "07f19fbe686ff0a62472fe48dd68372974e90201c90cca207dfa58146bc920f9"
+      "descriptionCheckedAt": "2026-11-22T14:04:20.838Z",
+      "descriptionContentSha256": "747d489495f5eef5b1e9f754bab9466980a96ac5b2767aee7e5aebcbf98a0d3f"
     },
     {
       "itemId": "scp-series-001",
@@ -109,7 +127,10 @@
       "descriptionExcerpt": "URM\u0102TOARELE FI\u0218IERE SUNT STRICT SECRETE TOP SECRET DUP\u0102 ORDINUL ADMINISTRATORULUI \u00ceN\u0218TIIN\u021aARE GENERAL\u0102 001-Alfa: Pentru a preveni divulgarea informa\u021biilor despre SCP-001, mai multe/niciun fi\u0219ier SCP-001 fals nu a fost creat al\u0103turi de fi\u0219ierul/fi\u0219ierele reale. Toate fi\u0219ierele referitoare la natura SCP-001, sunt protejate de un agent de ucidere memetic conceput s\u0103 provoace imediat stop cardiac oric\u0103rui personal neautorizat care \u00eencearc\u0103 s\u0103 acceseze fi\u0219ierul. Dezv\u0103luirea adev\u0103ratei naturi ale lui ",
       "descriptionVersion": 3,
       "tags": [
-        "hub"
+        {
+          "id": "hub",
+          "label": "hub"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -117,7 +138,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:35:48.473Z",
+      "lastUpdated": "2026-11-22T10:18:50.237Z",
       "createdAt": "2026-11-10T00:36:47.771Z",
       "translatedLanguages": [
         "jp",
@@ -148,8 +169,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:13.494Z",
-      "descriptionContentSha256": "23d48fbc43e1acaab445aae585910499e3b5e2145f964de8ca2af6d02356d0f0"
+      "descriptionCheckedAt": "2026-11-22T14:04:20.838Z",
+      "descriptionContentSha256": "cea36810ea8f6bf735b2081816b2078295d7dc1a62fb2a5d550245086c9acb76"
     },
     {
       "itemId": "scp-series-002",
@@ -169,7 +190,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:35:48.473Z",
+      "lastUpdated": "2026-11-22T10:18:50.237Z",
       "createdAt": "2026-11-10T00:36:47.771Z",
       "translatedLanguages": [
         "jp",
@@ -230,8 +251,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:13.494Z",
-      "descriptionContentSha256": "ab02316b609b13c8a0cd2e2f6d3eb99aa4e179857276e50541a39a322f97233e"
+      "descriptionCheckedAt": "2026-11-22T14:04:20.838Z",
+      "descriptionContentSha256": "690e39ccb9dcf9a62044ba5a27802a41f3c2e62d979b06b5339bb94576d38fa7"
     },
     {
       "itemId": "scp-series-003",
@@ -251,7 +272,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:35:48.473Z",
+      "lastUpdated": "2026-11-22T10:18:50.237Z",
       "createdAt": "2026-11-10T00:36:47.771Z",
       "translatedLanguages": [
         "jp",
@@ -281,8 +302,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:13.494Z",
-      "descriptionContentSha256": "8cfb14f86b8a5a76cc277d3ddbf97348d1d45590225cb7247466d939a1430754"
+      "descriptionCheckedAt": "2026-11-22T14:04:20.838Z",
+      "descriptionContentSha256": "76259b3178afd9f826f4a311203b84118d1f8823f33cf4664866af38d2614237"
     },
     {
       "itemId": "scp-series-004",
@@ -302,7 +323,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:35:48.473Z",
+      "lastUpdated": "2026-11-22T10:18:50.237Z",
       "createdAt": "2026-11-10T00:36:47.771Z",
       "translatedLanguages": [
         "jp",
@@ -331,8 +352,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:13.494Z",
-      "descriptionContentSha256": "a300aa74cb54faee0430bec95164612caf1424fe3c19f73997677c493c6fa49c"
+      "descriptionCheckedAt": "2026-11-22T14:04:20.838Z",
+      "descriptionContentSha256": "3c5c48a3a378cd16378e96bcc04302d28e7fd9fa5756aaafa7a34cca82f90876"
     },
     {
       "itemId": "scp-series-005",
@@ -352,7 +373,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:35:48.473Z",
+      "lastUpdated": "2026-11-22T10:18:50.237Z",
       "createdAt": "2026-11-10T00:36:47.771Z",
       "translatedLanguages": [
         "jp",
@@ -413,8 +434,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:13.494Z",
-      "descriptionContentSha256": "0b53bebdfe7b189597c4dcb7c41569f4899fbd9a649f6fa923207c3d15b041d4"
+      "descriptionCheckedAt": "2026-11-22T14:04:20.838Z",
+      "descriptionContentSha256": "91613befce2537d8e774f49c032ce6f90fe9fbd6bf4d57c95a00044f0c0a22ca"
     },
     {
       "itemId": "scp-series-006",
@@ -434,7 +455,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:35:48.473Z",
+      "lastUpdated": "2026-11-22T10:18:50.237Z",
       "createdAt": "2026-11-10T00:36:47.771Z",
       "translatedLanguages": [
         "jp",
@@ -493,8 +514,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:13.494Z",
-      "descriptionContentSha256": "44d4301cf2eb591afc36750fb6f69aaa38c82085d0bf1621b18967b6e6899f45"
+      "descriptionCheckedAt": "2026-11-22T14:04:20.838Z",
+      "descriptionContentSha256": "14bb452289a18467040b3c555bb2f463a339d7522759ff61b50d68a14d6548a8"
     },
     {
       "itemId": "scp-series-007",
@@ -514,7 +535,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:35:48.473Z",
+      "lastUpdated": "2026-11-22T10:18:50.237Z",
       "createdAt": "2026-11-10T00:36:47.771Z",
       "translatedLanguages": [
         "jp",
@@ -543,8 +564,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:13.494Z",
-      "descriptionContentSha256": "33e635c9c0df9ac7c5d1394148f26e38d61befe2f9cd5e4218128ae709fb1c17"
+      "descriptionCheckedAt": "2026-11-22T14:04:20.838Z",
+      "descriptionContentSha256": "358ff4316ecf76feb188a6c5bca8766e0183dce93961d597a34e1df1c1a11fd9"
     },
     {
       "itemId": "scp-series-008",
@@ -564,7 +585,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:35:48.473Z",
+      "lastUpdated": "2026-11-22T10:18:50.237Z",
       "createdAt": "2026-11-10T00:36:47.771Z",
       "translatedLanguages": [
         "jp",
@@ -623,8 +644,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:13.494Z",
-      "descriptionContentSha256": "1f253c8f71ef80bacca2c0ca49ea5dcbe0b39879995d064923265525b616dc32"
+      "descriptionCheckedAt": "2026-11-22T14:04:20.838Z",
+      "descriptionContentSha256": "148d666144d04e1959cafed0d4e07478d3d00ff1b7a305e79a81e1e3e4fdd36d"
     },
     {
       "itemId": "scp-series-012",
@@ -638,11 +659,26 @@
       "descriptionExcerpt": "SCP-012 a fost recuperat de c\u0103tre Arheologul K.M. Sandoval \u00een timpul excav\u0103rii unui morm\u00e2nt din nordul Italiei distrus \u00eentr-o furtun\u0103 recent\u0103. Obiectul, o pies\u0103 de partitur\u0103 scris\u0103 de m\u00e2n\u0103, intitulat\u0103 \"Pe Muntele Golgotha\", parte dintr-un set mai mare de partituri, pare s\u0103 fie incomplet. Cerneala ro\u0219ie/neagr\u0103, \u00een prim-plan considerat\u0103 a fi o form\u0103 de cerneal\u0103 natural\u0103 de fructe de p\u0103dure sau colorant natural, s-a dovedit mai t\u00e2rziu a fi defapt s\u00e2nge de om de la mai mul\u021bi indivizi. Primul persona",
       "descriptionVersion": 3,
       "tags": [
-        "tag-4a0246e725776bf1040d3599",
-        "document",
-        "euclid",
-        "muzical",
-        "vizual"
+        {
+          "id": "tag-4a0246e725776bf1040d3599",
+          "label": "afecteaz\u0103-mintea"
+        },
+        {
+          "id": "document",
+          "label": "document"
+        },
+        {
+          "id": "euclid",
+          "label": "euclid"
+        },
+        {
+          "id": "muzical",
+          "label": "muzical"
+        },
+        {
+          "id": "vizual",
+          "label": "vizual"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -650,7 +686,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:35:48.473Z",
+      "lastUpdated": "2026-11-22T10:18:50.237Z",
       "createdAt": "2026-11-10T00:36:47.771Z",
       "translatedLanguages": [
         "jp",
@@ -677,8 +713,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:13.494Z",
-      "descriptionContentSha256": "84f00f51f1654d8117ef0337d46de8eb5d1cc156b1a8812fed4886189d6ea718"
+      "descriptionCheckedAt": "2026-11-22T14:04:20.838Z",
+      "descriptionContentSha256": "48f632968e7a4f8e47eeff542aaaeda3a68fb4af66c3cfac7ffec58c62b0e831"
     },
     {
       "itemId": "scp-series-096",
@@ -692,12 +728,30 @@
       "descriptionExcerpt": "SCP-096 este o creatur\u0103 umanoid\u0103, m\u0103sur\u00e2nd aproximativ 2,38 metri \u00een\u0103l\u021bime. Subiectul prezint\u0103 o mas\u0103 muscular\u0103 foarte mic\u0103, analiza preliminar\u0103 a masei corporale suger\u00e2nd o malnutri\u021bie u\u0219oar\u0103. Bra\u021bele sunt extrem de dispropor\u021bionate cu restul corpului subiectului, av\u00e2nd o lungime de aproximativ 1,5 metri fiecare. Pielea este \u00een cea mai mare parte lipsit\u0103 de pigmentare, f\u0103r\u0103 semne de p\u0103r pe corp.\nMaxilarul lui SCP-096 se poate deschide de patru (4) ori mai mult dec\u00e2t norma unui om de r\u00e2nd. Alte",
       "descriptionVersion": 3,
       "tags": [
-        "cognitohazard",
-        "doctorul-dan",
-        "euclid",
-        "tip-timid",
-        "vizual",
-        "tag-7749e00111385297baa05d9b"
+        {
+          "id": "cognitohazard",
+          "label": "cognitohazard"
+        },
+        {
+          "id": "doctorul-dan",
+          "label": "doctorul-dan"
+        },
+        {
+          "id": "euclid",
+          "label": "euclid"
+        },
+        {
+          "id": "tip-timid",
+          "label": "tip-timid"
+        },
+        {
+          "id": "vizual",
+          "label": "vizual"
+        },
+        {
+          "id": "tag-7749e00111385297baa05d9b",
+          "label": "\u00een-via\u0163\u0103"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -705,7 +759,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:35:48.473Z",
+      "lastUpdated": "2026-11-22T10:18:50.237Z",
       "createdAt": "2026-11-10T00:36:47.771Z",
       "translatedLanguages": [
         "jp",
@@ -733,8 +787,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:13.494Z",
-      "descriptionContentSha256": "f8e36fa507f91be9c40ce012666babbf162c93a30d9c53b16ec4ef6b59a182d8"
+      "descriptionCheckedAt": "2026-11-22T14:04:20.838Z",
+      "descriptionContentSha256": "12a0e6670877469d9635d899de4c8fcb1680c44e39d9a46bbac84afdc1e31b11"
     },
     {
       "itemId": "scp-series-173",
@@ -748,13 +802,34 @@
       "descriptionExcerpt": "Mutat \u00een Zona-19 \u00een anul 1993. Originea acestuia este \u00eenc\u0103 necunoscut\u0103. Este construit din beton \u0219i arm\u0103tur\u0103 cu urme de vopsea spray, marca Krylon. SCP-173 este activ \u0219i extrem de ostil. Obiectul nu se poate mi\u0219ca \u00een timp ce este privit direct. Contactul vizual cu SCP-173 nu trebuie \u00eentrerupt \u00een niciun moment. Personalul desemnat s\u0103 intre \u00een container este instruit s\u0103 se avertizeze unul pe cel\u0103lalt \u00eenainte de a clipi. Obiectul este raportat atac\u00e2nd prin ruperea g\u00e2tului de la baza craniului sau p",
       "descriptionVersion": 3,
       "tags": [
-        "autonom",
-        "euclid",
-        "tag-a3a9f648a702e2d339933d15",
-        "ostil",
-        "recomandate",
-        "sculptura",
-        "tag-b735ce53201fbbe4d699c5bc"
+        {
+          "id": "autonom",
+          "label": "autonom"
+        },
+        {
+          "id": "euclid",
+          "label": "euclid"
+        },
+        {
+          "id": "tag-a3a9f648a702e2d339933d15",
+          "label": "observa\u021bional"
+        },
+        {
+          "id": "ostil",
+          "label": "ostil"
+        },
+        {
+          "id": "recomandate",
+          "label": "recomandate"
+        },
+        {
+          "id": "sculptura",
+          "label": "sculptura"
+        },
+        {
+          "id": "tag-b735ce53201fbbe4d699c5bc",
+          "label": "sculptur\u0103"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -762,7 +837,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:35:48.473Z",
+      "lastUpdated": "2026-11-22T10:18:50.237Z",
       "createdAt": "2026-11-10T00:36:47.771Z",
       "translatedLanguages": [
         "jp",
@@ -797,8 +872,8 @@
         "tok",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:13.494Z",
-      "descriptionContentSha256": "afd7c17d601a013f476475ed016da807bd2b2e783d285ce569bd70218202bd11"
+      "descriptionCheckedAt": "2026-11-22T14:04:20.838Z",
+      "descriptionContentSha256": "f9bfc8b3aba47e683917b614dac64392231f09d9475796a56106b6cd126bae27"
     },
     {
       "itemId": "scp-series-409",
@@ -812,10 +887,22 @@
       "descriptionExcerpt": "SCP-409 seam\u0103n\u0103 cu un cristal de cuar\u021b mare de aproximativ 1,5 m \u00een\u0103l\u021bime \u0219i 0,6 m l\u0103\u021bime. Orice obiecte care intr\u0103 \u00een contact cu SCP-409 vor \u00eencepe s\u0103 se cristalizeze dup\u0103 trei ore de la contact. Acest efect va ap\u0103rea \u00een orice alt material, cu excep\u021bia granitului. Cristalizarea se va r\u0103sp\u00e2ndi cu aproximativ 2,5 cm pe minut \u0219i va transforma \u00eentregul obiect sau organism, pe interior \u0219i pe exterior. Subiec\u021bii raporteaz\u0103 c\u0103 acest efect este extrem de dureros \u0219i similar cu deger\u0103turile. Dup\u0103 cristal",
       "descriptionVersion": 3,
       "tags": [
-        "auto-replicare",
-        "cristalin",
-        "keter",
-        "transfigurare"
+        {
+          "id": "auto-replicare",
+          "label": "auto-replicare"
+        },
+        {
+          "id": "cristalin",
+          "label": "cristalin"
+        },
+        {
+          "id": "keter",
+          "label": "keter"
+        },
+        {
+          "id": "transfigurare",
+          "label": "transfigurare"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -823,7 +910,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:35:48.473Z",
+      "lastUpdated": "2026-11-22T10:18:50.237Z",
       "createdAt": "2026-11-10T00:36:47.771Z",
       "translatedLanguages": [
         "jp",
@@ -848,8 +935,8 @@
         "sl",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:13.494Z",
-      "descriptionContentSha256": "2f75d01e589658a1baefa0803f21415b31a263061bfe8103f1ee6af61cf89ad5"
+      "descriptionCheckedAt": "2026-11-22T14:04:20.838Z",
+      "descriptionContentSha256": "9e57ba8e5353865fea7994d16b9db96eb7b20b95bfc265525ad598726d6a0360"
     },
     {
       "itemId": "scp-series-500",
@@ -869,7 +956,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:35:48.473Z",
+      "lastUpdated": "2026-11-22T10:18:50.237Z",
       "createdAt": "2026-11-10T00:36:47.771Z",
       "translatedLanguages": [
         "jp",
@@ -925,8 +1012,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:13.494Z",
-      "descriptionContentSha256": "b33a869f74efc98b0c34ab5fdcbaee58b91ab1c4c0473b357d74fdf3829f2d6b"
+      "descriptionCheckedAt": "2026-11-22T14:04:20.838Z",
+      "descriptionContentSha256": "c792d85f78bd44c8301373c9203ebad4a4a2eec8884c338965f5cb2048040787"
     },
     {
       "itemId": "scp-series-871",
@@ -940,10 +1027,22 @@
       "descriptionExcerpt": "SCP-871 reprezint\u0103 o colec\u021bie de 237 de pr\u0103jituri. Instan\u021bele SCP-871 varieaz\u0103 semnificativ ca aspect \u0219i dimensiune, acoperind \u00eentreaga gam\u0103 de alimente descrise de oameni drept tort. Cea mai mic\u0103 instan\u021b\u0103 SCP-871 observat\u0103 a fost o brio\u0219\u0103 \u00een miniatur\u0103 cu o mas\u0103 de 15 grame. Cea mai mare instan\u021b\u0103 observat\u0103 p\u00e2n\u0103 \u00een prezent a fost un baumkuchen de 22 de kilograme, ce m\u0103sura 2 metri \u00een lungime.\nC\u00e2nd o instan\u021b\u0103 SCP-871 este consumat\u0103 de un om sau mai mul\u021bi oameni, aceasta este \u00eenlocuit\u0103 la aproximat",
       "descriptionVersion": 3,
       "tags": [
-        "auto-replicare",
-        "keter",
-        "metamorfic",
-        "tag-24a7e40158d7aaf2558500a9"
+        {
+          "id": "auto-replicare",
+          "label": "auto-replicare"
+        },
+        {
+          "id": "keter",
+          "label": "keter"
+        },
+        {
+          "id": "metamorfic",
+          "label": "metamorfic"
+        },
+        {
+          "id": "tag-24a7e40158d7aaf2558500a9",
+          "label": "m\u00e2ncare"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -951,7 +1050,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:35:48.473Z",
+      "lastUpdated": "2026-11-22T10:18:50.237Z",
       "createdAt": "2026-11-10T00:36:47.771Z",
       "translatedLanguages": [
         "jp",
@@ -973,8 +1072,8 @@
         "ro",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:13.494Z",
-      "descriptionContentSha256": "ce654befdc30b302b839ff3bdd6d25cac81f37e7991c13886ed78593e8772a3c"
+      "descriptionCheckedAt": "2026-11-22T14:04:20.838Z",
+      "descriptionContentSha256": "0ce9cd50dd65f63722aac136c8bd968622ab1f06a174f6c31675473fdca53408"
     }
   ],
   "tagSchemaVersion": 2
