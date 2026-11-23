@@ -103,6 +103,11 @@ function isChapterBar(anchor) {
   const flat=clone.textContent.normalize('NFKC').replace(/\s+/g,'').trim();
   if(!/^[«‹<]/.test(flat)||!/[»›>]$/.test(flat))return false;
   if(!flat.includes('|'))return false;
+  // Two outer chapter links may surround a plain-text hub title. This is
+  // still a navigation bar; a narrative paragraph lacks the bounded triplet.
+  const slots=flat.replace(/^[«‹<]+|[»›>]+$/gu,'').split('|');
+  if(slots.length===3&&slots[0]==='\uFFFC'&&slots[2]==='\uFFFC'&&
+      slots[1].length>0&&slots[1].length<=160)return true;
   return /^[«»‹›<>|\/.,:;·•\-\u2013\u2014\u2190\u2192\uFFFC]+$/u.test(flat);
 }
 function isBreadcrumbBanner(anchor,title) {
@@ -116,8 +121,17 @@ function isAttributionParagraph(anchor) {
   const p=anchor.closest('p');
   if(!p)return false;
   const text=p.textContent.replace(/\s+/g,' ').trim();
+  if(/\bFilename\s*:/i.test(text)&&/\bAuthor\s*:/i.test(text)&&
+      /\bSource Link\s*:/i.test(text)&&/\bLicense\s*:\s*CC[\s-]*BY[\s-]*SA/i.test(text))return true;
   return /(?:原文來源|original source|original article)/i.test(text) &&
     /(?:CC[\s-]*BY[\s-]*SA|授權方式|license)/i.test(text);
+}
+function isAuthorCollection(anchor) {
+  const panel=anchor.closest('.collection');
+  if(!panel)return false;
+  const titles=[...panel.querySelectorAll('.collapsible-block-link,summary,h1,h2,h3,h4,h5,h6')];
+  return titles.some(n=>/\bmore (?:from|by) (?:this|the) author\b/i.test(n.textContent.replace(/\s+/g,' ')))||
+    !!panel.querySelector('th.articlecolumn,td.articlecolumn');
 }
 function fromHtml(html,source,workByUrl,supportedHosts) {
   const doc = new JSDOM(html,{url:source,virtualConsole:new VirtualConsole()});
@@ -135,6 +149,7 @@ function fromHtml(html,source,workByUrl,supportedHosts) {
       else if (a.matches('[rel~="alternate"],[data-translation-source]')) skip='translation_metadata';
       else if (a.closest(AUX_SELECTORS) || [...a.parentElement?.classList||[]].some(c=>/^(licensebox|creditRate)/i.test(c))) skip='auxiliary_content';
       else if (isImageDirectoryMenu(a,root)) skip='image_directory_navigation';
+      else if (isAuthorCollection(a)) skip='author_collection';
       else if (isChapterBar(a)) skip='chapter_navigation';
       else if (isBreadcrumbBanner(a,title)) skip='breadcrumb_navigation';
       else if (isAttributionParagraph(a)) skip='source_credit_metadata';

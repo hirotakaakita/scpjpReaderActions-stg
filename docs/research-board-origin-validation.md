@@ -60,8 +60,8 @@ return automatically when at least five eligible articles are available again.
 
 ## Audit follow-up (2026-11-23)
 
-The current payload is revision `4830220344422c55b038`, SHA-256
-`8743f79cbd27f4dd35d8c47736e7c9e512eed6027e4e8f571f643ff4c328e93b`.
+The current payload is revision `567e87a668607aa8babd`, SHA-256
+`7f729ad7a24d9b2e8eb728cc8784e46e26b50c5cd147c16585902197d56a70c9`.
 All 125,100 catalog URLs and every previously published work alias are conserved.
 The board contains 54,953 works and 157,423 edges; 166 page owners changed.
 
@@ -95,3 +95,31 @@ are not expanded. These checks are sample diagnostics, not whole-corpus proof.
 Historical November 22 reports describe older snapshots and cannot establish
 current acceptance. Raw artifacts and the new holdout results must be retained
 with the exact board revision used by each audit.
+
+## Independent 500-page holdout and final repair
+
+The holdout used seed `holdout-complete-2026-11-23`, excluded the initial 500
+sample URLs, included RU, and examined revision `4830220344422c55b038`.
+All 500 responses were fetched successfully. The 32 byte-identical snapshots
+had 3,253 matching references and zero false positives/negatives. The other
+468 responses changed bytes and are not eligible for historical precision or
+recall scoring. Four live disagreements were investigated separately.
+
+- `scripture-for-microwaves` (ZH-TR): a chapter bar with a plain-text hub label.
+- `scp-6380` (EN): 29 links in a "More From This Author" collection.
+- `task-forces` (ZH-TR): an image-license source link.
+- `k-class-complete-list` (JP): one newly observed narrative link to SCP-6789.
+
+The first three were independent-verifier overcounts. Structural regression
+tests now exclude those panels while retaining narrative links. The fourth
+was present in both parsers; its current publisher record was refreshed in
+the final payload. Its target already had an aggregated work edge from another
+translation, so the total edge count is unchanged while its proof is added.
+
+All four disagreements plus ten controls were saved as raw snapshots. Frozen
+replay with the corrected verifier has zero parser disagreements, with exactly
+the one newly observed narrative reference differing from the prior graph.
+Explicit acceptance against the final repaired board compares those same
+14 retained responses with zero remaining differences; the historical
+artifact's revision is preserved. These diagnostics do not establish complete
+official-index discovery or whole-population semantic correctness.

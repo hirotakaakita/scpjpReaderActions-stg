@@ -69,6 +69,29 @@ test('comparison exposes both published-only and missing links',()=>{
   assert.deepEqual(difference.fp,['work:a']);
   assert.deepEqual(difference.fn,['work:c']);
 });
+
+test('plain-text chapter hubs and author collections are UI, with narrative links preserved',()=>{
+ const {workByUrl,supportedHosts}=index();
+ const html='<div id="page-title">Article</div><div id="page-content">'+
+   '<p>« <a href="/scp-002">Previous</a> | Plain hub title | <a href="/scp-003">Next</a> »</p>'+
+   '<div class="collection"><a class="collapsible-block-link">More&nbsp;From&nbsp;This&nbsp;Author</a>'+
+   '<p><a href="/scp-003">Other work</a></p></div>'+
+   '<div class="collection"><p>A narrative collection mentions <a href="/scp-002">Two</a>.</p></div></div>';
+ const result=fromHtml(html,en+'scp-001',workByUrl,supportedHosts);
+ assert.deepEqual([...result.links.keys()],['work:two']);
+ assert.equal(result.counts.chapter_navigation,2);
+ assert.equal(result.counts.author_collection,1);
+});
+
+test('asset source links in an explicit attribution record are excluded, inline references survive',()=>{
+ const {workByUrl,supportedHosts}=index();
+ const html='<div id="page-content"><blockquote><p>Filename: image.png Name: Picture '+
+   'Author: Artist License: CC BY-SA 3.0 Source Link: <a href="/scp-003">Three</a></p></blockquote>'+
+   '<p>The source link for this experiment is <a href="/scp-002">Two</a>.</p></div>';
+ const result=fromHtml(html,en+'scp-001',workByUrl,supportedHosts);
+ assert.deepEqual([...result.links.keys()],['work:two']);
+ assert.equal(result.counts.source_credit_metadata,1);
+});
 test('deterministic selection, fixed allocation, holdout exclusion and branch coverage',()=>{
   const pages=[];
   for(const [language,n] of [['jp',55],['en',55],['ru',55],['fr',55]]){
