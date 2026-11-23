@@ -7,12 +7,14 @@ const { branchForPageType } = require('./classification');
 const {CATEGORY_ORDER, KIND_BY_CATEGORY, homeCategory} = require('./article-categories');
 const {scpIdentityKey}=require('./translation-identities');
 const {verifiedScpOriginal}=require('./explicit-scp-origin');
+const {isRussianBook1138,marker:russianBook1138Marker}=require('./russian-english-mainlist-originals');
 function validateScpIdentities(board, sources) {
   const pages = new Map(), owners = new Map();
   for (const node of board.nodes) for (const version of node[13]) {
     const p = normalizePage(version[1]);
     if (!p || pages.has(p.id)) throw Error('Invalid or duplicate source page: '+version[1]);
-    pages.set(p.id, {...p, siteBranch:version[0], branch:node[8], pageType:node[12], kindIndex:node[3]});
+    pages.set(p.id, {...p, siteBranch:version[0], branch:node[8], pageType:node[12], kindIndex:node[3],
+      ...(isRussianBook1138(p.url)?{historicalOriginalReview:russianBook1138Marker}:{})});
     owners.set(p.id, node);
   }
   const proven = new Set((board.workIdentityProofs||[])
