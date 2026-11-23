@@ -1,0 +1,52 @@
+name: Compare publisher original identities after PR6
+on:
+  push:
+    branches: [audit/postmerge-delivery-and-origin-20261123]
+    paths:
+      - 'tool/compare-origin-review-postmerge.js'
+      - '.github/workflows/research-board-postmerge-origins.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  classify-original-credits:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      NODE_OPTIONS: --max-old-space-size=5500
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Load immutable old board identity evidence
+        uses: actions/download-artifact@v4
+        with:
+          name: postmerge-integrity-45170473146
+          run-id: 45170473146
+          github-token: ${{ github.token }}
+          path: old-postmerge
+      - name: Independently recompute all original-credit relationships on new board
+        run: node research-board/verification/identity-provenance.js latest-postmerge-origins
+      - name: Compare evidence and work ownership before / after PR6
+        run: |
+          node tool/compare-origin-review-postmerge.js \
+            latest-postmerge-origins/identity-provenance.json \
+            old-postmerge/explicit-originals/identity-provenance.json \
+            latest-origin-comparison
+      - name: Recheck all duplicate full-path and work-owner groups
+        run: |
+          node tool/audit-research-board-identities.js --output latest-origin-comparison/identity-groups.json
+      - name: Store unresolved official publisher evidence and per-source changes
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: postmerge-origin-diff-${{ github.run_id }}
+          path: |
+            latest-postmerge-origins/
+            latest-origin-comparison/
+          retention-days: 21
+          if-no-files-found: warn
