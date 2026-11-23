@@ -14,8 +14,13 @@ const unsupportedOrigins = new Set(['uk']);
 function publisherOriginTags(url, record) {
   const host = new URL(url).hostname;
   const tags = (record?.tags || []).map(t => t.toLowerCase());
+  // English branch language tags are _ru, _jp, _pig, etc. A bare tag can
+  // be ordinary article subject matter (e.g. "pig" on EN SCP-509), and
+  // MUST NOT reassign that English original to the Pig Latin branch.
   const values = tags.map(t => t.replace(/^филиал:/u, '')).map(t =>
-    host === 'scp-wiki.wikidot.com' && /^_[a-z]{2,3}$/.test(t) ? t.slice(1) : t).map(t=>originAliases[t] || t);
+    host === 'scp-wiki.wikidot.com' ?
+      (/^_[a-z]{2,3}$/.test(t) ? t.slice(1) : null) : t)
+    .filter(Boolean).map(t=>originAliases[t] || t);
   // ULI's namespace and matching language tag describe the delivery language.
   // Keep every other origin tag, including genuine collaboration conflicts.
   const delivery = host === 'scp-int.wikidot.com' && tags.includes('language-incubator') &&

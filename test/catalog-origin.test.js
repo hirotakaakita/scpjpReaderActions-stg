@@ -1,6 +1,6 @@
 ﻿'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
-const {resolveOrigin,publisherDefaultOrigin}=require('../catalog-origin');
+const {resolveOrigin,publisherDefaultOrigin,publisherOriginTags}=require('../catalog-origin');
 const {originHint,parseIndex}=require('../catalog-indexes');
 const {buildIndexedCatalog}=require('../merge-catalog-indexes');
 const unknown={branch:null,basis:'insufficient_origin_evidence',evidence:[]};
@@ -49,7 +49,7 @@ test('explicit cross-site translation metadata uses already collected records an
  const en='https://scp-wiki.wikidot.com/original',jp='https://scp-jp.wikidot.com/translated';
  const record=(url,tags,translations=[])=>({url,title:'Work',tags,translations,checkedAt:'2026-11-08T00:00:00Z',contentSha256:'a'.repeat(64),availabilityVersion:1,descriptionExcerpt:'Body'});
  const state=(url,rec,source)=>({indexes:{x:{members:[{url,source,kind:'tale'}]}},records:{[url]:rec},attempts:{}});
- const result=buildIndexedCatalog([],{en:state(en,record(en,['jp']),'https://scp-wiki.wikidot.com/foundation-tales'),jp:state(jp,record(jp,['tale'],[en]),'https://scp-jp.wikidot.com/foundation-tales')},{data:[{url:jp,itemId:'document-existing',language:'jp'}]});
+ const result=buildIndexedCatalog([],{en:state(en,record(en,['_jp']),'https://scp-wiki.wikidot.com/foundation-tales'),jp:state(jp,record(jp,['tale'],[en]),'https://scp-jp.wikidot.com/foundation-tales')},{data:[{url:jp,itemId:'document-existing',language:'jp'}]});
  const row=result.data.find(r=>r.url===jp);assert.equal(row.pageType,'related-document-jp');assert.equal(row.itemId,'document-existing');
 });
 const {classify}=require('../related-documents');
@@ -139,4 +139,16 @@ test('documented publisher defaults require fiction tags and do not apply to uns
  assert.equal(infer('https://scp-wiki-de.wikidot.com/story',['übersetzt','fr']).branch,'fr');
  assert.equal(infer('https://scp-wiki-de.wikidot.com/story',['geschichte']).branch,null);
  assert.equal(publisherDefaultOrigin(url,{tags:['故事'],translations:['https://scp-int.wikidot.com/unknown']}),null);
+});
+
+
+test('EN publisher language tags require underscore; pig subject matter cannot become Pig Latin original',()=>{
+ const url='https://scp-wiki.wikidot.com/scp-509';
+ for(const tags of [['scp','pig','safe'],['scp','pig','humanoid'],['pig'],['scp','fr','it','ko']]){
+  assert.deepEqual(publisherOriginTags(url,{tags}).origins,[]);
+ }
+ assert.deepEqual(publisherOriginTags(url,{tags:['scp','pig','_pig']}).origins,['pig']);
+ assert.deepEqual(publisherOriginTags(url,{tags:['international','_ru','scp']}).origins,['ru']);
+ assert.deepEqual(publisherOriginTags(url,{tags:['international','_ko','scp']}).origins,['ko']);
+ assert.deepEqual(publisherOriginTags(url,{tags:['scp','pig','_ru']}).origins,['ru']);
 });
