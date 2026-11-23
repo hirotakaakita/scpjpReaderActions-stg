@@ -1,0 +1,30 @@
+name: Research board post-merge SCP-179 origin investigation
+on:
+  push:
+    branches:
+      - audit/research-board-postmerge-20261123
+    paths:
+      - '.github/workflows/research-board-focus-scp179-20261123.yml'
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Inspect every localized SCP-179 and official author-credit source record
+        run: node tool/postmerge-review-scp179.js postmerge-scp179
+      - name: Retain exact source evidence for review
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: postmerge-scp179-focus-${{ github.run_id }}
+          path: postmerge-scp179/
+          retention-days: 21
+          if-no-files-found: warn
