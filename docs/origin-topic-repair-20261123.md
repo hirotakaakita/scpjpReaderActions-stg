@@ -11,7 +11,7 @@ Therefore the catalog payloads, itemIds, URLs and source observations are
 unchanged. The rebuilt board is revision `b53af973497a96159bc3`, with 125,100
 source URLs, 54,929 works and 157,368 aggregated edges.
 
-The 24 previous work keys are retained in `research-board/reviewed-work-aliases.json`.
+The 24 previous work keys are retained in `research-board/legacy-topic-origin-aliases.js`.
 The alias applicator rejects conflicting owners and never reintroduces removed
 catalog pages. No reading-state key is dropped. Comparing the previous and new
 graphs verifies that every relation survives remapping except self-work links
