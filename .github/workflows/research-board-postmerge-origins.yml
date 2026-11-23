@@ -4,6 +4,7 @@ on:
     branches: [audit/postmerge-delivery-and-origin-20261123]
     paths:
       - 'tool/compare-origin-review-postmerge.js'
+      - 'tool/review-ru-vn-originals.js'
       - '.github/workflows/research-board-postmerge-origins.yml'
   workflow_dispatch:
 permissions:
@@ -40,6 +41,8 @@ jobs:
       - name: Recheck all duplicate full-path and work-owner groups
         run: |
           node tool/audit-research-board-identities.js --output latest-origin-comparison/identity-groups.json
+      - name: Diagnose exact Russian original and Vietnamese double-translation evidence
+        run: node tool/review-ru-vn-originals.js latest-origin-comparison/ru-vn-focus
       - name: Store unresolved official publisher evidence and per-source changes
         if: always()
         uses: actions/upload-artifact@v7
