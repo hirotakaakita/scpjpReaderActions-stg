@@ -3,6 +3,7 @@
 // com.scp.reader.stg ResearchBoardCatalog Dart client.
 // No Firebase credentials or GitHub write access required.
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),zlib=require('node:zlib');
+const {isDeepStrictEqual}=require('node:util');
 const output=path.resolve(process.argv[2]||'delivery-check');
 const base='https://raw.githubusercontent.com/hirotakaakita/scpjpReaderActions-stg/refs/heads/master/local-data/mobile-v3/research-board/';
 const prodBase=base.replace('/scpjpReaderActions-stg/','/scpjpReaderActions/');
@@ -50,9 +51,13 @@ async function main(){
   summary.manifestETag=remote.etag||null;
   if(remote.bytes){
     summary.manifestByteMatch=remote.bytes.equals(localBytes);
-    summary.remoteRevision=JSON.parse(remote.bytes).revision;
+    const remoteManifest=JSON.parse(remote.bytes);
+    // Git may check out JSON with CRLF on Windows. Clients parse JSON;
+    // retain the byte comparison as evidence without rejecting that checkout.
+    summary.manifestJSONMatch=isDeepStrictEqual(remoteManifest,local);
+    summary.remoteRevision=remoteManifest.revision;
     summary.remoteManifestHash=hash(remote.bytes);
-  } else summary.manifestByteMatch=false;
+  } else {summary.manifestByteMatch=false;summary.manifestJSONMatch=false;}
   const board=await get(base+local.fileName,24*1024*1024);
   summary.boardHTTP=board.status;
   summary.boardError=board.error||null;
@@ -77,7 +82,7 @@ async function main(){
   if(prod.bytes){try{summary.productionRevision=JSON.parse(prod.bytes).revision;}
     catch{summary.productionError='non_json';}}
   if(prod.error)summary.productionError=prod.error;
-  summary.passed=summary.manifestByteMatch&&summary.boardByteMatch&&summary.boardValid;
+  summary.passed=summary.manifestJSONMatch&&summary.boardByteMatch&&summary.boardValid;
   fs.writeFileSync(path.join(output,'delivery-verification.json'),JSON.stringify(summary,null,2)+'\n');
   fs.writeFileSync(path.join(output,'README.md'),[
     '# SCP Research Board postmerge delivery verification','',
