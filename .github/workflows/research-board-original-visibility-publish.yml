@@ -4,6 +4,7 @@ on:
     branches: [fix/hide-non-catalog-originals-20261124]
     paths:
       - 'tool/prepare-research-board-visibility-publication.js'
+      - '.github/workflows/research-board-original-visibility-publish.yml'
   workflow_dispatch:
 permissions:
   contents: write
