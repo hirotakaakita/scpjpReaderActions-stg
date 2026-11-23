@@ -1,0 +1,78 @@
+name: Audit EN ordinary tag vs language-origin collision
+on:
+  push:
+    branches: [fix/english-topic-tag-origin-collision-20261123]
+    paths:
+      - 'catalog-origin.js'
+      - 'test/catalog-origin.test.js'
+      - '.github/workflows/catalog-origin-topic-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  targeted-tests-and-full-source-inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      NODE_OPTIONS: --max-old-space-size=5500
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: All local regression tests
+        run: |
+          node --test test/catalog-origin.test.js
+          node --test
+      - name: Inventory every EN origin-code-like topic tag against the current published graph
+        run: |
+          node <<'NODE'
+          const fs=require('node:fs'),path=require('node:path');
+          const {loadBoard}=require('./research-board/verification/audit');
+          const {readSources}=require('./research-board/source-store');
+          const {publisherOriginTags,validOrigin}=require('./catalog-origin');
+          const {board}=loadBoard();
+          const sources=readSources('local-data/research-board-sources');
+          const owners=new Map(board.nodes.flatMap(n=>n[13].map(v=>[v[1],n[14][0]])));
+          const findings=[],allBare=[];
+          for(const state of sources.values()){
+            const r=state.record;if(!r?.url?.startsWith('https://scp-wiki.wikidot.com/'))continue;
+            const tags=(r.tags||[]).map(t=>t.toLowerCase());
+            const potential=[...new Set(tags.filter(t=>!t.startsWith('_')&&validOrigin(t)))];
+            if(!potential.length)continue;
+            const currentOrigins=publisherOriginTags(r.url,r).origins;
+            const item={url:r.url,tags:potential,topicOrBranchTag:potential.join(' | '),originalWork:owners.get(r.url)||'',
+              correctedOrigins:currentOrigins.join(' | '),contentSha256:r.contentSha256,
+              articleTitle:r.title,hasUnderscoreLanguage:tags.some(t=>/^_[a-z]{2,3}$/.test(t))};
+            allBare.push(item);
+            if(owners.get(r.url)?.startsWith('catalog:scp-series-pig:'))findings.push(item);
+          }
+          const summary={revision:board.revision,totalENPagesChecked:
+            [...sources.values()].filter(s=>s.record?.url?.startsWith('https://scp-wiki.wikidot.com/')).length,
+            bareLanguageCodeLikeTags:allBare.length,alreadyIncorrectPigWorkOwners:findings.length,
+            correctedStillReadsPig:findings.filter(x=>x.correctedOrigins.includes('pig')).length,
+            bareTagsHistogram:Object.fromEntries([...new Set(allBare.flatMap(x=>x.tags))].map(t=>
+              [t,allBare.filter(x=>x.tags.includes(t)).length]))};
+          const dir='topic-origin-audit';fs.mkdirSync(dir,{recursive:true});
+          fs.writeFileSync(path.join(dir,'SUMMARY.json'),JSON.stringify(summary,null,2));
+          fs.writeFileSync(path.join(dir,'AFFECTED_EN_ARTICLES.json'),JSON.stringify(allBare,null,2));
+          const q=x=>'"'+String(x??'').replace(/"/g,'""')+'"';
+          const fields=['url','articleTitle','topicOrBranchTag','originalWork','correctedOrigins','hasUnderscoreLanguage','contentSha256'];
+          fs.writeFileSync(path.join(dir,'AFFECTED_EN_ARTICLES.csv'),
+            [fields.map(q).join(','),...allBare.map(o=>fields.map(k=>q(o[k])).join(','))].join('\n')+'\n');
+          console.log(JSON.stringify(summary,null,2));
+          NODE
+      - name: Verify existing published graph and catalogs remain internally consistent
+        run: |
+          node validate-catalog-indexes.js
+          node research-board/validate.js
+      - name: Persist comprehensive tag collision audit and test outputs
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: en-tag-origin-collision-${{ github.run_id }}
+          path: topic-origin-audit/
+          retention-days: 21
+          if-no-files-found: warn
