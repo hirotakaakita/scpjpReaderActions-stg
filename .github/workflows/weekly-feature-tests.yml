@@ -9,6 +9,7 @@ on:
       - 'feature-notification-messages.json'
       - 'features/**'
       - 'test/weekly-features.test.js'
+      - 'test/weekly-feature-refresh.test.js'
       - '.github/workflows/weekly-feature*.yml'
   pull_request:
     branches: [master]
@@ -23,6 +24,6 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '24'
-      - run: node --test test/weekly-features.test.js test/notifications.test.js test/notification-branches.test.js test/workflow-concurrency.test.js
+      - run: node --test test/weekly-features.test.js test/weekly-feature-refresh.test.js test/notifications.test.js test/notification-branches.test.js test/workflow-concurrency.test.js
         env:
           FEATURE_PUBLICATION_RUN: ${{ github.ref == 'refs/heads/master' && '1' || '0' }}

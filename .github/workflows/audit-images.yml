@@ -62,6 +62,7 @@ jobs:
       - run: node validate-catalog-indexes.js
       - run: node validate-staging-catalogs.js
       - run: node mobile-catalog.js
+      - run: node refresh-weekly-features.js
       - run: node prepare-notification-queue.js
       - run: node tool/audit-image-metadata.js verify partial-data/image-audit.json
       - run: node research-board/validate.js
@@ -69,7 +70,7 @@ jobs:
         run: |
           git config user.name 'SCP Crawler Bot'
           git config user.email 'scp-crawler@github-actions.bot'
-          git add local-data/
+          git add local-data/ features/planned/
           if ! git diff --staged --quiet; then
             git commit -m "Repair article images across all STG languages - $(date -u +%Y%m%d%H%M%S)"
             git push origin master

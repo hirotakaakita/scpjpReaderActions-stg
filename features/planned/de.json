@@ -1391,11 +1391,11 @@
           ]
         },
         {
-          "itemId": "scp-series-1264",
-          "title": "Wiederbelebtes Wrack",
-          "blurb": "SCP-1264 ist ein Zusammenschluss von Wracks verschiedener Kriegsschiffe und unterschiedlichem Treibgut/Strandgut.Es wird durch organische Sekrete zusammengehalten.",
-          "url": "http://scp-wiki-de.wikidot.com/scp-1264",
-          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-1264/SCP-1264-a.jpg",
+          "itemId": "scp-series-847",
+          "title": "Die Schaufensterpuppe",
+          "blurb": "Die explorative Laparoskopie von SCP-847 zeigt das Vorhandensein interner Strukturen, die einem unvollständigen Satz von Knochen, Organen und großen Blutgefäßen ähneln und aus demselben Polymer bestehen.",
+          "url": "http://scp-wiki-de.wikidot.com/scp-847",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-847/basement.jpg",
           "sourceTags": [
             "biological",
             "hostile"
@@ -3320,11 +3320,10 @@
           ]
         },
         {
-          "itemId": "scp-series-466",
-          "title": "Mobile Adern",
-          "blurb": "Es ist nicht bekannt, ob SCP-466 ein separates Pathogen ist, welches einen menschlichen Wirt befällt oder ob es der Mensch selbst ist.SCP-466-2 zeigt anomale, vaskuläre Hypertrophie, teilweise entlang der Haut.",
-          "url": "http://scp-wiki-de.wikidot.com/scp-466",
-          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-466/logo1.png",
+          "itemId": "scp-series-1135",
+          "title": "Lebendes Dorf",
+          "blurb": "SCP-1135 ist ein isoliertes Dorf im Bundesstaat ███████, Indien.Vor der Übernahme durch die Foundation war das Dorf unter dem Namen ████████ bekannt.",
+          "url": "http://scp-wiki-de.wikidot.com/scp-1135",
           "sourceTags": [
             "biological",
             "regenerative"
@@ -3696,11 +3695,10 @@
           ]
         },
         {
-          "itemId": "scp-series-466",
-          "title": "Mobile Adern",
-          "blurb": "Es ist nicht bekannt, ob SCP-466 ein separates Pathogen ist, welches einen menschlichen Wirt befällt oder ob es der Mensch selbst ist.SCP-466-2 zeigt anomale, vaskuläre Hypertrophie, teilweise entlang der Haut.",
-          "url": "http://scp-wiki-de.wikidot.com/scp-466",
-          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-466/logo1.png",
+          "itemId": "scp-series-1030",
+          "title": "Alles-Golem",
+          "blurb": "In SCP-1030-1 integrierte Objekte korrodieren, verrotten oder zersetzen sich anderweitig schneller als normal.",
+          "url": "http://scp-wiki-de.wikidot.com/scp-1030",
           "sourceTags": [
             "sentient",
             "regenerative"
@@ -9643,11 +9641,11 @@
           ]
         },
         {
-          "itemId": "scp-series-466",
-          "title": "Mobile Adern",
-          "blurb": "Es ist nicht bekannt, ob SCP-466 ein separates Pathogen ist, welches einen menschlichen Wirt befällt oder ob es der Mensch selbst ist.SCP-466-2 zeigt anomale, vaskuläre Hypertrophie, teilweise entlang der Haut.",
-          "url": "http://scp-wiki-de.wikidot.com/scp-466",
-          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-466/logo1.png",
+          "itemId": "scp-series-1360",
+          "title": "PSHUD #31",
+          "blurb": "SCP-1360 ist ein animierter, voll beweglicher Androide.SCP-1360 ist 1,83 m groß und wiegt 100 kg.",
+          "url": "http://scp-wiki-de.wikidot.com/scp-1360",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-1360/SCP-1360.jpg",
           "sourceTags": [
             "regenerative"
           ]
