@@ -49,7 +49,7 @@ test('explicit cross-site translation metadata uses already collected records an
  const en='https://scp-wiki.wikidot.com/original',jp='https://scp-jp.wikidot.com/translated';
  const record=(url,tags,translations=[])=>({url,title:'Work',tags,translations,checkedAt:'2026-11-08T00:00:00Z',contentSha256:'a'.repeat(64),availabilityVersion:1,descriptionExcerpt:'Body'});
  const state=(url,rec,source)=>({indexes:{x:{members:[{url,source,kind:'tale'}]}},records:{[url]:rec},attempts:{}});
- const result=buildIndexedCatalog([],{en:state(en,record(en,['jp']),'https://scp-wiki.wikidot.com/foundation-tales'),jp:state(jp,record(jp,['tale'],[en]),'https://scp-jp.wikidot.com/foundation-tales')},{data:[{url:jp,itemId:'document-existing',language:'jp'}]});
+ const result=buildIndexedCatalog([],{en:state(en,record(en,['_jp']),'https://scp-wiki.wikidot.com/foundation-tales'),jp:state(jp,record(jp,['tale'],[en]),'https://scp-jp.wikidot.com/foundation-tales')},{data:[{url:jp,itemId:'document-existing',language:'jp'}]});
  const row=result.data.find(r=>r.url===jp);assert.equal(row.pageType,'related-document-jp');assert.equal(row.itemId,'document-existing');
 });
 const {classify}=require('../related-documents');
