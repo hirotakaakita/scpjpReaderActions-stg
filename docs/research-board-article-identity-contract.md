@@ -25,4 +25,4 @@ An app feature that looks up board work **only by an old catalog itemId/work ID*
 
 `tool/review-research-board-origin-diff.js` emits `WORK_ID_LOOKUP_RISKS.csv` from the immutable full preview. It asserts source-page uniqueness, verifies the 32 migration decisions, confirms all 109 edge changes are associated with changed works, and reports the old alias owner for every moved source URL.
 
-**Shipping status:** draft only, no STG or Flutter release. The graph code is technically validated; application-facing URL-based resolution and publisher identity review are release follow-ups, not reasons to mutate the read-history table.
+**STG data publication (2026-11-23):** the direct-credit repair is included in board revision `f693e54930396d0ddd8f`, with 125,100 catalog source URLs and unchanged mobile itemIds. URL-first lookup and full-board validation are covered by the acceptance pipeline. Protected same-site splits and unresolved transitive credits remain review candidates; no Flutter read-history migration is performed. See [the current validation and publication record](research-board-origin-validation.md).

@@ -44,6 +44,15 @@ workflow downloads another run's artifacts or depends on their expiration dates.
 - 28 removed and 81 added aggregated edges, all tied to affected works.
 - EN SCP-179 follows ES-026; native ES-179 remains separate.
 
+## STG publication payload (2026-11-23)
+
+The STG board manifest now points to revision `f693e54930396d0ddd8f`, payload
+`board-886506eadf80a7034934882ff82faff6a25b1ee8da8fa062834d3fa36380712a.json.gz`.
+Its decoded contents exactly match the validated preview. The full persisted
+manifest/checksum, proof and deterministic rebuild validation passes. Previous
+board payloads remain available for cached pointers. Catalog itemIds and source
+records are unchanged; platform-only gzip header changes were excluded.
+
 The existing full-suite failure `de/scp-series-1264` in the weekly-feature plan
 also reproduces on unchanged master. It remains visible and is not suppressed
 by these workflows. This repair does not change feature plans or reading IDs.
