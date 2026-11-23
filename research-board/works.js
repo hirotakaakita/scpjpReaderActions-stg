@@ -4,6 +4,7 @@ const {native,scpIdentityKey}=require('./translation-identities');
 const {KIND_BY_CATEGORY,homeCategory}=require('./article-categories');
 const {digest}=require('./extract');
 const {verifiedScpOriginal}=require('./explicit-scp-origin');
+const {legacyEnglishTopicPigAliases}=require('./legacy-topic-origin-aliases');
 
 // Ledger identity, not a bare SCP number. Each variant/proposal and branch
 // namespace keeps its own itemId. Unverified document translations stay apart.
@@ -170,6 +171,33 @@ function collapseWorks(pages, candidates, catalogEntries, sources = new Map()) {
     ledger.set(alias,{articleId:e.itemId,articleNumber:e.articleNumber,pageType:page.pageType,branch:page.branch});
     parent.set(alias,root(pageKeys.get(page.id)));
     extraAliases.set(page.id,[...(extraAliases.get(page.id)||[]),alias]);
+  }
+  // Preserve only the exact previous work IDs demonstrably misassigned by
+  // a publisher topic-tag collision. This is a migration ledger, NOT a
+  // general rule that bare 'pig' means Pig Latin. Do not hijack an alias
+  // belonging to a genuine Pig Latin article in this or a later snapshot.
+  const byUrl=new Map(pages.map(p=>[p.url,p]));
+  for(const [url,legacyKey] of legacyEnglishTopicPigAliases) {
+    const page=byUrl.get(url);if(!page)continue;
+    const record=sources.get(page.id)?.record;
+    if(!record)continue; // Test fixtures without a historical capture do not need migration.
+    const tags=(record.tags||[]).map(t=>String(t).toLowerCase());
+    if(page.siteBranch!=='en'||page.branch!=='en'||
+       tags.includes('_pig')||![0,8,9].includes(page.kindIndex))
+      throw Error('Invalid source evidence for legacy topic-tag alias: '+url);
+    const key=pageKeys.get(page.id);
+    if(!key)throw Error('Lost owner for legacy topic-tag alias '+url);
+    const owner=root(key);
+    if(parent.has(legacyKey)&&root(legacyKey)!==owner)
+      throw Error('Historical topic-tag alias collides with a real publisher work: '+legacyKey);
+    const entry=(eligibleByPage.get(page.id)||[])[0];
+    if(!entry)throw Error('No catalog row for legacy topic-tag alias '+url);
+    if(!parent.has(legacyKey)){
+      ledger.set(legacyKey,{articleId:entry.itemId,articleNumber:entry.articleNumber,
+        pageType:page.pageType,branch:page.branch});
+      parent.set(legacyKey,owner);
+    }
+    extraAliases.set(page.id,[...(extraAliases.get(page.id)||[]),legacyKey]);
   }
   const groups = new Map();
   for (const page of pages) {
