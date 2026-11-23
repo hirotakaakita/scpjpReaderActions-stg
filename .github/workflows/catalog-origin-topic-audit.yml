@@ -7,6 +7,9 @@ on:
       - 'test/catalog-origin.test.js'
       - 'test/related-documents.test.js'
       - 'tool/preview-english-topic-origin-repair.js'
+      - 'research-board/works.js'
+      - 'research-board/legacy-topic-origin-aliases.js'
+      - 'test/research-board-legacy-topic-origin.test.js'
       - '.github/workflows/catalog-origin-topic-audit.yml'
   workflow_dispatch:
 permissions:
@@ -26,7 +29,7 @@ jobs:
       - run: npm ci
       - name: All local regression tests
         run: |
-          node --test test/catalog-origin.test.js
+          node --test test/catalog-origin.test.js test/research-board-legacy-topic-origin.test.js
           node --test
       - name: Inventory every EN origin-code-like topic tag against the current published graph
         run: |
