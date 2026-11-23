@@ -1,0 +1,114 @@
+name: Research board original-source comprehensive existence checks
+on:
+  push:
+    branches: [audit/research-board-postmerge-20261123]
+    paths:
+      - '.github/workflows/research-board-origin-target-probes-20261123.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  publisher-pages:
+    strategy:
+      fail-fast: false
+      matrix:
+        cohort: [outside-catalog,identity-review]
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Download immutable post-merge provenance and identity candidates
+        uses: actions/download-artifact@v4
+        with:
+          name: postmerge-integrity-45170473146
+          run-id: 45170473146
+          github-token: \${{ github.token }}
+          path: published-evidence
+      - name: Check official source and target URLs at low rate (read-only GET)
+        env:
+          COHORT: \${{ matrix.cohort }}
+        run: |
+          node <<'NODE'
+          const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+          const input=JSON.parse(fs.readFileSync('published-evidence/explicit-originals/identity-provenance.json'));
+          if(input.revision!=='567e87a668607aa8babd')throw Error('Snapshot revision mismatch');
+          const cohort=process.env.COHORT,targets=new Set();
+          if(cohort==='outside-catalog'){
+            for(const c of input.cases.filter(c=>c.disposition==='hold_outside_catalog'))targets.add(c.ultimateOriginal);
+          }else{
+            for(const c of input.cases.filter(c=>['hold_same_site_collision','hold_publisher_identity_review'].includes(c.disposition))){
+              targets.add(c.source);targets.add(c.ultimateOriginal);
+            }
+            for(const c of input.ambiguous){targets.add(c.source);for(const url of c.urls)targets.add(url);}
+          }
+          const allowed=url=>{
+            try{const u=new URL(url);return u.protocol==='https:'&&!u.username&&!u.password&&!u.port&&
+              (/\.wikidot\.com$/i.test(u.hostname)||u.hostname==='scpfoundation.net');}
+            catch{return false;}
+          };
+          const strip=s=>String(s).replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
+          const probe=async url=>{
+            let current=url;const redirects=[],seen=new Set();
+            for(let hop=0;hop<4;hop++){
+              if(!allowed(current))return {url,status:'unsafe_redirect',final:current,redirects};
+              if(seen.has(current))return {url,status:'redirect_cycle',final:current,redirects};
+              seen.add(current);
+              try{
+                const response=await fetch(current,{redirect:'manual',signal:AbortSignal.timeout(12000),headers:{
+                  'User-Agent':'SCPReader-ReadOnly-ResearchBoard-Verification/1.0',
+                  Accept:'text/html'
+                }});
+                if(response.status>=300&&response.status<400){
+                  const loc=response.headers.get('location');
+                  if(!loc)return {url,status:'missing_redirect_location',code:response.status,final:current,redirects};
+                  const next=new URL(loc,current).href;
+                  redirects.push({code:response.status,from:current,to:next});current=next;continue;
+                }
+                if(response.status!==200)return {url,status:response.status===404?'http_404':'http_non_200',
+                  code:response.status,final:current,redirects};
+                const html=(await response.text()).slice(0,2_000_000);
+                const title=strip((html.match(/id=["']page-title["'][^>]*>([\s\S]*?)<\/div>/i)||[])[1]||
+                  (html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)||[])[1]||'').slice(0,150);
+                const sample=strip((html.match(/id=["']page-content["'][^>]*>([\s\S]{0,1600})/i)||[])[1]||'').slice(0,240);
+                const missing=/the page you want to access does not exist|page not found|this page does not exist/i.test(sample);
+                return {url,status:/bright-works-message/.test(current)||/bright works message/i.test(title)?
+                  'publisher_retirement_notice':missing?'missing_page_html':'http_200_article',
+                  code:response.status,final:current,title,sample,redirects,
+                  htmlSha256:crypto.createHash('sha256').update(html).digest('hex')};
+              }catch(e){return {url,status:'network_error',final:current,redirects,error:String(e.message||e).slice(0,160)};}
+            }
+            return {url,status:'excess_redirects',final:current,redirects};
+          };
+          const dir='publisher-check-'+cohort;fs.mkdirSync(dir,{recursive:true});
+          const results=[];let last=0;
+          const output=()=>{
+            fs.writeFileSync(path.join(dir,'HTTP_RESULTS.json'),JSON.stringify({revision:input.revision,cohort,total:targets.size,results},null,2));
+            const q=x=>'"'+String(x??'').replace(/"/g,'""')+'"';
+            const fields=['url','status','code','final','title','sample','htmlSha256','error'];
+            fs.writeFileSync(path.join(dir,'HTTP_RESULTS.csv'),[fields.map(q).join(','),
+              ...results.map(x=>fields.map(k=>q(x[k])).join(','))].join('\n')+'\n');
+          };
+          (async()=>{
+            for(const [i,url]of [...targets].entries()){
+              const gap=Math.max(0,last+1400-Date.now());if(gap)await new Promise(r=>setTimeout(r,gap));
+              last=Date.now();const result=await probe(url);results.push(result);
+              if((i+1)%20===0||i===targets.size-1){
+                output();
+                const counts={};for(const r of results)counts[r.status]=(counts[r.status]||0)+1;
+                console.log(JSON.stringify({cohort,progress:i+1,total:targets.size,counts}));
+              }
+            }
+          })().catch(e=>{output();console.error(e);process.exitCode=1;});
+          NODE
+      - name: Retain HTTP status and limited publisher title evidence
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: origin-publisher-check-\${{ matrix.cohort }}-\${{ github.run_id }}
+          path: publisher-check-\${{ matrix.cohort }}/
+          retention-days: 21
+          if-no-files-found: warn
