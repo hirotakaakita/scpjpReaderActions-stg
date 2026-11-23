@@ -55,6 +55,15 @@ function run(dir){
     pageType:holder?.node[12]||null,siteBranch:meta?.siteBranch||null,
     consideredNative:meta?nativeBranch(meta):null,
     allWorkVersions:holder?.node[13].map(v=>v[1])||[],
+    allWorkVersionEvidence:(holder?.node[13]||[]).map(v=>{
+      const vp=normalizePage(v[1]),sr=stores.get(vp?.id)?.record;
+      return {url:v[1],title:sr?.title||v[3],
+        tags:sr?.tags||[],
+        originalCredits:(sr?.originalSources||[])
+          .filter(x=>x.method==='credit_original_label')
+          .map(x=>originalPage(x.url)?.url||x.url),
+        checkedAt:sr?.checkedAt||null,sourceHash:sr?.contentSha256||null};
+    }),
     allWorkKeys:holder?.node[14][2]||[],
     sourceHash:record?.contentSha256||null,
     checkedAt:record?.checkedAt||null,
