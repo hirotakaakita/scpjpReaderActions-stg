@@ -1,7 +1,7 @@
 {
   "totalCount": 29,
   "language": "ar",
-  "timestamp": "2026-11-13T17:59:08.589Z",
+  "timestamp": "2026-11-22T14:12:40.130Z",
   "duration": 19,
   "status": "completed",
   "statistics": {
@@ -28,13 +28,13 @@
       "extractedFrom": "scp-ar-series",
       "pageType": "scp-series-ar",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:19.838Z",
+      "lastUpdated": "2026-11-22T09:47:26.746Z",
       "createdAt": "2026-11-10T00:33:38.844Z",
       "translatedLanguages": [
         "ar"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "fae6f4b1c66abc6d342ef6137ea706f95780d7c13958d5bf111924d09f45b97f"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "d857b5995bcfd11039481e572a05c4402f50851316004cbbf4d089f433cc9fe8"
     },
     {
       "itemId": "scp-series-ar-010",
@@ -54,13 +54,13 @@
       "extractedFrom": "scp-ar-series",
       "pageType": "scp-series-ar",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:19.838Z",
+      "lastUpdated": "2026-11-22T09:47:26.746Z",
       "createdAt": "2026-11-10T00:33:38.844Z",
       "translatedLanguages": [
         "ar"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "1b9533fb9415b8ef26976fc0b8c39b9e988f2abecbed771d24dfad347373c6cf"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "11a846e7c33cd3174fd929195534bb4aef80392274c3a84dfcb01bc2e8a79d85"
     },
     {
       "itemId": "scp-series-ar-062",
@@ -80,13 +80,13 @@
       "extractedFrom": "scp-ar-series",
       "pageType": "scp-series-ar",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:19.838Z",
+      "lastUpdated": "2026-11-22T09:47:26.746Z",
       "createdAt": "2026-11-10T00:33:38.844Z",
       "translatedLanguages": [
         "ar"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "73c36d5bc3d97307f06d0bc4ac6e0757f72751822fd142f756912ae8c61102cf"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "5b2e65b2b450179e625daabc9f435b11dc63a89034a28b5f8406563b29c2bc0b"
     },
     {
       "itemId": "scp-series-001",
@@ -106,7 +106,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -137,8 +137,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "a4bfb369a02335a3483bd6b9f85dbb4f6fed8aeb70aa051ad4590a33904ad9f8"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "97be8027c5b2fbad2f30e069dadf6e738a5ab6f373eb87619f2afd76a0dfb4a8"
     },
     {
       "itemId": "scp-series-002",
@@ -152,11 +152,26 @@
       "descriptionExcerpt": "\u064a\u0628\u062f\u0648 \u0623\u0646 \u0625\u0633.\u0633\u064a.\u0628\u064a-002 \u0639\u0628\u0627\u0631\u0629 \u0639\u0646 \u0646\u0645\u0648 \u0644\u062d\u0645\u064a \u064a\u0634\u0628\u0647 \u0627\u0644\u0648\u0631\u0645 \u062d\u062c\u0645\u0647 \u062d\u0648\u0627\u0644\u064a 60 \u0645 3 . \u062a\u0624\u062f\u064a \u0641\u062a\u062d\u0629 \u0627\u0644\u0635\u0645\u0627\u0645 \u0627\u0644\u062d\u062f\u064a\u062f\u064a \u0639\u0644\u0649 \u062c\u0627\u0646\u0628 \u0648\u0627\u062d\u062f \u0625\u0644\u0649 \u0627\u0644\u062c\u0632\u0621 \u0627\u0644\u062f\u0627\u062e\u0644\u064a\u060c \u0648\u0627\u0644\u0630\u064a \u064a\u0628\u062f\u0648 \u0648\u0643\u0623\u0646\u0647 \u0634\u0642\u0629 \u0639\u0627\u062f\u064a\u0629 \u0645\u0646\u062e\u0641\u0636\u0629 \u0627\u0644\u0625\u064a\u062c\u0627\u0631 \u0630\u0627\u062a \u062d\u062c\u0645 \u0645\u062a\u0648\u0627\u0636\u0639. \u064a\u062d\u062a\u0648\u064a \u0623\u062d\u062f \u062c\u062f\u0631\u0627\u0646 \u0627\u0644\u063a\u0631\u0641\u0629 \u0639\u0644\u0649 \u0646\u0627\u0641\u0630\u0629\u060c \u0639\u0644\u0649 \u0627\u0644\u0631\u063a\u0645 \u0645\u0646 \u0639\u062f\u0645 \u0648\u062c\u0648\u062f \u0645\u062b\u0644 \u0647\u0630\u0627 \u0627\u0644\u0641\u062a\u062d \u0645\u0646 \u0627\u0644\u062e\u0627\u0631\u062c. \u062a\u062d\u062a\u0648\u064a \u0627\u0644\u063a\u0631\u0641\u0629 \u0639\u0644\u0649 \u0623\u062b\u0627\u062b \u064a\u062a\u0628\u064a\u0646 \u0639\u0646\u062f \u0627\u0644\u0641\u062d\u0635 \u0627\u0644\u062f\u0642\u064a\u0642 \u0623\u0646\u0647 \u0645\u0646\u062d\u0648\u062a \u0645\u0646 \u0627\u0644\u0639\u0638\u0627\u0645 \u0648\u0627\u0644\u0634\u0639\u0631 \u0627\u0644\u0645\u0646\u0633\u0648\u062c \u0648\u0645\u0648\u0627\u062f \u0628\u064a\u0648\u0644\u0648\u062c\u064a\u0629 \u0623\u062e\u0631\u0649 \u064a\u0646\u062a\u062c\u0647\u0627 \u062c\u0633\u0645 \u0627\u0644\u0625\u0646\u0633\u0627\u0646. \u062a\u062d\u062a\u0648\u064a \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0648\u0627\u062f \u0627\u0644\u062a\u064a \u062a\u0645 \u0627\u062e\u062a\u0628\u0627\u0631\u0647\u0627 \u062d\u062a\u0649 \u0627\u0644\u0622\u0646 \u0639\u0644\u0649 \u062a\u0633\u0644\u0633\u0644\u0627\u062a \u062d\u0645\u0636 \u0646\u0648\u0648\u064a \u0645\u062e\u062a\u0644\u0641\u0647 \u0623\u0648 \u0645\u062c\u0632\u0623\u0629 \u0644\u0643\u0644 \u0643\u0627\u0626\u0646 \u0641\u064a \u0627\u0644\u063a\u0631\u0641\u0629.\n\u0631\u0627\u062c\u0639 \u062a\u0642\u0631\u064a\u0631 \u0645",
       "descriptionVersion": 3,
       "tags": [
-        "tag-1e176fe0ea0326cb278a0e0b",
-        "tag-4f0356aad0015c4eae4f8889",
-        "tag-9a21cb7e193e980f67c56826",
-        "tag-88c69d41d1eba7ab48fe4c51",
-        "tag-22b813153d7a53544757a7cb"
+        {
+          "id": "tag-1e176fe0ea0326cb278a0e0b",
+          "label": "\u0625\u0642\u0644\u064a\u062f\u0633"
+        },
+        {
+          "id": "tag-4f0356aad0015c4eae4f8889",
+          "label": "\u062a\u062d\u0648\u064a\u0644"
+        },
+        {
+          "id": "tag-9a21cb7e193e980f67c56826",
+          "label": "\u062d\u064a"
+        },
+        {
+          "id": "tag-88c69d41d1eba7ab48fe4c51",
+          "label": "\u0645\u062a\u0645\u064a\u0632"
+        },
+        {
+          "id": "tag-22b813153d7a53544757a7cb",
+          "label": "\u0647\u064a\u0643\u0644"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -164,7 +179,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -225,8 +240,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "a3f67490e1df444d103f598ab68eb5bc62ac82b7969e12ebc30ebe3396e8bb02"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "5b94f410d1a8ec1cf86c56634979a04d1aa450a86c5ffd32c0ae3e1ca177579e"
     },
     {
       "itemId": "scp-series-004",
@@ -246,7 +261,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -275,8 +290,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "0db0f4b89a83a62f2ef72369c329d10cdb7ec54ec18d482898dad90f90956b41"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "6102606a745ba6723e8ecf19a7f3da82cfe9f377bcad883cec87527aa73d0bbe"
     },
     {
       "itemId": "scp-series-005",
@@ -290,11 +305,26 @@
       "descriptionExcerpt": "\u0641\u064a \u0627\u0644\u0645\u0638\u0647\u0631\u060c \u064a\u0634\u0628\u0647 \u0625\u0633.\u0633\u064a.\u0628\u064a-005 \u0645\u0641\u062a\u0627\u062d\u064b\u0627 \u0645\u0632\u062e\u0631\u0641\u064b\u0627\u060c \u064a\u064f\u0638\u0647\u0631 \u062e\u0635\u0627\u0626\u0635 \u0627\u0644\u0645\u0641\u062a\u0627\u062d \u0627\u0644\u0646\u0645\u0648\u0630\u062c\u064a \u0627\u0644\u0630\u064a \u062a\u0645 \u0625\u0646\u062a\u0627\u062c\u0647 \u0628\u0643\u0645\u064a\u0627\u062a \u0643\u0628\u064a\u0631\u0629 \u0641\u064a \u0639\u0634\u0631\u064a\u0646\u064a\u0627\u062a \u0627\u0644\u0642\u0631\u0646 \u0627\u0644\u0645\u0627\u0636\u064a.\u062a\u0645 \u0627\u0643\u062a\u0634\u0627\u0641 \u0627\u0644\u0645\u0641\u062a\u0627\u062d \u0639\u0646\u062f\u0645\u0627 \u0627\u0633\u062a\u062e\u062f\u0645\u0647 \u0623\u062d\u062f \u0627\u0644\u0645\u062f\u0646\u064a\u064a\u0646 \u0644\u0644\u062a\u0633\u0644\u0644 \u0625\u0644\u0649 \u0645\u0628\u0646\u0649 \u0639\u0627\u0644\u064a \u0627\u0644\u0623\u0645\u0627\u0646. \u064a\u0628\u062f\u0648 \u0623\u0646 \u0625\u0633.\u0633\u064a.\u0628\u064a-005 \u064a\u062a\u0645\u062a\u0639 \u0628\u0642\u062f\u0631\u0629 \u0641\u0631\u064a\u062f\u0629 \u0639\u0644\u0649 \u0641\u062a\u062d \u062c\u0645\u064a\u0639 \u0623\u0634\u0643\u0627\u0644 \u0627\u0644\u0623\u0642\u0641\u0627\u0644 (\u0627\u0646\u0638\u0631 \u0627\u0644\u0645\u0644\u062d\u0642 \u0623)\u060c \u0627\u0644\u0645\u064a\u0643\u0627\u0646\u064a\u0643\u064a\u0629 \u0623\u0648 \u0627\u0644\u0631\u0642\u0645\u064a\u0629\u060c \u0628\u0633\u0647\u0648\u0644\u0629 \u0646\u0633\u0628\u064a\u0629. \u0623\u0635\u0644 \u0647\u0630\u0647 \u0627\u0644\u0642\u062f\u0631\u0629 \u0644\u0645 \u064a\u062a\u062d\u062f\u062f \u0628\u0639\u062f.",
       "descriptionVersion": 3,
       "tags": [
-        "tag-2fc23eae410499ee16044dc4",
-        "tag-4ee1668c9772120b9bec1baf",
-        "tag-fb2451873af0c56de9212187",
-        "tag-8a9d0e6c56ececec1a6c3f19",
-        "tag-83f842e87a2d8df8f956b582"
+        {
+          "id": "tag-2fc23eae410499ee16044dc4",
+          "label": "\u0622\u0645\u0646"
+        },
+        {
+          "id": "tag-4ee1668c9772120b9bec1baf",
+          "label": "\u062a\u0643\u064a\u0641\u064a"
+        },
+        {
+          "id": "tag-fb2451873af0c56de9212187",
+          "label": "\u0645\u0639\u062f\u0646\u064a"
+        },
+        {
+          "id": "tag-8a9d0e6c56ececec1a6c3f19",
+          "label": "\u0645\u0641\u062a\u0627\u062d"
+        },
+        {
+          "id": "tag-83f842e87a2d8df8f956b582",
+          "label": "\u0648\u0627\u0639\u064a"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -302,7 +332,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -363,8 +393,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "967cf1bd84292f9b7bd0a3f5adfe1a4cf673018da7301b5814c7305002acbb3b"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "f3a5202e779b3185a7bc9205f23a285e026f41f8eb4168f65bb54440d52c12ef"
     },
     {
       "itemId": "scp-series-006",
@@ -384,7 +414,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -443,8 +473,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "8e660a255a85aae5c014921cde09f21524250ad6cd1d2daa7cd2d7181ea9b2a3"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "cb9103d0afb8d7252c199af005984d463a22a7fd95fe8e9a1c1ef46576b9ec3b"
     },
     {
       "itemId": "scp-series-008",
@@ -464,7 +494,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -523,8 +553,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "486425350bfcf0dc208a5da8610b8694edecf5e2ec1f83209c5f3278f840b084"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "fc0ea24269248248e6e1cbe610c68f3a49840055cf651fd8b96b173d9c2ef3aa"
     },
     {
       "itemId": "scp-series-017",
@@ -544,7 +574,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -601,8 +631,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "e1c744fb8030f34144ec471371ade66f9d7a8f46156316b9d0656de7c684f960"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "37c92bebe99f674802a7f024a8183bf7d3b48d59eb55d52abaab403363450e90"
     },
     {
       "itemId": "scp-series-018",
@@ -622,7 +652,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -679,8 +709,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "3ae3c575434ef5fad8cfe62530f22889dd4530db7b11153cbf9b17c104027ea9"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "d3a17f6487c7554da5af883c258b693c8a36d777ee98df9d87b641c6c8f3ab95"
     },
     {
       "itemId": "scp-series-035",
@@ -700,7 +730,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -725,8 +755,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "915a1c0d7cc5e940a0905abb6d3fa30ed307760d3c19ae0f63814b9a7670fcab"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "693f13eb21966b1cf711d0ae88e018e465aa40700bef4f43ee9b801541f626ee"
     },
     {
       "itemId": "scp-series-043",
@@ -746,7 +776,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -773,8 +803,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "e0ecc46f23b3b9f5610f4b7fa8878070cda31c8a3c526c3be83762e168c014ba"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "849212d72500a3b08ef167b1aa5b544b5f0023f308b4afeb5b17d88460575d2d"
     },
     {
       "itemId": "scp-series-053",
@@ -794,7 +824,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -850,8 +880,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "27a55e30f41462a7c63bcc9789f8b109bbb5fbb29be700e748145953db9faadc"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "833716304e283d47eadea3d54f29276f5d25906a9d4384f840cc0fd772e2af16"
     },
     {
       "itemId": "scp-series-069",
@@ -871,7 +901,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -894,8 +924,8 @@
         "el",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "3c74a83fa0accbecb52ea9ea848cb8c7f53cacb9a1a25f740a95c67fdb9033b3"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "a2809b84700cdb8abd08744558de9e6be6e0d20f34ac9ff52b5ea78e59148dd2"
     },
     {
       "itemId": "scp-series-073",
@@ -915,7 +945,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -940,8 +970,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "a4fa8fa4edd639fc26068860cbd53acc1171a414d61c66ffe417ad80091ede08"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "ba4b7e4f562ccc72f63025c3bb499a9b68497e491d6478ea3226a2a1c6b23239"
     },
     {
       "itemId": "scp-series-076",
@@ -961,7 +991,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -985,8 +1015,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "d31a5ab0cb2e664a07bec232819e708b7447b78662e9472081b52c67be2a9d65"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "529ad0fa07fb42865bad7f44b673148a4d449ca954ee1abf6e8c81f4da4bf299"
     },
     {
       "itemId": "scp-series-104",
@@ -1006,7 +1036,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -1030,8 +1060,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "d5f5f3a1fc4ee41c296fd2ed1c131a3522e58c2c5165ab0c5f81e1f8bf3750bc"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "855d75dc0896eab35b40777cc2fa0efd8f17d4e02041443000a4a271a625c2a4"
     },
     {
       "itemId": "scp-series-106",
@@ -1051,7 +1081,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -1076,8 +1106,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "7c8faa31699f0b73d93c1b6471abb746fb0255519afe28d94b19a10fe6e141fb"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "13ff89b04b2a74d80aa1f8130f67fe50a2aa89dc1c07a60751073a8acb5f925e"
     },
     {
       "itemId": "scp-series-173",
@@ -1091,11 +1121,26 @@
       "descriptionExcerpt": "\u062a\u0645 \u0627\u0644\u0646\u0642\u0644 \u0625\u0644\u0649 \u0627\u0644\u0645\u0648\u0642\u0639-19 \u0641\u064a \u0639\u0627\u0645 1993. \u0627\u0644\u0623\u0635\u0644 \u063a\u064a\u0631 \u0645\u0639\u0631\u0648\u0641 \u062d\u062a\u0649 \u0627\u0644\u0622\u0646. \u0625\u0646\u0647 \u0645\u0635\u0646\u0648\u0639 \u0645\u0646 \u062d\u062f\u064a\u062f \u0627\u0644\u062a\u0633\u0644\u064a\u062d \u0648\u0627\u0644\u062e\u0631\u0633\u0627\u0646\u0629 \u0645\u0639 \u0622\u062b\u0627\u0631 \u0637\u0644\u0627\u0621 \u0628\u062e\u0627\u062e \u0645\u0627\u0631\u0643\u0629 \u0643\u0631\u064a\u0644\u0648\u0646. \u0625\u0646 \u0625\u0633.\u0633\u064a.\u0628\u064a-173 \u062d\u064a\u0648\u064a \u0648\u0639\u062f\u0627\u0626\u064a \u0644\u0644\u063a\u0627\u064a\u0629. \u0644\u0627 \u064a\u0645\u0643\u0646 \u0623\u0646 \u064a\u062a\u062d\u0631\u0643 \u0627\u0644\u0643\u0627\u0626\u0646 \u0637\u0627\u0644\u0645\u0627 \u0643\u0627\u0646 \u0641\u064a \u0645\u062c\u0627\u0644 \u0628\u0635\u0631\u064a \u0645\u0628\u0627\u0634\u0631. \u0645\u0646 \u0627\u0644\u0636\u0631\u0648\u0631\u064a \u0639\u062f\u0645 \u0645\u0642\u0627\u0637\u0639\u0629 \u0627\u0644\u0627\u062a\u0635\u0627\u0644 \u0627\u0644\u0628\u0635\u0631\u064a \u0628\u0640 \u0625\u0633.\u0633\u064a.\u0628\u064a-173. \u0627\u0644\u0645\u0648\u0638\u0641\u0648\u0646 \u0627\u0644\u0645\u0639\u064a\u0646\u0648\u0646 \u0644\u062f\u062e\u0648\u0644 \u0627\u0644\u062d\u0627\u0648\u064a\u0629 \u0645\u0633\u0624\u0648\u0644\u0648\u0646 \u0639\u0646 \u062a\u0646\u0628\u064a\u0647 \u0628\u0639\u0636\u0647\u0645 \u0627\u0644\u0628\u0639\u0636 \u0642\u0628\u0644 \u0623\u0646 \u064a\u0631\u0645\u0634\u0648\u0627. \u064a\u0647\u0627\u062c\u0645 \u0627\u0644\u062c\u0633\u0645 \u0639\u0646 \u0637\u0631\u064a\u0642 \u0643\u0633\u0631 \u0639\u0646\u0642 \u0627\u0644\u0636\u062d\u064a\u0629 \u0641\u064a \u0642\u0627\u0639\u062f\u0629 \u0627\u0644\u062c\u0645\u062c\u0645\u0629\u060c \u0623\u0648 \u0639\u0646 \u0637\u0631\u064a\u0642 \u0627\u0644\u062e\u0646\u0642. \u0641\u064a \u062d\u0627\u0644\u0629 \u0648\u0642\u0648\u0639 \u0647\u062c\u0648\u0645\u060c \u064a\u062c\u0628 \u0639\u0644\u0649 \u0627\u0644\u0623\u0641\u0631\u0627\u062f \u0627\u062a\u0628\u0627\u0639 \u0625\u062c\u0631\u0627\u0621\u0627\u062a \u0627\u062d\u062a\u0648\u0627\u0621 \u0627\u0644\u0641\u0626\u0629 4 \u0644\u0644\u0623\u0634\u064a\u0627\u0621 \u0627\u0644\u062e\u0637\u0631\u0629.",
       "descriptionVersion": 3,
       "tags": [
-        "tag-1e176fe0ea0326cb278a0e0b",
-        "tag-88c69d41d1eba7ab48fe4c51",
-        "tag-97040c8cc15ee7030a7607a7",
-        "tag-7ff9277f8b10dbf5b652c26f",
-        "tag-0a41cea3e8a6ecf95a7b0205"
+        {
+          "id": "tag-1e176fe0ea0326cb278a0e0b",
+          "label": "\u0625\u0642\u0644\u064a\u062f\u0633"
+        },
+        {
+          "id": "tag-88c69d41d1eba7ab48fe4c51",
+          "label": "\u0645\u062a\u0645\u064a\u0632"
+        },
+        {
+          "id": "tag-97040c8cc15ee7030a7607a7",
+          "label": "\u0645\u0631\u0627\u0642\u0628\u0629"
+        },
+        {
+          "id": "tag-7ff9277f8b10dbf5b652c26f",
+          "label": "\u0645\u0633\u062a\u0642\u0644"
+        },
+        {
+          "id": "tag-0a41cea3e8a6ecf95a7b0205",
+          "label": "\u0646\u062d\u062a"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -1103,7 +1148,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -1138,8 +1183,8 @@
         "tok",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "64bc488fb26ecba6ac3453fa0aaf33ffe7b728d33c285e5f72907951443e948f"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "ecab2cc747fe1d90a834839daf2758d2b5c28d87b46f6af62a925adab92b0d3b"
     },
     {
       "itemId": "scp-series-203",
@@ -1159,7 +1204,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -1177,8 +1222,8 @@
         "zh-tr",
         "ar"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "fe50047b63be997821c9f39835552332ee15abf92dc510b160351c814f125d6f"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "20b5535247365eba46ce8b692dcf0aba45cd9d60a89a075f9045fea2f63abc80"
     },
     {
       "itemId": "scp-series-293",
@@ -1198,7 +1243,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -1216,8 +1261,8 @@
         "ar",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "3c3c8603a6de498124de0775c1590b4051785e98238ecec7de791327d75510a4"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "760c8f745ac82b7566e728e19e532bb3ecbd18e78ea8ed9575fec26323b3fb74"
     },
     {
       "itemId": "scp-series-321",
@@ -1237,7 +1282,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -1257,8 +1302,8 @@
         "zh-tr",
         "ar"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "d061858ab29c69342e853d4e81d6bb51f974b044cbe2c4ff5db990df68cc31de"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "100bc6d301dd197a4e16be9d7ffb73752d8bc6fd5cdf5060aa5813f6a6c4fb0e"
     },
     {
       "itemId": "scp-series-485",
@@ -1278,7 +1323,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -1298,8 +1343,8 @@
         "zh-tr",
         "ar"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "49bdee194d85388359c509ceb164b9f886baccb69bda57b4b46c7a7f9ebb6d11"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "8aff4e765c77632ee5f07152253846c38d5b57100df9c9b1eca25bac4cdcfe9e"
     },
     {
       "itemId": "scp-series-914",
@@ -1319,7 +1364,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:22.496Z",
+      "lastUpdated": "2026-11-22T09:47:29.746Z",
       "createdAt": "2026-11-10T00:33:41.280Z",
       "translatedLanguages": [
         "jp",
@@ -1343,8 +1388,8 @@
         "hu",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "18874fb81f0d9f158fc71626ac16a73b704036aa91215c363cb3b2f789d27884"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "6a06c2bf39aa4b364c8d952044c63fc3afeabfc215a07b09ad0110247ad8b953"
     },
     {
       "itemId": "scp-series-1129",
@@ -1364,7 +1409,7 @@
       "extractedFrom": "scp-series-2",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:36.416Z",
+      "lastUpdated": "2026-11-22T09:47:44.044Z",
       "createdAt": "2026-11-10T00:34:01.446Z",
       "translatedLanguages": [
         "jp",
@@ -1379,8 +1424,8 @@
         "vn",
         "ar"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "8af169d324c4f2df92c846989158138806f81f156afc0b6dedf059f7f8a6f4fa"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "3ab79b038bf3631a62a2d320fcc5bb3f562172b0c528d4e0ea597385bff4515d"
     },
     {
       "itemId": "scp-series-1370",
@@ -1400,7 +1445,7 @@
       "extractedFrom": "scp-series-2",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:36.416Z",
+      "lastUpdated": "2026-11-22T09:47:44.044Z",
       "createdAt": "2026-11-10T00:34:01.446Z",
       "translatedLanguages": [
         "jp",
@@ -1421,8 +1466,8 @@
         "zh-tr",
         "ar"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "7e7e3f7089fd485ae5f48cc372fb05115dd09351a4b1fa0a5528e1e5bcb0e27a"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "07bdae413e28f708677272c255da16ca71ce90001baeb09d2a05d24dd2761be9"
     },
     {
       "itemId": "scp-series-1535",
@@ -1442,7 +1487,7 @@
       "extractedFrom": "scp-series-2",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:36.416Z",
+      "lastUpdated": "2026-11-22T09:47:44.044Z",
       "createdAt": "2026-11-10T00:34:01.446Z",
       "translatedLanguages": [
         "jp",
@@ -1462,8 +1507,8 @@
         "cy",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "ac1bc73aaf7435f0eec2c0b1ab98bcd5baa1a029ac5a44d87a1aa31134cc3e61"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "c9a2d85b8214e8cd4af480eb5554ea7076f4e9df2656cc1ade8c90b2e80cbb84"
     },
     {
       "itemId": "scp-series-1784",
@@ -1483,7 +1528,7 @@
       "extractedFrom": "scp-series-2",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:26:36.416Z",
+      "lastUpdated": "2026-11-22T09:47:44.044Z",
       "createdAt": "2026-11-10T00:34:01.446Z",
       "translatedLanguages": [
         "jp",
@@ -1495,8 +1540,8 @@
         "ru",
         "ar"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:50:15.884Z",
-      "descriptionContentSha256": "bc8eb704399daa7df4b758cfdf4a1fa36dad53ff4ff8acbf5b5408bbc44f8afd"
+      "descriptionCheckedAt": "2026-11-22T13:51:56.678Z",
+      "descriptionContentSha256": "96120b3caa7f24232f09e86ac901fba1b0d0cc71fa18acad8baa67650b1e4f57"
     }
   ],
   "tagSchemaVersion": 2

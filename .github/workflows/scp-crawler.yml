@@ -2,7 +2,8 @@ name: SCP Crawler STG
 
 on:
   schedule:
-    - cron: '0 0 * * 0'
+    # Friday 00:00 UTC (09:00 JST); publish before Saturday notifications.
+    - cron: '0 0 * * 5'
   workflow_dispatch:
     inputs:
       repair_excerpts_only:
@@ -349,12 +350,15 @@ jobs:
 
       - name: Generate combined compatible mobile catalogs
         run: |
-          node --test test/mobile-catalog.test.js test/research-board.test.js test/research-board-links.test.js test/research-board-navigation.test.js test/research-board-auxiliary-content.test.js test/research-board-identity-metadata.test.js test/research-board-identity-audit.test.js test/translation-identities.test.js test/identity-credit-metadata.test.js
+          node --test test/mobile-catalog.test.js test/catalog-arrivals.test.js test/research-board.test.js test/research-board-links.test.js test/research-board-navigation.test.js test/research-board-auxiliary-content.test.js test/research-board-identity-metadata.test.js test/research-board-identity-audit.test.js test/translation-identities.test.js test/identity-credit-metadata.test.js
           node mobile-catalog.js
           node research-board/validate.js
           node tool/audit-research-board-identities.js --output partial-data/research-board-identity-audit.json
 
       # Compare against the latest master acquired after entering the publish lock.
+      - name: Test notification queue preparation
+        run: node --test test/notifications.test.js
+
       - name: Prepare notification queue
         if: inputs.repair_excerpts_only != true || inputs.resume_crawl_run != ''
         run: node prepare-notification-queue.js

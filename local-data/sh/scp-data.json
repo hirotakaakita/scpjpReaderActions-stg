@@ -1,8 +1,8 @@
 {
   "totalCount": 22,
   "language": "sh",
-  "timestamp": "2026-11-13T17:59:08.589Z",
-  "duration": 15,
+  "timestamp": "2026-11-22T14:12:40.130Z",
+  "duration": 14,
   "status": "completed",
   "statistics": {
     "translated": 22,
@@ -22,10 +22,22 @@
       "descriptionExcerpt": "SCP-012-SH je prostorna anomalija u kabinetu za matematiku sada zatvorene Osnovne \u0161kole \"\u2588\u2588\u2588\u2588\u2588 \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\" u \u2588\u2588\u2588\u2588\u2588 \u2588\u2588\u2588\u2588. Ona predstavlja \"d\u017eepnu dimenziju\" unutar na\u0161e realnosti koja se superimponovala na mali segment prostora, izme\u0161taju\u0107i ga. Sav ispitani materijal iz SCP-012-SH (sem supstanci koje su deo vazduha, koji ulazi iz spolja\u0161njosti) izgra\u0111en je od leda. Me\u0111u molekulima vode koji sa\u010dinjavaju ovaj led deluju neobi\u010dno jake privla\u010dne sile, tako da voda ostaje u \u010dvrstom stanju na znatno vi\u0161",
       "descriptionVersion": 3,
       "tags": [
-        "ekstradimenzionalno",
-        "neutralizovano",
-        "portal",
-        "prostor-vreme"
+        {
+          "id": "ekstradimenzionalno",
+          "label": "ekstradimenzionalno"
+        },
+        {
+          "id": "neutralizovano",
+          "label": "neutralizovano"
+        },
+        {
+          "id": "portal",
+          "label": "portal"
+        },
+        {
+          "id": "prostor-vreme",
+          "label": "prostor-vreme"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -33,13 +45,13 @@
       "extractedFrom": "scp-bcms-series",
       "pageType": "scp-series-sh",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:14.055Z",
+      "lastUpdated": "2026-11-22T10:21:25.647Z",
       "createdAt": "2026-11-10T00:38:22.460Z",
       "translatedLanguages": [
         "sh"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "84190e5d645a956a725290afa8c2c1f5cb9571cd6fad855806d1aa4639881264"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "45d94fee20465097c7b406fda80088ec3812cb915d251c448e65531db79f5813"
     },
     {
       "itemId": "scp-series-sh-016",
@@ -53,8 +65,14 @@
       "descriptionExcerpt": "SCP-016-SH je anomalijska vrsta endemske biljke iz porodice Apiaceae. Stabljka ove biljke je vretenastog oblika, maslinasto zelene boje, \u0161uplja je i grana se. Listovi su tamnozelene do crne boje, krstastog oblika sa srebrnim ivicama. Cvjetovi su \u0161titastog oblika, crvenkaste boje i sli\u010dni su vatri. Korijen je 20 cm dug i sivo-sme\u0111e je boje. Ova biljka rasprostranjena uglavnom na planinskom podru\u010dju zapadnog djela Republike Srbije, ali se tako\u0111e mo\u017ee prona\u010di I na drugim djelovima Balkana.\nSCP-016-",
       "descriptionVersion": 3,
       "tags": [
-        "biljke",
-        "euklid"
+        {
+          "id": "biljke",
+          "label": "biljke"
+        },
+        {
+          "id": "euklid",
+          "label": "euklid"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -62,13 +80,13 @@
       "extractedFrom": "scp-bcms-series",
       "pageType": "scp-series-sh",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:14.055Z",
+      "lastUpdated": "2026-11-22T10:21:25.647Z",
       "createdAt": "2026-11-10T00:38:22.460Z",
       "translatedLanguages": [
         "sh"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "e3ce0a4e9c51569e7b1faea2a1ff7ca50e3b1c19afb706f50939bb3e1317a966"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "0435faae871710bdbc3f1bcc67899f84116e4e747725a317c37d62aee22d74e6"
     },
     {
       "itemId": "scp-series-sh-049",
@@ -82,7 +100,10 @@
       "descriptionExcerpt": "SCP-049-SH je jedna 2m duga\u010dka i 1m visoka kreatura koja ima sli\u010dnost sa nekim vrstama reptila i sisara. Objekt mnogo li\u010di na jednog vuka [Canis Lupus], me\u0111utim ima krlju\u0161ti umesto krzna. SCP-049-SH tako\u0111e ima mnogo duga\u010dke o\u010dnjake i crvene svetle\u0107e o\u010di. Testiranje je dokazalo da direktna obzervacija o\u010diju mo\u017ee da dovede do [INFORMACIJA IZBRISANA]. SCP-049-SH ima sposobnost da menja boju svoje ko\u017ee, me\u0111utim nije u stanju da replikuje providnost.\nObjekat je prvi put nadjen u [CENZURISANO] u Meksi",
       "descriptionVersion": 3,
       "tags": [
-        "euklid"
+        {
+          "id": "euklid",
+          "label": "euklid"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -90,13 +111,13 @@
       "extractedFrom": "scp-bcms-series",
       "pageType": "scp-series-sh",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:14.055Z",
+      "lastUpdated": "2026-11-22T10:21:25.647Z",
       "createdAt": "2026-11-10T00:38:22.460Z",
       "translatedLanguages": [
         "sh"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "b05847c8a150fdf714e3547ddbe9adfc82f8d6470c00d5f894a571939a31f3c8"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "12968125646262b4a6266d08bcae7e89d083b9fc16226f83f13a9cef5c2ec281"
     },
     {
       "itemId": "scp-series-001",
@@ -110,7 +131,10 @@
       "descriptionExcerpt": "SLEDE\u0106I DOKUMENTI SU KLASIFIKOVANI STROGO TAJNI PO NARE\u0110ENJU ADMINISTRATORA GENERALNO OBAVE\u0160TENJE 001-Alfa: Da bi se spre\u010dilo curenje znanja o SCP-001, vi\u0161e/nula la\u017enih SCP-001 dokumenata je stvoreno pored istinitog/ih dokumenta/dokumenata. Svi dokumenti vezani za prirodu SCP-001, uklju\u010duju\u0107i varku/varke, su za\u0161ti\u0107eni memeti\u010dkim ubistvenim agensom dizajniranim da odmah izazove sr\u010dani zastoj u bilo kom neautorizovanom \u010dlanu osoblja koji poku\u0161ava da pristupi dokumentu. Otkrivanje istinske prirode/",
       "descriptionVersion": 3,
       "tags": [
-        "centrala"
+        {
+          "id": "centrala",
+          "label": "centrala"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -118,7 +142,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:16.775Z",
+      "lastUpdated": "2026-11-22T10:21:28.087Z",
       "createdAt": "2026-11-10T00:38:25.005Z",
       "translatedLanguages": [
         "jp",
@@ -149,8 +173,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "a233531ce62c8ed7a9b601a27717dde6fdbde4596b338488e5b93f884ef29114"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "3998247c43095648adcb11f6145b8ed7be8a73ee74adbd8983f6404417c198a4"
     },
     {
       "itemId": "scp-series-002",
@@ -164,11 +188,26 @@
       "descriptionExcerpt": "SCP-002 izgleda kao tumorski, mesnat izrast zapremine pribli\u017eno 60 m\u00b3. Gvozdeni otvor na ventilu s jedne strane vodi do njegove unutra\u0161njosti, koja izgleda kao standardni stan ni\u017ee nov\u010dane vrednosti, skromne veli\u010dine. Jedan zid sobe ima jedan prozor, mada se sa spolja\u0161nosti taj otvor ne vidi. U sobi se nalazi name\u0161taj za koji se nakon pa\u017eljivog pregleda utvrdilo da je sa\u010dinjen od isklesane kosti, tkane kose i raznih drugih biolo\u0161kih supstanci koje proizvodi ljudsko telo. Sve dosad testirane mate",
       "descriptionVersion": 3,
       "tags": [
-        "euklid",
-        "izdvojeno",
-        "struktura",
-        "trasfiguracija",
-        "zivo"
+        {
+          "id": "euklid",
+          "label": "euklid"
+        },
+        {
+          "id": "izdvojeno",
+          "label": "izdvojeno"
+        },
+        {
+          "id": "struktura",
+          "label": "struktura"
+        },
+        {
+          "id": "trasfiguracija",
+          "label": "trasfiguracija"
+        },
+        {
+          "id": "zivo",
+          "label": "zivo"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -176,7 +215,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:16.775Z",
+      "lastUpdated": "2026-11-22T10:21:28.087Z",
       "createdAt": "2026-11-10T00:38:25.005Z",
       "translatedLanguages": [
         "jp",
@@ -237,8 +276,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "06df5e3f7708eae81de7328423fdce7d5cab9ec014b658cd87760c4e8eb852ba"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "720f2c16661c84280ac59b6c612eeabc7ed23f49a9c0d3ab2cd01014d44cd9ff"
     },
     {
       "itemId": "scp-series-003",
@@ -252,21 +291,66 @@
       "descriptionExcerpt": "SCP-003 se sastoji iz dve povezane komponente razli\u010ditog porekla, ozna\u010dene kao SCP-003-1 i SCP-003-2.\n\u010cini se da je SCP-003-1 sastavljena od hitina, dlaka i noktiju nepoznate biologije, raspore\u0111enih u konfiguraciju sli\u010dnu kompjuterskoj mati\u010dnoj plo\u010di. Testiranje je otkrilo da SCP-003-1 predatira najraniju poznatu \u0161tampanu plo\u010du za nekoliko hiljada godina. Smatra se da je SCP-003-1 svesna, ali nije aktivno opasna osim pod odre\u0111enim uslovima.\nSCP-003-1 je prona\u0111ena na kamenoj plo\u010di, SCP-003-2, na",
       "descriptionVersion": 3,
       "tags": [
-        "biolosko",
-        "direktorka-mus",
-        "euklid",
-        "istaknuto",
-        "kompjuter",
-        "organsko",
-        "preradjeno",
-        "radioaktivno",
-        "samo-replicirajuce",
-        "scenario-k-klase",
-        "telepaticno",
-        "termalno",
-        "trasfiguracija",
-        "utice-na-um",
-        "zivo"
+        {
+          "id": "biolosko",
+          "label": "biolosko"
+        },
+        {
+          "id": "direktorka-mus",
+          "label": "direktorka-mus"
+        },
+        {
+          "id": "euklid",
+          "label": "euklid"
+        },
+        {
+          "id": "istaknuto",
+          "label": "istaknuto"
+        },
+        {
+          "id": "kompjuter",
+          "label": "kompjuter"
+        },
+        {
+          "id": "organsko",
+          "label": "organsko"
+        },
+        {
+          "id": "preradjeno",
+          "label": "preradjeno"
+        },
+        {
+          "id": "radioaktivno",
+          "label": "radioaktivno"
+        },
+        {
+          "id": "samo-replicirajuce",
+          "label": "samo-replicirajuce"
+        },
+        {
+          "id": "scenario-k-klase",
+          "label": "scenario-k-klase"
+        },
+        {
+          "id": "telepaticno",
+          "label": "telepaticno"
+        },
+        {
+          "id": "termalno",
+          "label": "termalno"
+        },
+        {
+          "id": "trasfiguracija",
+          "label": "trasfiguracija"
+        },
+        {
+          "id": "utice-na-um",
+          "label": "utice-na-um"
+        },
+        {
+          "id": "zivo",
+          "label": "zivo"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -274,7 +358,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:16.775Z",
+      "lastUpdated": "2026-11-22T10:21:28.087Z",
       "createdAt": "2026-11-10T00:38:25.005Z",
       "translatedLanguages": [
         "jp",
@@ -304,8 +388,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "afe35e900d4e476076cfbcd0af06c87c76f845dc1ee5eae6cb3806ffcf4a06e2"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "bdd1ec6b9f8442d7fc6869cb734267c446f2b97f0be35e2faf84b2c903bd6531"
     },
     {
       "itemId": "scp-series-004",
@@ -319,13 +403,34 @@
       "descriptionExcerpt": "SCP-004 se sastoji od starih drvenih ambarskih vrata (SCP-004-1) i seta od 12 zar\u0111alih \u010deli\u010dnih klju\u010deva (SCP-004-2 kroz SCP-004-13). Sama vrata su ulaz u napu\u0161tenu fabriku u [PODACI IZBA\u010cENI].",
       "descriptionVersion": 3,
       "tags": [
-        "euklid",
-        "kljuc",
-        "portal",
-        "prostor-vreme",
-        "struktura",
-        "utice-na-um",
-        "vremensko"
+        {
+          "id": "euklid",
+          "label": "euklid"
+        },
+        {
+          "id": "kljuc",
+          "label": "kljuc"
+        },
+        {
+          "id": "portal",
+          "label": "portal"
+        },
+        {
+          "id": "prostor-vreme",
+          "label": "prostor-vreme"
+        },
+        {
+          "id": "struktura",
+          "label": "struktura"
+        },
+        {
+          "id": "utice-na-um",
+          "label": "utice-na-um"
+        },
+        {
+          "id": "vremensko",
+          "label": "vremensko"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -333,7 +438,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:16.775Z",
+      "lastUpdated": "2026-11-22T10:21:28.087Z",
       "createdAt": "2026-11-10T00:38:25.005Z",
       "translatedLanguages": [
         "jp",
@@ -362,8 +467,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "f279dd8795c7e27146f0181cd1161f200edecf6bae9e229bae7bd715de4d6109"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "2ac2a3f838a23ba46edf7d42a5783bb65be11c90f59ab51d74821d3442da9904"
     },
     {
       "itemId": "scp-series-005",
@@ -377,11 +482,26 @@
       "descriptionExcerpt": "Po izgledu, SCP-005 li\u010di na ukra\u0161en klju\u010d, prikazuju\u0107i karakteristike tipi\u010dnog masovno proizvedenog klju\u010da iz 1920-ih. Klju\u010d je otkriven kada ga je civil upotrebio da bi se infiltrirao u ustanovu visoke bezbednosti. \u010cini se da SCP-005 ima jedinstvenu sposobnost da otvori sve vrste brava (Videti Priklju\u010dak A), bilo one mehani\u010dke ili digitalne, sa relativnom lako\u0107om. Poreklo ove sposobnosti jo\u0161 uvek nije odre\u0111eno.",
       "descriptionVersion": 3,
       "tags": [
-        "adaptivan",
-        "kljuc",
-        "metalno",
-        "sigurno",
-        "svesno"
+        {
+          "id": "adaptivan",
+          "label": "adaptivan"
+        },
+        {
+          "id": "kljuc",
+          "label": "kljuc"
+        },
+        {
+          "id": "metalno",
+          "label": "metalno"
+        },
+        {
+          "id": "sigurno",
+          "label": "sigurno"
+        },
+        {
+          "id": "svesno",
+          "label": "svesno"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -389,7 +509,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:16.775Z",
+      "lastUpdated": "2026-11-22T10:21:28.087Z",
       "createdAt": "2026-11-10T00:38:25.005Z",
       "translatedLanguages": [
         "jp",
@@ -450,8 +570,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "962bc38451ce22c501a4816676d82ef562c35eb18cd78e8f8b91ad711708c963"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "68e8c9e18cf60723b5ee610e5d0ec7fa321dd9e2af966de39508e6b31f9584ae"
     },
     {
       "itemId": "scp-series-006",
@@ -465,11 +585,26 @@
       "descriptionExcerpt": "SCP-006 je veoma mali izvor lociran 60km od Astrakana. Komanda Fondacije je bila svesna njegovog postojanja od 19. veka, ali nije bila sposobna da je osigura sve do 1991. iz politi\u010dkih razloga. Na mestu izvora, fabrika hemikalija je sagra\u0111ena kao paravan, sa ve\u0107inom radnika pod kontrolom Fondacije i/ili Rusije. Te\u010dnost koja se ispu\u0161ta iz izvora je hemijski idetifikovana kao prosta mineralna voda, ali ima neuobi\u010dajenu osobinu \"zdravlja\".\nUno\u0161enje te\u010dnosti produkuje slede\u0107e svojstva u ljudskim bi\u0107",
       "descriptionVersion": 3,
       "tags": [
-        "lokacija",
-        "medicinsko",
-        "samopopravljajuce",
-        "sigurno",
-        "tecnost"
+        {
+          "id": "lokacija",
+          "label": "lokacija"
+        },
+        {
+          "id": "medicinsko",
+          "label": "medicinsko"
+        },
+        {
+          "id": "samopopravljajuce",
+          "label": "samopopravljajuce"
+        },
+        {
+          "id": "sigurno",
+          "label": "sigurno"
+        },
+        {
+          "id": "tecnost",
+          "label": "tecnost"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -477,7 +612,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:16.775Z",
+      "lastUpdated": "2026-11-22T10:21:28.087Z",
       "createdAt": "2026-11-10T00:38:25.005Z",
       "translatedLanguages": [
         "jp",
@@ -536,8 +671,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "04248c2339c7674be7f7b7000e7c3889a887c471ae6e46cb9e830b408db15b74"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "661176685ecf2a8f0c882fc1e053af629241f1b68f196ed320a95d02191ce8f7"
     },
     {
       "itemId": "scp-series-007",
@@ -551,11 +686,26 @@
       "descriptionExcerpt": "SCP-007 se nalazi u \u0161upljini u trbuhu Subjekta. Subjekat je belac, fizi\u010dke starosti oko 25 godina (Subjekat tvrdi da ima 28 godina) i visok 176 centimetara. Ve\u0107ina Subjektovog trbuha (mi\u0161i\u0107i, ko\u017ea i organi) je odsutna, premda se \u010dini da Subjekat ne pati zbog toga. Umesto normalnog mesa, prisutna je sfera sastavljena od zemlji\u0161ta i vode, mada ni u jednoj ta\u010dki ne dolazi stvarno u dodir sa Subjektovim telom. Sfera izgleda, po ve\u0107ini osobina, kao minijaturni skoro potpuni duplikat Zemlje, oko 60 cm",
       "descriptionVersion": 3,
       "tags": [
-        "euklid",
-        "humanoid",
-        "minijatura",
-        "planeta",
-        "zivo"
+        {
+          "id": "euklid",
+          "label": "euklid"
+        },
+        {
+          "id": "humanoid",
+          "label": "humanoid"
+        },
+        {
+          "id": "minijatura",
+          "label": "minijatura"
+        },
+        {
+          "id": "planeta",
+          "label": "planeta"
+        },
+        {
+          "id": "zivo",
+          "label": "zivo"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -563,7 +713,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:16.775Z",
+      "lastUpdated": "2026-11-22T10:21:28.087Z",
       "createdAt": "2026-11-10T00:38:25.005Z",
       "translatedLanguages": [
         "jp",
@@ -592,8 +742,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "2e783839ab72b40b20e71138f58a22c48c11f90acc63b5abf7d343e89e216cba"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "0f84ec38f984cefd83cedd38283d1171d75ed967ff8be8c3ee5d55d4865cc8bb"
     },
     {
       "itemId": "scp-series-008",
@@ -607,13 +757,34 @@
       "descriptionExcerpt": "SCP-008 je slo\u017een prion, \u010diji se uzorci \u010duvaju u svim poznatim G2 institucijama. Istra\u017eivanje SCP-008 je strogo poverljivo i prvenstveno cilja da spre\u010di istra\u017eivanje koje bi dovelo do sinteze SCP-008 u daljoj budu\u0107nosti. Osobine SCP-008 priona uklju\u010duju:\n\n100% zaraznost.\n100% smrtnost.\nPrenos preko izlo\u017eene sluzoko\u017ee i svih telesnih te\u010dnosti.\nNemogu\u0107a prenosivost putem vazduha ili vode.\n\nSimptomi infekcije SCP-008 se ispoljavaju posle ne vi\u0161e od tri sata po izlo\u017eenosti, i uklju\u010duju:\n\nSimptome sl",
       "descriptionVersion": 3,
       "tags": [
-        "bioloska-opasnost",
-        "euklid",
-        "krv",
-        "reanimacija",
-        "transfiguracija",
-        "zaraza",
-        "zivo"
+        {
+          "id": "bioloska-opasnost",
+          "label": "bioloska-opasnost"
+        },
+        {
+          "id": "euklid",
+          "label": "euklid"
+        },
+        {
+          "id": "krv",
+          "label": "krv"
+        },
+        {
+          "id": "reanimacija",
+          "label": "reanimacija"
+        },
+        {
+          "id": "transfiguracija",
+          "label": "transfiguracija"
+        },
+        {
+          "id": "zaraza",
+          "label": "zaraza"
+        },
+        {
+          "id": "zivo",
+          "label": "zivo"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -621,7 +792,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:16.775Z",
+      "lastUpdated": "2026-11-22T10:21:28.087Z",
       "createdAt": "2026-11-10T00:38:25.005Z",
       "translatedLanguages": [
         "jp",
@@ -680,8 +851,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "03a96fa5e25bc3309640a2de716c3c8e3719945f3903fc32ba10f8858d72b8ec"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "071d50a7489e0289d1c1d8fdde4a8917fcb9ae7ae3f7bd4f47872c525d74631a"
     },
     {
       "itemId": "scp-series-009",
@@ -695,10 +866,22 @@
       "descriptionExcerpt": "SCP-009 je oko \u2588\u2588\u2588 litara supstance koja povr\u0161no li\u010di na destilovanu vodu (H2O), samo sa karakteristi\u010dnom jarko crvenom bojom. Ova crvena nijansa je primetna u svim agregatnim stanjima, i slu\u017ei kao najprakti\u010dniji metod za identifikovanje kontaminirane materije pre nego \u0161to se ispolje njene anomalne osobine. Nasuprot svakodnevnoj vodi, SCP-009 sti\u010de te\u010dno stanje na temperaturama izme\u0111u -100\u00b0C i 0\u00b0C, i \u010dvrsto stanje iznad tih temperatura. Na temperaturama ispod -100\u00b0C, SCP-009 isparava u gasovito",
       "descriptionVersion": 3,
       "tags": [
-        "euklid",
-        "samo-replicirajuce",
-        "tecnost",
-        "termalno"
+        {
+          "id": "euklid",
+          "label": "euklid"
+        },
+        {
+          "id": "samo-replicirajuce",
+          "label": "samo-replicirajuce"
+        },
+        {
+          "id": "tecnost",
+          "label": "tecnost"
+        },
+        {
+          "id": "termalno",
+          "label": "termalno"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -706,7 +889,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:16.775Z",
+      "lastUpdated": "2026-11-22T10:21:28.087Z",
       "createdAt": "2026-11-10T00:38:25.005Z",
       "translatedLanguages": [
         "jp",
@@ -763,8 +946,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "4181c4580bb5c16a1243eaac24fe2170ec1b62f55c36707a825ad2d796c4e937"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "2dc11bb74d6d9e3654ce68fd9ee149c71eb56edb3b91c06de39283ccb32482e4"
     },
     {
       "itemId": "scp-series-010",
@@ -778,11 +961,26 @@
       "descriptionExcerpt": "SCP-010 se sastoji od serije \u0161est (6) naizgled identi\u010dnih livenih gvozdenih okovratnika sa numerisanim metalnim oznakama i jednog (1) daljinskog upravlja\u010da. Upravlja\u010d je SCP-010-1.\n\nOkovratnici su SCP-010-2 do 010-7. Okovratnici sadr\u017ee zamr\u0161ene elektronske komponente i napajaju ih male (pre\u010dnika 5mm i debljine 2mm) 100V baterije. Ove baterije su punjive.\nDaljinski je te\u0161ka crna kutija koja podse\u0107a na staromodni ru\u010dni radio oda\u0161ilja\u010d/primalac sa primitivnim plavo-belim katodnim ekranom i serijom",
       "descriptionVersion": 3,
       "tags": [
-        "artefakt",
-        "elektronsko",
-        "kompulzija",
-        "sigurno",
-        "utice-na-um"
+        {
+          "id": "artefakt",
+          "label": "artefakt"
+        },
+        {
+          "id": "elektronsko",
+          "label": "elektronsko"
+        },
+        {
+          "id": "kompulzija",
+          "label": "kompulzija"
+        },
+        {
+          "id": "sigurno",
+          "label": "sigurno"
+        },
+        {
+          "id": "utice-na-um",
+          "label": "utice-na-um"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -790,7 +988,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:16.775Z",
+      "lastUpdated": "2026-11-22T10:21:28.087Z",
       "createdAt": "2026-11-10T00:38:25.005Z",
       "translatedLanguages": [
         "jp",
@@ -816,8 +1014,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "64a95bb68132f8fe3c72f7a191fe254b402d3d283a115f52217a725e96e9e164"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "e4145e41cd53ab5e43589f1720a3ffdf8d5aad4e32a5667356b3e2109b903ada"
     },
     {
       "itemId": "scp-series-011",
@@ -831,12 +1029,30 @@
       "descriptionExcerpt": "SCP-011 je spomenik Ameri\u010dkog gra\u0111anskom ratu koji se nalazi u Vudstoku,Vermont. Statua izgleda kao mladi mu\u0161ki vojnik koji dr\u017ei musketu pored sebe, a isklesana je od granita lomljenog u toj oblasti. Povremeno,SCP-011 \u0458\u0435 prime\u0107en kako podi\u017ee svoju musketu ka nebu kako bi pucao u ptice koje poku\u0161aju da slete ili izvr\u0161e nu\u017edu na njega.Izve\u0161taji pokazuju da njegovi poktreti proizvode slabe zvukove bru\u0161enja ali ne izazivaju nikakav strukturni kvar. Iznena\u0111uju\u0107e, pucnjava je veoma sli\u010dna onoj iz stan",
       "descriptionVersion": 3,
       "tags": [
-        "autonomno",
-        "humanoid",
-        "inteligentno",
-        "sigurno",
-        "skulptura",
-        "vojno"
+        {
+          "id": "autonomno",
+          "label": "autonomno"
+        },
+        {
+          "id": "humanoid",
+          "label": "humanoid"
+        },
+        {
+          "id": "inteligentno",
+          "label": "inteligentno"
+        },
+        {
+          "id": "sigurno",
+          "label": "sigurno"
+        },
+        {
+          "id": "skulptura",
+          "label": "skulptura"
+        },
+        {
+          "id": "vojno",
+          "label": "vojno"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -844,7 +1060,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:16.775Z",
+      "lastUpdated": "2026-11-22T10:21:28.087Z",
       "createdAt": "2026-11-10T00:38:25.005Z",
       "translatedLanguages": [
         "jp",
@@ -901,8 +1117,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "b71081698187f61ef4393ae0bebf4840af6b4983108cd6ed5f9f3c4254a0be8d"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "bedd0223a13c76c3aa8146bf1dc29048eb7888647b5f79b72236e973889b94fa"
     },
     {
       "itemId": "scp-series-029",
@@ -916,13 +1132,34 @@
       "descriptionExcerpt": "SCP-029 izgleda kao devojka u pubertetu, Azijsko-indijskog porekla. Izgleda kao da pati od alopecije universalis. Preko 80% njene pigmentacije je istinski crno, dok ostatak ko\u017ee ima potpuni nedostatak melanina, do ta\u010dke albinizma. Njene o\u010di su tako\u0111e tamnocrne boje.\nSCP-029 ima jake ubila\u010dke nagone i pokazala je izvanrednu ve\u0161tinu pri kori\u0161\u0107enju bilo kojeg predmeta kao oru\u017eja. Ali, ona ima ozbiljnu kompulziju protiv prolivanja krvi, preferiraju\u0107i da svoje \u017ertve ubija davljenjem. SCP-029 je pokaz",
       "descriptionVersion": 3,
       "tags": [
-        "humanoid",
-        "keter",
-        "kompulzija",
-        "lajt",
-        "neprijateljski-nastrojeno",
-        "utice-na-um",
-        "zivo"
+        {
+          "id": "humanoid",
+          "label": "humanoid"
+        },
+        {
+          "id": "keter",
+          "label": "keter"
+        },
+        {
+          "id": "kompulzija",
+          "label": "kompulzija"
+        },
+        {
+          "id": "lajt",
+          "label": "lajt"
+        },
+        {
+          "id": "neprijateljski-nastrojeno",
+          "label": "neprijateljski-nastrojeno"
+        },
+        {
+          "id": "utice-na-um",
+          "label": "utice-na-um"
+        },
+        {
+          "id": "zivo",
+          "label": "zivo"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -930,7 +1167,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:16.775Z",
+      "lastUpdated": "2026-11-22T10:21:28.087Z",
       "createdAt": "2026-11-10T00:38:25.005Z",
       "translatedLanguages": [
         "jp",
@@ -951,8 +1188,8 @@
         "sh",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "cfd92a00bd0fa272e9ea109271c3493e559cd19ed0eb6c357a0d883b235d8478"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "b1e14bb0626fad938ab3d9d12032c7b931e51d65a13a013ef925a58593d93fee"
     },
     {
       "itemId": "scp-series-048",
@@ -966,10 +1203,22 @@
       "descriptionExcerpt": "SCP-048 je dugo smatran za \"prokleti SCP-broj\" od strane SCP osoblja: svi predmeti kojima se da ova oznaka te\u017ee da budu uni\u0161teni, raspu\u0161teni, ukradeni, ili izgubljeni na drugi na\u010din, obi\u010dno bez gre\u0161ke ijedne individualne osobe. Osim toga, osoblje koje je dodeljeno raznim inkarnacijama SCP-048 je imalo 50% vi\u0161u stopu terminacije zaposlenja zbog smrti, raskomadavanja, ili disciplinarnih \u010dinova.\nDa li broj 048 zaista ima natprirodne osobine je nepoznato, ali zbog sujeverja oko ovog broja, oznaka je",
       "descriptionVersion": 3,
       "tags": [
-        "ezotericna-klasa",
-        "matematicko",
-        "meta",
-        "verovatnoca"
+        {
+          "id": "ezotericna-klasa",
+          "label": "ezotericna-klasa"
+        },
+        {
+          "id": "matematicko",
+          "label": "matematicko"
+        },
+        {
+          "id": "meta",
+          "label": "meta"
+        },
+        {
+          "id": "verovatnoca",
+          "label": "verovatnoca"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -977,7 +1226,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:16.775Z",
+      "lastUpdated": "2026-11-22T10:21:28.087Z",
       "createdAt": "2026-11-10T00:38:25.005Z",
       "translatedLanguages": [
         "jp",
@@ -1003,8 +1252,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "27e061da8353947d463378e86f7b0b368790158f257fd8e76462f2c7f17963c2"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "63d9edaf99d673f0d922f253d1d99b1dedc34af0bbb652d2d3b31a9dec6a799d"
     },
     {
       "itemId": "scp-series-054",
@@ -1024,7 +1273,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:16.775Z",
+      "lastUpdated": "2026-11-22T10:21:28.087Z",
       "createdAt": "2026-11-10T00:38:25.005Z",
       "translatedLanguages": [
         "jp",
@@ -1047,8 +1296,8 @@
         "sh",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "4a5c3e80aaa70d9c3da1d87698e11e8d3ca88089b25dc4f176825702aac7b949"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "96db65f9abb5e31ca73a91e5a15442ea192bd221e1545383f8a87b9fb498ad04"
     },
     {
       "itemId": "scp-series-055",
@@ -1062,13 +1311,34 @@
       "descriptionExcerpt": "SCP-055 je \"samo\u010duvaju\u0107a tajna\" ili antimim. Informacije o SCP-055-ovom fizi\u010dkom izgledu, kao i njegovoj prirodi, pona\u0161anju i poreklu su samo\u010duvaju\u0107e. Ta\u010dnije:\n\nKako je Lokacija-19 originalno do\u0161la u posed SCP-055 je nepoznato.\n\n\nKada je SCP-055 ste\u010den, i od strane koga, je nepoznato.\n\n\nFizi\u010dki izgled SCP-055-a je nepoznat. On nije neopisiv niti nevidljiv: pojedinci su savr\u0161eno sposobni da u\u0111u u SCP-055-ov kontejner i da ga posmatraju, hvataju mentalne ili pismene bele\u0161ke, prave skice, da ga fot",
       "descriptionVersion": 3,
       "tags": [
-        "antimemeticno",
-        "infohazard",
-        "istaknuto",
-        "keter",
-        "meta",
-        "nasledje",
-        "utice-na-secanja"
+        {
+          "id": "antimemeticno",
+          "label": "antimemeticno"
+        },
+        {
+          "id": "infohazard",
+          "label": "infohazard"
+        },
+        {
+          "id": "istaknuto",
+          "label": "istaknuto"
+        },
+        {
+          "id": "keter",
+          "label": "keter"
+        },
+        {
+          "id": "meta",
+          "label": "meta"
+        },
+        {
+          "id": "nasledje",
+          "label": "nasledje"
+        },
+        {
+          "id": "utice-na-secanja",
+          "label": "utice-na-secanja"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -1076,7 +1346,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:16.775Z",
+      "lastUpdated": "2026-11-22T10:21:28.087Z",
       "createdAt": "2026-11-10T00:38:25.005Z",
       "translatedLanguages": [
         "jp",
@@ -1103,8 +1373,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "b6eae9c4a14aecb457067ff3ca9deab282df9418aec571b7a040c3707c891c28"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "f5e19feee1196ef477ea7acc548a1537a6b2511038003580836b44ad6cd793af"
     },
     {
       "itemId": "scp-series-173",
@@ -1118,12 +1388,30 @@
       "descriptionExcerpt": "Preba\u010den u Instituciju-19 1993. Poreklo je u trenutku pisanja nepoznato. Objekat je izgra\u0111en od betona I armature sa tragovima sprej farbe marke Krylon. SCP-173 je pokretan I izuzetno neprijateljski nastrojen. Predmet ne mo\u017ee da se pomera dok se nalazi u direktnoj liniji vida. Linija vida ne sme ni u kom trenutku biti prekinuta sa SCP-173-om. Osoblje odre\u0111eno za ulazak u kontejner dobija instrukcije da upozore jedno drugo pre treptanja. Prijavljeno je da objekat napada slamanjem vrata na osnovi",
       "descriptionVersion": 3,
       "tags": [
-        "autonomno",
-        "euklid",
-        "istaknuto",
-        "nasledje",
-        "posmatracko",
-        "skulptura"
+        {
+          "id": "autonomno",
+          "label": "autonomno"
+        },
+        {
+          "id": "euklid",
+          "label": "euklid"
+        },
+        {
+          "id": "istaknuto",
+          "label": "istaknuto"
+        },
+        {
+          "id": "nasledje",
+          "label": "nasledje"
+        },
+        {
+          "id": "posmatracko",
+          "label": "posmatracko"
+        },
+        {
+          "id": "skulptura",
+          "label": "skulptura"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -1131,7 +1419,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:16.775Z",
+      "lastUpdated": "2026-11-22T10:21:28.087Z",
       "createdAt": "2026-11-10T00:38:25.005Z",
       "translatedLanguages": [
         "jp",
@@ -1166,8 +1454,8 @@
         "tok",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "46021888270b9344ed1928151a56245b3310e03e41d47188ed38fa46666dae84"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "4dd8edaf098c799be6ac68ec1d62139965696b7f5ebc60358b2af61db2366ea8"
     },
     {
       "itemId": "scp-series-447",
@@ -1181,11 +1469,26 @@
       "descriptionExcerpt": "SCP-447-1 je zelena kugla otprilike 5 cm u pre\u010dniku, sa sun\u0111erastom povr\u0161inskom teksturom i te\u017einom od 1.37 kg. Objekat je topao na dodir, otprilike iste temperature kao i ljudsko telo, iako je temperatura njegovog jezgra neznatno vi\u0161a. Osoblje koje radi sa SCP-447-1-om ne prijavljuje nikakva \u0161tetna dejstva, pod uslovom da SCP-447-1 ne do\u0111e u kontakt sa mrtvim telom.\nSCP-447 je povra\u0107en od strane agenata Fondacije datuma \u2588\u2588\u2588\u2588\u2588\u2588\u2588 u gradu \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 u Kaliforniji u Sjedinjenim Ameri\u010dkim Dr\u017eavama.",
       "descriptionVersion": 3,
       "tags": [
-        "ektoentropno",
-        "sfera",
-        "sigurno",
-        "tecnost",
-        "truplo"
+        {
+          "id": "ektoentropno",
+          "label": "ektoentropno"
+        },
+        {
+          "id": "sfera",
+          "label": "sfera"
+        },
+        {
+          "id": "sigurno",
+          "label": "sigurno"
+        },
+        {
+          "id": "tecnost",
+          "label": "tecnost"
+        },
+        {
+          "id": "truplo",
+          "label": "truplo"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -1193,7 +1496,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:16.775Z",
+      "lastUpdated": "2026-11-22T10:21:28.087Z",
       "createdAt": "2026-11-10T00:38:25.005Z",
       "translatedLanguages": [
         "jp",
@@ -1245,8 +1548,8 @@
         "zh",
         "zh_Hant"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "35cc623ada7b03bf82f26f5728267323d35b74577a2ce0dccf2742163ec1e3a0"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "89fbd0ac5b58e167af297b3280eb61401c3fb20a1da94ab11e733c1752f0ca5b"
     },
     {
       "itemId": "scp-series-682",
@@ -1260,7 +1563,10 @@
       "descriptionExcerpt": "SCP-682 je velika kreatura koja ima sli\u010dnost sa jednim reptilom. Izgleda da je mnogo inteligentna i prime\u0107eno je kako je komplexno komuniciralo sa SCP-079 tokom njihovog ograni\u010denog vremena izlaganja. SCP-682 o\u010digledno mrzi sve \u0161to je \u017eivo, \u0161to je i reklo tokom raznih intervjua tokom zadr\u017eavanja. (Pogledajte Dodatak 682-B)",
       "descriptionVersion": 3,
       "tags": [
-        "nije-gotovo"
+        {
+          "id": "nije-gotovo",
+          "label": "nije-gotovo"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -1268,7 +1574,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:16.775Z",
+      "lastUpdated": "2026-11-22T10:21:28.087Z",
       "createdAt": "2026-11-10T00:38:25.005Z",
       "translatedLanguages": [
         "jp",
@@ -1294,8 +1600,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "49068b14fe36fff241f305bbb1bfdbc17aa5b37cb32534e32ec096a74d358cdd"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "5e2e93610961d2ece7f1d234aab83afa506ad4463c4b0bdf0be67899e04db2c9"
     },
     {
       "itemId": "scp-series-1471",
@@ -1309,13 +1615,34 @@
       "descriptionExcerpt": "SCP-1471 je besplatna aplikacija za mobilne ure\u0111aje, veli\u010dine 9,8 MB, nazvana \"MalO ver1.0.0\" na onlajn prodavnicama aplikacija. SCP-1471 nema navedenog izdava\u010da i nekako uspeva da zaobi\u0111e proces odobravanja aplikacija i direktno ode u distribuciju. SCP-1471 tako\u0111e uspeva da izbegne uklanjanje od strane drugih aplikacija za upravljanje programom.\nPosle instalacije SCP-1471, nikakve ikone niti pre\u010dice se ne naprave za aplikaciju. SCP-1471 \u0107e tada pojedincu po\u010deti tekstualnim porukama da \u0161alje sli",
       "descriptionVersion": 3,
       "tags": [
-        "euklid",
-        "humanoid",
-        "kompjuter",
-        "mediji",
-        "tag-17ca0112a4fbead6d4fda22e",
-        "prenos",
-        "vizuelno"
+        {
+          "id": "euklid",
+          "label": "euklid"
+        },
+        {
+          "id": "humanoid",
+          "label": "humanoid"
+        },
+        {
+          "id": "kompjuter",
+          "label": "kompjuter"
+        },
+        {
+          "id": "mediji",
+          "label": "mediji"
+        },
+        {
+          "id": "tag-17ca0112a4fbead6d4fda22e",
+          "label": "nezadr\u017ean"
+        },
+        {
+          "id": "prenos",
+          "label": "prenos"
+        },
+        {
+          "id": "vizuelno",
+          "label": "vizuelno"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -1323,7 +1650,7 @@
       "extractedFrom": "scp-series-2",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:37:28.996Z",
+      "lastUpdated": "2026-11-22T10:21:39.785Z",
       "createdAt": "2026-11-10T00:38:36.664Z",
       "translatedLanguages": [
         "jp",
@@ -1346,8 +1673,8 @@
         "sh",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:03.339Z",
-      "descriptionContentSha256": "5ab071afb77b5f9794dde46710c95a553f99daf8b39dec4005d4f5a869e6f573"
+      "descriptionCheckedAt": "2026-11-22T14:06:29.583Z",
+      "descriptionContentSha256": "029cce3596802bfe98fa95d1fd25a86b146c0aeaf8808e6b3f3d4e41ffbda60f"
     }
   ],
   "tagSchemaVersion": 2

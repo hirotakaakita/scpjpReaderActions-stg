@@ -47,6 +47,7 @@ jobs:
       - run: node validate-catalog-indexes.js
       - run: node validate-staging-catalogs.js
       - run: node mobile-catalog.js
+      - run: node prepare-notification-queue.js
       - run: node research-board/validate.js
       - name: Commit regenerated staging catalogs
         run: |

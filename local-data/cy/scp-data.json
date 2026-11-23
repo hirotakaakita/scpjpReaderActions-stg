@@ -1,8 +1,8 @@
 {
   "totalCount": 8,
   "language": "cy",
-  "timestamp": "2026-11-13T17:59:08.589Z",
-  "duration": 6,
+  "timestamp": "2026-11-22T14:12:40.130Z",
+  "duration": 12,
   "status": "completed",
   "statistics": {
     "translated": 8,
@@ -28,13 +28,13 @@
       "extractedFrom": "scp-series-cy",
       "pageType": "scp-series-cy",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:27:37.156Z",
+      "lastUpdated": "2026-11-22T09:50:11.184Z",
       "createdAt": "2026-11-10T00:33:44.711Z",
       "translatedLanguages": [
         "cy"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:21.327Z",
-      "descriptionContentSha256": "6b0bcff4fa17be3e888151d389299104b4666b523edb54fe6a1b97aa80a011a8"
+      "descriptionCheckedAt": "2026-11-22T13:53:49.498Z",
+      "descriptionContentSha256": "bcec35eeb4144fafac7a6fc739a02210d7209bc2260379f07a4f7e224d90c7b0"
     },
     {
       "itemId": "scp-series-007",
@@ -48,11 +48,26 @@
       "descriptionExcerpt": "Mae SCP-007 wedi'i leoli mewn twll yn yr abdomen y \"targed\". Mae'r \"targed\" yn wryw gwyn sy'n edrych tua 25 mlwydd oed mewn golwg (mynnu bod \"targed\" yn 28 mlwydd oed) ac mae 176 cm yn uchel. Mae'r rhan fwyaf o'r abdomen (croeniau, cyhyrau, ac organau) o'r \"targed\" ar goll, ond nid yw'r \"targed\" yn ymddangos yn boenus. Mae'r rhan sydd ar goll yn cynnwys cig a ph\u00eal o fwd a daear, ond ni fu'r pethau hyn yn gysylltiedig \u00e2'i gorff erioed. Mae'r b\u00eal ym mhob agwedd yn fodel o ffug y Ddaear, tua 60 cm",
       "descriptionVersion": 3,
       "tags": [
-        "byw",
-        "euclid",
-        "humanoid",
-        "miniatur",
-        "planed"
+        {
+          "id": "byw",
+          "label": "byw"
+        },
+        {
+          "id": "euclid",
+          "label": "euclid"
+        },
+        {
+          "id": "humanoid",
+          "label": "humanoid"
+        },
+        {
+          "id": "miniatur",
+          "label": "miniatur"
+        },
+        {
+          "id": "planed",
+          "label": "planed"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -60,7 +75,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:27:38.253Z",
+      "lastUpdated": "2026-11-22T09:50:14.088Z",
       "createdAt": "2026-11-10T00:33:46.052Z",
       "translatedLanguages": [
         "jp",
@@ -89,8 +104,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:21.327Z",
-      "descriptionContentSha256": "dc2b3906b3f1a54b495a6b2c04a647395da44faf24ae2827a6d40a7a924a0b9f"
+      "descriptionCheckedAt": "2026-11-22T13:53:49.498Z",
+      "descriptionContentSha256": "272d950082d34aab57a039661ad4b148d8f4066b2a1844d94660dfd9792826ad"
     },
     {
       "itemId": "scp-series-096",
@@ -104,10 +119,22 @@
       "descriptionExcerpt": "Creadur humanoid mesur lan i 2.38 medr yw SCP-096. Oddrych yn dangos m\u00e0s cyhyrau bach iawn, gyda dadansoddiad rhagarweiniol yn awgrymu diffyg maeth. Mae breichiau SCP-096 yn mas o gyfran gyda gweddill y corff y oddrych, gyda hyd brasamcan 1.5 medr yr un. Mwyafrif o croen yn heb pigmentiad, gyda dim arwydd o gwallt corff.\nY g\u00ean SCP-096 yn gallu agor lan bedair gwaith mwy na dynol cyfartalog. Nodweddion wyneb eraill yn tebyg i dynol cyfartalog, gyda eithriad i'r y llygaid, sy'n heb pigmentiad. Mae",
       "descriptionVersion": 3,
       "tags": [
-        "byw",
-        "cognitohazard",
-        "euclid",
-        "humanoid"
+        {
+          "id": "byw",
+          "label": "byw"
+        },
+        {
+          "id": "cognitohazard",
+          "label": "cognitohazard"
+        },
+        {
+          "id": "euclid",
+          "label": "euclid"
+        },
+        {
+          "id": "humanoid",
+          "label": "humanoid"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -115,7 +142,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:27:38.253Z",
+      "lastUpdated": "2026-11-22T09:50:14.088Z",
       "createdAt": "2026-11-10T00:33:46.052Z",
       "translatedLanguages": [
         "jp",
@@ -143,8 +170,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:21.327Z",
-      "descriptionContentSha256": "cf5ec2518a6b4e0f78c4238e5267057238b7a5a5c2ba6269e4ae9a38a1ff6976"
+      "descriptionCheckedAt": "2026-11-22T13:53:49.498Z",
+      "descriptionContentSha256": "f993961ef8ceb02a2aea6c0a39f605b1c59edf4b2630bc801bd3a9ee3e965f36"
     },
     {
       "itemId": "scp-series-173",
@@ -158,12 +185,30 @@
       "descriptionExcerpt": "Wedi gael eu symud i Safle-19 1993. Tarddiad yn anhysbys. Mae'n wedi gael eu adeiladu mas o concrid a rebar gyda olion o\n\npaent chwistrellu Krylon. Mae'n symud ac mae yn hynod elyniaethus. Y gwrthrych ddim yn gallu symud pan mae or dan cyswllt llygaid uniongyrchol. Ni ddylai cyswllt llygaid uniongyrchol gallu gael eu torri ar unrhyw adeg gyda SCP-173. Berson\u00e9l sy'n neilltuo i mynd mewn y cynhwysydd yn cyfarwyddwyd i rhybuddio eich gilydd cyn blincio. Y gwrthrych yn adroddwyd i ymosod gan rhuthro",
       "descriptionVersion": 3,
       "tags": [
-        "arsylwi",
-        "awtonomaidd",
-        "cerflunwaith",
-        "euclid",
-        "treftadaeth",
-        "wedi-ymddangos"
+        {
+          "id": "arsylwi",
+          "label": "arsylwi"
+        },
+        {
+          "id": "awtonomaidd",
+          "label": "awtonomaidd"
+        },
+        {
+          "id": "cerflunwaith",
+          "label": "cerflunwaith"
+        },
+        {
+          "id": "euclid",
+          "label": "euclid"
+        },
+        {
+          "id": "treftadaeth",
+          "label": "treftadaeth"
+        },
+        {
+          "id": "wedi-ymddangos",
+          "label": "wedi-ymddangos"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -171,7 +216,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:27:38.253Z",
+      "lastUpdated": "2026-11-22T09:50:14.088Z",
       "createdAt": "2026-11-10T00:33:46.052Z",
       "translatedLanguages": [
         "jp",
@@ -206,8 +251,8 @@
         "tok",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:21.327Z",
-      "descriptionContentSha256": "dd0a1f2f5b0267c18b28d1112e01985330e1374e25dbf7a53cbcabf77bdf1707"
+      "descriptionCheckedAt": "2026-11-22T13:53:49.498Z",
+      "descriptionContentSha256": "3db91502abcf977eee7ade1706fcf0bf0d72008aab09eb6f312362ff6a601c0e"
     },
     {
       "itemId": "scp-series-198",
@@ -227,7 +272,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:27:38.253Z",
+      "lastUpdated": "2026-11-22T09:50:14.088Z",
       "createdAt": "2026-11-10T00:33:46.052Z",
       "translatedLanguages": [
         "jp",
@@ -248,8 +293,8 @@
         "cy",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:21.327Z",
-      "descriptionContentSha256": "d887741567479a7bb9f1d7f518880975852b621642c83dcc39978b8c6f2b13cf"
+      "descriptionCheckedAt": "2026-11-22T13:53:49.498Z",
+      "descriptionContentSha256": "aec2772daf6b77514d6afe837cd38dea8bbb4f960012bc26f91349972d8ecb51"
     },
     {
       "itemId": "scp-series-297",
@@ -269,7 +314,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:27:38.253Z",
+      "lastUpdated": "2026-11-22T09:50:14.088Z",
       "createdAt": "2026-11-10T00:33:46.052Z",
       "translatedLanguages": [
         "jp",
@@ -291,8 +336,8 @@
         "sl",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:21.327Z",
-      "descriptionContentSha256": "f28629b87767edf93c49d35851a3c0597f567b8286ed07a38ee468e9ff222ddb"
+      "descriptionCheckedAt": "2026-11-22T13:53:49.498Z",
+      "descriptionContentSha256": "715141e23b6680fadf84a2337a30827c3f48b882d708c896b60c3e2afe68a541"
     },
     {
       "itemId": "scp-series-527",
@@ -312,7 +357,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:27:38.253Z",
+      "lastUpdated": "2026-11-22T09:50:14.088Z",
       "createdAt": "2026-11-10T00:33:46.052Z",
       "translatedLanguages": [
         "jp",
@@ -337,8 +382,8 @@
         "tok",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:21.327Z",
-      "descriptionContentSha256": "b273109a69f11f01b9fc7b088c3b71a271db740e861a096551124f4dd81c9d35"
+      "descriptionCheckedAt": "2026-11-22T13:53:49.498Z",
+      "descriptionContentSha256": "3549deba1d02405b372867f066547a17d67fa3eb4fd2a66a9f2d5aae04ef5b2b"
     },
     {
       "itemId": "scp-series-1535",
@@ -358,7 +403,7 @@
       "extractedFrom": "scp-series-2",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:27:42.643Z",
+      "lastUpdated": "2026-11-22T09:50:19.985Z",
       "createdAt": "2026-11-10T00:33:50.873Z",
       "translatedLanguages": [
         "jp",
@@ -378,8 +423,8 @@
         "cy",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:53:21.327Z",
-      "descriptionContentSha256": "9726c1afb5c80e27d7271f3f22ebb7fa499054fdd31d3eef57fc7b2565668357"
+      "descriptionCheckedAt": "2026-11-22T13:53:49.498Z",
+      "descriptionContentSha256": "452f3bf30d5fede1958ed3cbaed85caa955aa2d1811ba21509131597acb68b22"
     }
   ],
   "tagSchemaVersion": 2

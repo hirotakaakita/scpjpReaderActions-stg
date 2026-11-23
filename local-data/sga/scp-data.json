@@ -1,7 +1,7 @@
 {
   "totalCount": 6,
   "language": "sga",
-  "timestamp": "2026-11-13T17:59:08.589Z",
+  "timestamp": "2026-11-22T14:12:40.130Z",
   "duration": 5,
   "status": "completed",
   "statistics": {
@@ -22,7 +22,10 @@
       "descriptionExcerpt": "\u2138 \u0323 \u2351\u14b7 \u2393\ud835\ude79\ua58e\ua58e\ud835\ude79\u2234\u254e\u30ea\u22a3 \u2393\u254e\ua58e\u14b7\u14ed \u2351\u1511\u234a\u14b7 \u0296\u14b7\u14b7\u30ea \u14f5\ua58e\u1511\u14ed\u14ed\u254e\u2393\u254e\u14b7\u21b8 \u2138 \u0323 \ud835\ude79!\u00a1 \u14ed\u14b7\u14f5\u2237\u14b7\u2138 \u0323 \u0296|| \ud835\ude79\u2237\u21b8\u14b7\u2237 \ud835\ude79\u2393 \u2138 \u0323 \u2351\u14b7 \u1511\u21b8\u14b2\u254e\u30ea\u254e\u14ed\u2138 \u0323 \u2237\u1511\u2138 \u0323 \ud835\ude79\u2237 \u22a3\u14b7\u30ea\u14b7\u2237\u1511\ua58e \u30ea\ud835\ude79\u2138 \u0323 \u254e\u14f5\u14b7 001-\u1511\ua58e!\u00a1\u2351\u1511: \u254e\u30ea \ud835\ude79\u2237\u21b8\u14b7\u2237 \u2138 \u0323 \ud835\ude79 !\u00a1\u2237\u14b7\u234a\u14b7\u30ea\u2138 \u0323 \ua58c\u30ea\ud835\ude79\u2234\ua58e\u14b7\u21b8\u22a3\u14b7 \ud835\ude79\u2393 \u14ed\u14f5!\u00a1-001 \u2393\u2237\ud835\ude79\u14b2 \u0296\u14b7\u254e\u30ea\u22a3 \ua58e\u14b7\u1511\ua58c\u14b7\u21b8, \u14ed\u14b7\u234a\u14b7\u2237\u1511\ua58e/\u30ea\ud835\ude79 \u2393\u1511\ua58e\u14ed\u14b7 \u14ed\u14f5!\u00a1-001 \u2393\u254e\ua58e\u14b7\u14ed \u2351\u1511\u234a\u14b7 \u0296\u14b7\u14b7\u30ea \u14f5\u2237\u14b7\u1511\u2138 \u0323 \u14b7\u21b8 \u1511\ua58e\ud835\ude79\u30ea\u22a3\u14ed\u254e\u21b8\u14b7 \u2138 \u0323 \u2351\u14b7 \u2138 \u0323 \u2237\u268d\u14b7 \u2393\u254e\ua58e\u14b7/\u2393\u254e\ua58e\u14b7\u14ed. \u1511\ua58e\ua58e \u2393\u254e\ua58e\u14b7\u14ed \u14f5\ud835\ude79\u30ea\u14f5\u14b7\u2237\u30ea\u254e\u30ea\u22a3 \u2138 \u0323 \u2351\u14b7 \u30ea\u1511\u2138 \u0323 \u268d\u2237\u14b7 \ud835\ude79\u2393 \u14ed\u14f5!\u00a1-001, \u254e\u30ea\u14f5\ua58e\u268d\u21b8\u254e\u30ea\u22a3 \u2138 \u0323 \u2351\u14b7 \u21b8\u14b7\u14f5\ud835\ude79||/\u21b8\u14b7\u14f5\ud835\ude79||\u14ed, \u1511\u2237\u14b7 !\u00a1\u2237\ud835\ude79\u2138 \u0323 \u14b7\u14f5\u2138 \u0323 \u14b7\u21b8 \u0296|| \u1511 \u14b2\u14b7\u14b2\u14b7\u2138 \u0323 \u254e\u14f5 \ua58c\u254e\ua58e\ua58e \u1511\u22a3\u14b7\u30ea\u2138 \u0323 \u21b8\u14b7\u14ed\u254e\u22a3\u30ea\u14b7\u21b8 \u2138 \u0323 \ud835\ude79 \u254e\u14b2\u14b2\u14b7\u21b8\u254e\u1511\u2138 \u0323 \u14b7\ua58e|| \u14f5\u1511\u268d\u14ed\u14b7 \u14f5\u1511\u2237\u21b8\u254e\u1511\u14f5 \u1511\u2237\u2237\u14b7\u14ed\u2138 \u0323 \u254e\u30ea \u1511\u30ea|| \u30ea\ud835\ude79\u30ea\u1511\u268d\u2138 \u0323 \u2351\ud835\ude79\u2237\u254e\u2a05\u14b7",
       "descriptionVersion": 3,
       "tags": [
-        "hub"
+        {
+          "id": "hub",
+          "label": "hub"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -30,13 +33,13 @@
       "extractedFrom": "scp-sga-series",
       "pageType": "scp-series-sga",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:36:05.607Z",
+      "lastUpdated": "2026-11-22T10:20:45.979Z",
       "createdAt": "2026-11-10T00:37:08.206Z",
       "translatedLanguages": [
         "sga"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:51:17.666Z",
-      "descriptionContentSha256": "ca54eec26cd1370340d6f04ca40ade3ed08804ecec36d6ede14287189940cf38"
+      "descriptionCheckedAt": "2026-11-22T14:06:00.928Z",
+      "descriptionContentSha256": "6ffdfc9d2662577aa0411a11d25fee8b0caee432e987ce21ce3c5e8e0749751c"
     },
     {
       "itemId": "scp-series-sga-002",
@@ -56,13 +59,13 @@
       "extractedFrom": "scp-sga-series",
       "pageType": "scp-series-sga",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:36:05.607Z",
+      "lastUpdated": "2026-11-22T10:20:45.979Z",
       "createdAt": "2026-11-10T00:37:08.206Z",
       "translatedLanguages": [
         "sga"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:51:17.666Z",
-      "descriptionContentSha256": "5aba100a808c7edb353e29df2a9d4e6e4e6cb7fe73e6c160965da22d6254f4d9"
+      "descriptionCheckedAt": "2026-11-22T14:06:00.928Z",
+      "descriptionContentSha256": "f31ee9d2c099ebb732ac6290796f15f9ace02f4ca83a4819cb16c805a653e2c4"
     },
     {
       "itemId": "scp-series-sga-009",
@@ -82,13 +85,13 @@
       "extractedFrom": "scp-sga-series",
       "pageType": "scp-series-sga",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:36:05.607Z",
+      "lastUpdated": "2026-11-22T10:20:45.979Z",
       "createdAt": "2026-11-10T00:37:08.206Z",
       "translatedLanguages": [
         "sga"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:51:17.666Z",
-      "descriptionContentSha256": "558221015083241e88b1dd1fff49427be0e5211017bb16ba92528f5f4abe7dcf"
+      "descriptionCheckedAt": "2026-11-22T14:06:00.928Z",
+      "descriptionContentSha256": "21d9622e5423d76eaff07df120cd0b2e7dcd807a79eb80d008ab6a68d372d587"
     },
     {
       "itemId": "scp-series-sga-171",
@@ -108,13 +111,13 @@
       "extractedFrom": "scp-sga-series",
       "pageType": "scp-series-sga",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:36:05.607Z",
+      "lastUpdated": "2026-11-22T10:20:45.979Z",
       "createdAt": "2026-11-10T00:37:08.206Z",
       "translatedLanguages": [
         "sga"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:51:17.666Z",
-      "descriptionContentSha256": "c9e9028b510c2607efac12b68c9be93e73afed16af321c31a90d53f907f8e0f0"
+      "descriptionCheckedAt": "2026-11-22T14:06:00.928Z",
+      "descriptionContentSha256": "6d531dd735554b72b8a9674de0adfd29183dde6049e35a73ff664f51707f9905"
     },
     {
       "itemId": "scp-series-001",
@@ -128,8 +131,14 @@
       "descriptionExcerpt": "\u2138 \u0323 \u2351\u14b7 \u2393\ud835\ude79\ua58e\ua58e\ud835\ude79\u2234\u254e\u30ea\u22a3 \u2393\u254e\ua58e\u14b7\u14ed \u2351\u1511\u234a\u14b7 \u0296\u14b7\u14b7\u30ea \u14f5\ua58e\u1511\u14ed\u14ed\u254e\u2393\u254e\u14b7\u21b8 \u2138 \u0323 \ud835\ude79!\u00a1 \u14ed\u14b7\u14f5\u2237\u14b7\u2138 \u0323 \u0296|| \ud835\ude79\u2237\u21b8\u14b7\u2237 \ud835\ude79\u2393 \u2138 \u0323 \u2351\u14b7 \u1511\u21b8\u14b2\u254e\u30ea\u254e\u14ed\u2138 \u0323 \u2237\u1511\u2138 \u0323 \ud835\ude79\u2237 \u22a3\u14b7\u30ea\u14b7\u2237\u1511\ua58e \u30ea\ud835\ude79\u2138 \u0323 \u254e\u14f5\u14b7 001-\u1511\ua58e!\u00a1\u2351\u1511: \u254e\u30ea \ud835\ude79\u2237\u21b8\u14b7\u2237 \u2138 \u0323 \ud835\ude79 !\u00a1\u2237\u14b7\u234a\u14b7\u30ea\u2138 \u0323 \ua58c\u30ea\ud835\ude79\u2234\ua58e\u14b7\u21b8\u22a3\u14b7 \ud835\ude79\u2393 \u14ed\u14f5!\u00a1-001 \u2393\u2237\ud835\ude79\u14b2 \u0296\u14b7\u254e\u30ea\u22a3 \ua58e\u14b7\u1511\ua58c\u14b7\u21b8, \u14ed\u14b7\u234a\u14b7\u2237\u1511\ua58e/\u30ea\ud835\ude79 \u2393\u1511\ua58e\u14ed\u14b7 \u14ed\u14f5!\u00a1-001 \u2393\u254e\ua58e\u14b7\u14ed \u2351\u1511\u234a\u14b7 \u0296\u14b7\u14b7\u30ea \u14f5\u2237\u14b7\u1511\u2138 \u0323 \u14b7\u21b8 \u1511\ua58e\ud835\ude79\u30ea\u22a3\u14ed\u254e\u21b8\u14b7 \u2138 \u0323 \u2351\u14b7 \u2138 \u0323 \u2237\u268d\u14b7 \u2393\u254e\ua58e\u14b7/\u2393\u254e\ua58e\u14b7\u14ed. \u1511\ua58e\ua58e \u2393\u254e\ua58e\u14b7\u14ed \u14f5\ud835\ude79\u30ea\u14f5\u14b7\u2237\u30ea\u254e\u30ea\u22a3 \u2138 \u0323 \u2351\u14b7 \u30ea\u1511\u2138 \u0323 \u268d\u2237\u14b7 \ud835\ude79\u2393 \u14ed\u14f5!\u00a1-001, \u254e\u30ea\u14f5\ua58e\u268d\u21b8\u254e\u30ea\u22a3 \u2138 \u0323 \u2351\u14b7 \u21b8\u14b7\u14f5\ud835\ude79||/\u21b8\u14b7\u14f5\ud835\ude79||\u14ed, \u1511\u2237\u14b7 !\u00a1\u2237\ud835\ude79\u2138 \u0323 \u14b7\u14f5\u2138 \u0323 \u14b7\u21b8 \u0296|| \u1511 \u14b2\u14b7\u14b2\u14b7\u2138 \u0323 \u254e\u14f5 \ua58c\u254e\ua58e\ua58e \u1511\u22a3\u14b7\u30ea\u2138 \u0323 \u21b8\u14b7\u14ed\u254e\u22a3\u30ea\u14b7\u21b8 \u2138 \u0323 \ud835\ude79 \u254e\u14b2\u14b2\u14b7\u21b8\u254e\u1511\u2138 \u0323 \u14b7\ua58e|| \u14f5\u1511\u268d\u14ed\u14b7 \u14f5\u1511\u2237\u21b8\u254e\u1511\u14f5 \u1511\u2237\u2237\u14b7\u14ed\u2138 \u0323 \u254e\u30ea \u1511\u30ea|| \u30ea\ud835\ude79\u30ea\u1511\u268d\u2138 \u0323 \u2351\ud835\ude79\u2237\u254e\u2a05\u14b7",
       "descriptionVersion": 3,
       "tags": [
-        "hub",
-        "translation"
+        {
+          "id": "hub",
+          "label": "hub"
+        },
+        {
+          "id": "translation",
+          "label": "translation"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -137,7 +146,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:36:09.130Z",
+      "lastUpdated": "2026-11-22T10:20:49.072Z",
       "createdAt": "2026-11-10T00:37:12.088Z",
       "translatedLanguages": [
         "jp",
@@ -168,8 +177,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:51:17.666Z",
-      "descriptionContentSha256": "07acded89bb41e6116c3334a863a584fd20dba5dd441bc229b368d94f5b30f32"
+      "descriptionCheckedAt": "2026-11-22T14:06:00.928Z",
+      "descriptionContentSha256": "1c50b6e803f0182bca6948897e68ed0f200674f97b6252a0d92d8911a19ae8af"
     },
     {
       "itemId": "scp-series-173",
@@ -183,7 +192,10 @@
       "descriptionExcerpt": "\u14ed\u14f5!\u00a1-173 \u254e\u30ea \u14f5\ud835\ude79\u30ea\u2138 \u0323 \u1511\u254e\u30ea\u14b2\u14b7\u30ea\u2138 \u0323. i\u2138 \u0323 \u14b7\u14b2 #: \u14ed\u14f5!\u00a1-173 \ud835\ude79\u0296\u22ee\u14b7\u14f5\u2138 \u0323 \u14f5\ua58e\u1511\u14ed\u14ed: \u14b7\u268d\u14f5\ua58e\u254e\u21b8 \u14ed!\u00a1\u14b7\u14f5\u254e\u1511\ua58e \u14f5\ud835\ude79\u30ea\u2138 \u0323 \u1511\u254e\u30ea\u14b2\u14b7\u30ea\u2138 \u0323 !\u00a1\u2237\ud835\ude79\u14f5\u14b7\u21b8\u268d\u2237\u14b7\u14ed: i\u2138 \u0323 \u14b7\u14b2 \u14ed\u14f5!\u00a1-173 \u254e\u14ed \u2138 \u0323 \ud835\ude79 \u0296\u14b7 \ua58c\u14b7!\u00a1\u2138 \u0323 \u254e\u30ea \u1511 \ua58e\ud835\ude79\u14f5\ua58c\u14b7\u21b8 \u14f5\ud835\ude79\u30ea\u2138 \u0323 \u1511\u254e\u30ea\u14b7\u2237 \u1511\u2138 \u0323 \u1511\ua58e\ua58e \u2138 \u0323 \u254e\u14b2\u14b7\u14ed. W\u2351\u14b7\u30ea !\u00a1\u14b7\u2237\u14ed\ud835\ude79\u30ea\u30ea\u14b7\ua58e \u14b2\u268d\u14ed\u2138 \u0323 \u14b7\u30ea\u2138 \u0323 \u14b7\u2237 \u14ed\u14f5!\u00a1-173'\u14ed \u14f5\ud835\ude79\u30ea\u2138 \u0323 \u1511\u254e\u30ea\u14b7\u2237, \u30ea\ud835\ude79 \u2393\u14b7\u2234\u14b7\u2237 \u2138 \u0323 \u2351\u1511\u30ea 3 \u14b2\u1511|| \u14b7\u30ea\u2138 \u0323 \u14b7\u2237 \u1511\u2138 \u0323 \u1511\u30ea|| \u2138 \u0323 \u254e\u14b2\u14b7 \u1511\u30ea\u21b8 \u2138 \u0323 \u2351\u14b7 \u21b8\ud835\ude79\ud835\ude79\u2237 \u254e\u14ed \u2138 \u0323 \ud835\ude79 \u0296\u14b7 \u2237\u14b7\ua58e\ud835\ude79\u14f5\ua58c\u14b7\u21b8 \u0296\u14b7\u2351\u254e\u30ea\u21b8 \u2138 \u0323 \u2351\u14b7\u14b2. A\u2138 \u0323 \u1511\ua58e\ua58e \u2138 \u0323 \u254e\u14b2\u14b7\u14ed, \u2138 \u0323 \u2234\ud835\ude79 !\u00a1\u14b7\u2237\u14ed\ud835\ude79\u30ea\u14ed \u14b2\u268d\u14ed\u2138 \u0323 \u14b2\u1511\u254e\u30ea\u2138 \u0323 \u1511\u254e\u30ea \u21b8\u254e\u2237\u14b7\u14f5\u2138 \u0323 \u14b7||\u14b7 \u14f5\ud835\ude79\u30ea\u2138 \u0323 \u1511\u14f5\u2138 \u0323 \u2234\u254e\u2138 \u0323 \u2351 \u14ed\u14f5!\u00a1-173 \u268d\u30ea\u2138 \u0323 \u254e\ua58e \u1511\ua58e\ua58e !\u00a1\u14b7\u2237\u14ed\ud835\ude79\u30ea\u30ea\u14b7\ua58e \u2351\u1511\u234a\u14b7 \u234a\u1511\u14f5\u1511\u2138 \u0323 \u14b7\u21b8 \u1511\u30ea\u21b8 \u2237\u14b7\ua58e\ud835\ude79",
       "descriptionVersion": 3,
       "tags": [
-        "translation"
+        {
+          "id": "translation",
+          "label": "translation"
+        }
       ],
       "tagVersion": 3,
       "tagFetchStatus": "success",
@@ -191,7 +203,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-13T12:36:09.130Z",
+      "lastUpdated": "2026-11-22T10:20:49.072Z",
       "createdAt": "2026-11-10T00:37:12.088Z",
       "translatedLanguages": [
         "jp",
@@ -226,8 +238,8 @@
         "tok",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-13T17:51:17.666Z",
-      "descriptionContentSha256": "be06a7f8f7450d713903cd0ad34c907f88adfed47c58884e7b401a7872ea57c1"
+      "descriptionCheckedAt": "2026-11-22T14:06:00.928Z",
+      "descriptionContentSha256": "e73613786f5b6b5b5378d6e6a14f1906f892cb78ec20df6b1e3e4a1d5a0ef8d7"
     }
   ],
   "tagSchemaVersion": 2
