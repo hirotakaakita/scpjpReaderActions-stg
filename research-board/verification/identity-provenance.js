@@ -42,11 +42,19 @@ function classify(index,pointers,sourceRecords){
       const conflictingNative=members.filter(p=>new URL(p.url).hostname===hostname&&
         p.url!==resolution.root).map(p=>p.url);
       category=conflictingNative.length?'explicit_original_vs_native_work_collision':'explicit_original_work_split';
+    }
+    if(category!=='same_work_verified_by_credit'){
       const record=sourceRecords.get(source);
+      const targetMembers=pagesByWork.get(rootWork)||[];
+      const sourceHost=new URL(source).hostname;
+      const sameSiteTargets=targetMembers.filter(p=>new URL(p.url).hostname===sourceHost&&p.url!==source).map(p=>p.url);
+      const disposition=/(?:^|\/)bright-works-message$/.test(resolution.root)?'hold_retirement_notice':
+        resolution.status!=='terminal'?'hold_invalid_credit_chain':!rootWork?'hold_outside_catalog':
+        sameSiteTargets.length?'hold_same_site_collision':'hold_publisher_identity_review';
       review.push({source,creditedOriginal:target,ultimateOriginal:resolution.root,
-        ownerWork:owner,originalWork:rootWork,category,conflictingNative,
-        chain:resolution.path,contentSha256:record?.contentSha256||null,
-        checkedAt:record?.checkedAt||null});
+        ownerWork:owner,originalWork:rootWork,category,disposition,
+        sameSiteTargets,chain:resolution.path,contentSha256:record?.contentSha256||null,
+        checkedAt:record?.checkedAt||null,claims:record?.originalSources||[]});
     }
     count[category]=(count[category]||0)+1;
   }
@@ -59,7 +67,8 @@ function run(out){
   for(const state of records.values()){
     const record=state?.record;if(!record?.url||!index.workByUrl.has(record.url))continue;
     const source=normalizedUrl(record.url),claim=sourcePointer(record);
-    if(claim.urls.length>1)ambiguous.push({source,urls:claim.urls});
+    if(claim.urls.length>1)ambiguous.push({source,urls:claim.urls,disposition:'hold_ambiguous_originals',
+      contentSha256:record.contentSha256,checkedAt:record.checkedAt,claims:record.originalSources});
     else if(claim.urls.length===1&&claim.urls[0]!==source) {
       pointers.set(source,claim.urls[0]);metadata.set(source,record);
     }
@@ -67,11 +76,13 @@ function run(out){
   const classification=classify(index,pointers,metadata);
   const result={schemaVersion:1,generatedAt:new Date().toISOString(),revision:board.revision,
     explicitSourceCount:pointers.size,ambiguousCount:ambiguous.length,
-    counts:classification.counts,cases:classification.review,ambiguous};
+    counts:classification.counts,dispositions:classification.review.reduce((m,c)=>{
+      m[c.disposition]=(m[c.disposition]||0)+1;return m;
+    },{}),cases:classification.review,ambiguous};
   fs.mkdirSync(out,{recursive:true});
   fs.writeFileSync(path.join(out,'identity-provenance.json'),JSON.stringify(result,null,2)+'\n');
   const q=v=>'"'+String(v??'').replace(/"/g,'""')+'"';
-  const headings=['source','category','ownerWork','ultimateOriginal','originalWork','conflictingNative','chain'];
+  const headings=['source','category','disposition','ownerWork','ultimateOriginal','originalWork','sameSiteTargets','chain','contentSha256','checkedAt'];
   const lines=[headings.map(q).join(',')];
   for(const item of classification.review)
     lines.push(headings.map(h=>q(Array.isArray(item[h])?item[h].join(' | '):item[h])).join(','));
@@ -84,12 +95,12 @@ function run(out){
     '', '| Category | Count |','| --- | ---: |',
     ...Object.entries(result.counts).sort((a,b)=>b[1]-a[1]).map(([k,v])=>'| '+k+' | '+v+' |'),
     '', 'A different work key can reflect a missing translation merge; it is not automatically an error.',
-    'A collision also containing another distinct native original is a higher-confidence incompatible merge.',
+    'Retirement notices, multiple original claims, absent catalog targets and publisher-site collisions remain separate.',
+    'Every unresolved case retains its source hash, capture time, explicit credits and a hold disposition.',
     'All findings are read-only and require human interpretation of the publisher origin metadata.'
   ].join('\n')+'\n');
   console.log(JSON.stringify({revision:board.revision,count:pointers.size,
-    classes:result.counts,highConfidence:classification.review
-      .filter(x=>x.category==='explicit_original_vs_native_work_collision').slice(0,15)},null,2));
+    classes:result.counts,dispositions:result.dispositions},null,2));
   return result;
 }
 if(require.main===module)try{run(path.resolve(process.argv[2]||'research-board/verification/audit-results/identity-provenance'));}

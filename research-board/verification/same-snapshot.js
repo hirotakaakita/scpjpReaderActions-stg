@@ -69,8 +69,8 @@ async function run({baseline,out,controls=5,delayMs=1300}){
   const old=JSON.parse(fs.readFileSync(baseline,'utf8')),{board}=loadBoard();
   if(board.revision!==old.revision)throw Error('Graph revision changed since baseline');
   const index=buildIndex(board),byUrl=new Map(index.pages.map(p=>[p.url,p]));
-  const mismatches=old.samples.filter(p=>p.liveMatch===false&&p.status!=='fetch_error'&&p.language!=='ru');
-  const controlsSet=old.samples.filter(p=>p.liveMatch===true&&p.status!=='fetch_error'&&p.language!=='ru').slice(0,controls);
+  const mismatches=old.samples.filter(p=>p.liveMatch===false&&p.status!=='fetch_error');
+  const controlsSet=old.samples.filter(p=>p.liveMatch===true&&p.status!=='fetch_error').slice(0,controls);
   const selected=[...mismatches,...controlsSet];
   fs.mkdirSync(path.join(out,'raw'),{recursive:true});
   let last=0;const gate=async()=>{const ms=Math.max(0,last+delayMs-Date.now());if(ms)await sleep(ms);last=Date.now();};
@@ -80,13 +80,15 @@ async function run({baseline,out,controls=5,delayMs=1300}){
     const row={url:page.url,language:page.language,status:'error',totals:{},baselineHash:source.currentSha};
     try{
       const snap=await networkCapture(page,index.supportedHosts,gate,20000);
+      row.format=snap.format;
       row.sha=snap.sha;row.previousSampleChanged=snap.sha!==source.currentSha;
       fs.writeFileSync(path.join(out,'raw',snap.sha+'.'+snap.format+'.gz'),zlib.gzipSync(snap.content));
+      if(snap.detail)fs.writeFileSync(path.join(out,'raw',snap.sha+'.api.json.gz'),zlib.gzipSync(JSON.stringify(snap.detail)));
       const primary=snap.format==='html'?prod.extractHtml(snap.content,page.url):
-        prod.extractFtml(JSON.parse(snap.content),page.url);
+        prod.extractFtml(snap.detail||{source:snap.content},page.url);
       const independent=snap.format==='html'?
         ref.fromHtml(snap.content,page.url,index.workByUrl,index.supportedHosts):
-        ref.fromFtml(snap.content,page.url,index.workByUrl,index.supportedHosts);
+        ref.fromFtml(snap.content,page.url,index.workByUrl,index.supportedHosts,snap.detail?.title);
       const primarySet=primaryWorks(primary.links,page,index);
       const diff=compareThree(page.expected,primarySet,independent);
       row.status='compared';row.graphCount=page.expected.size;

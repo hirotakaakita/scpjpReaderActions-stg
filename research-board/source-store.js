@@ -90,8 +90,13 @@ function saveSources(sources, directory) {
   }
   const files = {};
   for (const [key, rows] of buckets) {
-    const bytes = zlib.gzipSync(Buffer.from(JSON.stringify(rows)), { level: 9 });
     const file = path.join(directory, `${key}.json.gz`);
+    const json=Buffer.from(JSON.stringify(rows));
+    const existing=fs.existsSync(file)?fs.readFileSync(file):null;
+    // gzip headers differ between Windows and Linux. Preserve an unchanged
+    // shard byte-for-byte so a refresh only rewrites actual source changes.
+    const bytes=existing&&zlib.gunzipSync(existing).equals(json)?existing:
+      zlib.gzipSync(json,{level:9});
     files[`${key}.json.gz`] = { bytes: bytes.length, sha256: digest(bytes) };
     if (!fs.existsSync(file) || !fs.readFileSync(file).equals(bytes)) {
       fs.writeFileSync(`${file}.tmp`, bytes);

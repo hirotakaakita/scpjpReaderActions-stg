@@ -5,9 +5,12 @@ const {loadCatalogs,matches,rankCandidates,featureArticle}=require('./generate-w
 
 function reconcile(catalog,rows,weeks,editorials=new Map()) {
  const source=new Map(rows.map(row=>[row.itemId,row])),themes=new Map(weeks.map(t=>[t.id,t]));
- const used=new Map(),features=[],changes=[];
- for(const f of catalog.features)for(const a of f.articles)used.set(a.itemId,(used.get(a.itemId)||0)+1);
- for(const feature of catalog.features){
+ const used=new Map(),features=[],changes=[],deferred=[];
+ const active=new Set(catalog.features.map(f=>f.id));
+ const editions=[...catalog.features,...(catalog.deferredFeatures||[])];
+ if(new Set(editions.map(f=>f.id)).size!==editions.length)throw Error('Duplicate planned/deferred feature');
+ for(const f of editions)for(const a of f.articles)used.set(a.itemId,(used.get(a.itemId)||0)+1);
+ for(const feature of editions){
   const theme=themes.get(feature.id),editorial=editorials.get(feature.id);
   if(!theme||theme.themeId!==feature.themeId||theme.publishedAt!==feature.publishedAt||
      feature.articles.length<5||feature.articles.length>10)throw Error('Invalid planned feature '+catalog.language+'/'+feature.id);
@@ -15,7 +18,9 @@ function reconcile(catalog,rows,weeks,editorials=new Map()) {
    if(JSON.stringify(feature)!==JSON.stringify(editorial)||feature.articles.some(a=>{
     const row=source.get(a.itemId);return !row||row.titleJP!==a.title||row.urlJP!==a.url||!a.blurb||a.blurb.length<=20;
    }))throw Error('Editorial feature requires review: '+catalog.language+'/'+feature.id);
-   features.push(feature);continue;
+   features.push(feature);
+   if(!active.has(feature.id))changes.push({featureId:feature.id,restored:true});
+   continue;
   }
   const chosen=new Set(),replacements=[];
   const articles=feature.articles.map(article=>{
@@ -37,13 +42,21 @@ function reconcile(catalog,rows,weeks,editorials=new Map()) {
   const retained=articles.filter(Boolean);
   if(retained.length<5){
    for(const a of retained)used.set(a.itemId,Math.max(0,(used.get(a.itemId)||0)-1));
-   changes.push({featureId:feature.id,removed:true});continue;
+   deferred.push(feature);
+   if(active.has(feature.id))changes.push({featureId:feature.id,removed:true});
+   continue;
   }
   const next={...feature,articles:retained};
-  if(JSON.stringify(next)!==JSON.stringify(feature))changes.push({featureId:feature.id,replacements});
+  if(!active.has(feature.id)||JSON.stringify(next)!==JSON.stringify(feature))
+   changes.push({featureId:feature.id,replacements,...(!active.has(feature.id)?{restored:true}:{})});
   features.push(next);
  }
- return {catalog:{...catalog,features},changes};
+ const order=new Map(weeks.map((theme,i)=>[theme.id,i]));
+ features.sort((a,b)=>order.get(a.id)-order.get(b.id));
+ const next={...catalog,features};
+ if(deferred.length)next.deferredFeatures=deferred;
+ else delete next.deferredFeatures;
+ return {catalog:next,changes};
 }
 
 function refresh({root=__dirname,catalogs}={}) {
@@ -54,7 +67,7 @@ function refresh({root=__dirname,catalogs}={}) {
   const file=path.join(folder,'planned',language+'.json'),catalog=JSON.parse(fs.readFileSync(file));
   if(catalog.language!==language)throw Error('Feature language mismatch: '+language);
   const editorials=new Map();
-  for(const feature of catalog.features){
+  for(const feature of [...catalog.features,...(catalog.deferredFeatures||[])]){
    const editorial=path.join(folder,'editorial',language,feature.id+'.json');
    if(fs.existsSync(editorial))editorials.set(feature.id,JSON.parse(fs.readFileSync(editorial)));
   }

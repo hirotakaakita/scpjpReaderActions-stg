@@ -152,17 +152,54 @@ test('a two-hop international credit cannot invalidate a proven direct original 
  assert.equal(find(b,f.translated)[14][0],find(b,f.original)[14][0],
   'direct native-original work must remain intact');
  assert.notEqual(find(b,f.translated)[14][0],find(b,f.other)[14][0]);
- // Future two-hop support must be proven across branch classification and
- // component collisions: do not silently join ZH with ES merely by URL chain.
- assert(!b.workIdentityProofs.some(p=>p.method==='explicit_transitive_scp_original_credit'));
+ assert.equal(find(b,f.zh)[14][0],find(b,f.original)[14][0]);
+ const proof=b.workIdentityProofs.find(p=>p.method==='explicit_transitive_scp_original_credit');
+ assert.deepEqual(proof.chain,[f.zh,f.translated,f.original]);
+ assert.equal(validateBoard(b,f.catalogs,f.src).verified,true);
+ const broken=structuredClone(b);broken.workIdentityProofs.find(p=>p.method==='explicit_transitive_scp_original_credit').chain=[f.zh,f.original];
+ assert.throws(()=>validateBoard(broken,f.catalogs,f.src),/Unproven transitive original SCP credit/);
 });
-test('nonstandard namespace paths retain historical identities rather than silently moving',()=>{
+
+test('cyclic and ambiguous intermediary credits do not supply a transitive proof',()=>{
+ for(const ambiguous of [false,true]){
+  const f=esCase();
+  f.src.get(normalizePage(f.zh).id).record.originalSources=[{url:f.translated,method:'credit_original_label'}];
+  f.src.get(normalizePage(f.translated).id).record.originalSources=ambiguous?
+   [{url:f.original,method:'credit_original_label'},{url:f.other,method:'credit_original_label'}]:
+   [{url:f.zh,method:'credit_original_label'}];
+  const b=buildBoard(f.catalogs,f.src);
+  assert(!b.workIdentityProofs.some(p=>p.method==='explicit_transitive_scp_original_credit'));
+ }
+});
+test('Nordic delivery namespaces follow exact credits while retaining every legacy alias',()=>{
  const original=en+'scp-002',translated='https://scp-nd.wikidot.com/sv:scp-002';
  const src=index(record(translated,'',[original]));
  const p={...normalizePage(translated),siteBranch:'nd',branch:'en',pageType:'scp-series',kindIndex:0};
  const native={...normalizePage(original),siteBranch:'en',branch:'en',pageType:'scp-series',kindIndex:0};
  const pages=new Map([[p.id,p],[native.id,native]]);
- assert.equal(verifiedScpOriginal(p,pages,src),null);
+ assert.equal(verifiedScpOriginal(p,pages,src)?.url,original);
+ const legacy='scp-series-sv:scp-002';
+ const board=buildBoard([catalog('en',[row(original,'scp-series','scp-series-002')]),
+   catalog('sv',[row(translated,'scp-series',legacy)])],src);
+ assert.equal(find(board,translated)[14][0],find(board,original)[14][0]);
+ assert(find(board,translated)[14][2].includes('catalog:scp-series:'+legacy));
+ assert.equal(validateBoard(board,[catalog('en',[row(original,'scp-series','scp-series-002')]),
+   catalog('sv',[row(translated,'scp-series',legacy)])],src).verified,true);
+ const draft={...p,slug:'draft:scp-002'};
+ assert.equal(verifiedScpOriginal(draft,pages,src),null);
+});
+
+test('a reused Nordic catalog ID retains its historical scoped work alias',()=>{
+ const original=en+'scp-002',translated='https://scp-nd.wikidot.com/sv:scp-002';
+ const catalogs=[catalog('en',[row(original,'scp-series','scp-series-002')]),
+   catalog('sv',[row(translated,'scp-series','scp-series-002')])];
+ const src=index(record(translated,'',[original]));
+ const b=buildBoard(catalogs,src);
+ const signature='en\0scp-series\0sv:scp-002';
+ const hash=require('../research-board/extract').digest(signature).slice(0,12);
+ assert.equal(find(b,translated)[14][0],find(b,original)[14][0]);
+ assert(find(b,translated)[14][2].includes('catalog:scp-series:scp-series-002@work-'+hash));
+ assert.equal(validateBoard(b,catalogs,src).verified,true);
 });
 test('missing target, cross-branch credit and non-native target are not auto trusted',()=>{
  const f=esCase();

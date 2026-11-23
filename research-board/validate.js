@@ -16,7 +16,7 @@ function validateScpIdentities(board, sources) {
     owners.set(p.id, node);
   }
   const proven = new Set((board.workIdentityProofs||[])
-    .filter(p=>p.method==='explicit_scp_original_credit').map(p=>p.source+'\0'+p.target));
+    .filter(p=>['explicit_scp_original_credit','explicit_transitive_scp_original_credit'].includes(p.method)).map(p=>p.source+'\0'+p.target));
   const scpOwners = new Map();
   for (const page of pages.values()) if ([0,8,9].includes(page.kindIndex) && page.pageType) {
     const node = owners.get(page.id), original = verifiedScpOriginal(page, pages, sources);

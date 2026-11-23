@@ -25,8 +25,9 @@ function loadBoard(root=ROOT){
   return {board,manifest};
 }
 function loadCoverage(root=ROOT) {
-  const file=path.join(root,'local-data/research-board-body-link-coverage.json.gz');
-  return fs.existsSync(file)?JSON.parse(z.gunzipSync(fs.readFileSync(file))):null;
+  const input=path.join(root,'local-data');
+  return require('../link-coverage').buildCoverage(
+    require('../catalog').loadCatalogs(input),readSources(path.join(input,'research-board-sources')));
 }
 function buildIndex(board){
   const workByUrl=new Map(),pageNode=new Map(),pages=[];
@@ -73,7 +74,7 @@ function allocate(limit) {
   }
   return allocations;
 }
-function samplePages(index,{limit=500,seed='2026-11-19-initial',excluded=new Set(),excludedLanguages=new Set(['ru'])}={}){
+function samplePages(index,{limit=500,seed='2026-11-19-initial',excluded=new Set(),excludedLanguages=new Set()}={}){
   if(!Number.isSafeInteger(limit)||limit<1||limit>5000)throw Error('Invalid sample limit');
   const eligible=index.pages.filter(p=>!excluded.has(p.url)&&!excludedLanguages.has(p.language)),selected=[],chosen=new Set();
   const allocation=allocate(limit);
@@ -110,7 +111,7 @@ function samplePages(index,{limit=500,seed='2026-11-19-initial',excluded=new Set
 }
 function parseArgs(args=process.argv.slice(2)){
   const options={limit:500,seed:'2026-11-19-initial',out:'audit-results',inventory:false,
-    exclude:null,includeRu:false,urls:[],requestDelayMs:1250,timeoutMs:20000};
+    exclude:null,includeRu:true,urls:[],requestDelayMs:1250,timeoutMs:20000};
   for(let i=0;i<args.length;i++){
     const v=args[i],next=()=>args[++i];
     if(v==='--limit')options.limit=Number(next());
@@ -119,6 +120,7 @@ function parseArgs(args=process.argv.slice(2)){
     else if(v==='--exclude')options.exclude=next();
     else if(v==='--inventory')options.inventory=true;
     else if(v==='--include-ru')options.includeRu=true;
+    else if(v==='--exclude-ru')options.includeRu=false;
     else if(v==='--url')options.urls.push(next());
     else if(v==='--delay-ms')options.requestDelayMs=Number(next());
     else throw Error('Unknown argument '+v);
@@ -170,7 +172,7 @@ async function networkCapture(page,supportedHosts,gate,timeoutMs=20000){
     const res=await axios.get(target,{timeout:timeoutMs,maxRedirects:0,maxContentLength:12*1024*1024,
       headers:{Accept:'application/json','User-Agent':'SCPReaderCatalog/1.0'}});
     if(!res.data||typeof res.data.source!=='string')throw Error('invalid_ru_api_response');
-    return {content:res.data.source,sha:sha(JSON.stringify(res.data)),format:'ftml'};
+    return {content:res.data.source,detail:res.data,sha:sha(JSON.stringify(res.data)),format:'ftml'};
   }
   let next=base, lastError;
   for(let attempt=0;attempt<2;attempt++){
@@ -249,7 +251,7 @@ async function run(options=parseArgs()){
       const capture=await networkCapture(page,index.supportedHosts,gate,options.timeoutMs);
       counters.fetched++;row.currentSha=capture.sha;
       const parsed=capture.format==='ftml'?
-        fromFtml(capture.content,page.url,index.workByUrl,index.supportedHosts):
+        fromFtml(capture.content,page.url,index.workByUrl,index.supportedHosts,capture.detail?.title):
         fromHtml(capture.content,page.url,index.workByUrl,index.supportedHosts);
       const delta=compare(page.expected,parsed.links.keys());
       row.actualCount=parsed.links.size;row.fp=delta.fp.length;row.fn=delta.fn.length;
