@@ -17,6 +17,12 @@ function run(dir){
   'https://scp-vn.wikidot.com/scp-1138',
   'https://scp-pt-br.wikidot.com/scp-1138'
  ];
+ // After publication this workflow also verifies a deterministic no-op
+ // rebuild. Only the already-correct published membership permits zero moves.
+ const publishedBook=a.versions.get(bookId)?.map(v=>v[1])||[];
+ const alreadyPublished=expected.every(url=>a.owners.get(url)===bookId)&&
+   publishedBook.length===11&&a.versions.get(otherId)?.length===1&&
+   a.owners.get(unrelated)===otherId;
  const move=[];
  for(const [url,old] of a.owners)if(b.owners.get(url)!==old)
    move.push({url,before:old,after:b.owners.get(url)||null});
@@ -40,8 +46,12 @@ function run(dir){
  assert.equal(report.rootWork,bookId);
  assert.equal(report.nativeOtherWork,otherId);
  assert(report.formerIdsUnchanged,'Old catalog work IDs missing');
- assert.deepEqual(move.map(x=>x.url).sort(),expected.slice().sort(),
+ assert.deepEqual(move.map(x=>x.url).sort(),alreadyPublished?[]:expected.slice().sort(),
    'Unexpected article reassignment beyond verified Book of Letters translations');
+ if(alreadyPublished){
+   assert.equal(after.revision,before.revision,'Published rebuild changed revision');
+   assert.equal(removed.length+added.length,0,'Published rebuild changed edges');
+ }
  assert(move.every(x=>x.before===otherId&&x.after===bookId),'Incorrect source-work move');
  assert.deepEqual(report.bookPages.slice().sort(),[
    root,'https://fondationscp.wikidot.com/scp-1138','https://lafundacionscp.wikidot.com/scp-1138',
