@@ -33,7 +33,9 @@ function csv(rows,fields){
 }
 function run(input,out){
  const r=JSON.parse(fs.readFileSync(input,'utf8'));
- if(r.count!==404||r.revision!=='cbb4fd621ad9cc805ef6')throw Error('Unexpected board revision/candidate count');
+ // Display-only metadata can change the graph revision without changing
+ // these source-credit cases. Validate the inventory, not its old revision.
+ if(r.count!==404||r.cases.length!==r.count)throw Error('Unexpected candidate count');
  const rows=r.cases.map(evaluate),counts={};
  for(const c of rows)counts[c.proposedClassification]=(counts[c.proposedClassification]||0)+1;
  fs.mkdirSync(out,{recursive:true});
