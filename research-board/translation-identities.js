@@ -3,6 +3,7 @@ const {normalizePage}=require('./extract');
 const {originalPage}=require('../origin-provenance');
 const {publisherOriginTags}=require('../catalog-origin');
 const {verifiedScpOriginal}=require('./explicit-scp-origin');
+const {markedIdentityKey}=require('./russian-english-mainlist-originals');
 const site=code=>code==='zh-tr'?'zh':code;
 const native=p=>site(p.siteBranch)===p.branch||(p.siteBranch==='cs'&&p.branch==='sk');
 const generic=/^(?:main|index|home|start|about|groups-of-interest|foundation-tales|canon-hub|series-archive|personnel-and-character-dossier|task-forces|secure-facilities-locations|goi-formats)(?:-[a-z]{2})?$/;
@@ -31,6 +32,8 @@ const explicitPublisherOrigin=(p,r)=>{
  return tags.origins.length===1&&tags.origins[0]===p.branch&&!tags.conflicts.length&&!tags.unsupported.length;
 };
 function scpIdentityKey(p){
+  const reviewed=markedIdentityKey(p);
+  if(reviewed)return reviewed;
  const m=/^scp-(?:([a-z]{2,5})-)?(\d+)(.*)$/.exec(p.slug);
  let identifier=p.slug;
  if(m&&(!m[1]||m[1]===p.branch)){
