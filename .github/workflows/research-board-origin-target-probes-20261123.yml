@@ -26,11 +26,11 @@ jobs:
         with:
           name: postmerge-integrity-45170473146
           run-id: 45170473146
-          github-token: \${{ github.token }}
+          github-token: ${{ github.token }}
           path: published-evidence
       - name: Check official source and target URLs at low rate (read-only GET)
         env:
-          COHORT: \${{ matrix.cohort }}
+          COHORT: ${{ matrix.cohort }}
         run: |
           node <<'NODE'
           const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
@@ -108,7 +108,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: origin-publisher-check-\${{ matrix.cohort }}-\${{ github.run_id }}
-          path: publisher-check-\${{ matrix.cohort }}/
+          name: origin-publisher-check-${{ matrix.cohort }}-${{ github.run_id }}
+          path: publisher-check-${{ matrix.cohort }}/
           retention-days: 21
           if-no-files-found: warn
