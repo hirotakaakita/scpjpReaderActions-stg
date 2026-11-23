@@ -5,6 +5,7 @@ on:
     paths:
       - 'catalog-origin.js'
       - 'test/catalog-origin.test.js'
+      - 'test/related-documents.test.js'
       - '.github/workflows/catalog-origin-topic-audit.yml'
   workflow_dispatch:
 permissions:
