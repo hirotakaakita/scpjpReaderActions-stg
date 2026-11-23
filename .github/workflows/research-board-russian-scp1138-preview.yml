@@ -1,0 +1,44 @@
+name: Audit RU SCP-1138 Book of Letters identity repair
+on:
+  push:
+    branches: [fix/research-board-russian-scp1138-work-20261123]
+    paths:
+      - 'research-board/catalog.js'
+      - 'research-board/translation-identities.js'
+      - 'research-board/validate.js'
+      - 'research-board/russian-english-mainlist-originals.js'
+      - 'test/research-board-ru-scp1138-identity.test.js'
+      - 'tool/check-russian-scp1138-preview.js'
+      - '.github/workflows/research-board-russian-scp1138-preview.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  full-proof-rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NODE_OPTIONS: --max-old-space-size=5500
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Exact publisher-credit and same-number native original tests
+        run: node --test test/research-board-ru-scp1138-identity.test.js
+      - name: Complete repository tests
+        run: node --test
+      - name: Rebuild entire board in memory, with zero data publishing
+        run: node tool/preview-research-board-origin-fix.js russian-scp1138-preview
+      - name: Enforce only four evidence-backed work moves and no unrelated graph edits
+        run: node tool/check-russian-scp1138-preview.js russian-scp1138-preview
+      - name: Persist all diffs and immutable preview for independent inspection
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: ru-scp1138-corrected-preview-${{ github.run_id }}
+          path: russian-scp1138-preview/
+          retention-days: 21
+          if-no-files-found: warn
