@@ -18,9 +18,8 @@ on:
       - '.github/workflows/research-board-verification.yml'
 permissions:
   contents: read
-  actions: read
 concurrency:
-  group: research-board-verification-frozen-replay-v3-${{ github.ref }}
+  group: research-board-verification-current-v3-${{ github.ref }}
   cancel-in-progress: false
 jobs:
   audit:
@@ -37,19 +36,6 @@ jobs:
         run: node --test research-board/verification/verification.test.js
       - name: Inventory unresolved pages
         run: node research-board/verification/audit.js --inventory --out research-board/verification/audit-results
-      - name: Download frozen RU-excluded 500-page baseline audit
-        uses: actions/download-artifact@v4
-        with:
-          name: research-board-verification-44535992868
-          run-id: 44535992868
-          github-token: ${{ github.token }}
-          path: research-board/verification/baseline-audit
-      - name: Classify all 719 previous discrepancy candidates
-        run: |
-          node research-board/verification/triage.js \
-            --audit research-board/verification/baseline-audit/audit.json \
-            --differences research-board/verification/baseline-audit/differences.csv \
-            --out research-board/verification/audit-results/baseline-triage
       - name: Reproduce targeted ZH-TR, CN and chapter-navigation cases
         if: github.event_name == 'push'
         run: |
@@ -60,49 +46,25 @@ jobs:
             --url https://scp-wiki.wikidot.com/march-of-the-fire-ants \
             --url https://scpko.wikidot.com/goc-hub-page \
             --delay-ms 1250 \
-            --out research-board/verification/audit-results/targeted
-      - name: Triage targeted live differences
-        if: github.event_name == 'push'
-        run: |
-          node research-board/verification/triage.js \
-            --audit research-board/verification/audit-results/targeted/audit.json \
-            --differences research-board/verification/audit-results/targeted/differences.csv \
-            --out research-board/verification/audit-results/targeted-triage
+            --out research-board/verification/audit-results/current
       - name: Optional full 500-page live audit
         if: github.event_name == 'workflow_dispatch'
         env:
           LIMIT: ${{ inputs.limit }}
           SEED: ${{ inputs.seed }}
-        run: node research-board/verification/audit.js --limit "$LIMIT" --seed "$SEED" --delay-ms 1250 --out research-board/verification/audit-results/full
-      - name: Triage optional full audit
-        if: github.event_name == 'workflow_dispatch'
+        run: node research-board/verification/audit.js --limit "$LIMIT" --seed "$SEED" --delay-ms 1250 --out research-board/verification/audit-results/current
+      - name: Triage current audit
         run: |
           node research-board/verification/triage.js \
-            --audit research-board/verification/audit-results/full/audit.json \
-            --differences research-board/verification/audit-results/full/differences.csv \
-            --out research-board/verification/audit-results/full-triage
-      - name: Optional live same-response audit of 48 previous discrepancies
-        if: github.event_name == 'workflow_dispatch'
+            --audit research-board/verification/audit-results/current/audit.json \
+            --differences research-board/verification/audit-results/current/differences.csv \
+            --out research-board/verification/audit-results/current-triage
+      - name: Compare both parsers using this run's current baseline
         run: |
           node research-board/verification/same-snapshot.js \
-            --baseline research-board/verification/baseline-audit/audit.json \
+            --baseline research-board/verification/audit-results/current/audit.json \
             --controls 10 \
             --out research-board/verification/audit-results/same-snapshot
-      - name: Download 58 previously captured HTML snapshots
-        id: frozen
-        if: github.event_name == 'push'
-        uses: actions/download-artifact@v4
-        with:
-          name: research-board-verification-45008914452
-          run-id: 45008914452
-          github-token: ${{ github.token }}
-          path: research-board/verification/frozen-snapshot
-      - name: Replay identical frozen HTML after verifier fixes
-        if: github.event_name == 'push'
-        run: |
-          node research-board/verification/replay.js \
-            research-board/verification/frozen-snapshot/same-snapshot \
-            research-board/verification/audit-results/frozen-replay
       - name: Audit original SCP work identity and provenance
         if: always()
         run: node research-board/verification/identity-check.js research-board/verification/audit-results/identity

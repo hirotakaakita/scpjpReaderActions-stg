@@ -36,7 +36,21 @@ node research-board/verification/audit.js --limit 50 --include-ru --seed ftml-re
 node research-board/verification/audit.js --limit 500 --seed holdout-2026-11-19 --exclude research-board/verification/audit-results/audit.json --out research-board/verification/holdout-results
 ```
 
-A separate, read-only Actions workflow, `.github/workflows/research-board-verification.yml`, runs tests, inventory and an independent sample audit. Reports are stored as short-lived **workflow artifacts**, not committed back to the repository.
+A separate, read-only Actions workflow, `.github/workflows/research-board-verification.yml`, runs tests and inventory against the checked-out revision. Branch pushes audit five targeted pages; manual dispatch audits the requested sample. Both write a fresh baseline to `audit-results/current/`, triage it, then pass that same baseline to `same-snapshot.js` for all disagreement pages and up to ten controls. The board and baseline therefore always share a revision, including after merging newer master data. Raw same-response HTML is preserved in the output artifact.
+
+Reports are stored as short-lived **workflow artifacts**, not committed back to the repository. No previous run or artifact is required to execute a new audit. Download any reports/raw snapshots needed for long-term evidence before their retention period ends.
+
+### Historical replay (separate, optional)
+
+`replay.js` remains available for previously downloaded frozen snapshots. Historical evidence must be paired with its original board revision; do not feed an old baseline to a current-board audit. The November 2026 reports in this directory describe revision `d1169d1aedd310205196`, not the latest board.
+
+For the original 58-page replay, create a separate worktree at commit `c4dd6daac618a7483774f1e1d8d7c4e86630a1ff` (which contains that board and verifier), run `npm ci` there, and run:
+
+```sh
+node research-board/verification/replay.js /absolute/path/to/downloaded-artifact/same-snapshot /absolute/path/to/replay-output
+```
+
+The original artifacts expire on December 3 (500-page baseline) and December 6 (58 raw snapshots), 2026. After expiry, historical replay requires an independently retained download; the workflow cannot recover expired evidence. These historical artifacts are not dependencies of current audits.
 
 ## Outputs
 
