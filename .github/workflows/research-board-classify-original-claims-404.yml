@@ -2,6 +2,8 @@ name: Audit all unresolved publisher original claims
 on:
   push:
     branches: [audit/original-claims-404-20261124]
+  pull_request:
+    branches: [master]
   workflow_dispatch:
 permissions:
   contents: read
