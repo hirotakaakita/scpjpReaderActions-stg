@@ -1,0 +1,140 @@
+name: Research board post-merge independent audit (2026-11-23)
+on:
+  push:
+    branches:
+      - audit/research-board-postmerge-20261123
+    paths:
+      - '.github/workflows/research-board-postmerge-20261123.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: research-board-postmerge-20261123-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      NODE_OPTIONS: --max-old-space-size=5500
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Published manifest / catalog / all reference evidence and identity proofs
+        run: |
+          node validate-catalog-indexes.js
+          node research-board/validate.js
+      - name: Independent verifier tests
+        run: node --test research-board/verification/verification.test.js
+      - name: Original-credit and full-path identity review
+        run: |
+          mkdir -p postmerge-integrity
+          cp local-data/mobile-v3/research-board/manifest.json postmerge-integrity/manifest.json
+          node tool/audit-research-board-identities.js --output postmerge-integrity/full-identity-review.json
+          node research-board/verification/identity-provenance.js postmerge-integrity/explicit-originals
+          node research-board/verification/identity-check.js postmerge-integrity/english-originals
+      - name: Publish immutable integrity evidence
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: postmerge-integrity-${{ github.run_id }}
+          path: postmerge-integrity/
+          retention-days: 21
+          if-no-files-found: warn
+  high-risk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      NODE_OPTIONS: --max-old-space-size=5500
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Target previously problematic original, translation and link cases
+        run: |
+          node research-board/verification/audit.js \
+            --url https://scp-wiki.wikidot.com/scp-179 \
+            --url https://lafundacionscp.wikidot.com/scp-es-026 \
+            --url https://lafundacionscp.wikidot.com/scp-es-179 \
+            --url https://scp-zh-tr.wikidot.com/scp-179 \
+            --url https://scp-wiki-cn.wikidot.com/tool-box \
+            --url https://scp-wiki.wikidot.com/march-of-the-fire-ants \
+            --url https://scpko.wikidot.com/goc-hub-page \
+            --url https://scpfoundation.net/scp-173 \
+            --delay-ms 1250 \
+            --out postmerge-high-risk/current
+      - name: Three-way comparison on exact same live source
+        run: |
+          node research-board/verification/same-snapshot.js \
+            --baseline postmerge-high-risk/current/audit.json \
+            --controls 8 \
+            --out postmerge-high-risk/paired
+      - name: Classify current-page candidate differences
+        run: |
+          node research-board/verification/triage.js \
+            --audit postmerge-high-risk/current/audit.json \
+            --differences postmerge-high-risk/current/differences.csv \
+            --out postmerge-high-risk/triage
+      - name: Preserve targeted raw source evidence and summaries
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: postmerge-high-risk-${{ github.run_id }}
+          path: postmerge-high-risk/
+          retention-days: 21
+          if-no-files-found: warn
+  disjoint-holdout-500:
+    runs-on: ubuntu-latest
+    timeout-minutes: 130
+    env:
+      NODE_OPTIONS: --max-old-space-size=5500
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Recover previous 500-page sample for disjoint holdout selection
+        uses: actions/download-artifact@v4
+        with:
+          name: research-board-verification-44535992868
+          run-id: 44535992868
+          github-token: ${{ github.token }}
+          path: historical-baseline
+      - name: Independently recapture 500 NEW stratified publisher articles, including RU FTML
+        run: |
+          node research-board/verification/audit.js \
+            --limit 500 \
+            --seed 2026-11-23-postmerge-disjoint-567e-v1 \
+            --exclude historical-baseline/audit.json \
+            --delay-ms 1250 \
+            --out postmerge-holdout/current
+      - name: Three-way same-source verification on disagreements and 15 controls
+        run: |
+          node research-board/verification/same-snapshot.js \
+            --baseline postmerge-holdout/current/audit.json \
+            --controls 15 \
+            --out postmerge-holdout/paired
+      - name: Group each candidate discrepancy with stored evidence
+        run: |
+          node research-board/verification/triage.js \
+            --audit postmerge-holdout/current/audit.json \
+            --differences postmerge-holdout/current/differences.csv \
+            --out postmerge-holdout/triage
+      - name: Preserve all raw captures and reports
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: postmerge-disjoint-500-${{ github.run_id }}
+          path: postmerge-holdout/
+          retention-days: 21
+          if-no-files-found: warn
