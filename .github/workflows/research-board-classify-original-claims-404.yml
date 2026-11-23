@@ -1,0 +1,32 @@
+name: Audit all unresolved publisher original claims
+on:
+  push:
+    branches: [audit/original-claims-404-20261124]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  classify-all:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      NODE_OPTIONS: --max-old-space-size=5500
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Validate published board
+        run: node research-board/validate.js
+      - name: Classify every pending original-credit record without changing data
+        run: node tool/classify-original-claims-404.js original-claims-404
+      - name: Store detailed cases and source evidence
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: unresolved-original-credit-404-${{ github.run_id }}
+          path: original-claims-404/
+          retention-days: 21
+          if-no-files-found: warn
