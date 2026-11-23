@@ -1,5 +1,6 @@
 'use strict';
 // Convert fully validated, isolated preview into a STG publication candidate.
+// This branch-only action leaves master and production untouched until reviewed.
 // Does not mutate source captures or article catalogs. Publication is explicit.
 const fs=require('node:fs'),path=require('node:path'),zlib=require('node:zlib');
 const assert=require('node:assert/strict');
