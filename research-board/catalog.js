@@ -167,7 +167,11 @@ function buildBoard(catalogs, sources) {
   overview.identityReviewCount=identityReview.length;
   overview.ambiguousWorkKeys=collapsed.ambiguousWorkKeys;
   overview.ambiguousArticleIds=collapsed.ambiguousArticleIds;
+  const hiddenOriginalUnavailable = require('./original-availability').hiddenOriginalUnavailableNodeIds(compact,sources);
+  overview.originalAbsentVisibilityPolicy = 'hide_work_from_visualization_keep_catalog_v1';
+  overview.hiddenOriginalUnavailableWorkCount = hiddenOriginalUnavailable.nodeIds.length;
   const content = { schemaVersion: 3, overview, nodes: compact, edges, proofs,
+    hiddenOriginalUnavailableNodeIds: hiddenOriginalUnavailable.nodeIds,
     workIdentityProofs:collapsed.identityProofs,identityReview };
   const revision = digest(JSON.stringify(content)).slice(0, 20);
   return { ...content, revision, overview: { ...overview, revision } };
