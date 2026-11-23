@@ -24,7 +24,7 @@ jobs:
         run: node research-board/validate.js
       - name: Classify every pending original-credit record without changing data
         run: node tool/classify-original-claims-404.js original-claims-404
-      - name: Generate conservative four-way case review\n        run: node tool/triage-original-claims-404.js original-claims-404/all-cases.json original-claims-404\n      - name: Store detailed cases and source evidence
+      - name: Generate conservative four-way case review\n        run: node tool/triage-original-claims-404.js original-claims-404/all-cases.json original-claims-404\n      - name: Check missing publisher originals and current source status (RU API)\n        run: node tool/check-unresolved-original-targets.js original-claims-404\n      - name: Store detailed cases and source evidence
         if: always()
         uses: actions/upload-artifact@v7
         with:
