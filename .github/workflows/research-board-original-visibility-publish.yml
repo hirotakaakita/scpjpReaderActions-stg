@@ -10,6 +10,7 @@ permissions:
   contents: write
 jobs:
   prepare-and-commit:
+    if: github.repository == 'hirotakaakita/scpjpReaderActions-stg' && github.ref == 'refs/heads/fix/hide-non-catalog-originals-20261124'
     runs-on: ubuntu-latest
     timeout-minutes: 50
     env:
