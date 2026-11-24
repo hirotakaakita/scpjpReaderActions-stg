@@ -6,7 +6,7 @@ on:
     branches: [master]
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
 jobs:
   preview-visibility:
     runs-on: ubuntu-latest
@@ -15,9 +15,6 @@ jobs:
       NODE_OPTIONS: --max-old-space-size=5500
     steps:
       - uses: actions/checkout@v7
-        with:
-          ref: ${{ github.head_ref || github.ref_name }}
-          persist-credentials: true
       - uses: actions/setup-node@v6
         with:
           node-version: '24'
@@ -60,19 +57,6 @@ jobs:
           console.log(JSON.stringify({revision:b.revision,hiddenWorks:ids.length,catalogPages:s.pageCountAfter,
             workNodes:b.nodes.length,edges:b.edges.length,moved:s.movedPages},null,2));
           NODE
-      - name: Commit verified STG payload only on retired-page review PR
-        if: github.event_name == 'pull_request' && github.head_ref == 'fix/research-board-retired-visibility-20261124' && github.event.pull_request.head.repo.full_name == github.repository
-        run: |
-          node tool/prepare-research-board-visibility-publication.js preview-missing-original-visibility
-          node research-board/validate.js
-          FILE=$(node -p "require('./local-data/mobile-v3/research-board/manifest.json').fileName")
-          git add -f local-data/mobile-v3/research-board/manifest.json "local-data/mobile-v3/research-board/$FILE"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if ! git diff --cached --quiet; then
-            git commit -m "Stage verified publisher-retired visibility metadata"
-            git push origin HEAD:fix/research-board-retired-visibility-20261124
-          fi
       - name: Upload full read-only preview and work-ID proof
         if: always()
         uses: actions/upload-artifact@v7
