@@ -8,6 +8,16 @@ const {readSources}=require('../research-board/source-store');
 const {candidateReview}=require('./classify-original-claims-404');
 const NOTICE='https://scp-wiki.wikidot.com/bright-works-message';
 const OTHER_TITLES=new Set(['ブライト関連作品に関するお知らせ','Bright Works Message','STAFF PLACEHOLDER']);
+const REVIEWED_TRANSLATION_EQUIVALENCE=new Map([
+ ['https://scp-vn.wikidot.com/scp-179',{
+  original:'https://lafundacionscp.wikidot.com/scp-es-026',
+  capturedSha:'b8fbe118112edd1341289a9134fa1f8b7951efafb22351d889c3a2467efd8b5b',
+  basis:'Vietnamese SCP-179 and English SCP-179 share the ES-026 administrative warning and images; EN article and Vietnamese branch official hub identify the Spanish SCP-ES-026 original.',
+  references:['https://scp-vn.wikidot.com/scp-179',
+   'https://scp-vn.wikidot.com/es-hub',
+   'https://scp-wiki.wikidot.com/scp-179']
+ }]
+]);
 const REVIEWED_REDIRECT_IDENTITY=new Map([
  ['https://scp-vn.wikidot.com/scp-4000','https://scp-wiki.wikidot.com/taboo'],
  ['https://scp-zh-tr.wikidot.com/scp-4000','https://scp-wiki.wikidot.com/taboo']
@@ -41,11 +51,21 @@ function auditCase(x) {
  let structuralGroup,classification='証拠不足',decision='hold',basis,confidence='unconfirmed';
  const correctedCredit=REVIEWED_WRONG_CREDITS.get(x.source);
  const confirmedRedirect=REVIEWED_REDIRECT_IDENTITY.get(x.source)===x.resolvedOriginal;
+ const reviewedTranslated=REVIEWED_TRANSLATION_EQUIVALENCE.get(x.source);
+ if(reviewedTranslated && (reviewedTranslated.original!==x.resolvedOriginal||
+  reviewedTranslated.capturedSha!==x.sourceContentSha))
+  throw Error('Reviewed exact translation evidence changed: '+x.source);
  if(correctedCredit &&
   (correctedCredit.badOriginal!==x.resolvedOriginal || correctedCredit.sourceContentHash!==x.sourceContentSha))
    throw Error('Reviewed publisher exception changed; stop and reverify: '+x.source);
  let hardening='Read independent publisher source and content before allowing graph identity mutation.';
- if(confirmedRedirect){
+ if(reviewedTranslated){
+  structuralGroup='verified_cross_language_original';
+  classification='誤分裂';decision='join_reviewed_spanish_original_translations';
+  confidence='independent_original_and_translated_body';
+  basis=reviewedTranslated.basis;
+  hardening='Repair only with exact publisher original and compatible work scope; review native aliases independently.';
+ }else if(confirmedRedirect){
   structuralGroup='verified_publisher_redirect_alias';
   classification='誤分裂';decision='unify_current_publisher_alias_same_work';
   confidence='independent_publisher_redirect';
@@ -114,6 +134,7 @@ function auditCase(x) {
   sourceCheckedAt:x.sourceCheckedAt,originalCheckedAt:x.originalCheckedAt,
   publisherCreditQuotes:x.sourceClaimQuotes,
   reviewedActualOriginal:correctedCredit?.publisherPage||null,
+  reviewedTranslationCitations:reviewedTranslated?.references||null,
   reviewedRetiredOriginal:correctedCredit?.retiredOriginal||null,
   verifiedPublisherRedirect:confirmedRedirect?['https://scp-wiki.wikidot.com/scp-4000',x.resolvedOriginal]:null,
   publisherCorroboration: correctedCredit?[x.source,correctedCredit.publisherPage||correctedCredit.retiredOriginal,correctedCredit.badOriginal]: x.resolvedOriginal===NOTICE?[
