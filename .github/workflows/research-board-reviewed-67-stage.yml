@@ -41,5 +41,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if ! git diff --cached --quiet; then
             git commit -m "Freeze 67 reviewed translation identity repair rules"
+            git fetch origin fix/research-board-all-reviewed-identities-20261124
+            git rebase origin/fix/research-board-all-reviewed-identities-20261124
             git push origin HEAD:fix/research-board-all-reviewed-identities-20261124
           fi
