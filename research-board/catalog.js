@@ -158,6 +158,8 @@ function buildBoard(catalogs, sources) {
       .map(basis => [basis, nodes.filter(n => n.classificationBasis === basis).length])),
     semanticCoverage: 'partial_source_specific_only', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/' };
   overview.workIdentityPolicy='original_catalog_and_explicit_credits_v1';
+  overview.publisherReviewedIdentityCount=collapsed.publisherReviewed.reviewedCount;
+  overview.publisherReviewedWorkMerges=collapsed.publisherReviewed.mergedGroups.length;
   overview.bodyLinkCoverage = {
     checkedPages: sourcePages.filter(p => p.coverage === 'fetched' && sources.get(p.id)?.record?.linkExtractionVersion >= 6).length,
     totalPages: sourcePages.length,
