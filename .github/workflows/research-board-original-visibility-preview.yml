@@ -36,7 +36,7 @@ jobs:
           assert.equal(new Set(ids).size,ids.length,'Duplicate hidden node ID');
           assert(ids.every(x=>Number.isInteger(x)&&x>=0&&x<b.nodes.length),'Hidden node missing');
           assert.equal(b.overview.hiddenOriginalUnavailableWorkCount,ids.length);
-          const moved=fs.readFileSync(p+'moved-page-owners.csv','utf8').trim().split(/\\r?\\n/).slice(1);
+          const moved=fs.readFileSync(p+'moved-page-owners.csv','utf8').trim().split(String.fromCharCode(10)).slice(1);
           const reviewed='https://scp-vn.wikidot.com/scp-179';
           const owners=new Map(b.nodes.flatMap(n=>n[13].map(v=>[v[1],n[14][0]])));
           assert.deepEqual(moved.map(line=>line.slice(1).split('"')[0]),[reviewed],
