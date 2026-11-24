@@ -5,6 +5,7 @@ const {KIND_BY_CATEGORY,homeCategory}=require('./article-categories');
 const {digest}=require('./extract');
 const {verifiedScpOriginal}=require('./explicit-scp-origin');
 const {legacyEnglishTopicPigAliases}=require('./legacy-topic-origin-aliases');
+const {reviewedRepair}=require('./reviewed-150-work-repairs');
 
 // Ledger identity, not a bare SCP number. Each variant/proposal and branch
 // namespace keeps its own itemId. Unverified document translations stay apart.
@@ -199,6 +200,9 @@ function collapseWorks(pages, candidates, catalogEntries, sources = new Map()) {
     }
     extraAliases.set(page.id,[...(extraAliases.get(page.id)||[]),legacyKey]);
   }
+  const publisherReviewed=reviewedRepair({
+    pages,sources,pageKeys,parent,root,components,nativeKeys,proofs:identityProofs
+  });
   const groups = new Map();
   for (const page of pages) {
     const key = root(pageKeys.get(page.id));
@@ -251,7 +255,7 @@ function collapseWorks(pages, candidates, catalogEntries, sources = new Map()) {
     ...ambiguousWorkKeys.map(key=>key.slice(key.indexOf(':',8)+1)),
     ...[...rawOwners].filter(([,owners])=>owners.size>1).map(([id])=>id),
   ])].sort();
-  return { nodes, identityProofs, identityReview, ambiguousWorkKeys, ambiguousArticleIds, sourcePageCount: pages.filter(p => !p.classificationSourceId).length, internalReferences,
+  return { nodes, identityProofs, identityReview, publisherReviewed, ambiguousWorkKeys, ambiguousArticleIds, sourcePageCount: pages.filter(p => !p.classificationSourceId).length, internalReferences,
     relations: [...relations.values()].map(e => ({ ...e, proofs: [...e.proofs].sort(([a], [b]) => a.localeCompare(b, 'en')).map(([, proof]) => proof) }))
       .sort((a, b) => `${a.source}\0${a.type}\0${a.target}`.localeCompare(`${b.source}\0${b.type}\0${b.target}`, 'en')) };
 }
