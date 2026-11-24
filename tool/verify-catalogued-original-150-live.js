@@ -38,7 +38,7 @@ async function run(inFile,outDir){
  const focus=input.result.filter(x=>['native_work_collision','exact_path_split',
   'numbered_renumbered_translation','named_or_indirect_origin'].includes(x.structuralGroup));
  if(focus.length!==62)throw Error('Expected 62 source/credit mismatches, got '+focus.length);
- const urls=[...new Set(focus.flatMap(x=>[x.source,x.original]))];
+ const urls=[...new Set(focus.flatMap(x=>[x.source,x.original,...x.competingNativeUrls]))];
  const grouped=new Map();
  for(const url of urls){
   const host=new URL(url).hostname;
@@ -57,7 +57,13 @@ async function run(inFile,outDir){
   const sameHtmlTitle=source?.title&&original?.title&&source.title===original.title;
   const sameRawText=source?.outcome==='publisher_accessible'&&
    original?.outcome==='publisher_accessible'&&source.textHash===original.textHash;
+  const nativeCompeting=(c.competingNativeUrls||[]).map(url=>results.get(url));
+  const isPublisherAlias=nativeCompeting.some(n=>n?.outcome==='publisher_accessible'&&
+   original?.outcome==='publisher_accessible'&&
+   n.finalUrl===original.finalUrl&&n.textHash===original.textHash&&
+   !n.finalUrl.includes('/api/articles/'));
   return {sourceUrl:c.source,originalUrl:c.original,detectedIssue:c.detectedIssue,
+   competingNativePublisherPages:nativeCompeting,canonicalPublisherAliasConfirmed:isPublisherAlias,
    sourceWork:c.sourceWork,originalWork:c.originalWork,sourceTitle:c.sourceTitle,
    originalTitle:c.originalTitle,sourceNow:source,originalNow:original,
    samePublisherResponseText:!!sameRawText,identicalPageTitle:!!sameHtmlTitle,
@@ -70,7 +76,8 @@ async function run(inFile,outDir){
   status[o.outcome]=(status[o.outcome]||0)+1;
  }
  const doc={revision:input.revision,focusCount:focus.length,uniqueTargets:urls.length,
-  checkedTargets:results.size,checkOutcomes:status,method:'Wikidot current HTML; RU current official article API in FTML',
+  checkedTargets:results.size,checkOutcomes:status,
+  publisherCanonicalAliasCases:cases.filter(x=>x.canonicalPublisherAliasConfirmed).map(x=>x.sourceUrl),method:'Wikidot current HTML; RU current official article API in FTML',
   limitation:'HTTP, titles, and differing content hashes cannot prove translation equivalence.',
   cases};
  fs.mkdirSync(outDir,{recursive:true});
