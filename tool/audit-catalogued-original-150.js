@@ -25,6 +25,11 @@ const REVIEWED_REDIRECT_IDENTITY=new Map([
 // https://scp-wiki.wikidot.com/scp-4000 redirects to /taboo,
 // so separate same-publisher URL identities are not separate published works.
 const REVIEWED_WRONG_CREDITS=new Map([
+ ['https://scp-wiki-de.wikidot.com/scp-1114',{
+   publisherPage:'https://scp-wiki.wikidot.com/scp-1114',badOriginal:'https://scp-wiki.wikidot.com/scp-114',
+   sourceContentHash:'c832290f0f2b5c9c252e5c34dbcc268dafb2cd84c97f89de8a5944711753c2c0',
+   explanation:'German SCP-1114 and English SCP-1114 both describe a Hybrid II automotive crash-test dummy and Protocol Wanderlust. The credited English SCP-114 is instead a Pashtun woman causing conflict.'
+ }],
  ['https://scp-cs.wikidot.com/scp-025',{
    publisherPage:'https://scp-wiki.wikidot.com/scp-025',badOriginal:'https://scp-wiki.wikidot.com/scp-024',
    sourceContentHash:'0bb653eda54b3b84c100eecaa9ecf84db472bae2aa7f44abb6683f095002bb1b',
