@@ -1,0 +1,91 @@
+name: Validate all 67 reviewed work identity repairs
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [fix/research-board-all-reviewed-identities-20261124]
+    paths:
+      - 'research-board/reviewed-150-work-repairs.js'
+      - 'research-board/reviewed-original-67.json'
+      - 'research-board/works.js'
+      - 'research-board/catalog.js'
+      - 'tool/preview-research-board-origin-fix.js'
+      - '.github/workflows/research-board-reviewed-67-preview.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  review-all-67:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    env:
+      NODE_OPTIONS: --max-old-space-size=5500
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Publisher identity and adversarial stale-record tests
+        run: node --test test/research-board-reviewed-150-work-repairs.test.js
+      - name: Rebuild complete 125100-page graph in isolated preview
+        run: node tool/preview-research-board-origin-fix.js preview-all-67-reviewed
+      - name: Download original all-150 publisher proof of distinct works and retirement
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p original-150-artifact
+          gh run download 45316009381 --repo "$GITHUB_REPOSITORY" --name catalogue-original-150-evidence-45316009381 --dir original-150-artifact
+      - name: Require all reviewed same-work merges and all distinct works remain distinct
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'),assert=require('node:assert/strict'),z=require('zlib');
+          const q='preview-all-67-reviewed/';
+          const board=JSON.parse(z.gunzipSync(fs.readFileSync(q+'preview-board.json.gz')));
+          const summary=JSON.parse(fs.readFileSync(q+'SUMMARY.json'));
+          const plan=require('./research-board/reviewed-original-67.json');
+          const review=require('./original-150-artifact/FINAL-150.json');
+          const owners=new Map(board.nodes.flatMap(n=>n[13].map(v=>[v[1],n[14][0]])));
+          assert.equal(owners.size,125100);
+          assert.equal(summary.pageCountAfter,125100);
+          assert.equal(summary.validated,true);
+          assert.equal(board.overview.publisherReviewedIdentityCount,67);
+          assert(board.overview.publisherReviewedWorkMerges>=55,'Unexpectedly few audited group unions');
+          assert.equal(plan.rules.length,67);
+          for(const rule of plan.rules){
+            assert(owners.has(rule.source)&&owners.has(rule.target),'Missing audited source or original: '+rule.source);
+            assert.equal(owners.get(rule.source),owners.get(rule.target),'Unresolved reviewed split: '+rule.source);
+            if(rule.method==='verified_wrong_original_credit')
+              assert.notEqual(owners.get(rule.source),owners.get(rule.creditedOriginal),
+                'A wrong credited work was merged: '+rule.source);
+          }
+          let actualNormal=0;
+          for(const row of review.rows.filter(x=>x.classification==='正常な別作品')){
+            assert.notEqual(owners.get(row.source),owners.get(row.creditedOriginal),
+              'Distinct original/archived work accidentally merged: '+row.source);
+            actualNormal++;
+          }
+          assert.equal(actualNormal,43);
+          assert.equal(board.overview.hiddenRetiredPageCount,45);
+          assert.equal(board.hiddenRetiredPageUrls.length,45);
+          assert.equal(board.overview.hiddenRetiredWorkCount,board.hiddenRetiredNodeIds.length);
+          assert.equal(owners.get('https://scp-vn.wikidot.com/scp-179'),
+            owners.get('https://lafundacionscp.wikidot.com/scp-es-026'));
+          assert.notEqual(owners.get('https://scp-vn.wikidot.com/scp-179'),
+            owners.get('https://lafundacionscp.wikidot.com/scp-es-179'));
+          console.log(JSON.stringify({reviewed:67,normalDistinct:actualNormal,
+            mergedGroups:board.overview.publisherReviewedWorkMerges,
+            graphBefore:summary.nodesBefore,graphAfter:summary.nodesAfter,
+            pages:owners.size,edgesBefore:summary.edgesBefore,edgesAfter:summary.edgesAfter,
+            movedPages:summary.movedPages},null,2));
+          NODE
+      - name: Upload all-work identity preview and membership/edge diffs
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: reviewed-67-graph-preview-${{ github.run_id }}
+          path: preview-all-67-reviewed/
+          retention-days: 21
+          if-no-files-found: warn
