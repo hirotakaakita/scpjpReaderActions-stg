@@ -1,5 +1,5 @@
 'use strict';
-// Read-only 2026 publisher checks for the 62 URL/number cases that cannot
+// Read-only 2026 publisher checks for the unconfirmed URL/number cases that cannot
 // be decided by the presence of a staff redirect or a structural namespace.
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
 const textHash=s=>crypto.createHash('sha256').update(s).digest('hex');
@@ -37,7 +37,7 @@ async function run(inFile,outDir){
  const input=JSON.parse(fs.readFileSync(inFile,'utf8'));
  const focus=input.result.filter(x=>['native_work_collision','exact_path_split',
   'numbered_renumbered_translation','named_or_indirect_origin'].includes(x.structuralGroup));
- if(focus.length!==62)throw Error('Expected 62 source/credit mismatches, got '+focus.length);
+ if(focus.length<1||focus.length>62)throw Error('Unexpected number of unresolved source/credit mismatches: '+focus.length);
  const urls=[...new Set(focus.flatMap(x=>[x.source,x.original,...x.competingNativeUrls]))];
  const grouped=new Map();
  for(const url of urls){
@@ -83,7 +83,7 @@ async function run(inFile,outDir){
  fs.mkdirSync(outDir,{recursive:true});
  fs.writeFileSync(path.join(outDir,'62-live-publisher-checks.json'),JSON.stringify(doc,null,2)+'\n');
  fs.writeFileSync(path.join(outDir,'LIVE-SUMMARY.md'),[
-  '# Current publisher recheck: 62 complex numbered/named identity cases','',
+  '# Current publisher recheck: remaining complex numbered/named identity cases','',
   'Source cases: '+cases.length, 'Publisher endpoints requested: '+urls.length,
   'Responses: '+results.size,'','| Outcome | URL count |','|---|---:|',
   ...Object.entries(status).map(([k,v])=>'| '+k+' | '+v+' |'),
