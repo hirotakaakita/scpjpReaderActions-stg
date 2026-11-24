@@ -168,10 +168,16 @@ function buildBoard(catalogs, sources) {
   overview.ambiguousWorkKeys=collapsed.ambiguousWorkKeys;
   overview.ambiguousArticleIds=collapsed.ambiguousArticleIds;
   const hiddenOriginalUnavailable = require('./original-availability').hiddenOriginalUnavailableNodeIds(compact,sources);
+  const retired = require('./retired-visibility').retiredVisibility(compact,sources);
+  overview.retiredArticleVisibilityPolicy = 'hide_publisher_withdrawn_pages_preserve_live_versions_v1';
+  overview.hiddenRetiredPageCount = retired.pageUrls.length;
+  overview.hiddenRetiredWorkCount = retired.nodeIds.length;
   overview.originalAbsentVisibilityPolicy = 'hide_work_from_visualization_keep_catalog_v1';
   overview.hiddenOriginalUnavailableWorkCount = hiddenOriginalUnavailable.nodeIds.length;
   const content = { schemaVersion: 3, overview, nodes: compact, edges, proofs,
     hiddenOriginalUnavailableNodeIds: hiddenOriginalUnavailable.nodeIds,
+    hiddenRetiredPageUrls: retired.pageUrls,
+    hiddenRetiredNodeIds: retired.nodeIds,
     workIdentityProofs:collapsed.identityProofs,identityReview };
   const revision = digest(JSON.stringify(content)).slice(0, 20);
   return { ...content, revision, overview: { ...overview, revision } };
