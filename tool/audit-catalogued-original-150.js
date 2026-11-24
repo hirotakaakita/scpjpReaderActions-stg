@@ -22,6 +22,24 @@ const REVIEWED_TRANSLATION_EQUIVALENCE=new Map([
   references:['https://scpko.wikidot.com/scp-6470','https://scp-wiki.wikidot.com/scp-6470',
     'https://scp-wiki-cn.wikidot.com/scp-cn-2469']
  }],
+ ['https://scp-vn.wikidot.com/scp-2195',{
+  original:'https://scpfoundation.net/scp-2195',
+  capturedSha:'bbaaf919961aae2b513ea368118a2b89604e7b50d7569b839d7a67ecb9d284a3',
+  basis:'Vietnamese SCP-2195 shows the same specimen #037, 29-week-old SCP-2195-1 photograph and RU original credit as the English SCP-2195 publication; the separate /scp-2195-ru URL redirects to this VN page.',
+  references:['https://scp-vn.wikidot.com/scp-2195','https://scp-wiki.wikidot.com/scp-2195','https://scpfoundation.net/scp-2195']
+ }],
+ ['https://scp-vn.wikidot.com/scp-2195-ru',{
+  original:'https://scpfoundation.net/scp-2195',
+  capturedSha:'7133ce93edc6a72d166ad565b12f840f529ee2fc6df53384f1bc77d08ecd1434',
+  basis:'Vietnamese /scp-2195-ru permanently redirects to /scp-2195, a single publisher article crediting Russian SCP-2195.',
+  references:['https://scp-vn.wikidot.com/scp-2195-ru','https://scp-vn.wikidot.com/scp-2195','https://scpfoundation.net/scp-2195']
+ }],
+ ['https://scp-wiki.wikidot.com/scp-2195',{
+  original:'https://scpfoundation.net/scp-2195',
+  capturedSha:'650d284e7b139885add3f6869303c8a2c0d42895f9ee4d7ec1bb89d25d4d3a80',
+  basis:'English SCP-2195 and the credited Russian original describe 29-week SCP-2195-1 specimens, same 1195-1.jpg image and same scientific anomaly; Vietnamese page follows that exact content.',
+  references:['https://scp-wiki.wikidot.com/scp-2195','https://scp-vn.wikidot.com/scp-2195','https://scpfoundation.net/scp-2195']
+ }],
  ['https://scp-wiki.wikidot.com/scp-206',{
   original:'https://scpfoundation.net/scp-206',
   capturedSha:'6f0d5ac47d8d78cb9447e36a360c456bee29bc0e11706ada5715464a8c9ab10e',
