@@ -55,7 +55,7 @@ async function capture(url){
 async function run(inputFile,outDir){
  const source=JSON.parse(fs.readFileSync(inputFile,'utf8'));
  const unresolved=source.result.filter(x=>x.classification==='証拠不足');
- const cases=source.result.filter(x=>['native_work_collision','exact_path_split','numbered_renumbered_translation','named_or_indirect_origin'].includes(x.structuralGroup));
+ const cases=source.result; // Every one of the 150, including the 40 staff notices and 25 unofficial translations
  const urls=unique(cases.flatMap(x=>[
   x.source,x.original,...(x.competingNativeUrls||[]), numbered(x.source)
  ]));
