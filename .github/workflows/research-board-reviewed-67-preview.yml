@@ -29,7 +29,7 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Publisher identity and adversarial stale-record tests
-        run: node --test test/research-board-reviewed-150-work-repairs.test.js
+        run: node --test test/research-board-reviewed-150-work-repairs.test.js test/research-board-reviewed-transitive-identity-proof.test.js
       - name: Rebuild complete 125100-page graph in isolated preview
         run: node tool/preview-research-board-origin-fix.js preview-all-67-reviewed
       - name: Download original all-150 publisher proof of distinct works and retirement
