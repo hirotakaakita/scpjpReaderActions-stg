@@ -9,6 +9,12 @@ const {candidateReview}=require('./classify-original-claims-404');
 const NOTICE='https://scp-wiki.wikidot.com/bright-works-message';
 const OTHER_TITLES=new Set(['ブライト関連作品に関するお知らせ','Bright Works Message','STAFF PLACEHOLDER']);
 const REVIEWED_TRANSLATION_EQUIVALENCE=new Map([
+ ['https://scp-wiki.wikidot.com/scp-206',{
+  original:'https://scpfoundation.net/scp-206',
+  capturedSha:'6f0d5ac47d8d78cb9447e36a360c456bee29bc0e11706ada5715464a8c9ab10e',
+  basis:'English SCP-206 cites the RU article explicitly, and both publisher bodies describe the Invictus Mars rover, failed radio contact and transmissions of strange planetary photos.',
+  references:['https://scp-wiki.wikidot.com/scp-206','https://scpfoundation.net/scp-206']
+ }],
  ['https://scp-vn.wikidot.com/scp-179',{
   original:'https://lafundacionscp.wikidot.com/scp-es-026',
   capturedSha:'b8fbe118112edd1341289a9134fa1f8b7951efafb22351d889c3a2467efd8b5b',
