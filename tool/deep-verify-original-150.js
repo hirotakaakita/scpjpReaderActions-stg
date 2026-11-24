@@ -11,8 +11,8 @@ const stripFtml=s=>String(s||'').replace(/\[\[(?:include|module|image|div|span|c
 const unique=a=>[...new Set(a.filter(Boolean))];
 const numbered=url=>{
  const p=new URL(url),slug=p.pathname.slice(1);
- return /^scp-\d+(?:-(?:j|ex))?$/.test(slug)?null:
-  /^scp-\d+(?:-[a-z]{2,5})?$/i.test(slug)?
+ if(p.hostname==='scp-wiki.wikidot.com')return null;
+ return /^scp-\d+(?:-[a-z]{2,5})?$/i.test(slug)?
   'https://scp-wiki.wikidot.com/'+slug :null;
 };
 async function capture(url){
