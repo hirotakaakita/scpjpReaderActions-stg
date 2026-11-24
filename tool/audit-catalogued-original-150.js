@@ -8,6 +8,18 @@ const {readSources}=require('../research-board/source-store');
 const {candidateReview}=require('./classify-original-claims-404');
 const NOTICE='https://scp-wiki.wikidot.com/bright-works-message';
 const OTHER_TITLES=new Set(['ブライト関連作品に関するお知らせ','Bright Works Message','STAFF PLACEHOLDER']);
+const REVIEWED_WRONG_CREDITS=new Map([
+ ['https://scp-cs.wikidot.com/scp-025',{
+   publisherPage:'https://scp-wiki.wikidot.com/scp-025',badOriginal:'https://scp-wiki.wikidot.com/scp-024',
+   sourceContentHash:'0bb653eda54b3b84c100eecaa9ecf84db472bae2aa7f44abb6683f095002bb1b',
+   explanation:'Publisher credit identifies SCP-024 but both Czech source and English SCP-025 describe the same wooden wardrobe; SCP-024 describes a hazardous game-show studio.'
+ }],
+ ['https://scp-cs.wikidot.com/scp-068',{
+   publisherPage:'https://scp-wiki.wikidot.com/scp-068',badOriginal:'https://scp-wiki.wikidot.com/scp-536',
+   sourceContentHash:'f5bd46480312ab6b9f507f6c580a7425bd05e66de5ffb9e50161040db9ed6490',
+   explanation:'Both Czech source and English SCP-068 describe a self-replicating wire stick figure and use SCP068.jpg; SCP-536 is a physics-constant chamber.'
+ }]
+]);
 function auditCase(x) {
  const sourcePath=new URL(x.source).pathname.toLowerCase();
  const originPath=new URL(x.resolvedOriginal).pathname.toLowerCase();
@@ -15,8 +27,18 @@ function auditCase(x) {
  const sourceTitles=x.sourceWorkTitles||[];
  const mix=sourceTitles.filter(t=>!OTHER_TITLES.has(t));
  let structuralGroup,classification='証拠不足',decision='hold',basis,confidence='unconfirmed';
+ const correctedCredit=REVIEWED_WRONG_CREDITS.get(x.source);
+ if(correctedCredit &&
+  (correctedCredit.badOriginal!==x.resolvedOriginal || correctedCredit.sourceContentHash!==x.sourceContentSha))
+   throw Error('Reviewed publisher exception changed; stop and reverify: '+x.source);
  let hardening='Read independent publisher source and content before allowing graph identity mutation.';
- if(x.resolvedOriginal===NOTICE && x.sourceTitle==='ブライト関連作品に関するお知らせ'){
+ if(correctedCredit){
+  structuralGroup='verified_publisher_credit_error';
+  classification='誤分裂';decision='fix_proven_wrong_credit_and_join_actual_work';
+  confidence='independent_publisher_body_crosscheck';
+  basis=correctedCredit.explanation;
+  hardening='Do not replace the publisher claim in evidence. Correct work identity in a separately tested graph change.';
+ }else if(x.resolvedOriginal===NOTICE && x.sourceTitle==='ブライト関連作品に関するお知らせ'){
   structuralGroup='publisher_retirement_notice';
   if(mix.length){
    classification='誤統合';decision='separate_retirement_notice_from_historical_work';
@@ -69,7 +91,8 @@ function auditCase(x) {
   sourceContentSha256:x.sourceContentSha,originalContentSha256:x.originalContentSha,
   sourceCheckedAt:x.sourceCheckedAt,originalCheckedAt:x.originalCheckedAt,
   publisherCreditQuotes:x.sourceClaimQuotes,
-  publisherCorroboration: x.resolvedOriginal===NOTICE?[
+  reviewedActualOriginal:correctedCredit?.publisherPage||null,
+  publisherCorroboration: correctedCredit?[x.source,correctedCredit.publisherPage,correctedCredit.badOriginal]: x.resolvedOriginal===NOTICE?[
    'https://scp-wiki.wikidot.com/bright-works-message',
    'https://scp-wiki.wikidot.com/forum/t-17573548/discussion-bright-works-project-q-a'
   ]: sourceHost==='scp-int.wikidot.com'&&sourcePath.startsWith('/unofficial:')?[
