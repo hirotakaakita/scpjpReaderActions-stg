@@ -42,6 +42,11 @@ const REVIEWED_WRONG_CREDITS=new Map([
    sourceContentHash:'c832290f0f2b5c9c252e5c34dbcc268dafb2cd84c97f89de8a5944711753c2c0',
    explanation:'German SCP-1114 and English SCP-1114 both describe a Hybrid II automotive crash-test dummy and Protocol Wanderlust. The credited English SCP-114 is instead a Pashtun woman causing conflict.'
  }],
+ ['https://scp-cs.wikidot.com/scp-2350',{
+  publisherPage:'https://scp-wiki.wikidot.com/scp-2350',badOriginal:'https://scp-wiki.wikidot.com/scp-6442',
+  sourceContentHash:'bb51c08ddf2bc42303dbc489912aa0e06963ff8637e74685257c9b89719815f0',
+  explanation:'Czech SCP-2350 shares the Lambda-12 Vietnam village mosquito-meme containment narrative with English SCP-2350; the credited SCP-6442 concerns an unrelated lethal cognition hazard.'
+ }],
  ['https://scp-cs.wikidot.com/scp-025',{
    publisherPage:'https://scp-wiki.wikidot.com/scp-025',badOriginal:'https://scp-wiki.wikidot.com/scp-024',
    sourceContentHash:'0bb653eda54b3b84c100eecaa9ecf84db472bae2aa7f44abb6683f095002bb1b',
