@@ -4,6 +4,20 @@ const {originalPage}=require('../origin-provenance');
 const {publisherOriginTags}=require('../catalog-origin');
 const {generic}=require('./translation-identities');
 const {verifiedScpOriginal}=require('./explicit-scp-origin');
+function publisherTransitiveChainMatches(proof,sources,owners){
+ const urls=proof.chain;
+ if(!Array.isArray(urls)||urls.length<3||urls[0]!==proof.source||
+  urls.at(-1)!==proof.target||new Set(urls).size!==urls.length||
+  owners.get(proof.source)!==owners.get(proof.target))return false;
+ for(let i=0;i<urls.length-1;i++){
+  const page=normalizePage(urls[i]),record=page&&sources.get(page.id)?.record;
+  const credits=(record?.originalSources||[]).filter(x=>x.method==='credit_original_label');
+  const canonical=[...new Set(credits.map(x=>originalPage(x.url)?.url).filter(Boolean))];
+  if(!credits.length||canonical.length!==1||canonical[0]!==urls[i+1]||
+     credits.some(x=>!originalPage(x.url)))return false;
+ }
+ return true;
+}
 function validateIdentityProofs(board,sources){
  const owners=new Map(board.nodes.flatMap(n=>n[13].map(p=>[p[1],n])));
  const record=url=>sources.get(normalizePage(url)?.id)?.record;
@@ -20,9 +34,15 @@ function validateIdentityProofs(board,sources){
   if(proof.method==='explicit_transitive_scp_original_credit'){
    const source=normalizePage(proof.source),p=source&&pages.get(source.id);
    const original=verifiedScpOriginal(p,pages,sources);
-   if(!original?.creditChain||original.url!==proof.target||
-      JSON.stringify(original.creditChain)!==JSON.stringify(proof.chain)||
-      owners.get(proof.source)!==owners.get(proof.target))throw Error('Unproven transitive original SCP credit');
+   const originTraceValid=original?.creditChain&&original.url===proof.target&&
+     JSON.stringify(original.creditChain)===JSON.stringify(proof.chain)&&
+     owners.get(proof.source)===owners.get(proof.target);
+   // When a separately audited multi-lingual cluster is joined to its actual
+   // publisher original, a node's representative branch/pageType can change.
+   // Reconstruct the *exact publisher credit chain* independently from that
+   // presentation metadata, rather than invalidating a valid original credit.
+   if(!originTraceValid&&!publisherTransitiveChainMatches(proof,sources,owners))
+    throw Error('Unproven transitive original SCP credit '+proof.source+' -> '+proof.target);
   }
   if(['shared_explicit_original_credit','shared_verified_original_metadata'].includes(proof.method)){
    const metadata=proof.method==='shared_verified_original_metadata';
