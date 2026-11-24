@@ -1,0 +1,55 @@
+name: Prepare retired-page display metadata for STG
+on:
+  push:
+    branches: [fix/research-board-retired-visibility-20261124]
+    paths:
+      - 'research-board/retired-visibility.js'
+      - 'research-board/catalog.js'
+      - '.github/workflows/research-board-retired-visibility-publish.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    if: github.repository == 'hirotakaakita/scpjpReaderActions-stg' && github.ref == 'refs/heads/fix/research-board-retired-visibility-20261124'
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    env:
+      NODE_OPTIONS: --max-old-space-size=5500
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Validate retirement and original visibility policies
+        run: node --test test/research-board-original-availability.test.js test/research-board-retired-visibility.test.js
+      - name: Rebuild full graph from official catalog in an isolated preview
+        run: node tool/preview-research-board-origin-fix.js preview-missing-original-visibility
+      - name: Package verified display-only metadata without moving a source page
+        run: node tool/prepare-research-board-visibility-publication.js preview-missing-original-visibility
+      - name: Validate the exact packaged graph against the full source catalog
+        run: node research-board/validate.js
+      - name: Run Node regression suite
+        run: node --test
+      - name: Commit validated STG gzip and manifest only to review branch
+        run: |
+          FILE=$(node -p "require('./local-data/mobile-v3/research-board/manifest.json').fileName")
+          git add -f local-data/mobile-v3/research-board/manifest.json "local-data/mobile-v3/research-board/$FILE"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --cached --quiet; then
+            git commit -m "Stage verified retirement visibility for research board"
+            git push origin HEAD:fix/research-board-retired-visibility-20261124
+          fi
+      - name: Upload validation evidence
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: retired-page-visibility-stg-${{ github.run_id }}
+          path: preview-missing-original-visibility/
+          retention-days: 14
+          if-no-files-found: warn
