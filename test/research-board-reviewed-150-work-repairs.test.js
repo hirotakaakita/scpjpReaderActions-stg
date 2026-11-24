@@ -50,6 +50,6 @@ test('canonical numbered SCP work survives a verified publisher URL alias merge'
 });
 test('unexpected full-publisher catalog without any evidence-hashed repair is rejected',()=>{
  const f=caseFixture(base,base.sourceSha256);
- f.options.pages=Array(100001).fill(f.p);
- assert.throws(()=>reviewedRepair(f.options),/Unexpectedly few reviewed work repairs/);
+ f.options.pages=[...Array(100000).fill(f.p),f.q];
+ assert.throws(()=>reviewedRepair(f.options),/Official full catalog lost reviewed pages|Unexpectedly few reviewed work repairs/);
 });
