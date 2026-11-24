@@ -26,6 +26,8 @@ jobs:
         run: node tool/audit-catalogued-original-150.js original-claims-150
       - name: Recheck all 62 ambiguous numbered and named origins with publisher APIs
         run: node tool/verify-catalogued-original-150-live.js original-claims-150/150-case-evidence.json original-claims-150
+      - name: Compare primary-source article bodies, images and alternative original pages
+        run: node tool/deep-verify-original-150.js original-claims-150/150-case-evidence.json original-claims-150
       - name: Validate every source has an adjudication and no migration occurred
         run: |
           node - <<'NODE'
