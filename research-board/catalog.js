@@ -100,6 +100,8 @@ function buildBoard(catalogs, sources) {
   // Reviewed special case: RU Book of Letters is published at /scp-1138,
   // not the distinct native /scp-1138-ru (Live Broadcast).
   require('./russian-english-mainlist-originals').applyRussianBook1138(sourcePages,sources);
+  // Hand-reviewed source/target pairs only; no number-based mass reassignment.
+  require('./reviewed-origin-identities').applyReviewedOriginIdentities(sourcePages,sources);
   require('./explicit-scp-origin').inheritTransitiveOrigins(sourcePages,sources);
   const identities=translationIdentities(sourcePages,sources);
   candidates.push(...identities.candidates);
