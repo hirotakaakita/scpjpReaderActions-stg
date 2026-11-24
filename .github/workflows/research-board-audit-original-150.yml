@@ -28,6 +28,8 @@ jobs:
         run: node tool/verify-catalogued-original-150-live.js original-claims-150/150-case-evidence.json original-claims-150
       - name: Compare primary-source article bodies, images and alternative original pages
         run: node tool/deep-verify-original-150.js original-claims-150/150-case-evidence.json original-claims-150
+      - name: Confirm all 150 primary-source work identity decisions
+        run: node tool/final-adjudicate-original-150.js original-claims-150/deep-primary-source-excerpts.json original-claims-150
       - name: Validate every source has an adjudication and no migration occurred
         run: |
           node - <<'NODE'
