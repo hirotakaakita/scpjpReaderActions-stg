@@ -15,6 +15,13 @@ const REVIEWED_TRANSLATION_EQUIVALENCE=new Map([
   basis:'English SCP-1150-J directly credits the RU original and both published works describe an anomalous budget-deficient object with Site 22/13 staff satire.',
   references:['https://scp-wiki.wikidot.com/scp-1150-j','https://scpfoundation.net/scp-1150-j']
  }],
+ ['https://scpko.wikidot.com/scp-6470',{
+  original:'https://scp-wiki-cn.wikidot.com/scp-cn-2469',
+  capturedSha:'7e31ee444ce51dd9675514250f4fbe2613813e59e77f3be9a69d754845b0c6a1',
+  basis:'Korean SCP-6470 explicitly credits Chinese SCP-CN-2469. English SCP-6470 also explicitly credits SCP-CN-2469 and both Korean/English describe Paganini Oral Medication, future 2030, and the Silent Era.',
+  references:['https://scpko.wikidot.com/scp-6470','https://scp-wiki.wikidot.com/scp-6470',
+    'https://scp-wiki-cn.wikidot.com/scp-cn-2469']
+ }],
  ['https://scp-wiki.wikidot.com/scp-206',{
   original:'https://scpfoundation.net/scp-206',
   capturedSha:'6f0d5ac47d8d78cb9447e36a360c456bee29bc0e11706ada5715464a8c9ab10e',
