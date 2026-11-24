@@ -37,7 +37,8 @@ jobs:
       - name: Commit only new board binary and its manifest to isolated branch
         run: |
           FILE=$(node -p "require('./local-data/mobile-v3/research-board/manifest.json').fileName")
-          git add -f local-data/mobile-v3/research-board/manifest.json "local-data/mobile-v3/research-board/$FILE"
+          git add -f local-data/research-board-audit.json.gz local-data/mobile-v3/research-board/manifest.json "local-data/mobile-v3/research-board/$FILE"
+          git add -u local-data/mobile-v3/research-board/
           git diff --cached --stat
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

@@ -4,7 +4,6 @@
 // Does not mutate source captures or article catalogs. Publication is explicit.
 const fs=require('node:fs'),path=require('node:path'),zlib=require('node:zlib');
 const assert=require('node:assert/strict');
-const {digest}=require('../research-board/extract');
 const {loadPublished,ownership,edges}=require('./preview-research-board-origin-fix');
 function run(dir){
  const old=loadPublished('local-data').board;
@@ -29,19 +28,10 @@ function run(dir){
  assert.equal(next.overview.sourcePageCount,125100);
  assert.equal(next.overview.originalAbsentVisibilityPolicy,
   'hide_work_from_visualization_keep_catalog_v1');
- const root=path.resolve('local-data/mobile-v3/research-board');
- const raw=Buffer.from(JSON.stringify(next));
- const zipped=zlib.gzipSync(raw,{level:9});
- const sha=digest(zipped),name='board-'+sha+'.json.gz';
- const manifest={schemaVersion:3,revision:next.revision,
-   timestamp:next.overview.generatedAt,fileName:name,bytes:zipped.length,
-   decodedBytes:raw.length,sha256:sha,
-   nodeCount:next.nodes.length,edgeCount:next.edges.length};
- fs.writeFileSync(path.join(root,name),zipped);
- fs.writeFileSync(path.join(root,'manifest.json'),JSON.stringify(manifest)+'\n');
+ const manifest=require('../research-board/runtime-delivery').writeDelivery(next,'local-data','local-data/mobile-v3');
  console.log(JSON.stringify({previousRevision:old.revision,newRevision:next.revision,
    hiddenWorks:hidden.length,sourcePages:oldOwner.owners.size,
-   nodeCount:next.nodes.length,edgeCount:next.edges.length,sha256:sha},null,2));
+   nodeCount:next.nodes.length,edgeCount:next.edges.length,sha256:manifest.sha256},null,2));
  return manifest;
 }
 if(require.main===module)try{run(process.argv[2]||'preview-missing-original-visibility');}
