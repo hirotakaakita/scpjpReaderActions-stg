@@ -9,6 +9,12 @@ const {candidateReview}=require('./classify-original-claims-404');
 const NOTICE='https://scp-wiki.wikidot.com/bright-works-message';
 const OTHER_TITLES=new Set(['ブライト関連作品に関するお知らせ','Bright Works Message','STAFF PLACEHOLDER']);
 const REVIEWED_TRANSLATION_EQUIVALENCE=new Map([
+ ['https://scp-wiki.wikidot.com/scp-1150-j',{
+  original:'https://scpfoundation.net/scp-1150-j',
+  capturedSha:'52074bea41a4a3a38e7761e559b2e592070b39b75531e730650e3628149da6fd',
+  basis:'English SCP-1150-J directly credits the RU original and both published works describe an anomalous budget-deficient object with Site 22/13 staff satire.',
+  references:['https://scp-wiki.wikidot.com/scp-1150-j','https://scpfoundation.net/scp-1150-j']
+ }],
  ['https://scp-wiki.wikidot.com/scp-206',{
   original:'https://scpfoundation.net/scp-206',
   capturedSha:'6f0d5ac47d8d78cb9447e36a360c456bee29bc0e11706ada5715464a8c9ab10e',
