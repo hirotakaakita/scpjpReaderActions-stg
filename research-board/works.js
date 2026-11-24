@@ -5,6 +5,7 @@ const {KIND_BY_CATEGORY,homeCategory}=require('./article-categories');
 const {digest}=require('./extract');
 const {verifiedScpOriginal}=require('./explicit-scp-origin');
 const {legacyEnglishTopicPigAliases}=require('./legacy-topic-origin-aliases');
+const {reviewedSameSiteAlias}=require('./reviewed-origin-identities');
 
 // Ledger identity, not a bare SCP number. Each variant/proposal and branch
 // namespace keeps its own itemId. Unverified document translations stay apart.
@@ -141,7 +142,14 @@ function collapseWorks(pages, candidates, catalogEntries, sources = new Map()) {
     const right=[...(components.get(b)||[])].map(id=>byPage.get(id));
     // An identity component cannot contain two distinct pages on one site, or
     // acquire incompatible origins through a chain of translation assertions.
-    if(left.some(p=>right.some(q=>p.siteBranch===q.siteBranch&&p.id!==q.id))&&!(sameScpIdentity&&[...left,...right].every(p=>scpIdentityKey(p)===scpIdentityKey(source)))){identityReview.push({url:source.url,original:target.url,reason:'same_site_identity_collision'});continue;}
+    const sameSiteCollision=left.some(p=>right.some(q=>p.siteBranch===q.siteBranch&&p.id!==q.id));
+    const fullyCompatibleNumbered=sameScpIdentity&&[...left,...right].every(p=>scpIdentityKey(p)===scpIdentityKey(source));
+    const publisherReviewedAlias=sameSiteCollision&&explicitScpIdentity&&
+      reviewedSameSiteAlias({source,target,left,right,byPage,sources});
+    if(sameSiteCollision&&!fullyCompatibleNumbered&&!publisherReviewedAlias){
+      identityReview.push({url:source.url,original:target.url,reason:'same_site_identity_collision'});
+      continue;
+    }
     const origins=new Set([...left,...right].map(p=>p.branch).filter(b=>b!=='other'));
     if(origins.size>1){identityReview.push({url:source.url,original:target.url,reason:'conflicting_component_origins'});continue;}
     // Prefer a catalog-backed identity over a URL-only identity.
