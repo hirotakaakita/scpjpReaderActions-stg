@@ -1,0 +1,42 @@
+name: Stage evidence-backed 67 work repair cases
+on:
+  push:
+    branches: [fix/research-board-all-reviewed-identities-20261124]
+    paths:
+      - 'tool/stage-reviewed-150-rules.js'
+      - '.github/workflows/research-board-reviewed-67-stage.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  stage-reviewed-rules:
+    if: github.repository == 'hirotakaakita/scpjpReaderActions-stg' && github.ref == 'refs/heads/fix/research-board-all-reviewed-identities-20261124'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Download 150-case independently verified publisher audit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p original-150-artifact
+          gh run download 45316009381 --repo "$GITHUB_REPOSITORY" --name catalogue-original-150-evidence-45316009381 --dir original-150-artifact
+      - name: Freeze only publisher-reviewed 67 live original work identities
+        run: node tool/stage-reviewed-150-rules.js research-board/reviewed-original-67.json original-150-artifact
+      - name: Commit exact primary-source proof manifest to isolated PR
+        run: |
+          git add research-board/reviewed-original-67.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --cached --quiet; then
+            git commit -m "Freeze 67 reviewed translation identity repair rules"
+            git push origin HEAD:fix/research-board-all-reviewed-identities-20261124
+          fi
