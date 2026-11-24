@@ -1,0 +1,47 @@
+name: Audit 150 catalogued original conflicts
+on:
+  push:
+    branches: [audit/adjudicate-original-credit-150-20261124]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      NODE_OPTIONS: --max-old-space-size=5500
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Validate current published board and origin metadata
+        run: node research-board/validate.js
+      - name: Reclassify every one of the 150 source-credit discrepancies
+        run: node tool/audit-catalogued-original-150.js original-claims-150
+      - name: Validate every source has an adjudication and no migration occurred
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'),assert=require('assert/strict');
+          const data=JSON.parse(fs.readFileSync('original-claims-150/150-case-evidence.json'));
+          assert.equal(data.result.length,150);
+          assert.equal(new Set(data.result.map(x=>x.source)).size,150);
+          assert.equal(data.originalSplit,107);
+          assert.equal(data.nativeCollision,43);
+          assert(data.result.every(x=>!x.automaticallyMergeAllowed));
+          assert(data.result.every(x=>x.sourceContentSha256&&x.originalContentSha256));
+          console.log(JSON.stringify({groups:data.countsByGroup,provisional:data.provisionalFourWay},null,2));
+          NODE
+      - name: Upload per-source publisher evidence and work ID memberships
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: catalogue-original-150-evidence-${{ github.run_id }}
+          path: original-claims-150/
+          retention-days: 21
+          if-no-files-found: warn
