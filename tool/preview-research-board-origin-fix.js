@@ -13,7 +13,7 @@ const root=path.resolve(__dirname,'..');
 function loadPublished(input) {
  const d=path.join(input,'mobile-v3/research-board');
  const manifest=JSON.parse(fs.readFileSync(path.join(d,'manifest.json')));
- return {board:JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(d,manifest.fileName)))),manifest};
+ return {board:require('../research-board/runtime-delivery').loadAudit(input),manifest};
 }
 function ownership(board){
  const owners=new Map(),versions=new Map(),nodes=new Map();

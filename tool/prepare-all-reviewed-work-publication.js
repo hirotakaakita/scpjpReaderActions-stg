@@ -3,7 +3,6 @@
 // 125,100 reader catalog pages or any original catalog ID / reading alias.
 const fs=require('node:fs'),path=require('node:path'),zlib=require('node:zlib');
 const assert=require('node:assert/strict');
-const {digest}=require('../research-board/extract');
 const {loadPublished,ownership}=require('./preview-research-board-origin-fix');
 const plan=require('../research-board/reviewed-original-67.json');
 function validate(old,next,review){
@@ -49,15 +48,7 @@ function run(preview,reviewFile){
  const old=loadPublished('local-data').board;
  const review=JSON.parse(fs.readFileSync(reviewFile));
  const summary=validate(old,next,review);
- const raw=Buffer.from(JSON.stringify(next)),compressed=zlib.gzipSync(raw,{level:9}),
-  sha=digest(compressed),name='board-'+sha+'.json.gz';
- assert(raw.length<160*1024*1024&&compressed.length<32*1024*1024);
- const directory='local-data/mobile-v3/research-board';
- const manifest={schemaVersion:3,revision:next.revision,timestamp:next.overview.generatedAt,
-  fileName:name,bytes:compressed.length,decodedBytes:raw.length,sha256:sha,
-  nodeCount:next.nodes.length,edgeCount:next.edges.length};
- fs.writeFileSync(path.join(directory,name),compressed);
- fs.writeFileSync(path.join(directory,'manifest.json'),JSON.stringify(manifest)+'\n');
+ const manifest=require('../research-board/runtime-delivery').writeDelivery(next,'local-data','local-data/mobile-v3');
  console.log(JSON.stringify({manifest,summary},null,2));
 }
 if(require.main===module)try{

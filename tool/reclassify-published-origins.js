@@ -31,7 +31,7 @@ function reclassify(root=path.join(__dirname,'..')){
  for(const c of before){const next=after.find(a=>a.language===c.language);assert(next,'Lost delivery language');
   assert.deepEqual(identities(next),identities(c),'Changed article membership / IDs: '+c.language);}
  const manifest=generateResearchBoard(input,path.join(input,'mobile-v3'));
- const board=JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(input,'mobile-v3/research-board',manifest.fileName))));
+ const board=require('../research-board/runtime-delivery').loadAudit(input);
  const summary={changedPages:changed.length,unclassified:board.nodes.filter(n=>n[8]==='other').length,
    catalogPages:board.overview.sourcePageCount,manifest};
  fs.mkdirSync(path.join(root,'partial-data/origin-publication'),{recursive:true});
