@@ -1,34 +1,29 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const {normalizePage}=require('../research-board/extract');
-const {applyReviewedOriginIdentities,RULES}=require('../research-board/reviewed-origin-identities');
-const src=RULES[0].source,original=RULES[0].original;
-function fixture(sha=RULES[0].sha,credited=original){
- const p={...normalizePage(src),siteBranch:'vn',branch:'en',pageType:'scp-series',kindIndex:0},
-  o={...normalizePage(original),siteBranch:'es',branch:'es',pageType:'scp-series-es',kindIndex:0};
- const sources=new Map([
-  [p.id,{record:{url:src,contentSha256:sha,originalSources:[{url:credited,method:'credit_original_label'}]},lastAttempt:{status:'success'}}],
-  [o.id,{record:{url:original,contentSha256:'a'.repeat(64),originalSources:[]},lastAttempt:{status:'success'}}]
- ]);
- return {p,o,sources};
+const {reviewedSameSiteAlias,CASE}=require('../research-board/reviewed-origin-identities');
+function fixture(sha=CASE.capturedSha,credit=CASE.publishedOriginal){
+ const p={...normalizePage(CASE.source),siteBranch:'vn',branch:'es',pageType:'scp-series-es',kindIndex:0};
+ const o={...normalizePage(CASE.publishedOriginal),siteBranch:'es',branch:'es',pageType:'scp-series-es',kindIndex:0};
+ const v={...normalizePage(CASE.parallelVietnamese),siteBranch:'vn',branch:'es',pageType:'scp-series-es',kindIndex:0};
+ const sources=new Map([[p.id,{record:{url:p.url,contentSha256:sha,originalSources:[{url:credit,method:'credit_original_label'}]},lastAttempt:{status:'success'}}]]);
+ const args={source:p,target:o,left:[p],right:[o,v],byPage:new Map([[p.id,p],[o.id,o],[v.id,v]]),sources};
+ return {args,p,o,v};
 }
-test('reviewed Vietnamese SCP-179 inherits native Spanish ES-026 original identity',()=>{
+test('reviewed source allows exact second Vietnamese URL only when publisher original and capture agree',()=>{
  const f=fixture();
- const edits=applyReviewedOriginIdentities([f.p,f.o],f.sources,{strict:true});
- assert.equal(edits.length,1);
- assert.equal(f.p.branch,'es');assert.equal(f.p.pageType,'scp-series-es');
- assert.equal(f.o.branch,'es');
+ assert.equal(reviewedSameSiteAlias(f.args),true);
 });
-test('mismatched source capture hash cannot authorize identity correction',()=>{
+test('reject a changed source capture instead of silently merging it',()=>{
  const f=fixture('b'.repeat(64));
- assert.throws(()=>applyReviewedOriginIdentities([f.p,f.o],f.sources),/Unsafe reviewed original/);
+ assert.throws(()=>reviewedSameSiteAlias(f.args),/Reviewed publisher source changed/);
 });
-test('credit to another original cannot authorize identity correction',()=>{
- const f=fixture(RULES[0].sha,'https://lafundacionscp.wikidot.com/scp-es-179');
- assert.throws(()=>applyReviewedOriginIdentities([f.p,f.o],f.sources),/Unsafe reviewed original/);
+test('reject alias if credited original is a different work',()=>{
+ const f=fixture(CASE.capturedSha,'https://lafundacionscp.wikidot.com/scp-es-179');
+ assert.equal(reviewedSameSiteAlias(f.args),false);
 });
-test('unrelated page pairs are not modified',()=>{
- const n={...normalizePage('https://scp-vn.wikidot.com/scp-0001'),branch:'en'};
- assert.deepEqual(applyReviewedOriginIdentities([n],new Map()),[]);
- assert.equal(n.branch,'en');
+test('reject unrelated same-site source and a missing competing version',()=>{
+ const f=fixture();
+ assert.equal(reviewedSameSiteAlias({...f.args,left:[],source:f.o}),false);
+ assert.equal(reviewedSameSiteAlias({...f.args,right:[f.o]}),false);
 });
