@@ -14,6 +14,12 @@ const REVIEWED_WRONG_CREDITS=new Map([
    sourceContentHash:'0bb653eda54b3b84c100eecaa9ecf84db472bae2aa7f44abb6683f095002bb1b',
    explanation:'Publisher credit identifies SCP-024 but both Czech source and English SCP-025 describe the same wooden wardrobe; SCP-024 describes a hazardous game-show studio.'
  }],
+ ['https://scp-cs.wikidot.com/scp-590',{
+   publisherPage:null,badOriginal:'https://scp-wiki.wikidot.com/scp-500',
+   sourceContentHash:'8029e694b7bfe9d8e76b48fb9a1d899ae1af0cc0b026c505be2fea5a62d99a1c',
+   retiredOriginal:'https://scp-wiki.wikidot.com/scp-590',
+   explanation:'Czech SCP-590 concerns a healing teenage boy; SCP-500 is a container of red curative pills referenced within Czech SCP-590, not its original. The old English SCP-590 has been retired and redirects to Bright Works Message.'
+ }],
  ['https://scp-cs.wikidot.com/scp-068',{
    publisherPage:'https://scp-wiki.wikidot.com/scp-068',badOriginal:'https://scp-wiki.wikidot.com/scp-536',
    sourceContentHash:'f5bd46480312ab6b9f507f6c580a7425bd05e66de5ffb9e50161040db9ed6490',
@@ -34,7 +40,10 @@ function auditCase(x) {
  let hardening='Read independent publisher source and content before allowing graph identity mutation.';
  if(correctedCredit){
   structuralGroup='verified_publisher_credit_error';
-  classification='誤分裂';decision='fix_proven_wrong_credit_and_join_actual_work';
+  classification=correctedCredit.retiredOriginal?'正常な別作品':'誤分裂';
+  decision=correctedCredit.retiredOriginal?
+   'do_not_attach_to_referenced_scp500_review_retired_origin_visibility':
+   'fix_proven_wrong_credit_and_join_actual_work';
   confidence='independent_publisher_body_crosscheck';
   basis=correctedCredit.explanation;
   hardening='Do not replace the publisher claim in evidence. Correct work identity in a separately tested graph change.';
@@ -92,7 +101,8 @@ function auditCase(x) {
   sourceCheckedAt:x.sourceCheckedAt,originalCheckedAt:x.originalCheckedAt,
   publisherCreditQuotes:x.sourceClaimQuotes,
   reviewedActualOriginal:correctedCredit?.publisherPage||null,
-  publisherCorroboration: correctedCredit?[x.source,correctedCredit.publisherPage,correctedCredit.badOriginal]: x.resolvedOriginal===NOTICE?[
+  reviewedRetiredOriginal:correctedCredit?.retiredOriginal||null,
+  publisherCorroboration: correctedCredit?[x.source,correctedCredit.publisherPage||correctedCredit.retiredOriginal,correctedCredit.badOriginal]: x.resolvedOriginal===NOTICE?[
    'https://scp-wiki.wikidot.com/bright-works-message',
    'https://scp-wiki.wikidot.com/forum/t-17573548/discussion-bright-works-project-q-a'
   ]: sourceHost==='scp-int.wikidot.com'&&sourcePath.startsWith('/unofficial:')?[
