@@ -1,0 +1,55 @@
+name: Publish validated display-only original-availability metadata on isolated branch
+on:
+  push:
+    branches: [fix/hide-non-catalog-originals-20261124]
+    paths:
+      - 'tool/prepare-research-board-visibility-publication.js'
+      - '.github/workflows/research-board-original-visibility-publish.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  prepare-and-commit:
+    if: github.repository == 'hirotakaakita/scpjpReaderActions-stg' && github.ref == 'refs/heads/fix/hide-non-catalog-originals-20261124'
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    env:
+      NODE_OPTIONS: --max-old-space-size=5500
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Test publisher-availability visibility policy
+        run: node --test test/research-board-original-availability.test.js
+      - name: Rebuild full graph in isolated preview
+        run: node tool/preview-research-board-origin-fix.js preview-missing-original-visibility
+      - name: Prepare new STG board and check all previous URLs aliases and edges
+        run: node tool/prepare-research-board-visibility-publication.js preview-missing-original-visibility
+      - name: Validate newly packaged published graph against all current source records
+        run: node research-board/validate.js
+      - name: Run complete Node regression suite
+        run: node --test
+      - name: Commit only new board binary and its manifest to isolated branch
+        run: |
+          FILE=$(node -p "require('./local-data/mobile-v3/research-board/manifest.json').fileName")
+          git add -f local-data/mobile-v3/research-board/manifest.json "local-data/mobile-v3/research-board/$FILE"
+          git diff --cached --stat
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish STG visibility metadata without reassigning any work"
+            git push origin HEAD:fix/hide-non-catalog-originals-20261124
+          fi
+      - name: Upload proof and migration preview
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: visibility-publication-proof-${{ github.run_id }}
+          path: preview-missing-original-visibility/
+          retention-days: 21
+          if-no-files-found: warn
