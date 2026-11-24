@@ -1,0 +1,53 @@
+name: Validate reviewed original work corrections
+on:
+  push:
+    branches: [fix/research-board-reviewed-origin-identity-20261124]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reviewed-origin-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NODE_OPTIONS: --max-old-space-size=5500
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Source-hash and official-original regression tests
+        run: node --test test/research-board-reviewed-origin-identities.test.js
+      - name: Rebuild work identity from immutable article catalog in isolated preview
+        run: node tool/preview-research-board-origin-fix.js preview-reviewed-originals
+      - name: Prevent unrelated pages from changing work identity
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'),z=require('zlib'),assert=require('node:assert/strict');
+          const p='preview-reviewed-originals/';
+          const b=JSON.parse(z.gunzipSync(fs.readFileSync(p+'preview-board.json.gz')));
+          const s=JSON.parse(fs.readFileSync(p+'SUMMARY.json'));
+          const owners=new Map(b.nodes.flatMap(n=>n[13].map(v=>[v[1],n[14][0]])));
+          const vn='https://scp-vn.wikidot.com/scp-179';
+          const es='https://lafundacionscp.wikidot.com/scp-es-026';
+          const other='https://lafundacionscp.wikidot.com/scp-es-179';
+          assert.equal(owners.get(vn),owners.get(es),'The verified original must share a work');
+          assert.notEqual(owners.get(vn),owners.get(other),'Native ES-179 is distinct');
+          assert.equal(s.pageCountAfter,125100);
+          assert.equal(s.validated,true);
+          const lines=fs.readFileSync(p+'moved-page-owners.csv','utf8').trim().split(/\\r?\\n/);
+          console.log(JSON.stringify({originalRevision:s.revisionBefore,nextRevision:s.revisionAfter,
+            moved:s.movedPages,previewRows:lines.length-1,edges:s.edgesAfter},null,2));
+          NODE
+      - name: Upload read-only graph diff and publisher proof
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: reviewed-origin-preview-${{ github.run_id }}
+          path: preview-reviewed-originals/
+          retention-days: 14
+          if-no-files-found: warn
