@@ -96,7 +96,7 @@ function run(out='original-claims-404'){
    '- '+x.source+' => '+x.resolvedOriginal+' ('+x.detectedIssue+')')
  ];
  fs.writeFileSync(path.join(out,'REVIEW.md'),summary.join('\n')+'\n');
- if(report.count!==404)throw Error('Unexpected current unresolved count '+report.count+'; inventory preserved for triage');
+ // 404 is the historical inventory, not a limit on future catalog updates.
  console.log(JSON.stringify({revision:report.revision,unresolved:report.count,categories:report.detectedCounts,
   classifications:report.classes,ambiguous:report.ambiguous.length},null,2));
 }

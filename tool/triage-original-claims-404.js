@@ -35,7 +35,8 @@ function run(input,out){
  const r=JSON.parse(fs.readFileSync(input,'utf8'));
  // Display-only metadata can change the graph revision without changing
  // these source-credit cases. Validate the inventory, not its old revision.
- if(r.count!==404||r.cases.length!==r.count)throw Error('Unexpected candidate count');
+ if(!Number.isInteger(r.count)||!Array.isArray(r.cases)||r.cases.length!==r.count)
+   throw Error('Unexpected candidate count');
  const rows=r.cases.map(evaluate),counts={};
  for(const c of rows)counts[c.proposedClassification]=(counts[c.proposedClassification]||0)+1;
  fs.mkdirSync(out,{recursive:true});
@@ -47,7 +48,7 @@ function run(input,out){
   'originalWork','sourceTitle','originalTitle','sourceWorkMembers','targetWorkMembers',
   'sourceContentSha','originalContentSha','competingNativeUrls','remainingChecks']));
  fs.writeFileSync(path.join(out,'SUMMARY.md'),[
-  '# 404 original-credit cases: provisional four-way triage','',
+  '# '+r.count+' original-credit cases: provisional four-way triage','',
   'Revision: '+r.revision,'Total: '+rows.length,
   '','| Provisional classification | Cases |','| --- | ---: |',
   ...Object.entries(counts).map(([k,v])=>'| '+k+' | '+v+' |'),

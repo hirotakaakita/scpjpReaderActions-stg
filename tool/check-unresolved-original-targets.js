@@ -1,5 +1,5 @@
 'use strict';
-// Read-only publisher-target HTTP evidence for all 323 unresolved claims.
+// Read-only publisher-target HTTP evidence for all currently unresolved claims.
 // HTTP status or a title similarity NEVER proves that two article bodies are identical.
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
 const {candidateReview}=require('./classify-original-claims-404');
@@ -38,7 +38,6 @@ async function run(out){
  const {board}=loadBoard(),sources=readSources('local-data/research-board-sources');
  const report=candidateReview(board,sources);
  const pending=report.cases.map(evaluate).filter(x=>x.proposedClassification==='証拠不足');
- if(pending.length!==323)throw Error('Expected 323 pending, found '+pending.length);
  const urls=[...new Set(pending.map(x=>x.resolvedOriginal))].sort();
  const evidence=new Map();const queues=new Map();
  for(const url of urls){
@@ -80,7 +79,7 @@ async function run(out){
  fs.mkdirSync(out,{recursive:true});
  fs.writeFileSync(path.join(out,'live-target-evidence.json'),JSON.stringify(result,null,2)+'\n');
  fs.writeFileSync(path.join(out,'LIVE-EVIDENCE.md'),[
-  '# Current publisher target availability for all 323 outstanding candidates','',
+  '# Current publisher target availability for all '+cases.length+' outstanding candidates','',
   'Current graph revision: '+result.revision,'Unresolved cases inspected: '+cases.length,
   'Unique original publisher targets: '+urls.length,'Attempted: '+evidence.size,
   '','| Outcome | Unique targets |','| --- | ---: |',
