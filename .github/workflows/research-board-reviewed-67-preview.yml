@@ -32,12 +32,6 @@ jobs:
         run: node --test test/research-board-reviewed-150-work-repairs.test.js test/research-board-reviewed-transitive-identity-proof.test.js
       - name: Rebuild complete 125100-page graph in isolated preview
         run: node tool/preview-research-board-origin-fix.js preview-all-67-reviewed
-      - name: Download original all-150 publisher proof of distinct works and retirement
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          mkdir -p original-150-artifact
-          gh run download 45316009381 --repo "$GITHUB_REPOSITORY" --name catalogue-original-150-evidence-45316009381 --dir original-150-artifact
       - name: Require all reviewed same-work merges and all distinct works remain distinct
         run: |
           node - <<'NODE'
@@ -46,7 +40,7 @@ jobs:
           const board=JSON.parse(z.gunzipSync(fs.readFileSync(q+'preview-board.json.gz')));
           const summary=JSON.parse(fs.readFileSync(q+'SUMMARY.json'));
           const plan=require('./research-board/reviewed-original-67.json');
-          const review=require('./original-150-artifact/FINAL-150.json');
+          const distinct=require('./research-board/reviewed-distinct-43.json');
           const owners=new Map(board.nodes.flatMap(n=>n[13].map(v=>[v[1],n[14][0]])));
           assert.equal(owners.size,125100);
           assert.equal(summary.pageCountAfter,125100);
@@ -61,10 +55,13 @@ jobs:
               assert.notEqual(owners.get(rule.source),owners.get(rule.creditedOriginal),
                 'A wrong credited work was merged: '+rule.source);
           }
+          assert.equal(distinct.publisherAuditRevision,plan.reviewedBoardRevision);
+          assert.equal(distinct.pairs.length,43);
           let actualNormal=0;
-          for(const row of review.rows.filter(x=>x.classification==='正常な別作品')){
-            assert.notEqual(owners.get(row.source),owners.get(row.creditedOriginal),
-              'Distinct original/archived work accidentally merged: '+row.source);
+          for(const [source,original] of distinct.pairs){
+            assert(owners.has(source)&&owners.has(original),'Distinct publisher page lost: '+source);
+            assert.notEqual(owners.get(source),owners.get(original),
+              'Distinct original/archived work accidentally merged: '+source);
             actualNormal++;
           }
           assert.equal(actualNormal,43);
