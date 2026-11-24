@@ -41,6 +41,20 @@ test('changing audit evidence does not change the runtime revision or bytes',()=
   board.identityReview=[{reason:'publisher-only review'}];board.workIdentityProofs=[{method:'publisher-only proof'}];
   assert.deepEqual(runtimeBoard(board),before);
 });
+test('retired-page-only references are omitted before proof records are stripped',()=>{
+  const board=fixture();
+  const retired=board.proofs[0][0];
+  board.hiddenRetiredPageUrls=[retired];board.hiddenRetiredNodeIds=[];
+  assert.deepEqual(runtimeBoard(board).edges,[]);
+  const live='https://scp-jp.wikidot.com/scp-001';
+  board.nodes[0][13].push(['jp',live,'scp-001','Japanese title','fetched']);
+  board.proofs.push([live,'quote','article_body','b'.repeat(64),'','','2026-11-24']);
+  board.edges[0][4].push(1);
+  const runtime=runtimeBoard(board);
+  assert.deepEqual(runtime.edges,[[0,1]]);
+  assert.deepEqual(runtime.hiddenRetiredPageUrls,[retired]);
+  assert(!('proofs' in runtime));
+});
 test('publisher retains a revision-paired audit outside the downloadable payload',t=>{
   const root=fs.mkdtempSync(path.join(os.tmpdir(),'runtime-board-'));
   t.after(()=>fs.rmSync(root,{recursive:true,force:true}));

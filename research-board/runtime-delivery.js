@@ -4,7 +4,8 @@ const fs=require('node:fs'),path=require('node:path'),zlib=require('node:zlib');
 const {digest}=require('./extract');
 const overviewKeys=['pageCount','tileSize','width','height','geometryWarp',
   'sections','branches','ambiguousWorkKeys','ambiguousArticleIds',
-  'originalAbsentVisibilityPolicy','hiddenOriginalUnavailableWorkCount','license','licenseUrl'];
+  'originalAbsentVisibilityPolicy','hiddenOriginalUnavailableWorkCount',
+  'retiredArticleVisibilityPolicy','hiddenRetiredPageCount','hiddenRetiredWorkCount','license','licenseUrl'];
 function runtimeBoard(board){
   const overview=Object.fromEntries(overviewKeys.filter(k=>board.overview[k]!==undefined).map(k=>[k,board.overview[k]]));
   // Lanes and graph-building metadata have no display consumer.
@@ -26,11 +27,16 @@ function runtimeBoard(board){
     if(n[14][1]&&!ids.includes(n[14][1]))row.push(n[14][1]);
     return row;
   });
-  const edges=board.edges.filter(e=>board.overview.types[e[2]]==='references').map(e=>e.slice(0,2));
+  const retired=new Set(board.hiddenRetiredPageUrls||[]);
+  // Evaluate page-level evidence before omitting the publisher's proof records.
+  const edges=board.edges.filter(e=>board.overview.types[e[2]]==='references'&&
+    (e[4]||[e[3]]).some(id=>!retired.has(board.proofs[id][0]))).map(e=>e.slice(0,2));
   overview.nodeCount=nodes.length;overview.sourcePageCount=board.overview.sourcePageCount;
   overview.edgeCount=edges.length;
   const content={schemaVersion:4,overview,nodes,edges,
-    hiddenOriginalUnavailableNodeIds:board.hiddenOriginalUnavailableNodeIds||[]};
+    hiddenOriginalUnavailableNodeIds:board.hiddenOriginalUnavailableNodeIds||[],
+    hiddenRetiredPageUrls:board.hiddenRetiredPageUrls||[],
+    hiddenRetiredNodeIds:board.hiddenRetiredNodeIds||[]};
   const revision=digest(JSON.stringify(content)).slice(0,20);
   return {...content,revision,overview:{...overview,schemaVersion:4,revision}};
 }

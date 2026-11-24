@@ -21,7 +21,7 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Visibility-policy regression tests
-        run: node --test test/research-board-original-availability.test.js
+        run: node --test test/research-board-original-availability.test.js test/research-board-retired-visibility.test.js
       - name: Rebuild from official catalog and inspect exactly which work IDs are hidden
         run: node tool/preview-research-board-origin-fix.js preview-missing-original-visibility
       - name: Enforce non-destructive graph visibility policy
@@ -36,6 +36,20 @@ jobs:
           assert.equal(new Set(ids).size,ids.length,'Duplicate hidden node ID');
           assert(ids.every(x=>Number.isInteger(x)&&x>=0&&x<b.nodes.length),'Hidden node missing');
           assert.equal(b.overview.hiddenOriginalUnavailableWorkCount,ids.length);
+          const retired=b.hiddenRetiredPageUrls||[], retiredNodes=b.hiddenRetiredNodeIds||[];
+          assert.equal(b.overview.hiddenRetiredPageCount,retired.length);
+          assert.equal(b.overview.hiddenRetiredWorkCount,retiredNodes.length);
+          assert.equal(b.overview.retiredArticleVisibilityPolicy,
+            'hide_publisher_withdrawn_pages_preserve_live_versions_v1');
+          assert(retired.length>0,'Expected the publisher retirement placeholders');
+          assert.equal(new Set(retired).size,retired.length);
+          const byUrl=new Map(b.nodes.flatMap(n=>n[13].map(v=>[v[1],n[0]])));
+          assert(retired.every(url=>byUrl.has(url)),'Retired article not part of graph');
+          const retiredSet=new Set(retired);
+          assert(retiredNodes.every(id=>b.nodes[id][13].every(v=>retiredSet.has(v[1]))));
+          const retiredNodeSet=new Set(retiredNodes);
+          assert(b.nodes.every(n=>!n[13].every(v=>retiredSet.has(v[1]))||retiredNodeSet.has(n[0])),
+            'An entirely retired work would remain visible');
           assert.equal(s.movedPages,0,'Catalog work IDs were changed');
           assert.equal(s.addedEdges+s.removedEdges,0,'Graph relations changed');
           assert.equal(s.pageCountAfter,125100,'Catalog page coverage changed');

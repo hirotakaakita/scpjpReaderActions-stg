@@ -158,6 +158,8 @@ function buildBoard(catalogs, sources) {
       .map(basis => [basis, nodes.filter(n => n.classificationBasis === basis).length])),
     semanticCoverage: 'partial_source_specific_only', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/' };
   overview.workIdentityPolicy='original_catalog_and_explicit_credits_v1';
+  overview.publisherReviewedIdentityCount=collapsed.publisherReviewed.reviewedCount;
+  overview.publisherReviewedWorkMerges=collapsed.publisherReviewed.mergedGroups.length;
   overview.bodyLinkCoverage = {
     checkedPages: sourcePages.filter(p => p.coverage === 'fetched' && sources.get(p.id)?.record?.linkExtractionVersion >= 6).length,
     totalPages: sourcePages.length,
@@ -168,10 +170,16 @@ function buildBoard(catalogs, sources) {
   overview.ambiguousWorkKeys=collapsed.ambiguousWorkKeys;
   overview.ambiguousArticleIds=collapsed.ambiguousArticleIds;
   const hiddenOriginalUnavailable = require('./original-availability').hiddenOriginalUnavailableNodeIds(compact,sources);
+  const retired = require('./retired-visibility').retiredVisibility(compact,sources);
+  overview.retiredArticleVisibilityPolicy = 'hide_publisher_withdrawn_pages_preserve_live_versions_v1';
+  overview.hiddenRetiredPageCount = retired.pageUrls.length;
+  overview.hiddenRetiredWorkCount = retired.nodeIds.length;
   overview.originalAbsentVisibilityPolicy = 'hide_work_from_visualization_keep_catalog_v1';
   overview.hiddenOriginalUnavailableWorkCount = hiddenOriginalUnavailable.nodeIds.length;
   const content = { schemaVersion: 3, overview, nodes: compact, edges, proofs,
     hiddenOriginalUnavailableNodeIds: hiddenOriginalUnavailable.nodeIds,
+    hiddenRetiredPageUrls: retired.pageUrls,
+    hiddenRetiredNodeIds: retired.nodeIds,
     workIdentityProofs:collapsed.identityProofs,identityReview };
   const revision = digest(JSON.stringify(content)).slice(0, 20);
   return { ...content, revision, overview: { ...overview, revision } };
