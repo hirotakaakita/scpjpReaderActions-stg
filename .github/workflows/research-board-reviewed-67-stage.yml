@@ -5,18 +5,21 @@ on:
     paths:
       - 'tool/stage-reviewed-150-rules.js'
       - '.github/workflows/research-board-reviewed-67-stage.yml'
+  pull_request:
+    branches: [master]
   workflow_dispatch:
 permissions:
   contents: write
   actions: read
 jobs:
   stage-reviewed-rules:
-    if: github.repository == 'hirotakaakita/scpjpReaderActions-stg' && github.ref == 'refs/heads/fix/research-board-all-reviewed-identities-20261124'
+    if: github.repository == 'hirotakaakita/scpjpReaderActions-stg' && (github.head_ref == 'fix/research-board-all-reviewed-identities-20261124' || github.ref == 'refs/heads/fix/research-board-all-reviewed-identities-20261124')
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
         with:
+          ref: ${{ github.head_ref || github.ref_name }}
           persist-credentials: true
       - uses: actions/setup-node@v6
         with:
