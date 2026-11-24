@@ -1,7 +1,7 @@
-name: Publish validated original-availability and retired-page visibility on isolated branch
+name: Publish validated display-only original-availability metadata on isolated branch
 on:
   push:
-    branches: [fix/research-board-retired-visibility-20261124]
+    branches: [fix/hide-non-catalog-originals-20261124]
     paths:
       - 'tool/prepare-research-board-visibility-publication.js'
       - '.github/workflows/research-board-original-visibility-publish.yml'
@@ -10,7 +10,7 @@ permissions:
   contents: write
 jobs:
   prepare-and-commit:
-    if: github.repository == 'hirotakaakita/scpjpReaderActions-stg' && github.ref == 'refs/heads/fix/research-board-retired-visibility-20261124'
+    if: github.repository == 'hirotakaakita/scpjpReaderActions-stg' && github.ref == 'refs/heads/fix/hide-non-catalog-originals-20261124'
     runs-on: ubuntu-latest
     timeout-minutes: 50
     env:
@@ -24,8 +24,8 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
-      - name: Test publisher-retired and original visibility policy
-        run: node --test test/research-board-original-availability.test.js test/research-board-retired-visibility.test.js
+      - name: Test publisher-availability visibility policy
+        run: node --test test/research-board-original-availability.test.js
       - name: Rebuild full graph in isolated preview
         run: node tool/preview-research-board-origin-fix.js preview-missing-original-visibility
       - name: Prepare new STG board and check all previous URLs aliases and edges
@@ -42,8 +42,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if ! git diff --cached --quiet; then
-            git commit -m "Publish STG retired-page visibility without reassigning works"
-            git push origin HEAD:fix/research-board-retired-visibility-20261124
+            git commit -m "Publish STG visibility metadata without reassigning any work"
+            git push origin HEAD:fix/hide-non-catalog-originals-20261124
           fi
       - name: Upload proof and migration preview
         if: always()
