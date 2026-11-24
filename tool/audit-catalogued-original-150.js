@@ -8,6 +8,12 @@ const {readSources}=require('../research-board/source-store');
 const {candidateReview}=require('./classify-original-claims-404');
 const NOTICE='https://scp-wiki.wikidot.com/bright-works-message';
 const OTHER_TITLES=new Set(['ブライト関連作品に関するお知らせ','Bright Works Message','STAFF PLACEHOLDER']);
+const REVIEWED_REDIRECT_IDENTITY=new Map([
+ ['https://scp-vn.wikidot.com/scp-4000','https://scp-wiki.wikidot.com/taboo'],
+ ['https://scp-zh-tr.wikidot.com/scp-4000','https://scp-wiki.wikidot.com/taboo']
+]);
+// https://scp-wiki.wikidot.com/scp-4000 redirects to /taboo,
+// so separate same-publisher URL identities are not separate published works.
 const REVIEWED_WRONG_CREDITS=new Map([
  ['https://scp-cs.wikidot.com/scp-025',{
    publisherPage:'https://scp-wiki.wikidot.com/scp-025',badOriginal:'https://scp-wiki.wikidot.com/scp-024',
@@ -34,11 +40,18 @@ function auditCase(x) {
  const mix=sourceTitles.filter(t=>!OTHER_TITLES.has(t));
  let structuralGroup,classification='証拠不足',decision='hold',basis,confidence='unconfirmed';
  const correctedCredit=REVIEWED_WRONG_CREDITS.get(x.source);
+ const confirmedRedirect=REVIEWED_REDIRECT_IDENTITY.get(x.source)===x.resolvedOriginal;
  if(correctedCredit &&
   (correctedCredit.badOriginal!==x.resolvedOriginal || correctedCredit.sourceContentHash!==x.sourceContentSha))
    throw Error('Reviewed publisher exception changed; stop and reverify: '+x.source);
  let hardening='Read independent publisher source and content before allowing graph identity mutation.';
- if(correctedCredit){
+ if(confirmedRedirect){
+  structuralGroup='verified_publisher_redirect_alias';
+  classification='誤分裂';decision='unify_current_publisher_alias_same_work';
+  confidence='independent_publisher_redirect';
+  basis='The English /scp-4000 page redirects to the credited /taboo original, which is the same published work.';
+  hardening='Merge only the two corroborated publisher aliases with their cross-language translations, preserving distinct native originals.';
+ }else if(correctedCredit){
   structuralGroup='verified_publisher_credit_error';
   classification=correctedCredit.retiredOriginal?'正常な別作品':'誤分裂';
   decision=correctedCredit.retiredOriginal?
@@ -102,6 +115,7 @@ function auditCase(x) {
   publisherCreditQuotes:x.sourceClaimQuotes,
   reviewedActualOriginal:correctedCredit?.publisherPage||null,
   reviewedRetiredOriginal:correctedCredit?.retiredOriginal||null,
+  verifiedPublisherRedirect:confirmedRedirect?['https://scp-wiki.wikidot.com/scp-4000',x.resolvedOriginal]:null,
   publisherCorroboration: correctedCredit?[x.source,correctedCredit.publisherPage||correctedCredit.retiredOriginal,correctedCredit.badOriginal]: x.resolvedOriginal===NOTICE?[
    'https://scp-wiki.wikidot.com/bright-works-message',
    'https://scp-wiki.wikidot.com/forum/t-17573548/discussion-bright-works-project-q-a'
