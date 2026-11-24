@@ -25,10 +25,12 @@ function validate(old,next,review){
   if(rule.method==='verified_wrong_original_credit')
    assert.notEqual(x,b.owners.get(rule.creditedOriginal),'Bad publisher credit incorrectly merged: '+rule.source);
  }
- assert.equal(review.rows.filter(x=>x.classification==='正常な別作品').length,43);
- for(const item of review.rows.filter(x=>x.classification==='正常な別作品'))
-  assert.notEqual(b.owners.get(item.source),b.owners.get(item.creditedOriginal),
-    'Independent edition or separate work was merged: '+item.source);
+ assert.equal(review.pairs.length,43);
+ for(const [source,original] of review.pairs){
+  assert(b.owners.has(source)&&b.owners.has(original),'A distinct article was lost');
+  assert.notEqual(b.owners.get(source),b.owners.get(original),
+    'Independent edition or separate work was merged: '+source);
+ }
  assert.equal(next.hiddenRetiredPageUrls.length,45);
  assert.equal(next.overview.hiddenRetiredPageCount,45);
  assert.equal(next.overview.hiddenRetiredWorkCount,next.hiddenRetiredNodeIds.length);
@@ -60,6 +62,6 @@ function run(preview,reviewFile){
 }
 if(require.main===module)try{
  run(process.argv[2]||'preview-all-67-reviewed',
-  process.argv[3]||'original-150-artifact/FINAL-150.json');
+  process.argv[3]||'research-board/reviewed-distinct-43.json');
 }catch(e){console.error(e);process.exitCode=1}
 module.exports={run,validate};
