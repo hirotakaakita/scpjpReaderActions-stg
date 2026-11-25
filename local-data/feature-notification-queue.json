@@ -5,8 +5,8 @@
       "lastSentWindow": null,
       "items": [
         {
-          "itemId": "weekly-002",
-          "titleJP": "ここではない場所"
+          "itemId": "weekly-003",
+          "titleJP": "使ってはいけない日用品"
         }
       ]
     },
@@ -14,8 +14,8 @@
       "lastSentWindow": null,
       "items": [
         {
-          "itemId": "weekly-002",
-          "titleJP": "Spatial"
+          "itemId": "weekly-003",
+          "titleJP": "Artifact"
         }
       ]
     },
@@ -23,8 +23,8 @@
       "lastSentWindow": null,
       "items": [
         {
-          "itemId": "weekly-002",
-          "titleJP": "空间"
+          "itemId": "weekly-003",
+          "titleJP": "物品"
         }
       ]
     },
@@ -32,8 +32,8 @@
       "lastSentWindow": null,
       "items": [
         {
-          "itemId": "weekly-002",
-          "titleJP": "Prostorové"
+          "itemId": "weekly-003",
+          "titleJP": "Artefakt"
         }
       ]
     },
@@ -41,8 +41,8 @@
       "lastSentWindow": null,
       "items": [
         {
-          "itemId": "weekly-002",
-          "titleJP": "Räumlich"
+          "itemId": "weekly-003",
+          "titleJP": "Artefakt"
         }
       ]
     },
@@ -50,8 +50,8 @@
       "lastSentWindow": null,
       "items": [
         {
-          "itemId": "weekly-002",
-          "titleJP": "Espacial"
+          "itemId": "weekly-003",
+          "titleJP": "Artefacto"
         }
       ]
     },
@@ -59,8 +59,8 @@
       "lastSentWindow": null,
       "items": [
         {
-          "itemId": "weekly-002",
-          "titleJP": "Spatial"
+          "itemId": "weekly-003",
+          "titleJP": "Artefact"
         }
       ]
     },
@@ -68,8 +68,8 @@
       "lastSentWindow": null,
       "items": [
         {
-          "itemId": "weekly-002",
-          "titleJP": "Spaziale"
+          "itemId": "weekly-003",
+          "titleJP": "Artefatto"
         }
       ]
     },
@@ -77,8 +77,8 @@
       "lastSentWindow": null,
       "items": [
         {
-          "itemId": "weekly-002",
-          "titleJP": "공간"
+          "itemId": "weekly-003",
+          "titleJP": "물품"
         }
       ]
     },
@@ -86,8 +86,8 @@
       "lastSentWindow": null,
       "items": [
         {
-          "itemId": "weekly-002",
-          "titleJP": "Пространство"
+          "itemId": "weekly-003",
+          "titleJP": "Предмет"
         }
       ]
     },
@@ -95,8 +95,8 @@
       "lastSentWindow": null,
       "items": [
         {
-          "itemId": "weekly-002",
-          "titleJP": "Przestrzenny"
+          "itemId": "weekly-003",
+          "titleJP": "Artefakt"
         }
       ]
     },
@@ -104,8 +104,8 @@
       "lastSentWindow": null,
       "items": [
         {
-          "itemId": "weekly-002",
-          "titleJP": "Espacial"
+          "itemId": "weekly-003",
+          "titleJP": "Artefato"
         }
       ]
     },
@@ -113,8 +113,8 @@
       "lastSentWindow": null,
       "items": [
         {
-          "itemId": "weekly-002",
-          "titleJP": "มิติและพื้นที่"
+          "itemId": "weekly-003",
+          "titleJP": "วัตถุ"
         }
       ]
     },
@@ -122,8 +122,8 @@
       "lastSentWindow": null,
       "items": [
         {
-          "itemId": "weekly-002",
-          "titleJP": "Просторове"
+          "itemId": "weekly-003",
+          "titleJP": "Артефакт"
         }
       ]
     },
@@ -131,8 +131,8 @@
       "lastSentWindow": null,
       "items": [
         {
-          "itemId": "weekly-002",
-          "titleJP": "Không gian"
+          "itemId": "weekly-003",
+          "titleJP": "Vật thể"
         }
       ]
     },
@@ -140,8 +140,8 @@
       "lastSentWindow": null,
       "items": [
         {
-          "itemId": "weekly-002",
-          "titleJP": "空間"
+          "itemId": "weekly-003",
+          "titleJP": "物品"
         }
       ]
     },
@@ -149,8 +149,8 @@
       "lastSentWindow": null,
       "items": [
         {
-          "itemId": "weekly-002",
-          "titleJP": "Χώρος"
+          "itemId": "weekly-003",
+          "titleJP": "Αντικείμενα"
         }
       ]
     },
@@ -158,8 +158,8 @@
       "lastSentWindow": null,
       "items": [
         {
-          "itemId": "weekly-002",
-          "titleJP": "Rum"
+          "itemId": "weekly-003",
+          "titleJP": "Föremål"
         }
       ]
     },
@@ -167,8 +167,35 @@
       "lastSentWindow": null,
       "items": [
         {
-          "itemId": "weekly-002",
-          "titleJP": "Uzay"
+          "itemId": "weekly-003",
+          "titleJP": "Nesneler"
+        }
+      ]
+    },
+    "hu": {
+      "lastSentWindow": null,
+      "items": [
+        {
+          "itemId": "weekly-003",
+          "titleJP": "Tárgyak"
+        }
+      ]
+    },
+    "pig": {
+      "lastSentWindow": null,
+      "items": [
+        {
+          "itemId": "weekly-003",
+          "titleJP": "Artifact"
+        }
+      ]
+    },
+    "sl": {
+      "lastSentWindow": null,
+      "items": [
+        {
+          "itemId": "weekly-003",
+          "titleJP": "Predmeti"
         }
       ]
     }
