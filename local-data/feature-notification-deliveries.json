@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "deliveries": [
+    {
+      "id": "ua/2026-11-25",
+      "lang": "ua",
+      "window": "2026-11-25",
+      "items": [
+        {
+          "itemId": "weekly-003",
+          "titleJP": "Артефакт"
+        }
+      ],
+      "attempts": 1,
+      "status": "sending",
+      "startedAt": "2026-11-25T17:40:40.778Z"
+    }
+  ]
+}
