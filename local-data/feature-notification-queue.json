@@ -119,13 +119,8 @@
       ]
     },
     "ua": {
-      "lastSentWindow": null,
-      "items": [
-        {
-          "itemId": "weekly-003",
-          "titleJP": "Артефакт"
-        }
-      ]
+      "lastSentWindow": "2026-11-25",
+      "items": []
     },
     "vn": {
       "lastSentWindow": null,
@@ -199,5 +194,6 @@
         }
       ]
     }
-  }
+  },
+  "updatedAt": "2026-11-25T17:40:40.778Z"
 }
