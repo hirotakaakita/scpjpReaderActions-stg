@@ -268,5 +268,685 @@
         }
       ]
     }
+  ],
+  "previewFeatures": [
+    {
+      "id": "weekly-004",
+      "themeId": "sentient-biological",
+      "publishedAt": "2026-12-02T10:00:00.000Z",
+      "title": "Sentient × Biological",
+      "introduction": "Explore Sentient × Biological: compare what these SCPs have in common and how their anomalies differ.",
+      "coverImage": "features/images/weekly-004-v1.png",
+      "articles": [
+        {
+          "itemId": "scp-series-682",
+          "title": "Hard-to-Destroy Reptile",
+          "blurb": "SCP-682 is a large, vaguely reptile-like creature of unknown origin.It appears to be extremely intelligent, and was observed to engage in complex communication with SCP-079 during their limited time of exposure.",
+          "url": "https://scp-wiki.wikidot.com/scp-682",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-682/monster8editub9-new.jpg",
+          "sourceTags": [
+            "sentient",
+            "biological"
+          ]
+        },
+        {
+          "itemId": "scp-series-1440",
+          "title": "The Old Man from Nowhere",
+          "blurb": "SCP-1440 is a man of unknown ethnicity and age.",
+          "url": "https://scp-wiki.wikidot.com/scp-1440",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--resized-images/scp-1440/1440/medium.jpg",
+          "sourceTags": [
+            "sentient",
+            "biological"
+          ]
+        },
+        {
+          "itemId": "scp-series-1867",
+          "title": "A Gentleman",
+          "blurb": "SCP-1867 is sapient and capable of telepathic communication with the same range as a typical human voice.",
+          "url": "https://scp-wiki.wikidot.com/scp-1867",
+          "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-1867/Nudibranch_Nembrotha_kubaryana.jpg",
+          "sourceTags": [
+            "sentient",
+            "biological"
+          ]
+        },
+        {
+          "itemId": "scp-series-105",
+          "title": "\"Iris\"",
+          "blurb": "SCP-105 (formerly known as Iris Thompson) is a female human of European descent.Records indicate that SCP-105 was born in ████, making her ██ years old at the time of acquisition.",
+          "url": "https://scp-wiki.wikidot.com/scp-105",
+          "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-105/2014-07-18%2022.41.47-new.jpg",
+          "sourceTags": [
+            "sentient",
+            "biological"
+          ]
+        },
+        {
+          "itemId": "scp-series-3812",
+          "title": "A Voice Behind Me",
+          "blurb": "SCP-3812 is a reality-altering entity.Due to SCP-3812's latent effect on reality, it is nearly impossible to describe SCP-3812 in any meaningful way.",
+          "url": "https://scp-wiki.wikidot.com/scp-3812",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-3812/RAE.jpg",
+          "sourceTags": [
+            "sentient",
+            "biological"
+          ]
+        },
+        {
+          "itemId": "scp-series-8000",
+          "title": "The Seal of Approval",
+          "blurb": "SCP-8000 is a gigantic, serpentine entity resembling a harbor seal (Phoca vitulina) residing within Site-322.SCP-8000 is sapient, capable of speech, and highly intelligent.",
+          "url": "https://scp-wiki.wikidot.com/scp-8000",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-8000/seal.jpg",
+          "sourceTags": [
+            "sentient",
+            "biological"
+          ]
+        },
+        {
+          "itemId": "scp-series-3199",
+          "title": "Humans, Refuted",
+          "blurb": "SCP-3199 denotes a species of sapient Category-5 biological entities of currently indeterminable origin, though tissue samples indicate the presence of Silkie chicken1, chimpanzee2, stoat3, mussel4, adder5, and human DN…",
+          "url": "https://scp-wiki.wikidot.com/scp-3199",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-3199/resized.jpg",
+          "sourceTags": [
+            "sentient",
+            "biological"
+          ]
+        },
+        {
+          "itemId": "scp-series-053",
+          "title": "Young Girl",
+          "blurb": "SCP-053 appears to be a small 3-year-old girl.She is capable of basic speech and appears to be slightly above average in mental development.",
+          "url": "https://scp-wiki.wikidot.com/scp-053",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-053/SCP-0053.jpg",
+          "sourceTags": [
+            "sentient",
+            "biological"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "weekly-005",
+      "themeId": "sentient",
+      "publishedAt": "2026-12-09T10:00:00.000Z",
+      "title": "Sentient",
+      "introduction": "Explore Sentient: compare what these SCPs have in common and how their anomalies differ.",
+      "coverImage": "features/images/weekly-005-v1.png",
+      "articles": [
+        {
+          "itemId": "scp-series-914",
+          "title": "The Clockworks",
+          "blurb": "It is incredibly complex, consisting of over eight million moving parts comprised mostly of tin and copper, with some wooden and cloth items observed.",
+          "url": "https://scp-wiki.wikidot.com/scp-914",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-914/gears.jpg",
+          "sourceTags": [
+            "sentient"
+          ]
+        },
+        {
+          "itemId": "scp-series-035",
+          "title": "Possessive Mask",
+          "blurb": "In these events, all existing visual records, such as photographs, video footage, even illustrations, of SCP-035 automatically change to reflect its new appearance.",
+          "url": "https://scp-wiki.wikidot.com/scp-035",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-035/scp--035--002-new.gif",
+          "sourceTags": [
+            "sentient"
+          ]
+        },
+        {
+          "itemId": "scp-series-2006",
+          "title": "Too Spooky",
+          "blurb": "To accomplish this purpose, SCP-2006 possesses the ability to change its shape, mass, volume, density, chemical structure, and voice to any form that it desires.",
+          "url": "https://scp-wiki.wikidot.com/scp-2006",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-2006/SCP%20Ro-Man.jpg",
+          "sourceTags": [
+            "sentient"
+          ]
+        },
+        {
+          "itemId": "scp-series-6001",
+          "title": "Avalon",
+          "blurb": "I just had the most incredible day.",
+          "url": "https://scp-wiki.wikidot.com/scp-6001",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-6001/SCP-6000.jpg",
+          "sourceTags": [
+            "sentient"
+          ]
+        },
+        {
+          "itemId": "scp-series-2030",
+          "title": "LA U GH IS F UN",
+          "blurb": "SCP-2030 is an anomalous phenomenon that manifests as a television series.",
+          "url": "https://scp-wiki.wikidot.com/scp-2030",
+          "imageUrl": "http://scp-wiki.wdfiles.com/local--files/scp-2030/LaughIsFun3.jpg",
+          "sourceTags": [
+            "sentient"
+          ]
+        },
+        {
+          "itemId": "scp-series-990",
+          "title": "Dream Man",
+          "blurb": "Thus far no Foundation personnel have encountered SCP-990 in the real world; if he corresponds to an actual human being, we have yet to find him.",
+          "url": "https://scp-wiki.wikidot.com/scp-990",
+          "imageUrl": "http://scp-wiki.wikidot.com/local--files/scp-990/scp990-new.jpg",
+          "sourceTags": [
+            "sentient"
+          ]
+        },
+        {
+          "itemId": "scp-series-8980",
+          "title": "Ergophobia: Without Regards",
+          "blurb": "Marley joined the SCP Foundation in 1999 after discovering an algorithm directly related to an anomalous mathematical inequality, shortly after obtaining her Bachelor's degree in Computer Science.",
+          "url": "https://scp-wiki.wikidot.com/scp-8980",
+          "imageUrl": "https://scp-wiki.wikidot.com/local--files/scp-8980/femalescientist.png",
+          "sourceTags": [
+            "sentient"
+          ]
+        },
+        {
+          "itemId": "scp-series-7999",
+          "title": "Meet Me in the Stars",
+          "blurb": "SCP-7999 refers to the following interconnected anomalies:",
+          "url": "https://scp-wiki.wikidot.com/scp-7999",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-7999/NestPortal.jpg",
+          "sourceTags": [
+            "sentient"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "weekly-006",
+      "themeId": "mind_affecting-biological",
+      "publishedAt": "2026-12-16T10:00:00.000Z",
+      "title": "Mind-affecting × Biological",
+      "introduction": "Explore Mind-affecting × Biological: compare what these SCPs have in common and how their anomalies differ.",
+      "coverImage": "features/images/weekly-006-v1.png",
+      "articles": [
+        {
+          "itemId": "scp-series-610",
+          "title": "The Flesh that Hates",
+          "blurb": "A small military contingent was dispatched to the area and quickly withdrew at which point The Foundation was contacted to investigate.",
+          "url": "https://scp-wiki.wikidot.com/scp-610",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-610/610-new.png",
+          "sourceTags": [
+            "mind_affecting",
+            "biological"
+          ]
+        },
+        {
+          "itemId": "scp-series-003",
+          "title": "Biological Motherboard",
+          "blurb": "SCP-003-1 appears to be composed of chitin, hair, and nails of unknown biology, arranged in a configuration similar to that of a computer motherboard.",
+          "url": "https://scp-wiki.wikidot.com/scp-003",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-003/SCP-003a-new.jpg",
+          "sourceTags": [
+            "mind_affecting",
+            "biological"
+          ]
+        },
+        {
+          "itemId": "scp-series-1875",
+          "title": "Antique Chess Computer",
+          "blurb": "A steel chessboard table, 72 x 72 x 64 cm, with a standard eight-by-eight grid of 64 checkered squares painted on its surface.",
+          "url": "https://scp-wiki.wikidot.com/scp-1875",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-1875/1875-3.jpg",
+          "sourceTags": [
+            "mind_affecting",
+            "biological"
+          ]
+        },
+        {
+          "itemId": "scp-series-5005",
+          "title": "Lamplight",
+          "blurb": "Consequently, it is the most remote settlement created by a sentient creature and the most remote matter in existence.",
+          "url": "https://scp-wiki.wikidot.com/scp-5005",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-5005/lamplight1.jpg",
+          "sourceTags": [
+            "mind_affecting",
+            "biological"
+          ]
+        },
+        {
+          "itemId": "scp-series-020",
+          "title": "Unseen Mold",
+          "blurb": "SCP-020 is a fast-spreading fungal organism that is capable of affecting the senses and behavior of living creatures, including humans.",
+          "url": "https://scp-wiki.wikidot.com/scp-020",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-020/scp020.jpg",
+          "sourceTags": [
+            "mind_affecting",
+            "biological"
+          ]
+        },
+        {
+          "itemId": "scp-series-3512",
+          "title": "The More You Know",
+          "blurb": "SCP-3512 is a phenomenon which leads to significant changes in the personality and psychological stability of certain women between the ages of 18 and 40.",
+          "url": "https://scp-wiki.wikidot.com/scp-3512",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-3512/Sagrada3.jpg",
+          "sourceTags": [
+            "mind_affecting",
+            "biological"
+          ]
+        },
+        {
+          "itemId": "scp-series-1659",
+          "title": "Directorate K",
+          "blurb": "SCP-1659 is a quasi-governmental organization transcending all known political boundaries and divisions.",
+          "url": "https://scp-wiki.wikidot.com/scp-1659",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-1659/orgchart.jpg",
+          "sourceTags": [
+            "mind_affecting",
+            "biological"
+          ]
+        },
+        {
+          "itemId": "scp-series-6659",
+          "title": "METAGNOSTIC",
+          "blurb": "SCP-6659 is a Foundation-designed eigenweapon developed for the neutralization of hostile deific entities..Deicidium-class anomalies are employed by the Foundation in the decommissioning of other Anomalous phenomena.",
+          "url": "https://scp-wiki.wikidot.com/scp-6659",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-6659/Flip.jpg",
+          "sourceTags": [
+            "mind_affecting",
+            "biological"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "weekly-007",
+      "themeId": "humanoid-mind_affecting",
+      "publishedAt": "2026-12-23T10:00:00.000Z",
+      "title": "Humanoid × Mind-affecting",
+      "introduction": "Explore Humanoid × Mind-affecting: compare what these SCPs have in common and how their anomalies differ.",
+      "coverImage": "features/images/weekly-007-v1.png",
+      "articles": [
+        {
+          "itemId": "scp-series-2852",
+          "title": "Cousin Johnny",
+          "blurb": "Instances of SCP-2852 have the appearance of a middle-aged white male.Biologically, the cells of SCP-2852 instances are genetically identical and human; however, instances do not have any identifiable organs.",
+          "url": "https://scp-wiki.wikidot.com/scp-2852",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-2852/scpdad.jpg",
+          "sourceTags": [
+            "humanoid",
+            "mind_affecting"
+          ]
+        },
+        {
+          "itemId": "scp-series-026",
+          "title": "Afterschool Retention",
+          "blurb": "SCP-026 is a three (3) story public school building built in ████.The building demonstrates spatial anomalies.",
+          "url": "https://scp-wiki.wikidot.com/scp-026",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-026/SCP-026-A-new.jpg",
+          "sourceTags": [
+            "humanoid",
+            "mind_affecting"
+          ]
+        },
+        {
+          "itemId": "scp-series-1529",
+          "title": "King of the Mountain",
+          "blurb": "SCP-1529 is a humanoid individual residing near the summit of Mt.Everest in Nepal, above the 8,000 meter \"death zone\" mark where human acclimatization is believed to be impossible.",
+          "url": "https://scp-wiki.wikidot.com/scp-1529",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-1529/1529.jpg",
+          "sourceTags": [
+            "humanoid",
+            "mind_affecting"
+          ]
+        },
+        {
+          "itemId": "scp-series-4773",
+          "title": "and a stuffed bear",
+          "blurb": "SCP-4773-2 is a brown, stuffed bear composed of synthetic fur and cotton.Due to events, it is suspected that the anomaly possesses some secondary mind-affecting effects.",
+          "url": "https://scp-wiki.wikidot.com/scp-4773",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-4773/Times.png",
+          "sourceTags": [
+            "humanoid",
+            "mind_affecting"
+          ]
+        },
+        {
+          "itemId": "scp-series-122",
+          "title": "no more monstɘrs.",
+          "blurb": "When in a powered state, SCP-122 has been reported to be able to exude a sense of calmness, comfort, and safety to those within a roughly 20-kilometer radius.",
+          "url": "https://scp-wiki.wikidot.com/scp-122",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-122/Night_light.jpg",
+          "sourceTags": [
+            "humanoid",
+            "mind_affecting"
+          ]
+        },
+        {
+          "itemId": "scp-series-8008",
+          "title": "Time Pervert",
+          "blurb": "Tachyon bursts usually indicate significant alterations to consensus history (CK-Class reality restructuring scenarios).",
+          "url": "https://scp-wiki.wikidot.com/scp-8008",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-8008/timepervertsplash2.jpg",
+          "sourceTags": [
+            "humanoid",
+            "mind_affecting"
+          ]
+        },
+        {
+          "itemId": "scp-series-1348",
+          "title": "Inner Sanctum",
+          "blurb": "Per intergovernmental compact with the Israeli and Syrian governments, Foundation agents responded, containing SCP-1348-01, 02, and 03 and constructing the Site 87 Containment Unit.",
+          "url": "https://scp-wiki.wikidot.com/scp-1348",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-1348/1348-2.jpg",
+          "sourceTags": [
+            "humanoid",
+            "mind_affecting"
+          ]
+        },
+        {
+          "itemId": "scp-series-6005",
+          "title": "Cascadia",
+          "blurb": "SCP-6005 refers to the disappearances of 1,943 people in heavily wooded areas of the Cascadia bioregion between 1985 and the present day.No trace of any of these individuals has ever been found.",
+          "url": "https://scp-wiki.wikidot.com/scp-6005",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-6005/dogmountain.jpg",
+          "sourceTags": [
+            "humanoid",
+            "mind_affecting"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "weekly-008",
+      "themeId": "sentient-hostile",
+      "publishedAt": "2026-12-30T10:00:00.000Z",
+      "title": "Sentient × Hostile",
+      "introduction": "Explore Sentient × Hostile: compare what these SCPs have in common and how their anomalies differ.",
+      "coverImage": "features/images/weekly-008-v1.png",
+      "articles": [
+        {
+          "itemId": "scp-series-6820",
+          "title": "TERMINATION ATTEMPT",
+          "blurb": "███-███ is a large, vaguely reptile-like creature of unknown origin.",
+          "url": "https://scp-wiki.wikidot.com/scp-6820",
+          "imageUrl": "https://scp-wiki.wikidot.com/local--files/admonition/admo-6820-ballnew.jpg",
+          "sourceTags": [
+            "sentient",
+            "hostile"
+          ]
+        },
+        {
+          "itemId": "scp-series-3939",
+          "title": "[NUMBER RESERVED; AWAITING RESEARCHER]",
+          "blurb": "You read the object's document — all measly 24 words of it — and shudder at the work that lies ahead of you.Your name is Senior Researcher ████ ████████, and you are a researcher assigned to SCP-3939.",
+          "url": "https://scp-wiki.wikidot.com/scp-3939",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-3939/scp.jpg",
+          "sourceTags": [
+            "sentient",
+            "hostile"
+          ]
+        },
+        {
+          "itemId": "scp-series-6666",
+          "title": "The Demon Hector and the Dread Titania",
+          "blurb": "SCP-6666 is a colossal, botanical entity located near 4°51'29.4\"S 67°44'12.6\"W in the Amazon rainforest.SCP-6666's trunk is roughly 380m in diameter, and the entire structure reaches a height of nearly 9.2km.",
+          "url": "https://scp-wiki.wikidot.com/scp-6666",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-6666/titania4.jpg",
+          "sourceTags": [
+            "sentient",
+            "hostile"
+          ]
+        },
+        {
+          "itemId": "scp-series-6599",
+          "title": "HOGSLICE",
+          "blurb": "SCP-6599 is a collective of internet accounts registered under the username HOGSLICE.",
+          "url": "https://scp-wiki.wikidot.com/scp-6599",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-6599/4386553053_c654e4e85d_b.jpg",
+          "sourceTags": [
+            "sentient",
+            "hostile"
+          ]
+        },
+        {
+          "itemId": "scp-series-3213",
+          "title": "F*ck off Carl.",
+          "blurb": "SCP-3213 is a 44-year-old human male named Carl Prosser.SCP-3213-affected animals will then utilize this capability to direct verbal abuse towards SCP-3213.",
+          "url": "https://scp-wiki.wikidot.com/scp-3213",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-3213/SCP-3213_Affected_Animal.jpg",
+          "sourceTags": [
+            "sentient",
+            "hostile"
+          ]
+        },
+        {
+          "itemId": "scp-series-2419",
+          "title": "The Laughing Men",
+          "blurb": "SCP-2419 is a refinery and waste disposal facility located 75 kilometers north of Summer Springs, Colorado (USA).A controlled evacuation was carried out in 1975 after it began to exhibit several anomalies.",
+          "url": "https://scp-wiki.wikidot.com/scp-2419",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-2419/site.jpg",
+          "sourceTags": [
+            "sentient",
+            "hostile"
+          ]
+        },
+        {
+          "itemId": "scp-series-5004",
+          "title": "MEGALOMANIA",
+          "blurb": "SCP-5004 is the group designation for anomalous phenomenon affecting the Executive branch of the United States Government.",
+          "url": "https://scp-wiki.wikidot.com/scp-5004",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-5004/hughes.jpg",
+          "sourceTags": [
+            "sentient",
+            "hostile"
+          ]
+        },
+        {
+          "itemId": "scp-series-1360",
+          "title": "PSHUD #31",
+          "blurb": "SCP-1360 is an animate, fully articulated android.SCP-1360 stands at 1.83 m tall and weighs 100 kg.",
+          "url": "https://scp-wiki.wikidot.com/scp-1360",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-1360/SCP-1360.jpg",
+          "sourceTags": [
+            "sentient",
+            "hostile"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "weekly-009",
+      "themeId": "humanoid-biological",
+      "publishedAt": "2027-01-06T10:00:00.000Z",
+      "title": "Humanoid × Biological",
+      "introduction": "Explore Humanoid × Biological: compare what these SCPs have in common and how their anomalies differ.",
+      "coverImage": "features/images/weekly-009-v1.png",
+      "articles": [
+        {
+          "itemId": "scp-series-4444",
+          "title": "Bush v. Gore",
+          "blurb": "The entity is invisible to the naked eye, but appears under infrared as a long, slender, translucent, hexagonal pyramid with six triangular vents2, one at the top of each of its six faces, emerging from the upper back o…",
+          "url": "https://scp-wiki.wikidot.com/scp-4444",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-4444/september.jpg",
+          "sourceTags": [
+            "humanoid",
+            "biological"
+          ]
+        },
+        {
+          "itemId": "scp-series-239",
+          "title": "The Witch Child",
+          "blurb": "SCP-239 appears to be an 8-year-old girl, 1 meter in height and 20 kilograms in weight.Subject has shoulder-length blond hair.",
+          "url": "https://scp-wiki.wikidot.com/scp-239",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--resized-images/scp-239/SCP-239/medium.jpg",
+          "sourceTags": [
+            "humanoid",
+            "biological"
+          ]
+        },
+        {
+          "itemId": "scp-series-4975",
+          "title": "Time's Up",
+          "blurb": "SCP-4975 is a vaguely humanoid entity with various avian attributes, the most notable of which is its beak.",
+          "url": "https://scp-wiki.wikidot.com/scp-4975",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-4975/4975.png",
+          "sourceTags": [
+            "humanoid",
+            "biological"
+          ]
+        },
+        {
+          "itemId": "scp-series-966",
+          "title": "Sleep Killer",
+          "blurb": "SCP-966 are predatory creatures that resemble hairless, digitigrade humans, possessing an elongated face with a mouth lined with needle-like teeth.",
+          "url": "https://scp-wiki.wikidot.com/scp-966",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-966/Darkskullteeth%20infrared%201-new.png",
+          "sourceTags": [
+            "humanoid",
+            "biological"
+          ]
+        },
+        {
+          "itemId": "scp-series-3740",
+          "title": "God Is Dumb",
+          "blurb": "SCP-3740 is capable of manipulating air currents at will, as well as communing with flying animals, and controlling air pressure and temperature.",
+          "url": "https://scp-wiki.wikidot.com/scp-3740",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-3740/Ashur.jpg",
+          "sourceTags": [
+            "humanoid",
+            "biological"
+          ]
+        },
+        {
+          "itemId": "scp-series-082",
+          "title": "\"Fernand\" the Cannibal",
+          "blurb": "SCP-082 is genetically human; however, through some process (either chemical, hormonal, cancerous, or supernatural), SCP-082 has grown to giant proportions.",
+          "url": "https://scp-wiki.wikidot.com/scp-082",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-082/SCP-082-new.png",
+          "sourceTags": [
+            "humanoid",
+            "biological"
+          ]
+        },
+        {
+          "itemId": "scp-series-527",
+          "title": "Mr. Fish",
+          "blurb": "SCP-527 is a male humanoid, 1.67m in height, which is biologically non-anomalous, with the exception of its head, which is that of a Puntius semifasciolatus, or gold barb fish.",
+          "url": "https://scp-wiki.wikidot.com/scp-527",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-527/flapper-up.png",
+          "sourceTags": [
+            "humanoid",
+            "biological"
+          ]
+        },
+        {
+          "itemId": "scp-series-1861",
+          "title": "The Crew of the HMS Wintersheimer",
+          "blurb": "SCP-1861 is an anomalous meteorological phenomenon characterized by heavy precipitation and fog composed of saltwater, human blood, and human cerebrospinal fluid.",
+          "url": "https://scp-wiki.wikidot.com/scp-1861",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-1861/Wintershimer2018.jpg",
+          "sourceTags": [
+            "humanoid",
+            "biological"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "weekly-010",
+      "themeId": "humanoid-hostile",
+      "publishedAt": "2027-01-13T10:00:00.000Z",
+      "title": "Humanoid × Hostile",
+      "introduction": "Explore Humanoid × Hostile: compare what these SCPs have in common and how their anomalies differ.",
+      "coverImage": "features/images/weekly-010-v1.png",
+      "articles": [
+        {
+          "itemId": "scp-series-4666",
+          "title": "The Yule Man",
+          "blurb": "SCP-4666 is currently believed to be a single, exceptionally long-lived humanoid entity of unknown origin.",
+          "url": "https://scp-wiki.wikidot.com/scp-4666",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-4666/yuleman-photo%20FINAL.jpg",
+          "sourceTags": [
+            "humanoid",
+            "hostile"
+          ]
+        },
+        {
+          "itemId": "scp-series-017",
+          "title": "Shadow Person",
+          "blurb": "SCP-017 is a humanoid figure approximately 80 centimeters in height, anatomically similar to a small child, but with no discernible identifying features.",
+          "url": "https://scp-wiki.wikidot.com/scp-017",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-017/scp017InCaptivity.jpg",
+          "sourceTags": [
+            "humanoid",
+            "hostile"
+          ]
+        },
+        {
+          "itemId": "scp-series-6096",
+          "title": "The Guest",
+          "blurb": "SCP-6096 is an entity, presumably humanoid in shape, the body of which is perpetually concealed underneath a large cotton sheet.",
+          "url": "https://scp-wiki.wikidot.com/scp-6096",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--resized-images/scp-6096/guest/medium.jpg",
+          "sourceTags": [
+            "humanoid",
+            "hostile"
+          ]
+        },
+        {
+          "itemId": "scp-series-4885",
+          "title": "Find Him",
+          "blurb": "SCP-4885 is an anomalous humanoid resembling the main character of the popular series of puzzle books \"Where's Wally?\" (known in the US as \"Where's Waldo?\").",
+          "url": "https://scp-wiki.wikidot.com/scp-4885",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-4885/him.png",
+          "sourceTags": [
+            "humanoid",
+            "hostile"
+          ]
+        },
+        {
+          "itemId": "scp-series-847",
+          "title": "The Mannequin",
+          "blurb": "SCP-847 is a human female mannequin, 156 cm tall and 27 kg in mass, constructed of human hair and an unknown composite fibrous polymer that abrades and shatters similarly to porcelain.",
+          "url": "https://scp-wiki.wikidot.com/scp-847",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-847/basement.jpg",
+          "sourceTags": [
+            "humanoid",
+            "hostile"
+          ]
+        },
+        {
+          "itemId": "scp-series-060",
+          "title": "Infernal Occult Skeleton",
+          "blurb": "A house on the property was demolished during the construction of Satellite-Site 66-060 after being combed by Foundation personnel for information regarding SCP-060.",
+          "url": "https://scp-wiki.wikidot.com/scp-060",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-060/not-firewood-small.jpg",
+          "sourceTags": [
+            "humanoid",
+            "hostile"
+          ]
+        },
+        {
+          "itemId": "scp-series-8400",
+          "title": "The Birch Knight and the Game of Three Chestnuts",
+          "blurb": "A battle of wits between a folklorist and the folklore she studies.PeppersGhost and Uncle Nicolini . . .",
+          "url": "https://scp-wiki.wikidot.com/scp-8400",
+          "imageUrl": "https://scp-wiki.wdfiles.com/local--files/scp-8400/knight.jpg",
+          "sourceTags": [
+            "humanoid",
+            "hostile"
+          ]
+        },
+        {
+          "itemId": "scp-series-2744",
+          "title": "[ENTRY REMOVED FROM DATABASE]",
+          "blurb": "CLICK HERE TO ACCESS ACCESSIBILITY MODE WELCOME WILLIAM MILLER This anomaly currently presents no danger to you.",
+          "url": "https://scp-wiki.wikidot.com/scp-2744",
+          "imageUrl": "https://scp-wiki.wikidot.com/local--files/scp-2744/tattletalehauntedcropped.jpg",
+          "sourceTags": [
+            "humanoid",
+            "hostile"
+          ]
+        }
+      ]
+    }
   ]
 }
