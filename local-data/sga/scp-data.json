@@ -1,7 +1,7 @@
 {
   "totalCount": 6,
   "language": "sga",
-  "timestamp": "2026-11-22T14:12:40.130Z",
+  "timestamp": "2026-11-28T07:45:07.302Z",
   "duration": 5,
   "status": "completed",
   "statistics": {
@@ -33,13 +33,13 @@
       "extractedFrom": "scp-sga-series",
       "pageType": "scp-series-sga",
       "contentType": "scp",
-      "lastUpdated": "2026-11-22T10:20:45.979Z",
+      "lastUpdated": "2026-11-27T10:42:19.218Z",
       "createdAt": "2026-11-10T00:37:08.206Z",
       "translatedLanguages": [
         "sga"
       ],
-      "descriptionCheckedAt": "2026-11-22T14:06:00.928Z",
-      "descriptionContentSha256": "6ffdfc9d2662577aa0411a11d25fee8b0caee432e987ce21ce3c5e8e0749751c"
+      "descriptionCheckedAt": "2026-11-28T07:42:29.051Z",
+      "descriptionContentSha256": "bcc2ef8212fcf260fb4d79f880bdf25f49862523d6aa5bf4e13f76400a7dd563"
     },
     {
       "itemId": "scp-series-sga-002",
@@ -59,13 +59,13 @@
       "extractedFrom": "scp-sga-series",
       "pageType": "scp-series-sga",
       "contentType": "scp",
-      "lastUpdated": "2026-11-22T10:20:45.979Z",
+      "lastUpdated": "2026-11-27T10:42:19.218Z",
       "createdAt": "2026-11-10T00:37:08.206Z",
       "translatedLanguages": [
         "sga"
       ],
-      "descriptionCheckedAt": "2026-11-22T14:06:00.928Z",
-      "descriptionContentSha256": "f31ee9d2c099ebb732ac6290796f15f9ace02f4ca83a4819cb16c805a653e2c4"
+      "descriptionCheckedAt": "2026-11-28T07:42:29.051Z",
+      "descriptionContentSha256": "076ff352152187346738d90462815d9bdba7f12a59331789ffbabdae02faeafb"
     },
     {
       "itemId": "scp-series-sga-009",
@@ -85,13 +85,13 @@
       "extractedFrom": "scp-sga-series",
       "pageType": "scp-series-sga",
       "contentType": "scp",
-      "lastUpdated": "2026-11-22T10:20:45.979Z",
+      "lastUpdated": "2026-11-27T10:42:19.218Z",
       "createdAt": "2026-11-10T00:37:08.206Z",
       "translatedLanguages": [
         "sga"
       ],
-      "descriptionCheckedAt": "2026-11-22T14:06:00.928Z",
-      "descriptionContentSha256": "21d9622e5423d76eaff07df120cd0b2e7dcd807a79eb80d008ab6a68d372d587"
+      "descriptionCheckedAt": "2026-11-28T07:42:29.051Z",
+      "descriptionContentSha256": "b9a5125a574cda45f6d34fe45b3d7e43ed2d84a823c687ca706986b8a355eb13"
     },
     {
       "itemId": "scp-series-sga-171",
@@ -111,13 +111,13 @@
       "extractedFrom": "scp-sga-series",
       "pageType": "scp-series-sga",
       "contentType": "scp",
-      "lastUpdated": "2026-11-22T10:20:45.979Z",
+      "lastUpdated": "2026-11-27T10:42:19.218Z",
       "createdAt": "2026-11-10T00:37:08.206Z",
       "translatedLanguages": [
         "sga"
       ],
-      "descriptionCheckedAt": "2026-11-22T14:06:00.928Z",
-      "descriptionContentSha256": "6d531dd735554b72b8a9674de0adfd29183dde6049e35a73ff664f51707f9905"
+      "descriptionCheckedAt": "2026-11-28T07:42:29.051Z",
+      "descriptionContentSha256": "edf58c13737cba503af68943b36466cc029aef4a38365cb4441ef7ea69a581b0"
     },
     {
       "itemId": "scp-series-001",
@@ -146,7 +146,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-22T10:20:49.072Z",
+      "lastUpdated": "2026-11-27T10:42:22.753Z",
       "createdAt": "2026-11-10T00:37:12.088Z",
       "translatedLanguages": [
         "jp",
@@ -177,8 +177,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-22T14:06:00.928Z",
-      "descriptionContentSha256": "1c50b6e803f0182bca6948897e68ed0f200674f97b6252a0d92d8911a19ae8af"
+      "descriptionCheckedAt": "2026-11-28T07:42:29.051Z",
+      "descriptionContentSha256": "741aeb2584f76a54b2bdd1209b1e046163955fe05052ffab066229fc7786af32"
     },
     {
       "itemId": "scp-series-173",
@@ -203,7 +203,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-22T10:20:49.072Z",
+      "lastUpdated": "2026-11-27T10:42:22.753Z",
       "createdAt": "2026-11-10T00:37:12.088Z",
       "translatedLanguages": [
         "jp",
@@ -238,8 +238,8 @@
         "tok",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-22T14:06:00.928Z",
-      "descriptionContentSha256": "e73613786f5b6b5b5378d6e6a14f1906f892cb78ec20df6b1e3e4a1d5a0ef8d7"
+      "descriptionCheckedAt": "2026-11-28T07:42:29.051Z",
+      "descriptionContentSha256": "5dd478381254633f0c60ce8c38394ee459cca630d3b394a84d40f0a03c7f1959"
     }
   ],
   "tagSchemaVersion": 2

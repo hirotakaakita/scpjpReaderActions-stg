@@ -1,8 +1,8 @@
 {
   "totalCount": 4,
   "language": "tok",
-  "timestamp": "2026-11-22T14:12:40.130Z",
-  "duration": 3,
+  "timestamp": "2026-11-28T07:45:07.302Z",
+  "duration": 4,
   "status": "completed",
   "statistics": {
     "translated": 4,
@@ -49,13 +49,13 @@
       "extractedFrom": "lipu-scp",
       "pageType": "scp-series-tok",
       "contentType": "scp",
-      "lastUpdated": "2026-11-22T10:25:53.211Z",
+      "lastUpdated": "2026-11-27T10:45:35.568Z",
       "createdAt": "2026-11-10T00:40:11.338Z",
       "translatedLanguages": [
         "tok"
       ],
-      "descriptionCheckedAt": "2026-11-22T14:07:29.915Z",
-      "descriptionContentSha256": "838b67184b0e6b78d96e58dba2c2acf3678fce4d68cd7512883879b3c288a6d7"
+      "descriptionCheckedAt": "2026-11-28T07:43:28.782Z",
+      "descriptionContentSha256": "6ec625c3815eba561f2ab0357e44a8a7335d79ab33239221bff8be30b9172ade"
     },
     {
       "itemId": "scp-series-173",
@@ -100,7 +100,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-22T10:25:54.329Z",
+      "lastUpdated": "2026-11-27T10:45:36.852Z",
       "createdAt": "2026-11-10T00:40:12.375Z",
       "translatedLanguages": [
         "jp",
@@ -135,8 +135,8 @@
         "tok",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-22T14:07:29.915Z",
-      "descriptionContentSha256": "8d3b640a9aa1072164e24c735e91d97b4011ab723b01a23927eff42d218b394b"
+      "descriptionCheckedAt": "2026-11-28T07:43:28.782Z",
+      "descriptionContentSha256": "9b2526979d9a5f5866ac43de803afd2971943df86deeda3b76f55211cb6d82bf"
     },
     {
       "itemId": "scp-series-426",
@@ -185,7 +185,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-22T10:25:54.329Z",
+      "lastUpdated": "2026-11-27T10:45:36.852Z",
       "createdAt": "2026-11-10T00:40:12.375Z",
       "translatedLanguages": [
         "jp",
@@ -209,8 +209,8 @@
         "tok",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-22T14:07:29.915Z",
-      "descriptionContentSha256": "ab359c8b3cb253b4f275d27376d58c03da301ecd9e1a7e6f90a053280f1401f0"
+      "descriptionCheckedAt": "2026-11-28T07:43:28.782Z",
+      "descriptionContentSha256": "bda40b7fb0bab2ecdd05164d86ac9b90455b5358577f1732e83ce803ef168b4f"
     },
     {
       "itemId": "scp-series-527",
@@ -267,7 +267,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-22T10:25:54.329Z",
+      "lastUpdated": "2026-11-27T10:45:36.852Z",
       "createdAt": "2026-11-10T00:40:12.375Z",
       "translatedLanguages": [
         "jp",
@@ -292,8 +292,8 @@
         "tok",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-22T14:07:29.915Z",
-      "descriptionContentSha256": "3da5b4fe2d952ca3c07ef4ea4e047ddbe9f74e3a66ea4efb8b8270ef2544328e"
+      "descriptionCheckedAt": "2026-11-28T07:43:28.782Z",
+      "descriptionContentSha256": "94ec200242f1817a074cebfb7759a524aa3c3d4987ec397f17cd54707778a8c0"
     }
   ],
   "tagSchemaVersion": 2

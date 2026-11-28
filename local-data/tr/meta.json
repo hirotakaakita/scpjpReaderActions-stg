@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2026-11-22T14:12:40.130Z",
+  "lastUpdated": "2026-11-28T07:45:07.302Z",
   "language": "tr",
   "totalCount": 347,
   "status": "completed",
-  "duration": 209,
+  "duration": 238,
   "statistics": {
     "translated": 347,
     "untranslated": 0,
-    "withImage": 158
+    "withImage": 159
   },
   "dataFile": "scp-data.json",
   "tagSchemaVersion": 2

@@ -82,6 +82,66 @@
         {
           "itemId": "scp-series-jp-4898",
           "titleJP": "「ポータブル神聖物質処理装置」って知ってる？"
+        },
+        {
+          "itemId": "scp-series-3616",
+          "titleJP": "筆が止まる"
+        },
+        {
+          "itemId": "scp-series-3665",
+          "titleJP": "インスタント悪魔、血を注ぐだけ！"
+        },
+        {
+          "itemId": "scp-series-3679",
+          "titleJP": "メイク・ア・ゲッシュ、財団"
+        },
+        {
+          "itemId": "scp-series-5079",
+          "titleJP": "ひとりぼっちの夢見心地"
+        },
+        {
+          "itemId": "scp-series-8937",
+          "titleJP": "私は私に起きたことで最悪"
+        },
+        {
+          "itemId": "scp-series-9257",
+          "titleJP": "人をゲイにするナチョス"
+        },
+        {
+          "itemId": "scp-series-9290",
+          "titleJP": "いんたーねっと から けす つーる by dado"
+        },
+        {
+          "itemId": "scp-series-9579",
+          "titleJP": "水曜日の朝、トラックがやって来て"
+        },
+        {
+          "itemId": "scp-series-9903",
+          "titleJP": "グレートフィルター"
+        },
+        {
+          "itemId": "scp-series-9996",
+          "titleJP": "扉がたくさんある場所"
+        },
+        {
+          "itemId": "scp-ex-4855",
+          "titleJP": "認知抵抗者"
+        },
+        {
+          "itemId": "scp-series-jp-3943",
+          "titleJP": "街角の未来広告"
+        },
+        {
+          "itemId": "scp-series-jp-4051",
+          "titleJP": "現代のコンプライアンスに適応したサンタクロース"
+        },
+        {
+          "itemId": "scp-series-jp-4463",
+          "titleJP": "あなたの耳の中にいるキモい虫 〜アリの巻〜"
+        },
+        {
+          "itemId": "scp-series-jp-4526",
+          "titleJP": "月見の爬虫類"
         }
       ],
       "lastSentWindow": "2026-11-15"
@@ -215,6 +275,62 @@
         {
           "itemId": "scp-ex-7384",
           "titleJP": "Unremarkable Re:Mark"
+        },
+        {
+          "itemId": "scp-series-6973",
+          "titleJP": "Perfect Therapist"
+        },
+        {
+          "itemId": "scp-series-9362",
+          "titleJP": "Never-Wrong Coin"
+        },
+        {
+          "itemId": "scp-series-9420",
+          "titleJP": "Tongue Cannabis"
+        },
+        {
+          "itemId": "scp-series-9462",
+          "titleJP": "[ACCESS DENIED]"
+        },
+        {
+          "itemId": "scp-series-9492",
+          "titleJP": "The Electric Man"
+        },
+        {
+          "itemId": "scp-series-9521",
+          "titleJP": "[ACCESS DENIED]"
+        },
+        {
+          "itemId": "scp-series-9528",
+          "titleJP": "A Simple Lab Assistant"
+        },
+        {
+          "itemId": "scp-series-9642",
+          "titleJP": "The emperor"
+        },
+        {
+          "itemId": "scp-series-9722",
+          "titleJP": "Stranded Assets"
+        },
+        {
+          "itemId": "scp-series-9736",
+          "titleJP": "The Metal Slab of (Possible) Doom"
+        },
+        {
+          "itemId": "scp-series-9843",
+          "titleJP": "[ACCESS DENIED]"
+        },
+        {
+          "itemId": "scp-series-9851",
+          "titleJP": "Doctor Miller's Guilt"
+        },
+        {
+          "itemId": "scp-series-9861",
+          "titleJP": "[ACCESS DENIED]"
+        },
+        {
+          "itemId": "scp-ex-4855",
+          "titleJP": "Cognitively Resistant"
         }
       ],
       "lastSentWindow": "2026-11-15"
@@ -392,6 +508,74 @@
         {
           "itemId": "scp-series-2615",
           "titleJP": "SCP-2615"
+        },
+        {
+          "itemId": "scp-series-3273",
+          "titleJP": "自主编写的大脑编辑手册"
+        },
+        {
+          "itemId": "scp-series-3325",
+          "titleJP": "Live Entertainment"
+        },
+        {
+          "itemId": "scp-series-3586",
+          "titleJP": "饕客海鸥"
+        },
+        {
+          "itemId": "scp-series-5626",
+          "titleJP": "最远之岸"
+        },
+        {
+          "itemId": "scp-series-7188",
+          "titleJP": "这一切从何而来。"
+        },
+        {
+          "itemId": "scp-series-7378",
+          "titleJP": "说到底，我们何必在意？"
+        },
+        {
+          "itemId": "scp-series-9118",
+          "titleJP": "What the Smoke Wants"
+        },
+        {
+          "itemId": "scp-series-9220",
+          "titleJP": "慈悲Chesed：干产"
+        },
+        {
+          "itemId": "scp-series-9352",
+          "titleJP": "尸检异常"
+        },
+        {
+          "itemId": "scp-series-9558",
+          "titleJP": "感谢您安装Windows 95"
+        },
+        {
+          "itemId": "scp-series-cn-4277",
+          "titleJP": "所见真者的月之都市"
+        },
+        {
+          "itemId": "scp-series-cn-4522",
+          "titleJP": "[禁止访问]"
+        },
+        {
+          "itemId": "scp-series-cn-4533",
+          "titleJP": "刀子，尖叫，切黑屏（试播集）"
+        },
+        {
+          "itemId": "scp-series-cn-4655",
+          "titleJP": "逃过一死"
+        },
+        {
+          "itemId": "scp-series-cn-4684",
+          "titleJP": "现实扭曲冷冻鱼"
+        },
+        {
+          "itemId": "scp-series-cn-4897",
+          "titleJP": "帷幕？在《每日秀》前不存在的！"
+        },
+        {
+          "itemId": "scp-series-cn-4957",
+          "titleJP": "[禁止访问]"
         }
       ],
       "lastSentWindow": "2026-11-15"
@@ -401,6 +585,14 @@
         {
           "itemId": "scp-series-167",
           "titleJP": "Nekonečný labyrint"
+        },
+        {
+          "itemId": "scp-series-274",
+          "titleJP": "Graffito"
+        },
+        {
+          "itemId": "scp-series-711",
+          "titleJP": "Paradoxní pojistka"
         }
       ],
       "lastSentWindow": "2026-11-15"
@@ -436,7 +628,12 @@
       "lastSentWindow": "2026-11-08"
     },
     "fr": {
-      "items": [],
+      "items": [
+        {
+          "itemId": "scp-series-fr-792",
+          "titleJP": "Poisson fantôme des abysses"
+        }
+      ],
       "lastSentWindow": "2026-11-08"
     },
     "int": {
@@ -497,6 +694,38 @@
         {
           "itemId": "scp-series-ko-1933",
           "titleJP": "[접근 거부]"
+        },
+        {
+          "itemId": "scp-series-2498",
+          "titleJP": "칠채화신"
+        },
+        {
+          "itemId": "scp-series-2777",
+          "titleJP": "왕이 되고자 한 자"
+        },
+        {
+          "itemId": "scp-series-5706",
+          "titleJP": "스카이림 스피드런 몰래카메라!!!!!(뭔가 잘못됨!)[뭔가 성적임!!]{어그로 아님!!!}"
+        },
+        {
+          "itemId": "scp-series-6880",
+          "titleJP": "끓는 피"
+        },
+        {
+          "itemId": "scp-series-7225",
+          "titleJP": "나는 화이트 크리스마스를 기대하고 있어"
+        },
+        {
+          "itemId": "scp-series-8597",
+          "titleJP": "태어난 월별 남친"
+        },
+        {
+          "itemId": "scp-series-9529",
+          "titleJP": "삼족보행 고양이"
+        },
+        {
+          "itemId": "scp-series-ko-1835",
+          "titleJP": "공명침강윤허의 마법소녀 아리엘 디"
         }
       ],
       "lastSentWindow": "2026-11-15"
@@ -514,6 +743,10 @@
         {
           "itemId": "scp-series-pl-256",
           "titleJP": "Nieskończona Rekursja"
+        },
+        {
+          "itemId": "scp-series-pl-438",
+          "titleJP": "Gasnący płomień"
         }
       ],
       "lastSentWindow": "2026-11-15"
@@ -531,6 +764,10 @@
         {
           "itemId": "scp-series-6979",
           "titleJP": "Desfile Noturno de um Único Demônio"
+        },
+        {
+          "itemId": "scp-series-4510",
+          "titleJP": "Expresso Primeira Classe Prime da Avelar™!"
         }
       ],
       "lastSentWindow": "2026-11-15"
@@ -581,6 +818,10 @@
         {
           "itemId": "scp-series-vn-189",
           "titleJP": "Hiệp Sĩ Bóng Tối"
+        },
+        {
+          "itemId": "scp-series-2872",
+          "titleJP": "Con Ngựa Quá Nhanh Quá Nguy Hiểm"
         }
       ],
       "lastSentWindow": "2026-11-08"
@@ -679,5 +920,5 @@
       "lastSentWindow": "2026-11-08"
     }
   },
-  "updatedAt": "2026-11-22T14:17:28.488Z"
+  "updatedAt": "2026-11-28T07:50:58.721Z"
 }

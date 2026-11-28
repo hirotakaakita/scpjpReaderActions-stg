@@ -165,11 +165,11 @@
           ]
         },
         {
-          "itemId": "scp-series-2669",
-          "title": "SCP-2669 - Кебтеул 1",
-          "blurb": "Первоначальной миссией SCP-2669 было прямое наблюдение экзопланет, которые предположительно могли бы приютить подобные земным формы жизни.",
-          "url": "https://scpfoundation.net/scp-2669",
-          "imageUrl": "https://scpfoundation.net/local--files/scp-2669/stars.png",
+          "itemId": "scp-series-9900",
+          "title": "SCP-9900 - В колонну по одному",
+          "blurb": "SCP-9900 - очередь, стоящая в колонну по одному.различных гуманоидов.",
+          "url": "https://scpfoundation.net/scp-9900",
+          "imageUrl": "https://scpfoundation.net/local--files/scp-9900/9kSketch_Johnnodwarf.png",
           "sourceTags": [
             "spatial"
           ]
@@ -7172,11 +7172,10 @@
           ]
         },
         {
-          "itemId": "scp-series-2669",
-          "title": "SCP-2669 - Кебтеул 1",
-          "blurb": "Первоначальной миссией SCP-2669 было прямое наблюдение экзопланет, которые предположительно могли бы приютить подобные земным формы жизни.",
-          "url": "https://scpfoundation.net/scp-2669",
-          "imageUrl": "https://scpfoundation.net/local--files/scp-2669/stars.png",
+          "itemId": "scp-series-1273",
+          "title": "SCP-1273 - Застрявшая",
+          "blurb": "SCP-1273 представляет собой детский ночник марки ██████.Материалы, входящие в состав объекта, не обладают аномальными свойствами.",
+          "url": "https://scpfoundation.net/scp-1273",
           "sourceTags": [
             "humanoid",
             "spatial"
@@ -7641,11 +7640,10 @@
           ]
         },
         {
-          "itemId": "scp-series-2669",
-          "title": "SCP-2669 - Кебтеул 1",
-          "blurb": "Первоначальной миссией SCP-2669 было прямое наблюдение экзопланет, которые предположительно могли бы приютить подобные земным формы жизни.",
-          "url": "https://scpfoundation.net/scp-2669",
-          "imageUrl": "https://scpfoundation.net/local--files/scp-2669/stars.png",
+          "itemId": "scp-series-2901",
+          "title": "SCP-2901 - Человек-мотылёк",
+          "blurb": "SCP-2901 - это вид ночных плотоядных падальщиков, обладающих ограниченным интеллектом; средний рост особи составляет 1,7 м.Обычно имеют эллипсоидную форму, обладают двумя крупными глазами со слоем фотофорной ткани.",
+          "url": "https://scpfoundation.net/scp-2901",
           "sourceTags": [
             "sentient",
             "spatial"
@@ -8412,11 +8410,10 @@
           ]
         },
         {
-          "itemId": "scp-series-2669",
-          "title": "SCP-2669 - Кебтеул 1",
-          "blurb": "Первоначальной миссией SCP-2669 было прямое наблюдение экзопланет, которые предположительно могли бы приютить подобные земным формы жизни.",
-          "url": "https://scpfoundation.net/scp-2669",
-          "imageUrl": "https://scpfoundation.net/local--files/scp-2669/stars.png",
+          "itemId": "scp-series-354",
+          "title": "SCP-354 - Алое Озеро",
+          "blurb": "SCP-354 — озеро красной жидкости, находящееся в северной Канаде.По консистенции жидкость примерно соответствует человеческой крови (отсюда неофициальное название «Озеро крови»), но природа жидкости не биологическая.",
+          "url": "https://scpfoundation.net/scp-354",
           "sourceTags": [
             "spatial"
           ]
@@ -9468,11 +9465,10 @@
           ]
         },
         {
-          "itemId": "scp-series-2669",
-          "title": "SCP-2669 - Кебтеул 1",
-          "blurb": "Первоначальной миссией SCP-2669 было прямое наблюдение экзопланет, которые предположительно могли бы приютить подобные земным формы жизни.",
-          "url": "https://scpfoundation.net/scp-2669",
-          "imageUrl": "https://scpfoundation.net/local--files/scp-2669/stars.png",
+          "itemId": "scp-series-1741",
+          "title": "SCP-1741 - Лодочная прогулка",
+          "blurb": "Дверь SCP-1741-А не может быть открыта.",
+          "url": "https://scpfoundation.net/scp-1741",
           "sourceTags": [
             "spatial",
             "biological"

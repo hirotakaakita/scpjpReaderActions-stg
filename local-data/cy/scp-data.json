@@ -1,8 +1,8 @@
 {
   "totalCount": 8,
   "language": "cy",
-  "timestamp": "2026-11-22T14:12:40.130Z",
-  "duration": 12,
+  "timestamp": "2026-11-28T07:45:07.302Z",
+  "duration": 6,
   "status": "completed",
   "statistics": {
     "translated": 8,
@@ -28,13 +28,13 @@
       "extractedFrom": "scp-series-cy",
       "pageType": "scp-series-cy",
       "contentType": "scp",
-      "lastUpdated": "2026-11-22T09:50:11.184Z",
+      "lastUpdated": "2026-11-27T10:20:02.756Z",
       "createdAt": "2026-11-10T00:33:44.711Z",
       "translatedLanguages": [
         "cy"
       ],
-      "descriptionCheckedAt": "2026-11-22T13:53:49.498Z",
-      "descriptionContentSha256": "bcec35eeb4144fafac7a6fc739a02210d7209bc2260379f07a4f7e224d90c7b0"
+      "descriptionCheckedAt": "2026-11-28T07:39:47.140Z",
+      "descriptionContentSha256": "9fc51ea933819cf74206a1768e595560987bdeef7fc78e22aca9b52155cb2e5d"
     },
     {
       "itemId": "scp-series-007",
@@ -75,7 +75,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-22T09:50:14.088Z",
+      "lastUpdated": "2026-11-27T10:20:04.146Z",
       "createdAt": "2026-11-10T00:33:46.052Z",
       "translatedLanguages": [
         "jp",
@@ -104,8 +104,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-22T13:53:49.498Z",
-      "descriptionContentSha256": "272d950082d34aab57a039661ad4b148d8f4066b2a1844d94660dfd9792826ad"
+      "descriptionCheckedAt": "2026-11-28T07:39:47.140Z",
+      "descriptionContentSha256": "ca207eda063b6bf907db21bc7bd90eb6643c00293d14cb8dc0836a2271b89a3b"
     },
     {
       "itemId": "scp-series-096",
@@ -142,7 +142,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-22T09:50:14.088Z",
+      "lastUpdated": "2026-11-27T10:20:04.146Z",
       "createdAt": "2026-11-10T00:33:46.052Z",
       "translatedLanguages": [
         "jp",
@@ -170,8 +170,8 @@
         "sv",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-22T13:53:49.498Z",
-      "descriptionContentSha256": "f993961ef8ceb02a2aea6c0a39f605b1c59edf4b2630bc801bd3a9ee3e965f36"
+      "descriptionCheckedAt": "2026-11-28T07:39:47.140Z",
+      "descriptionContentSha256": "cbab15608e73ec910086dc9958d36567f0a9e91f3c4f03d1e1cced7012ec831c"
     },
     {
       "itemId": "scp-series-173",
@@ -216,7 +216,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-22T09:50:14.088Z",
+      "lastUpdated": "2026-11-27T10:20:04.146Z",
       "createdAt": "2026-11-10T00:33:46.052Z",
       "translatedLanguages": [
         "jp",
@@ -251,8 +251,8 @@
         "tok",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-22T13:53:49.498Z",
-      "descriptionContentSha256": "3db91502abcf977eee7ade1706fcf0bf0d72008aab09eb6f312362ff6a601c0e"
+      "descriptionCheckedAt": "2026-11-28T07:39:47.140Z",
+      "descriptionContentSha256": "0acd6a3276a6561726a4f5e9db2c21b9dee1ae998ec21fdcd19d67a59cfcdfd7"
     },
     {
       "itemId": "scp-series-198",
@@ -272,7 +272,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-22T09:50:14.088Z",
+      "lastUpdated": "2026-11-27T10:20:04.146Z",
       "createdAt": "2026-11-10T00:33:46.052Z",
       "translatedLanguages": [
         "jp",
@@ -293,8 +293,8 @@
         "cy",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-22T13:53:49.498Z",
-      "descriptionContentSha256": "aec2772daf6b77514d6afe837cd38dea8bbb4f960012bc26f91349972d8ecb51"
+      "descriptionCheckedAt": "2026-11-28T07:39:47.140Z",
+      "descriptionContentSha256": "dffd643c6ea2a6552f1b3dbb6370800d5edee8b42540c838e027e6a73232284a"
     },
     {
       "itemId": "scp-series-297",
@@ -314,7 +314,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-22T09:50:14.088Z",
+      "lastUpdated": "2026-11-27T10:20:04.146Z",
       "createdAt": "2026-11-10T00:33:46.052Z",
       "translatedLanguages": [
         "jp",
@@ -336,8 +336,8 @@
         "sl",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-22T13:53:49.498Z",
-      "descriptionContentSha256": "715141e23b6680fadf84a2337a30827c3f48b882d708c896b60c3e2afe68a541"
+      "descriptionCheckedAt": "2026-11-28T07:39:47.140Z",
+      "descriptionContentSha256": "d54c31824daec599df200b4cf1a6f4c338e9f79fe063633cba215a0c2736ccee"
     },
     {
       "itemId": "scp-series-527",
@@ -357,7 +357,7 @@
       "extractedFrom": "scp-series",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-22T09:50:14.088Z",
+      "lastUpdated": "2026-11-27T10:20:04.146Z",
       "createdAt": "2026-11-10T00:33:46.052Z",
       "translatedLanguages": [
         "jp",
@@ -382,8 +382,8 @@
         "tok",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-22T13:53:49.498Z",
-      "descriptionContentSha256": "3549deba1d02405b372867f066547a17d67fa3eb4fd2a66a9f2d5aae04ef5b2b"
+      "descriptionCheckedAt": "2026-11-28T07:39:47.140Z",
+      "descriptionContentSha256": "bee7c217d13d2c2b4f8e82b39091426b9ea3cbf208eddab169bbdd45d1545bba"
     },
     {
       "itemId": "scp-series-1535",
@@ -403,7 +403,7 @@
       "extractedFrom": "scp-series-2",
       "pageType": "scp-series",
       "contentType": "scp",
-      "lastUpdated": "2026-11-22T09:50:19.985Z",
+      "lastUpdated": "2026-11-27T10:20:09.110Z",
       "createdAt": "2026-11-10T00:33:50.873Z",
       "translatedLanguages": [
         "jp",
@@ -423,8 +423,8 @@
         "cy",
         "tr"
       ],
-      "descriptionCheckedAt": "2026-11-22T13:53:49.498Z",
-      "descriptionContentSha256": "452f3bf30d5fede1958ed3cbaed85caa955aa2d1811ba21509131597acb68b22"
+      "descriptionCheckedAt": "2026-11-28T07:39:47.140Z",
+      "descriptionContentSha256": "76117fa931081851c72d90806a4ceb1ffe38cb5482d5fd425149c23bc577ec0d"
     }
   ],
   "tagSchemaVersion": 2
